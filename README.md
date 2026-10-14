@@ -1,6 +1,6 @@
 # UEAssist for Visual Studio
 
-현재 개발 버전: `0.0.47`
+현재 개발 버전: `0.0.49`
 
 **Visual Studio용 Unreal Engine C++ 생산성 확장입니다.** IntelliSense가 준비되는 동안 Unreal 매크로와 의미 색상을 먼저 표시하고, 빠른 정의 탐색을 제공합니다.
 
@@ -15,6 +15,14 @@
 3. VSIX를 실행하고 Visual Studio 2022에 설치합니다.
 
 ## 주요 기능
+
+- Visual Assist와 같은 주요 탐색 단축키: `Alt+G`, `Shift+Alt+F/S/O/G`, `Alt+O/M`
+- 파일·심볼·현재 파일 메서드 검색 창과 대응 헤더/소스 이동
+- 문서 종료 시 분석 작업 정리와 오래된 수정 결과 차단
+- 문자열·블록 주석을 제외하고 지역 블록을 구분하는 참조 후보 검색
+- 컴파일 구성 변경에 따른 프로젝트 캐시 갱신과 선택형 별도 인덱싱 작업자
+
+사용법, 단축키별 동작 범위와 검증 결과는 [HTML 문서](docs/index.html)를 참고하세요. 브라우저에서 `docs/index.html`을 열면 됩니다.
 
 - Unreal 프로젝트 자동 감지
 - `UCLASS`, `UPROPERTY`, `GENERATED_BODY`, `<모듈명>_API` 등 Unreal 매크로 즉시 표시
@@ -84,6 +92,8 @@ F12
 UEAssist는 IntelliSense 전체를 대체하지 않습니다. 자동완성·참조 검색은 빠른 후보를 먼저 제공하며, 완전한 C++ 타입 추론, 템플릿·조건부 컴파일 분석과 정밀 진단은 Visual Studio IntelliSense가 담당합니다.
 
 ## 개발
+
+Visual Assist 10.9.2630.0의 정적 역분석 근거, 미확인 사항과 UEAssist 적용 후보는 [분석 기록](docs/reverse-engineering/va-2630/index.html)에 정리되어 있습니다. 재현 도구는 `tools/VAStaticAnalysis`에 있습니다.
 
 요구 사항:
 

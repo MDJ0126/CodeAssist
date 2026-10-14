@@ -53,6 +53,14 @@
     <Compile Include="IntelliSenseSquiggleController.cs" />
     <Compile Include="IndexingStatusReporter.cs" />
     <Compile Include="LiveDocumentTracker.cs" />
+    <Compile Include="NavigationCommands.cs" />
+    <Compile Include="EditorClipboardHistory.cs" />
+    <Compile Include="SnippetInsertion.cs" />
+    <Compile Include="SymbolToolWindows.cs" />
+    <Compile Include="WordHighlights.cs" />
+    <Compile Include="CompilerSemanticService.cs" />
+    <Compile Include="ReferenceResults.cs" />
+    <Compile Include="CompilerRename.cs" />
     <Compile Include="ProjectIndexService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusCommand.cs" />
@@ -63,8 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="UEAssistCommands.vsct">
-      <ResourceName>Menus.ctmenu</ResourceName>
+      <ResourceName>CTMENU</ResourceName>
     </VSCTCompile>
+    <EmbeddedResource Include="VSPackage.resx"><MergeWithCTO>true</MergeWithCTO><ManifestResourceName>UEAssist.Extension.VSPackage</ManifestResourceName></EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="source.extension.vsixmanifest">
@@ -73,20 +82,27 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Design" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.32112.339" ExcludeAssets="runtime" NoWarn="NU1604" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.14.2142" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\UEAssist.Worker\bin\$(Configuration)\UEAssist.Worker.exe"><Link>UEAssist.Worker.exe</Link><IncludeInVSIX>true</IncludeInVSIX><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="bin\$(Configuration)\Newtonsoft.Json.dll"><Link>Newtonsoft.Json.dll</Link><IncludeInVSIX>true</IncludeInVSIX></Content>
+    <Content Include="Newtonsoft.Json.LICENSE.md"><IncludeInVSIX>true</IncludeInVSIX></Content>
+    <ProjectReference Include="..\UEAssist.Worker\UEAssist.Worker.csproj"><Project>{9C3DE21B-BC7B-4C87-BDC4-6F3C97689FA8}</Project><Name>UEAssist.Worker</Name><ReferenceOutputAssembly>false</ReferenceOutputAssembly></ProjectReference>
     <ProjectReference Include="..\UEAssist.Core\UEAssist.Core.csproj">
       <Project>{0603e075-018b-4b19-8610-d0a9b4ba57b9}</Project>
       <Name>UEAssist.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UEAssist.Semantics\UEAssist.Semantics.csproj"><Project>{f2c669cb-43ec-4164-ad66-f83a73d00b33}</Project><Name>UEAssist.Semantics</Name></ProjectReference>
     <ProjectReference Include="..\UEAssist.Indexing\UEAssist.Indexing.csproj">
       <Project>{d1f6e853-1ab2-4699-89ca-596412394ad1}</Project>
       <Name>UEAssist.Indexing</Name>

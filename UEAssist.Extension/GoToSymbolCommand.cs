@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using UEAssist.Core;
 using UEAssist.Indexing;
@@ -87,7 +88,13 @@ namespace UEAssist.Extension
                 return;
             }
 
-            var results = indexService?.Index.FindDefinitions(symbolName);
+            var semanticDocument = dte.ActiveDocument.Object("TextDocument") as EnvDTE.TextDocument;
+            var semanticText = semanticDocument?.StartPoint.CreateEditPoint().GetText(semanticDocument.EndPoint);
+            var compilerResults = await CompilerSemanticService.Instance.FindAsync("textDocument/definition", solutionDirectory,
+                dte.FullName, dte.ActiveDocument.FullName, semanticText, selection.ActivePoint.Line, selection.ActivePoint.LineCharOffset, package.DisposalToken);
+            await package.JoinableTaskFactory.SwitchToMainThreadAsync();
+            var results = compilerResults != null && compilerResults.Length > 0 ? compilerResults.Select(item =>
+                new SourceSymbol(symbolName, item.File, item.Line, item.Column, SymbolKind.Unknown)).ToArray() : indexService?.Index.FindDefinitions(symbolName);
             if (results == null || results.Count == 0)
             {
                 results = await Task.Run(() => new CppSymbolIndexer().Find(solutionDirectory, symbolName));
@@ -100,7 +107,17 @@ namespace UEAssist.Extension
                 return;
             }
 
-            var target = results[0];
+            var distinct = results.GroupBy(item => item.FilePath + ":" + item.Line + ":" + item.Column).Select(group => group.First()).ToArray();
+            var target = distinct[0];
+            if (distinct.Length > 1)
+            {
+                var picker = new NavigationPicker("UEAssist: 정의 후보 선택", distinct.Select(item =>
+                    new NavigationEntry(item.Name, item.FilePath, item.Line, item.Column)).ToArray(), package.JoinableTaskFactory);
+                new System.Windows.Interop.WindowInteropHelper(picker).Owner = dte.MainWindow.HWnd;
+                if (picker.ShowDialog() != true || picker.Selected == null) return;
+                var selected = picker.Selected;
+                target = new SourceSymbol(selected.Name, selected.File, selected.Line, selected.Column, target.Kind);
+            }
             dte.ItemOperations.OpenFile(target.FilePath, EnvDTE.Constants.vsViewKindTextView);
             if (dte.ActiveDocument?.Selection is EnvDTE.TextSelection targetSelection)
             {

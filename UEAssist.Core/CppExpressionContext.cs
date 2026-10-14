@@ -1,5 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace UEAssist.Core
 {
@@ -12,9 +13,18 @@ namespace UEAssist.Core
         public static string FindEnclosingFunctionOwner(string text, int caretPosition)
         {
             if (string.IsNullOrEmpty(text) || caretPosition <= 0) return null;
-            var prefix = text.Substring(0, Math.Min(caretPosition, text.Length));
-            var matches = QualifiedFunction.Matches(prefix);
-            return matches.Count == 0 ? null : matches[matches.Count - 1].Groups["owner"].Value;
+            var prefix = CppCodeMask.Create(text.Substring(0, Math.Min(caretPosition, text.Length)));
+            var owners = new Dictionary<int, string>();
+            foreach (Match match in QualifiedFunction.Matches(prefix)) owners[match.Index + match.Length - 1] = match.Groups["owner"].Value;
+            foreach (Match match in Regex.Matches(prefix, @"\b(?:class|struct)\s+(?:\w+_API\s+)?(?<owner>[A-Za-z_]\w*)[^;{}]*\{"))
+                owners[match.Index + match.Length - 1] = match.Groups["owner"].Value;
+            var stack = new Stack<string>();
+            for (var index=0; index < prefix.Length; index++)
+            {
+                if (prefix[index] == '{') stack.Push(owners.TryGetValue(index, out var owner) ? owner : stack.Count > 0 ? stack.Peek() : null);
+                else if (prefix[index] == '}' && stack.Count > 0) stack.Pop();
+            }
+            return stack.Count > 0 ? stack.Peek() : null;
         }
     }
 }

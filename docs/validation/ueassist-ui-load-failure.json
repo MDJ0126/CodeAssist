@@ -1,0 +1,20 @@
+[
+  {
+    "Type": "Error",
+    "Source": "VisualStudio",
+    "Description": "Failed to find CTMENU resource '#1000' in loaded UI library.",
+    "Hr": ""
+  },
+  {
+    "Type": "Error",
+    "Source": "Extension Manager",
+    "Description": "Unable to load DLL 'PkgDefMgmt.dll' or one of its dependencies: 지정된 모듈을 찾을 수 없습니다. (0x8007007E) ",
+    "Hr": ""
+  },
+  {
+    "Type": "Error",
+    "Source": "vs/extensionmanager/packageerror",
+    "Description": "StreamJsonRpc.RemoteInvocationException: Unable to load DLL 'PkgDefMgmt.dll' or one of its dependencies: 지정된 모듈을 찾을 수 없습니다. (0x8007007E)\r\n   위치: StreamJsonRpc.JsonRpc.<InvokeCoreAsync>d__156`1.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.Threading.ThreadingTools.<WithCancellationSlow>d__8`1.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.ExtensionManager.ExtensionManagerServiceProxy.<GetInstalledExtensionUpdatesAsync>d__29.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.ExtensionManager.UpdateCheckerImpl.<StartImplAsync>d__22.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.ExtensionManager.UpdateCheckerImpl.<StartAsync>d__20.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.ExtensionManager.VSPackage.ExtensionManagerPackage.<CheckForUpdatesAsync>d__28.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.ExtensionManager.VSPackage.ExtensionManagerPackage.<<updateCheckerComponent_DoIdle>b__29_0>d.MoveNext()\r\n--- 예외가 throw된 이전 위치의 스택 추적 끝 ---\r\n   위치: System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()\r\n   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   위치: Microsoft.VisualStudio.Shell.VsTaskLibraryHelper.<>c.<<FileAndForget>b__36_0>d.MoveNext()\r\nRPC server exception:\r\nSystem.DllNotFoundException: Unable to load DLL 'PkgDefMgmt.dll' or one of its dependencies: 지정된 모듈을 찾을 수 없습니다. (0x8007007E)\r\n      at Microsoft.VisualStudio.ExtensionManager.SettingsManagement.SettingsManager.HrCreatePkgDefManagerForApplicationWithAlternateUserAndRegRoot(String devenvPath, String rootSuffix, PkgDefManagementFlags flags, IntPtr userToken, IntPtr regRootHiveOverride, IntPtr& pkgdefManager)\r\n      at Microsoft.VisualStudio.ExtensionManager.SettingsManagement.SettingsManager.CreateForApplication(String devenvPath, String rootSuffix, PkgDefManagementFlags flags, IntPtr userToken, IntPtr regRootHiveOverride)\r\n      at Microsoft.VisualStudio.ExtensionManager.ServiceModule.ExtensionManagerServiceModule.get_SettingsManager()\r\n      at Microsoft.VisualStudio.ExtensionManager.ServiceModule.ExtensionManagerServiceModule.GetExtensionUpdates(ExtensionManagerHubServiceParameters args)\r\n      at Microsoft.VisualStudio.ExtensionManager.ServiceModule.ExtensionManagerServiceModule.RpcTarget.GetExtensionUpdates(ExtensionManagerHubServiceParameters args)\r\n",
+    "Hr": ""
+  }
+]

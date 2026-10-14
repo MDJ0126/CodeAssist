@@ -10,6 +10,7 @@ using System.ComponentModel.Composition;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
+using UEAssist.Core;
 
 namespace UEAssist.Extension
 {
@@ -53,12 +54,30 @@ namespace UEAssist.Extension
         public int QueryStatus(ref Guid commandGroup, uint commandCount, OLECMD[] commands, IntPtr commandText)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
+            if (view.IsClosed) return Next.QueryStatus(ref commandGroup, commandCount, commands, commandText);
+            if (commandGroup == VSConstants.GUID_VSStandardCommandSet97 && WordHighlights.For(view).Active &&
+                commands.Take((int)commandCount).All(command => command.cmdID == (uint)VSConstants.VSStd97CmdID.FindNext || command.cmdID == (uint)VSConstants.VSStd97CmdID.FindPrev))
+            {
+                for (var i = 0; i < commandCount; i++) commands[i].cmdf = (uint)(OLECMDF.OLECMDF_SUPPORTED | OLECMDF.OLECMDF_ENABLED);
+                return VSConstants.S_OK;
+            }
             return Next.QueryStatus(ref commandGroup, commandCount, commands, commandText);
         }
 
         public int Exec(ref Guid commandGroup, uint commandId, uint commandOptions, IntPtr input, IntPtr output)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
+            if (view.IsClosed) return Next.Exec(ref commandGroup, commandId, commandOptions, input, output);
+            if (commandGroup == VSConstants.GUID_VSStandardCommandSet97 &&
+                (commandId == (uint)VSConstants.VSStd97CmdID.FindNext || commandId == (uint)VSConstants.VSStd97CmdID.FindPrev) &&
+                WordHighlights.For(view).Navigate(commandId == (uint)VSConstants.VSStd97CmdID.FindNext)) return VSConstants.S_OK;
+            if (commandGroup == VSConstants.VSStd2K && commandId == (uint)VSConstants.VSStd2KCmdID.CANCEL && WordHighlights.For(view).Active)
+                WordHighlights.For(view).Clear();
+            string copiedText = null;
+            if (!view.IsClosed && commandGroup == VSConstants.GUID_VSStandardCommandSet97 &&
+                (commandId == (uint)VSConstants.VSStd97CmdID.Copy || commandId == (uint)VSConstants.VSStd97CmdID.Cut) &&
+                !view.Selection.IsEmpty && view.Selection.SelectedSpans.Count == 1 && view.Selection.SelectedSpans[0].Length <= 1024 * 1024)
+                copiedText = view.Selection.SelectedSpans[0].GetText();
             if (IsCommitCommand(commandGroup, commandId) && TryCommitUEAssistSelection())
             {
                 return VSConstants.S_OK;
@@ -82,6 +101,7 @@ namespace UEAssist.Extension
                 DismissPreviewSessions();
             }
             var result = Next.Exec(ref commandGroup, commandId, commandOptions, input, output);
+            if (ErrorHandler.Succeeded(result) && copiedText != null) EditorClipboardHistory.History.Record(copiedText);
             if (ErrorHandler.Succeeded(result) && (hasTypedCharacter || isDeletion))
             {
                 RefreshUEAssistSessions();
@@ -141,6 +161,13 @@ namespace UEAssist.Extension
                 var isUEAssist = string.Equals(set?.Moniker, "UEAssistPreview", StringComparison.Ordinal) ||
                                  selected is Completion4 completion && string.Equals(completion.Suffix, "UEAssist", StringComparison.Ordinal);
                 if (!isUEAssist || selected == null) continue;
+                var identity = IdentityOf(selected);
+                var candidates = set.Completions.ToArray();
+                var previousIndex = Array.IndexOf(candidates, selected);
+                var index = CompletionSelection.Validate(identity, previousIndex < 0 ? candidates.Length : previousIndex,
+                    candidates.Select(IdentityOf).ToArray());
+                if (index < 0) { session.Dismiss(); return false; }
+                set.SelectionStatus = new CompletionSelectionStatus(candidates[index], true, true);
                 session.Commit();
                 return true;
             }
@@ -153,6 +180,8 @@ namespace UEAssist.Extension
                    (commandId == (uint)VSConstants.VSStd2KCmdID.TAB ||
                     commandId == (uint)VSConstants.VSStd2KCmdID.RETURN);
         }
+
+        private static string IdentityOf(Completion completion) => completion == null ? null : completion.InsertionText + "\0" + completion.Description;
 
         private static bool IsExplicitCompletion(Guid commandGroup, uint commandId)
         {
@@ -236,12 +265,13 @@ namespace UEAssist.Extension
 
         private void QueueCompletionRefresh()
         {
-            if (liveCompletionQueued) return;
+            if (liveCompletionQueued || view.IsClosed || uiContext == null) return;
             liveCompletionQueued = true;
 #pragma warning disable VSTHRD001 // Captured from IVsTextViewCreated on the VS UI thread.
             uiContext.Post(delegate
             {
                 liveCompletionQueued = false;
+                if (view.IsClosed) return;
                 try
                 {
                     ThreadHelper.ThrowIfNotOnUIThread();
@@ -263,11 +293,24 @@ namespace UEAssist.Extension
                 .ToArray();
             if (ueAssistSessions.Length > 0)
             {
+                var previous = ueAssistSessions.Select(session => session.SelectedCompletionSet?.SelectionStatus)
+                    .FirstOrDefault(status => status?.IsSelected == true);
+                var identity = IdentityOf(previous?.Completion);
                 // Filtering can only remove items from the list created for the
                 // first character. Recreate our standalone safe session so a more
                 // specific prefix can bring GetWorld/GetPawn and similar symbols in.
                 foreach (var session in ueAssistSessions) session.Dismiss();
                 broker.TriggerCompletion(view);
+                if (identity != null)
+                {
+                    foreach (var session in broker.GetSessions(view))
+                    foreach (var set in session.CompletionSets.Where(item => item.Moniker == "UEAssistPreview"))
+                    {
+                        var items = set.Completions.ToArray();
+                        var index = CompletionSelection.Validate(identity, items.Length, items.Select(IdentityOf).ToArray());
+                        if (index >= 0) set.SelectionStatus = new CompletionSelectionStatus(items[index], true, true);
+                    }
+                }
                 return;
             }
 

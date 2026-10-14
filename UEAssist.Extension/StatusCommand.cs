@@ -38,7 +38,11 @@ namespace UEAssist.Extension
                 package,
                 controller.CreateStatusText() + Environment.NewLine + Environment.NewLine +
                 $"심볼 인덱스: {indexService?.Index.Count ?? 0:N0}개" + Environment.NewLine +
-                $"인덱싱: {(indexService?.IsBuilding == true ? "진행 중" : "완료")}",
+                $"인덱싱: {(indexService?.IsBuilding == true ? "진행 중" : "완료")}" + Environment.NewLine +
+                $"컴파일 구성: {indexService?.CompilationModel?.Targets.Count ?? 0}개" + Environment.NewLine +
+                $"최근 분석: {indexService?.LastBuild?.ElapsedMilliseconds ?? 0}ms / {(indexService?.LastBuild?.UsedWorker == true ? "별도 작업자" : "프로세스 내부")}" + Environment.NewLine +
+                (indexService?.LastBuild?.WorkerFailure ?? "") + Environment.NewLine +
+                "컴파일러 의미 분석: " + (CompilerSemanticService.Instance.LastError ?? "오류 기록 없음; 구성 파일이 있거나 명시 활성화한 경우 사용"),
                 "UEAssist Status",
                 Microsoft.VisualStudio.Shell.Interop.OLEMSGICON.OLEMSGICON_INFO,
                 Microsoft.VisualStudio.Shell.Interop.OLEMSGBUTTON.OLEMSGBUTTON_OK,

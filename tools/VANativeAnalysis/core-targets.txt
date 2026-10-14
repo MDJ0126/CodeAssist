@@ -1,0 +1,17 @@
+# Entry points and .pdata ranges connected to native strings; semantics pending.
+8d0770
+4bd560
+6d3440
+170140
+18f220
+1a71b0
+2b1910
+2c1e80
+2f7a80
+350dd0
+35a800
+3783e0
+3a01f0
+3a3af0
+48d990
+48db00

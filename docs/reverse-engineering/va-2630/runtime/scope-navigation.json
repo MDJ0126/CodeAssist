@@ -1,0 +1,52 @@
+{
+  "version": "10.9.2630.0",
+  "fixture": "main.cpp",
+  "access": "VA navigation bar upper/lower scope arrow; keyboard Alt+Down conflicts with VS",
+  "observations": [
+    {
+      "from": {
+        "line": 6,
+        "column": 32
+      },
+      "action": "next",
+      "to": {
+        "line": 13,
+        "column": 1
+      }
+    },
+    {
+      "from": {
+        "line": 13,
+        "column": 1
+      },
+      "action": "previous",
+      "to": {
+        "line": 4,
+        "column": 1
+      }
+    },
+    {
+      "from": {
+        "line": 4,
+        "column": 1
+      },
+      "action": "previous",
+      "to": {
+        "line": 1,
+        "column": 1
+      }
+    },
+    {
+      "from": {
+        "line": 1,
+        "column": 1
+      },
+      "action": "next",
+      "to": {
+        "line": 4,
+        "column": 1
+      }
+    }
+  ],
+  "scope": "One simple function fixture; full C++ scope semantics not verified."
+}

@@ -1,0 +1,2962 @@
+{
+  "file": "VaAux64.dll",
+  "sha256": "7d12322fc9e7efe4749d228ecb33c5e99dfc3ac7688757819889ad88172a47f5",
+  "image_base": "0x180000000",
+  "size": 6268928,
+  "sections": [
+    {
+      "name": ".text",
+      "virtual_size": 4277304,
+      "rva": 4096,
+      "raw_size": 4277760,
+      "raw_offset": 1024,
+      "characteristics": 1610612768
+    },
+    {
+      "name": ".rdata",
+      "virtual_size": 1688330,
+      "rva": 4284416,
+      "raw_size": 1688576,
+      "raw_offset": 4278784,
+      "characteristics": 1073741888
+    },
+    {
+      "name": ".data",
+      "virtual_size": 67164,
+      "rva": 5976064,
+      "raw_size": 42496,
+      "raw_offset": 5967360,
+      "characteristics": 3221225536
+    },
+    {
+      "name": ".pdata",
+      "virtual_size": 195792,
+      "rva": 6045696,
+      "raw_size": 196096,
+      "raw_offset": 6009856,
+      "characteristics": 1073741888
+    },
+    {
+      "name": ".fptable",
+      "virtual_size": 256,
+      "rva": 6242304,
+      "raw_size": 512,
+      "raw_offset": 6205952,
+      "characteristics": 3221225536
+    },
+    {
+      "name": ".rsrc",
+      "virtual_size": 1232,
+      "rva": 6246400,
+      "raw_size": 1536,
+      "raw_offset": 6206464,
+      "characteristics": 1073741888
+    },
+    {
+      "name": ".reloc",
+      "virtual_size": 60452,
+      "rva": 6250496,
+      "raw_size": 60928,
+      "raw_offset": 6208000,
+      "characteristics": 1107296320
+    }
+  ],
+  "unwind_range_count": 16316,
+  "exports": [
+    {
+      "name": "GetAuxDll",
+      "rva": 1141024
+    }
+  ],
+  "export_ranges": [],
+  "focused_strings": [
+    {
+      "rva": 4301992,
+      "bytes": 36,
+      "encoding": "ascii",
+      "text": "Feature database corrupted in daemon",
+      "truncated": false
+    },
+    {
+      "rva": 4306176,
+      "bytes": 48,
+      "encoding": "ascii",
+      "text": "Internal error loading IANA database information",
+      "truncated": false
+    },
+    {
+      "rva": 4306672,
+      "bytes": 48,
+      "encoding": "ascii",
+      "text": "Internal error loading IANA database information",
+      "truncated": false
+    },
+    {
+      "rva": 4570360,
+      "bytes": 23,
+      "encoding": "ascii",
+      "text": "Cache-Control: no-cache",
+      "truncated": false
+    },
+    {
+      "rva": 4579336,
+      "bytes": 30,
+      "encoding": "ascii",
+      "text": "evp_pkey_ctx_store_cached_data",
+      "truncated": false
+    },
+    {
+      "rva": 4586272,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "Load file into cache",
+      "truncated": false
+    },
+    {
+      "rva": 4588400,
+      "bytes": 19,
+      "encoding": "ascii",
+      "text": "different CRL scope",
+      "truncated": false
+    },
+    {
+      "rva": 4593232,
+      "bytes": 17,
+      "encoding": "ascii",
+      "text": "X509V3_parse_list",
+      "truncated": false
+    },
+    {
+      "rva": 4615392,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "BIO_parse_hostserv",
+      "truncated": false
+    },
+    {
+      "rva": 4740904,
+      "bytes": 21,
+      "encoding": "ascii",
+      "text": "id-it-certReqTemplate",
+      "truncated": false
+    },
+    {
+      "rva": 4741872,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "id-regCtrl-altCertTemplate",
+      "truncated": false
+    },
+    {
+      "rva": 4742880,
+      "bytes": 30,
+      "encoding": "ascii",
+      "text": "Microsoft certificate template",
+      "truncated": false
+    },
+    {
+      "rva": 4756976,
+      "bytes": 33,
+      "encoding": "ascii",
+      "text": "evp_set_parsed_default_properties",
+      "truncated": false
+    },
+    {
+      "rva": 4760832,
+      "bytes": 30,
+      "encoding": "ascii",
+      "text": "ossl_encoder_parsed_properties",
+      "truncated": false
+    },
+    {
+      "rva": 4785480,
+      "bytes": 17,
+      "encoding": "ascii",
+      "text": "asn1_template_new",
+      "truncated": false
+    },
+    {
+      "rva": 4785824,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "asn1_template_ex_d2i",
+      "truncated": false
+    },
+    {
+      "rva": 4785848,
+      "bytes": 23,
+      "encoding": "ascii",
+      "text": "asn1_template_noexp_d2i",
+      "truncated": false
+    },
+    {
+      "rva": 4786040,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "asn1_template_ex_i2d",
+      "truncated": false
+    },
+    {
+      "rva": 4792672,
+      "bytes": 19,
+      "encoding": "ascii",
+      "text": "policy_cache_create",
+      "truncated": false
+    },
+    {
+      "rva": 4792696,
+      "bytes": 40,
+      "encoding": "ascii",
+      "text": "..\\openssl-3.5.9\\crypto\\x509\\pcy_cache.c",
+      "truncated": false
+    },
+    {
+      "rva": 4794912,
+      "bytes": 15,
+      "encoding": "ascii",
+      "text": "CONF_parse_list",
+      "truncated": false
+    },
+    {
+      "rva": 4799912,
+      "bytes": 27,
+      "encoding": "ascii",
+      "text": "  <Can't parse certificate>",
+      "truncated": false
+    },
+    {
+      "rva": 4800192,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "Can't Parse Certificate %d",
+      "truncated": false
+    },
+    {
+      "rva": 4811256,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "parse tlsext",
+      "truncated": false
+    },
+    {
+      "rva": 4819800,
+      "bytes": 28,
+      "encoding": "ascii",
+      "text": "ossl_x509v3_cache_extensions",
+      "truncated": false
+    },
+    {
+      "rva": 4821984,
+      "bytes": 30,
+      "encoding": "ascii",
+      "text": "ossl_decoder_parsed_properties",
+      "truncated": false
+    },
+    {
+      "rva": 4822232,
+      "bytes": 24,
+      "encoding": "ascii",
+      "text": "ossl_decoder_cache_flush",
+      "truncated": false
+    },
+    {
+      "rva": 4824840,
+      "bytes": 13,
+      "encoding": "ascii",
+      "text": "parse_tagging",
+      "truncated": false
+    },
+    {
+      "rva": 4840936,
+      "bytes": 10,
+      "encoding": "ascii",
+      "text": "parse_name",
+      "truncated": false
+    },
+    {
+      "rva": 4840952,
+      "bytes": 49,
+      "encoding": "ascii",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c",
+      "truncated": false
+    },
+    {
+      "rva": 4841024,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "parse_number",
+      "truncated": false
+    },
+    {
+      "rva": 4841064,
+      "bytes": 9,
+      "encoding": "ascii",
+      "text": "parse_hex",
+      "truncated": false
+    },
+    {
+      "rva": 4841080,
+      "bytes": 9,
+      "encoding": "ascii",
+      "text": "parse_oct",
+      "truncated": false
+    },
+    {
+      "rva": 4841096,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "parse_string",
+      "truncated": false
+    },
+    {
+      "rva": 4841128,
+      "bytes": 14,
+      "encoding": "ascii",
+      "text": "parse_unquoted",
+      "truncated": false
+    },
+    {
+      "rva": 4841192,
+      "bytes": 19,
+      "encoding": "ascii",
+      "text": "ossl_parse_property",
+      "truncated": false
+    },
+    {
+      "rva": 4841248,
+      "bytes": 16,
+      "encoding": "ascii",
+      "text": "ossl_parse_query",
+      "truncated": false
+    },
+    {
+      "rva": 4917560,
+      "bytes": 16,
+      "encoding": "ascii",
+      "text": "%*s<Parse Error>",
+      "truncated": false
+    },
+    {
+      "rva": 4918096,
+      "bytes": 14,
+      "encoding": "ascii",
+      "text": "OSSL_parse_url",
+      "truncated": false
+    },
+    {
+      "rva": 4920360,
+      "bytes": 45,
+      "encoding": "ascii",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\defn_cache.c",
+      "truncated": false
+    },
+    {
+      "rva": 4920504,
+      "bytes": 32,
+      "encoding": "ascii",
+      "text": "provider_conf_parse_bool_setting",
+      "truncated": false
+    },
+    {
+      "rva": 4955232,
+      "bytes": 16,
+      "encoding": "ascii",
+      "text": "asn1 parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4955256,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "asn1 sig parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4955320,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "bad template",
+      "truncated": false
+    },
+    {
+      "rva": 4956128,
+      "bytes": 32,
+      "encoding": "ascii",
+      "text": "illegal options on item template",
+      "truncated": false
+    },
+    {
+      "rva": 4956672,
+      "bytes": 16,
+      "encoding": "ascii",
+      "text": "mime parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4956696,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "mime sig parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4970448,
+      "bytes": 22,
+      "encoding": "ascii",
+      "text": "cache constants failed",
+      "truncated": false
+    },
+    {
+      "rva": 4970768,
+      "bytes": 25,
+      "encoding": "ascii",
+      "text": "default query parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4974208,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "keyblob header parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4980064,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "no config database",
+      "truncated": false
+    },
+    {
+      "rva": 4982320,
+      "bytes": 11,
+      "encoding": "ascii",
+      "text": "parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4984960,
+      "bytes": 43,
+      "encoding": "ascii",
+      "text": "could not bind to the requested symbol name",
+      "truncated": false
+    },
+    {
+      "rva": 4987736,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "header parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4988096,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "response parse error",
+      "truncated": false
+    },
+    {
+      "rva": 4998032,
+      "bytes": 24,
+      "encoding": "ascii",
+      "text": "generate certreqtemplate",
+      "truncated": false
+    },
+    {
+      "rva": 5002352,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "parse failed",
+      "truncated": false
+    },
+    {
+      "rva": 5007600,
+      "bytes": 9,
+      "encoding": "ascii",
+      "text": "parsebool",
+      "truncated": false
+    },
+    {
+      "rva": 5088704,
+      "bytes": 38,
+      "encoding": "ascii",
+      "text": "..\\openssl-3.5.9\\crypto\\sparse_array.c",
+      "truncated": false
+    },
+    {
+      "rva": 5558944,
+      "bytes": 49,
+      "encoding": "ascii",
+      "text": "failed to parse %s public key from the input data",
+      "truncated": false
+    },
+    {
+      "rva": 5590712,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "parse_pubkey",
+      "truncated": false
+    },
+    {
+      "rva": 5590848,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "parse_prvkey",
+      "truncated": false
+    },
+    {
+      "rva": 5609440,
+      "bytes": 20,
+      "encoding": "ascii",
+      "text": "ssl_cache_cipherlist",
+      "truncated": false
+    },
+    {
+      "rva": 5617040,
+      "bytes": 16,
+      "encoding": "ascii",
+      "text": "custom_ext_parse",
+      "truncated": false
+    },
+    {
+      "rva": 5633640,
+      "bytes": 14,
+      "encoding": "ascii",
+      "text": "parse_ca_names",
+      "truncated": false
+    },
+    {
+      "rva": 5642352,
+      "bytes": 33,
+      "encoding": "ascii",
+      "text": "tls_parse_certificate_authorities",
+      "truncated": false
+    },
+    {
+      "rva": 5655496,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "ssl3_digest_cached_records",
+      "truncated": false
+    },
+    {
+      "rva": 5666000,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_renegotiate",
+      "truncated": false
+    },
+    {
+      "rva": 5666080,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_server_name",
+      "truncated": false
+    },
+    {
+      "rva": 5666112,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_maxfragmentlen",
+      "truncated": false
+    },
+    {
+      "rva": 5666144,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_srp",
+      "truncated": false
+    },
+    {
+      "rva": 5666168,
+      "bytes": 28,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_ec_pt_formats",
+      "truncated": false
+    },
+    {
+      "rva": 5666200,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_session_ticket",
+      "truncated": false
+    },
+    {
+      "rva": 5666232,
+      "bytes": 28,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_sig_algs_cert",
+      "truncated": false
+    },
+    {
+      "rva": 5666264,
+      "bytes": 23,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_sig_algs",
+      "truncated": false
+    },
+    {
+      "rva": 5666288,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_status_request",
+      "truncated": false
+    },
+    {
+      "rva": 5666320,
+      "bytes": 19,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_alpn",
+      "truncated": false
+    },
+    {
+      "rva": 5666344,
+      "bytes": 23,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_use_srtp",
+      "truncated": false
+    },
+    {
+      "rva": 5666368,
+      "bytes": 28,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_psk_kex_modes",
+      "truncated": false
+    },
+    {
+      "rva": 5666448,
+      "bytes": 24,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_key_share",
+      "truncated": false
+    },
+    {
+      "rva": 5666480,
+      "bytes": 21,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_cookie",
+      "truncated": false
+    },
+    {
+      "rva": 5666504,
+      "bytes": 31,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_supported_groups",
+      "truncated": false
+    },
+    {
+      "rva": 5666536,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_ems",
+      "truncated": false
+    },
+    {
+      "rva": 5666560,
+      "bytes": 25,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_early_data",
+      "truncated": false
+    },
+    {
+      "rva": 5666592,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_psk",
+      "truncated": false
+    },
+    {
+      "rva": 5666616,
+      "bytes": 34,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_post_handshake_auth",
+      "truncated": false
+    },
+    {
+      "rva": 5667304,
+      "bytes": 31,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_client_cert_type",
+      "truncated": false
+    },
+    {
+      "rva": 5667376,
+      "bytes": 31,
+      "encoding": "ascii",
+      "text": "tls_parse_ctos_server_cert_type",
+      "truncated": false
+    },
+    {
+      "rva": 5668272,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_renegotiate",
+      "truncated": false
+    },
+    {
+      "rva": 5668304,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_maxfragmentlen",
+      "truncated": false
+    },
+    {
+      "rva": 5668336,
+      "bytes": 26,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_server_name",
+      "truncated": false
+    },
+    {
+      "rva": 5668368,
+      "bytes": 28,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_ec_pt_formats",
+      "truncated": false
+    },
+    {
+      "rva": 5668400,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_session_ticket",
+      "truncated": false
+    },
+    {
+      "rva": 5668432,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_status_request",
+      "truncated": false
+    },
+    {
+      "rva": 5668464,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_sct",
+      "truncated": false
+    },
+    {
+      "rva": 5668512,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_npn",
+      "truncated": false
+    },
+    {
+      "rva": 5668536,
+      "bytes": 19,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_alpn",
+      "truncated": false
+    },
+    {
+      "rva": 5668560,
+      "bytes": 23,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_use_srtp",
+      "truncated": false
+    },
+    {
+      "rva": 5668584,
+      "bytes": 33,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_supported_versions",
+      "truncated": false
+    },
+    {
+      "rva": 5668624,
+      "bytes": 24,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_key_share",
+      "truncated": false
+    },
+    {
+      "rva": 5668656,
+      "bytes": 21,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_cookie",
+      "truncated": false
+    },
+    {
+      "rva": 5668680,
+      "bytes": 25,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_early_data",
+      "truncated": false
+    },
+    {
+      "rva": 5668712,
+      "bytes": 18,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_psk",
+      "truncated": false
+    },
+    {
+      "rva": 5668776,
+      "bytes": 31,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_client_cert_type",
+      "truncated": false
+    },
+    {
+      "rva": 5668848,
+      "bytes": 31,
+      "encoding": "ascii",
+      "text": "tls_parse_stoc_server_cert_type",
+      "truncated": false
+    },
+    {
+      "rva": 5693800,
+      "bytes": 29,
+      "encoding": "ascii",
+      "text": "too many symbolic link levels",
+      "truncated": false
+    },
+    {
+      "rva": 5736936,
+      "bytes": 12,
+      "encoding": "ascii",
+      "text": "PKCS12_parse",
+      "truncated": false
+    }
+  ],
+  "string_xrefs": [
+    {
+      "instruction_rva": 1578067,
+      "target_rva": 4570360,
+      "string_rva": 4570360,
+      "function_start": 1577920,
+      "instruction": "lea\trdx, [rip + 0x2da89e]   # 0x18045bcf8",
+      "text": "Cache-Control: no-cache"
+    },
+    {
+      "instruction_rva": 1646730,
+      "target_rva": 4579336,
+      "string_rva": 4579336,
+      "function_start": 1646665,
+      "instruction": "lea\tr8, [rip + 0x2cbf77]    # 0x18045e008",
+      "text": "evp_pkey_ctx_store_cached_data"
+    },
+    {
+      "instruction_rva": 1646831,
+      "target_rva": 4579336,
+      "string_rva": 4579336,
+      "function_start": 1646792,
+      "instruction": "lea\tr8, [rip + 0x2cbf12]    # 0x18045e008",
+      "text": "evp_pkey_ctx_store_cached_data"
+    },
+    {
+      "instruction_rva": 1646924,
+      "target_rva": 4579336,
+      "string_rva": 4579336,
+      "function_start": 1646888,
+      "instruction": "lea\tr8, [rip + 0x2cbeb5]    # 0x18045e008",
+      "text": "evp_pkey_ctx_store_cached_data"
+    },
+    {
+      "instruction_rva": 1647000,
+      "target_rva": 4579336,
+      "string_rva": 4579336,
+      "function_start": 1646986,
+      "instruction": "lea\tr8, [rip + 0x2cbe69]    # 0x18045e008",
+      "text": "evp_pkey_ctx_store_cached_data"
+    },
+    {
+      "instruction_rva": 1647088,
+      "target_rva": 4579336,
+      "string_rva": 4579336,
+      "function_start": 1647062,
+      "instruction": "lea\tr8, [rip + 0x2cbe11]    # 0x18045e008",
+      "text": "evp_pkey_ctx_store_cached_data"
+    },
+    {
+      "instruction_rva": 1647164,
+      "target_rva": 4579336,
+      "string_rva": 4579336,
+      "function_start": 1647150,
+      "instruction": "lea\tr8, [rip + 0x2cbdc5]    # 0x18045e008",
+      "text": "evp_pkey_ctx_store_cached_data"
+    },
+    {
+      "instruction_rva": 1724975,
+      "target_rva": 4588400,
+      "string_rva": 4588400,
+      "function_start": null,
+      "instruction": "lea\trax, [rip + 0x2bb13a]   # 0x180460370",
+      "text": "different CRL scope"
+    },
+    {
+      "instruction_rva": 1741504,
+      "target_rva": 4593232,
+      "string_rva": 4593232,
+      "function_start": 1741152,
+      "instruction": "lea\tr8, [rip + 0x2b8389]    # 0x180461650",
+      "text": "X509V3_parse_list"
+    },
+    {
+      "instruction_rva": 1741535,
+      "target_rva": 4593232,
+      "string_rva": 4593232,
+      "function_start": 1741152,
+      "instruction": "lea\tr8, [rip + 0x2b836a]    # 0x180461650",
+      "text": "X509V3_parse_list"
+    },
+    {
+      "instruction_rva": 1741641,
+      "target_rva": 4593232,
+      "string_rva": 4593232,
+      "function_start": 1741152,
+      "instruction": "lea\tr8, [rip + 0x2b8300]    # 0x180461650",
+      "text": "X509V3_parse_list"
+    },
+    {
+      "instruction_rva": 1741690,
+      "target_rva": 4593232,
+      "string_rva": 4593232,
+      "function_start": 1741152,
+      "instruction": "lea\tr8, [rip + 0x2b82cf]    # 0x180461650",
+      "text": "X509V3_parse_list"
+    },
+    {
+      "instruction_rva": 1789177,
+      "target_rva": 4615392,
+      "string_rva": 4615392,
+      "function_start": 1788960,
+      "instruction": "lea\tr8, [rip + 0x2b1fe0]    # 0x180466ce0",
+      "text": "BIO_parse_hostserv"
+    },
+    {
+      "instruction_rva": 1789359,
+      "target_rva": 4615392,
+      "string_rva": 4615392,
+      "function_start": 1788960,
+      "instruction": "lea\tr8, [rip + 0x2b1f2a]    # 0x180466ce0",
+      "text": "BIO_parse_hostserv"
+    },
+    {
+      "instruction_rva": 1849005,
+      "target_rva": 4756976,
+      "string_rva": 4756976,
+      "function_start": 1848688,
+      "instruction": "lea\tr8, [rip + 0x2c5f3c]    # 0x1804895f0",
+      "text": "evp_set_parsed_default_properties"
+    },
+    {
+      "instruction_rva": 1905838,
+      "target_rva": 4760832,
+      "string_rva": 4760832,
+      "function_start": 1905824,
+      "instruction": "lea\tr8, [rip + 0x2b904b]    # 0x18048a500",
+      "text": "ossl_encoder_parsed_properties"
+    },
+    {
+      "instruction_rva": 2017101,
+      "target_rva": 4785480,
+      "string_rva": 4785480,
+      "function_start": 2016976,
+      "instruction": "lea\tr8, [rip + 0x2a3df4]    # 0x180490548",
+      "text": "asn1_template_new"
+    },
+    {
+      "instruction_rva": 2026605,
+      "target_rva": 4785824,
+      "string_rva": 4785824,
+      "function_start": 2026283,
+      "instruction": "lea\tr8, [rip + 0x2a1a2c]    # 0x1804906a0",
+      "text": "asn1_template_ex_d2i"
+    },
+    {
+      "instruction_rva": 2026714,
+      "target_rva": 4785824,
+      "string_rva": 4785824,
+      "function_start": 2026283,
+      "instruction": "lea\tr8, [rip + 0x2a19bf]    # 0x1804906a0",
+      "text": "asn1_template_ex_d2i"
+    },
+    {
+      "instruction_rva": 2026897,
+      "target_rva": 4785824,
+      "string_rva": 4785824,
+      "function_start": 2026812,
+      "instruction": "lea\tr8, [rip + 0x2a1908]    # 0x1804906a0",
+      "text": "asn1_template_ex_d2i"
+    },
+    {
+      "instruction_rva": 2027005,
+      "target_rva": 4785824,
+      "string_rva": 4785824,
+      "function_start": 2026812,
+      "instruction": "lea\tr8, [rip + 0x2a189c]    # 0x1804906a0",
+      "text": "asn1_template_ex_d2i"
+    },
+    {
+      "instruction_rva": 2027631,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2027176,
+      "instruction": "lea\tr8, [rip + 0x2a1642]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2027747,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2027176,
+      "instruction": "lea\tr8, [rip + 0x2a15ce]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2027969,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2027176,
+      "instruction": "lea\tr8, [rip + 0x2a14f0]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2028040,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2027176,
+      "instruction": "lea\tr8, [rip + 0x2a14a9]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2028094,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2027176,
+      "instruction": "lea\tr8, [rip + 0x2a1473]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2028130,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2027176,
+      "instruction": "lea\tr8, [rip + 0x2a144f]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2028473,
+      "target_rva": 4785848,
+      "string_rva": 4785848,
+      "function_start": 2028378,
+      "instruction": "lea\tr8, [rip + 0x2a12f8]    # 0x1804906b8",
+      "text": "asn1_template_noexp_d2i"
+    },
+    {
+      "instruction_rva": 2032048,
+      "target_rva": 4786040,
+      "string_rva": 4786040,
+      "function_start": 2031168,
+      "instruction": "lea\tr8, [rip + 0x2a05c1]    # 0x180490778",
+      "text": "asn1_template_ex_i2d"
+    },
+    {
+      "instruction_rva": 2059259,
+      "target_rva": 4792696,
+      "string_rva": 4792696,
+      "function_start": 2059216,
+      "instruction": "lea\trdx, [rip + 0x29b576]   # 0x180492178",
+      "text": "..\\openssl-3.5.9\\crypto\\x509\\pcy_cache.c"
+    },
+    {
+      "instruction_rva": 2059448,
+      "target_rva": 4792672,
+      "string_rva": 4792672,
+      "function_start": 2059360,
+      "instruction": "lea\tr8, [rip + 0x29b4a1]    # 0x180492160",
+      "text": "policy_cache_create"
+    },
+    {
+      "instruction_rva": 2059460,
+      "target_rva": 4792696,
+      "string_rva": 4792696,
+      "function_start": 2059360,
+      "instruction": "lea\trcx, [rip + 0x29b4ad]   # 0x180492178",
+      "text": "..\\openssl-3.5.9\\crypto\\x509\\pcy_cache.c"
+    },
+    {
+      "instruction_rva": 2059725,
+      "target_rva": 4792672,
+      "string_rva": 4792672,
+      "function_start": 2059360,
+      "instruction": "lea\tr8, [rip + 0x29b38c]    # 0x180492160",
+      "text": "policy_cache_create"
+    },
+    {
+      "instruction_rva": 2059737,
+      "target_rva": 4792696,
+      "string_rva": 4792696,
+      "function_start": 2059360,
+      "instruction": "lea\trcx, [rip + 0x29b398]   # 0x180492178",
+      "text": "..\\openssl-3.5.9\\crypto\\x509\\pcy_cache.c"
+    },
+    {
+      "instruction_rva": 2059795,
+      "target_rva": 4792672,
+      "string_rva": 4792672,
+      "function_start": 2059360,
+      "instruction": "lea\tr8, [rip + 0x29b346]    # 0x180492160",
+      "text": "policy_cache_create"
+    },
+    {
+      "instruction_rva": 2059807,
+      "target_rva": 4792696,
+      "string_rva": 4792696,
+      "function_start": 2059360,
+      "instruction": "lea\trcx, [rip + 0x29b352]   # 0x180492178",
+      "text": "..\\openssl-3.5.9\\crypto\\x509\\pcy_cache.c"
+    },
+    {
+      "instruction_rva": 2059913,
+      "target_rva": 4792696,
+      "string_rva": 4792696,
+      "function_start": 2059908,
+      "instruction": "lea\trdx, [rip + 0x29b2e8]   # 0x180492178",
+      "text": "..\\openssl-3.5.9\\crypto\\x509\\pcy_cache.c"
+    },
+    {
+      "instruction_rva": 2072914,
+      "target_rva": 4794912,
+      "string_rva": 4794912,
+      "function_start": 2072880,
+      "instruction": "lea\tr8, [rip + 0x2988c7]    # 0x180492a20",
+      "text": "CONF_parse_list"
+    },
+    {
+      "instruction_rva": 2094030,
+      "target_rva": 4799912,
+      "string_rva": 4799912,
+      "function_start": 2093895,
+      "instruction": "lea\trdx, [rip + 0x2949d3]   # 0x180493da8",
+      "text": "  <Can't parse certificate>"
+    },
+    {
+      "instruction_rva": 2101796,
+      "target_rva": 4800192,
+      "string_rva": 4800192,
+      "function_start": 2101712,
+      "instruction": "lea\trdx, [rip + 0x292c95]   # 0x180493ec0",
+      "text": "Can't Parse Certificate %d"
+    },
+    {
+      "instruction_rva": 2145178,
+      "target_rva": 4819800,
+      "string_rva": 4819800,
+      "function_start": 2145021,
+      "instruction": "lea\tr8, [rip + 0x28cfb7]    # 0x180498b58",
+      "text": "ossl_x509v3_cache_extensions"
+    },
+    {
+      "instruction_rva": 2145545,
+      "target_rva": 4819800,
+      "string_rva": 4819800,
+      "function_start": 2145021,
+      "instruction": "lea\tr8, [rip + 0x28ce48]    # 0x180498b58",
+      "text": "ossl_x509v3_cache_extensions"
+    },
+    {
+      "instruction_rva": 2146944,
+      "target_rva": 4819800,
+      "string_rva": 4819800,
+      "function_start": 2146917,
+      "instruction": "lea\tr8, [rip + 0x28c8d1]    # 0x180498b58",
+      "text": "ossl_x509v3_cache_extensions"
+    },
+    {
+      "instruction_rva": 2164958,
+      "target_rva": 4821984,
+      "string_rva": 4821984,
+      "function_start": 2164944,
+      "instruction": "lea\tr8, [rip + 0x288afb]    # 0x1804993e0",
+      "text": "ossl_decoder_parsed_properties"
+    },
+    {
+      "instruction_rva": 2168665,
+      "target_rva": 4822232,
+      "string_rva": 4822232,
+      "function_start": 2168624,
+      "instruction": "lea\tr8, [rip + 0x287d78]    # 0x1804994d8",
+      "text": "ossl_decoder_cache_flush"
+    },
+    {
+      "instruction_rva": 2185678,
+      "target_rva": 4824840,
+      "string_rva": 4824840,
+      "function_start": 2185600,
+      "instruction": "lea\tr8, [rip + 0x284533]    # 0x180499f08",
+      "text": "parse_tagging"
+    },
+    {
+      "instruction_rva": 2185786,
+      "target_rva": 4824840,
+      "string_rva": 4824840,
+      "function_start": 2185600,
+      "instruction": "lea\tr8, [rip + 0x2844c7]    # 0x180499f08",
+      "text": "parse_tagging"
+    },
+    {
+      "instruction_rva": 2252390,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2252296,
+      "instruction": "lea\trdx, [rip + 0x277f8b]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2252676,
+      "target_rva": 4841192,
+      "string_rva": 4841192,
+      "function_start": 2252296,
+      "instruction": "lea\tr8, [rip + 0x277f5d]    # 0x18049dee8",
+      "text": "ossl_parse_property"
+    },
+    {
+      "instruction_rva": 2252688,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2252296,
+      "instruction": "lea\trcx, [rip + 0x277e61]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2252735,
+      "target_rva": 4841192,
+      "string_rva": 4841192,
+      "function_start": 2252296,
+      "instruction": "lea\tr8, [rip + 0x277f22]    # 0x18049dee8",
+      "text": "ossl_parse_property"
+    },
+    {
+      "instruction_rva": 2252747,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2252296,
+      "instruction": "lea\trcx, [rip + 0x277e26]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2252796,
+      "target_rva": 4841192,
+      "string_rva": 4841192,
+      "function_start": 2252296,
+      "instruction": "lea\tr8, [rip + 0x277ee5]    # 0x18049dee8",
+      "text": "ossl_parse_property"
+    },
+    {
+      "instruction_rva": 2252808,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2252296,
+      "instruction": "lea\trcx, [rip + 0x277de9]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2252870,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2252296,
+      "instruction": "lea\trdx, [rip + 0x277dab]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2253081,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2253004,
+      "instruction": "lea\trdx, [rip + 0x277cd8]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2253614,
+      "target_rva": 4841248,
+      "string_rva": 4841248,
+      "function_start": 2253004,
+      "instruction": "lea\tr8, [rip + 0x277beb]    # 0x18049df20",
+      "text": "ossl_parse_query"
+    },
+    {
+      "instruction_rva": 2253626,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2253004,
+      "instruction": "lea\trcx, [rip + 0x277ab7]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2253688,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2253004,
+      "instruction": "lea\trdx, [rip + 0x277a79]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2253766,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": null,
+      "instruction": "lea\trdx, [rip + 0x277a2b]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2254808,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2254784,
+      "instruction": "lea\trdx, [rip + 0x277619]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2255467,
+      "target_rva": 4841064,
+      "string_rva": 4841064,
+      "function_start": 2255296,
+      "instruction": "lea\tr8, [rip + 0x2773f6]    # 0x18049de68",
+      "text": "parse_hex"
+    },
+    {
+      "instruction_rva": 2255479,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2255296,
+      "instruction": "lea\trcx, [rip + 0x27737a]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2255576,
+      "target_rva": 4841064,
+      "string_rva": 4841064,
+      "function_start": 2255296,
+      "instruction": "lea\tr8, [rip + 0x277389]    # 0x18049de68",
+      "text": "parse_hex"
+    },
+    {
+      "instruction_rva": 2255588,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2255296,
+      "instruction": "lea\trcx, [rip + 0x27730d]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2255619,
+      "target_rva": 4841064,
+      "string_rva": 4841064,
+      "function_start": 2255296,
+      "instruction": "lea\tr8, [rip + 0x27735e]    # 0x18049de68",
+      "text": "parse_hex"
+    },
+    {
+      "instruction_rva": 2255631,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2255296,
+      "instruction": "lea\trcx, [rip + 0x2772e2]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2255897,
+      "target_rva": 4840936,
+      "string_rva": 4840936,
+      "function_start": 2255696,
+      "instruction": "lea\tr8, [rip + 0x2771c8]    # 0x18049dde8",
+      "text": "parse_name"
+    },
+    {
+      "instruction_rva": 2255909,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2255696,
+      "instruction": "lea\trcx, [rip + 0x2771cc]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2256015,
+      "target_rva": 4840936,
+      "string_rva": 4840936,
+      "function_start": 2255696,
+      "instruction": "lea\tr8, [rip + 0x277152]    # 0x18049dde8",
+      "text": "parse_name"
+    },
+    {
+      "instruction_rva": 2256027,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2255696,
+      "instruction": "lea\trcx, [rip + 0x277156]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2256410,
+      "target_rva": 4841024,
+      "string_rva": 4841024,
+      "function_start": 2256160,
+      "instruction": "lea\tr8, [rip + 0x27701f]    # 0x18049de40",
+      "text": "parse_number"
+    },
+    {
+      "instruction_rva": 2256422,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256160,
+      "instruction": "lea\trcx, [rip + 0x276fcb]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2256458,
+      "target_rva": 4841024,
+      "string_rva": 4841024,
+      "function_start": 2256160,
+      "instruction": "lea\tr8, [rip + 0x276fef]    # 0x18049de40",
+      "text": "parse_number"
+    },
+    {
+      "instruction_rva": 2256465,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256160,
+      "instruction": "lea\trcx, [rip + 0x276fa0]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2256734,
+      "target_rva": 4841128,
+      "string_rva": 4841128,
+      "function_start": 2256598,
+      "instruction": "lea\tr8, [rip + 0x276f43]    # 0x18049dea8",
+      "text": "parse_unquoted"
+    },
+    {
+      "instruction_rva": 2256746,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256598,
+      "instruction": "lea\trcx, [rip + 0x276e87]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2256860,
+      "target_rva": 4841128,
+      "string_rva": 4841128,
+      "function_start": 2256833,
+      "instruction": "lea\tr8, [rip + 0x276ec5]    # 0x18049dea8",
+      "text": "parse_unquoted"
+    },
+    {
+      "instruction_rva": 2256872,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256833,
+      "instruction": "lea\trcx, [rip + 0x276e09]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2257456,
+      "target_rva": 4841080,
+      "string_rva": 4841080,
+      "function_start": 2256992,
+      "instruction": "lea\tr8, [rip + 0x276c41]    # 0x18049de78",
+      "text": "parse_oct"
+    },
+    {
+      "instruction_rva": 2257468,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256992,
+      "instruction": "lea\trcx, [rip + 0x276bb5]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2257520,
+      "target_rva": 4841080,
+      "string_rva": 4841080,
+      "function_start": 2256992,
+      "instruction": "lea\tr8, [rip + 0x276c01]    # 0x18049de78",
+      "text": "parse_oct"
+    },
+    {
+      "instruction_rva": 2257527,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256992,
+      "instruction": "lea\trcx, [rip + 0x276b7a]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2257711,
+      "target_rva": 4841096,
+      "string_rva": 4841096,
+      "function_start": 2256992,
+      "instruction": "lea\tr8, [rip + 0x276b52]    # 0x18049de88",
+      "text": "parse_string"
+    },
+    {
+      "instruction_rva": 2257723,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256992,
+      "instruction": "lea\trcx, [rip + 0x276ab6]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2257845,
+      "target_rva": 4841096,
+      "string_rva": 4841096,
+      "function_start": 2256992,
+      "instruction": "lea\tr8, [rip + 0x276acc]    # 0x18049de88",
+      "text": "parse_string"
+    },
+    {
+      "instruction_rva": 2257857,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2256992,
+      "instruction": "lea\trcx, [rip + 0x276a30]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2258022,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": null,
+      "instruction": "lea\trdx, [rip + 0x27698b]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2258544,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2258512,
+      "instruction": "lea\trdx, [rip + 0x276781]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2258726,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2258512,
+      "instruction": "lea\trdx, [rip + 0x2766cb]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2258758,
+      "target_rva": 4840952,
+      "string_rva": 4840952,
+      "function_start": 2258512,
+      "instruction": "lea\trcx, [rip + 0x2766ab]   # 0x18049ddf8",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\property_parse.c"
+    },
+    {
+      "instruction_rva": 2465436,
+      "target_rva": 4917560,
+      "string_rva": 4917560,
+      "function_start": 2465261,
+      "instruction": "lea\trdx, [rip + 0x256a95]   # 0x1804b0938",
+      "text": "%*s<Parse Error>"
+    },
+    {
+      "instruction_rva": 2471518,
+      "target_rva": 4918096,
+      "string_rva": 4918096,
+      "function_start": 2471360,
+      "instruction": "lea\tr8, [rip + 0x2554eb]    # 0x1804b0b50",
+      "text": "OSSL_parse_url"
+    },
+    {
+      "instruction_rva": 2472687,
+      "target_rva": 4918096,
+      "string_rva": 4918096,
+      "function_start": 2471837,
+      "instruction": "lea\tr8, [rip + 0x25505a]    # 0x1804b0b50",
+      "text": "OSSL_parse_url"
+    },
+    {
+      "instruction_rva": 2472734,
+      "target_rva": 4918096,
+      "string_rva": 4918096,
+      "function_start": 2471837,
+      "instruction": "lea\tr8, [rip + 0x25502b]    # 0x1804b0b50",
+      "text": "OSSL_parse_url"
+    },
+    {
+      "instruction_rva": 2472791,
+      "target_rva": 4918096,
+      "string_rva": 4918096,
+      "function_start": 2471837,
+      "instruction": "lea\tr8, [rip + 0x254ff2]    # 0x1804b0b50",
+      "text": "OSSL_parse_url"
+    },
+    {
+      "instruction_rva": 2483226,
+      "target_rva": 4920360,
+      "string_rva": 4920360,
+      "function_start": 2483193,
+      "instruction": "lea\trdx, [rip + 0x253007]   # 0x1804b1428",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\defn_cache.c"
+    },
+    {
+      "instruction_rva": 2483309,
+      "target_rva": 4920360,
+      "string_rva": 4920360,
+      "function_start": 2483193,
+      "instruction": "lea\trdx, [rip + 0x252fb4]   # 0x1804b1428",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\defn_cache.c"
+    },
+    {
+      "instruction_rva": 2483528,
+      "target_rva": 4920360,
+      "string_rva": 4920360,
+      "function_start": 2483504,
+      "instruction": "lea\trdx, [rip + 0x252ed9]   # 0x1804b1428",
+      "text": "..\\openssl-3.5.9\\crypto\\property\\defn_cache.c"
+    },
+    {
+      "instruction_rva": 2486655,
+      "target_rva": 4920504,
+      "string_rva": 4920504,
+      "function_start": 2486096,
+      "instruction": "lea\tr8, [rip + 0x252332]    # 0x1804b14b8",
+      "text": "provider_conf_parse_bool_setting"
+    },
+    {
+      "instruction_rva": 2546498,
+      "target_rva": 5007600,
+      "string_rva": 5007600,
+      "function_start": 2546400,
+      "instruction": "lea\tr8, [rip + 0x258da7]    # 0x1804c68f0",
+      "text": "parsebool"
+    },
+    {
+      "instruction_rva": 2598229,
+      "target_rva": 5088704,
+      "string_rva": 5088704,
+      "function_start": 2598192,
+      "instruction": "lea\trdx, [rip + 0x260064]   # 0x1804da5c0",
+      "text": "..\\openssl-3.5.9\\crypto\\sparse_array.c"
+    },
+    {
+      "instruction_rva": 2598342,
+      "target_rva": 5088704,
+      "string_rva": 5088704,
+      "function_start": null,
+      "instruction": "lea\trdx, [rip + 0x25fff3]   # 0x1804da5c0",
+      "text": "..\\openssl-3.5.9\\crypto\\sparse_array.c"
+    },
+    {
+      "instruction_rva": 2598438,
+      "target_rva": 5088704,
+      "string_rva": 5088704,
+      "function_start": 2598368,
+      "instruction": "lea\trdx, [rip + 0x25ff93]   # 0x1804da5c0",
+      "text": "..\\openssl-3.5.9\\crypto\\sparse_array.c"
+    },
+    {
+      "instruction_rva": 2598543,
+      "target_rva": 5088704,
+      "string_rva": 5088704,
+      "function_start": 2598368,
+      "instruction": "lea\trdx, [rip + 0x25ff2a]   # 0x1804da5c0",
+      "text": "..\\openssl-3.5.9\\crypto\\sparse_array.c"
+    },
+    {
+      "instruction_rva": 2598918,
+      "target_rva": 5088704,
+      "string_rva": 5088704,
+      "function_start": null,
+      "instruction": "lea\trdx, [rip + 0x25fdb3]   # 0x1804da5c0",
+      "text": "..\\openssl-3.5.9\\crypto\\sparse_array.c"
+    },
+    {
+      "instruction_rva": 3244363,
+      "target_rva": 5558944,
+      "string_rva": 5558944,
+      "function_start": 3243998,
+      "instruction": "lea\tr8, [rip + 0x23514e]    # 0x18054d2a0",
+      "text": "failed to parse %s public key from the input data"
+    },
+    {
+      "instruction_rva": 3377161,
+      "target_rva": 5590848,
+      "string_rva": 5590848,
+      "function_start": 3377008,
+      "instruction": "lea\tr8, [rip + 0x21c730]    # 0x180554f40",
+      "text": "parse_prvkey"
+    },
+    {
+      "instruction_rva": 3377247,
+      "target_rva": 5590848,
+      "string_rva": 5590848,
+      "function_start": 3377008,
+      "instruction": "lea\tr8, [rip + 0x21c6da]    # 0x180554f40",
+      "text": "parse_prvkey"
+    },
+    {
+      "instruction_rva": 3377841,
+      "target_rva": 5590712,
+      "string_rva": 5590712,
+      "function_start": 3377792,
+      "instruction": "lea\tr8, [rip + 0x21c400]    # 0x180554eb8",
+      "text": "parse_pubkey"
+    },
+    {
+      "instruction_rva": 3378021,
+      "target_rva": 5590712,
+      "string_rva": 5590712,
+      "function_start": 3377921,
+      "instruction": "lea\tr8, [rip + 0x21c34c]    # 0x180554eb8",
+      "text": "parse_pubkey"
+    },
+    {
+      "instruction_rva": 3498454,
+      "target_rva": 5609440,
+      "string_rva": 5609440,
+      "function_start": 3498416,
+      "instruction": "lea\tr8, [rip + 0x203603]    # 0x1805597e0",
+      "text": "ssl_cache_cipherlist"
+    },
+    {
+      "instruction_rva": 3498559,
+      "target_rva": 5609440,
+      "string_rva": 5609440,
+      "function_start": 3498523,
+      "instruction": "lea\tr8, [rip + 0x20359a]    # 0x1805597e0",
+      "text": "ssl_cache_cipherlist"
+    },
+    {
+      "instruction_rva": 3498716,
+      "target_rva": 5609440,
+      "string_rva": 5609440,
+      "function_start": 3498523,
+      "instruction": "lea\tr8, [rip + 0x2034fd]    # 0x1805597e0",
+      "text": "ssl_cache_cipherlist"
+    },
+    {
+      "instruction_rva": 3498843,
+      "target_rva": 5609440,
+      "string_rva": 5609440,
+      "function_start": 3498523,
+      "instruction": "lea\tr8, [rip + 0x20347e]    # 0x1805597e0",
+      "text": "ssl_cache_cipherlist"
+    },
+    {
+      "instruction_rva": 3499019,
+      "target_rva": 5609440,
+      "string_rva": 5609440,
+      "function_start": 3498523,
+      "instruction": "lea\tr8, [rip + 0x2033ce]    # 0x1805597e0",
+      "text": "ssl_cache_cipherlist"
+    },
+    {
+      "instruction_rva": 3534550,
+      "target_rva": 5617040,
+      "string_rva": 5617040,
+      "function_start": 3534352,
+      "instruction": "lea\tr8, [rip + 0x1fc6b3]    # 0x18055b590",
+      "text": "custom_ext_parse"
+    },
+    {
+      "instruction_rva": 3534708,
+      "target_rva": 5617040,
+      "string_rva": 5617040,
+      "function_start": 3534352,
+      "instruction": "lea\tr8, [rip + 0x1fc615]    # 0x18055b590",
+      "text": "custom_ext_parse"
+    },
+    {
+      "instruction_rva": 3592179,
+      "target_rva": 5633640,
+      "string_rva": 5633640,
+      "function_start": 3592128,
+      "instruction": "lea\tr8, [rip + 0x1f266e]    # 0x18055f668",
+      "text": "parse_ca_names"
+    },
+    {
+      "instruction_rva": 3592416,
+      "target_rva": 5633640,
+      "string_rva": 5633640,
+      "function_start": 3592128,
+      "instruction": "lea\tr8, [rip + 0x1f2581]    # 0x18055f668",
+      "text": "parse_ca_names"
+    },
+    {
+      "instruction_rva": 3592456,
+      "target_rva": 5633640,
+      "string_rva": 5633640,
+      "function_start": 3592128,
+      "instruction": "lea\tr8, [rip + 0x1f2559]    # 0x18055f668",
+      "text": "parse_ca_names"
+    },
+    {
+      "instruction_rva": 3592496,
+      "target_rva": 5633640,
+      "string_rva": 5633640,
+      "function_start": 3592128,
+      "instruction": "lea\tr8, [rip + 0x1f2531]    # 0x18055f668",
+      "text": "parse_ca_names"
+    },
+    {
+      "instruction_rva": 3592595,
+      "target_rva": 5633640,
+      "string_rva": 5633640,
+      "function_start": 3592128,
+      "instruction": "lea\tr8, [rip + 0x1f24ce]    # 0x18055f668",
+      "text": "parse_ca_names"
+    },
+    {
+      "instruction_rva": 3718773,
+      "target_rva": 5642352,
+      "string_rva": 5642352,
+      "function_start": 3718736,
+      "instruction": "lea\tr8, [rip + 0x1d59f4]    # 0x180561870",
+      "text": "tls_parse_certificate_authorities"
+    },
+    {
+      "instruction_rva": 3768001,
+      "target_rva": 5655496,
+      "string_rva": 5655496,
+      "function_start": 3767936,
+      "instruction": "lea\tr8, [rip + 0x1ccd00]    # 0x180564bc8",
+      "text": "ssl3_digest_cached_records"
+    },
+    {
+      "instruction_rva": 3768080,
+      "target_rva": 5655496,
+      "string_rva": 5655496,
+      "function_start": 3767936,
+      "instruction": "lea\tr8, [rip + 0x1cccb1]    # 0x180564bc8",
+      "text": "ssl3_digest_cached_records"
+    },
+    {
+      "instruction_rva": 3768155,
+      "target_rva": 5655496,
+      "string_rva": 5655496,
+      "function_start": 3767936,
+      "instruction": "lea\tr8, [rip + 0x1ccc66]    # 0x180564bc8",
+      "text": "ssl3_digest_cached_records"
+    },
+    {
+      "instruction_rva": 3768263,
+      "target_rva": 5655496,
+      "string_rva": 5655496,
+      "function_start": 3767936,
+      "instruction": "lea\tr8, [rip + 0x1ccbfa]    # 0x180564bc8",
+      "text": "ssl3_digest_cached_records"
+    },
+    {
+      "instruction_rva": 3768587,
+      "target_rva": 5655496,
+      "string_rva": 5655496,
+      "function_start": 3768368,
+      "instruction": "lea\tr8, [rip + 0x1ccab6]    # 0x180564bc8",
+      "text": "ssl3_digest_cached_records"
+    },
+    {
+      "instruction_rva": 3839508,
+      "target_rva": 5666320,
+      "string_rva": 5666320,
+      "function_start": 3839244,
+      "instruction": "lea\tr8, [rip + 0x1bdff5]    # 0x180567610",
+      "text": "tls_parse_ctos_alpn"
+    },
+    {
+      "instruction_rva": 3839582,
+      "target_rva": 5666320,
+      "string_rva": 5666320,
+      "function_start": 3839577,
+      "instruction": "lea\tr8, [rip + 0x1bdfab]    # 0x180567610",
+      "text": "tls_parse_ctos_alpn"
+    },
+    {
+      "instruction_rva": 3839627,
+      "target_rva": 5666320,
+      "string_rva": 5666320,
+      "function_start": 3839622,
+      "instruction": "lea\tr8, [rip + 0x1bdf7e]    # 0x180567610",
+      "text": "tls_parse_ctos_alpn"
+    },
+    {
+      "instruction_rva": 3839867,
+      "target_rva": 5667304,
+      "string_rva": 5667304,
+      "function_start": 3839696,
+      "instruction": "lea\tr8, [rip + 0x1be266]    # 0x1805679e8",
+      "text": "tls_parse_ctos_client_cert_type"
+    },
+    {
+      "instruction_rva": 3840329,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bdd60]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3840444,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bdced]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3840843,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bdb5e]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3840928,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bdb09]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3841423,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd91a]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3841763,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd7c6]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3841828,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd785]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3841896,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd741]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3841954,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd707]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842012,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd6cd]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842070,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd693]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842128,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd659]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842186,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd61f]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842260,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd5d5]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842334,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd58b]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842392,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd551]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842450,
+      "target_rva": 5666480,
+      "string_rva": 5666480,
+      "function_start": 3839920,
+      "instruction": "lea\tr8, [rip + 0x1bd517]    # 0x1805676b0",
+      "text": "tls_parse_ctos_cookie"
+    },
+    {
+      "instruction_rva": 3842533,
+      "target_rva": 5666560,
+      "string_rva": 5666560,
+      "function_start": 3842512,
+      "instruction": "lea\tr8, [rip + 0x1bd514]    # 0x180567700",
+      "text": "tls_parse_ctos_early_data"
+    },
+    {
+      "instruction_rva": 3842601,
+      "target_rva": 5666560,
+      "string_rva": 5666560,
+      "function_start": 3842512,
+      "instruction": "lea\tr8, [rip + 0x1bd4d0]    # 0x180567700",
+      "text": "tls_parse_ctos_early_data"
+    },
+    {
+      "instruction_rva": 3842856,
+      "target_rva": 5666168,
+      "string_rva": 5666168,
+      "function_start": 3842656,
+      "instruction": "lea\tr8, [rip + 0x1bd249]    # 0x180567578",
+      "text": "tls_parse_ctos_ec_pt_formats"
+    },
+    {
+      "instruction_rva": 3842898,
+      "target_rva": 5666168,
+      "string_rva": 5666168,
+      "function_start": 3842656,
+      "instruction": "lea\tr8, [rip + 0x1bd21f]    # 0x180567578",
+      "text": "tls_parse_ctos_ec_pt_formats"
+    },
+    {
+      "instruction_rva": 3842997,
+      "target_rva": 5666536,
+      "string_rva": 5666536,
+      "function_start": 3842976,
+      "instruction": "lea\tr8, [rip + 0x1bd32c]    # 0x1805676e8",
+      "text": "tls_parse_ctos_ems"
+    },
+    {
+      "instruction_rva": 3843215,
+      "target_rva": 5666448,
+      "string_rva": 5666448,
+      "function_start": 3843120,
+      "instruction": "lea\tr8, [rip + 0x1bd1fa]    # 0x180567690",
+      "text": "tls_parse_ctos_key_share"
+    },
+    {
+      "instruction_rva": 3843412,
+      "target_rva": 5666448,
+      "string_rva": 5666448,
+      "function_start": 3843355,
+      "instruction": "lea\tr8, [rip + 0x1bd135]    # 0x180567690",
+      "text": "tls_parse_ctos_key_share"
+    },
+    {
+      "instruction_rva": 3843506,
+      "target_rva": 5666448,
+      "string_rva": 5666448,
+      "function_start": 3843487,
+      "instruction": "lea\tr8, [rip + 0x1bd0d7]    # 0x180567690",
+      "text": "tls_parse_ctos_key_share"
+    },
+    {
+      "instruction_rva": 3844678,
+      "target_rva": 5666448,
+      "string_rva": 5666448,
+      "function_start": 3844673,
+      "instruction": "lea\tr8, [rip + 0x1bcc43]    # 0x180567690",
+      "text": "tls_parse_ctos_key_share"
+    },
+    {
+      "instruction_rva": 3844820,
+      "target_rva": 5666112,
+      "string_rva": 5666112,
+      "function_start": 3844736,
+      "instruction": "lea\tr8, [rip + 0x1bca65]    # 0x180567540",
+      "text": "tls_parse_ctos_maxfragmentlen"
+    },
+    {
+      "instruction_rva": 3844879,
+      "target_rva": 5666112,
+      "string_rva": 5666112,
+      "function_start": 3844736,
+      "instruction": "lea\tr8, [rip + 0x1bca2a]    # 0x180567540",
+      "text": "tls_parse_ctos_maxfragmentlen"
+    },
+    {
+      "instruction_rva": 3845013,
+      "target_rva": 5666616,
+      "string_rva": 5666616,
+      "function_start": 3844992,
+      "instruction": "lea\tr8, [rip + 0x1bcb9c]    # 0x180567738",
+      "text": "tls_parse_ctos_post_handshake_auth"
+    },
+    {
+      "instruction_rva": 3846518,
+      "target_rva": 5666592,
+      "string_rva": 5666592,
+      "function_start": 3845088,
+      "instruction": "lea\tr8, [rip + 0x1bc5a3]    # 0x180567720",
+      "text": "tls_parse_ctos_psk"
+    },
+    {
+      "instruction_rva": 3846601,
+      "target_rva": 5666592,
+      "string_rva": 5666592,
+      "function_start": 3845088,
+      "instruction": "lea\tr8, [rip + 0x1bc550]    # 0x180567720",
+      "text": "tls_parse_ctos_psk"
+    },
+    {
+      "instruction_rva": 3846698,
+      "target_rva": 5666592,
+      "string_rva": 5666592,
+      "function_start": 3845088,
+      "instruction": "lea\tr8, [rip + 0x1bc4ef]    # 0x180567720",
+      "text": "tls_parse_ctos_psk"
+    },
+    {
+      "instruction_rva": 3847119,
+      "target_rva": 5666592,
+      "string_rva": 5666592,
+      "function_start": 3845088,
+      "instruction": "lea\tr8, [rip + 0x1bc34a]    # 0x180567720",
+      "text": "tls_parse_ctos_psk"
+    },
+    {
+      "instruction_rva": 3847211,
+      "target_rva": 5666592,
+      "string_rva": 5666592,
+      "function_start": 3845088,
+      "instruction": "lea\tr8, [rip + 0x1bc2ee]    # 0x180567720",
+      "text": "tls_parse_ctos_psk"
+    },
+    {
+      "instruction_rva": 3847436,
+      "target_rva": 5666368,
+      "string_rva": 5666368,
+      "function_start": 3847264,
+      "instruction": "lea\tr8, [rip + 0x1bc12d]    # 0x180567640",
+      "text": "tls_parse_ctos_psk_kex_modes"
+    },
+    {
+      "instruction_rva": 3847595,
+      "target_rva": 5666000,
+      "string_rva": 5666000,
+      "function_start": 3847504,
+      "instruction": "lea\tr8, [rip + 0x1bbf1e]    # 0x1805674d0",
+      "text": "tls_parse_ctos_renegotiate"
+    },
+    {
+      "instruction_rva": 3847701,
+      "target_rva": 5666000,
+      "string_rva": 5666000,
+      "function_start": 3847504,
+      "instruction": "lea\tr8, [rip + 0x1bbeb4]    # 0x1805674d0",
+      "text": "tls_parse_ctos_renegotiate"
+    },
+    {
+      "instruction_rva": 3847909,
+      "target_rva": 5667376,
+      "string_rva": 5667376,
+      "function_start": 3847760,
+      "instruction": "lea\tr8, [rip + 0x1bc344]    # 0x180567a30",
+      "text": "tls_parse_ctos_server_cert_type"
+    },
+    {
+      "instruction_rva": 3847950,
+      "target_rva": 5667376,
+      "string_rva": 5667376,
+      "function_start": 3847760,
+      "instruction": "lea\tr8, [rip + 0x1bc31b]    # 0x180567a30",
+      "text": "tls_parse_ctos_server_cert_type"
+    },
+    {
+      "instruction_rva": 3848298,
+      "target_rva": 5666080,
+      "string_rva": 5666080,
+      "function_start": 3848284,
+      "instruction": "lea\tr8, [rip + 0x1bbcaf]    # 0x180567520",
+      "text": "tls_parse_ctos_server_name"
+    },
+    {
+      "instruction_rva": 3848385,
+      "target_rva": 5666080,
+      "string_rva": 5666080,
+      "function_start": 3848362,
+      "instruction": "lea\tr8, [rip + 0x1bbc58]    # 0x180567520",
+      "text": "tls_parse_ctos_server_name"
+    },
+    {
+      "instruction_rva": 3848496,
+      "target_rva": 5666080,
+      "string_rva": 5666080,
+      "function_start": 3848362,
+      "instruction": "lea\tr8, [rip + 0x1bbbe9]    # 0x180567520",
+      "text": "tls_parse_ctos_server_name"
+    },
+    {
+      "instruction_rva": 3848568,
+      "target_rva": 5666080,
+      "string_rva": 5666080,
+      "function_start": 3848563,
+      "instruction": "lea\tr8, [rip + 0x1bbba1]    # 0x180567520",
+      "text": "tls_parse_ctos_server_name"
+    },
+    {
+      "instruction_rva": 3848632,
+      "target_rva": 5666080,
+      "string_rva": 5666080,
+      "function_start": 3848627,
+      "instruction": "lea\tr8, [rip + 0x1bbb61]    # 0x180567520",
+      "text": "tls_parse_ctos_server_name"
+    },
+    {
+      "instruction_rva": 3848738,
+      "target_rva": 5666200,
+      "string_rva": 5666200,
+      "function_start": 3848688,
+      "instruction": "lea\tr8, [rip + 0x1bbb6f]    # 0x180567598",
+      "text": "tls_parse_ctos_session_ticket"
+    },
+    {
+      "instruction_rva": 3848965,
+      "target_rva": 5666264,
+      "string_rva": 5666264,
+      "function_start": 3848816,
+      "instruction": "lea\tr8, [rip + 0x1bbacc]    # 0x1805675d8",
+      "text": "tls_parse_ctos_sig_algs"
+    },
+    {
+      "instruction_rva": 3849176,
+      "target_rva": 5666232,
+      "string_rva": 5666232,
+      "function_start": 3849024,
+      "instruction": "lea\tr8, [rip + 0x1bb9d9]    # 0x1805675b8",
+      "text": "tls_parse_ctos_sig_algs_cert"
+    },
+    {
+      "instruction_rva": 3849383,
+      "target_rva": 5666144,
+      "string_rva": 5666144,
+      "function_start": 3849232,
+      "instruction": "lea\tr8, [rip + 0x1bb8b2]    # 0x180567560",
+      "text": "tls_parse_ctos_srp"
+    },
+    {
+      "instruction_rva": 3849446,
+      "target_rva": 5666144,
+      "string_rva": 5666144,
+      "function_start": 3849232,
+      "instruction": "lea\tr8, [rip + 0x1bb873]    # 0x180567560",
+      "text": "tls_parse_ctos_srp"
+    },
+    {
+      "instruction_rva": 3849741,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb7dc]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3849943,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb712]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850017,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb6c8]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850083,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb686]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850149,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb644]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850360,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb571]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850426,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb52f]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850492,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb4ed]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850558,
+      "target_rva": 5666288,
+      "string_rva": 5666288,
+      "function_start": 3849520,
+      "instruction": "lea\tr8, [rip + 0x1bb4ab]    # 0x1805675f0",
+      "text": "tls_parse_ctos_status_request"
+    },
+    {
+      "instruction_rva": 3850867,
+      "target_rva": 5666504,
+      "string_rva": 5666504,
+      "function_start": 3850862,
+      "instruction": "lea\tr8, [rip + 0x1bb44e]    # 0x1805676c8",
+      "text": "tls_parse_ctos_supported_groups"
+    },
+    {
+      "instruction_rva": 3850937,
+      "target_rva": 5666504,
+      "string_rva": 5666504,
+      "function_start": 3850862,
+      "instruction": "lea\tr8, [rip + 0x1bb408]    # 0x1805676c8",
+      "text": "tls_parse_ctos_supported_groups"
+    },
+    {
+      "instruction_rva": 3851264,
+      "target_rva": 5666344,
+      "string_rva": 5666344,
+      "function_start": 3851117,
+      "instruction": "lea\tr8, [rip + 0x1bb221]    # 0x180567628",
+      "text": "tls_parse_ctos_use_srtp"
+    },
+    {
+      "instruction_rva": 3851366,
+      "target_rva": 5666344,
+      "string_rva": 5666344,
+      "function_start": 3851351,
+      "instruction": "lea\tr8, [rip + 0x1bb1bb]    # 0x180567628",
+      "text": "tls_parse_ctos_use_srtp"
+    },
+    {
+      "instruction_rva": 3851436,
+      "target_rva": 5666344,
+      "string_rva": 5666344,
+      "function_start": 3851351,
+      "instruction": "lea\tr8, [rip + 0x1bb175]    # 0x180567628",
+      "text": "tls_parse_ctos_use_srtp"
+    },
+    {
+      "instruction_rva": 3851476,
+      "target_rva": 5666344,
+      "string_rva": 5666344,
+      "function_start": 3851471,
+      "instruction": "lea\tr8, [rip + 0x1bb14d]    # 0x180567628",
+      "text": "tls_parse_ctos_use_srtp"
+    },
+    {
+      "instruction_rva": 3862732,
+      "target_rva": 5668536,
+      "string_rva": 5668536,
+      "function_start": 3862704,
+      "instruction": "lea\tr8, [rip + 0x1b8de5]    # 0x180567eb8",
+      "text": "tls_parse_stoc_alpn"
+    },
+    {
+      "instruction_rva": 3863077,
+      "target_rva": 5668536,
+      "string_rva": 5668536,
+      "function_start": 3862925,
+      "instruction": "lea\tr8, [rip + 0x1b8c8c]    # 0x180567eb8",
+      "text": "tls_parse_stoc_alpn"
+    },
+    {
+      "instruction_rva": 3863132,
+      "target_rva": 5668536,
+      "string_rva": 5668536,
+      "function_start": 3862925,
+      "instruction": "lea\tr8, [rip + 0x1b8c55]    # 0x180567eb8",
+      "text": "tls_parse_stoc_alpn"
+    },
+    {
+      "instruction_rva": 3863409,
+      "target_rva": 5668536,
+      "string_rva": 5668536,
+      "function_start": 3863213,
+      "instruction": "lea\tr8, [rip + 0x1b8b40]    # 0x180567eb8",
+      "text": "tls_parse_stoc_alpn"
+    },
+    {
+      "instruction_rva": 3863431,
+      "target_rva": 5668536,
+      "string_rva": 5668536,
+      "function_start": 3863426,
+      "instruction": "lea\tr8, [rip + 0x1b8b2a]    # 0x180567eb8",
+      "text": "tls_parse_stoc_alpn"
+    },
+    {
+      "instruction_rva": 3863489,
+      "target_rva": 5668536,
+      "string_rva": 5668536,
+      "function_start": 3863484,
+      "instruction": "lea\tr8, [rip + 0x1b8af0]    # 0x180567eb8",
+      "text": "tls_parse_stoc_alpn"
+    },
+    {
+      "instruction_rva": 3863573,
+      "target_rva": 5668776,
+      "string_rva": 5668776,
+      "function_start": 3863552,
+      "instruction": "lea\tr8, [rip + 0x1b8b8c]    # 0x180567fa8",
+      "text": "tls_parse_stoc_client_cert_type"
+    },
+    {
+      "instruction_rva": 3863666,
+      "target_rva": 5668776,
+      "string_rva": 5668776,
+      "function_start": 3863630,
+      "instruction": "lea\tr8, [rip + 0x1b8b2f]    # 0x180567fa8",
+      "text": "tls_parse_stoc_client_cert_type"
+    },
+    {
+      "instruction_rva": 3863742,
+      "target_rva": 5668776,
+      "string_rva": 5668776,
+      "function_start": 3863725,
+      "instruction": "lea\tr8, [rip + 0x1b8ae3]    # 0x180567fa8",
+      "text": "tls_parse_stoc_client_cert_type"
+    },
+    {
+      "instruction_rva": 3863825,
+      "target_rva": 5668776,
+      "string_rva": 5668776,
+      "function_start": 3863801,
+      "instruction": "lea\tr8, [rip + 0x1b8a90]    # 0x180567fa8",
+      "text": "tls_parse_stoc_client_cert_type"
+    },
+    {
+      "instruction_rva": 3864124,
+      "target_rva": 5668656,
+      "string_rva": 5668656,
+      "function_start": 3863920,
+      "instruction": "lea\tr8, [rip + 0x1b88ed]    # 0x180567f30",
+      "text": "tls_parse_stoc_cookie"
+    },
+    {
+      "instruction_rva": 3864351,
+      "target_rva": 5668680,
+      "string_rva": 5668680,
+      "function_start": 3864192,
+      "instruction": "lea\tr8, [rip + 0x1b8822]    # 0x180567f48",
+      "text": "tls_parse_stoc_early_data"
+    },
+    {
+      "instruction_rva": 3864391,
+      "target_rva": 5668680,
+      "string_rva": 5668680,
+      "function_start": 3864192,
+      "instruction": "lea\tr8, [rip + 0x1b87fa]    # 0x180567f48",
+      "text": "tls_parse_stoc_early_data"
+    },
+    {
+      "instruction_rva": 3864455,
+      "target_rva": 5668680,
+      "string_rva": 5668680,
+      "function_start": 3864192,
+      "instruction": "lea\tr8, [rip + 0x1b87ba]    # 0x180567f48",
+      "text": "tls_parse_stoc_early_data"
+    },
+    {
+      "instruction_rva": 3864553,
+      "target_rva": 5668680,
+      "string_rva": 5668680,
+      "function_start": 3864192,
+      "instruction": "lea\tr8, [rip + 0x1b8758]    # 0x180567f48",
+      "text": "tls_parse_stoc_early_data"
+    },
+    {
+      "instruction_rva": 3864698,
+      "target_rva": 5668368,
+      "string_rva": 5668368,
+      "function_start": 3864652,
+      "instruction": "lea\tr8, [rip + 0x1b858f]    # 0x180567e10",
+      "text": "tls_parse_stoc_ec_pt_formats"
+    },
+    {
+      "instruction_rva": 3864843,
+      "target_rva": 5668368,
+      "string_rva": 5668368,
+      "function_start": 3864762,
+      "instruction": "lea\tr8, [rip + 0x1b84fe]    # 0x180567e10",
+      "text": "tls_parse_stoc_ec_pt_formats"
+    },
+    {
+      "instruction_rva": 3864933,
+      "target_rva": 5668368,
+      "string_rva": 5668368,
+      "function_start": 3864928,
+      "instruction": "lea\tr8, [rip + 0x1b84a4]    # 0x180567e10",
+      "text": "tls_parse_stoc_ec_pt_formats"
+    },
+    {
+      "instruction_rva": 3865177,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865120,
+      "instruction": "lea\tr8, [rip + 0x1b84b0]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3865304,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865240,
+      "instruction": "lea\tr8, [rip + 0x1b8431]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3865462,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865240,
+      "instruction": "lea\tr8, [rip + 0x1b8393]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3865520,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865240,
+      "instruction": "lea\tr8, [rip + 0x1b8359]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3865771,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865736,
+      "instruction": "lea\tr8, [rip + 0x1b825e]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3865907,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865858,
+      "instruction": "lea\tr8, [rip + 0x1b81d6]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3866010,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3865858,
+      "instruction": "lea\tr8, [rip + 0x1b816f]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3866199,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3866067,
+      "instruction": "lea\tr8, [rip + 0x1b80b2]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3866286,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3866067,
+      "instruction": "lea\tr8, [rip + 0x1b805b]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3866426,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3866378,
+      "instruction": "lea\tr8, [rip + 0x1b7fcf]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3866482,
+      "target_rva": 5668624,
+      "string_rva": 5668624,
+      "function_start": 3866477,
+      "instruction": "lea\tr8, [rip + 0x1b7f97]    # 0x180567f10",
+      "text": "tls_parse_stoc_key_share"
+    },
+    {
+      "instruction_rva": 3866609,
+      "target_rva": 5668304,
+      "string_rva": 5668304,
+      "function_start": 3866544,
+      "instruction": "lea\tr8, [rip + 0x1b7dd8]    # 0x180567dd0",
+      "text": "tls_parse_stoc_maxfragmentlen"
+    },
+    {
+      "instruction_rva": 3866699,
+      "target_rva": 5668304,
+      "string_rva": 5668304,
+      "function_start": 3866544,
+      "instruction": "lea\tr8, [rip + 0x1b7d7e]    # 0x180567dd0",
+      "text": "tls_parse_stoc_maxfragmentlen"
+    },
+    {
+      "instruction_rva": 3866825,
+      "target_rva": 5668512,
+      "string_rva": 5668512,
+      "function_start": 3866768,
+      "instruction": "lea\tr8, [rip + 0x1b7dd0]    # 0x180567ea0",
+      "text": "tls_parse_stoc_npn"
+    },
+    {
+      "instruction_rva": 3867062,
+      "target_rva": 5668512,
+      "string_rva": 5668512,
+      "function_start": 3866768,
+      "instruction": "lea\tr8, [rip + 0x1b7ce3]    # 0x180567ea0",
+      "text": "tls_parse_stoc_npn"
+    },
+    {
+      "instruction_rva": 3867209,
+      "target_rva": 5668512,
+      "string_rva": 5668512,
+      "function_start": 3866768,
+      "instruction": "lea\tr8, [rip + 0x1b7c50]    # 0x180567ea0",
+      "text": "tls_parse_stoc_npn"
+    },
+    {
+      "instruction_rva": 3867352,
+      "target_rva": 5668712,
+      "string_rva": 5668712,
+      "function_start": 3867329,
+      "instruction": "lea\tr8, [rip + 0x1b7c89]    # 0x180567f68",
+      "text": "tls_parse_stoc_psk"
+    },
+    {
+      "instruction_rva": 3867499,
+      "target_rva": 5668712,
+      "string_rva": 5668712,
+      "function_start": 3867482,
+      "instruction": "lea\tr8, [rip + 0x1b7bf6]    # 0x180567f68",
+      "text": "tls_parse_stoc_psk"
+    },
+    {
+      "instruction_rva": 3867717,
+      "target_rva": 5668712,
+      "string_rva": 5668712,
+      "function_start": 3867712,
+      "instruction": "lea\tr8, [rip + 0x1b7b1c]    # 0x180567f68",
+      "text": "tls_parse_stoc_psk"
+    },
+    {
+      "instruction_rva": 3867830,
+      "target_rva": 5668272,
+      "string_rva": 5668272,
+      "function_start": 3867776,
+      "instruction": "lea\tr8, [rip + 0x1b78f3]    # 0x180567db0",
+      "text": "tls_parse_stoc_renegotiate"
+    },
+    {
+      "instruction_rva": 3867937,
+      "target_rva": 5668272,
+      "string_rva": 5668272,
+      "function_start": 3867889,
+      "instruction": "lea\tr8, [rip + 0x1b7888]    # 0x180567db0",
+      "text": "tls_parse_stoc_renegotiate"
+    },
+    {
+      "instruction_rva": 3868011,
+      "target_rva": 5668272,
+      "string_rva": 5668272,
+      "function_start": 3868001,
+      "instruction": "lea\tr8, [rip + 0x1b783e]    # 0x180567db0",
+      "text": "tls_parse_stoc_renegotiate"
+    },
+    {
+      "instruction_rva": 3868214,
+      "target_rva": 5668272,
+      "string_rva": 5668272,
+      "function_start": 3868075,
+      "instruction": "lea\tr8, [rip + 0x1b7773]    # 0x180567db0",
+      "text": "tls_parse_stoc_renegotiate"
+    },
+    {
+      "instruction_rva": 3868288,
+      "target_rva": 5668272,
+      "string_rva": 5668272,
+      "function_start": 3868283,
+      "instruction": "lea\tr8, [rip + 0x1b7729]    # 0x180567db0",
+      "text": "tls_parse_stoc_renegotiate"
+    },
+    {
+      "instruction_rva": 3868307,
+      "target_rva": 5668272,
+      "string_rva": 5668272,
+      "function_start": 3868302,
+      "instruction": "lea\tr8, [rip + 0x1b7716]    # 0x180567db0",
+      "text": "tls_parse_stoc_renegotiate"
+    },
+    {
+      "instruction_rva": 3868532,
+      "target_rva": 5668464,
+      "string_rva": 5668464,
+      "function_start": 3868384,
+      "instruction": "lea\tr8, [rip + 0x1b76f5]    # 0x180567e70",
+      "text": "tls_parse_stoc_sct"
+    },
+    {
+      "instruction_rva": 3868617,
+      "target_rva": 5668464,
+      "string_rva": 5668464,
+      "function_start": 3868384,
+      "instruction": "lea\tr8, [rip + 0x1b76a0]    # 0x180567e70",
+      "text": "tls_parse_stoc_sct"
+    },
+    {
+      "instruction_rva": 3868720,
+      "target_rva": 5668464,
+      "string_rva": 5668464,
+      "function_start": 3868384,
+      "instruction": "lea\tr8, [rip + 0x1b7639]    # 0x180567e70",
+      "text": "tls_parse_stoc_sct"
+    },
+    {
+      "instruction_rva": 3868885,
+      "target_rva": 5668848,
+      "string_rva": 5668848,
+      "function_start": 3868864,
+      "instruction": "lea\tr8, [rip + 0x1b7714]    # 0x180567ff0",
+      "text": "tls_parse_stoc_server_cert_type"
+    },
+    {
+      "instruction_rva": 3868978,
+      "target_rva": 5668848,
+      "string_rva": 5668848,
+      "function_start": 3868942,
+      "instruction": "lea\tr8, [rip + 0x1b76b7]    # 0x180567ff0",
+      "text": "tls_parse_stoc_server_cert_type"
+    },
+    {
+      "instruction_rva": 3869054,
+      "target_rva": 5668848,
+      "string_rva": 5668848,
+      "function_start": 3869037,
+      "instruction": "lea\tr8, [rip + 0x1b766b]    # 0x180567ff0",
+      "text": "tls_parse_stoc_server_cert_type"
+    },
+    {
+      "instruction_rva": 3869137,
+      "target_rva": 5668848,
+      "string_rva": 5668848,
+      "function_start": 3869113,
+      "instruction": "lea\tr8, [rip + 0x1b7618]    # 0x180567ff0",
+      "text": "tls_parse_stoc_server_cert_type"
+    },
+    {
+      "instruction_rva": 3869258,
+      "target_rva": 5668336,
+      "string_rva": 5668336,
+      "function_start": 3869232,
+      "instruction": "lea\tr8, [rip + 0x1b739f]    # 0x180567df0",
+      "text": "tls_parse_stoc_server_name"
+    },
+    {
+      "instruction_rva": 3869324,
+      "target_rva": 5668336,
+      "string_rva": 5668336,
+      "function_start": 3869232,
+      "instruction": "lea\tr8, [rip + 0x1b735d]    # 0x180567df0",
+      "text": "tls_parse_stoc_server_name"
+    },
+    {
+      "instruction_rva": 3869413,
+      "target_rva": 5668336,
+      "string_rva": 5668336,
+      "function_start": 3869232,
+      "instruction": "lea\tr8, [rip + 0x1b7304]    # 0x180567df0",
+      "text": "tls_parse_stoc_server_name"
+    },
+    {
+      "instruction_rva": 3869521,
+      "target_rva": 5668336,
+      "string_rva": 5668336,
+      "function_start": 3869232,
+      "instruction": "lea\tr8, [rip + 0x1b7298]    # 0x180567df0",
+      "text": "tls_parse_stoc_server_name"
+    },
+    {
+      "instruction_rva": 3869657,
+      "target_rva": 5668400,
+      "string_rva": 5668400,
+      "function_start": 3869600,
+      "instruction": "lea\tr8, [rip + 0x1b7250]    # 0x180567e30",
+      "text": "tls_parse_stoc_session_ticket"
+    },
+    {
+      "instruction_rva": 3869733,
+      "target_rva": 5668400,
+      "string_rva": 5668400,
+      "function_start": 3869600,
+      "instruction": "lea\tr8, [rip + 0x1b7204]    # 0x180567e30",
+      "text": "tls_parse_stoc_session_ticket"
+    },
+    {
+      "instruction_rva": 3869800,
+      "target_rva": 5668400,
+      "string_rva": 5668400,
+      "function_start": 3869600,
+      "instruction": "lea\tr8, [rip + 0x1b71c1]    # 0x180567e30",
+      "text": "tls_parse_stoc_session_ticket"
+    },
+    {
+      "instruction_rva": 3869911,
+      "target_rva": 5668432,
+      "string_rva": 5668432,
+      "function_start": 3869872,
+      "instruction": "lea\tr8, [rip + 0x1b7172]    # 0x180567e50",
+      "text": "tls_parse_stoc_status_request"
+    },
+    {
+      "instruction_rva": 3870009,
+      "target_rva": 5668432,
+      "string_rva": 5668432,
+      "function_start": 3869872,
+      "instruction": "lea\tr8, [rip + 0x1b7110]    # 0x180567e50",
+      "text": "tls_parse_stoc_status_request"
+    },
+    {
+      "instruction_rva": 3870209,
+      "target_rva": 5668584,
+      "string_rva": 5668584,
+      "function_start": 3870128,
+      "instruction": "lea\tr8, [rip + 0x1b70e0]    # 0x180567ee8",
+      "text": "tls_parse_stoc_supported_versions"
+    },
+    {
+      "instruction_rva": 3870312,
+      "target_rva": 5668584,
+      "string_rva": 5668584,
+      "function_start": 3870128,
+      "instruction": "lea\tr8, [rip + 0x1b7079]    # 0x180567ee8",
+      "text": "tls_parse_stoc_supported_versions"
+    },
+    {
+      "instruction_rva": 3870371,
+      "target_rva": 5668584,
+      "string_rva": 5668584,
+      "function_start": 3870128,
+      "instruction": "lea\tr8, [rip + 0x1b703e]    # 0x180567ee8",
+      "text": "tls_parse_stoc_supported_versions"
+    },
+    {
+      "instruction_rva": 3870590,
+      "target_rva": 5668560,
+      "string_rva": 5668560,
+      "function_start": 3870432,
+      "instruction": "lea\tr8, [rip + 0x1b6f4b]    # 0x180567ed0",
+      "text": "tls_parse_stoc_use_srtp"
+    },
+    {
+      "instruction_rva": 3870681,
+      "target_rva": 5668560,
+      "string_rva": 5668560,
+      "function_start": 3870658,
+      "instruction": "lea\tr8, [rip + 0x1b6ef0]    # 0x180567ed0",
+      "text": "tls_parse_stoc_use_srtp"
+    },
+    {
+      "instruction_rva": 3870792,
+      "target_rva": 5668560,
+      "string_rva": 5668560,
+      "function_start": 3870731,
+      "instruction": "lea\tr8, [rip + 0x1b6e81]    # 0x180567ed0",
+      "text": "tls_parse_stoc_use_srtp"
+    },
+    {
+      "instruction_rva": 3870886,
+      "target_rva": 5668560,
+      "string_rva": 5668560,
+      "function_start": 3870881,
+      "instruction": "lea\tr8, [rip + 0x1b6e23]    # 0x180567ed0",
+      "text": "tls_parse_stoc_use_srtp"
+    },
+    {
+      "instruction_rva": 4241257,
+      "target_rva": 5736936,
+      "string_rva": 5736936,
+      "function_start": 4241200,
+      "instruction": "lea\tr8, [rip + 0x16d278]    # 0x1805789e8",
+      "text": "PKCS12_parse"
+    },
+    {
+      "instruction_rva": 4241391,
+      "target_rva": 5736936,
+      "string_rva": 5736936,
+      "function_start": 4241312,
+      "instruction": "lea\tr8, [rip + 0x16d1f2]    # 0x1805789e8",
+      "text": "PKCS12_parse"
+    },
+    {
+      "instruction_rva": 4241523,
+      "target_rva": 5736936,
+      "string_rva": 5736936,
+      "function_start": 4241312,
+      "instruction": "lea\tr8, [rip + 0x16d16e]    # 0x1805789e8",
+      "text": "PKCS12_parse"
+    },
+    {
+      "instruction_rva": 4242054,
+      "target_rva": 5736936,
+      "string_rva": 5736936,
+      "function_start": 4241312,
+      "instruction": "lea\tr8, [rip + 0x16cf5b]    # 0x1805789e8",
+      "text": "PKCS12_parse"
+    }
+  ],
+  "scope": "All executable sections disassembled. Strings/xrefs are discovery evidence, not semantic verification."
+}

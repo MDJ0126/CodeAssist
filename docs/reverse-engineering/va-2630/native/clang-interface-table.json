@@ -1,0 +1,79 @@
+{
+  "table_rva": "0x2d72878",
+  "global_rva": "0x3b77300",
+  "initializer_rva": "0x3690",
+  "export_rva": "0x4e8e0",
+  "scope": "Contiguous executable pointers at the address stored as the object first field. Slot signatures/roles unverified.",
+  "slots": [
+    {
+      "slot": 0,
+      "rva": "0x525a0",
+      "address": "0x1800525a0"
+    },
+    {
+      "slot": 1,
+      "rva": "0x4cbd0",
+      "address": "0x18004cbd0"
+    },
+    {
+      "slot": 2,
+      "rva": "0x4cc90",
+      "address": "0x18004cc90"
+    },
+    {
+      "slot": 3,
+      "rva": "0x52430",
+      "address": "0x180052430"
+    },
+    {
+      "slot": 4,
+      "rva": "0x52450",
+      "address": "0x180052450"
+    },
+    {
+      "slot": 5,
+      "rva": "0x4cce0",
+      "address": "0x18004cce0"
+    },
+    {
+      "slot": 6,
+      "rva": "0x4cd40",
+      "address": "0x18004cd40"
+    },
+    {
+      "slot": 7,
+      "rva": "0x4cda0",
+      "address": "0x18004cda0"
+    },
+    {
+      "slot": 8,
+      "rva": "0x52480",
+      "address": "0x180052480"
+    },
+    {
+      "slot": 9,
+      "rva": "0x52540",
+      "address": "0x180052540"
+    },
+    {
+      "slot": 10,
+      "rva": "0x4d2d0",
+      "address": "0x18004d2d0"
+    },
+    {
+      "slot": 11,
+      "rva": "0x4d680",
+      "address": "0x18004d680"
+    },
+    {
+      "slot": 12,
+      "rva": "0x4da50",
+      "address": "0x18004da50"
+    },
+    {
+      "slot": 13,
+      "rva": "0x4e550",
+      "address": "0x18004e550"
+    }
+  ]
+}

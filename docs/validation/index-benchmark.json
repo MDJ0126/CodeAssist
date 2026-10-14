@@ -1,0 +1,46 @@
+{
+  "Date": "2026-10-14 Asia/Seoul",
+  "Files": 120,
+  "ClassesPerFile": 20,
+  "MethodsPerClass": 8,
+  "EqualSymbolIdentities": true,
+  "Scope": "Synthetic project parse \u002B lookup construction; worker includes process start and cache roundtrip. Not a VA or IDE UI benchmark.",
+  "Measurements": [
+    {
+      "Run": 1,
+      "Mode": "in-process",
+      "ElapsedMilliseconds": 337,
+      "Symbols": 21600
+    },
+    {
+      "Run": 1,
+      "Mode": "worker",
+      "ElapsedMilliseconds": 980,
+      "Symbols": 21600
+    },
+    {
+      "Run": 2,
+      "Mode": "in-process",
+      "ElapsedMilliseconds": 289,
+      "Symbols": 21600
+    },
+    {
+      "Run": 2,
+      "Mode": "worker",
+      "ElapsedMilliseconds": 735,
+      "Symbols": 21600
+    },
+    {
+      "Run": 3,
+      "Mode": "in-process",
+      "ElapsedMilliseconds": 264,
+      "Symbols": 21600
+    },
+    {
+      "Run": 3,
+      "Mode": "worker",
+      "ElapsedMilliseconds": 662,
+      "Symbols": 21600
+    }
+  ]
+}

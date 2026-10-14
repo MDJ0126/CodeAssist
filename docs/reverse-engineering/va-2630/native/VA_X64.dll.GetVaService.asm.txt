@@ -1,0 +1,67 @@
+
+C:\Users\ehdwn\AppData\Local\Microsoft\VisualStudio\17.0_ca39936f\Extensions\zgy5sun1.aim\VA_X64.dll:	file format coff-x86-64
+
+Disassembly of section .text:
+
+00000001ed8d0770 <GetVaService>:
+1ed8d0770:     	sub	rsp, 0x28
+1ed8d0774:     	mov	rax, qword ptr [rip + 0x9bcc95] # 0x1ee28d410
+1ed8d077b:     	test	rax, rax
+1ed8d077e:     	jne	0x1ed8d086c <GetVaService+0xfc>
+1ed8d0784:     	cmp	byte ptr [rip + 0x917c06], al # 0x1ee1e8390
+1ed8d078a:     	je	0x1ed8d086c <GetVaService+0xfc>
+1ed8d0790:     	mov	rcx, qword ptr [rip + 0x9a0e19] # 0x1ee2715b0
+1ed8d0797:     	test	rcx, rcx
+1ed8d079a:     	je	0x1ed8d086c <GetVaService+0xfc>
+1ed8d07a0:     	mov	edx, dword ptr [rcx + 0x8]
+1ed8d07a3:     	lea	ecx, [rdx - 0xa]
+1ed8d07a6:     	cmp	ecx, 0x2
+1ed8d07a9:     	jbe	0x1ed8d07b7 <GetVaService+0x47>
+1ed8d07ab:     	lea	ecx, [rdx - 0xe]
+1ed8d07ae:     	cmp	ecx, 0x5
+1ed8d07b1:     	ja	0x1ed8d086c <GetVaService+0xfc>
+1ed8d07b7:     	mov	byte ptr [rip + 0x917bd2], 0x0 # 0x1ee1e8390
+1ed8d07be:     	cmp	qword ptr [rip + 0x9a7e72], 0x0 # 0x1ee278638
+1ed8d07c6:     	jne	0x1ed8d07ec <GetVaService+0x7c>
+1ed8d07c8:     	mov	ecx, 0xe0
+1ed8d07cd:     	call	0x1eda2e4c0 <PeekMessageWHook+0xcd650>
+1ed8d07d2:     	mov	qword ptr [rsp + 0x30], rax
+1ed8d07d7:     	test	rax, rax
+1ed8d07da:     	je	0x1ed8d07e5 <GetVaService+0x75>
+1ed8d07dc:     	mov	rcx, rax
+1ed8d07df:     	call	0x1ed3f8fc0 <DllUnregisterServer+0xefd70>
+1ed8d07e4:     	nop
+1ed8d07e5:     	mov	qword ptr [rip + 0x9a7e4c], rax # 0x1ee278638
+1ed8d07ec:     	cmp	qword ptr [rip + 0x9abf8c], 0x0 # 0x1ee27c780
+1ed8d07f4:     	jne	0x1ed8d081a <GetVaService+0xaa>
+1ed8d07f6:     	mov	ecx, 0x46e8
+1ed8d07fb:     	call	0x1eda2e4c0 <PeekMessageWHook+0xcd650>
+1ed8d0800:     	mov	qword ptr [rsp + 0x30], rax
+1ed8d0805:     	test	rax, rax
+1ed8d0808:     	je	0x1ed8d0813 <GetVaService+0xa3>
+1ed8d080a:     	mov	rcx, rax
+1ed8d080d:     	call	0x1ed522240 <VaConnectSetup+0x64ce0>
+1ed8d0812:     	nop
+1ed8d0813:     	mov	qword ptr [rip + 0x9abf66], rax # 0x1ee27c780
+1ed8d081a:     	cmp	qword ptr [rip + 0x9ab766], 0x0 # 0x1ee27bf88
+1ed8d0822:     	jne	0x1ed8d0848 <GetVaService+0xd8>
+1ed8d0824:     	mov	ecx, 0x2a0
+1ed8d0829:     	call	0x1eda2e4c0 <PeekMessageWHook+0xcd650>
+1ed8d082e:     	mov	qword ptr [rsp + 0x30], rax
+1ed8d0833:     	test	rax, rax
+1ed8d0836:     	je	0x1ed8d0841 <GetVaService+0xd1>
+1ed8d0838:     	mov	rcx, rax
+1ed8d083b:     	call	0x1ed4cb290 <VaConnectSetup+0xdd30>
+1ed8d0840:     	nop
+1ed8d0841:     	mov	qword ptr [rip + 0x9ab740], rax # 0x1ee27bf88
+1ed8d0848:     	mov	ecx, 0x78
+1ed8d084d:     	call	0x1eda2e4c0 <PeekMessageWHook+0xcd650>
+1ed8d0852:     	mov	qword ptr [rsp + 0x30], rax
+1ed8d0857:     	test	rax, rax
+1ed8d085a:     	je	0x1ed8d0865 <GetVaService+0xf5>
+1ed8d085c:     	mov	rcx, rax
+1ed8d085f:     	call	0x1ed8c4a30 <DllCanUnloadNow+0x1f1490>
+1ed8d0864:     	nop
+1ed8d0865:     	mov	qword ptr [rip + 0x9bcba4], rax # 0x1ee28d410
+1ed8d086c:     	add	rsp, 0x28
+1ed8d0870:     	ret

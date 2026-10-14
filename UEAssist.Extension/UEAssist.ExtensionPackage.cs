@@ -28,10 +28,15 @@ namespace UEAssist.Extension
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [ProvideAutoLoad(UIContextGuids80.NoSolution, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
-    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideMenuResource("CTMENU", 1)]
+    [InstalledProductRegistration("#110", "#112", "0.0.49")]
+    [ProvideToolWindow(typeof(OutlineToolWindow))]
+    [ProvideToolWindow(typeof(WorkspaceToolWindow))]
+    [ProvideToolWindow(typeof(ReferenceResultsToolWindow), MultiInstances = true)]
     [Guid(ExtensionPackage.PackageGuidString)]
     public sealed class ExtensionPackage : AsyncPackage
     {
+        internal static ExtensionPackage Current { get; private set; }
         private IntelliSenseSquiggleController squiggleController;
         private ProjectIndexService indexService;
         private IndexingStatusReporter indexingStatusReporter;
@@ -55,8 +60,11 @@ namespace UEAssist.Extension
         // When initialized asynchronously, the current thread may be a background thread at this point.
         // Do any initialization that requires the UI thread after switching to the UI thread.
         await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+        Current = this;
         var componentModel = await GetServiceAsync(typeof(SComponentModel)) as IComponentModel;
         indexService = componentModel?.GetService<ProjectIndexService>();
+        var semanticDte = await GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
+        if (semanticDte != null) CompilerSemanticService.Instance.EditorExecutable = semanticDte.FullName;
         try
         {
             var statusBar = await GetServiceAsync(typeof(SVsStatusbar)) as IVsStatusbar;
@@ -74,6 +82,7 @@ namespace UEAssist.Extension
         await GoToSymbolCommand.InitializeAsync(this, squiggleController, indexService);
         await FindReferencesCommand.InitializeAsync(this, squiggleController, indexService);
         await StatusCommand.InitializeAsync(this, squiggleController, indexService);
+        await NavigationCommands.InitializeAsync(this, indexService, squiggleController);
     }
 
     protected override void Dispose(bool disposing)
@@ -88,6 +97,9 @@ namespace UEAssist.Extension
         }
 
         if (disposing) indexingStatusReporter?.Dispose();
+        if (disposing) indexService?.Dispose();
+        if (disposing) CompilerSemanticService.Instance.Dispose();
+        if (disposing && ReferenceEquals(Current, this)) Current = null;
 
         base.Dispose(disposing);
     }

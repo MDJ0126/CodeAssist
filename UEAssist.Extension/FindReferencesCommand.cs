@@ -3,7 +3,9 @@ using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Threading;
 using UEAssist.Core;
 
 namespace UEAssist.Extension
@@ -15,6 +17,7 @@ namespace UEAssist.Extension
         private readonly AsyncPackage package;
         private readonly IntelliSenseSquiggleController controller;
         private readonly ProjectIndexService indexService;
+        private CancellationTokenSource pendingSearch;
 
         private FindReferencesCommand(AsyncPackage package, IntelliSenseSquiggleController controller, ProjectIndexService indexService, OleMenuCommandService commandService)
         {
@@ -33,10 +36,14 @@ namespace UEAssist.Extension
 
         private void Execute(object sender, EventArgs e)
         {
-            package.JoinableTaskFactory.RunAsync(ExecuteAsync).FileAndForget("UEAssist/FindReferences");
+            pendingSearch?.Cancel(); pendingSearch?.Dispose();
+            pendingSearch = CancellationTokenSource.CreateLinkedTokenSource(package.DisposalToken);
+            var token = pendingSearch.Token;
+            package.JoinableTaskFactory.RunAsync(async () =>
+            { try { await ExecuteAsync(token); } catch (OperationCanceledException) { } }).FileAndForget("UEAssist/FindReferences");
         }
 
-        private async Task ExecuteAsync()
+        private async Task ExecuteAsync(CancellationToken cancellation)
         {
             await package.JoinableTaskFactory.SwitchToMainThreadAsync();
             var dte = await package.GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
@@ -58,21 +65,45 @@ namespace UEAssist.Extension
 
             controller?.Refresh();
             indexService?.Initialize(controller?.UnrealProjectPath);
-            var results = await Task.Run(() => indexService?.Index.FindReferences(symbol));
+            var activeFile = dte.ActiveDocument.FullName;
+            var activeLine = selection.ActivePoint.Line;
+            var activeColumn = selection.ActivePoint.LineCharOffset;
+            var document = dte.ActiveDocument.Object("TextDocument") as EnvDTE.TextDocument;
+            var activeText = document?.StartPoint.CreateEditPoint().GetText(document.EndPoint);
+            var semanticRoot = !string.IsNullOrEmpty(controller?.UnrealProjectPath) ? controller.UnrealProjectPath :
+                string.IsNullOrEmpty(dte.Solution?.FullName) ? null : Path.GetDirectoryName(dte.Solution.FullName);
+            var compilerResults = await CompilerSemanticService.Instance.FindAsync("textDocument/references", semanticRoot, dte.FullName,
+                activeFile, activeText, activeLine, activeColumn, cancellation);
             await package.JoinableTaskFactory.SwitchToMainThreadAsync();
+            if (compilerResults != null)
+            {
+                await ReferenceResults.PublishAsync(package, symbol, compilerResults, true);
+                var semanticOutput = await package.GetServiceAsync(typeof(SVsOutputWindow)) as IVsOutputWindow;
+                if (semanticOutput == null) return;
+                var semanticGuid = OutputPaneGuid;
+                semanticOutput.CreatePane(ref semanticGuid, "UEAssist References", 1, 1); semanticOutput.GetPane(ref semanticGuid, out var semanticPane);
+                semanticPane?.Clear(); semanticPane?.OutputStringThreadSafe($"UEAssist: '{symbol}' compiler references {compilerResults.Length}\r\n");
+                foreach (var item in compilerResults) semanticPane?.OutputStringThreadSafe($"{item.File}({item.Line},{item.Column}): {symbol}\r\n");
+                semanticPane?.Activate(); return;
+            }
+            var results = await Task.Run(() => indexService?.Index.FindReferences(symbol, activeFile, activeLine, activeColumn, activeText, cancellation), cancellation);
+            await package.JoinableTaskFactory.SwitchToMainThreadAsync();
+            cancellation.ThrowIfCancellationRequested();
             if (results == null || results.Count == 0)
             {
                 ExecuteFallback(dte);
                 return;
             }
 
+            await ReferenceResults.PublishAsync(package, symbol, results.Select(item =>
+                new NavigationEntry(symbol, item.FilePath, item.Line, item.Column)).ToArray(), false);
             var output = await package.GetServiceAsync(typeof(SVsOutputWindow)) as IVsOutputWindow;
             if (output == null) return;
             var paneGuid = OutputPaneGuid;
             output.CreatePane(ref paneGuid, "UEAssist References", 1, 1);
             output.GetPane(ref paneGuid, out var pane);
             pane?.Clear();
-            pane?.OutputStringThreadSafe($"UEAssist: '{symbol}' 참조 {results.Count}개\r\n");
+            pane?.OutputStringThreadSafe($"UEAssist: '{symbol}' 참조 후보 {results.Count}개 (어휘·지역 블록 기준)\r\n");
             foreach (var result in results)
             {
                 pane?.OutputStringThreadSafe($"{result.FilePath}({result.Line},{result.Column}): {symbol}\r\n");

@@ -1,0 +1,523 @@
+
+Dump of file C:\Users\ehdwn\AppData\Local\Microsoft\VisualStudio\17.0_ca39936f\Extensions\zgy5sun1.aim\VaAux64.dll
+
+PE signature found
+
+File Type: DLL
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               7 number of sections
+        6AC84B5B time date stamp Fri Oct  9 11:03:07 2026
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+            2022 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+                   DLL
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.51 linker version
+          414600 size of code
+          1EC000 size of initialized data
+               0 size of uninitialized data
+          3CE3D0 entry point (00000001803CE3D0)
+            1000 base of code
+       180000000 image base (0000000180000000 to 0000000180604FFF)
+            1000 section alignment
+             200 file alignment
+            6.00 operating system version
+            0.00 image version
+            6.00 subsystem version
+               0 Win32 version
+          605000 size of image
+             400 size of headers
+               0 checksum
+               2 subsystem (Windows GUI)
+             160 DLL characteristics
+                   High Entropy Virtual Addresses
+                   Dynamic base
+                   NX compatible
+          100000 size of stack reserve
+            1000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+          5B07A0 [      48] RVA [size] of Export Directory
+          5B07E8 [      C8] RVA [size] of Import Directory
+          5F5000 [     4D0] RVA [size] of Resource Directory
+          5C4000 [   2FCD0] RVA [size] of Exception Directory
+               0 [       0] RVA [size] of Certificates Directory
+          5F6000 [    EC24] RVA [size] of Base Relocation Directory
+          578BF0 [      54] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+          578E00 [      28] RVA [size] of Thread Storage Directory
+          578AB0 [     140] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+          416000 [     880] RVA [size] of Import Address Table Directory
+               0 [       0] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+   .text name
+  414438 virtual size
+    1000 virtual address (0000000180001000 to 0000000180415437)
+  414600 size of raw data
+     400 file pointer to raw data (00000400 to 004149FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #2
+  .rdata name
+  19C30A virtual size
+  416000 virtual address (0000000180416000 to 00000001805B2309)
+  19C400 size of raw data
+  414A00 file pointer to raw data (00414A00 to 005B0DFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    6AC84B5B cv            58 0057D54C   57BF4C    Format: RSDS, {02D5F002-CAF5-4039-AA58-C8E9F95147DF}, 1, C:\va-build-test-system\visual-assist\bin64\Release\VaAux64.pdb
+    6AC84B5B feat          14 0057D5A4   57BFA4    Counts: Pre-VC++ 11.00=0, C/C++=1368, /GS=1368, /sdl=0, guardN=353
+    6AC84B5B coffgrp      400 0057D5B8   57BFB8
+
+  Section contains the following exports for VaAux64.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+           1 number of functions
+           1 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00116920 GetAuxDll
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+             1804161F0 Import Address Table
+             1805B0AA0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         5F1 TlsSetValue
+                         5EE TlsFree
+                         61D VirtualProtect
+                         61A VirtualFree
+                         306 GetStdHandle
+                         663 WriteFile
+                         2A8 GetModuleHandleW
+                         5D5 SwitchToFiber
+                         133 DeleteFiber
+                          DE CreateFiberEx
+                         245 GetCurrentProcessId
+                         31D GetSystemTimeAsFileTime
+                         1DE GetACP
+                         51B RtlVirtualUnwind
+                         4EF ReleaseSemaphore
+                         26B GetExitCodeThread
+                         109 CreateSemaphoreA
+                         31B GetSystemTime
+                         5D7 SystemTimeToFileTime
+                          BC ConvertFiberToThread
+                          C0 ConvertThreadToFiberEx
+                         2A4 GetModuleFileNameW
+                         3FA LoadLibraryW
+                         1A0 FindClose
+                         1AB FindFirstFileW
+                         1B7 FindNextFileW
+                         228 GetConsoleMode
+                         542 SetConsoleMode
+                         49F ReadConsoleA
+                         4A9 ReadConsoleW
+                         662 WriteConsoleW
+                         1D6 FreeEnvironmentStringsW
+                         265 GetEnvironmentStringsW
+                         203 GetCommandLineW
+                         202 GetCommandLineA
+                         2C9 GetOEMCP
+                         3C1 IsValidCodePage
+                         313 GetSystemDirectoryA
+                         1D2 FormatMessageA
+                         57B SetLastError
+                         292 GetLocaleInfoA
+                         2E0 GetProcAddress
+                         626 WaitForMultipleObjects
+                         209 GetComputerNameExA
+                         405 LocalFree
+                         5FF UnlockFile
+                         5EF TlsGetValue
+                         40F LockFile
+                         26E GetFileAttributesA
+                          D2 CreateDirectoryA
+                         249 GetCurrentThreadId
+                         112 CreateThread
+                         5CB Sleep
+                          D9 CreateEventA
+                         55F SetEvent
+                         3F3 LeaveCriticalSection
+                         15A EnterCriticalSection
+                         398 InitializeCriticalSection
+                         208 GetComputerNameA
+                         628 WaitForSingleObject
+                          A0 CloseHandle
+                           1 AcquireSRWLockShared
+                         64F WideCharToMultiByte
+                         426 MultiByteToWideChar
+                         195 FileTimeToSystemTime
+                         2DD GetPrivateProfileStringW
+                         2D7 GetPrivateProfileIntW
+                         1C1 FindResourceW
+                         5CA SizeofResource
+                         411 LockResource
+                         3FD LoadResource
+                         1C0 FindResourceExW
+                         132 DeleteCriticalSection
+                         39A InitializeCriticalSectionEx
+                         2E7 GetProcessHeap
+                         388 HeapSize
+                         383 HeapFree
+                         386 HeapReAlloc
+                         273 GetFileAttributesW
+                         37F HeapAlloc
+                         382 HeapDestroy
+                         290 GetLastError
+                         12B DecodePointer
+                           0 AcquireSRWLockExclusive
+                         27B GetFileSizeEx
+                         1CB FlushFileBuffers
+                         56C SetFilePointerEx
+                         559 SetEndOfFile
+                         41F MoveFileExW
+                         139 DeleteFileW
+                         566 SetFileAttributesW
+                         270 GetFileAttributesExW
+                         17E EnumSystemLocalesW
+                         34C GetUserDefaultLCID
+                         3C3 IsValidLocale
+                         294 GetLocaleInfoW
+                         563 SetFileAttributesA
+                         5ED TlsAlloc
+                         3E7 LCMapStringW
+                          B6 CompareStringW
+                         344 GetTimeFormatW
+                         24F GetDateFormatW
+                         3F9 LoadLibraryExW
+                         1D8 FreeLibraryAndExitThread
+                         18A ExitThread
+                         532 SetConsoleCtrlHandler
+                         189 ExitProcess
+                         22C GetConsoleOutputCP
+                         4AC ReadFile
+                         23D GetCurrentDirectoryW
+                         552 SetCurrentDirectoryW
+                         55D SetEnvironmentVariableW
+                         288 GetFullPathNameW
+                         1A6 FindFirstFileExW
+                         596 SetStdHandle
+                         346 GetTimeZoneInformation
+                         5D8 SystemTimeToTzSpecificLocalTime
+                         457 PeekNamedPipe
+                         275 GetFileInformationByHandle
+                         25D GetDriveTypeW
+                          E9 CreateFileW
+                         3BB IsProcessorFeaturePresent
+                         5DB TerminateProcess
+                         244 GetCurrentProcess
+                         5FE UnhandledExceptionFilter
+                         50C RtlCaptureContext
+                         1C6 FlsFree
+                         1C9 FlsSetValue
+                         1C7 FlsGetValue
+                         1C5 FlsAlloc
+                         4EE ReleaseSRWLockShared
+                         4ED ReleaseSRWLockExclusive
+                         39E InitializeSRWLock
+                         267 GetEnvironmentVariableW
+                         27D GetFileType
+                         2A7 GetModuleHandleExW
+                         3F7 LoadLibraryA
+                         1D7 FreeLibrary
+                         484 QueryPerformanceCounter
+                         156 EncodePointer
+                         3E6 LCMapStringEx
+                         30B GetStringTypeW
+                         1ED GetCPInfo
+                         630 WakeAllConditionVariable
+                         5CD SleepConditionVariableSRW
+                         5BB SetUnhandledExceptionFilter
+                         304 GetStartupInfoW
+                         39D InitializeSListHead
+                         3B3 IsDebuggerPresent
+                         44E OutputDebugStringW
+                         49B RaiseException
+                         516 RtlPcToFileHeader
+                         514 RtlLookupFunctionEntry
+                         51A RtlUnwindEx
+                         3A1 InterlockedFlushSList
+                         519 RtlUnwind
+
+    USER32.dll
+             180416708 Import Address Table
+             1805B0FB8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         1BE GetProcessWindowStation
+                         295 MessageBoxA
+                         1E8 GetUserObjectInformationW
+                         29C MessageBoxW
+
+    ADVAPI32.dll
+             180416000 Import Address Table
+             1805B08B0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          C4 CryptCreateHash
+                          D2 CryptGenRandom
+                          CF CryptEnumProvidersW
+                          E5 CryptSignHashW
+                          C7 CryptDestroyHash
+                          C5 CryptDecrypt
+                          D0 CryptExportKey
+                          D8 CryptGetUserKey
+                          D7 CryptGetProvParam
+                          DD CryptSetHashParam
+                          C8 CryptDestroyKey
+                          DC CryptReleaseContext
+                          C2 CryptAcquireContextW
+                         2BD ReportEventW
+                         2AB RegisterEventSourceW
+                          ED DeregisterEventSource
+                         2A5 RegSetValueExA
+                         295 RegQueryValueExA
+                         288 RegOpenKeyExA
+                         260 RegCreateKeyExA
+                         193 LookupAccountNameA
+                         2E5 SetSecurityDescriptorDacl
+                         1FC MakeSelfRelativeSD
+                         1FA MakeAbsoluteSD
+                         189 IsValidSid
+                         17B InitializeSid
+                         17A InitializeSecurityDescriptor
+                         179 InitializeAcl
+                         157 GetSidSubAuthority
+                         156 GetSidLengthRequired
+                         14D GetSecurityDescriptorSacl
+                         14B GetSecurityDescriptorOwner
+                         14A GetSecurityDescriptorLength
+                         149 GetSecurityDescriptorGroup
+                         148 GetSecurityDescriptorDacl
+                         147 GetSecurityDescriptorControl
+                         136 GetLengthSid
+                         123 GetAclInformation
+                          85 CopySid
+                          16 AddAce
+                         165 GetUserNameA
+                         2DD SetNamedSecurityInfoA
+                         2D4 SetEntriesInAclA
+                         11F FreeSid
+                          20 AllocateAndInitializeSid
+                         2A6 RegSetValueExW
+                         296 RegQueryValueExW
+                         289 RegOpenKeyExW
+                         261 RegCreateKeyExW
+                         258 RegCloseKey
+
+    SHELL32.dll
+             1804166F8 Import Address Table
+             1805B0FA8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         14D SHGetFolderPathA
+
+    ole32.dll
+             180416850 Import Address Table
+             1805B1100 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          62 CoInitializeSecurity
+                          87 CoSetProxyBlanket
+                          2B CoCreateInstance
+                          61 CoInitializeEx
+                          91 CoUninitialize
+
+    OLEAUT32.dll
+             1804166D8 Import Address Table
+             1805B0F88 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal     2
+                             Ordinal     6
+                             Ordinal     9
+
+    IPHLPAPI.DLL
+             1804161E0 Import Address Table
+             1805B0A90 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          46 GetAdaptersInfo
+
+    WS2_32.dll
+             180416730 Import Address Table
+             1805B0FE0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                             Ordinal    14
+                             Ordinal    13
+                             Ordinal    11
+                             Ordinal     9
+                             Ordinal     8
+                             Ordinal     7
+                             Ordinal    10
+                             Ordinal     4
+                             Ordinal    16
+                             Ordinal     2
+                             Ordinal     1
+                             Ordinal   151
+                             Ordinal   111
+                             Ordinal    52
+                             Ordinal   116
+                             Ordinal   115
+                             Ordinal    57
+                             Ordinal    17
+                             Ordinal    18
+                             Ordinal    19
+                             Ordinal    20
+                             Ordinal    21
+                             Ordinal    22
+                             Ordinal    23
+                             Ordinal    12
+                             Ordinal    51
+                             Ordinal    56
+                             Ordinal    55
+                             Ordinal   112
+                             Ordinal    15
+                             Ordinal     6
+                             Ordinal     5
+                          3B WSAIoctl
+                          57 WSASocketA
+                             Ordinal     3
+
+    CRYPT32.dll
+             180416198 Import Address Table
+             1805B0A48 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          46 CertGetCertificateContextProperty
+                          40 CertFreeCertificateContext
+                          25 CertDuplicateCertificateContext
+                          35 CertFindCertificateInStore
+                          2C CertEnumCertificatesInStore
+                          12 CertCloseStore
+                          59 CertOpenStore
+                          5B CertOpenSystemStoreW
+
+SECTION HEADER #3
+   .data name
+   1065C virtual size
+  5B3000 virtual address (00000001805B3000 to 00000001805C365B)
+    A600 size of raw data
+  5B0E00 file pointer to raw data (005B0E00 to 005BB3FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #4
+  .pdata name
+   2FCD0 virtual size
+  5C4000 virtual address (00000001805C4000 to 00000001805F3CCF)
+   2FE00 size of raw data
+  5BB400 file pointer to raw data (005BB400 to 005EB1FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #5
+.fptable name
+     100 virtual size
+  5F4000 virtual address (00000001805F4000 to 00000001805F40FF)
+     200 size of raw data
+  5EB200 file pointer to raw data (005EB200 to 005EB3FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #6
+   .rsrc name
+     4D0 virtual size
+  5F5000 virtual address (00000001805F5000 to 00000001805F54CF)
+     600 size of raw data
+  5EB400 file pointer to raw data (005EB400 to 005EB9FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #7
+  .reloc name
+    EC24 virtual size
+  5F6000 virtual address (00000001805F6000 to 0000000180604C23)
+    EE00 size of raw data
+  5EBA00 file pointer to raw data (005EBA00 to 005FA7FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+  Summary
+
+       11000 .data
+        1000 .fptable
+       30000 .pdata
+      19D000 .rdata
+        F000 .reloc
+        1000 .rsrc
+      415000 .text

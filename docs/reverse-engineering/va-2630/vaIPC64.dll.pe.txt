@@ -1,0 +1,483 @@
+
+Dump of file C:\Users\ehdwn\AppData\Local\Microsoft\VisualStudio\17.0_ca39936f\Extensions\zgy5sun1.aim\vaIPC64.dll
+
+PE signature found
+
+File Type: DLL
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               6 number of sections
+        6AC84B51 time date stamp Fri Oct  9 11:02:57 2026
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+            2022 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+                   DLL
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.51 linker version
+           1D800 size of code
+           1E400 size of initialized data
+               0 size of uninitialized data
+           1C3F0 entry point (000000018001C3F0)
+            1000 base of code
+       180000000 image base (0000000180000000 to 000000018003EFFF)
+            1000 section alignment
+             200 file alignment
+            6.00 operating system version
+            0.00 image version
+            6.00 subsystem version
+               0 Win32 version
+           3F000 size of image
+             400 size of headers
+           3A1DA checksum
+               2 subsystem (Windows GUI)
+             160 DLL characteristics
+                   High Entropy Virtual Addresses
+                   Dynamic base
+                   NX compatible
+          100000 size of stack reserve
+            1000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+           2DE40 [     F70] RVA [size] of Export Directory
+           2EDB0 [      F0] RVA [size] of Import Directory
+           3D000 [     4D0] RVA [size] of Resource Directory
+           3B000 [    1B00] RVA [size] of Exception Directory
+           33A00 [    2860] RVA [size] of Certificates Directory
+           3E000 [     26C] RVA [size] of Base Relocation Directory
+           257C0 [      54] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+           25880 [      28] RVA [size] of Thread Storage Directory
+           25680 [     140] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+           1F000 [     658] RVA [size] of Import Address Table Directory
+               0 [       0] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+   .text name
+   1D740 virtual size
+    1000 virtual address (0000000180001000 to 000000018001E73F)
+   1D800 size of raw data
+     400 file pointer to raw data (00000400 to 0001DBFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #2
+  .rdata name
+   11F9C virtual size
+   1F000 virtual address (000000018001F000 to 0000000180030F9B)
+   12000 size of raw data
+   1DC00 file pointer to raw data (0001DC00 to 0002FBFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    6AC84B51 cv            58 00027190    25D90    Format: RSDS, {3898CF02-7B61-4856-824B-7DB6D3AE4033}, 1, C:\va-build-test-system\visual-assist\bin64\Release\vaIPC64.pdb
+    6AC84B51 feat          14 000271E8    25DE8    Counts: Pre-VC++ 11.00=0, C/C++=46, /GS=46, /sdl=0, guardN=36
+    6AC84B51 coffgrp      378 000271FC    25DFC
+
+  Section contains the following exports for vaIPC64.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+          33 number of functions
+          33 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000090E0 ?CheckAndCleanupInstanceName@Client@vaIPC@@YA?AV?$optional@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@@Z
+          2    1 00014B10 ?CloseLogFile@Logging@VaCodeInspections@WholeTomato@@YAXXZ
+          3    2 00008BE0 ?ExitAllServerInstances@Client@vaIPC@@YAXXZ
+          4    3 000077F0 ?FindClientConnectionCallback@Client@vaIPC@@YA?AV?$shared_ptr@UIIpcClientConnectionCallback@Client@vaIPC@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@0@Z
+          5    4 000150B0 ?GetLoggingLevel@Logging@VaCodeInspections@WholeTomato@@YA?AW4Level@123@XZ
+          6    5 00008DF0 ?GetServerConnectionCount@Client@vaIPC@@YAXAEA_K0@Z
+          7    6 00008F70 ?GetServerProcessId@Client@vaIPC@@YAKAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+          8    7 00014BC0 ?IsLogFileOpen@Logging@VaCodeInspections@WholeTomato@@YA_NXZ
+          9    8 00007A20 ?LaunchConnectionInstance@Client@vaIPC@@YA?AV?$shared_ptr@UIIpcClientConnectionCallback@Client@vaIPC@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@0@Z
+         10    9 00006CA0 ?LaunchServer@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@00$$QEAV?$function@$$A6A?AV?$shared_ptr@UIIpcClientConnectionCallback@Client@vaIPC@@@std@@XZ@4@$$QEAV?$function@$$A6A_NPEAV?$list@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@V?$allocator@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@@3@@std@@@Z@4@@Z
+         11    A 000094A0 ?LockIPCLock@vaIPC@@YAXXZ
+         12    B 00014C40 ?Log@Logging@VaCodeInspections@WholeTomato@@YAXW4Level@123@PEBD@Z
+         13    C 00014EA0 ?LogException@Logging@VaCodeInspections@WholeTomato@@YAXPEBD0@Z
+         14    D 000086B0 ?MakeInstanceNotification@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+         15    E 00008470 ?MakeInstanceRequest@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+         16    F 00014010 ?OpenLogFile@Logging@VaCodeInspections@WholeTomato@@YA_NXZ
+         17   10 00008180 ?RetireServerInstance@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+         18   11 000110C0 ?RunServer@Server@vaIPC@@YAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$shared_ptr@UIIpcServerProcessCallback@Server@vaIPC@@@4@HPEBQEB_W@Z
+         19   12 000150A0 ?SetLoggingLevel@Logging@VaCodeInspections@WholeTomato@@YAXW4Level@123@@Z
+         20   13 00010EF0 ?StartServer@Server@vaIPC@@YA?AV?$shared_ptr@UIIpcServer@ServerImpl@vaIPC@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@I0V?$shared_ptr@UIIpcServerProcessCallback@Server@vaIPC@@@4@@Z
+         21   14 000088F0 ?StopConnectionInstance@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z
+         22   15 00007E70 ?StopServerInstance@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N1@Z
+         23   16 000094F0 ?UnlockIPCLock@vaIPC@@YAXXZ
+         24   17 00031008 ?clangtidy_convert_to_utf8@vaIPC@@3_NA
+         25   18 00019330 ?get_fail_times@stats@vaIPC@@SA?AV?$list@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@V?$allocator@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@@3@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@@Z
+         26   19 00002710 ?get_iltava@@YAPEAXXZ
+         27   1A 00019320 ?get_servers_alive@stats@vaIPC@@SAJXZ
+         28   1B 00018FE0 ?get_stats@stats@vaIPC@@SA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@XZ
+         29   1C 00018F90 ?map_lock@stats@vaIPC@@SAXW4map_lock_site@12@_J1@Z
+         30   1D 00018E50 ?server_failed@stats@vaIPC@@SAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z
+         31   1E 00018E20 ?server_quit@stats@vaIPC@@SAXXZ
+         32   1F 00018E30 ?server_restarted@stats@vaIPC@@SAXXZ
+         33   20 00018E10 ?server_started@stats@vaIPC@@SAXXZ
+
+  Section contains the following imports:
+
+    KERNEL32.dll
+             18001F000 Import Address Table
+             18002EEA0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         317 GetSystemInfo
+                         617 VirtualAlloc
+                         61A VirtualFree
+                         61F VirtualQuery
+                         290 GetLastError
+                         39A InitializeCriticalSectionEx
+                         132 DeleteCriticalSection
+                          E9 CreateFileW
+                         4AC ReadFile
+                         663 WriteFile
+                          A0 CloseHandle
+                         152 DuplicateHandle
+                         28C GetHandleInformation
+                         584 SetNamedPipeHandleState
+                         62F WaitNamedPipeW
+                         55F SetEvent
+                         628 WaitForSingleObject
+                          DC CreateEventW
+                         5CB Sleep
+                         244 GetCurrentProcess
+                         245 GetCurrentProcessId
+                         248 GetCurrentThread
+                         249 GetCurrentThreadId
+                         2E9 GetProcessId
+                          E6 CreateFileMappingW
+                         415 MapViewOfFile
+                         601 UnmapViewOfFile
+                         2A5 GetModuleHandleA
+                         2E0 GetProcAddress
+                         5DB TerminateProcess
+                         105 CreateProcessW
+                         2B5 GetNativeSystemInfo
+                         2A4 GetModuleFileNameW
+                         2A7 GetModuleHandleExW
+                          B7 ConnectNamedPipe
+                          FB CreateNamedPipeW
+                         626 WaitForMultipleObjects
+                         442 OpenProcess
+                         273 GetFileAttributesW
+                         32C GetTempPathW
+                         1CB FlushFileBuffers
+                         149 DisconnectNamedPipe
+                         2A8 GetModuleHandleW
+                         44E OutputDebugStringW
+                         3B3 IsDebuggerPresent
+                         39D InitializeSListHead
+                         31D GetSystemTimeAsFileTime
+                         484 QueryPerformanceCounter
+                         5CD SleepConditionVariableSRW
+                         630 WakeAllConditionVariable
+                           0 AcquireSRWLockExclusive
+                         4ED ReleaseSRWLockExclusive
+
+    MSVCP140.dll
+             18001F1A8 Import Address Table
+             18002F048 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         275 ?_Throw_Cpp_error@std@@YAXH@Z
+                         51F ?uncaught_exceptions@std@@YAHXZ
+                         28E ?_Xlength_error@std@@YAXPEBD@Z
+                         1D5 ?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ
+                         3C5 ?good@ios_base@std@@QEBA_NXZ
+                         367 ?flags@ios_base@std@@QEBAHXZ
+                         53E ?width@ios_base@std@@QEBA_JXZ
+                         53D ?width@ios_base@std@@QEAA_J_J@Z
+                         534 ?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z
+                         461 ?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z
+                         368 ?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ
+                         28C ?_Xbad_function_call@std@@YAXXZ
+                         1EE ?_Id_cnt@id@locale@std@@0HA
+                         590 _Query_perf_counter
+                         591 _Query_perf_frequency
+                         28F ?_Xout_of_range@std@@YAXPEBD@Z
+                         4D5 ?showmanyc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JXZ
+                         29D ?always_noconv@codecvt_base@std@@QEBA_NXZ
+                         3FA ?in@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z
+                         433 ?out@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEBD1AEAPEBDPEAD3AEAPEAD@Z
+                         527 ?unshift@?$codecvt@DDU_Mbstatet@@@std@@QEBAHAEAU_Mbstatet@@PEAD1AEAPEAD@Z
+                         1B1 ?_Getcat@?$codecvt@DDU_Mbstatet@@@std@@SA_KPEAPEBVfacet@locale@2@PEBV42@@Z
+                          2F ??0?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAA@XZ
+                          89 ??1?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAA@XZ
+                         3C0 ?getloc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEBA?AVlocale@2@XZ
+                         4DE ?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z
+                         4E1 ?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z
+                         34D ?eback@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ
+                         3C6 ?gptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ
+                         43E ?pbase@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ
+                         447 ?pptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ
+                         350 ?egptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ
+                         36B ?gbump@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXH@Z
+                         4BA ?setg@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAD00@Z
+                         359 ?epptr@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBAPEADXZ
+                         1E5 ?_Gndec@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ
+                         1E8 ?_Gninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ
+                         1E2 ?_Gnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ
+                         441 ?pbump@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXH@Z
+                         4BF ?setp@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAD0@Z
+                         4BE ?setp@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAD00@Z
+                         24A ?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ
+                         54B _Cnd_broadcast
+                         1F5 ?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXXZ
+                         1F4 ?_Init@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAXPEAPEAD0PEAH001@Z
+                         543 ?xsgetn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEAD_J@Z
+                         546 ?xsputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAA_JPEBD_J@Z
+                          7D ??1?$basic_ios@DU?$char_traits@D@std@@@std@@UEAA@XZ
+                         2A6 ?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+                         4C5 ?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z
+                         50A ?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ
+                         487 ?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ
+                         361 ?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADXZ
+                           C ??0?$basic_ios@DU?$char_traits@D@std@@@std@@IEAA@XZ
+                          25 ??0?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@_N@Z
+                          86 ??1?$basic_ostream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+                         244 ?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ
+                         106 ??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z
+                          13 ??0?$basic_iostream@DU?$char_traits@D@std@@@std@@QEAA@PEAV?$basic_streambuf@DU?$char_traits@D@std@@@1@@Z
+                          80 ??1?$basic_iostream@DU?$char_traits@D@std@@@std@@UEAA@XZ
+                         1AD ?_Fiopen@std@@YAPEAU_iobuf@@PEB_WHH@Z
+                         228 ?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
+                         27F ?_Unlock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
+                         4B5 ?setbuf@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAPEAV12@PEAD_J@Z
+                         4FD ?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ
+                         3F6 ?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAXAEBVlocale@2@@Z
+                         51B ?uflow@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHXZ
+                         3C9 ?id@?$codecvt@DDU_Mbstatet@@@std@@2V0locale@2@A
+                         5CC _Xtime_get_ticks
+                         28B ?_Xbad_alloc@std@@YAXXZ
+                         54E _Cnd_do_broadcast_at_thread_exit
+                         247 ?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ
+                          6D ??0_Lockit@std@@QEAA@H@Z
+                          A5 ??1_Lockit@std@@QEAA@XZ
+                         5B0 _Thrd_detach
+                         5B5 _Thrd_join
+                         5B4 _Thrd_id
+                         584 _Mtx_init_in_situ
+                         585 _Mtx_lock
+                         589 _Mtx_unlock
+                         550 _Cnd_init_in_situ
+                         555 _Cnd_wait
+
+    SHLWAPI.dll
+             18001F440 Import Address Table
+             18002F2E0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          49 PathFileExistsW
+
+    VCRUNTIME140.dll
+             18001F450 Import Address Table
+             18002F2F0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          25 __std_type_info_destroy_list
+                          3B memcmp
+                          1B __current_exception
+                          1C __current_exception_context
+                           8 __C_specific_handler
+                          22 __std_exception_destroy
+                           1 _CxxThrowException
+                          3C memcpy
+                          3E memset
+                          23 __std_terminate
+                          21 __std_exception_copy
+                          24 __std_type_info_compare
+                          3D memmove
+
+    VCRUNTIME140_1.dll
+             18001F4C0 Import Address Table
+             18002F360 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 __CxxFrameHandler4
+
+    api-ms-win-crt-heap-l1-1-0.dll
+             18001F500 Import Address Table
+             18002F3A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          18 free
+                           8 _callnewh
+                          19 malloc
+
+    api-ms-win-crt-runtime-l1-1-0.dll
+             18001F530 Import Address Table
+             18002F3D0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          36 _initterm
+                          1E _crt_atexit
+                          38 _invalid_parameter_noinfo
+                          21 _errno
+                          16 _cexit
+                          37 _initterm_e
+                          67 terminate
+                          34 _initialize_onexit_table
+                          3F _seh_filter_dll
+                          18 _configure_narrow_argv
+                          33 _initialize_narrow_environment
+                          22 _execute_onexit_table
+                          3C _register_onexit_function
+                          14 _beginthreadex
+
+    api-ms-win-crt-stdio-l1-1-0.dll
+             18001F5A8 Import Address Table
+             18002F448 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          8A fwrite
+                          2F _fseeki64
+                          83 fread
+                          7F fputc
+                          79 fgetpos
+                          88 fsetpos
+                          98 setvbuf
+                          78 fgetc
+                          77 fflush
+                          74 fclose
+                          39 _get_stream_buffer_pointers
+                           D __stdio_common_vsprintf
+                          14 __stdio_common_vswscanf
+                          13 __stdio_common_vswprintf_s
+                          11 __stdio_common_vswprintf
+                          10 __stdio_common_vsscanf
+                          9D ungetc
+
+    api-ms-win-crt-string-l1-1-0.dll
+             18001F638 Import Address Table
+             18002F4D8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          A3 wcslen
+                          8B strlen
+                          4A _wcsicmp
+
+    api-ms-win-crt-math-l1-1-0.dll
+             18001F520 Import Address Table
+             18002F3C0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          7D ceilf
+
+    api-ms-win-crt-filesystem-l1-1-0.dll
+             18001F4D0 Import Address Table
+             18002F370 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          24 _unlock_file
+                          3D _wstat64i32
+                          28 _wchmod
+                          16 _lock_file
+                          35 _wremove
+
+SECTION HEADER #3
+   .data name
+    9CC0 virtual size
+   31000 virtual address (0000000180031000 to 000000018003ACBF)
+    1800 size of raw data
+   2FC00 file pointer to raw data (0002FC00 to 000313FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #4
+  .pdata name
+    1B00 virtual size
+   3B000 virtual address (000000018003B000 to 000000018003CAFF)
+    1C00 size of raw data
+   31400 file pointer to raw data (00031400 to 00032FFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #5
+   .rsrc name
+     4D0 virtual size
+   3D000 virtual address (000000018003D000 to 000000018003D4CF)
+     600 size of raw data
+   33000 file pointer to raw data (00033000 to 000335FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #6
+  .reloc name
+     26C virtual size
+   3E000 virtual address (000000018003E000 to 000000018003E26B)
+     400 size of raw data
+   33600 file pointer to raw data (00033600 to 000339FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+  Summary
+
+        A000 .data
+        2000 .pdata
+       12000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       1E000 .text

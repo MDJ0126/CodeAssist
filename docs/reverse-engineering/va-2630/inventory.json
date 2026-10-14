@@ -1,0 +1,604 @@
+[
+  {
+    "File": "api-ms-win-core-console-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-console-l1-2-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12256,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-datetime-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11736,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-debug-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-errorhandling-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-file-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 15328,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-file-l1-2-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-file-l2-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11744,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-handle-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11736,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-heap-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12256,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-interlocked-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-libraryloader-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12752,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-localization-l1-2-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 14800,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-memory-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-namedpipe-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-processenvironment-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12752,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-processthreads-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 14288,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-processthreads-l1-1-1.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-profile-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-string-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-synch-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 13776,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-synch-l1-2-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-sysinfo-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12768,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-timezone-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-core-util-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 11728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-conio-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12752,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-convert-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 15824,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-environment-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-filesystem-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 13776,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-heap-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12752,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-locale-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-math-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 20944,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-multibyte-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 19920,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-private-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 64464,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-process-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12752,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-runtime-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 16336,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-stdio-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 17872,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-string-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 18384,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-time-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 14288,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "api-ms-win-crt-utility-l1-1-0.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 12240,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "Community.VisualStudio.Toolkit.dll",
+    "Version": "17.0.527.0",
+    "Bytes": 443392,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "concrt140.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 374200,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "ICSharpCode.AvalonEdit.Va.dll",
+    "Version": "5.0.3.0",
+    "Bytes": 614400,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "msdia120.dll",
+    "Version": "12.00.30723.0 built by: REL",
+    "Bytes": 1150600,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, OU=MOPR, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "msvcp140_1.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 35768,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "msvcp140_2.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 274872,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "msvcp140_atomic_wait.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 57792,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "msvcp140_codecvt_ids.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 31160,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "msvcp140.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 643512,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "Newtonsoft.Json.dll",
+    "Version": "13.0.3.27908",
+    "Bytes": 711952,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Json.NET (.NET Foundation), O=Json.NET (.NET Foundation), L=Redmond, S=Washington, C=US, SERIALNUMBER=603 389 068, OID.1.3.6.1.4.1.311.60.2.1.2=Washington, OID.1.3.6.1.4.1.311.60.2.1.3=US, OID.2.5.4.15=Private Organization"
+  },
+  {
+    "File": "ucrtbase.dll",
+    "Version": "10.0.19041.685 (WinBuild.160101.0800)",
+    "Bytes": 1035728,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "VA_X64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 21643360,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "VaAux2_64.dll",
+    "Version": "10.9.2508.0",
+    "Bytes": 1757184,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaAux64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 6268928,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaCodeInspections.VisualStudio.17.0.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 26112,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaCodeInspections.VisualStudio.18.0.dll",
+    "Version": "1.0.0.0",
+    "Bytes": 26112,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaCodeInspections64.Interop.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 206336,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaCodeInspections64.Interop2.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 659968,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaCodeInspectionsAsync.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 1309696,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaCodeInspectionsServer64.exe",
+    "Version": "10.9.2630.0",
+    "Bytes": 21088,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "VaDbMtx64.exe",
+    "Version": null,
+    "Bytes": 592992,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "VaDebuggerToolsAsync.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 370176,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "vaIPC64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 221792,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "vaIPCnet64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 284768,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "valibclang2_64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 64157280,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "VaMefAsync.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 546816,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaMenuPkg.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 165376,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VANetObjMD64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 242784,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "VAOpsWin64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 3996160,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VAOpsWinNet.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 461312,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaOptKeyBinds.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 75264,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaPdbSymbolServer64.exe",
+    "Version": "10.9.2630.0",
+    "Bytes": 71776,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Whole Tomato Software LLC, O=Whole Tomato Software LLC, L=Austin, S=Texas, C=US"
+  },
+  {
+    "File": "VaPkgAsync64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 1167360,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VASnippetEditor.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 325120,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaSourceLinksAsync.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 304640,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaSourceLinksPluginApi.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 23040,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VAssistNET64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 516096,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VATE2_64.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 356864,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VaWpfTheming.17.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 320000,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "VAX64.Interop.dll",
+    "Version": "10.9.2630.0",
+    "Bytes": 185856,
+    "SignatureStatus": "NotSigned",
+    "Signer": null
+  },
+  {
+    "File": "vccorlib140.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 350648,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "vcruntime140_1.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 50112,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "vcruntime140_threads.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 38840,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "vcruntime140.dll",
+    "Version": "14.51.36247.0",
+    "Bytes": 178616,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Windows Software Compatibility Publisher, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  },
+  {
+    "File": "WebView2Loader.dll",
+    "Version": "1.0.3485.44",
+    "Bytes": 159816,
+    "SignatureStatus": "Valid",
+    "Signer": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+  }
+]

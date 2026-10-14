@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Threading;
 using UEAssist.Core;
 
 namespace UEAssist.Indexing
@@ -50,6 +51,7 @@ namespace UEAssist.Indexing
 
         private readonly object gate = new object();
         private List<IndexedSymbol> symbols = new List<IndexedSymbol>();
+        private string[] sourceFiles = Array.Empty<string>();
         private Dictionary<string, List<IndexedSymbol>> completionsByPrefix = new Dictionary<string, List<IndexedSymbol>>(StringComparer.OrdinalIgnoreCase);
         private Dictionary<string, List<IndexedSymbol>> membersByOwner = new Dictionary<string, List<IndexedSymbol>>(StringComparer.OrdinalIgnoreCase);
         private Dictionary<string, string> typeNamesByInsensitiveName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -83,15 +85,15 @@ namespace UEAssist.Indexing
             BuildFiles(files, projectRoot, engineRoot);
         }
 
-        public void BuildProject(string projectRoot)
+        public void BuildProject(string projectRoot, CancellationToken cancellation = default(CancellationToken))
         {
-            BuildFiles(EnumerateProjectFiles(projectRoot), projectRoot, null);
+            BuildFiles(EnumerateProjectFiles(projectRoot), projectRoot, null, cancellation);
         }
 
-        public void BuildEngine(string engineRoot, string projectRoot)
+        public void BuildEngine(string engineRoot, string projectRoot, CancellationToken cancellation = default(CancellationToken))
         {
             var modules = CollectEngineModules(projectRoot);
-            BuildFiles(EnumerateEngineApiFiles(engineRoot, modules), null, engineRoot);
+            BuildFiles(EnumerateEngineApiFiles(engineRoot, modules), null, engineRoot, cancellation);
         }
 
         public void LoadBuiltInApi()
@@ -103,7 +105,8 @@ namespace UEAssist.Indexing
                 Type("UGameplayStatics", "UObject"), Type("UInputMappingContext", "UObject"),
                 Type("UInputAction", "UObject"), Type("FVector"), Type("FRotator"),
                 Macro("UCLASS"), Macro("USTRUCT"), Macro("UENUM"), Macro("UINTERFACE"),
-                Macro("UFUNCTION"), Macro("UPROPERTY"), Macro("UMETA"), Macro("UPARAM"),
+                Macro("UFUNCTION"), Macro("UDELEGATE"), Macro("UPROPERTY"), Macro("UMETA"), Macro("UPARAM"),
+                Macro("GENERATED_UINTERFACE_BODY"), Macro("GENERATED_IINTERFACE_BODY"), Macro("RIGVM_METHOD"),
                 Macro("GENERATED_BODY"), Macro("GENERATED_UCLASS_BODY"), Macro("GENERATED_USTRUCT_BODY"),
                 Specifier("VisibleAnywhere"), Specifier("VisibleDefaultsOnly"), Specifier("EditAnywhere"),
                 Specifier("EditDefaultsOnly"), Specifier("EditInstanceOnly"), Specifier("BlueprintReadOnly"),
@@ -133,7 +136,7 @@ namespace UEAssist.Indexing
             var merged = indexes
                 .Where(index => index != null)
                 .SelectMany(index => index.Snapshot())
-                .GroupBy(item => string.Join("|", item.Name, item.Kind, item.FilePath, item.Line, item.OwnerType), StringComparer.OrdinalIgnoreCase)
+                .GroupBy(item => item.Identity, StringComparer.Ordinal)
                 .Select(group => group.First())
                 .ToList();
 
@@ -141,27 +144,59 @@ namespace UEAssist.Indexing
                 merged,
                 indexes.FirstOrDefault(index => !string.IsNullOrWhiteSpace(index?.ProjectRoot))?.ProjectRoot,
                 indexes.FirstOrDefault(index => !string.IsNullOrWhiteSpace(index?.EngineRoot))?.EngineRoot,
-                indexes.Where(index => index != null).Select(index => index.LastUpdatedUtc).DefaultIfEmpty().Max());
+                indexes.Where(index => index != null).Select(index => index.LastUpdatedUtc).DefaultIfEmpty().Max(),
+                indexes.Where(index => index != null).SelectMany(index => index.SourceFiles()));
         }
 
-        private void BuildFiles(IEnumerable<string> files, string projectRoot, string engineRoot)
+        private void BuildFiles(IEnumerable<string> files, string projectRoot, string engineRoot, CancellationToken cancellation = default(CancellationToken))
         {
+            var fileList = files.Select(file => { cancellation.ThrowIfCancellationRequested(); return file; }).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
             var discovered = new ConcurrentBag<IndexedSymbol>();
             Parallel.ForEach(
-                files.Distinct(StringComparer.OrdinalIgnoreCase),
-                CreateParallelOptions(),
+                fileList,
+                CreateParallelOptions(cancellation),
                 file => ParseFile(file, discovered.Add));
 
             var built = discovered
-                .GroupBy(item => string.Join("|", item.Name, item.Kind, item.FilePath, item.Line, item.OwnerType), StringComparer.OrdinalIgnoreCase)
+                .GroupBy(item => item.Identity, StringComparer.Ordinal)
                 .Select(group => group.First())
                 .ToList();
-            ApplySymbols(built, projectRoot, engineRoot, DateTime.UtcNow);
+            cancellation.ThrowIfCancellationRequested();
+            ApplySymbols(built, projectRoot, engineRoot, DateTime.UtcNow, fileList);
         }
 
         private IndexedSymbol[] Snapshot()
         {
             lock (gate) return symbols.ToArray();
+        }
+
+        public IReadOnlyList<IndexedSymbol> SearchSymbols(string query, string filePath = null, bool functionsOnly = false, int limit = 200)
+        {
+            return Snapshot().Where(item => !string.IsNullOrEmpty(item.FilePath) && !item.IsLocal &&
+                (!functionsOnly || item.Kind == SymbolKind.Function) &&
+                (filePath == null || string.Equals(filePath, item.FilePath, StringComparison.OrdinalIgnoreCase)))
+                .Where(item => MemberMatchRank(item.Name, query ?? string.Empty) != int.MaxValue)
+                .OrderBy(item => MemberMatchRank(item.Name, query ?? string.Empty))
+                .ThenBy(item => item.Name, StringComparer.OrdinalIgnoreCase).ThenBy(item => item.FilePath)
+                .Take(limit).ToArray();
+        }
+
+        public IReadOnlyList<string> SourceFiles() { lock (gate) return sourceFiles.ToArray(); }
+
+        public IReadOnlyList<IndexedSymbol> RelatedSymbols(string name, string owner = null)
+        {
+            var all = Snapshot();
+            var related = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            if (!string.IsNullOrEmpty(owner)) foreach (var type in GetTypeHierarchy(owner)) related.Add(type);
+            foreach (var item in all.Where(item => string.Equals(item.Name, name, StringComparison.OrdinalIgnoreCase)))
+            {
+                if (item.Kind == SymbolKind.Type) foreach (var type in GetTypeHierarchy(item.Name)) related.Add(type);
+                if (!string.IsNullOrEmpty(item.OwnerType)) related.Add(item.OwnerType);
+                if (!string.IsNullOrEmpty(item.ValueType)) related.Add(NormalizeTypeName(item.ValueType));
+            }
+            return all.Where(item => !item.IsLocal && !string.IsNullOrEmpty(item.FilePath) &&
+                (string.Equals(item.Name, name, StringComparison.OrdinalIgnoreCase) || related.Contains(item.OwnerType) || related.Contains(item.Name)))
+                .OrderBy(item => item.Name).ThenBy(item => item.FilePath).Take(2000).ToArray();
         }
 
         private static IndexedSymbol Type(string name, string baseType = null)
@@ -224,7 +259,7 @@ namespace UEAssist.Indexing
             prefix = prefix ?? string.Empty;
             lock (gate)
             {
-                IEnumerable<IndexedSymbol> pool = symbols;
+                IEnumerable<IndexedSymbol> pool = symbols.Where(item => !item.IsLocal);
                 if (prefix.Length > 0 && completionsByPrefix.TryGetValue(GetPrefixKey(prefix), out var indexedPool))
                 {
                     pool = indexedPool;
@@ -264,7 +299,7 @@ namespace UEAssist.Indexing
                     if (!membersByOwner.TryGetValue(owner, out var members)) continue;
                     foreach (var item in members)
                     {
-                        if (MemberMatchRank(item.Name, query) == int.MaxValue || !names.Add(item.Name)) continue;
+                        if (MemberMatchRank(item.Name, query) == int.MaxValue || !names.Add(item.Name + "\0" + item.Signature)) continue;
                         results.Add(item);
                     }
                 }
@@ -309,7 +344,7 @@ namespace UEAssist.Indexing
                         return typeName;
                 }
             }
-            return ResolveVariableType(variableName);
+            return string.IsNullOrEmpty(ownerType) ? ResolveVariableType(variableName) : null;
         }
 
         public string ResolveReturnType(string functionName)
@@ -342,7 +377,7 @@ namespace UEAssist.Indexing
                         return typeName;
                 }
             }
-            return ResolveReturnType(functionName);
+            return string.IsNullOrEmpty(ownerType) ? ResolveReturnType(functionName) : null;
         }
 
         public string FindCorrectTypeCasing(string name)
@@ -394,7 +429,7 @@ namespace UEAssist.Indexing
             return false;
         }
 
-        public IReadOnlyList<SourceSymbol> FindReferences(string name)
+        public IReadOnlyList<SourceSymbol> FindReferences(string name, string activeFile = null, int line = 0, int column = 0, string activeText = null, CancellationToken cancellation = default(CancellationToken))
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -404,29 +439,51 @@ namespace UEAssist.Indexing
             string[] files;
             lock (gate)
             {
-                files = symbols.Select(item => item.FilePath).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+                files = sourceFiles.ToArray();
             }
+            if (!string.IsNullOrEmpty(activeFile)) files = files.Concat(new[] { activeFile }).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
 
             var results = new ConcurrentBag<SourceSymbol>();
-            var pattern = new Regex(@"\b" + Regex.Escape(name) + @"\b", RegexOptions.CultureInvariant);
-            Parallel.ForEach(files, CreateParallelOptions(), file =>
+            int? localDeclaration = null;
+            if (!string.IsNullOrEmpty(activeFile) && line > 0)
             {
-                string[] lines;
-                try { lines = File.ReadAllLines(file); }
+                try
+                {
+                    var context = new CppReferenceContext(activeText ?? File.ReadAllText(activeFile));
+                    var offset = OffsetAt(context.Code, line, column);
+                    localDeclaration = context.DeclarationAt(name, offset);
+                    if (localDeclaration.HasValue) files = new[] { activeFile };
+                }
+                catch (IOException) { }
+                catch (UnauthorizedAccessException) { }
+            }
+            Parallel.ForEach(files, CreateParallelOptions(cancellation), file =>
+            {
+                string text;
+                try { text = activeText != null && string.Equals(file, activeFile, StringComparison.OrdinalIgnoreCase) ? activeText : File.ReadAllText(file); }
                 catch (IOException) { return; }
                 catch (UnauthorizedAccessException) { return; }
 
-                for (var lineIndex = 0; lineIndex < lines.Length; lineIndex++)
+                var context = new CppReferenceContext(text);
+                var offsets = context.References(name, localDeclaration);
+                var currentLine = 1; var lineStart = 0; var position = 0;
+                foreach (var offset in offsets)
                 {
-                    var line = StripLineComment(lines[lineIndex]);
-                    foreach (Match match in pattern.Matches(line))
-                    {
-                        results.Add(new SourceSymbol(name, file, lineIndex + 1, match.Index + 1, SymbolKind.Variable));
-                    }
+                    cancellation.ThrowIfCancellationRequested();
+                    while (position < offset) { if (text[position++] == '\n') { currentLine++; lineStart = position; } }
+                    results.Add(new SourceSymbol(name, file, currentLine, offset - lineStart + 1, SymbolKind.Variable));
                 }
             });
 
             return results.OrderBy(item => item.FilePath, StringComparer.OrdinalIgnoreCase).ThenBy(item => item.Line).ThenBy(item => item.Column).ToArray();
+        }
+
+        private static int OffsetAt(string text, int line, int column)
+        {
+            var position = 0;
+            for (var current = 1; current < line && position < text.Length; current++)
+            { var end = text.IndexOf('\n', position); position = end < 0 ? text.Length : end + 1; }
+            return Math.Min(text.Length, position + Math.Max(0, column - 1));
         }
 
         public void Save(string cachePath)
@@ -435,8 +492,9 @@ namespace UEAssist.Indexing
             List<string> lines;
             lock (gate)
             {
-                lines = new List<string> { "UEASSIST4", Encode(ProjectRoot), Encode(EngineRoot), LastUpdatedUtc.Ticks.ToString() };
-                lines.AddRange(symbols.Select(item => string.Join("\t", Encode(item.Name), (int)item.Kind, Encode(item.FilePath), item.Line, item.Column, Encode(item.OwnerType), Encode(item.ValueType), Encode(item.BaseType))));
+                lines = new List<string> { "UEASSIST5", Encode(ProjectRoot), Encode(EngineRoot), LastUpdatedUtc.Ticks.ToString() };
+                lines.AddRange(sourceFiles.Select(file => "@FILE\t" + Encode(file)));
+                lines.AddRange(symbols.Select(item => string.Join("\t", Encode(item.Name), (int)item.Kind, Encode(item.FilePath), item.Line, item.Column, Encode(item.OwnerType), Encode(item.ValueType), Encode(item.BaseType), Encode(item.ScopeId), Encode(item.Signature), item.IsLocal ? "1" : "0")));
             }
             var temporaryPath = cachePath + "." + Guid.NewGuid().ToString("N") + ".tmp";
             try
@@ -457,19 +515,21 @@ namespace UEAssist.Indexing
             try
             {
                 var lines = File.ReadAllLines(cachePath, Encoding.UTF8);
-                if (lines.Length < 4 || lines[0] != "UEASSIST4") return false;
+                if (lines.Length < 4 || lines[0] != "UEASSIST5") return false;
                 var loaded = new List<IndexedSymbol>();
+                var files = new List<string>();
                 foreach (var line in lines.Skip(4))
                 {
                     var fields = line.Split('\t');
-                    if (fields.Length != 8) continue;
-                    loaded.Add(new IndexedSymbol(Decode(fields[0]), (SymbolKind)int.Parse(fields[1]), Decode(fields[2]), int.Parse(fields[3]), int.Parse(fields[4]), Decode(fields[5]), Decode(fields[6]), Decode(fields[7])));
+                    if (fields.Length == 2 && fields[0] == "@FILE") { files.Add(Decode(fields[1])); continue; }
+                    if (fields.Length != 11) return false;
+                    loaded.Add(new IndexedSymbol(Decode(fields[0]), (SymbolKind)int.Parse(fields[1]), Decode(fields[2]), int.Parse(fields[3]), int.Parse(fields[4]), Decode(fields[5]), Decode(fields[6]), Decode(fields[7]), Decode(fields[8]), Decode(fields[9]), fields[10] == "1"));
                 }
                 ApplySymbols(
                     loaded,
                     Decode(lines[1]),
                     Decode(lines[2]),
-                    new DateTime(long.Parse(lines[3]), DateTimeKind.Utc));
+                    new DateTime(long.Parse(lines[3]), DateTimeKind.Utc), files);
                 return true;
             }
             catch (Exception exception) when (exception is IOException || exception is UnauthorizedAccessException || exception is FormatException)
@@ -501,18 +561,37 @@ namespace UEAssist.Indexing
             catch (IOException) { return; }
             catch (UnauthorizedAccessException) { return; }
 
+            ParseLines(filePath, lines, addSymbol);
+        }
+
+        public static IReadOnlyList<IndexedSymbol> ReadDocumentSymbols(string filePath, string text)
+        {
+            var found = new List<IndexedSymbol>();
+            ParseLines(filePath, (text ?? string.Empty).Replace("\r\n", "\n").Split('\n'), found.Add);
+            return found;
+        }
+
+        private static void ParseLines(string filePath, string[] lines, Action<IndexedSymbol> addSymbol)
+        {
+
+            var context = new CppReferenceContext(string.Join("\n", lines));
+            lines = context.Code.Split('\n');
+            var offset = 0;
             var typeScopes = new Stack<TypeScope>();
             string pendingType = null;
             var braceDepth = 0;
-            var insideBlockComment = false;
             for (var index = 0; index < lines.Length; index++)
             {
-                var line = StripComments(lines[index], ref insideBlockComment);
+                var line = lines[index];
+                Action<IndexedSymbol> emit = item => addSymbol(new IndexedSymbol(item.Name, item.Kind, item.FilePath, item.Line, item.Column,
+                    item.OwnerType, item.ValueType, item.BaseType, context.ScopeAt(offset + Math.Max(0, item.Column - 1)),
+                    item.Kind == SymbolKind.Function ? line.Substring(Math.Max(0, item.Column - 1)).Split('{')[0].Trim().TrimEnd(';') : "",
+                    item.Kind == SymbolKind.Variable && context.IsExecutableAt(offset + Math.Max(0, item.Column - 1))));
                 var typeMatch = TypePattern.Match(line);
                 if (typeMatch.Success)
                 {
                     var typeName = typeMatch.Groups["name"].Value;
-                    addSymbol(new IndexedSymbol(typeName, SymbolKind.Type, filePath, index + 1, typeMatch.Groups["name"].Index + 1, baseType: typeMatch.Groups["base"].Value));
+                    emit(new IndexedSymbol(typeName, SymbolKind.Type, filePath, index + 1, typeMatch.Groups["name"].Index + 1, baseType: typeMatch.Groups["base"].Value));
                     var declarationTail = line.Substring(typeMatch.Index + typeMatch.Length);
                     if (declarationTail.Contains("{"))
                     {
@@ -531,10 +610,10 @@ namespace UEAssist.Indexing
                 }
 
                 var constructedVariableMatch = ConstructedVariablePattern.Match(line);
-                var insideExecutableScope = braceDepth > (typeScopes.Count == 0 ? 0 : typeScopes.Peek().Depth);
+                var insideExecutableScope = context.IsExecutableAt(offset + constructedVariableMatch.Groups["name"].Index);
                 if (insideExecutableScope && constructedVariableMatch.Success && line.TrimEnd().EndsWith(";", StringComparison.Ordinal))
                 {
-                    addSymbol(new IndexedSymbol(
+                    emit(new IndexedSymbol(
                         constructedVariableMatch.Groups["name"].Value,
                         SymbolKind.Variable,
                         filePath,
@@ -547,7 +626,7 @@ namespace UEAssist.Indexing
                 {
                     var constructorMatch = ConstructorPattern.Match(line);
                     var functionMatch = FunctionPattern.Match(line);
-                    var selectedFunction = constructorMatch.Success ? constructorMatch : functionMatch;
+                    var selectedFunction = functionMatch.Success ? functionMatch : constructorMatch;
                     if (selectedFunction.Success)
                     {
                         var owner = selectedFunction.Groups["owner"].Success ? selectedFunction.Groups["owner"].Value : typeScopes.Count == 0 ? null : typeScopes.Peek().Name;
@@ -555,7 +634,7 @@ namespace UEAssist.Indexing
                         if (!IsControlKeyword(name) && UnrealMacroParser.Find(name).Count == 0)
                         {
                             var valueType = selectedFunction.Groups["type"].Success ? selectedFunction.Groups["type"].Value : owner;
-                            addSymbol(new IndexedSymbol(name, SymbolKind.Function, filePath, index + 1, selectedFunction.Groups["name"].Index + 1, owner, valueType));
+                            emit(new IndexedSymbol(name, SymbolKind.Function, filePath, index + 1, selectedFunction.Groups["name"].Index + 1, owner, valueType));
                         }
                     }
                     else if (!line.Contains("("))
@@ -563,7 +642,7 @@ namespace UEAssist.Indexing
                         var variableMatch = VariablePattern.Match(line);
                         if (variableMatch.Success)
                         {
-                            addSymbol(new IndexedSymbol(variableMatch.Groups["name"].Value, SymbolKind.Variable, filePath, index + 1, variableMatch.Groups["name"].Index + 1, typeScopes.Count == 0 ? null : typeScopes.Peek().Name, variableMatch.Groups["type"].Value.Trim()));
+                            emit(new IndexedSymbol(variableMatch.Groups["name"].Value, SymbolKind.Variable, filePath, index + 1, variableMatch.Groups["name"].Index + 1, typeScopes.Count == 0 ? null : typeScopes.Peek().Name, variableMatch.Groups["type"].Value.Trim()));
                         }
                     }
                 }
@@ -574,6 +653,7 @@ namespace UEAssist.Indexing
                 {
                     typeScopes.Pop();
                 }
+                offset += line.Length + 1;
             }
         }
 
@@ -733,12 +813,15 @@ namespace UEAssist.Indexing
             return queryIndex == query.Length;
         }
 
-        private void ApplySymbols(List<IndexedSymbol> newSymbols, string projectRoot, string engineRoot, DateTime updatedUtc)
+        private void ApplySymbols(List<IndexedSymbol> newSymbols, string projectRoot, string engineRoot, DateTime updatedUtc, IEnumerable<string> files = null)
         {
             var lookups = BuildLookups(newSymbols);
+            var newFiles = (files ?? newSymbols.Select(item => item.FilePath)).Where(path => !string.IsNullOrEmpty(path))
+                .Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(path => path).ToArray();
             lock (gate)
             {
                 symbols = newSymbols;
+                sourceFiles = newFiles;
                 completionsByPrefix = lookups.CompletionsByPrefix;
                 membersByOwner = lookups.MembersByOwner;
                 typeNamesByInsensitiveName = lookups.TypeNamesByInsensitiveName;
@@ -759,7 +842,7 @@ namespace UEAssist.Indexing
         private static LookupTables BuildLookups(List<IndexedSymbol> sourceSymbols)
         {
             var distinctCompletions = sourceSymbols
-                .Where(item => !string.IsNullOrEmpty(item.Name) && item.Kind != SymbolKind.Specifier && item.Kind != SymbolKind.Header)
+                .Where(item => !item.IsLocal && !string.IsNullOrEmpty(item.Name) && item.Kind != SymbolKind.Specifier && item.Kind != SymbolKind.Header)
                 .GroupBy(item => item.Name, StringComparer.Ordinal)
                 .Select(group => group.OrderBy(item => item.Kind).First())
                 .OrderBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
@@ -779,7 +862,7 @@ namespace UEAssist.Indexing
                 }
             }
             var members = sourceSymbols
-                .Where(item => !string.IsNullOrEmpty(item.OwnerType))
+                .Where(item => !item.IsLocal && !string.IsNullOrEmpty(item.OwnerType))
                 .GroupBy(item => item.OwnerType, StringComparer.OrdinalIgnoreCase)
                 .ToDictionary(group => group.Key, group => group.ToList(), StringComparer.OrdinalIgnoreCase);
             var typeNames = sourceSymbols
@@ -787,13 +870,13 @@ namespace UEAssist.Indexing
                 .GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
                 .ToDictionary(group => group.Key, group => group.First().Name, StringComparer.OrdinalIgnoreCase);
             var variableTypes = sourceSymbols
-                .Where(item => item.Kind == SymbolKind.Variable && !string.IsNullOrEmpty(item.ValueType))
+                .Where(item => item.Kind == SymbolKind.Variable && !item.IsLocal && !string.IsNullOrEmpty(item.ValueType))
                 .GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
-                .ToDictionary(group => group.Key, group => group.First().ValueType, StringComparer.OrdinalIgnoreCase);
+                .ToDictionary(group => group.Key, group => UniqueValueType(group), StringComparer.OrdinalIgnoreCase);
             var ownerVariableTypes = sourceSymbols
-                .Where(item => item.Kind == SymbolKind.Variable && !string.IsNullOrEmpty(item.OwnerType) && !string.IsNullOrEmpty(item.ValueType))
+                .Where(item => item.Kind == SymbolKind.Variable && !item.IsLocal && !string.IsNullOrEmpty(item.OwnerType) && !string.IsNullOrEmpty(item.ValueType))
                 .GroupBy(item => MemberKey(item.OwnerType, item.Name), StringComparer.OrdinalIgnoreCase)
-                .ToDictionary(group => group.Key, group => group.First().ValueType, StringComparer.OrdinalIgnoreCase);
+                .ToDictionary(group => group.Key, group => UniqueValueType(group), StringComparer.OrdinalIgnoreCase);
             var returnTypes = sourceSymbols
                 .Where(item => item.Kind == SymbolKind.Function && !string.IsNullOrEmpty(item.ValueType))
                 .GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
@@ -832,13 +915,14 @@ namespace UEAssist.Indexing
 
         private static string SelectReturnType(IEnumerable<IndexedSymbol> candidates)
         {
-            return candidates
-                .OrderBy(item => IsTemplatePlaceholderType(item.ValueType) ? 1 : 0)
-                .ThenBy(item => string.Equals(item.ValueType, item.OwnerType, StringComparison.Ordinal) ? 1 : 0)
-                .ThenBy(item => IsHeader(item.FilePath) ? 0 : 1)
-                .ThenBy(item => item.FilePath, StringComparer.OrdinalIgnoreCase)
-                .Select(item => item.ValueType)
-                .First();
+            var values = candidates.Where(item => !IsTemplatePlaceholderType(item.ValueType)).ToArray();
+            return UniqueValueType(values.Length > 0 ? values : candidates);
+        }
+
+        private static string UniqueValueType(IEnumerable<IndexedSymbol> candidates)
+        {
+            var types = candidates.Select(item => item.ValueType).Distinct(StringComparer.Ordinal).Take(2).ToArray();
+            return types.Length == 1 ? types[0] : null;
         }
 
         private static bool IsTemplatePlaceholderType(string typeName)
@@ -936,11 +1020,12 @@ namespace UEAssist.Indexing
             return int.MaxValue;
         }
 
-        private static ParallelOptions CreateParallelOptions()
+        private static ParallelOptions CreateParallelOptions(CancellationToken cancellation = default(CancellationToken))
         {
             return new ParallelOptions
             {
                 MaxDegreeOfParallelism = Math.Min(2, Math.Max(1, Environment.ProcessorCount))
+                , CancellationToken = cancellation
             };
         }
 

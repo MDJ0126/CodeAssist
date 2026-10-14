@@ -1,0 +1,96 @@
+[
+  {
+    "File": "VaCodeInspectionsAsync.17.pkgdef",
+    "Lines": [
+      "[$RootKey$\\Packages\\{3606fe1f-0d41-407b-92ff-509729da3fa6}]",
+      "\"InprocServer32\"=\"$WinDir$\\SYSTEM32\\MSCOREE.DLL\"",
+      "\"Class\"=\"WholeTomato.VaCodeInspections.VaCodeInspectionsPackage\"",
+      "\"CodeBase\"=\"$PackageFolder$\\VaCodeInspectionsAsync.17.dll\"",
+      "\"AllowsBackgroundLoad\"=dword:00000001",
+      "[$RootKey$\\AutoLoadPackages\\{8b382828-6202-11d1-8870-0000f87579d2}]",
+      "[$RootKey$\\AutoLoadPackages\\{d2567162-f94f-4091-8798-a096e61b8b50}]",
+      "[$RootKey$\\AutoLoadPackages\\{f1536ef8-92ec-443c-9ed7-fdadf150da82}]",
+      "\"Name\"=\"WholeTomato.VaCodeInspections.QuickFixListToolWindow\""
+    ]
+  },
+  {
+    "File": "VaDebuggerToolsAsync.17.pkgdef",
+    "Lines": [
+      "[$RootKey$\\Packages\\{66d044cf-265f-4beb-a428-3d37a0835dd5}]",
+      "\"InprocServer32\"=\"$WinDir$\\SYSTEM32\\MSCOREE.DLL\"",
+      "\"Class\"=\"WholeTomatoSoftware.VaDebuggerTools.VaDebuggerToolsPackage\"",
+      "\"CodeBase\"=\"$PackageFolder$\\VaDebuggerToolsAsync.17.dll\"",
+      "\"AllowsBackgroundLoad\"=dword:00000001",
+      "[$RootKey$\\AutoLoadPackages\\{8b382828-6202-11d1-8870-0000f87579d2}]",
+      "[$RootKey$\\AutoLoadPackages\\{adfc4e64-0397-11d1-9f4e-00a0c911004f}]",
+      "[$RootKey$\\AutoLoadPackages\\{adfc4e65-0397-11d1-9f4e-00a0c911004f}]",
+      "[$RootKey$\\AutoLoadPackages\\{d2567162-f94f-4091-8798-a096e61b8b50}]",
+      "[$RootKey$\\AutoLoadPackages\\{f1536ef8-92ec-443c-9ed7-fdadf150da82}]",
+      "\"Name\"=\"WholeTomatoSoftware.VaDebuggerTools.SymbolsExplorer.DebugTextAnalysisToolWindow\"",
+      "\"Name\"=\"WholeTomatoSoftware.VaDebuggerTools.SymbolsExplorer.SymbolsExplorerToolWindow\"",
+      "\"Name\"=\"WholeTomatoSoftware.VaDebuggerTools.SpotTheSymbol.VaMemoryStackViewToolWindow\"",
+      "\"Name\"=\"WholeTomatoSoftware.VaDebuggerTools.VaStepFilterToolWindow\""
+    ]
+  },
+  {
+    "File": "VaManagedPkgAsync.17.pkgdef",
+    "Lines": [
+      "[$RootKey$\\Packages\\{63bbd0d0-98ce-4ad4-b66d-45f1cdf72454}]",
+      "\"InprocServer32\"=\"$WinDir$\\SYSTEM32\\MSCOREE.DLL\"",
+      "\"Class\"=\"WholeTomatoSoftware.VisualAssist.VaManagedPkg\"",
+      "\"CodeBase\"=\"$PackageFolder$\\VaMefAsync.17.dll\"",
+      "\"AllowsBackgroundLoad\"=dword:00000001",
+      "[$RootKey$\\AutoLoadPackages\\{d2567162-f94f-4091-8798-a096e61b8b50}]",
+      "[$RootKey$\\AutoLoadPackages\\{f1536ef8-92ec-443c-9ed7-fdadf150da82}]",
+      "[$RootKey$\\AutoLoadPackages\\{4646B819-1AE0-4E79-97F4-8A8176FDD664}]",
+      "[$RootKey$\\AutoLoadPackages\\{ADFC4E64-0397-11D1-9F4E-00A0C911004F}]",
+      "\"Name\"=\"VA Agent\""
+    ]
+  },
+  {
+    "File": "VaMenuPkg.17.pkgdef",
+    "Lines": [
+      "[$RootKey$\\Packages\\{95cea2d4-e20d-4c59-ac8f-04cbecc0767d}]",
+      "\"InprocServer32\"=\"$WinDir$\\SYSTEM32\\MSCOREE.DLL\"",
+      "\"Class\"=\"WholeTomatoSoftware.VisualAssist.VaMenuPackage\"",
+      "\"CodeBase\"=\"$PackageFolder$\\VaMenuPkg.17.dll\"",
+      "\"AllowsBackgroundLoad\"=dword:00000001"
+    ]
+  },
+  {
+    "File": "VaSourceLinksAsync.17.pkgdef",
+    "Lines": [
+      "[$RootKey$\\Packages\\{99a217b3-7a46-4fef-9c4d-9359efb0c703}]",
+      "\"InprocServer32\"=\"$WinDir$\\SYSTEM32\\MSCOREE.DLL\"",
+      "\"Class\"=\"WholeTomatoSoftware.SourceLinks.HwPackage\"",
+      "\"CodeBase\"=\"$PackageFolder$\\VaSourceLinksAsync.17.dll\"",
+      "\"AllowsBackgroundLoad\"=dword:00000001",
+      "[$RootKey$\\AutoLoadPackages\\{8b382828-6202-11d1-8870-0000f87579d2}]"
+    ]
+  },
+  {
+    "File": "VAXasync.17.pkgdef",
+    "Lines": [
+      "[$RootKey$\\Packages\\{44630d46-96b5-488c-8df9-26e21db8c1a3}]",
+      "\"InprocServer32\"=\"$PackageFolder$\\VaPkgAsync64.dll\"",
+      "\"AllowsBackgroundLoad\"=dword:00000001",
+      "[$RootKey$\\Packages\\{44630d46-96b5-488c-8df9-26e21db8c1a3}\\SatelliteDll]",
+      "[$RootKey$\\AutoLoadPackages\\{E80EF1CB-6D64-4609-8FAA-FEACFD3BC89F}]",
+      "[$RootKey$\\AutoLoadPackages\\{d2567162-f94f-4091-8798-a096e61b8b50}]",
+      "[$RootKey$\\AutoLoadPackages\\{f1536ef8-92ec-443c-9ed7-fdadf150da82}]",
+      "[$RootKey$\\AutoLoadPackages\\{adfc4e64-0397-11d1-9f4e-00a0c911004f}]",
+      "[$RootKey$\\AutoLoadPackages\\{4646B819-1AE0-4E79-97F4-8A8176FDD664}]",
+      "[$RootKey$\\AutoLoadPackages\\{8b382828-6202-11d1-8870-0000f87579d2}]",
+      "\"Name\"=\"SVaGlobalService\"",
+      "\"IsAsyncQueryable\"=dword:00000001",
+      "\"Name\"=\"SVaStepFilterService\"",
+      "\"IsAsyncQueryable\"=dword:00000000",
+      "\"Name\"=\"Visual Assist View\"",
+      "\"Name\"=\"Visual Assist Find References Results\"",
+      "\"Name\"=\"Visual Assist Outline\"",
+      "\"Name\"=\"Visual Assist Cloned Reference Results\"",
+      "\"Name\"=\"Visual Assist Trace Window\"",
+      "\"Name\"=\"Visual Assist Hashtags Window\""
+    ]
+  }
+]

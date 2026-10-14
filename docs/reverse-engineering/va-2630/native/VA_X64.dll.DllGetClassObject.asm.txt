@@ -1,0 +1,116 @@
+
+C:\Users\ehdwn\AppData\Local\Microsoft\VisualStudio\17.0_ca39936f\Extensions\zgy5sun1.aim\VA_X64.dll:	file format coff-x86-64
+
+Disassembly of section .text:
+
+00000001ed6d3440 <DllGetClassObject>:
+1ed6d3440:     	push	rbx
+1ed6d3442:     	push	rbp
+1ed6d3443:     	push	rsi
+1ed6d3444:     	push	rdi
+1ed6d3445:     	push	r14
+1ed6d3447:     	push	r15
+1ed6d3449:     	sub	rsp, 0x38
+1ed6d344d:     	mov	r14, r8
+1ed6d3450:     	mov	rbp, rdx
+1ed6d3453:     	mov	r9, rcx
+1ed6d3456:     	test	r8, r8
+1ed6d3459:     	jne	0x1ed6d346d <DllGetClassObject+0x2d>
+1ed6d345b:     	mov	eax, 0x80004003
+1ed6d3460:     	add	rsp, 0x38
+1ed6d3464:     	pop	r15
+1ed6d3466:     	pop	r14
+1ed6d3468:     	pop	rdi
+1ed6d3469:     	pop	rsi
+1ed6d346a:     	pop	rbp
+1ed6d346b:     	pop	rbx
+1ed6d346c:     	ret
+1ed6d346d:     	mov	qword ptr [r8], 0x0
+1ed6d3474:     	cmp	dword ptr [rip + 0xb107f5], 0x0 # 0x1ee1e3c70
+1ed6d347b:     	jne	0x1ed6d348f <DllGetClassObject+0x4f>
+1ed6d347d:     	mov	eax, 0x8000ffff
+1ed6d3482:     	add	rsp, 0x38
+1ed6d3486:     	pop	r15
+1ed6d3488:     	pop	r14
+1ed6d348a:     	pop	rdi
+1ed6d348b:     	pop	rsi
+1ed6d348c:     	pop	rbp
+1ed6d348d:     	pop	rbx
+1ed6d348e:     	ret
+1ed6d348f:     	xor	edi, edi
+1ed6d3491:     	mov	rcx, qword ptr [rip + 0xb107e8] # 0x1ee1e3c80
+1ed6d3498:     	mov	r8, qword ptr [rip + 0xb107e9] # 0x1ee1e3c88
+1ed6d349f:     	cmp	rcx, r8
+1ed6d34a2:     	jae	0x1ed6d357a <DllGetClassObject+0x13a>
+1ed6d34a8:     	mov	rbx, qword ptr [rcx]
+1ed6d34ab:     	test	rbx, rbx
+1ed6d34ae:     	je	0x1ed6d34db <DllGetClassObject+0x9b>
+1ed6d34b0:     	cmp	qword ptr [rbx + 0x10], rdi
+1ed6d34b4:     	je	0x1ed6d34db <DllGetClassObject+0x9b>
+1ed6d34b6:     	mov	rdx, qword ptr [rbx]
+1ed6d34b9:     	mov	eax, dword ptr [rdx]
+1ed6d34bb:     	cmp	dword ptr [r9], eax
+1ed6d34be:     	jne	0x1ed6d34db <DllGetClassObject+0x9b>
+1ed6d34c0:     	mov	eax, dword ptr [rdx + 0x4]
+1ed6d34c3:     	cmp	dword ptr [r9 + 0x4], eax
+1ed6d34c7:     	jne	0x1ed6d34db <DllGetClassObject+0x9b>
+1ed6d34c9:     	mov	eax, dword ptr [rdx + 0x8]
+1ed6d34cc:     	cmp	dword ptr [r9 + 0x8], eax
+1ed6d34d0:     	jne	0x1ed6d34db <DllGetClassObject+0x9b>
+1ed6d34d2:     	mov	eax, dword ptr [rdx + 0xc]
+1ed6d34d5:     	cmp	dword ptr [r9 + 0xc], eax
+1ed6d34d9:     	je	0x1ed6d34e9 <DllGetClassObject+0xa9>
+1ed6d34db:     	add	rcx, 0x8
+1ed6d34df:     	cmp	rcx, r8
+1ed6d34e2:     	jb	0x1ed6d34a8 <DllGetClassObject+0x68>
+1ed6d34e4:     	jmp	0x1ed6d357a <DllGetClassObject+0x13a>
+1ed6d34e9:     	mov	rsi, qword ptr [rbx + 0x20]
+1ed6d34ed:     	cmp	qword ptr [rsi], rdi
+1ed6d34f0:     	jne	0x1ed6d355b <DllGetClassObject+0x11b>
+1ed6d34f2:     	lea	r15, [rip + 0xb10797]   # 0x1ee1e3c90
+1ed6d34f9:     	mov	qword ptr [rsp + 0x20], r15
+1ed6d34fe:     	mov	byte ptr [rsp + 0x28], dil
+1ed6d3503:     	mov	rcx, r15
+1ed6d3506:     	call	qword ptr [rip + 0x6e3a94] # 0x1eddb6fa0
+1ed6d350c:     	mov	byte ptr [rsp + 0x28], 0x1
+1ed6d3511:     	xor	edi, edi
+1ed6d3513:     	cmp	qword ptr [rsi], rdi
+1ed6d3516:     	jne	0x1ed6d354d <DllGetClassObject+0x10d>
+1ed6d3518:     	mov	qword ptr [rsp + 0x80], rdi
+1ed6d3520:     	lea	r8, [rsp + 0x80]
+1ed6d3528:     	lea	rdx, [rip + 0x6fd841]   # 0x1eddd0d70
+1ed6d352f:     	mov	rcx, qword ptr [rbx + 0x18]
+1ed6d3533:     	call	qword ptr [rbx + 0x10]
+1ed6d3536:     	mov	edi, eax
+1ed6d3538:     	test	eax, eax
+1ed6d353a:     	js	0x1ed6d354d <DllGetClassObject+0x10d>
+1ed6d353c:     	mov	rcx, qword ptr [rsp + 0x80]
+1ed6d3544:     	call	qword ptr [rip + 0x6e3236] # 0x1eddb6780
+1ed6d354a:     	mov	qword ptr [rsi], rax
+1ed6d354d:     	mov	rcx, r15
+1ed6d3550:     	call	qword ptr [rip + 0x6e3a42] # 0x1eddb6f98
+1ed6d3556:     	mov	byte ptr [rsp + 0x28], 0x0
+1ed6d355b:     	mov	rcx, qword ptr [rsi]
+1ed6d355e:     	test	rcx, rcx
+1ed6d3561:     	je	0x1ed6d357a <DllGetClassObject+0x13a>
+1ed6d3563:     	call	qword ptr [rip + 0x6e38e7] # 0x1eddb6e50
+1ed6d3569:     	mov	r9, qword ptr [rax]
+1ed6d356c:     	mov	r8, r14
+1ed6d356f:     	mov	rdx, rbp
+1ed6d3572:     	mov	rcx, rax
+1ed6d3575:     	call	qword ptr [r9]
+1ed6d3578:     	mov	edi, eax
+1ed6d357a:     	cmp	qword ptr [r14], 0x0
+1ed6d357e:     	jne	0x1ed6d358a <DllGetClassObject+0x14a>
+1ed6d3580:     	mov	eax, 0x80040111
+1ed6d3585:     	test	edi, edi
+1ed6d3587:     	cmove	edi, eax
+1ed6d358a:     	mov	eax, edi
+1ed6d358c:     	add	rsp, 0x38
+1ed6d3590:     	pop	r15
+1ed6d3592:     	pop	r14
+1ed6d3594:     	pop	rdi
+1ed6d3595:     	pop	rsi
+1ed6d3596:     	pop	rbp
+1ed6d3597:     	pop	rbx
+1ed6d3598:     	ret

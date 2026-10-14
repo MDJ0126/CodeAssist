@@ -1,0 +1,25 @@
+{
+  "version": "10.9.2630.0",
+  "fixture": "main.cpp",
+  "line": 6,
+  "input": "    const auto Health = Actor.GetHealth();",
+  "access": "Extensions > VAssistX > Smart Select > Extend Selection",
+  "observations": [
+    {
+      "step": 1,
+      "selection": "GetHealth",
+      "evidence": "Native menu, refreshed screenshot blue selection on method name"
+    },
+    {
+      "step": 2,
+      "selection": "Actor.GetHealth();",
+      "evidence": "Native menu, refreshed screenshot blue selection from Actor through final semicolon; editor column 43, input length 42"
+    }
+  ],
+  "shortcutObservation": {
+    "key": "Shift+Alt+]",
+    "result": "Selected whole main function; this is not the same result as native menu",
+    "reason": "Exact key routing unverified; do not count as native VA SmartSelect evidence"
+  },
+  "scope": "Two observed expansion steps only; not full Smart Select parity."
+}

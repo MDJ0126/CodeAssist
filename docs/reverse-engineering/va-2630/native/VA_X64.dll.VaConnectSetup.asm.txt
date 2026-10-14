@@ -1,0 +1,474 @@
+
+C:\Users\ehdwn\AppData\Local\Microsoft\VisualStudio\17.0_ca39936f\Extensions\zgy5sun1.aim\VA_X64.dll:	file format coff-x86-64
+
+Disassembly of section .text:
+
+00000001ed4bd560 <VaConnectSetup>:
+1ed4bd560:     	push	rbp
+1ed4bd562:     	push	rbx
+1ed4bd563:     	push	rsi
+1ed4bd564:     	push	rdi
+1ed4bd565:     	push	r12
+1ed4bd567:     	push	r13
+1ed4bd569:     	push	r14
+1ed4bd56b:     	push	r15
+1ed4bd56d:     	lea	rbp, [rsp - 0x168]
+1ed4bd575:     	sub	rsp, 0x268
+1ed4bd57c:     	mov	rdi, rcx
+1ed4bd57f:     	mov	edx, dword ptr [rip + 0xddc993] # 0x1ee299f18
+1ed4bd585:     	mov	rax, qword ptr gs:[0x58]
+1ed4bd58e:     	mov	ecx, 0x230
+1ed4bd593:     	mov	rax, qword ptr [rax + 8*rdx]
+1ed4bd597:     	mov	eax, dword ptr [rcx + rax]
+1ed4bd59a:     	cmp	dword ptr [rip + 0xdb2588], eax # 0x1ee26fb28
+1ed4bd5a0:     	jg	0x1ed4bdc23 <VaConnectSetup+0x6c3>
+1ed4bd5a6:     	cmp	qword ptr [rip + 0xdb2572], 0x0 # 0x1ee26fb20
+1ed4bd5ae:     	je	0x1ed4bd5df <VaConnectSetup+0x7f>
+1ed4bd5b0:     	lea	r8, [rip + 0x9862b9]    # 0x1ede43870
+1ed4bd5b7:     	lea	rdx, [rip + 0x906c4a]   # 0x1eddc4208
+1ed4bd5be:     	lea	rcx, [rsp + 0x60]
+1ed4bd5c3:     	call	0x1ed105100 <.text+0x104100>
+1ed4bd5c8:     	mov	rbx, qword ptr [rip + 0xdb2551] # 0x1ee26fb20
+1ed4bd5cf:     	call	qword ptr [rip + 0x8f996b] # 0x1eddb6f40
+1ed4bd5d5:     	mov	rcx, rax
+1ed4bd5d8:     	lea	rdx, [rsp + 0x60]
+1ed4bd5dd:     	call	rbx
+1ed4bd5df:     	call	qword ptr [rip + 0x8f999b] # 0x1eddb6f80
+1ed4bd5e5:     	cmp	dword ptr [rip + 0xdbe031], eax # 0x1ee27b61c
+1ed4bd5eb:     	je	0x1ed4bd5f9 <VaConnectSetup+0x99>
+1ed4bd5ed:     	call	qword ptr [rip + 0x8f998d] # 0x1eddb6f80
+1ed4bd5f3:     	mov	dword ptr [rip + 0xdbe023], eax # 0x1ee27b61c
+1ed4bd5f9:     	xor	esi, esi
+1ed4bd5fb:     	test	rdi, rdi
+1ed4bd5fe:     	je	0x1ed4bd69f <VaConnectSetup+0x13f>
+1ed4bd604:     	cmp	qword ptr [rip + 0xdbe9cd], rsi # 0x1ee27bfd8
+1ed4bd60b:     	jne	0x1ed4bd69f <VaConnectSetup+0x13f>
+1ed4bd611:     	mov	rax, qword ptr [rdi]
+1ed4bd614:     	lea	r8, [rip + 0xdbe9bd]    # 0x1ee27bfd8
+1ed4bd61b:     	lea	rdx, [rip + 0x987b1e]   # 0x1ede45140
+1ed4bd622:     	mov	rcx, rdi
+1ed4bd625:     	call	qword ptr [rax]
+1ed4bd627:     	test	eax, eax
+1ed4bd629:     	jns	0x1ed4bd634 <VaConnectSetup+0xd4>
+1ed4bd62b:     	mov	qword ptr [rip + 0xdbe9a6], rsi # 0x1ee27bfd8
+1ed4bd632:     	jmp	0x1ed4bd686 <VaConnectSetup+0x126>
+1ed4bd634:     	mov	rcx, qword ptr [rip + 0xdbe99d] # 0x1ee27bfd8
+1ed4bd63b:     	test	rcx, rcx
+1ed4bd63e:     	je	0x1ed4bd686 <VaConnectSetup+0x126>
+1ed4bd640:     	mov	rbx, qword ptr [rip + 0xdbea81] # 0x1ee27c0c8
+1ed4bd647:     	cmp	rbx, rcx
+1ed4bd64a:     	je	0x1ed4bd67d <VaConnectSetup+0x11d>
+1ed4bd64c:     	test	rcx, rcx
+1ed4bd64f:     	je	0x1ed4bd668 <VaConnectSetup+0x108>
+1ed4bd651:     	mov	rax, qword ptr [rcx]
+1ed4bd654:     	lea	r8, [rip + 0xdbea6d]    # 0x1ee27c0c8
+1ed4bd65b:     	lea	rdx, [rip + 0x987afe]   # 0x1ede45160
+1ed4bd662:     	call	qword ptr [rax]
+1ed4bd664:     	test	eax, eax
+1ed4bd666:     	jns	0x1ed4bd66f <VaConnectSetup+0x10f>
+1ed4bd668:     	mov	qword ptr [rip + 0xdbea59], rsi # 0x1ee27c0c8
+1ed4bd66f:     	test	rbx, rbx
+1ed4bd672:     	je	0x1ed4bd67d <VaConnectSetup+0x11d>
+1ed4bd674:     	mov	rax, qword ptr [rbx]
+1ed4bd677:     	mov	rcx, rbx
+1ed4bd67a:     	call	qword ptr [rax + 0x10]
+1ed4bd67d:     	cmp	qword ptr [rip + 0xdbe954], rsi # 0x1ee27bfd8
+1ed4bd684:     	jne	0x1ed4bd69f <VaConnectSetup+0x13f>
+1ed4bd686:     	cmp	qword ptr [rip + 0xdbe8c3], rsi # 0x1ee27bf50
+1ed4bd68d:     	jne	0x1ed4bd69f <VaConnectSetup+0x13f>
+1ed4bd68f:     	mov	qword ptr [rip + 0xdbe8ba], rdi # 0x1ee27bf50
+1ed4bd696:     	mov	rax, qword ptr [rdi]
+1ed4bd699:     	mov	rcx, rdi
+1ed4bd69c:     	call	qword ptr [rax + 0x8]
+1ed4bd69f:     	mov	rcx, qword ptr [rip + 0xdbf0da] # 0x1ee27c780
+1ed4bd6a6:     	test	rcx, rcx
+1ed4bd6a9:     	je	0x1ed4bd6cd <VaConnectSetup+0x16d>
+1ed4bd6ab:     	mov	rdx, qword ptr [rip + 0xdb3efe] # 0x1ee2715b0
+1ed4bd6b2:     	test	rdx, rdx
+1ed4bd6b5:     	je	0x1ed4bdb8b <VaConnectSetup+0x62b>
+1ed4bd6bb:     	mov	eax, dword ptr [rdx + 0x8]
+1ed4bd6be:     	sub	eax, 0xf
+1ed4bd6c1:     	cmp	eax, 0x4
+1ed4bd6c4:     	ja	0x1ed4bd6fe <VaConnectSetup+0x19e>
+1ed4bd6c6:     	call	0x1ed510fd0 <VaConnectSetup+0x53a70>
+1ed4bd6cb:     	jmp	0x1ed4bd6f7 <VaConnectSetup+0x197>
+1ed4bd6cd:     	mov	ecx, 0x46e8
+1ed4bd6d2:     	call	0x1eda2e4c0 <PeekMessageWHook+0xcd650>
+1ed4bd6d7:     	mov	qword ptr [rbp + 0x1b0], rax
+1ed4bd6de:     	test	rax, rax
+1ed4bd6e1:     	je	0x1ed4bd6ed <VaConnectSetup+0x18d>
+1ed4bd6e3:     	mov	rcx, rax
+1ed4bd6e6:     	call	0x1ed522240 <VaConnectSetup+0x64ce0>
+1ed4bd6eb:     	jmp	0x1ed4bd6f0 <VaConnectSetup+0x190>
+1ed4bd6ed:     	mov	rax, rsi
+1ed4bd6f0:     	mov	qword ptr [rip + 0xdbf089], rax # 0x1ee27c780
+1ed4bd6f7:     	mov	rdx, qword ptr [rip + 0xdb3eb2] # 0x1ee2715b0
+1ed4bd6fe:     	test	rdx, rdx
+1ed4bd701:     	je	0x1ed4bdb8b <VaConnectSetup+0x62b>
+1ed4bd707:     	mov	eax, dword ptr [rdx + 0x8]
+1ed4bd70a:     	sub	eax, 0xe
+1ed4bd70d:     	cmp	eax, 0x5
+1ed4bd710:     	ja	0x1ed4bdb8b <VaConnectSetup+0x62b>
+1ed4bd716:     	cmp	qword ptr [rip + 0xdbe8ba], 0x0 # 0x1ee27bfd8
+1ed4bd71e:     	je	0x1ed4bdb8b <VaConnectSetup+0x62b>
+1ed4bd724:     	call	0x1eda2fdc8 <PeekMessageWHook+0xcef58>
+1ed4bd729:     	mov	rcx, rax
+1ed4bd72c:     	test	rax, rax
+1ed4bd72f:     	je	0x1ed4bdc71 <VaConnectSetup+0x711>
+1ed4bd735:     	mov	rax, qword ptr [rax]
+1ed4bd738:     	call	qword ptr [rax + 0x18]
+1ed4bd73b:     	add	rax, 0x18
+1ed4bd73f:     	mov	qword ptr [rsp + 0x38], rax
+1ed4bd744:     	lea	rdx, [rip + 0x98613d]   # 0x1ede43888
+1ed4bd74b:     	lea	rcx, [rsp + 0x38]
+1ed4bd750:     	call	0x1ed1214f0 <.text+0x1204f0>
+1ed4bd755:     	test	al, al
+1ed4bd757:     	jne	0x1ed4bd771 <VaConnectSetup+0x211>
+1ed4bd759:     	mov	r8d, 0xb
+1ed4bd75f:     	lea	rdx, [rip + 0x986122]   # 0x1ede43888
+1ed4bd766:     	lea	rcx, [rsp + 0x38]
+1ed4bd76b:     	call	0x1ed11bb80 <.text+0x11ab80>
+1ed4bd770:     	nop
+1ed4bd771:     	lea	rax, [rip + 0x9823df]   # 0x1ede3fb57
+1ed4bd778:     	mov	qword ptr [rsp + 0x20], rax
+1ed4bd77d:     	lea	r9, [rip + 0x986114]    # 0x1ede43898
+1ed4bd784:     	mov	r8, qword ptr [rip + 0xdbf015] # 0x1ee27c7a0
+1ed4bd78b:     	mov	rdx, -0x7fffffff
+1ed4bd792:     	lea	rcx, [rsp + 0x58]
+1ed4bd797:     	call	0x1ed46c5f0 <DllUnregisterServer+0x1633a0>
+1ed4bd79c:     	nop
+1ed4bd79d:     	mov	qword ptr [rsp + 0x50], rsi
+1ed4bd7a2:     	mov	rcx, qword ptr [rip + 0xdbe82f] # 0x1ee27bfd8
+1ed4bd7a9:     	mov	rax, qword ptr [rcx]
+1ed4bd7ac:     	lea	rdx, [rsp + 0x50]
+1ed4bd7b1:     	call	qword ptr [rax + 0x178]
+1ed4bd7b7:     	mov	rbx, qword ptr [rsp + 0x50]
+1ed4bd7bc:     	call	0x1eda2fdc8 <PeekMessageWHook+0xcef58>
+1ed4bd7c1:     	mov	rcx, rax
+1ed4bd7c4:     	test	rax, rax
+1ed4bd7c7:     	je	0x1ed4bdc7c <VaConnectSetup+0x71c>
+1ed4bd7cd:     	mov	rax, qword ptr [rax]
+1ed4bd7d0:     	call	qword ptr [rax + 0x18]
+1ed4bd7d3:     	add	rax, 0x18
+1ed4bd7d7:     	mov	qword ptr [rsp + 0x40], rax
+1ed4bd7dc:     	mov	rdx, rbx
+1ed4bd7df:     	lea	rcx, [rsp + 0x40]
+1ed4bd7e4:     	call	0x1ed11ab00 <.text+0x119b00>
+1ed4bd7e9:     	test	al, al
+1ed4bd7eb:     	jne	0x1ed4bd80f <VaConnectSetup+0x2af>
+1ed4bd7ed:     	test	rbx, rbx
+1ed4bd7f0:     	jne	0x1ed4bd7f6 <VaConnectSetup+0x296>
+1ed4bd7f2:     	mov	eax, esi
+1ed4bd7f4:     	jmp	0x1ed4bd7fe <VaConnectSetup+0x29e>
+1ed4bd7f6:     	mov	rcx, rbx
+1ed4bd7f9:     	call	0x1edc3ad80 <PeekMessageWHook+0x2d9f10>
+1ed4bd7fe:     	mov	r8d, eax
+1ed4bd801:     	mov	rdx, rbx
+1ed4bd804:     	lea	rcx, [rsp + 0x40]
+1ed4bd809:     	call	0x1ed11bd10 <.text+0x11ad10>
+1ed4bd80e:     	nop
+1ed4bd80f:     	mov	rdi, qword ptr [rsp + 0x40]
+1ed4bd814:     	mov	r15d, dword ptr [rdi - 0x10]
+1ed4bd818:     	mov	ebx, 0xffffffff
+1ed4bd81d:     	test	r15d, r15d
+1ed4bd820:     	je	0x1ed4bdb2a <VaConnectSetup+0x5ca>
+1ed4bd826:     	mov	edx, 0x2f
+1ed4bd82b:     	lea	rsi, [rip + 0x98608e]   # 0x1ede438c0
+1ed4bd832:     	mov	rcx, rsi
+1ed4bd835:     	call	0x1edc3aed0 <PeekMessageWHook+0x2da060>
+1ed4bd83a:     	mov	r12, rax
+1ed4bd83d:     	mov	ecx, 0x7fffffff
+1ed4bd842:     	sub	ecx, eax
+1ed4bd844:     	cmp	ecx, r15d
+1ed4bd847:     	jl	0x1ed4bdc18 <VaConnectSetup+0x6b8>
+1ed4bd84d:     	lea	r14d, [rax + r15]
+1ed4bd851:     	test	r14d, r14d
+1ed4bd854:     	js	0x1ed4bdc18 <VaConnectSetup+0x6b8>
+1ed4bd85a:     	mov	r13, rsi
+1ed4bd85d:     	sub	r13, rdi
+1ed4bd860:     	mov	rax, r13
+1ed4bd863:     	sar	rax
+1ed4bd866:     	mov	qword ptr [rbp + 0x1b0], rax
+1ed4bd86d:     	mov	ecx, 0x1
+1ed4bd872:     	sub	ecx, dword ptr [rdi - 0x8]
+1ed4bd875:     	mov	eax, dword ptr [rdi - 0xc]
+1ed4bd878:     	sub	eax, r14d
+1ed4bd87b:     	or	eax, ecx
+1ed4bd87d:     	jge	0x1ed4bd891 <VaConnectSetup+0x331>
+1ed4bd87f:     	mov	edx, r14d
+1ed4bd882:     	lea	rcx, [rsp + 0x40]
+1ed4bd887:     	call	0x1ed11b710 <.text+0x11a710>
+1ed4bd88c:     	mov	rdi, qword ptr [rsp + 0x40]
+1ed4bd891:     	cmp	qword ptr [rbp + 0x1b0], r15
+1ed4bd898:     	ja	0x1ed4bd8a4 <VaConnectSetup+0x344>
+1ed4bd89a:     	mov	rsi, r13
+1ed4bd89d:     	and	rsi, -0x2
+1ed4bd8a1:     	add	rsi, rdi
+1ed4bd8a4:     	movsxd	rax, r12d
+1ed4bd8a7:     	lea	r8, [rax + rax]
+1ed4bd8ab:     	test	r8, r8
+1ed4bd8ae:     	je	0x1ed4bd8df <VaConnectSetup+0x37f>
+1ed4bd8b0:     	lea	rcx, [rdi + 2*r15]
+1ed4bd8b4:     	test	rcx, rcx
+1ed4bd8b7:     	je	0x1ed4bd8cf <VaConnectSetup+0x36f>
+1ed4bd8b9:     	test	rsi, rsi
+1ed4bd8bc:     	je	0x1ed4bd8c8 <VaConnectSetup+0x368>
+1ed4bd8be:     	mov	rdx, rsi
+1ed4bd8c1:     	call	0x1edc67640 <PeekMessageWHook+0x3067d0>
+1ed4bd8c6:     	jmp	0x1ed4bd8df <VaConnectSetup+0x37f>
+1ed4bd8c8:     	xor	edx, edx
+1ed4bd8ca:     	call	0x1edc67cf0 <PeekMessageWHook+0x306e80>
+1ed4bd8cf:     	call	0x1edc320d0 <PeekMessageWHook+0x2d1260>
+1ed4bd8d4:     	mov	dword ptr [rax], 0x16
+1ed4bd8da:     	call	0x1edc31ee0 <PeekMessageWHook+0x2d1070>
+1ed4bd8df:     	cmp	r14d, dword ptr [rdi - 0xc]
+1ed4bd8e3:     	jg	0x1ed4bdc18 <VaConnectSetup+0x6b8>
+1ed4bd8e9:     	mov	dword ptr [rdi - 0x10], r14d
+1ed4bd8ed:     	movsxd	rcx, r14d
+1ed4bd8f0:     	xor	eax, eax
+1ed4bd8f2:     	mov	word ptr [rdi + 2*rcx], ax
+1ed4bd8f6:     	call	0x1eda2fdc8 <PeekMessageWHook+0xcef58>
+1ed4bd8fb:     	mov	rcx, rax
+1ed4bd8fe:     	test	rax, rax
+1ed4bd901:     	je	0x1ed4bdc87 <VaConnectSetup+0x727>
+1ed4bd907:     	mov	rax, qword ptr [rax]
+1ed4bd90a:     	call	qword ptr [rax + 0x18]
+1ed4bd90d:     	add	rax, 0x18
+1ed4bd911:     	mov	qword ptr [rsp + 0x30], rax
+1ed4bd916:     	lea	rdx, [rip + 0x986003]   # 0x1ede43920
+1ed4bd91d:     	lea	rcx, [rsp + 0x30]
+1ed4bd922:     	call	0x1ed1214f0 <.text+0x1204f0>
+1ed4bd927:     	test	al, al
+1ed4bd929:     	jne	0x1ed4bd943 <VaConnectSetup+0x3e3>
+1ed4bd92b:     	mov	r8d, 0x23
+1ed4bd931:     	lea	rdx, [rip + 0x985fe8]   # 0x1ede43920
+1ed4bd938:     	lea	rcx, [rsp + 0x30]
+1ed4bd93d:     	call	0x1ed11bb80 <.text+0x11ab80>
+1ed4bd942:     	nop
+1ed4bd943:     	lea	rdx, [rip + 0x985ffa]   # 0x1ede43944
+1ed4bd94a:     	lea	rcx, [rsp + 0x30]
+1ed4bd94f:     	call	0x1ed4d34f0 <VaConnectSetup+0x15f90>
+1ed4bd954:     	lea	rdx, [rsp + 0x38]
+1ed4bd959:     	lea	rcx, [rsp + 0x30]
+1ed4bd95e:     	call	0x1ed4d33f0 <VaConnectSetup+0x15e90>
+1ed4bd963:     	mov	r14, qword ptr [rsp + 0x30]
+1ed4bd968:     	call	0x1eda2fdc8 <PeekMessageWHook+0xcef58>
+1ed4bd96d:     	mov	rcx, rax
+1ed4bd970:     	test	rax, rax
+1ed4bd973:     	je	0x1ed4bdc92 <VaConnectSetup+0x732>
+1ed4bd979:     	mov	rax, qword ptr [rax]
+1ed4bd97c:     	call	qword ptr [rax + 0x18]
+1ed4bd97f:     	add	rax, 0x18
+1ed4bd983:     	mov	qword ptr [rbp + 0x1b0], rax
+1ed4bd98a:     	mov	rdx, rdi
+1ed4bd98d:     	lea	rcx, [rbp + 0x1b0]
+1ed4bd994:     	call	0x1ed1214f0 <.text+0x1204f0>
+1ed4bd999:     	test	al, al
+1ed4bd99b:     	jne	0x1ed4bd9ad <VaConnectSetup+0x44d>
+1ed4bd99d:     	mov	rdx, rdi
+1ed4bd9a0:     	lea	rcx, [rbp + 0x1b0]
+1ed4bd9a7:     	call	0x1ed2733e0 <VAGraphCallback+0xe2030>
+1ed4bd9ac:     	nop
+1ed4bd9ad:     	mov	rsi, qword ptr [rbp + 0x1b0]
+1ed4bd9b4:     	lea	rax, [rip + 0x985f8d]   # 0x1ede43948
+1ed4bd9bb:     	mov	qword ptr [rsp + 0x20], rax
+1ed4bd9c0:     	mov	r9, r14
+1ed4bd9c3:     	mov	r8, rsi
+1ed4bd9c6:     	mov	rdx, -0x7fffffff
+1ed4bd9cd:     	lea	rcx, [rsp + 0x48]
+1ed4bd9d2:     	call	0x1ed46c5f0 <DllUnregisterServer+0x1633a0>
+1ed4bd9d7:     	nop
+1ed4bd9d8:     	mov	eax, ebx
+1ed4bd9da:     	lock
+1ed4bd9db:     	xadd	dword ptr [rsi - 0x8], eax
+1ed4bd9df:     	sub	eax, 0x1
+1ed4bd9e2:     	jg	0x1ed4bd9f1 <VaConnectSetup+0x491>
+1ed4bd9e4:     	lea	rdx, [rsi - 0x18]
+1ed4bd9e8:     	mov	rcx, qword ptr [rdx]
+1ed4bd9eb:     	mov	rax, qword ptr [rcx]
+1ed4bd9ee:     	call	qword ptr [rax + 0x8]
+1ed4bd9f1:     	lea	rdx, [rip + 0x985f54]   # 0x1ede4394c
+1ed4bd9f8:     	mov	rcx, qword ptr [rsp + 0x48]
+1ed4bd9fd:     	call	0x1edc3bc0c <PeekMessageWHook+0x2dad9c>
+1ed4bda02:     	test	eax, eax
+1ed4bda04:     	je	0x1ed4bda44 <VaConnectSetup+0x4e4>
+1ed4bda06:     	lea	rdx, [rip + 0x985f43]   # 0x1ede43950
+1ed4bda0d:     	mov	rcx, qword ptr [rsp + 0x48]
+1ed4bda12:     	call	0x1edc3bc0c <PeekMessageWHook+0x2dad9c>
+1ed4bda17:     	test	eax, eax
+1ed4bda19:     	je	0x1ed4bdaeb <VaConnectSetup+0x58b>
+1ed4bda1f:     	mov	r15, qword ptr [rsp + 0x38]
+1ed4bda24:     	test	r15, r15
+1ed4bda27:     	je	0x1ed4bdc9d <VaConnectSetup+0x73d>
+1ed4bda2d:     	mov	rdx, r15
+1ed4bda30:     	mov	rcx, qword ptr [rsp + 0x58]
+1ed4bda35:     	call	0x1edc3bc0c <PeekMessageWHook+0x2dad9c>
+1ed4bda3a:     	test	eax, eax
+1ed4bda3c:     	je	0x1ed4bdaeb <VaConnectSetup+0x58b>
+1ed4bda42:     	jmp	0x1ed4bda49 <VaConnectSetup+0x4e9>
+1ed4bda44:     	mov	r15, qword ptr [rsp + 0x38]
+1ed4bda49:     	mov	r14, qword ptr [rsp + 0x30]
+1ed4bda4e:     	call	0x1eda2fdc8 <PeekMessageWHook+0xcef58>
+1ed4bda53:     	mov	rcx, rax
+1ed4bda56:     	test	rax, rax
+1ed4bda59:     	je	0x1ed4bdc9d <VaConnectSetup+0x73d>
+1ed4bda5f:     	mov	rax, qword ptr [rax]
+1ed4bda62:     	call	qword ptr [rax + 0x18]
+1ed4bda65:     	add	rax, 0x18
+1ed4bda69:     	mov	qword ptr [rbp + 0x1b0], rax
+1ed4bda70:     	mov	rdx, rdi
+1ed4bda73:     	lea	rcx, [rbp + 0x1b0]
+1ed4bda7a:     	call	0x1ed1214f0 <.text+0x1204f0>
+1ed4bda7f:     	test	al, al
+1ed4bda81:     	jne	0x1ed4bda93 <VaConnectSetup+0x533>
+1ed4bda83:     	mov	rdx, rdi
+1ed4bda86:     	lea	rcx, [rbp + 0x1b0]
+1ed4bda8d:     	call	0x1ed2733e0 <VAGraphCallback+0xe2030>
+1ed4bda92:     	nop
+1ed4bda93:     	mov	rsi, qword ptr [rbp + 0x1b0]
+1ed4bda9a:     	lea	r9, [rip + 0x985eb3]    # 0x1ede43954
+1ed4bdaa1:     	mov	r8, r14
+1ed4bdaa4:     	mov	rdx, rsi
+1ed4bdaa7:     	mov	rcx, -0x7fffffff
+1ed4bdaae:     	call	0x1ed46d530 <DllUnregisterServer+0x1642e0>
+1ed4bdab3:     	nop
+1ed4bdab4:     	mov	eax, ebx
+1ed4bdab6:     	lock
+1ed4bdab7:     	xadd	dword ptr [rsi - 0x8], eax
+1ed4bdabb:     	sub	eax, 0x1
+1ed4bdabe:     	jg	0x1ed4bdacd <VaConnectSetup+0x56d>
+1ed4bdac0:     	lea	rdx, [rsi - 0x18]
+1ed4bdac4:     	mov	rcx, qword ptr [rdx]
+1ed4bdac7:     	mov	rax, qword ptr [rcx]
+1ed4bdaca:     	call	qword ptr [rax + 0x8]
+1ed4bdacd:     	mov	r9, r15
+1ed4bdad0:     	lea	r8, [rip + 0x985dc1]    # 0x1ede43898
+1ed4bdad7:     	mov	rdx, qword ptr [rip + 0xdbecc2] # 0x1ee27c7a0
+1ed4bdade:     	mov	rcx, -0x7fffffff
+1ed4bdae5:     	call	0x1ed46d530 <DllUnregisterServer+0x1642e0>
+1ed4bdaea:     	nop
+1ed4bdaeb:     	mov	rdx, qword ptr [rsp + 0x48]
+1ed4bdaf0:     	add	rdx, -0x18
+1ed4bdaf4:     	mov	eax, ebx
+1ed4bdaf6:     	lock
+1ed4bdaf7:     	xadd	dword ptr [rdx + 0x10], eax
+1ed4bdafb:     	sub	eax, 0x1
+1ed4bdafe:     	jg	0x1ed4bdb0a <VaConnectSetup+0x5aa>
+1ed4bdb00:     	mov	rcx, qword ptr [rdx]
+1ed4bdb03:     	mov	rax, qword ptr [rcx]
+1ed4bdb06:     	call	qword ptr [rax + 0x8]
+1ed4bdb09:     	nop
+1ed4bdb0a:     	mov	rdx, qword ptr [rsp + 0x30]
+1ed4bdb0f:     	add	rdx, -0x18
+1ed4bdb13:     	mov	eax, ebx
+1ed4bdb15:     	lock
+1ed4bdb16:     	xadd	dword ptr [rdx + 0x10], eax
+1ed4bdb1a:     	sub	eax, 0x1
+1ed4bdb1d:     	jg	0x1ed4bdb28 <VaConnectSetup+0x5c8>
+1ed4bdb1f:     	mov	rcx, qword ptr [rdx]
+1ed4bdb22:     	mov	rax, qword ptr [rcx]
+1ed4bdb25:     	call	qword ptr [rax + 0x8]
+1ed4bdb28:     	xor	esi, esi
+1ed4bdb2a:     	lea	rdx, [rdi - 0x18]
+1ed4bdb2e:     	mov	eax, ebx
+1ed4bdb30:     	lock
+1ed4bdb31:     	xadd	dword ptr [rdx + 0x10], eax
+1ed4bdb35:     	sub	eax, 0x1
+1ed4bdb38:     	jg	0x1ed4bdb44 <VaConnectSetup+0x5e4>
+1ed4bdb3a:     	mov	rcx, qword ptr [rdx]
+1ed4bdb3d:     	mov	rax, qword ptr [rcx]
+1ed4bdb40:     	call	qword ptr [rax + 0x8]
+1ed4bdb43:     	nop
+1ed4bdb44:     	mov	rcx, qword ptr [rsp + 0x50]
+1ed4bdb49:     	call	qword ptr [rip + 0x8f9711] # 0x1eddb7260
+1ed4bdb4f:     	nop
+1ed4bdb50:     	mov	rdx, qword ptr [rsp + 0x58]
+1ed4bdb55:     	add	rdx, -0x18
+1ed4bdb59:     	mov	eax, ebx
+1ed4bdb5b:     	lock
+1ed4bdb5c:     	xadd	dword ptr [rdx + 0x10], eax
+1ed4bdb60:     	sub	eax, 0x1
+1ed4bdb63:     	jg	0x1ed4bdb6f <VaConnectSetup+0x60f>
+1ed4bdb65:     	mov	rcx, qword ptr [rdx]
+1ed4bdb68:     	mov	rax, qword ptr [rcx]
+1ed4bdb6b:     	call	qword ptr [rax + 0x8]
+1ed4bdb6e:     	nop
+1ed4bdb6f:     	mov	rdx, qword ptr [rsp + 0x38]
+1ed4bdb74:     	add	rdx, -0x18
+1ed4bdb78:     	lock
+1ed4bdb79:     	xadd	dword ptr [rdx + 0x10], ebx
+1ed4bdb7d:     	sub	ebx, 0x1
+1ed4bdb80:     	jg	0x1ed4bdb8b <VaConnectSetup+0x62b>
+1ed4bdb82:     	mov	rcx, qword ptr [rdx]
+1ed4bdb85:     	mov	rax, qword ptr [rcx]
+1ed4bdb88:     	call	qword ptr [rax + 0x8]
+1ed4bdb8b:     	call	0x1ed9071d0 <GetVaService+0x36a60>
+1ed4bdb90:     	mov	rax, qword ptr [rip + 0xdb3a19] # 0x1ee2715b0
+1ed4bdb97:     	mov	ecx, dword ptr [rax + 0x8]
+1ed4bdb9a:     	sub	ecx, 0xf
+1ed4bdb9d:     	cmp	ecx, 0x4
+1ed4bdba0:     	ja	0x1ed4bdbc4 <VaConnectSetup+0x664>
+1ed4bdba2:     	mov	qword ptr [rsp + 0x20], rsi
+1ed4bdba7:     	xor	r9d, r9d
+1ed4bdbaa:     	xor	r8d, r8d
+1ed4bdbad:     	xor	edx, edx
+1ed4bdbaf:     	lea	rcx, [rip + 0x988202]   # 0x1ede45db8
+1ed4bdbb6:     	call	0x1eda4d600 <PeekMessageWHook+0xec790>
+1ed4bdbbb:     	lea	rax, [rip + 0xd289be]   # 0x1ee1e6580
+1ed4bdbc2:     	jmp	0x1ed4bdc04 <VaConnectSetup+0x6a4>
+1ed4bdbc4:     	mov	rcx, qword ptr [rip + 0xd2a9f5] # 0x1ee1e85c0
+1ed4bdbcb:     	test	rcx, rcx
+1ed4bdbce:     	je	0x1ed4bdbf6 <VaConnectSetup+0x696>
+1ed4bdbd0:     	mov	rax, qword ptr [rcx]
+1ed4bdbd3:     	lea	rdx, [rip + 0xd289ae]   # 0x1ee1e6588
+1ed4bdbda:     	call	qword ptr [rax + 0x38]
+1ed4bdbdd:     	test	eax, eax
+1ed4bdbdf:     	je	0x1ed4bdbf6 <VaConnectSetup+0x696>
+1ed4bdbe1:     	mov	byte ptr [rip + 0xd289a8], 0x1 # 0x1ee1e6590
+1ed4bdbe8:     	call	0x1ed751390 <DllCanUnloadNow+0x7ddf0>
+1ed4bdbed:     	lea	rax, [rip + 0xd2898c]   # 0x1ee1e6580
+1ed4bdbf4:     	jmp	0x1ed4bdc04 <VaConnectSetup+0x6a4>
+1ed4bdbf6:     	lea	rcx, [rip + 0xd2898b]   # 0x1ee1e6588
+1ed4bdbfd:     	call	0x1ed4ba600 <DllUnregisterServer+0x1b13b0>
+1ed4bdc02:     	xor	eax, eax
+1ed4bdc04:     	add	rsp, 0x268
+1ed4bdc0b:     	pop	r15
+1ed4bdc0d:     	pop	r14
+1ed4bdc0f:     	pop	r13
+1ed4bdc11:     	pop	r12
+1ed4bdc13:     	pop	rdi
+1ed4bdc14:     	pop	rsi
+1ed4bdc15:     	pop	rbx
+1ed4bdc16:     	pop	rbp
+1ed4bdc17:     	ret
+1ed4bdc18:     	mov	ecx, 0x80070057
+1ed4bdc1d:     	call	0x1ed119480 <.text+0x118480>
+1ed4bdc22:     	nop
+1ed4bdc23:     	lea	rcx, [rip + 0xdb1efe]   # 0x1ee26fb28
+1ed4bdc2a:     	call	0x1edbc9890 <PeekMessageWHook+0x268a20>
+1ed4bdc2f:     	cmp	dword ptr [rip + 0xdb1ef2], -0x1 # 0x1ee26fb28
+1ed4bdc36:     	jne	0x1ed4bd5a6 <VaConnectSetup+0x46>
+1ed4bdc3c:     	lea	rcx, [rip + 0x9060d5]   # 0x1eddc3d18
+1ed4bdc43:     	call	qword ptr [rip + 0x8f92df] # 0x1eddb6f28
+1ed4bdc49:     	mov	rcx, rax
+1ed4bdc4c:     	lea	rdx, [rip + 0x90659d]   # 0x1eddc41f0
+1ed4bdc53:     	call	qword ptr [rip + 0x8f94bf] # 0x1eddb7118
+1ed4bdc59:     	mov	qword ptr [rip + 0xdb1ec0], rax # 0x1ee26fb20
+1ed4bdc60:     	lea	rcx, [rip + 0xdb1ec1]   # 0x1ee26fb28
+1ed4bdc67:     	call	0x1edbc9820 <PeekMessageWHook+0x2689b0>
+1ed4bdc6c:     	jmp	0x1ed4bd5a6 <VaConnectSetup+0x46>
+1ed4bdc71:     	mov	ecx, 0x80004005
+1ed4bdc76:     	call	0x1ed119480 <.text+0x118480>
+1ed4bdc7b:     	nop
+1ed4bdc7c:     	mov	ecx, 0x80004005
+1ed4bdc81:     	call	0x1ed119480 <.text+0x118480>
+1ed4bdc86:     	nop
+1ed4bdc87:     	mov	ecx, 0x80004005
+1ed4bdc8c:     	call	0x1ed119480 <.text+0x118480>
+1ed4bdc91:     	nop
+1ed4bdc92:     	mov	ecx, 0x80004005
+1ed4bdc97:     	call	0x1ed119480 <.text+0x118480>
+1ed4bdc9c:     	nop
+1ed4bdc9d:     	mov	ecx, 0x80004005
+1ed4bdca2:     	call	0x1ed119480 <.text+0x118480>
+1ed4bdca7:     	int3

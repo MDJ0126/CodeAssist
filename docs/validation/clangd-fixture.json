@@ -1,0 +1,306 @@
+{
+  "GetHealth@6": [
+    {
+      "range": {
+        "end": {
+          "character": 27,
+          "line": 2
+        },
+        "start": {
+          "character": 18,
+          "line": 2
+        }
+      },
+      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+    }
+  ],
+  "Select@8": [
+    {
+      "range": {
+        "end": {
+          "character": 25,
+          "line": 13
+        },
+        "start": {
+          "character": 19,
+          "line": 13
+        }
+      },
+      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+    }
+  ],
+  "Select@9": [
+    {
+      "range": {
+        "end": {
+          "character": 28,
+          "line": 14
+        },
+        "start": {
+          "character": 22,
+          "line": 14
+        }
+      },
+      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+    }
+  ],
+  "GetHealthReferences": [
+    {
+      "range": {
+        "end": {
+          "character": 39,
+          "line": 5
+        },
+        "start": {
+          "character": 30,
+          "line": 5
+        }
+      },
+      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/main.cpp"
+    },
+    {
+      "range": {
+        "end": {
+          "character": 27,
+          "line": 2
+        },
+        "start": {
+          "character": 18,
+          "line": 2
+        }
+      },
+      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+    },
+    {
+      "range": {
+        "end": {
+          "character": 19,
+          "line": 15
+        },
+        "start": {
+          "character": 10,
+          "line": 15
+        }
+      },
+      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.h"
+    }
+  ],
+  "completion": {
+    "isIncomplete": false,
+    "items": [
+      {
+        "detail": "TObjectPtr<UWorld>",
+        "filterText": "World",
+        "insertText": "World",
+        "insertTextFormat": 1,
+        "kind": 5,
+        "label": " World",
+        "score": 0.8245605230331421,
+        "sortText": "40ace99aWorld",
+        "textEdit": {
+          "newText": "World",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      },
+      {
+        "detail": "double",
+        "filterText": "Select",
+        "insertText": "Select",
+        "insertTextFormat": 1,
+        "kind": 2,
+        "label": " Select(double Value)",
+        "score": 0.7869859933853149,
+        "sortText": "40b68816Select",
+        "textEdit": {
+          "newText": "Select",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      },
+      {
+        "detail": "int",
+        "filterText": "Select",
+        "insertText": "Select",
+        "insertTextFormat": 1,
+        "kind": 2,
+        "label": " Select(int Value)",
+        "score": 0.7869859933853149,
+        "sortText": "40b68816Select",
+        "textEdit": {
+          "newText": "Select",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      },
+      {
+        "detail": "void",
+        "filterText": "Tick",
+        "insertText": "Tick",
+        "insertTextFormat": 1,
+        "kind": 2,
+        "label": " Tick(float DeltaSeconds)",
+        "score": 0.7869859933853149,
+        "sortText": "40b68816Tick",
+        "textEdit": {
+          "newText": "Tick",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      },
+      {
+        "detail": "float",
+        "filterText": "Health",
+        "insertText": "Health",
+        "insertTextFormat": 1,
+        "kind": 5,
+        "label": " Health",
+        "score": 0.7207275629043579,
+        "sortText": "40c77e66Health",
+        "textEdit": {
+          "newText": "Health",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      },
+      {
+        "detail": "float",
+        "filterText": "GetHealth",
+        "insertText": "GetHealth",
+        "insertTextFormat": 1,
+        "kind": 2,
+        "label": " GetHealth() const",
+        "score": 0.6256070137023926,
+        "sortText": "40dfd838GetHealth",
+        "textEdit": {
+          "newText": "GetHealth",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      },
+      {
+        "detail": "UWorld *",
+        "filterText": "GetWorld",
+        "insertText": "GetWorld",
+        "insertTextFormat": 1,
+        "kind": 2,
+        "label": " GetWorld()",
+        "score": 0.38570961356163025,
+        "sortText": "413a8445GetWorld",
+        "textEdit": {
+          "newText": "GetWorld",
+          "range": {
+            "end": {
+              "character": 30,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      }
+    ]
+  },
+  "rename": {
+    "changes": {
+      "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp": [
+        {
+          "newText": "GetVitality",
+          "range": {
+            "end": {
+              "character": 27,
+              "line": 2
+            },
+            "start": {
+              "character": 18,
+              "line": 2
+            }
+          }
+        }
+      ],
+      "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.h": [
+        {
+          "newText": "GetVitality",
+          "range": {
+            "end": {
+              "character": 19,
+              "line": 15
+            },
+            "start": {
+              "character": 10,
+              "line": 15
+            }
+          }
+        }
+      ],
+      "file:///C:/Projects/UEAssist/tests/VAParityFixture/main.cpp": [
+        {
+          "newText": "GetVitality",
+          "range": {
+            "end": {
+              "character": 39,
+              "line": 5
+            },
+            "start": {
+              "character": 30,
+              "line": 5
+            }
+          }
+        }
+      ]
+    }
+  },
+  "scope": "Real clangd 19 compiler definition/reference requests on standalone C++ fixture; not VA parity or Unreal configuration validation.",
+  "clangd": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/Llvm/x64/bin/clangd.exe",
+  "lastError": null
+}

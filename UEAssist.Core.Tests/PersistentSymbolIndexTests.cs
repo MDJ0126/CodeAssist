@@ -27,7 +27,10 @@ namespace UEAssist.Core.Tests
                 Assert.Equal("AMyActor*", index.ResolveVariableType("target"));
                 Assert.Equal("float", index.ResolveReturnType("GetHealth"));
                 Assert.Equal("float", index.ResolveReturnType("gethealth"));
-                Assert.Contains(index.Complete("loc"), item => item.Name == "Location" && item.Kind == SymbolKind.Variable);
+                Assert.DoesNotContain(index.Complete("loc"), item => item.Name == "Location");
+                Assert.Contains(PersistentSymbolIndex.ReadDocumentSymbols(Path.Combine(root, "Source", "Game", "MyActor.cpp"),
+                    File.ReadAllText(Path.Combine(root, "Source", "Game", "MyActor.cpp"))),
+                    item => item.Name == "Location" && item.IsLocal);
                 Assert.True(index.ContainsSymbol("location"));
                 Assert.False(index.ContainsSymbol("asec"));
                 Assert.Contains(index.CompleteHeaders("myactor"), item => item.Name == "MyActor.h" && item.Kind == SymbolKind.Header);

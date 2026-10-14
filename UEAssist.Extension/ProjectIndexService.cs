@@ -8,61 +8,71 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Threading;
+using UEAssist.Core;
 using UEAssist.Indexing;
 
 namespace UEAssist.Extension
 {
     [Export]
     [PartCreationPolicy(CreationPolicy.Shared)]
-    internal sealed class ProjectIndexService
+    internal sealed class ProjectIndexService : IDisposable
     {
         private readonly object gate = new object();
         private Task buildTask;
+        private readonly CancellationTokenSource shutdown = new CancellationTokenSource();
         private string initializedProjectRoot;
         private int intelliSenseEvidence;
-        private readonly Dictionary<string, IReadOnlyList<IndexedSymbol>> liveDocuments =
-            new Dictionary<string, IReadOnlyList<IndexedSymbol>>(StringComparer.OrdinalIgnoreCase);
-        private static readonly Regex LiveTypePattern = new Regex(
-            @"\b(?:class|struct)\s+(?:\w+_API\s+)?(?<name>[A-Za-z_]\w*)", RegexOptions.Compiled);
-        private static readonly Regex LiveVariablePattern = new Regex(
-            @"\b(?<type>(?:const\s+)?[A-Za-z_]\w*(?:\s*<[^;{}()]+>)?\s*[*&]?)\s+(?<name>[A-Za-z_]\w*)\s*(?=[=;,\[])" , RegexOptions.Compiled);
-        private static readonly Regex LiveFunctionPattern = new Regex(
-            @"\b(?<type>[A-Za-z_]\w*(?:\s*<[^>]+>)?[*&]?)\s+(?<name>[A-Za-z_]\w*)\s*\(", RegexOptions.Compiled);
+        private IndexedSymbol[] configuredHeaders = Array.Empty<IndexedSymbol>();
+        private readonly DocumentRevisionStore<IReadOnlyList<IndexedSymbol>> liveDocuments =
+            new DocumentRevisionStore<IReadOnlyList<IndexedSymbol>>();
 
         public PersistentSymbolIndex Index { get; } = new PersistentSymbolIndex();
+        internal string ProjectRoot { get { lock (gate) return initializedProjectRoot; } }
         public bool IsBuilding { get; private set; }
         public string LastError { get; private set; }
         public event EventHandler IndexUpdated;
         public event EventHandler IntelliSenseAvailabilityChanged;
         public event EventHandler<IndexingStatusEventArgs> IndexingStatusChanged;
         public bool IntelliSenseReady { get; private set; }
+        public ProjectCompilationModel CompilationModel { get; private set; }
+        public IndexBuildResult LastBuild { get; private set; }
+        public IReadOnlyList<IndexedSymbol> CompleteHeaders(string prefix, int limit)
+        {
+            return Index.CompleteHeaders(prefix, limit).Concat(configuredHeaders.Where(item =>
+                item.Name.IndexOf(prefix ?? "", StringComparison.OrdinalIgnoreCase) >= 0))
+                .GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase).Select(group => group.First())
+                .OrderBy(item => item.Name.StartsWith(prefix ?? "", StringComparison.OrdinalIgnoreCase) ? 0 : 1)
+                .ThenBy(item => item.Name).Take(limit).ToArray();
+        }
+        private IndexBuildResult BuildIndex(PersistentSymbolIndex target, string mode, string root, string project)
+        {
+            return IndexBuildRunner.Build(target, mode, root, project,
+                Path.Combine(Path.GetDirectoryName(typeof(ProjectIndexService).Assembly.Location), "UEAssist.Worker.exe"),
+                Environment.GetEnvironmentVariable("UEASSIST_USE_INDEX_WORKER") == "1", shutdown.Token);
+        }
+        public void Dispose() { shutdown.Cancel(); }
 
-        public void UpdateLiveDocument(string filePath, string text)
+        public long BeginLiveDocument(string filePath) => liveDocuments.Begin(filePath);
+        public void RemoveLiveDocument(string filePath) => liveDocuments.Remove(filePath);
+
+        public void UpdateLiveDocument(string filePath, string text, long revision, CancellationToken cancellation)
         {
             if (string.IsNullOrWhiteSpace(filePath)) return;
-            var found = new List<IndexedSymbol>();
-            foreach (Match match in LiveTypePattern.Matches(text ?? string.Empty))
-                found.Add(new IndexedSymbol(match.Groups["name"].Value, UEAssist.Core.SymbolKind.Type, filePath, 0, match.Index));
-            foreach (Match match in LiveVariablePattern.Matches(text ?? string.Empty))
-                found.Add(new IndexedSymbol(match.Groups["name"].Value, UEAssist.Core.SymbolKind.Variable, filePath, 0, match.Index,
-                    valueType: match.Groups["type"].Value));
-            foreach (Match match in LiveFunctionPattern.Matches(text ?? string.Empty))
-                found.Add(new IndexedSymbol(match.Groups["name"].Value, UEAssist.Core.SymbolKind.Function, filePath, 0, match.Index,
-                    valueType: match.Groups["type"].Value));
-            lock (gate)
-            {
-                liveDocuments[filePath] = found
-                    .GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
-                    .Select(group => group.First()).ToArray();
-            }
+            if (cancellation.IsCancellationRequested) return;
+            text = CppCodeMask.Create(text);
+            var found = PersistentSymbolIndex.ReadDocumentSymbols(filePath, text);
+            if (!cancellation.IsCancellationRequested)
+                liveDocuments.Publish(filePath, revision, found.ToArray());
         }
 
-        public IReadOnlyList<IndexedSymbol> CompleteLive(string prefix, int limit = 100)
+        public IReadOnlyList<IndexedSymbol> CompleteLive(string prefix, int limit = 100, string activeFile = null)
         {
             lock (gate)
             {
-                return liveDocuments.Values.SelectMany(items => items)
+                return liveDocuments.Snapshot().SelectMany(items => items)
                     .Where(item => item.Name.StartsWith(prefix ?? string.Empty, StringComparison.OrdinalIgnoreCase))
+                    .Where(item => !item.IsLocal || string.Equals(item.FilePath, activeFile, StringComparison.OrdinalIgnoreCase))
                     .GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
                     .Select(group => group.First())
                     .OrderBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
@@ -75,7 +85,7 @@ namespace UEAssist.Extension
             if (string.IsNullOrWhiteSpace(name)) return false;
             lock (gate)
             {
-                return liveDocuments.Values.SelectMany(items => items)
+                return liveDocuments.Snapshot().SelectMany(items => items)
                     .Any(item => string.Equals(item.Name, name, StringComparison.OrdinalIgnoreCase));
             }
         }
@@ -108,15 +118,20 @@ namespace UEAssist.Extension
                 {
                     try
                     {
+                        CompilationModel = ProjectCompilationModel.Load(projectRoot);
+                        var configurationPath = projectCachePath + ".configuration";
+                        var configurationCurrent = File.Exists(configurationPath) &&
+                            File.ReadAllText(configurationPath) == CompilationModel.Fingerprint;
                         var projectCacheLoaded = projectIndex.Load(projectCachePath);
                         var engineCacheLoaded = engineIndex.Load(engineCachePath);
                         Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
                         var changed = false;
-                        if (!projectCacheLoaded || !IsCacheCurrent(projectRoot, projectCachePath))
+                        if (!projectCacheLoaded || !configurationCurrent || !IsCacheCurrent(projectRoot, projectCachePath))
                         {
                             ReportIndexingStatus("프로젝트 심볼 분석 중...", 20);
-                            projectIndex.BuildProject(projectRoot);
+                            LastBuild = BuildIndex(projectIndex, "project", projectRoot, projectRoot);
                             projectIndex.Save(projectCachePath);
+                            File.WriteAllText(configurationPath, CompilationModel.Fingerprint);
                             changed = true;
                         }
 
@@ -126,7 +141,7 @@ namespace UEAssist.Extension
                             // this project are scanned and merged into the shared engine installation cache.
                             var refreshedEngine = new PersistentSymbolIndex();
                             ReportIndexingStatus("Unreal Engine API 최신화 중...", 55);
-                            refreshedEngine.BuildEngine(engineRoot, projectRoot);
+                            LastBuild = BuildIndex(refreshedEngine, "engine", engineRoot, projectRoot);
                             ReportIndexingStatus("엔진 공용 캐시 저장 중...", 85);
                             engineIndex.ReplaceWith(engineIndex, refreshedEngine);
                             engineIndex.Save(engineCachePath);
@@ -134,11 +149,13 @@ namespace UEAssist.Extension
                         }
 
                         Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
+                        configuredHeaders = CompilationModel.HeaderCandidates(Index.SourceFiles()).ToArray();
                         LastError = null;
                         if (changed) IndexUpdated?.Invoke(this, EventArgs.Empty);
                         ReportIndexingStatus("인덱스 준비 완료", 100, true);
                     }
-                    catch (Exception exception) when (exception is IOException || exception is UnauthorizedAccessException)
+                    catch (OperationCanceledException) { ReportIndexingStatus("인덱싱 취소됨", 100, true); }
+                    catch (Exception exception) when (exception is IOException || exception is UnauthorizedAccessException || exception is System.Xml.XmlException)
                     {
                         LastError = exception.Message;
                         ReportIndexingStatus("인덱싱 실패: " + exception.Message, 100, true, true);

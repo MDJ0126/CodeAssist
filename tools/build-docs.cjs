@@ -1,0 +1,41 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const { marked } = require('marked');
+
+const root = path.resolve(__dirname, '..', 'docs');
+const pages = [
+  ['README.md', '문서 홈'], ['usage.md', '사용 안내'], ['keyboard-shortcuts.md', '단축키'],
+  ['architecture.md', '구조와 캐시'], ['analysis-integration.md', '분석 적용 현황'],
+  ['validation/README.md', '검증 결과'], ['reverse-engineering/va-2630/README.md', '역분석 기록'],
+];
+const output = name => name.replace(/(?:^|\/)README\.md$/, match => match.startsWith('/') ? '/index.html' : 'index.html').replace(/\.md$/, '.html');
+const escape = value => value.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const relative = (from, to) => path.relative(path.dirname(from), to).split(path.sep).join('/') || 'index.html';
+const source = pages.map(([name, title]) => ({name, title, text:fs.readFileSync(path.join(root, name), 'utf8')}));
+
+for (const page of source) {
+  const destination = path.join(root, output(page.name));
+  const nav = source.map(item => `<a href="${escape(relative(destination, path.join(root, output(item.name))))}" ${item.name === page.name ? 'aria-current="page"' : ''} data-search="${escape(item.title + ' ' + item.text.replace(/\s+/g, ' '))}">${escape(item.title)}</a>`).join('\n');
+  const body = marked.parse(page.text, {gfm:true}).replace(/href="([^"#]+\.md)(#[^"]*)?"/g, (full, url, fragment = '') => {
+    if (/^[a-z]+:/i.test(url)) return full;
+    return `href="${escape(output(url))}${fragment}"`;
+  });
+  const css = escape(relative(destination, path.join(root, 'assets/docs.css')));
+  const js = escape(relative(destination, path.join(root, 'assets/docs.js')));
+  const home = escape(relative(destination, path.join(root, 'index.html')));
+  const html = `<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="UEAssist 0.0.48 — ${escape(page.title)}"><title>${escape(page.title)} · UEAssist</title>
+<link rel="stylesheet" href="${css}"><script defer src="${js}"></script></head>
+<body><a class="skip" href="#content">본문으로 이동</a>
+<aside class="sidebar"><a class="brand" href="${home}"><span class="logo">UE</span><span>UEAssist<small>DOCUMENTATION</small></span></a>
+<div class="version">Visual Studio 2022 <span>v0.0.48</span></div>
+<label for="doc-search">문서 검색</label><input id="doc-search" type="search" placeholder="키워드를 입력하세요" autocomplete="off">
+<p id="search-status" aria-live="polite"></p><nav aria-label="문서 목차">${nav}</nav>
+<div class="sidebar-note">Unreal C++를 위한<br>무료 · 경량 개발 보조 도구</div></aside>
+<div class="workspace"><header><span>UEAssist / ${escape(page.title)}</span><button id="theme-toggle" type="button" aria-label="밝은 테마와 어두운 테마 전환">테마 전환</button></header>
+<main id="content" tabindex="-1"><div class="eyebrow">UEASSIST DOCUMENTATION</div><article>${body}</article>
+<footer>UEAssist 0.0.48 · 확인된 구현과 미확인 사항을 구분해 기록합니다.</footer></main></div></body></html>`;
+  fs.writeFileSync(destination, html);
+}
+console.log(`Generated ${source.length} offline HTML documentation pages.`);

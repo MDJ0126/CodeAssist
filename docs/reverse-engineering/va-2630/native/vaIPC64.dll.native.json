@@ -1,0 +1,231 @@
+{
+  "file": "vaIPC64.dll",
+  "sha256": "463a3ce99b8f584c474db7770c29316460876a68e8ef02125da8750a5a8d380a",
+  "image_base": "0x180000000",
+  "size": 221792,
+  "sections": [
+    {
+      "name": ".text",
+      "virtual_size": 120640,
+      "rva": 4096,
+      "raw_size": 120832,
+      "raw_offset": 1024,
+      "characteristics": 1610612768
+    },
+    {
+      "name": ".rdata",
+      "virtual_size": 73628,
+      "rva": 126976,
+      "raw_size": 73728,
+      "raw_offset": 121856,
+      "characteristics": 1073741888
+    },
+    {
+      "name": ".data",
+      "virtual_size": 40128,
+      "rva": 200704,
+      "raw_size": 6144,
+      "raw_offset": 195584,
+      "characteristics": 3221225536
+    },
+    {
+      "name": ".pdata",
+      "virtual_size": 6912,
+      "rva": 241664,
+      "raw_size": 7168,
+      "raw_offset": 201728,
+      "characteristics": 1073741888
+    },
+    {
+      "name": ".rsrc",
+      "virtual_size": 1232,
+      "rva": 249856,
+      "raw_size": 1536,
+      "raw_offset": 208896,
+      "characteristics": 1073741888
+    },
+    {
+      "name": ".reloc",
+      "virtual_size": 620,
+      "rva": 253952,
+      "raw_size": 1024,
+      "raw_offset": 210432,
+      "characteristics": 1107296320
+    }
+  ],
+  "unwind_range_count": 576,
+  "exports": [
+    {
+      "name": "?CheckAndCleanupInstanceName@Client@vaIPC@@YA?AV?$optional@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@std@@V?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@@Z",
+      "rva": 37088
+    },
+    {
+      "name": "?CloseLogFile@Logging@VaCodeInspections@WholeTomato@@YAXXZ",
+      "rva": 84752
+    },
+    {
+      "name": "?ExitAllServerInstances@Client@vaIPC@@YAXXZ",
+      "rva": 35808
+    },
+    {
+      "name": "?FindClientConnectionCallback@Client@vaIPC@@YA?AV?$shared_ptr@UIIpcClientConnectionCallback@Client@vaIPC@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@0@Z",
+      "rva": 30704
+    },
+    {
+      "name": "?GetLoggingLevel@Logging@VaCodeInspections@WholeTomato@@YA?AW4Level@123@XZ",
+      "rva": 86192
+    },
+    {
+      "name": "?GetServerConnectionCount@Client@vaIPC@@YAXAEA_K0@Z",
+      "rva": 36336
+    },
+    {
+      "name": "?GetServerProcessId@Client@vaIPC@@YAKAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+      "rva": 36720
+    },
+    {
+      "name": "?IsLogFileOpen@Logging@VaCodeInspections@WholeTomato@@YA_NXZ",
+      "rva": 84928
+    },
+    {
+      "name": "?LaunchConnectionInstance@Client@vaIPC@@YA?AV?$shared_ptr@UIIpcClientConnectionCallback@Client@vaIPC@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@0@Z",
+      "rva": 31264
+    },
+    {
+      "name": "?LaunchServer@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@00$$QEAV?$function@$$A6A?AV?$shared_ptr@UIIpcClientConnectionCallback@Client@vaIPC@@@std@@XZ@4@$$QEAV?$function@$$A6A_NPEAV?$list@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@V?$allocator@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@@3@@std@@@Z@4@@Z",
+      "rva": 27808
+    },
+    {
+      "name": "?LockIPCLock@vaIPC@@YAXXZ",
+      "rva": 38048
+    },
+    {
+      "name": "?Log@Logging@VaCodeInspections@WholeTomato@@YAXW4Level@123@PEBD@Z",
+      "rva": 85056
+    },
+    {
+      "name": "?LogException@Logging@VaCodeInspections@WholeTomato@@YAXPEBD0@Z",
+      "rva": 85664
+    },
+    {
+      "name": "?MakeInstanceNotification@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z",
+      "rva": 34480
+    },
+    {
+      "name": "?MakeInstanceRequest@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z",
+      "rva": 33904
+    },
+    {
+      "name": "?OpenLogFile@Logging@VaCodeInspections@WholeTomato@@YA_NXZ",
+      "rva": 81936
+    },
+    {
+      "name": "?RetireServerInstance@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+      "rva": 33152
+    },
+    {
+      "name": "?RunServer@Server@vaIPC@@YAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@V?$shared_ptr@UIIpcServerProcessCallback@Server@vaIPC@@@4@HPEBQEB_W@Z",
+      "rva": 69824
+    },
+    {
+      "name": "?SetLoggingLevel@Logging@VaCodeInspections@WholeTomato@@YAXW4Level@123@@Z",
+      "rva": 86176
+    },
+    {
+      "name": "?StartServer@Server@vaIPC@@YA?AV?$shared_ptr@UIIpcServer@ServerImpl@vaIPC@@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@I0V?$shared_ptr@UIIpcServerProcessCallback@Server@vaIPC@@@4@@Z",
+      "rva": 69360
+    },
+    {
+      "name": "?StopConnectionInstance@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@0@Z",
+      "rva": 35056
+    },
+    {
+      "name": "?StopServerInstance@Client@vaIPC@@YA_NAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@_N1@Z",
+      "rva": 32368
+    },
+    {
+      "name": "?UnlockIPCLock@vaIPC@@YAXXZ",
+      "rva": 38128
+    },
+    {
+      "name": "?clangtidy_convert_to_utf8@vaIPC@@3_NA",
+      "rva": 200712
+    },
+    {
+      "name": "?get_fail_times@stats@vaIPC@@SA?AV?$list@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@V?$allocator@V?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@@3@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@4@@Z",
+      "rva": 103216
+    },
+    {
+      "name": "?get_iltava@@YAPEAXXZ",
+      "rva": 10000
+    },
+    {
+      "name": "?get_servers_alive@stats@vaIPC@@SAJXZ",
+      "rva": 103200
+    },
+    {
+      "name": "?get_stats@stats@vaIPC@@SA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@XZ",
+      "rva": 102368
+    },
+    {
+      "name": "?map_lock@stats@vaIPC@@SAXW4map_lock_site@12@_J1@Z",
+      "rva": 102288
+    },
+    {
+      "name": "?server_failed@stats@vaIPC@@SAXAEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@@Z",
+      "rva": 101968
+    },
+    {
+      "name": "?server_quit@stats@vaIPC@@SAXXZ",
+      "rva": 101920
+    },
+    {
+      "name": "?server_restarted@stats@vaIPC@@SAXXZ",
+      "rva": 101936
+    },
+    {
+      "name": "?server_started@stats@vaIPC@@SAXXZ",
+      "rva": 101904
+    }
+  ],
+  "export_ranges": [],
+  "focused_strings": [
+    {
+      "rva": 142568,
+      "bytes": 48,
+      "encoding": "ascii",
+      "text": "Internal error loading IANA database information",
+      "truncated": false
+    },
+    {
+      "rva": 142712,
+      "bytes": 48,
+      "encoding": "ascii",
+      "text": "Internal error loading IANA database information",
+      "truncated": false
+    },
+    {
+      "rva": 191138,
+      "bytes": 38,
+      "encoding": "ascii",
+      "text": "?clangtidy_convert_to_utf8@vaIPC@@3_NA",
+      "truncated": false
+    },
+    {
+      "rva": 202240,
+      "bytes": 76,
+      "encoding": "ascii",
+      "text": ".?AV<lambda_1>@?1???$?0H@ScopedIncrementAtomic@@QEAA@PEAU?$atomic@H@std@@@Z@",
+      "truncated": false
+    },
+    {
+      "rva": 204848,
+      "bytes": 109,
+      "encoding": "ascii",
+      "text": ".?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$?0H@ScopedIncrementAtomic@@QEAA@PEAU?$atomic@H@std@@@Z@X$$V@std@@",
+      "truncated": false
+    }
+  ],
+  "string_xrefs": [],
+  "scope": "All executable sections disassembled. Strings/xrefs are discovery evidence, not semantic verification."
+}

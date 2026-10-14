@@ -56,6 +56,9 @@ namespace UEAssist.Extension
     {
         private readonly ITextBuffer textBuffer;
         private readonly IClassificationType classificationType;
+        private ITextSnapshot cachedSnapshot;
+        private IReadOnlyList<MacroOccurrence> cachedMacros;
+        private readonly object cacheGate = new object();
 
         public UnrealMacroClassifier(ITextBuffer textBuffer, IClassificationType classificationType)
         {
@@ -70,21 +73,21 @@ namespace UEAssist.Extension
         {
             var results = new List<ClassificationSpan>();
             var snapshot = span.Snapshot;
-            var startLine = snapshot.GetLineFromPosition(span.Start.Position).LineNumber;
-            var endPosition = Math.Max(span.Start.Position, span.End.Position - 1);
-            var endLine = snapshot.GetLineFromPosition(endPosition).LineNumber;
-
-            for (var lineNumber = startLine; lineNumber <= endLine; lineNumber++)
+            IReadOnlyList<MacroOccurrence> macros;
+            lock (cacheGate)
             {
-                var line = snapshot.GetLineFromLineNumber(lineNumber);
-                foreach (var macro in UnrealMacroParser.Find(line.GetText()))
+                if (!ReferenceEquals(cachedSnapshot, snapshot))
                 {
-                    var macroSpan = new SnapshotSpan(snapshot, line.Start.Position + macro.Start, macro.Length);
-                    if (macroSpan.IntersectsWith(span))
-                    {
-                        results.Add(new ClassificationSpan(macroSpan, classificationType));
-                    }
+                    cachedMacros = UnrealMacroParser.Find(snapshot.GetText());
+                    cachedSnapshot = snapshot;
                 }
+                macros = cachedMacros;
+            }
+            foreach (var macro in macros)
+            {
+                var macroSpan = new SnapshotSpan(snapshot, macro.Start, macro.Length);
+                if (macroSpan.IntersectsWith(span))
+                    results.Add(new ClassificationSpan(macroSpan, classificationType));
             }
 
             return results;

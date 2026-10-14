@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UEAssist.Core\UEAssist.Core.csproj" />
+    <ProjectReference Include="..\UEAssist.Semantics\UEAssist.Semantics.csproj" />
     <ProjectReference Include="..\UEAssist.Indexing\UEAssist.Indexing.csproj" />
   </ItemGroup>
 

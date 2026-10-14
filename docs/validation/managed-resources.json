@@ -1,0 +1,134 @@
+{
+  "Resources": [
+    {
+      "Name": "UEAssist.Extension.VSPackage.resources",
+      "Keys": [
+        {
+          "Key": "CTMENU",
+          "Type": "ResourceTypeCode.ByteArray",
+          "Bytes": 1859
+        },
+        {
+          "Key": "110",
+          "Type": "ResourceTypeCode.String",
+          "Bytes": 27
+        },
+        {
+          "Key": "112",
+          "Type": "ResourceTypeCode.String",
+          "Bytes": 58
+        }
+      ]
+    }
+  ],
+  "Dependencies": [
+    {
+      "Name": "mscorlib",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "System.ComponentModel.Composition",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Text.Logic",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Text.UI.Wpf",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Editor",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.CoreUtility",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Text.UI",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Language.Intellisense",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Interop",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Text.Data",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "UEAssist.Core",
+      "Version": "1.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Shell.15.0",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Threading",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "System",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "System.Core",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "UEAssist.Indexing",
+      "Version": "1.0.0.0"
+    },
+    {
+      "Name": "PresentationFramework",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "PresentationCore",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.ComponentModelHost",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "WindowsBase",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "UEAssist.Semantics",
+      "Version": "1.0.0.0"
+    },
+    {
+      "Name": "Newtonsoft.Json",
+      "Version": "13.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Shell.Framework",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime",
+      "Version": "14.0.0.0"
+    },
+    {
+      "Name": "System.Design",
+      "Version": "4.0.0.0"
+    },
+    {
+      "Name": "Microsoft.VisualStudio.ImageCatalog",
+      "Version": "17.0.0.0"
+    },
+    {
+      "Name": "System.Xml",
+      "Version": "4.0.0.0"
+    }
+  ]
+}

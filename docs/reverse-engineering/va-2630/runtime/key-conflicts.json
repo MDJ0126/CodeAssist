@@ -1,0 +1,16 @@
+{
+  "version": "10.9.2630.0",
+  "fixture": "main.cpp",
+  "key": "Alt+Down",
+  "before": {
+    "line": 6,
+    "text": "const auto Health = Actor.GetHealth();"
+  },
+  "observed": {
+    "line": 7,
+    "behavior": "VS MoveSelectedLinesDown: Health line swapped with Actor.Tick line",
+    "dirty": true
+  },
+  "cleanup": "Ctrl+Z restored original file; refreshed screenshot showed clean main.cpp tab",
+  "scope": "One installed VS profile; VA ScopeNext behavior has not been verified by this shortcut."
+}
