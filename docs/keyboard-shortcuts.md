@@ -1,8 +1,8 @@
 # 단축키
 
-Visual Assist 공식 [단축키 안내](https://www.wholetomato.com/documentation/configuration/keyboard-shortcuts)의 키 조합을 대응하는 UEAssist 명령에 등록했습니다. 해당 안내는 기본 및 권장 키를 함께 설명하며, 2630 설치본에서 사용자가 실제로 할당한 키는 별도로 확인하지 않았습니다.
+Visual Assist 공식 [단축키 안내](https://www.wholetomato.com/documentation/configuration/keyboard-shortcuts)의 키 조합을 대응하는 CodeAssist 명령에 등록했습니다. 해당 안내는 기본 및 권장 키를 함께 설명하며, 2630 설치본에서 사용자가 실제로 할당한 키는 별도로 확인하지 않았습니다.
 
-| 키 | UEAssist 동작 | 구현 범위 |
+| 키 | CodeAssist 동작 | 구현 범위 |
 |---|---|---|
 | Alt+G / F12 | 정의 후보 탐색 | 독립 구현, 복수 후보 선택, VS fallback |
 | Shift+Alt+F / Shift+F12 | 참조 후보 검색 | 어휘·일반 지역 블록 기준 |
@@ -22,21 +22,21 @@ Visual Assist 공식 [단축키 안내](https://www.wholetomato.com/documentatio
 | Shift+Alt+R | 이름 변경 | Visual Studio Rename 호출 |
 | Shift+Alt+Q | 빠른 작업 | Visual Studio Quick Actions 호출 |
 | Shift+Alt+C | 사용 위치의 생성 작업 | Visual Studio Quick Actions 메뉴 호출; 생성 항목은 VS 문맥에 따름 |
-| Ctrl+Space | 자동완성 수동 호출 | 기존 VS 편집기 명령과 UEAssist 후보 |
+| Ctrl+Space | 자동완성 수동 호출 | 기존 VS 편집기 명령과 CodeAssist 후보 |
 | Tab / Enter | 선택 후보 확정 | 선택 항목 재검증 |
 
-동일한 키 조합이 VA의 모든 동작을 똑같이 재현한다는 뜻은 아닙니다. 특히 관련 심볼·범위 이동은 위 표의 범위를 지원하며, Rename 및 코드 생성에는 VA의 구현을 이식하지 않았습니다. 빠른 작업에 원하는 생성 항목이 없으면 UEAssist가 임의로 코드를 작성하지 않습니다.
+동일한 키 조합이 VA의 모든 동작을 똑같이 재현한다는 뜻은 아닙니다. 특히 관련 심볼·범위 이동은 위 표의 범위를 지원하며, Rename 및 코드 생성에는 VA의 구현을 이식하지 않았습니다. 빠른 작업에 원하는 생성 항목이 없으면 CodeAssist가 임의로 코드를 작성하지 않습니다.
 
-클립보드·Hashtags·선택 확장/축소·현재 단어 강조 키도 추가했습니다. 기본 조합은 [공식 키 목록](https://www.wholetomato.com/documentation/configuration/keyboard-shortcuts) 및 설치 도움말과 대조했습니다. 신규 명령의 UEAssist UI 실행 동등성은 아직 미확인입니다.
+클립보드·Hashtags·선택 확장/축소·현재 단어 강조 키도 추가했습니다. 기본 조합은 [공식 키 목록](https://www.wholetomato.com/documentation/configuration/keyboard-shortcuts) 및 설치 도움말과 대조했습니다. 신규 명령의 CodeAssist UI 실행 동등성은 아직 미확인입니다.
 
 ## 키 충돌과 사용자 설정
 
-VSCT에 기본 키를 등록했습니다. Visual Studio의 사용자 지정 할당이나 함께 설치한 Visual Assist가 우선하면 키가 UEAssist 명령을 실행하지 않을 수 있습니다. 기존 사용자 키 설정을 프로그램에서 자동으로 덮어쓰지는 않습니다.
+VSCT에 기본 키를 등록했습니다. Visual Studio의 사용자 지정 할당이나 함께 설치한 Visual Assist가 우선하면 키가 CodeAssist 명령을 실행하지 않을 수 있습니다. 기존 사용자 키 설정을 프로그램에서 자동으로 덮어쓰지는 않습니다.
 
 설치된 현재 VS에서 `Alt+Down`이 선택 행 이동을 실행하는 충돌을 직접 확인했습니다. VA 탐색 바 화살표로 확인한 [범위 이동 기록](reverse-engineering/va-2630/runtime/scope-navigation.json)과 [키 충돌 기록](reverse-engineering/va-2630/runtime/key-conflicts.json)을 구분해 보존했습니다. 괄호·중괄호 범위 설명은 [공식 Move Scope 문서](https://www.wholetomato.com/documentation/navigation/move-scope)와 함께 대조했습니다. namespace·class·전처리 조건을 포함한 모든 C++ 범위의 동등성은 미확인입니다.
 
-`도구 → 옵션 → 환경 → 키보드`에서 `UEAssist`로 명령을 찾아 표의 키를 지정해 주세요. 파일·심볼 검색은 Global, 편집기 동작은 Text Editor 범위로 지정하실 수 있습니다. 실제 IDE 키 동작은 [확인 목록](validation/README.md)에 남겼습니다.
+`도구 → 옵션 → 환경 → 키보드`에서 `CodeAssist`로 명령을 찾아 표의 키를 지정해 주세요. 파일·심볼 검색은 Global, 편집기 동작은 Text Editor 범위로 지정하실 수 있습니다. 실제 IDE 키 동작은 [확인 목록](validation/README.md)에 남겼습니다.
 
 ## 등록 파일
 
-명령 ID와 기본 키는 `UEAssist.Extension/UEAssistCommands.vsct`, 명령 실행은 `GoToSymbolCommand`, `FindReferencesCommand`, `NavigationCommands`, 후보 확정은 `CompletionCommandFilter`에 있습니다.
+명령 ID와 기본 키는 `CodeAssist.Extension/CodeAssistCommands.vsct`, 명령 실행은 `GoToSymbolCommand`, `FindReferencesCommand`, `NavigationCommands`, 후보 확정은 `CompletionCommandFilter`에 있습니다.

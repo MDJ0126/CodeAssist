@@ -25,17 +25,17 @@ for (const page of source) {
   const home = escape(relative(destination, path.join(root, 'index.html')));
   const html = `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="UEAssist 0.0.48 — ${escape(page.title)}"><title>${escape(page.title)} · UEAssist</title>
+<meta name="description" content="CodeAssist 0.0.48 — ${escape(page.title)}"><title>${escape(page.title)} · CodeAssist</title>
 <link rel="stylesheet" href="${css}"><script defer src="${js}"></script></head>
 <body><a class="skip" href="#content">본문으로 이동</a>
-<aside class="sidebar"><a class="brand" href="${home}"><span class="logo">UE</span><span>UEAssist<small>DOCUMENTATION</small></span></a>
+<aside class="sidebar"><a class="brand" href="${home}"><span class="logo">UE</span><span>CodeAssist<small>DOCUMENTATION</small></span></a>
 <div class="version">Visual Studio 2022 <span>v0.0.48</span></div>
 <label for="doc-search">문서 검색</label><input id="doc-search" type="search" placeholder="키워드를 입력하세요" autocomplete="off">
 <p id="search-status" aria-live="polite"></p><nav aria-label="문서 목차">${nav}</nav>
 <div class="sidebar-note">Unreal C++를 위한<br>무료 · 경량 개발 보조 도구</div></aside>
-<div class="workspace"><header><span>UEAssist / ${escape(page.title)}</span><button id="theme-toggle" type="button" aria-label="밝은 테마와 어두운 테마 전환">테마 전환</button></header>
-<main id="content" tabindex="-1"><div class="eyebrow">UEASSIST DOCUMENTATION</div><article>${body}</article>
-<footer>UEAssist 0.0.48 · 확인된 구현과 미확인 사항을 구분해 기록합니다.</footer></main></div></body></html>`;
+<div class="workspace"><header><span>CodeAssist / ${escape(page.title)}</span><button id="theme-toggle" type="button" aria-label="밝은 테마와 어두운 테마 전환">테마 전환</button></header>
+<main id="content" tabindex="-1"><div class="eyebrow">CODEASSIST DOCUMENTATION</div><article>${body}</article>
+<footer>CodeAssist 0.0.48 · 확인된 구현과 미확인 사항을 구분해 기록합니다.</footer></main></div></body></html>`;
   fs.writeFileSync(destination, html);
 }
 console.log(`Generated ${source.length} offline HTML documentation pages.`);

@@ -1,17 +1,17 @@
 {
   "Resources": [
     {
-      "Name": "UEAssist.Extension.VSPackage.resources",
+      "Name": "CodeAssist.Extension.VSPackage.resources",
       "Keys": [
         {
           "Key": "CTMENU",
           "Type": "ResourceTypeCode.ByteArray",
-          "Bytes": 1859
+          "Bytes": 1900
         },
         {
           "Key": "110",
           "Type": "ResourceTypeCode.String",
-          "Bytes": 27
+          "Bytes": 29
         },
         {
           "Key": "112",
@@ -63,7 +63,7 @@
       "Version": "17.0.0.0"
     },
     {
-      "Name": "UEAssist.Core",
+      "Name": "CodeAssist.Core",
       "Version": "1.0.0.0"
     },
     {
@@ -83,7 +83,7 @@
       "Version": "4.0.0.0"
     },
     {
-      "Name": "UEAssist.Indexing",
+      "Name": "CodeAssist.Indexing",
       "Version": "1.0.0.0"
     },
     {
@@ -103,7 +103,7 @@
       "Version": "4.0.0.0"
     },
     {
-      "Name": "UEAssist.Semantics",
+      "Name": "CodeAssist.Semantics",
       "Version": "1.0.0.0"
     },
     {

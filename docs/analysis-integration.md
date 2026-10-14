@@ -30,13 +30,13 @@ UDELEGATE, GENERATED_UINTERFACE_BODY, GENERATED_IINTERFACE_BODY, RIGVM_METHOD를
 
 탐색 창은 부분 문자열, 공백 AND, 쉼표 OR, `-제외`, `.시작`, `끝.`, `\\경로`, `:행` 검색을 지원합니다. 파일명 기본 검색은 디렉터리명에 자동으로 매칭하지 않습니다. [VA 실제 비교 기록](reverse-engineering/va-2630/runtime/file-search.json)에 저장한 결과 집합을 회귀 테스트로 검증했습니다. 오타를 허용하는 VA fuzzy 검색은 아직 구현하지 않았습니다.
 
-범위 이동은 인접한 모든 여는 중괄호 순회에서 현재 괄호·중괄호의 경계로 이동하도록 수정했습니다. 최상위에서는 인접한 바깥 중괄호 블록을 방문합니다. [단순 함수 실제 비교](reverse-engineering/va-2630/runtime/scope-navigation.json)는 일치하지만 모든 클래스·namespace 구조의 동등성은 미확인입니다. Ctrl+0 줌 초기화는 설치 도움말의 동작 설명과 [VS 2022 IWpfTextView API](https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.text.editor.iwpftextview?view=visualstudiosdk-2022)를 근거로 구현했고 빌드를 검증했습니다. UEAssist UI에서 실행 확인은 남아 있습니다.
+범위 이동은 인접한 모든 여는 중괄호 순회에서 현재 괄호·중괄호의 경계로 이동하도록 수정했습니다. 최상위에서는 인접한 바깥 중괄호 블록을 방문합니다. [단순 함수 실제 비교](reverse-engineering/va-2630/runtime/scope-navigation.json)는 일치하지만 모든 클래스·namespace 구조의 동등성은 미확인입니다. Ctrl+0 줌 초기화는 설치 도움말의 동작 설명과 [VS 2022 IWpfTextView API](https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.text.editor.iwpftextview?view=visualstudiosdk-2022)를 근거로 구현했고 빌드를 검증했습니다. CodeAssist UI에서 실행 확인은 남아 있습니다.
 
 ## 발견한 VA 명령별 누락 관리
 
-[설치 바이너리 명령 문자열 목록](reverse-engineering/va-2630/command-inventory.json)의 30개를 아래처럼 추적합니다. 문자열 목록은 모든 VA 기능의 완전한 목록이 아닙니다. ‘구현’은 UEAssist 코드가 있다는 의미이고 원본과 전체 동등하다는 의미가 아닙니다.
+[설치 바이너리 명령 문자열 목록](reverse-engineering/va-2630/command-inventory.json)의 30개를 아래처럼 추적합니다. 문자열 목록은 모든 VA 기능의 완전한 목록이 아닙니다. ‘구현’은 CodeAssist 코드가 있다는 의미이고 원본과 전체 동등하다는 의미가 아닙니다.
 
-| VA 명령 | UEAssist 현재 대응 | 남은 검증·구현 |
+| VA 명령 | CodeAssist 현재 대응 | 남은 검증·구현 |
 |---|---|---|
 | GotoImplementation | 구성된 clangd 의미 정의 + 어휘 fallback·복수 후보 선택 | 실제 UE 구성·VA 이동 순서·UI 비교 |
 | OpenFileInSolutionDialog | 파일 검색, 10개 VA 결과 비교 | fuzzy·다중 선택·외부 파일 범위·UI 비교 |
@@ -48,7 +48,7 @@ UDELEGATE, GENERATED_UINTERFACE_BODY, GENERATED_IINTERFACE_BODY, RIGVM_METHOD를
 | CloneFindReferencesResults | 별도 도킹 창의 결과 스냅샷 복제 | UI 실행·세션 간 결과 보존 |
 | NavigateBack, NavigateForward | VS 명령 연결 | VA 방문 기록과 동등성 |
 | ScopeNext, ScopePrevious | 어휘 범위 경계 이동 | 복잡한 C++ 범위와 키 충돌 |
-| ResetEditorZoom | WPF 뷰 100% 초기화 | UEAssist UI 실행 확인 |
+| ResetEditorZoom | WPF 뷰 100% 초기화 | CodeAssist UI 실행 확인 |
 | RefactorRename | clangd 변경 계획·파일별 preview·원문 대조·Undo, 미구성 시 VS 연결 | 실제 적용/rollback UI 검증·모든 VA 옵션 |
 | RefactorContextMenu | VS Quick Actions 연결 | VA 전용 액션 목록 |
 | RefactorCreateFromUsage | VS Quick Actions 연결 | 독립 코드 생성과 타깃 선택 |
@@ -61,14 +61,14 @@ UDELEGATE, GENERATED_UINTERFACE_BODY, GENERATED_IINTERFACE_BODY, RIGVM_METHOD를
 | VAView, VAOutline | 도킹 창·필터·심볼 이동·변경 갱신 | VA tree 구조·메뉴·드래그 수정·UI 비교 |
 | ToggleRepairCase | 미구현 | 문맥에 따른 대소문자 수정 |
 | ReparseCurrentFile | 명시 재분석 명령·저장 전 버퍼 심볼 갱신 | VA의 컴파일러/프로젝트 재분석 범위 비교·실제 UI 실행 |
-| EnableDisable | UEAssist 자체 IntelliSense 전환 | VA 전체 기능 on/off와 다른 동작 |
-| Options | UEAssist 자체 설정 | VA 설정 모델과 항목별 비교 |
+| EnableDisable | CodeAssist 자체 IntelliSense 전환 | VA 전체 기능 on/off와 다른 동작 |
+| Options | CodeAssist 자체 설정 | VA 설정 모델과 항목별 비교 |
 
 추가로 설치 도움말에서 FindSymbolDialog와 VAHashtags를 확인했습니다. 심볼 탐색 및 주석 전용 Hashtags 목록·줄 이동을 구현했습니다. 프로젝트 검사·AI agent·spell check·debugger 등도 이 30개 표만으로 분석 완료로 처리하지 않습니다.
 
 ## 0.0.49 추가 구현과 증거
 
-설치 `Autotext/Latest/Cpp.tpl`을 읽어 form-feed 레코드 구분, `a:제목:shortcut:` 헤더, 반복 `$변수$`, `$selected$`, `$end$`를 확인했습니다. Core 파서와 변수·커서 계산 및 사용자 TPL 로더를 구현했습니다. 내장 템플릿 7개는 UEAssist에서 별도로 작성했으며 원본 전체 템플릿을 복제해 배포하지 않습니다. 원본 reserved 변수의 모든 의미와 서식 엔진의 동등성은 미확인입니다.
+설치 `Autotext/Latest/Cpp.tpl`을 읽어 form-feed 레코드 구분, `a:제목:shortcut:` 헤더, 반복 `$변수$`, `$selected$`, `$end$`를 확인했습니다. Core 파서와 변수·커서 계산 및 사용자 TPL 로더를 구현했습니다. 내장 템플릿 7개는 CodeAssist에서 별도로 작성했으며 원본 전체 템플릿을 복제해 배포하지 않습니다. 원본 reserved 변수의 모든 의미와 서식 엔진의 동등성은 미확인입니다.
 
 [VA 공식 reserved string 문서](https://stage.wholetomato.com/it/documentation/code-snippets/va-snippet-reserved-strings)와 대조해 `$DATE$`를 `yyyy/MM/dd`로 수정하고 날짜·시간 값과 영문/지역화 이름, 파일·이름 변수의 UPPER/LOWER 변환을 추가했습니다. 한 번 캡처한 시각으로 확장하며, 0으로 채운 값과 채우지 않은 값을 구분하는 테스트를 통과했습니다. CAMEL/PASCAL 단어 구분, GUID, 심볼 문맥, 프로젝트 및 생성 전용 값은 아직 구현하지 않았습니다. 현재 온라인 문서는 2630 실행과 동일하다는 별도 증거가 아니므로 해당 버전 UI 비교는 미확인입니다.
 
@@ -78,11 +78,11 @@ Outline·Workspace는 문서/인덱스 변경 이벤트와 150ms 지연 갱신�
 
 ## 컴파일러 의미 분석 경로
 
-새 `UEAssist.Semantics` 모듈은 로컬 clangd와 LSP로 통신합니다. 실제 설치된 clangd **19.1.5**에서 [독립 C++ fixture 검증](validation/clangd-fixture.json)을 수행해 int/double 오버로드 정의 분리, 상속 멤버 완성, 의미 참조, 선언·정의·사용처 세 파일 이름 변경 계획과 주석/문자열 보존을 확인했습니다. 실제 파일을 자동으로 이름 변경한 검증은 아닙니다.
+새 `CodeAssist.Semantics` 모듈은 로컬 clangd와 LSP로 통신합니다. 실제 설치된 clangd **19.1.5**에서 [독립 C++ fixture 검증](validation/clangd-fixture.json)을 수행해 int/double 오버로드 정의 분리, 상속 멤버 완성, 의미 참조, 선언·정의·사용처 세 파일 이름 변경 계획과 주석/문자열 보존을 확인했습니다. 실제 파일을 자동으로 이름 변경한 검증은 아닙니다.
 
 정의·참조·이름 변경과 비동기 완성에 이 경로를 연결했습니다. 완성은 요청한 prefix 범위에 대한 평문 교체만 수용하며 snippet/추가 파일 edit는 제외합니다. 문서·커서·프로젝트 변경, 닫힌 뷰, 취소된 응답은 게시하지 않습니다. 이름 변경은 파일별 미리보기와 적용 전 내용 대조를 거치며, 모든 편집을 먼저 준비하고 [UndoContext](https://learn.microsoft.com/en-us/dotnet/api/envdte.undocontext.setaborted?view=visualstudiosdk-2022)로 묶도록 구현했습니다. Undo와 새 UI는 실제 VS 실행 검증이 남아 있습니다.
 
-`compile_commands.json` 또는 `compile_flags.txt`가 있는 프로젝트에서 사용하고, 명시 `UEASSIST_USE_CLANGD=1`로도 활성화할 수 있습니다. 컴파일 DB가 있으면 2개 작업 스레드의 background index를 사용하며 `UEASSIST_CLANGD_BACKGROUND_INDEX=0`으로 끌 수 있습니다. 인덱싱 중이거나 background index를 끄면 닫힌 파일의 정의·참조 범위가 불완전할 수 있습니다. 정확한 UE 빌드 설정 없이 단순 `.vcxproj` 문자열 값을 완전한 컴파일 구성으로 취급하지 않습니다. [clangd 구성·설치 문서](https://clangd.llvm.org/installation)와 대조했습니다.
+`compile_commands.json` 또는 `compile_flags.txt`가 있는 프로젝트에서 사용하고, 명시 `CODEASSIST_USE_CLANGD=1`로도 활성화할 수 있습니다. 컴파일 DB가 있으면 2개 작업 스레드의 background index를 사용하며 `CODEASSIST_CLANGD_BACKGROUND_INDEX=0`으로 끌 수 있습니다. 인덱싱 중이거나 background index를 끄면 닫힌 파일의 정의·참조 범위가 불완전할 수 있습니다. 정확한 UE 빌드 설정 없이 단순 `.vcxproj` 문자열 값을 완전한 컴파일 구성으로 취급하지 않습니다. [clangd 구성·설치 문서](https://clangd.llvm.org/installation)와 대조했습니다.
 
 이 경로는 원본 VA Clang wrapper를 복제한 코드가 아닙니다. VS의 LLVM 실행 파일을 사용하므로 현재 VSIX에 78,457,440바이트의 clangd를 포함하지 않습니다. 작은 패키지 크기는 이 외부 의존성과 호스트 재사용에서 비롯되며, 그 자체가 VA 기능 완성률의 증거가 되지 않습니다.
 

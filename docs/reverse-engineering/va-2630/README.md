@@ -30,7 +30,7 @@ RVA `0x3690` 초기화 코드에서 0x18바이트 할당 호출, 첫 필드에 `
 
 `0x4CBD0`에는 객체 offset 8/9의 상태 검사·offset 0x10의 객체 생성/저장이, `0x4CC90`에는 그 상태/객체 정리 분기가 있습니다. `0x52430`은 출력에 0x8BA18AFC00031512와 0을 쓰며, `0x52450`은 3,1,22,1,2를 씁니다. 이 숫자들의 API/LLVM 버전 의미는 호출자 검증 전 **미확인**입니다. 전체 자동 분석 로그에는 잘못된 주소/흐름 경고가 있으므로 디컴파일 성공을 의미 정확성으로 바꾸지 않습니다.
 
-fixture의 `.uproject`는 UEAssist 프로젝트 발견 경로를 검증하는 표식입니다. 엔진으로 빌드한 프로젝트라는 증거로 사용하지 않습니다.
+fixture의 `.uproject`는 CodeAssist 프로젝트 발견 경로를 검증하는 표식입니다. 엔진으로 빌드한 프로젝트라는 증거로 사용하지 않습니다.
 
 분석 대상 폴더:
 
@@ -87,7 +87,7 @@ ValidateItemIndex(selectedText, index, count, getDisplayText):
 
 근거: RVA `19292`, `IL_0002 bge.s IL_0019`, `IL_0006 blt.s IL_0024`, `IL_0012 ItemsMatch`, `IL_0017 brtrue.s IL_0024`, `IL_001D FindItem`, `IL_0025 ret`.
 
-따라서 **선택 인덱스의 항목과 선택 문자열이 맞는지 확인하고, 불일치하면 다시 찾는 동작**을 확인했습니다. 음수 인덱스는 그대로 반환합니다. 이 메서드가 특정 UEAssist 문제를 해결한다고 주장하지 않습니다. `Verify-ControlFlow.ps1`은 이 분기 모델의 4개 경로를 스텁으로 확인하며 실제 VA 메서드 실행 테스트가 아닙니다.
+따라서 **선택 인덱스의 항목과 선택 문자열이 맞는지 확인하고, 불일치하면 다시 찾는 동작**을 확인했습니다. 음수 인덱스는 그대로 반환합니다. 이 메서드가 특정 CodeAssist 문제를 해결한다고 주장하지 않습니다. `Verify-ControlFlow.ps1`은 이 분기 모델의 4개 경로를 스텁으로 확인하며 실제 VA 메서드 실행 테스트가 아닙니다.
 
 ## 코드 검사에서 확인한 호출
 
@@ -95,24 +95,24 @@ ValidateItemIndex(selectedText, index, count, getDisplayText):
 
 `BufferListener.Dispose`에는 Timer.Stop, CancelMyPendingParses, CancellationCookie.Cancel, QueueDisposeTask 호출이 있습니다. `ProjectItemInspector`에는 프로젝트·파일 구성 조회, 평가된 속성 조회, include 경로 정리 호출이 있습니다. **지연 작업·취소·컴파일 구성 수집을 담당하는 코드**까지 확인됐습니다. 타이머 간격, 취소의 완료 보장, 반환 결과의 버전 검증은 미확인입니다.
 
-## UEAssist 적용 후보와 우선순위
+## CodeAssist 적용 후보와 우선순위
 
 본연: Unreal C++에 즉시 반응하는 무료·경량 보조 확장. 작은 프로젝트 캐시와 엔진 공용 캐시, IntelliSense로 넘기는 흐름을 유지합니다. 아래 항목은 개발 제안이며 VA와의 동등성 또는 성능이 검증된 구현은 아닙니다.
 
-| 우선순위 | 적용 후보 | 현재 UEAssist 근거 | 구현 후 검증 조건 |
+| 우선순위 | 적용 후보 | 현재 CodeAssist 근거 | 구현 후 검증 조건 |
 |---|---|---|---|
 | P1 | 문서 추적의 종료·취소·버전 관리 | `LiveDocumentTracker`는 150ms Timer, Changed 구독을 보유하지만 이 클래스에 Dispose/구독 해제가 없음 | 문서 닫기 후 작업·이벤트 정리, 연속 수정에서 이전 분석이 최신 상태를 덮어쓰지 않는지 검사 |
-| P1 | 갱신된 자동완성 목록에서 선택 항목의 식별자 재검증 | `UEAssistCompletionSource`, `CompletionCommandFilter`가 목록 생성·갱신·확정을 담당 | 후보 재정렬·삭제 직후 Tab/Enter가 사용자가 선택한 심볼을 확정하는지 재현. 실제 결함은 아직 미확인 |
+| P1 | 갱신된 자동완성 목록에서 선택 항목의 식별자 재검증 | `CodeAssistCompletionSource`, `CompletionCommandFilter`가 목록 생성·갱신·확정을 담당 | 후보 재정렬·삭제 직후 Tab/Enter가 사용자가 선택한 심볼을 확정하는지 재현. 실제 결함은 아직 미확인 |
 | P1 | 참조 후보 검색의 어휘·범위 정확도 개선 | `PersistentSymbolIndex.FindReferences`는 줄 주석 제거 후 이름 정규식 검색 | 문자열·블록 주석 제외, 같은 이름의 다른 지역 변수 구분. 정밀하지 않은 결과는 계속 후보로 표시 |
 | P2 | 심볼 키에 범위·파일·시그니처를 포함 | `IndexedSymbol`은 이름·소유형·형·기본형·위치를 보유. 소유형 조회 실패 시 전역 이름 조회로 fallback | 같은 이름의 클래스/지역 변수/오버로드에서 모호성을 유지하고 임의 타입을 확정하지 않는지 검사 |
-| P2 | 프로젝트 컴파일 구성의 명시적 모델 | VA 검사 측의 ProjectItemInspector 호출과 UEAssist의 `.Build.cs` 기반 모듈 탐색 | UE include/define/타깃 차이를 반영하면서 초기 응답 및 공용 엔진 캐시를 유지하는지 측정 |
+| P2 | 프로젝트 컴파일 구성의 명시적 모델 | VA 검사 측의 ProjectItemInspector 호출과 CodeAssist의 `.Build.cs` 기반 모듈 탐색 | UE include/define/타깃 차이를 반영하면서 초기 응답 및 공용 엔진 캐시를 유지하는지 측정 |
 | P3 | 무거운 정밀 분석의 선택적 작업자 분리 | VA IPC와 검사 서버 구조 | 먼저 CPU·메모리·UI 지연 측정. 현재 구조에서 이득이 입증될 때 도입 |
 
-P1 → P2 순서로 독립 구현하는 것을 제안합니다. 코드 검사 서버 전체나 Clang DLL을 붙이는 대규모 변경은 현재 근거만으로 정당화하지 않습니다. 이번 변경은 분석 도구와 기록이며 UEAssist 제품 코드는 변경하지 않았습니다.
+P1 → P2 순서로 독립 구현하는 것을 제안합니다. 코드 검사 서버 전체나 Clang DLL을 붙이는 대규모 변경은 현재 근거만으로 정당화하지 않습니다. 이번 변경은 분석 도구와 기록이며 CodeAssist 제품 코드는 변경하지 않았습니다.
 
 ## 후속 분석에 필요한 작업
 
-1. 같은 작은 Unreal C++ 입력으로 VA와 UEAssist의 후보·정의·참조 결과와 응답 시간을 기록합니다. 아직 실행하지 않았습니다.
+1. 같은 작은 Unreal C++ 입력으로 VA와 CodeAssist의 후보·정의·참조 결과와 응답 시간을 기록합니다. 아직 실행하지 않았습니다.
 2. 네이티브 코어는 디스어셈블러의 함수 경계·교차 참조를 통해 GetVaService/VaConnectSetup에서 기능 경계를 추적해야 합니다. 현재 import/export 분석만 완료했습니다.
 3. 캐시는 파일 I/O 관찰과 생성 전후 샘플로 포맷·무효화 조건을 확인해야 합니다. 현재 캐시 구조는 복원하지 않았습니다.
 4. 일반 자동완성과 코드 검사 경로를 별도로 추적합니다. 검사 측 Clang 흔적을 일반 자동완성의 근거로 사용하지 않습니다.

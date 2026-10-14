@@ -1,5 +1,5 @@
 {
   "FileVersion": 3,
   "EngineAssociation": "",
-  "Description": "UEAssist discovery marker for a standalone C++ parity fixture; this is not an Unreal Engine build."
+  "Description": "CodeAssist discovery marker for a standalone C++ parity fixture; this is not an Unreal Engine build."
 }

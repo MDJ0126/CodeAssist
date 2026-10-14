@@ -11,7 +11,7 @@
           "line": 2
         }
       },
-      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+      "uri": "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.cpp"
     }
   ],
   "Select@8": [
@@ -26,7 +26,7 @@
           "line": 13
         }
       },
-      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+      "uri": "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.cpp"
     }
   ],
   "Select@9": [
@@ -41,7 +41,7 @@
           "line": 14
         }
       },
-      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+      "uri": "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.cpp"
     }
   ],
   "GetHealthReferences": [
@@ -56,7 +56,7 @@
           "line": 5
         }
       },
-      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/main.cpp"
+      "uri": "file:///C:/Projects/CodeAssist/tests/VAParityFixture/main.cpp"
     },
     {
       "range": {
@@ -69,7 +69,7 @@
           "line": 2
         }
       },
-      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp"
+      "uri": "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.cpp"
     },
     {
       "range": {
@@ -82,7 +82,7 @@
           "line": 15
         }
       },
-      "uri": "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.h"
+      "uri": "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.h"
     }
   ],
   "completion": {
@@ -253,7 +253,7 @@
   },
   "rename": {
     "changes": {
-      "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.cpp": [
+      "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.cpp": [
         {
           "newText": "GetVitality",
           "range": {
@@ -268,7 +268,7 @@
           }
         }
       ],
-      "file:///C:/Projects/UEAssist/tests/VAParityFixture/FixtureActor.h": [
+      "file:///C:/Projects/CodeAssist/tests/VAParityFixture/FixtureActor.h": [
         {
           "newText": "GetVitality",
           "range": {
@@ -283,7 +283,7 @@
           }
         }
       ],
-      "file:///C:/Projects/UEAssist/tests/VAParityFixture/main.cpp": [
+      "file:///C:/Projects/CodeAssist/tests/VAParityFixture/main.cpp": [
         {
           "newText": "GetVitality",
           "range": {

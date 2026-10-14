@@ -26,9 +26,9 @@
 재현:
 
 ```powershell
-& 'C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe' UEAssist.sln /restore /t:Rebuild /p:Configuration=Release /v:minimal /nologo
-dotnet vstest UEAssist.Core.Tests/bin/Release/net8.0/UEAssist.Core.Tests.dll
-dotnet run --project tools/IndexBenchmark -c Release -- UEAssist.Worker/bin/Release/UEAssist.Worker.exe docs/validation/index-benchmark.json
+& 'C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe' CodeAssist.sln /restore /t:Rebuild /p:Configuration=Release /v:minimal /nologo
+dotnet vstest CodeAssist.Core.Tests/bin/Release/net8.0/CodeAssist.Core.Tests.dll
+dotnet run --project tools/IndexBenchmark -c Release -- CodeAssist.Worker/bin/Release/CodeAssist.Worker.exe docs/validation/index-benchmark.json
 ./tools/VerifyPackage.ps1
 ```
 
@@ -36,9 +36,9 @@ dotnet run --project tools/IndexBenchmark -c Release -- UEAssist.Worker/bin/Rele
 
 ## Visual Studio에서 남은 확인
 
-별도 `UEAssistVerify` 프로필에서 실제 메뉴 29개와 인덱스 준비 상태를 확인했습니다. UEAssist 파일 검색에 `\ui-fixture main.cpp:6`을 입력한 뒤 Enter로 `main.cpp` 6행 1열에 이동했습니다. [UEAssist 실행 기록](ueassist-runtime.json). 명시 재분석 명령을 추가하기 전의 실행 결과이며, 나머지 명령과 모든 키 라우팅의 검증을 대신하지 않습니다.
+별도 `CodeAssistVerify` 프로필에서 실제 메뉴 29개와 인덱스 준비 상태를 확인했습니다. CodeAssist 파일 검색에 `\ui-fixture main.cpp:6`을 입력한 뒤 Enter로 `main.cpp` 6행 1열에 이동했습니다. [CodeAssist 실행 기록](codeassist-runtime.json). 명시 재분석 명령을 추가하기 전의 실행 결과이며, 나머지 명령과 모든 키 라우팅의 검증을 대신하지 않습니다.
 
-VA 원본은 비교 솔루션에서 실제 실행했습니다. 파일 검색 결과 10개와 행 이동 결과를 [실행 기록](../reverse-engineering/va-2630/runtime/file-search.json)에 저장했습니다. 이 결과를 UEAssist 확장 UI 실행 검증으로 대신하지 않습니다.
+VA 원본은 비교 솔루션에서 실제 실행했습니다. 파일 검색 결과 10개와 행 이동 결과를 [실행 기록](../reverse-engineering/va-2630/runtime/file-search.json)에 저장했습니다. 이 결과를 CodeAssist 확장 UI 실행 검증으로 대신하지 않습니다.
 
 현재 VS 프로필에서 `Alt+↓`는 VA ScopeNext 대신 VS 기본 선택 행 이동을 실행했습니다. `Ctrl+Z`로 비교 파일을 복구하고 변경 표시가 사라진 것을 확인했습니다. [단축키 충돌 기록](../reverse-engineering/va-2630/runtime/key-conflicts.json). 전체 통합을 허용해도 기존 사용자 키 배치와의 충돌이 모두 해소되는 것은 아닙니다.
 

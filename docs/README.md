@@ -1,4 +1,4 @@
-# UEAssist 문서
+# CodeAssist 문서
 
 현재 버전: **0.0.49**. Unreal C++에서 IntelliSense 로딩 중에도 빠르게 색상·자동완성·탐색 후보를 제공하는 무료 확장입니다.
 
@@ -11,7 +11,7 @@
 - [검증 결과](validation/README.md): 빌드, 회귀 테스트, 작업자 실행 측정, IDE 확인 항목.
 - [Visual Assist 정적 역분석 기록](reverse-engineering/va-2630/README.md): 원자료와 재현 도구.
 
-UEAssist는 독립 구현입니다. Visual Assist 바이너리를 제품에 포함하거나 런타임 의존성으로 사용하지 않습니다. 정밀 C++ 리팩터링은 Visual Studio의 기능을 호출합니다.
+CodeAssist는 독립 구현입니다. Visual Assist 바이너리를 제품에 포함하거나 런타임 의존성으로 사용하지 않습니다. 정밀 C++ 리팩터링은 Visual Studio의 기능을 호출합니다.
 
 ## 문서 갱신
 

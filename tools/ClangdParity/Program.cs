@@ -1,5 +1,5 @@
 using Newtonsoft.Json.Linq;
-using UEAssist.Semantics;
+using CodeAssist.Semantics;
 
 if (args.Length != 3) throw new ArgumentException("clangd executable, fixture directory, output json");
 var root = Path.GetFullPath(args[1]);

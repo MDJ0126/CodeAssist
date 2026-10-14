@@ -1,4 +1,4 @@
-// @category UEAssist.ReverseEngineering
+// @category CodeAssist.ReverseEngineering
 import ghidra.app.script.GhidraScript;
 import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;

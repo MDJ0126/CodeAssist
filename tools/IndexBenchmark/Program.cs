@@ -1,9 +1,9 @@
 using System.Text;
 using System.Text.Json;
-using UEAssist.Indexing;
+using CodeAssist.Indexing;
 
 if (args.Length != 2) throw new ArgumentException("Usage: IndexBenchmark <worker exe> <report json>");
-var root = Path.Combine(Path.GetTempPath(), "UEAssistBenchmark-" + Guid.NewGuid().ToString("N"));
+var root = Path.Combine(Path.GetTempPath(), "CodeAssistBenchmark-" + Guid.NewGuid().ToString("N"));
 Directory.CreateDirectory(root);
 try
 {

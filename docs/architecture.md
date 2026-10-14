@@ -4,10 +4,10 @@
 
 | 구성 요소 | 책임 |
 |---|---|
-| UEAssist.Core | C++ 어휘 마스킹, 블록 문맥, 문서 버전, 선택 항목 검증 |
-| UEAssist.Indexing | 심볼 인덱싱·조회·캐시, 컴파일 구성 모델, 작업자 실행 |
-| UEAssist.Extension | Visual Studio 문서·자동완성·명령·검색 창 연동 |
-| UEAssist.Worker | 선택형 .NET Framework 4.7.2 인덱싱 프로세스 |
+| CodeAssist.Core | C++ 어휘 마스킹, 블록 문맥, 문서 버전, 선택 항목 검증 |
+| CodeAssist.Indexing | 심볼 인덱싱·조회·캐시, 컴파일 구성 모델, 작업자 실행 |
+| CodeAssist.Extension | Visual Studio 문서·자동완성·명령·검색 창 연동 |
+| CodeAssist.Worker | 선택형 .NET Framework 4.7.2 인덱싱 프로세스 |
 
 ## 문서 수명과 결과 게시
 
@@ -33,7 +33,7 @@ MSBuild/UBT를 실행해 최종 구성 값을 평가하거나 활성 타깃에 �
 
 ## 캐시
 
-캐시 헤더는 `UEASSIST5`입니다. scope·signature·local 표시와 파일 목록을 보존합니다. 이전 `UEASSIST4` 캐시는 새 포맷으로 읽지 않고 다음 초기화에서 다시 분석합니다. 따라서 첫 업데이트 후 인덱싱 시간이 추가로 필요합니다.
+캐시 헤더는 `CODEASSIST5`입니다. scope·signature·local 표시와 파일 목록을 보존합니다. 이전 `CODEASSIST4` 캐시는 새 포맷으로 읽지 않고 다음 초기화에서 다시 분석합니다. 따라서 첫 업데이트 후 인덱싱 시간이 추가로 필요합니다.
 
 프로젝트별 캐시와 엔진 설치별 공용 캐시를 계속 분리합니다. 공용 캐시를 검색하면서 사용 모듈을 백그라운드로 최신화하며, 새 조회 테이블을 잠금 밖에서 완성한 뒤 교체합니다.
 
