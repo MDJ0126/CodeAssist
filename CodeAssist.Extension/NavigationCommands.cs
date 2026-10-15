@@ -31,7 +31,7 @@ namespace CodeAssist.Extension
             var service = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (service == null || indexes == null) return;
             var commands = new NavigationCommands(package, indexes, controller);
-            for (var id = 0x0103; id <= 0x011d; id++)
+            for (var id = 0x0103; id <= 0x011e; id++)
             {
                 var command = id;
                 service.AddCommand(new MenuCommand((s, e) => package.JoinableTaskFactory.RunAsync(() => commands.ExecuteAsync(command))
@@ -60,7 +60,31 @@ namespace CodeAssist.Extension
                     var view = components?.GetService<IVsEditorAdaptersFactoryService>()?.GetWpfTextView(adapter);
                     if (view != null && !view.IsClosed)
                     {
-                        if (command == 0x011d)
+                        if (command == 0x011e)
+                        {
+                            var snapshot = view.TextSnapshot;
+                            var selected = view.Selection.StreamSelectionSpan.SnapshotSpan;
+                            if (selected.Length == 0) return;
+                            var descending = new CheckBox { Content = "내림차순", Margin = new Thickness(10) };
+                            var ignoreCase = new CheckBox { Content = "대소문자 무시", Margin = new Thickness(10) };
+                            var sort = new Button { Content = "정렬", IsDefault = true, Margin = new Thickness(10) };
+                            var panel = new StackPanel(); panel.Children.Add(descending); panel.Children.Add(ignoreCase); panel.Children.Add(sort);
+                            var dialog = new Window { Title = "CodeAssist: Sort Selected Lines", Content = panel, Width = 350, Height = 220, WindowStartupLocation = WindowStartupLocation.CenterOwner };
+                            var sortDte = await package.GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
+                            if (sortDte != null) new System.Windows.Interop.WindowInteropHelper(dialog).Owner = (IntPtr)sortDte.MainWindow.HWnd;
+                            sort.Click += (s, e) => dialog.DialogResult = true;
+                            dialog.PreviewKeyDown += (s, e) => { if (e.Key == Key.Escape) dialog.DialogResult = false; };
+                            if (dialog.ShowDialog() != true || view.IsClosed || !ReferenceEquals(snapshot, view.TextSnapshot)) return;
+                            var change = SelectedLineSort.Create(snapshot.GetText(), selected.Start.Position, selected.Length, descending.IsChecked == true, ignoreCase.IsChecked == true);
+                            using (var edit = view.TextBuffer.CreateEdit())
+                            {
+                                if (!edit.Replace(new Span(change.Start, change.Length), change.Text)) return;
+                                var updated = edit.Apply();
+                                view.Selection.Select(new SnapshotSpan(updated, change.Start, change.Text.Length), false);
+                                view.Caret.MoveTo(new SnapshotPoint(updated, change.Start + change.Text.Length));
+                            }
+                        }
+                        else if (command == 0x011d)
                         {
                             if (!view.TextBuffer.ContentType.IsOfType("C/C++")) return;
                             if (view.TextBuffer.Properties.TryGetProperty(typeof(LiveDocumentTracker), out LiveDocumentTracker tracker))
@@ -78,8 +102,11 @@ namespace CodeAssist.Extension
                         {
                             var snippetDte = await package.GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
                             if (snippetDte == null) return;
+                            string snippetProject = null;
+                            try { snippetProject = snippetDte.ActiveDocument?.ProjectItem?.ContainingProject?.FullName; }
+                            catch (System.Runtime.InteropServices.COMException) { }
                             SnippetInsertion.Show(view, snippetDte.ActiveDocument?.FullName, controller?.UnrealProjectPath,
-                                (IntPtr)snippetDte.MainWindow.HWnd);
+                                (IntPtr)snippetDte.MainWindow.HWnd, snippetProject, snippetDte.Solution?.FullName);
                         }
                         else if (command == 0x0116)
                         {
@@ -106,12 +133,13 @@ namespace CodeAssist.Extension
                         }
                         else
                         {
+                            if (!StartupUi.Preferences.SmartSelectEnabled) return;
                             var selected = view.Selection.StreamSelectionSpan.SnapshotSpan;
                             var history = view.Properties.GetOrCreateSingletonProperty(() => new SelectionHistory());
                             var value = view.TextSnapshot.GetText();
                             var range = command == 0x0113 || command == 0x0115 ?
                                 history.Shrink(value, selected.Start.Position, selected.Length) :
-                                history.Extend(value, selected.Start.Position, selected.Length, command == 0x0114);
+                                history.Extend(value, selected.Start.Position, selected.Length, command == 0x0114, StartupUi.Preferences.SmartSelectSplitWords, StartupUi.Preferences.SmartSelectTrimWhitespace);
                             view.Selection.Select(new SnapshotSpan(view.TextSnapshot, range.Start, range.Length), false);
                             view.Caret.MoveTo(new SnapshotPoint(view.TextSnapshot, range.End));
                             view.ViewScroller.EnsureSpanVisible(new SnapshotSpan(view.TextSnapshot, range.Start, range.Length));

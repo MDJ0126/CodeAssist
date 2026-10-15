@@ -1,0 +1,7 @@
+{
+  "MatchingBinaries": 6,
+  "ActualIdeUi": "Failed actual PC verification: InitializeEditorInstance HRESULT 0x80070057",
+  "Version": "0.0.60",
+  "Status": "VerifiedInstalled",
+  "Manifest": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\a3pri3hg.zva\\extension.vsixmanifest"
+}

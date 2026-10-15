@@ -1,0 +1,23 @@
+{
+  "version": "0.0.64",
+  "catalogEntries": 110,
+  "languages": [
+    "ko",
+    "en"
+  ],
+  "coreTestsPassed": 115,
+  "colorRuntimeVersion": "0.0.64",
+  "colorRuntimeScreenshot": "pc-verification-1792056219981-1.jpg",
+  "smartSelectRuntimeScreenshot": "pc-verification-1792055956877-2.jpg",
+  "tableSHA256": "781fa2969271aba88041349099869e9f35c214129a4208e94009081bac8daa95",
+  "vaParity": "Not established",
+  "limitations": [
+    "All VA settings and toggles are not implemented.",
+    "All command, diagnostic, InfoBar strings are not localized.",
+    "Existing views need reopening after a language change.",
+    "All symbol kinds, themes and native-only candidates still need visual comparison."
+  ],
+  "installedEvidence": "install-0.0.64.json",
+  "latestWelcomeRuntimeScreenshot": "pc-verification-1792056156892-1.jpg",
+  "captureLimitation": "Captured main-window composite includes repeated popup imagery; single-popup rendering has not been certified."
+}

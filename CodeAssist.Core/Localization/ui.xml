@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8'?>
+<translations fallback="en" version="1">
+  <entry key="ui.5fb926229090" source="저장">
+    <text lang="ko">저장</text>
+    <text lang="en">Save</text>
+  </entry>
+  <entry key="ui.be876433993a" source="취소">
+    <text lang="ko">취소</text>
+    <text lang="en">Cancel</text>
+  </entry>
+  <entry key="ui.1e8c10206f5b" source="닫기">
+    <text lang="ko">닫기</text>
+    <text lang="en">Close</text>
+  </entry>
+  <entry key="ui.dc13dbfbfaf2" source="설정 검색">
+    <text lang="ko">설정 검색</text>
+    <text lang="en">Search settings</text>
+  </entry>
+  <entry key="ui.b2b93c0fe82d" source="설정 검색…  ⌕">
+    <text lang="ko">설정 검색…  ⌕</text>
+    <text lang="en">Search settings…  ⌕</text>
+  </entry>
+  <entry key="ui.7f6e8753f903" source="설정은 저장할 때 적용됩니다.">
+    <text lang="ko">설정은 저장할 때 적용됩니다.</text>
+    <text lang="en">Settings apply when saved.</text>
+  </entry>
+  <entry key="ui.3e06fafb2485" source="색상은 #RRGGBB 형식으로 입력하세요.">
+    <text lang="ko">색상은 #RRGGBB 형식으로 입력하세요.</text>
+    <text lang="en">Enter a color in #RRGGBB format.</text>
+  </entry>
+  <entry key="ui.0a742e39bd6b" source="자동 완성 사용">
+    <text lang="ko">자동 완성 사용</text>
+    <text lang="en">Enable code completion</text>
+  </entry>
+  <entry key="ui.1d908a61a7ba" source="심볼 색상 표시">
+    <text lang="ko">심볼 색상 표시</text>
+    <text lang="en">Color symbols</text>
+  </entry>
+  <entry key="ui.77933ce40141" source="클립보드 기록 항목 수">
+    <text lang="ko">클립보드 기록 항목 수</text>
+    <text lang="en">Clipboard history items</text>
+  </entry>
+  <entry key="ui.e3f68552b5dc" source="자동 괄호·붙여넣기 서식·대소문자 자동 교정은 현재 VS의 편집기 설정을 따릅니다.">
+    <text lang="ko">자동 괄호·붙여넣기 서식·대소문자 자동 교정은 현재 VS의 편집기 설정을 따릅니다.</text>
+    <text lang="en">Automatic brackets, paste formatting and case repair currently use Visual Studio settings.</text>
+  </entry>
+  <entry key="ui.d642458e7e5f" source="향상된 심볼 색상 사용">
+    <text lang="ko">향상된 심볼 색상 사용</text>
+    <text lang="en">Enable enhanced symbol coloring</text>
+  </entry>
+  <entry key="ui.ec05f530725f" source="클래스와 타입">
+    <text lang="ko">클래스와 타입</text>
+    <text lang="en">Classes and types</text>
+  </entry>
+  <entry key="ui.541034c474b7" source="변수">
+    <text lang="ko">변수</text>
+    <text lang="en">Variables</text>
+  </entry>
+  <entry key="ui.16a8523fe90a" source="함수">
+    <text lang="ko">함수</text>
+    <text lang="en">Functions</text>
+  </entry>
+  <entry key="ui.35a733f3603c" source="Unreal 매크로">
+    <text lang="ko">Unreal 매크로</text>
+    <text lang="en">Unreal macros</text>
+  </entry>
+  <entry key="ui.0594b124faea" source="추천 팔레트 복원">
+    <text lang="ko">추천 팔레트 복원</text>
+    <text lang="en">Restore recommended palette</text>
+  </entry>
+  <entry key="ui.66d03af33c6b" source="추천 팔레트를 복원하거나 원하는 #RRGGBB 색상을 입력할 수 있습니다.">
+    <text lang="ko">추천 팔레트를 복원하거나 원하는 #RRGGBB 색상을 입력할 수 있습니다.</text>
+    <text lang="en">Restore the recommended palette or enter a #RRGGBB color.</text>
+  </entry>
+  <entry key="ui.f2f8eccd001f" source="파일 내 기본 코드 진단 사용">
+    <text lang="ko">파일 내 기본 코드 진단 사용</text>
+    <text lang="en">Enable basic file diagnostics</text>
+  </entry>
+  <entry key="ui.01b0ab0cd521" source="확정 구문·스코프 오류 후보를 표시합니다. 컴파일러 전체 진단과 동일하지 않습니다.">
+    <text lang="ko">확정 구문·스코프 오류 후보를 표시합니다. 컴파일러 전체 진단과 동일하지 않습니다.</text>
+    <text lang="en">Show syntax and scope issue candidates. This is not a full compiler diagnostic engine.</text>
+  </entry>
+  <entry key="ui.b02e85c63043" source="Find Selected: Alt+K · 다음/이전 선택 항목 이동은 기존 명령을 사용합니다.">
+    <text lang="ko">Find Selected: Alt+K · 다음/이전 선택 항목 이동은 기존 명령을 사용합니다.</text>
+    <text lang="en">Find Selected: Alt+K. Use the existing commands for next/previous matches.</text>
+  </entry>
+  <entry key="ui.61935cdc25a7" source="단축키 도움말">
+    <text lang="ko">단축키 도움말</text>
+    <text lang="en">Keyboard shortcut help</text>
+  </entry>
+  <entry key="ui.66e09c36971c" source="빠른 작업은 Alt+Shift+Q로 엽니다. 부동 빠른 작업 툴바는 현재 지원하지 않습니다.">
+    <text lang="ko">빠른 작업은 Alt+Shift+Q로 엽니다. 부동 빠른 작업 툴바는 현재 지원하지 않습니다.</text>
+    <text lang="en">Open Quick Actions with Alt+Shift+Q. A floating action toolbar is not yet supported.</text>
+  </entry>
+  <entry key="ui.e2622fbee4fd" source="Smart Select 사용">
+    <text lang="ko">Smart Select 사용</text>
+    <text lang="en">Enable Smart Select</text>
+  </entry>
+  <entry key="ui.ff9944bb0741" source="대문자와 밑줄 경계에서 단어 나누기">
+    <text lang="ko">대문자와 밑줄 경계에서 단어 나누기</text>
+    <text lang="en">Split words at case changes and underscores</text>
+  </entry>
+  <entry key="ui.7ff7418ae8b3" source="줄 선택 전에 앞뒤 공백을 제외한 범위 선택">
+    <text lang="ko">줄 선택 전에 앞뒤 공백을 제외한 범위 선택</text>
+    <text lang="en">Select trimmed line contents before the entire line</text>
+  </entry>
+  <entry key="ui.d00d2b7f0d08" source="선택 확장 Alt+Shift+] · 축소 Alt+Shift+[ · 블록 확장 Alt+] · 축소 Alt+[.">
+    <text lang="ko">선택 확장 Alt+Shift+] · 축소 Alt+Shift+[ · 블록 확장 Alt+] · 축소 Alt+[.</text>
+    <text lang="en">Extend Alt+Shift+] · Shrink Alt+Shift+[ · Extend block Alt+] · Shrink block Alt+[.</text>
+  </entry>
+  <entry key="ui.e14faa46b4e1" source="편집기 상단 Context Bar 표시">
+    <text lang="ko">편집기 상단 Context Bar 표시</text>
+    <text lang="en">Show Context Bar above the editor</text>
+  </entry>
+  <entry key="ui.66da30755409" source="파일 경로·메서드 이동·관련 파일 명령을 편집기 위에 표시합니다.">
+    <text lang="ko">파일 경로·메서드 이동·관련 파일 명령을 편집기 위에 표시합니다.</text>
+    <text lang="en">Show file paths, method navigation and related file commands above the editor.</text>
+  </entry>
+  <entry key="ui.97c9d50080f5" source="기본 마우스 동작은 Visual Studio 설정을 사용합니다.">
+    <text lang="ko">기본 마우스 동작은 Visual Studio 설정을 사용합니다.</text>
+    <text lang="en">Mouse behavior uses Visual Studio settings.</text>
+  </entry>
+  <entry key="ui.1dac55f3f882" source="Alt+G 정의/구현 · Alt+O 대응 파일 · Alt+Shift+S 심볼 · Alt+Shift+O 파일.">
+    <text lang="ko">Alt+G 정의/구현 · Alt+O 대응 파일 · Alt+Shift+S 심볼 · Alt+Shift+O 파일.</text>
+    <text lang="en">Alt+G definition/implementation · Alt+O corresponding file · Alt+Shift+S symbols · Alt+Shift+O files.</text>
+  </entry>
+  <entry key="ui.ad4fc2bbc816" source="명령과 단축키는 설치된 CodeAssist 명령 테이블을 사용합니다. 기존 키보드 설정을 덮어쓰지 않습니다.">
+    <text lang="ko">명령과 단축키는 설치된 CodeAssist 명령 테이블을 사용합니다. 기존 키보드 설정을 덮어쓰지 않습니다.</text>
+    <text lang="en">Commands use the installed CodeAssist command table. Existing keyboard settings are preserved.</text>
+  </entry>
+  <entry key="ui.9913118adfe6" source="외부 소스 링크 규칙 편집기는 미구현입니다.">
+    <text lang="ko">외부 소스 링크 규칙 편집기는 미구현입니다.</text>
+    <text lang="en">An external source link rule editor is not yet implemented.</text>
+  </entry>
+  <entry key="ui.13cb441d7cec" source="주석의 #태그를 Alt+Shift+H로 검색합니다.">
+    <text lang="ko">주석의 #태그를 Alt+Shift+H로 검색합니다.</text>
+    <text lang="en">Search comment #tags with Alt+Shift+H.</text>
+  </entry>
+  <entry key="ui.bebb6c42196b" source="CodeAssist 자동 완성">
+    <text lang="ko">CodeAssist 자동 완성</text>
+    <text lang="en">CodeAssist completion</text>
+  </entry>
+  <entry key="ui.d0d3eac9f65b" source="C/C++ 완성 후보와 clangd 기반 후보를 결합합니다. 표시 결과는 프로젝트 구성과 인덱스 상태에 영향을 받습니다.">
+    <text lang="ko">C/C++ 완성 후보와 clangd 기반 후보를 결합합니다. 표시 결과는 프로젝트 구성과 인덱스 상태에 영향을 받습니다.</text>
+    <text lang="en">Combine C/C++ and clangd candidates. Results depend on project configuration and index readiness.</text>
+  </entry>
+  <entry key="ui.d6d749c48e39" source="범용 C/C++ 프로젝트를 지원하며 Unreal은 추가 지원 대상입니다.">
+    <text lang="ko">범용 C/C++ 프로젝트를 지원하며 Unreal은 추가 지원 대상입니다.</text>
+    <text lang="en">Support general C/C++ projects with additional Unreal support.</text>
+  </entry>
+  <entry key="ui.244a7891c915" source="현재 프로젝트의 파일과 심볼을 인덱싱합니다. 엔진·시스템 헤더 캐시는 프로젝트 심볼과 분리합니다.">
+    <text lang="ko">현재 프로젝트의 파일과 심볼을 인덱싱합니다. 엔진·시스템 헤더 캐시는 프로젝트 심볼과 분리합니다.</text>
+    <text lang="en">Index project files and symbols. Engine/system header caches are separate.</text>
+  </entry>
+  <entry key="ui.022c6ed7510d" source="포함 경로는 프로젝트 컴파일 구성에서 읽습니다. 사용자 경로 편집은 아직 제공하지 않습니다.">
+    <text lang="ko">포함 경로는 프로젝트 컴파일 구성에서 읽습니다. 사용자 경로 편집은 아직 제공하지 않습니다.</text>
+    <text lang="en">Read include paths from project compilation settings. Editing custom paths is not yet supported.</text>
+  </entry>
+  <entry key="ui.8238bc5fd540" source="선언 만들기 Alt+Shift+C · 스니펫 삽입은 CodeAssist 메뉴에서 실행합니다.">
+    <text lang="ko">선언 만들기 Alt+Shift+C · 스니펫 삽입은 CodeAssist 메뉴에서 실행합니다.</text>
+    <text lang="en">Create from Usage: Alt+Shift+C. Insert snippets from the CodeAssist menu.</text>
+  </entry>
+  <entry key="ui.c479af03cc48" source="프로젝트 전체 기본 검사">
+    <text lang="ko">프로젝트 전체 기본 검사</text>
+    <text lang="en">Project-wide basic inspection</text>
+  </entry>
+  <entry key="ui.a4b1a4ed4cd7" source="파일별 검사">
+    <text lang="ko">파일별 검사</text>
+    <text lang="en">Per-file inspection</text>
+  </entry>
+  <entry key="ui.b89fbbee189f" source="검사 사용 안 함">
+    <text lang="ko">검사 사용 안 함</text>
+    <text lang="en">Disable inspections</text>
+  </entry>
+  <entry key="ui.b7e3effedd7b" source="상단 안내에서 선택">
+    <text lang="ko">상단 안내에서 선택</text>
+    <text lang="en">Ask in the notification bar</text>
+  </entry>
+  <entry key="ui.7933e9a76776" source="파일별 검사 활성화">
+    <text lang="ko">파일별 검사 활성화</text>
+    <text lang="en">Enable per-file inspection</text>
+  </entry>
+  <entry key="ui.8835e23178fe" source="프로젝트 전체 검사는 로컬 프로젝트 C/C++ 파일의 확정 구문 오류 후보를 검사해 오류 목록에 표시합니다. 컴파일러의 전체 진단을 대체하지 않습니다.">
+    <text lang="ko">프로젝트 전체 검사는 로컬 프로젝트 C/C++ 파일의 확정 구문 오류 후보를 검사해 오류 목록에 표시합니다. 컴파일러의 전체 진단을 대체하지 않습니다.</text>
+    <text lang="en">Check local project C/C++ syntax issue candidates and show results in Error List. This does not replace full compiler diagnostics.</text>
+  </entry>
+  <entry key="ui.9b0835261899" source="프로젝트 전체: 괄호·제어문 구문 검사. 파일별: 타입 대소문자·식별자·구문·스코프 후보 검사. 추가 검사기는 미구현입니다.">
+    <text lang="ko">프로젝트 전체: 괄호·제어문 구문 검사. 파일별: 타입 대소문자·식별자·구문·스코프 후보 검사. 추가 검사기는 미구현입니다.</text>
+    <text lang="en">Project: delimiter/control-flow checks. Per file: type case, identifier, syntax and scope candidates. Additional checkers are not implemented.</text>
+  </entry>
+  <entry key="ui.34d52682f8d0" source="로컬 AI·에이전트 연결은 현재 구현하지 않았습니다.">
+    <text lang="ko">로컬 AI·에이전트 연결은 현재 구현하지 않았습니다.</text>
+    <text lang="en">Local AI and agent integration is not yet implemented.</text>
+  </entry>
+  <entry key="ui.0d90ef527728" source="전용 디버그 보조 기능은 현재 지원하지 않습니다.">
+    <text lang="ko">전용 디버그 보조 기능은 현재 지원하지 않습니다.</text>
+    <text lang="en">Dedicated debugging assistance is not yet supported.</text>
+  </entry>
+  <entry key="ui.f06777473271" source="Unreal 반사 매크로와 메타 지정자·엔진 심볼을 지원합니다. GPU 전용 분석기는 미구현입니다.">
+    <text lang="ko">Unreal 반사 매크로와 메타 지정자·엔진 심볼을 지원합니다. GPU 전용 분석기는 미구현입니다.</text>
+    <text lang="en">Support Unreal reflection macros, metadata and engine symbols. A GPU analyzer is not implemented.</text>
+  </entry>
+  <entry key="ui.ac160f848818" source="시작할 때 Welcome 문서 열기">
+    <text lang="ko">시작할 때 Welcome 문서 열기</text>
+    <text lang="en">Open Welcome at startup</text>
+  </entry>
+  <entry key="ui.317b69fc0dfd" source="상단 안내바 표시">
+    <text lang="ko">상단 안내바 표시</text>
+    <text lang="en">Show notification bar</text>
+  </entry>
+  <entry key="ui.c38ae6888911" source="CodeAssist 문서">
+    <text lang="ko">CodeAssist 문서</text>
+    <text lang="en">CodeAssist documentation</text>
+  </entry>
+  <entry key="ui.10458a1021da" source="편집 후 문서 인덱스 갱신 대기 (ms)">
+    <text lang="ko">편집 후 문서 인덱스 갱신 대기 (ms)</text>
+    <text lang="en">Document index update delay after editing (ms)</text>
+  </entry>
+  <entry key="ui.835b8ad3b6cd" source="빠른 입력 중 중복 분석을 합칩니다. 초기 인덱싱 시간은 프로젝트 구성에 따라 다릅니다.">
+    <text lang="ko">빠른 입력 중 중복 분석을 합칩니다. 초기 인덱싱 시간은 프로젝트 구성에 따라 다릅니다.</text>
+    <text lang="en">Coalesce analysis during rapid input. Initial indexing depends on project configuration.</text>
+  </entry>
+  <entry key="ui.5f9f2e875929" source="CodeAssist에 오신 것을 환영합니다. 권장 설정을 확인하고 저장하세요.">
+    <text lang="ko">CodeAssist에 오신 것을 환영합니다. 권장 설정을 확인하고 저장하세요.</text>
+    <text lang="en">Welcome to CodeAssist. Review and save the recommended settings.</text>
+  </entry>
+  <entry key="ui.529efaf7d647" source="이 범주는 현재 지원하지 않습니다. 제공되는 기능은 관련 설정에서 사용할 수 있습니다.">
+    <text lang="ko">이 범주는 현재 지원하지 않습니다. 제공되는 기능은 관련 설정에서 사용할 수 있습니다.</text>
+    <text lang="en">This category is not yet supported. Available features are accessible in the related settings.</text>
+  </entry>
+  <entry key="ui.7aabb6fb160c" source="코드를 이해하고, 원하는 위치로 이동하고, 더 빠르게 편집하세요.">
+    <text lang="ko">코드를 이해하고, 원하는 위치로 이동하고, 더 빠르게 편집하세요.</text>
+    <text lang="en">Understand code, navigate to what matters, and edit faster.</text>
+  </entry>
+  <entry key="ui.bc4bb57b266c" source="주요 기능">
+    <text lang="ko">주요 기능</text>
+    <text lang="en">Top features</text>
+  </entry>
+  <entry key="ui.086f41200b47" source="단축키">
+    <text lang="ko">단축키</text>
+    <text lang="en">Keyboard shortcuts</text>
+  </entry>
+  <entry key="ui.689e9f028ed8" source="프로젝트의 C/C++ 기본 구문 검사 결과를 오류 목록에서 확인하세요.">
+    <text lang="ko">프로젝트의 C/C++ 기본 구문 검사 결과를 오류 목록에서 확인하세요.</text>
+    <text lang="en">Review basic project C/C++ syntax inspection results in Error List.</text>
+  </entry>
+  <entry key="ui.de15e9aa7097" source="심볼 팔레트와 자동 완성·클립보드 설정을 한곳에서 조정하세요.">
+    <text lang="ko">심볼 팔레트와 자동 완성·클립보드 설정을 한곳에서 조정하세요.</text>
+    <text lang="en">Adjust symbol colors, completion and clipboard settings in one place.</text>
+  </entry>
+  <entry key="ui.dde85d659a93" source="파일·심볼·메서드·대응 파일을 단축키와 Context Bar로 찾으세요.">
+    <text lang="ko">파일·심볼·메서드·대응 파일을 단축키와 Context Bar로 찾으세요.</text>
+    <text lang="en">Find files, symbols, methods and corresponding files using shortcuts and Context Bar.</text>
+  </entry>
+  <entry key="ui.13a23ecbbbb4" source="범용 C/C++ 작업 흐름에 Unreal 매크로와 엔진 탐색 지원을 더합니다.">
+    <text lang="ko">범용 C/C++ 작업 흐름에 Unreal 매크로와 엔진 탐색 지원을 더합니다.</text>
+    <text lang="en">Add Unreal macros and engine navigation to general C/C++ workflows.</text>
+  </entry>
+  <entry key="ui.00a5dc5fc36f" source="설치·권장 색상·탐색·검사 기능의 사용 방법과 검증 범위를 확인하세요.">
+    <text lang="ko">설치·권장 색상·탐색·검사 기능의 사용 방법과 검증 범위를 확인하세요.</text>
+    <text lang="en">Read about installation, colors, navigation, inspections and verification scope.</text>
+  </entry>
+  <entry key="ui.960d26982d32" source="오프라인 사용 안내">
+    <text lang="ko">오프라인 사용 안내</text>
+    <text lang="en">Offline user guide</text>
+  </entry>
+  <entry key="ui.761de67b68ec" source="심볼 찾기 Alt+Shift+S">
+    <text lang="ko">심볼 찾기 Alt+Shift+S</text>
+    <text lang="en">Find Symbol Alt+Shift+S</text>
+  </entry>
+  <entry key="ui.4af75fce0a2c" source="파일 열기 Alt+Shift+O">
+    <text lang="ko">파일 열기 Alt+Shift+O</text>
+    <text lang="en">Open File Alt+Shift+O</text>
+  </entry>
+  <entry key="ui.9f1fdac99643" source="개선할 점이나 재현 방법을 적어 복사하세요. 내용은 자동 전송하지 않습니다.">
+    <text lang="ko">개선할 점이나 재현 방법을 적어 복사하세요. 내용은 자동 전송하지 않습니다.</text>
+    <text lang="en">Write feedback or reproduction steps and copy them. Nothing is sent automatically.</text>
+  </entry>
+  <entry key="ui.41908a006476" source="피드백 내용">
+    <text lang="ko">피드백 내용</text>
+    <text lang="en">Feedback</text>
+  </entry>
+  <entry key="ui.f5640cf6543f" source="피드백 내용 복사">
+    <text lang="ko">피드백 내용 복사</text>
+    <text lang="en">Copy feedback</text>
+  </entry>
+  <entry key="ui.d9381128c086" source="복사했습니다.">
+    <text lang="ko">복사했습니다.</text>
+    <text lang="en">Copied.</text>
+  </entry>
+  <entry key="ui.71af66d7c97f" source="클립보드에 복사하지 못했습니다. 잠시 뒤 다시 시도하세요.">
+    <text lang="ko">클립보드에 복사하지 못했습니다. 잠시 뒤 다시 시도하세요.</text>
+    <text lang="en">Could not copy to the clipboard. Please try again.</text>
+  </entry>
+  <entry key="ui.29b8dbb00979" source="Visual Studio 시작 시 Welcome 열기">
+    <text lang="ko">Visual Studio 시작 시 Welcome 열기</text>
+    <text lang="en">Open Welcome when Visual Studio starts</text>
+  </entry>
+  <entry key="ui.665cf081f45f" source="CodeAssist · 범용 C/C++ 개발 보조 · Unreal Engine 지원">
+    <text lang="ko">CodeAssist · 범용 C/C++ 개발 보조 · Unreal Engine 지원</text>
+    <text lang="en">CodeAssist · General C/C++ assistance · Unreal Engine support</text>
+  </entry>
+  <entry key="ui.d870406c5d15" source="언어">
+    <text lang="ko">언어</text>
+    <text lang="en">Language</text>
+  </entry>
+  <entry key="ui.42bf8c453699" source="UI 언어">
+    <text lang="ko">UI 언어</text>
+    <text lang="en">UI language</text>
+  </entry>
+  <entry key="ui.a575009cf3d5" source="언어는 저장 후 새로 여는 화면에 적용됩니다.">
+    <text lang="ko">언어는 저장 후 새로 여는 화면에 적용됩니다.</text>
+    <text lang="en">Language applies to newly opened views after saving.</text>
+  </entry>
+  <entry key="ui.bee6f0eca84c" source="시스템 언어">
+    <text lang="ko">시스템 언어</text>
+    <text lang="en">System language</text>
+  </entry>
+  <entry key="ui.936a161c3931" source="Editor">
+    <text lang="ko">편집기</text>
+    <text lang="en">Editor</text>
+  </entry>
+  <entry key="ui.931d37b7a209" source="Coloring">
+    <text lang="ko">색상</text>
+    <text lang="en">Coloring</text>
+  </entry>
+  <entry key="ui.ad1668a5241d" source="Underlining">
+    <text lang="ko">밑줄</text>
+    <text lang="en">Underlining</text>
+  </entry>
+  <entry key="ui.7a4a9fe7f2da" source="Highlighting">
+    <text lang="ko">강조</text>
+    <text lang="en">Highlighting</text>
+  </entry>
+  <entry key="ui.2f5995fe5981" source="Floating Elements">
+    <text lang="ko">부동 요소</text>
+    <text lang="en">Floating Elements</text>
+  </entry>
+  <entry key="ui.f1326d00cced" source="Smart Select">
+    <text lang="ko">스마트 선택</text>
+    <text lang="en">Smart Select</text>
+  </entry>
+  <entry key="ui.34e108c0896d" source="Display">
+    <text lang="ko">표시</text>
+    <text lang="en">Display</text>
+  </entry>
+  <entry key="ui.55c1520824a8" source="Mouse">
+    <text lang="ko">마우스</text>
+    <text lang="en">Mouse</text>
+  </entry>
+  <entry key="ui.3db65f8c2a7d" source="Navigation">
+    <text lang="ko">탐색</text>
+    <text lang="en">Navigation</text>
+  </entry>
+  <entry key="ui.f1079111a1c1" source="Goto">
+    <text lang="ko">이동</text>
+    <text lang="en">Goto</text>
+  </entry>
+  <entry key="ui.1daa9b7c7fe5" source="Source Links">
+    <text lang="ko">소스 링크</text>
+    <text lang="en">Source Links</text>
+  </entry>
+  <entry key="ui.20e2990eaf99" source="CodeAssist Hashtags">
+    <text lang="ko">CodeAssist 해시태그</text>
+    <text lang="en">CodeAssist Hashtags</text>
+  </entry>
+  <entry key="ui.16c1d601fc66" source="Suggestions">
+    <text lang="ko">추천</text>
+    <text lang="en">Suggestions</text>
+  </entry>
+  <entry key="ui.6717832dcbee" source="Enhanced Listboxes">
+    <text lang="ko">향상된 추천 목록</text>
+    <text lang="en">Enhanced Listboxes</text>
+  </entry>
+  <entry key="ui.04e2a9728af7" source="Projects">
+    <text lang="ko">프로젝트</text>
+    <text lang="en">Projects</text>
+  </entry>
+  <entry key="ui.c98f7d5e8895" source="Projects and Files">
+    <text lang="ko">프로젝트와 파일</text>
+    <text lang="en">Projects and Files</text>
+  </entry>
+  <entry key="ui.630e99629241" source="C/C++ Directories">
+    <text lang="ko">C/C++ 경로</text>
+    <text lang="en">C/C++ Directories</text>
+  </entry>
+  <entry key="ui.6dd237e349c9" source="Code Generation">
+    <text lang="ko">코드 생성</text>
+    <text lang="en">Code Generation</text>
+  </entry>
+  <entry key="ui.faeb12c9dfa0" source="Code Inspection">
+    <text lang="ko">코드 검사</text>
+    <text lang="en">Code Inspection</text>
+  </entry>
+  <entry key="ui.3dc198a486b5" source="Project-Wide">
+    <text lang="ko">프로젝트 전체</text>
+    <text lang="en">Project-Wide</text>
+  </entry>
+  <entry key="ui.f24944c1eea3" source="Per-File">
+    <text lang="ko">파일별</text>
+    <text lang="en">Per-File</text>
+  </entry>
+  <entry key="ui.73405b2fcb2a" source="Checker Sets">
+    <text lang="ko">검사기 구성</text>
+    <text lang="en">Checker Sets</text>
+  </entry>
+  <entry key="ui.86db970426ef" source="CodeAssist Intelligence">
+    <text lang="ko">CodeAssist 인텔리전스</text>
+    <text lang="en">CodeAssist Intelligence</text>
+  </entry>
+  <entry key="ui.8c3fc9e4b991" source="Debug Assistance">
+    <text lang="ko">디버그 보조</text>
+    <text lang="en">Debug Assistance</text>
+  </entry>
+  <entry key="ui.a82acc52a7f9" source="Games &amp; GPUs">
+    <text lang="ko">게임과 GPU</text>
+    <text lang="en">Games &amp; GPUs</text>
+  </entry>
+  <entry key="ui.9f088dbebd6c" source="Advanced">
+    <text lang="ko">고급</text>
+    <text lang="en">Advanced</text>
+  </entry>
+  <entry key="ui.442aded87a55" source="Performance">
+    <text lang="ko">성능</text>
+    <text lang="en">Performance</text>
+  </entry>
+  <entry key="ui.a4fe65264ef7" source="Language">
+    <text lang="ko">언어</text>
+    <text lang="en">Language</text>
+  </entry>
+  <entry key="ui.d0db8b5e364b" source="Options">
+    <text lang="ko">설정</text>
+    <text lang="en">Options</text>
+  </entry>
+  <entry key="ui.c205924de0fe" source="Documentation">
+    <text lang="ko">문서</text>
+    <text lang="en">Documentation</text>
+  </entry>
+  <entry key="ui.700fe314615c" source="CodeAssist Options">
+    <text lang="ko">CodeAssist 설정</text>
+    <text lang="en">CodeAssist Options</text>
+  </entry>
+  <entry key="ui.completion.native.colors" source="Visual Studio 기본 추천 색상 사용">
+    <text lang="ko">Visual Studio 기본 추천 색상 사용</text>
+    <text lang="en">Use Visual Studio default completion colors</text>
+  </entry>
+</translations>

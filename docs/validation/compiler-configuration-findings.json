@@ -1,0 +1,201 @@
+{
+  "component": "VA inspection compilation configuration pipeline",
+  "evidence": [
+    {
+      "evidence_id": "ev_5a1f6a61f7d8ddf2ce27b04d30bfffd26db26977419e0d240da2ec122a62c7df",
+      "parent_evidence_id": "ev_489c7411dd7b5e658ff0c089f8a1ff918e4df82263fbf7dcdf38baa9f671c854",
+      "operation": "import_managed_reconstruction",
+      "provider": {
+        "id": "rea-dotnet-workflows",
+        "name": "REA managed-code workflows",
+        "version": "1"
+      },
+      "subject": {
+        "name": "VaCodeInspections.VisualStudio.17.0.dll",
+        "digest": {
+          "sha256": "59c3982ee42cee3e0413ba771acc5cc66874fad6d248533db55eb3bfd218be8e"
+        },
+        "local_path": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\VaCodeInspections.VisualStudio.17.0.dll",
+        "format": "pe",
+        "architecture": null
+      },
+      "phase": "reconstruction-import",
+      "executed": false,
+      "token": "0x06000004",
+      "rva": 8580,
+      "signature_sha256": "b35ad3d77486a3570b23cbcca1ed79a097742250c1fcac9fd0284822aa72569a",
+      "normalized_il_sha256": "b2a6482d0c45c4ec07a5676657ec13b7e83b79126d35f4c07219f00513599a96",
+      "reconstruction_sha256": "96db5c5ea4d1c86579731ba36b7bcad0a02f7694f421c871673b0970a22fb4d7",
+      "reconstruction_path": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\GetCompilationOptions.cs",
+      "decompiler": "ICSharpCode.Decompiler 9.1.0.7988",
+      "limitations": [
+        "Decompiler output is imported as reconstruction evidence and analyst inference; metadata and IL observations remain canonical.",
+        "This operation did not execute, load, reflect over, debug, instrument, patch, or decompile the target artifact.",
+        "The imported reconstruction is valid only for the exact artifact SHA-256, MVID, method signature, and normalized IL shape recorded here.",
+        "Obfuscated names, decompiler variables, and control-flow restructuring are not treated as proof without separate validation."
+      ],
+      "scope": "Compilation option retrieval/cache only; native symbol/reference index behavior is not established by this method"
+    }
+  ],
+  "findings": [
+    "빈 configurationName·비 VCProject·비 VCProjectEngine 입력은 null 반환",
+    "키는 프로젝트 파일·configurationName·C/C++ 모드의 결합; cache 사용 여부는 OptionsCloneable 호출 결과에도 의존",
+    "캐시 generation을 읽고 프로젝트 옵션 계산 후 generation이 같을 때만 게시",
+    "캐시 값을 CopyOptions한 뒤 WalkVCFile로 파일 옵션 반영",
+    "프로젝트·파일 옵션 수집 예외는 로그와 null 반환",
+    "include 경로 정규화 후 active configuration 기록 및 프로젝트 속성 변경 이벤트 연결"
+  ],
+  "dependentMethods": [
+    {
+      "token": "0x06000008",
+      "name": "WalkVCProject",
+      "rva": 9584,
+      "signature": {
+        "raw_length": 9,
+        "raw_sha256": "80f697f851dcac7b4a99693b178794136bf2fc0f69bf22011aee6796fdcb6e12",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default",
+        "generic_parameter_count": null,
+        "parameter_count": 3,
+        "return_type": "void",
+        "parameter_types": [
+          "class:129",
+          "string",
+          "class:117"
+        ],
+        "field_type": null,
+        "issue": null
+      }
+    },
+    {
+      "token": "0x06000009",
+      "name": "WalkVCFile",
+      "rva": 9696,
+      "signature": {
+        "raw_length": 10,
+        "raw_sha256": "43a5de1e326083c43044143a9cb09e709ee9f8dc4960984979d5e757c8f13b7b",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default",
+        "generic_parameter_count": null,
+        "parameter_count": 4,
+        "return_type": "void",
+        "parameter_types": [
+          "class:133",
+          "string",
+          "string",
+          "class:117"
+        ],
+        "field_type": null,
+        "issue": null
+      }
+    },
+    {
+      "token": "0x06000012",
+      "name": "SanitizeIncludePathsCached",
+      "rva": 12704,
+      "signature": {
+        "raw_length": 6,
+        "raw_sha256": "4d29a0b06bae0284c8a6a7c9276396ee96c246954abf6ffe74482f2cff731951",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default",
+        "generic_parameter_count": null,
+        "parameter_count": 3,
+        "return_type": "string",
+        "parameter_types": [
+          "string",
+          "string",
+          "bool"
+        ],
+        "field_type": null,
+        "issue": null
+      }
+    },
+    {
+      "token": "0x0600001a",
+      "name": "LoadMakefileSettings",
+      "rva": 14472,
+      "signature": {
+        "raw_length": 11,
+        "raw_sha256": "2112687892999a7c360003c7ac9d44899a7837bed9eaa33eb83061e57aa1eab6",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default",
+        "generic_parameter_count": null,
+        "parameter_count": 2,
+        "return_type": "class:109<string,valuetype:20>",
+        "parameter_types": [
+          "string",
+          "string"
+        ],
+        "field_type": null,
+        "issue": null
+      }
+    },
+    {
+      "token": "0x0600001d",
+      "name": "ClearProjectOptionsCache",
+      "rva": 15436,
+      "signature": {
+        "raw_length": 3,
+        "raw_sha256": "0c9373898d2dd1c85902837a9e979cb88484e2548a008ad2b2176cc7119d09df",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default has-this",
+        "generic_parameter_count": null,
+        "parameter_count": 0,
+        "return_type": "void",
+        "parameter_types": [],
+        "field_type": null,
+        "issue": null
+      }
+    },
+    {
+      "token": "0x0600001f",
+      "name": "OptionsCloneable",
+      "rva": 15648,
+      "signature": {
+        "raw_length": 3,
+        "raw_sha256": "65d27a48dfef406db8f5f437423bfa5f9c83d77bfc12f8a14b8ce3ede5892fb5",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default",
+        "generic_parameter_count": null,
+        "parameter_count": 0,
+        "return_type": "bool",
+        "parameter_types": [],
+        "field_type": null,
+        "issue": null
+      }
+    },
+    {
+      "token": "0x06000020",
+      "name": "CopyOptions",
+      "rva": 15688,
+      "signature": {
+        "raw_length": 6,
+        "raw_sha256": "9452fa0bdfde8e03a3efc56da4d1b704fa7ea4355e4848e81aebe3a24ee8d969",
+        "kind": "method",
+        "parse_status": "decoded",
+        "calling_convention": "default",
+        "generic_parameter_count": null,
+        "parameter_count": 1,
+        "return_type": "class:117",
+        "parameter_types": [
+          "class:117"
+        ],
+        "field_type": null,
+        "issue": null
+      }
+    }
+  ],
+  "unknowns": [
+    "OptionsCloneable 판정 세부 조건 및 옵션 전체 초기값",
+    "Native 심볼/참조 인덱스와의 관계·성능",
+    "VS 실제 호출 스레드와 모든 이벤트 경로",
+    "다른 언어/빌드 플랫폼의 동일성"
+  ],
+  "productCodeChanged": false
+}

@@ -43,7 +43,7 @@ namespace CodeAssist.Extension
 
         private void OnChanged(object sender, TextContentChangedEventArgs args)
         {
-            Schedule(args.After, 150);
+            Schedule(args.After, StartupUi.Preferences.LiveUpdateDelay);
         }
 
         public void Reparse()

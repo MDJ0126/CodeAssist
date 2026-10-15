@@ -6,6 +6,7 @@ int main()
     const auto Health = Actor.GetHealth();
     Actor.Tick(0.016f);
     const auto Integer = Actor.Select(1);
+    GetWorl
     const auto Real = Actor.Select(1.0);
     // GetHealth is a comment, not a code reference.
     const char* Text = "GetHealth";

@@ -1,4 +1,4 @@
-param([string]$Package = "$PSScriptRoot/../CodeAssist.vsix", [string]$Output = "$PSScriptRoot/../docs/validation/package.json")
+﻿param([string]$Package = "$PSScriptRoot/../CodeAssist.vsix", [string]$Output = "$PSScriptRoot/../docs/validation/package.json")
 $ErrorActionPreference='Stop'
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $codeAssistPackagePath=(Resolve-Path -LiteralPath $Package).Path
@@ -11,7 +11,12 @@ try {
     $codeAssistPkgdefEntry=$codeAssistZip.GetEntry('CodeAssist.Extension.pkgdef'); if($null -eq $codeAssistPkgdefEntry){throw 'Missing package registration'}
     $codeAssistPkgdefReader=[IO.StreamReader]::new($codeAssistPkgdefEntry.Open()); try{$codeAssistPkgdef=$codeAssistPkgdefReader.ReadToEnd()}finally{$codeAssistPkgdefReader.Dispose()}
     if($codeAssistPkgdef -notmatch ', CTMENU, 1'){throw 'Missing managed menu registration'}
-    if($codeAssistVersion -ne '0.0.49') { throw "Incorrect version: $codeAssistVersion" }
+    [xml]$codeAssistSourceManifest=Get-Content -LiteralPath "$PSScriptRoot/../CodeAssist.Extension/source.extension.vsixmanifest" -Raw
+    if($codeAssistVersion -ne $codeAssistSourceManifest.PackageManifest.Metadata.Identity.Version) { throw "Incorrect version: $codeAssistVersion" }
+    if($codeAssistPkgdef -notmatch 'Editors\\\{fcb5ef5d-27a7-43f4-8e97-cfcf48219013\}'){throw 'Missing registered Welcome editor factory'}
+    if($null -eq $codeAssistZip.GetEntry('Resources/CodeAssistHelp.html')) {throw 'Missing offline help'}
+    if($null -eq $codeAssistZip.GetEntry('Resources/CodeAssist.png')) {throw 'Missing CodeAssist icon'}
+    if($codeAssistPkgdef -match '5e5645de-4a8b-4f85-9123-73246b5a29aa'){throw 'Obsolete floating Welcome tool window is still registered'}
     $codeAssistFiles=foreach($codeAssistName in @('CodeAssist.Extension.dll','CodeAssist.Core.dll','CodeAssist.Indexing.dll','CodeAssist.Worker.exe','CodeAssist.Semantics.dll','Newtonsoft.Json.dll')) {
         $codeAssistEntry=$codeAssistZip.GetEntry($codeAssistName)
         if($null -eq $codeAssistEntry) {throw "Missing package entry: $codeAssistName"}
@@ -24,6 +29,11 @@ try {
         [pscustomobject]@{File=$codeAssistName; Bytes=$codeAssistEntry.Length; SHA256=$codeAssistDigest; MatchesReleaseBuild=$true}
     }
     [xml]$codeAssistCommands=Get-Content -LiteralPath "$PSScriptRoot/../CodeAssist.Extension/CodeAssistCommands.vsct" -Raw
+    foreach($startupId in @('WelcomeCommandId','SettingsCommandId')){
+        if(@($codeAssistCommands.CommandTable.Commands.Buttons.Button.id) -notcontains $startupId){throw "Missing startup command: $startupId"}
+    }
+    if(@($codeAssistCommands.CommandTable.Commands.Menus.Menu.id) -notcontains 'CodeAssistToolbar'){throw 'Missing CodeAssist toolbar'}
+    if(@($codeAssistCommands.CommandTable.CommandPlacements.CommandPlacement.id) -notcontains 'SettingsCommandId'){throw 'Missing toolbar settings placement'}
     $codeAssistBindings=@($codeAssistCommands.CommandTable.KeyBindings.KeyBinding | ForEach-Object {
         [pscustomobject]@{Command=$_.id; Key=$_.key1; Modifiers=$_.mod1}
     })

@@ -1,0 +1,12 @@
+{
+  "source": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\Autotext\\Latest\\Cpp.tpl",
+  "sha256": "39c0f7961a1db327b4d31ef699c3fc4b20fc98b06c029604ce9c789d466d50ef",
+  "environmentNames": [
+    "USERNAME"
+  ],
+  "scope": "Static installed template syntax only; no target execution and not REA native analysis",
+  "references": [
+    "https://www.wholetomato.com/documentation/code-snippets/va-snippet-input-placeholders",
+    "https://www.wholetomato.com/documentation/code-snippets/va-snippet-environment-placeholders"
+  ]
+}

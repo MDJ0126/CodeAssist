@@ -1,0 +1,36 @@
+{
+  "Version": "0.0.59",
+  "Confirmed": [
+    "0.0.58 user-observed failure",
+    "Native click trace reaches MapLogicalView; no later factory/frame success recorded",
+    "Live VS PID22696 loads actual 0.0.58 extension",
+    "No Welcome frames active at snapshot time; not a historical hang stack"
+  ],
+  "Cause": "Unverified; command registration was reached and is not the cause shown by this trace",
+  "Changes": [
+    "Explicit named physical view",
+    "Queue automatic Welcome only after all initialization awaits",
+    "Prevent reentrant document opens",
+    "Record raw return HRESULT and non-null frame",
+    "Protect editor callbacks from unavailable ActivityLog service"
+  ],
+  "Verified": [
+    "Release build",
+    "6 matching package binaries",
+    "24 key bindings",
+    "VSCT callback routing",
+    "DocData COM and lifecycle contract",
+    "Named logical view mapping and unsupported view rejection",
+    "Unavailable ActivityLog tolerance"
+  ],
+  "Unverified": [
+    "0.0.59 native Welcome display, close and reopen"
+  ],
+  "SourceSHA256": {
+    "CodeAssist.Extension/StartupUi.cs": "bca37e0f2c5c9999874b641fa0ff36bde18d6462d294e87895ed58ca8d26b00a",
+    "CodeAssist.Extension/WelcomeDocumentWindow.cs": "23f52af704f273d11ea0d332998e7679570e4c4f3c34a29d1626f4b5cf97230d",
+    "CodeAssist.Extension/CodeAssist.ExtensionPackage.cs": "c415ff064db4dc7b8063927518d7688df24689dbf8ebf435c2fa60dd29bb4265",
+    "tools/VerifyWelcomeButton.ps1": "9e0a69ffef288785f096451a1dc0b3e086ad2fefa4c70e237391706200d830f3",
+    "tools/LiveVsDebugger/Program.cs": "7bf52bc02ccfc0fc2803d6042e027a94ceff09ea1a6515221d12278c9c719d85"
+  }
+}

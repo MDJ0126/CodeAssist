@@ -1,0 +1,56 @@
+{
+  "Project": "C:\\Projects\\UnrealTestProject",
+  "Engine": "C:\\Program Files\\Epic Games\\UE_5.5",
+  "ProjectFiles": 4,
+  "EngineFiles": 3962,
+  "CompilationTargets": 18,
+  "InputFingerprintStable": true,
+  "Stages": [
+    {
+      "Name": "ProjectInputEnumeration",
+      "ElapsedMs": 26,
+      "CpuMs": 31.25
+    },
+    {
+      "Name": "CompilationModel",
+      "ElapsedMs": 818,
+      "CpuMs": 812.5
+    },
+    {
+      "Name": "ProjectColdParse",
+      "ElapsedMs": 53,
+      "CpuMs": 78.125
+    },
+    {
+      "Name": "ProjectSave",
+      "ElapsedMs": 18,
+      "CpuMs": 0
+    },
+    {
+      "Name": "ProjectWarmLoad",
+      "ElapsedMs": 3,
+      "CpuMs": 0
+    },
+    {
+      "Name": "EngineInputEnumeration",
+      "ElapsedMs": 1448,
+      "CpuMs": 1640.625
+    },
+    {
+      "Name": "ConfiguredHeaderCandidates",
+      "ElapsedMs": 37,
+      "CpuMs": 31.25
+    },
+    {
+      "Name": "EngineInputFingerprint",
+      "ElapsedMs": 166,
+      "CpuMs": 156.25
+    },
+    {
+      "Name": "EngineWarmFingerprint",
+      "ElapsedMs": 1539,
+      "CpuMs": 1578.125
+    }
+  ],
+  "Scope": "Headless actual Unreal project input/cache processing; not a Visual Studio UI CPU trace. Engine parsing and cache load are not measured here."
+}

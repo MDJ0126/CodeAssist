@@ -1,0 +1,61 @@
+{
+  "scope": "Historical original UI observations joined to current limited core filter comparison; no original VA rerun",
+  "featureLinks": [
+    {
+      "featureName": "Open File in Solution",
+      "observationPath": "../reverse-engineering/va-2630/runtime/file-search.json",
+      "observationSHA256": "9a3101d8cbe470d78c5b9f135dadc4fdf52047097554388db5a6a462ea21ca50",
+      "version": "10.9.2630.0",
+      "observationCount": 10,
+      "state": "historical-partial-original-observation",
+      "codeAssistComparison": "10 filter result-set cases passed; actual CodeAssist picker UI not compared",
+      "fullParityPassed": false
+    },
+    {
+      "featureName": "Smart Select",
+      "observationPath": "../reverse-engineering/va-2630/runtime/smart-select.json",
+      "observationSHA256": "dfefa8c3539a27732ef94bb7cecbc6d887faaf3dedab2a74b077f1850529a517",
+      "version": "10.9.2630.0",
+      "observationCount": 2,
+      "state": "historical-partial-original-observation",
+      "codeAssistComparison": "current product result not rerun against this observation",
+      "fullParityPassed": false
+    },
+    {
+      "featureName": "Move Scope",
+      "observationPath": "../reverse-engineering/va-2630/runtime/scope-navigation.json",
+      "observationSHA256": "7391260392065d903722e1c3761255f5e7e5ed4e16cd425344427244cde8d877",
+      "version": "10.9.2630.0",
+      "observationCount": 4,
+      "state": "historical-partial-original-observation",
+      "codeAssistComparison": "current product result not rerun against this observation",
+      "fullParityPassed": false
+    }
+  ],
+  "keyConflictEvidence": {
+    "path": "../reverse-engineering/va-2630/runtime/key-conflicts.json",
+    "sha256": "6ee7b64f5cf647bb014adf8af956f654d5385fea09085aa24d936295eb56cfce",
+    "finding": "Alt+Down routed to VS MoveSelectedLinesDown in recorded profile; cannot count as VA ScopeNext key proof"
+  },
+  "currentFilterComparison": {
+    "cases": 10,
+    "passed": 10,
+    "failed": 0,
+    "trxSHA256": "9657be6d67a18df9386b827151b8ba7b28b6c7221f887ac0a74e945f2c61b720",
+    "testSourceSHA256": "ccdb15f209e34cf57268ecdc5fe62044105a00a93077ba808368e030c38f3d07",
+    "implementationSHA256": "2b75236333479824a1b454ab7f17e0d1ae9dd9d5e6f38577a0ee2e90d3fea174",
+    "candidateFiles": [
+      "FixtureActor.cpp",
+      "FixtureActor.h",
+      "main.cpp"
+    ]
+  },
+  "fixtureCurrentSHA256": "4666d7497211f5c4c6ea1e4660417f86695a115f1de62a33c8be348c98232bc5",
+  "limitations": [
+    "Historical path labels were renamed; hash refers to current evidence file, not immutable original capture.",
+    "Original screenshot provenance and exact fixture snapshot at capture not independently revalidated.",
+    "Core filter test does not compare focus, key routing, selection, settings, asynchronous loading or performance.",
+    "Smart Select has only two observed menu steps; shortcut observation differs and is excluded.",
+    "Scope navigation has one simple fixture and four movements only."
+  ]
+}

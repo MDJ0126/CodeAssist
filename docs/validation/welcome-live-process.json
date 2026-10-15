@@ -1,0 +1,16 @@
+{
+  "ObservedUtc": "2026-10-15T07:21:13.2187934Z",
+  "ProcessId": 22696,
+  "Scope": "Read-only process snapshot; no breakpoints, UI automation, heap values or full dump exported",
+  "Runtimes": [
+    {
+      "Clr": "4.8.9363.0",
+      "Modules": [
+        "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936f\\extensions\\odw3xjgw.lkj\\CodeAssist.Extension.dll",
+        "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936f\\extensions\\odw3xjgw.lkj\\CodeAssist.Core.dll",
+        "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936f\\extensions\\odw3xjgw.lkj\\CodeAssist.Indexing.dll"
+      ],
+      "RelevantThreads": []
+    }
+  ]
+}

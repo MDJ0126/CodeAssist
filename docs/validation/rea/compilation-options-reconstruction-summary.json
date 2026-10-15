@@ -1,0 +1,35 @@
+{
+  "evidence_id": "ev_5a1f6a61f7d8ddf2ce27b04d30bfffd26db26977419e0d240da2ec122a62c7df",
+  "parent_evidence_id": "ev_489c7411dd7b5e658ff0c089f8a1ff918e4df82263fbf7dcdf38baa9f671c854",
+  "operation": "import_managed_reconstruction",
+  "provider": {
+    "id": "rea-dotnet-workflows",
+    "name": "REA managed-code workflows",
+    "version": "1"
+  },
+  "subject": {
+    "name": "VaCodeInspections.VisualStudio.17.0.dll",
+    "digest": {
+      "sha256": "59c3982ee42cee3e0413ba771acc5cc66874fad6d248533db55eb3bfd218be8e"
+    },
+    "local_path": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\VaCodeInspections.VisualStudio.17.0.dll",
+    "format": "pe",
+    "architecture": null
+  },
+  "phase": "reconstruction-import",
+  "executed": false,
+  "token": "0x06000004",
+  "rva": 8580,
+  "signature_sha256": "b35ad3d77486a3570b23cbcca1ed79a097742250c1fcac9fd0284822aa72569a",
+  "normalized_il_sha256": "b2a6482d0c45c4ec07a5676657ec13b7e83b79126d35f4c07219f00513599a96",
+  "reconstruction_sha256": "96db5c5ea4d1c86579731ba36b7bcad0a02f7694f421c871673b0970a22fb4d7",
+  "reconstruction_path": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\GetCompilationOptions.cs",
+  "decompiler": "ICSharpCode.Decompiler 9.1.0.7988",
+  "limitations": [
+    "Decompiler output is imported as reconstruction evidence and analyst inference; metadata and IL observations remain canonical.",
+    "This operation did not execute, load, reflect over, debug, instrument, patch, or decompile the target artifact.",
+    "The imported reconstruction is valid only for the exact artifact SHA-256, MVID, method signature, and normalized IL shape recorded here.",
+    "Obfuscated names, decompiler variables, and control-flow restructuring are not treated as proof without separate validation."
+  ],
+  "scope": "Compilation option retrieval/cache only; native symbol/reference index behavior is not established by this method"
+}

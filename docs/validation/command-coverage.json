@@ -1,0 +1,450 @@
+{
+  "scope": "발견된 명령 기반; VA 전체 기능 목록이 아니며 등록만으로 동등성 통과 처리하지 않음",
+  "commands": [
+    {
+      "id": "ReparseCommandId",
+      "label": "CodeAssist: Reparse Current File",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "현재 C++ 버퍼 심볼 재분석; 전체 프로젝트/컴파일러 재생성 아님"
+    },
+    {
+      "id": "ReferencesResultsCommandId",
+      "label": "CodeAssist: Reference Results",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "CloneReferencesCommandId",
+      "label": "CodeAssist: Clone Reference Results",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "FindSelectedCommandId",
+      "label": "CodeAssist: Find Selected",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "FindSelectedCommandId",
+          "editor": "guidVSStd97",
+          "key1": "K",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "OutlineCommandId",
+      "label": "CodeAssist: Outline",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "WorkspaceCommandId",
+      "label": "CodeAssist: Workspace Symbols",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "SnippetCommandId",
+      "label": "CodeAssist: Insert Snippet",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "ClipboardCommandId",
+      "label": "CodeAssist: Multiple Clipboards",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "ClipboardCommandId",
+          "editor": "guidVSStd97",
+          "key1": "V",
+          "mod1": "CONTROL SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "HashtagsCommandId",
+      "label": "CodeAssist: Hashtags",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "HashtagsCommandId",
+          "editor": "guidVSStd97",
+          "key1": "H",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "IncludesCommandId",
+      "label": "CodeAssist: Include Files",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "SelectExtendCommandId",
+      "label": "CodeAssist: Extend Selection",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "SelectExtendCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_OEM_6",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "SelectShrinkCommandId",
+      "label": "CodeAssist: Shrink Selection",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "SelectShrinkCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_OEM_4",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "SelectBlockExtendCommandId",
+      "label": "CodeAssist: Extend Block Selection",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "SelectBlockExtendCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_OEM_6",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "SelectBlockShrinkCommandId",
+      "label": "CodeAssist: Shrink Block Selection",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "SelectBlockShrinkCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_OEM_4",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "ResetZoomCommandId",
+      "label": "CodeAssist: Reset Editor Zoom",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "ResetZoomCommandId",
+          "editor": "guidVSStd97",
+          "key1": "0",
+          "mod1": "CONTROL"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "OpenFileCommandId",
+      "label": "CodeAssist: Open File",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "OpenFileCommandId",
+          "editor": "guidVSStd97",
+          "key1": "O",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "직접 UI에서 검색 및 :6 행 이동 확인; fuzzy와 다중 선택 미구현"
+    },
+    {
+      "id": "FindSymbolCommandId",
+      "label": "CodeAssist: Find Symbol",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "FindSymbolCommandId",
+          "editor": "guidVSStd97",
+          "key1": "S",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "CorrespondingFileCommandId",
+      "label": "CodeAssist: Open Corresponding File",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "CorrespondingFileCommandId",
+          "editor": "guidVSStd97",
+          "key1": "O",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "ListMethodsCommandId",
+      "label": "CodeAssist: List Methods",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "ListMethodsCommandId",
+          "editor": "guidVSStd97",
+          "key1": "M",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "RelatedSymbolsCommandId",
+      "label": "CodeAssist: Related Symbol Candidates",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "RelatedSymbolsCommandId",
+          "editor": "guidVSStd97",
+          "key1": "G",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "NavigateBackCommandId",
+      "label": "CodeAssist: Navigate Back",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "NavigateBackCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_LEFT",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "NavigateForwardCommandId",
+      "label": "CodeAssist: Navigate Forward",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "NavigateForwardCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_RIGHT",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "RenameCommandId",
+      "label": "CodeAssist: Rename",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "RenameCommandId",
+          "editor": "guidVSStd97",
+          "key1": "R",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구성된 clangd 변경 계획 및 미리보기; 미구성 시 VS Rename; 실제 적용/Undo UI 미확인"
+    },
+    {
+      "id": "QuickActionsCommandId",
+      "label": "CodeAssist: Quick Actions (Visual Studio)",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "QuickActionsCommandId",
+          "editor": "guidVSStd97",
+          "key1": "Q",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "VS Quick Actions 연결; VA 전용 리팩터링/생성 미구현"
+    },
+    {
+      "id": "CreateDeclarationCommandId",
+      "label": "CodeAssist: Create From Usage (Visual Studio Quick Actions)",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "CreateDeclarationCommandId",
+          "editor": "guidVSStd97",
+          "key1": "C",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "VS Quick Actions 연결; VA 전용 리팩터링/생성 미구현"
+    },
+    {
+      "id": "NextScopeCommandId",
+      "label": "CodeAssist: Next Scope",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "NextScopeCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_DOWN",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "PreviousScopeCommandId",
+      "label": "CodeAssist: Previous Scope",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "PreviousScopeCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_UP",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "GoToSymbolCommandId",
+      "label": "CodeAssist: Go to Symbol",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "GoToSymbolCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_F12"
+        },
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "GoToSymbolCommandId",
+          "editor": "guidVSStd97",
+          "key1": "G",
+          "mod1": "ALT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "StatusCommandId",
+      "label": "CodeAssist: Status",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "FindReferencesCommandId",
+      "label": "CodeAssist: Find References",
+      "bindings": [
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "FindReferencesCommandId",
+          "editor": "guidVSStd97",
+          "key1": "VK_F12",
+          "mod1": "SHIFT"
+        },
+        {
+          "guid": "guidCodeAssistCommandSet",
+          "id": "FindReferencesCommandId",
+          "editor": "guidVSStd97",
+          "key1": "F",
+          "mod1": "ALT SHIFT"
+        }
+      ],
+      "state": "일부 구현",
+      "evidence": "구현 코드 존재; 원본 전체 비교 미통과"
+    },
+    {
+      "id": "SortLinesCommandId",
+      "label": "CodeAssist: Sort Selected Lines",
+      "bindings": [],
+      "state": "일부 구현",
+      "evidence": "전체 선택 줄 정렬·방향/대소문자 옵션·부분 마지막 줄·EOF EOL; VA UI/기본값 비교 미확인"
+    }
+  ],
+  "nativeCommandStrings": [
+    "VAssistX.RefactorContextMenu",
+    "VAssistX.Options",
+    "VAssistX.OpenCorrespondingFile",
+    "VAssistX.VAView",
+    "VAssistX.VAOutline",
+    "VAssistX.ToggleRepairCase",
+    "VAssistX.CloneFindReferencesResults",
+    "VAssistX.EnableDisable",
+    "VAssistX.ReparseCurrentFile",
+    "VAssistX.FindReferences",
+    "VAssistX.FindReferencesResults",
+    "VAssistX.GotoRelated",
+    "VAssistX.VaSnippetInsert",
+    "VAssistX.SmartSelectExtend",
+    "VAssistX.SmartSelectShrink",
+    "VAssistX.SmartSelectExtendBlock",
+    "VAssistX.SmartSelectShrinkBlock",
+    "VAssistX.ListIncludeFiles",
+    "VAssistX.RefactorRename",
+    "VAssistX.RefactorCreateFromUsage",
+    "VAssistX.GotoImplementation",
+    "VAssistX.ListMethodsInCurrentFile",
+    "VAssistX.ScopePrevious",
+    "VAssistX.ScopeNext",
+    "VAssistX.OpenFileInSolutionDialog",
+    "VAssistX.NavigateBack",
+    "VAssistX.NavigateForward",
+    "VAssistX.FindSelected",
+    "VAssistX.Paste",
+    "VAssistX.ResetEditorZoom"
+  ],
+  "missingNativeFeatures": [
+    "ToggleRepairCase",
+    "VA 전용 리팩터링 및 Create From Usage",
+    "전체 Options",
+    "VA Outline 편집/드래그",
+    "전체 스니펫 예약 변수 및 shortcut 자동 확장"
+  ]
+}

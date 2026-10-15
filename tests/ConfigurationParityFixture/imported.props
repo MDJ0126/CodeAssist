@@ -1,0 +1,4 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup><SharedRoot>$(MSBuildThisFileDirectory)include</SharedRoot></PropertyGroup>
+  <ItemDefinitionGroup><ClCompile><PreprocessorDefinitions>BASE=1</PreprocessorDefinitions><ForcedIncludeFiles>base.h</ForcedIncludeFiles></ClCompile></ItemDefinitionGroup>
+</Project>

@@ -77,6 +77,7 @@ namespace CodeAssist.Extension
 
         public void AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
         {
+            if (!StartupUi.Preferences.CompletionEnabled) return;
             if (disposed || indexService.Index.Count == 0) return;
             var point = session.GetTriggerPoint(buffer.CurrentSnapshot);
             if (!point.HasValue) return;
@@ -232,14 +233,14 @@ namespace CodeAssist.Extension
         private static Completion CreateCompletion(IndexedSymbol symbol)
         {
             var owner = string.IsNullOrWhiteSpace(symbol.OwnerType) ? string.Empty : " — " + symbol.OwnerType;
-            return new Completion4(
+            return new ColoredCompletion(symbol.Kind,
                 symbol.Name,
                 symbol.Name,
                 symbol.Kind + owner + (symbol.Signature.Length > 0 ? "\n" + symbol.Signature : "") + " (CodeAssist 미리보기)",
                 CompletionIcons.For(symbol.Kind),
                 symbol.Kind.ToString(),
                 null,
-                "CodeAssist");
+                "");
         }
 
         private static Completion CloneCompletion(Completion completion)
@@ -294,6 +295,7 @@ namespace CodeAssist.Extension
             if (!session.Properties.ContainsProperty(CodeAssistCompletionSessionState.Marker))
             {
                 session.Properties.AddProperty(CodeAssistCompletionSessionState.Marker, true);
+                CompletionPopupColors.Connect(session);
             }
         }
     }
@@ -337,8 +339,27 @@ namespace CodeAssist.Extension
 
     internal static class CompletionIcons
     {
+        private static readonly Dictionary<SymbolKind,Microsoft.VisualStudio.Imaging.Interop.IImageHandle> badges = new Dictionary<SymbolKind,Microsoft.VisualStudio.Imaging.Interop.IImageHandle>();
+        internal static void Initialize(Microsoft.VisualStudio.Shell.IVsManagedImageService images,System.Windows.Media.ImageSource brand)
+        {
+            if(images==null)return;
+            foreach(var kind in new[]{SymbolKind.Type,SymbolKind.Function,SymbolKind.Variable,SymbolKind.Macro,SymbolKind.Specifier})
+            {
+                var group=new System.Windows.Media.DrawingGroup();
+                var color=kind==SymbolKind.Type?System.Windows.Media.Color.FromRgb(255,215,0):kind==SymbolKind.Variable?System.Windows.Media.Color.FromRgb(70,180,230):kind==SymbolKind.Macro?System.Windows.Media.Color.FromRgb(189,99,197):kind==SymbolKind.Specifier?System.Windows.Media.Color.FromRgb(100,200,160):System.Windows.Media.Color.FromRgb(160,120,200);
+                using(var draw=group.Open())
+                {
+                    var brush=new System.Windows.Media.SolidColorBrush(color);var pen=new System.Windows.Media.Pen(brush,1);
+                    draw.DrawGeometry(new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromArgb(60,color.R,color.G,color.B)),pen,System.Windows.Media.Geometry.Parse("M1,5 L7,2 L13,5 L13,12 L7,15 L1,12 Z M1,5 L7,8 L13,5 M7,8 L7,15"));
+                    if(kind==SymbolKind.Type)draw.DrawLine(pen,new System.Windows.Point(3,11),new System.Windows.Point(5,12));
+                    if(brand!=null)draw.DrawImage(brand,new System.Windows.Rect(9,0,7,7));
+                }
+                var icon=new System.Windows.Media.DrawingImage(group);icon.Freeze();badges[kind]=images.AddCustomImage(icon,false);
+            }
+        }
         public static Microsoft.VisualStudio.Imaging.Interop.ImageMoniker For(SymbolKind kind)
         {
+            if(badges.TryGetValue(kind,out var badge))return badge.Moniker;
             return kind == SymbolKind.Type
                 ? KnownMonikers.Class
                 : kind == SymbolKind.Function

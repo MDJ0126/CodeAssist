@@ -1,0 +1,11 @@
+{
+  "Characters": 105559,
+  "Variables": 2000,
+  "Tokens": 6000,
+  "SamplesMs": [
+    42.3027,
+    28.9035,
+    27.7702
+  ],
+  "Scope": "Headless .NET 8 parser benchmark; not VS UI or VA comparison."
+}

@@ -1,0 +1,856 @@
+{
+  "scope": "CodeAssist independent integrated architecture proposal across all108 catalog rows; original VA architecture and implementation completion not claimed",
+  "modules": [
+    {
+      "id": "navigation",
+      "firstFeature": 1,
+      "lastFeature": 14,
+      "responsibility": "Semantic locations·query·scope·history·파일 공급원",
+      "relatedEvidence": "navigation-edit-visual-spec.json"
+    },
+    {
+      "id": "refactoring",
+      "firstFeature": 15,
+      "lastFeature": 41,
+      "responsibility": "문맥별 action 판정·preview·파일 배치·참조 변화·Undo",
+      "relatedEvidence": "refactoring-generation-spec.json"
+    },
+    {
+      "id": "editing-completion",
+      "firstFeature": 42,
+      "lastFeature": 56,
+      "responsibility": "Completion/suggestion 공급원·commit·선택·clipboard·surround",
+      "relatedEvidence": "navigation-edit-visual-spec.json"
+    },
+    {
+      "id": "understanding",
+      "firstFeature": 57,
+      "lastFeature": 68,
+      "responsibility": "색상·강조·semantic context·tooltip·print/RTF",
+      "relatedEvidence": "navigation-edit-visual-spec.json"
+    },
+    {
+      "id": "correction",
+      "firstFeature": 69,
+      "lastFeature": 75,
+      "responsibility": "수정 판정·brace/spelling/symbol 오류·output file links",
+      "relatedEvidence": null
+    },
+    {
+      "id": "inspection",
+      "firstFeature": 76,
+      "lastFeature": 79,
+      "responsibility": "검사 요청·결과 수명·quickfix span·겹침·취소",
+      "relatedEvidence": "inspection-pipeline-findings.json"
+    },
+    {
+      "id": "snippets",
+      "firstFeature": 80,
+      "lastFeature": 88,
+      "responsibility": "언어·문맥별 template·필드 수명·reserved/environment expansion",
+      "relatedEvidence": null
+    },
+    {
+      "id": "debugging",
+      "firstFeature": 89,
+      "lastFeature": 92,
+      "responsibility": "Debugger session·address/PDB/memory/step context",
+      "relatedEvidence": null
+    },
+    {
+      "id": "tool-windows",
+      "firstFeature": 93,
+      "lastFeature": 94,
+      "responsibility": "Outline/View 결과 모델·정렬·필터·문서 및 solution 수명",
+      "relatedEvidence": null
+    },
+    {
+      "id": "source-links",
+      "firstFeature": 95,
+      "lastFeature": 100,
+      "responsibility": "패턴 매칭·preview·browser/plugin 경계·취소",
+      "relatedEvidence": null
+    },
+    {
+      "id": "integration",
+      "firstFeature": 101,
+      "lastFeature": 108,
+      "responsibility": "Command/key/mouse·확장자·platform/build adapter·옵션·동시성",
+      "relatedEvidence": "rea/vs-configuration-reconstruction-summary.json"
+    }
+  ],
+  "featureAssignments": [
+    {
+      "featureId": "VA-F001",
+      "featureName": "Find by Context",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F002",
+      "featureName": "Find References",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F003",
+      "featureName": "Find Symbol in Solution",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F004",
+      "featureName": "GoTo Implementation",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F005",
+      "featureName": "GoTo Member",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F006",
+      "featureName": "GoTo Related",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F007",
+      "featureName": "Highlight Current Line",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F008",
+      "featureName": "List Methods in File",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F009",
+      "featureName": "Move Scope",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F010",
+      "featureName": "Navigate Back and Forward",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F011",
+      "featureName": "Open Corresponding File",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F012",
+      "featureName": "Open File in Solution",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F013",
+      "featureName": "VA Hashtags",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F014",
+      "featureName": "VA Navigation Bar",
+      "proposedModule": "navigation",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F015",
+      "featureName": "Access to Refactoring Commands",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F016",
+      "featureName": "Change Signature",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F017",
+      "featureName": "Convert Between Pointer and Instance",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F018",
+      "featureName": "Encapsulate Field",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F019",
+      "featureName": "Extract Method",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F020",
+      "featureName": "Introduce Variable",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F021",
+      "featureName": "Move Implementation to Header File",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F022",
+      "featureName": "Move Implementation to Source File",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F023",
+      "featureName": "Move Method Implementations to Source File",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F024",
+      "featureName": "Move Selection to New File",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F025",
+      "featureName": "Rename",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F026",
+      "featureName": "Rename Files",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F027",
+      "featureName": "Simplify Instance Declaration",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F028",
+      "featureName": "Add Forward Declaration",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F029",
+      "featureName": "Add Member",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F030",
+      "featureName": "Add Missing Case Statements",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F031",
+      "featureName": "Add Similar Member",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F032",
+      "featureName": "Add Using Directive",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F033",
+      "featureName": "Add include Directive",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F034",
+      "featureName": "Add/Remove Braces",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F035",
+      "featureName": "Create Declaration",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F036",
+      "featureName": "Create File",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F037",
+      "featureName": "Create from Usage",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F038",
+      "featureName": "Create Implementation",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F039",
+      "featureName": "Create Method Implementations",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F040",
+      "featureName": "Document Method",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F041",
+      "featureName": "Implement Interface / Virtual Methods",
+      "proposedModule": "refactoring",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F042",
+      "featureName": "Acronyms",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F043",
+      "featureName": "Auto-Extend Multi-Line Comments",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F044",
+      "featureName": "Enhanced Listboxes",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F045",
+      "featureName": "Format After Paste",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F046",
+      "featureName": "Insert () and Closing Brackets and Quotes",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F047",
+      "featureName": "Insert _ After m and Shift",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F048",
+      "featureName": "Multiple Clipboards",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F049",
+      "featureName": "Reset Editor Zoom",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F050",
+      "featureName": "Shorthand",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F051",
+      "featureName": "Smart Select",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F052",
+      "featureName": "Smart Suggestions",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F053",
+      "featureName": "Sort Selected Lines",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F054",
+      "featureName": "Suggestion Lists",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F055",
+      "featureName": "Surround Selection",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F056",
+      "featureName": "Surround With",
+      "proposedModule": "editing-completion",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F057",
+      "featureName": "Column Indicator",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F058",
+      "featureName": "Context Field",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F059",
+      "featureName": "Definition Field",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F060",
+      "featureName": "Enhanced Syntax Coloring",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F061",
+      "featureName": "Local Symbols in Bold",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F062",
+      "featureName": "Highlight Find Results",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F063",
+      "featureName": "Highlight Matching Words",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F064",
+      "featureName": "Highlight References to Symbol Under Cursor",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F065",
+      "featureName": "Parameter Info",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F066",
+      "featureName": "Print in Color",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F067",
+      "featureName": "Quick Info",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F068",
+      "featureName": "System Symbols in Italics",
+      "proposedModule": "understanding",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F069",
+      "featureName": "Convert Dot to ->",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F070",
+      "featureName": "Highlight Files in Output Window",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F071",
+      "featureName": "Highlight Matching Braces and Parentheses",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F072",
+      "featureName": "Highlight Mismatching Braces and Parentheses",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F073",
+      "featureName": "Repair Case",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F074",
+      "featureName": "Underline Spelling Errors",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F075",
+      "featureName": "Underline Unknown Symbols",
+      "proposedModule": "correction",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F076",
+      "featureName": "Code Inspection Settings",
+      "proposedModule": "inspection",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F077",
+      "featureName": "Code Issues in the Editor",
+      "proposedModule": "inspection",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F078",
+      "featureName": "Quick Fixes in the Editor",
+      "proposedModule": "inspection",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F079",
+      "featureName": "Quick Fixes in a Tool Window",
+      "proposedModule": "inspection",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F080",
+      "featureName": "VA Snippets",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F081",
+      "featureName": "for Refactoring",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F082",
+      "featureName": "for Smart Suggestions",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F083",
+      "featureName": "for Surround With",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F084",
+      "featureName": "with Shortcuts",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F085",
+      "featureName": "Create from Selection",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F086",
+      "featureName": "Environment Placeholders",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F087",
+      "featureName": "Input Placeholders",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F088",
+      "featureName": "Reserved Strings",
+      "proposedModule": "snippets",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F089",
+      "featureName": "Address Resolver",
+      "proposedModule": "debugging",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F090",
+      "featureName": "PDB Explorer",
+      "proposedModule": "debugging",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F091",
+      "featureName": "VA Memory View",
+      "proposedModule": "debugging",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F092",
+      "featureName": "VA Step Filter",
+      "proposedModule": "debugging",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F093",
+      "featureName": "VA Outline",
+      "proposedModule": "tool-windows",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F094",
+      "featureName": "VA View",
+      "proposedModule": "tool-windows",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F095",
+      "featureName": "Simple Link Patterns",
+      "proposedModule": "source-links",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F096",
+      "featureName": "Complex Link Patterns",
+      "proposedModule": "source-links",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F097",
+      "featureName": "Connect to FogBugz and GitHub",
+      "proposedModule": "source-links",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F098",
+      "featureName": "Preview Files",
+      "proposedModule": "source-links",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F099",
+      "featureName": "Open Hyperlinks in an External Browser",
+      "proposedModule": "source-links",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F100",
+      "featureName": "Custom Plug-ins",
+      "proposedModule": "source-links",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F101",
+      "featureName": "Context Menus",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F102",
+      "featureName": "Custom File Extensions",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F103",
+      "featureName": "Keyboard Shortcuts",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F104",
+      "featureName": "Mouse",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F105",
+      "featureName": "Multiple Platforms",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F106",
+      "featureName": "Non-Microsoft Build Processes",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F107",
+      "featureName": "Parse Concurrency",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    },
+    {
+      "featureId": "VA-F108",
+      "featureName": "Options Dialog",
+      "proposedModule": "integration",
+      "state": "design assignment, not implementation or original architecture claim"
+    }
+  ],
+  "sharedContracts": [
+    {
+      "name": "CommandRegistry",
+      "contract": "ID/menu/key/scope/availability/order/help from one schema; include IDE conflict ownership and profile-specific localized gestures",
+      "evidence": [
+        "rea/keybinding-reconstruction-summary.json"
+      ],
+      "unknown": "Original native availability and ordering per command"
+    },
+    {
+      "name": "WorkspaceConfiguration",
+      "contract": "Immutable active workspace/configuration/platform/language/file option snapshot; VS evaluated adapter and external build adapter; raw fallback marked incomplete",
+      "evidence": [
+        "rea/vs-configuration-reconstruction-summary.json",
+        "configuration-fixture-evaluation.json"
+      ],
+      "unknown": "Generic native parser compile flags and event ordering"
+    },
+    {
+      "name": "AnalysisScheduler",
+      "contract": "Subsystem-specific cancellation/revision/queue budgets; same-file exclusion where proven; reject stale result publication",
+      "evidence": [
+        "inspection-pipeline-findings.json"
+      ],
+      "unknown": "General parser limits; inspection limit must not apply globally"
+    },
+    {
+      "name": "CacheServices",
+      "contract": "Separate FileFinder lookup persistence, semantic symbol/reference index, compiler option caches; independent schema/context/generation/invalidation",
+      "evidence": [
+        "native-cache-parser-rules.json",
+        "native-cache-header-reset.json",
+        "rea/vs-configuration-reconstruction-summary.json"
+      ],
+      "unknown": "Semantic index layout and every cache invalidation condition"
+    },
+    {
+      "name": "EditTransaction",
+      "contract": "Snapshot version check, overlap detection, preview, coordinated multi-file Undo, caret/selection restore; cancellation before applying edits",
+      "evidence": [
+        "inspection-pipeline-findings.json",
+        "refactoring-generation-spec.json"
+      ],
+      "unknown": "Original Undo grouping and refactoring-specific rollback edge cases"
+    },
+    {
+      "name": "SemanticBackend",
+      "contract": "Language-specific symbol identity/type/hierarchy/read-write/overloads and diagnostics; compiler and textual candidate results remain distinguishable",
+      "evidence": [
+        "navigation-edit-visual-spec.json"
+      ],
+      "unknown": "All native semantics, C# provider behavior and incomplete-code heuristics"
+    },
+    {
+      "name": "SettingsSchema",
+      "contract": "Stored values, installation-help defaults and observed factory-reset values separate; version/theme/language constraints and dependent options explicit",
+      "evidence": [
+        "installed-help-defaults.json",
+        "general-parser-help-findings.json"
+      ],
+      "unknown": "Most exact setting bindings and full factory palette"
+    },
+    {
+      "name": "UIResultModels",
+      "contract": "Stable identity, result kind, scope, filters, selection, sorting and cloning state independent from view; lazy data loading and cancellation",
+      "evidence": [
+        "navigation-edit-visual-spec.json",
+        "historical-runtime-comparison.json"
+      ],
+      "unknown": "Exact layout/icons/focus/accessibility/async behavior"
+    },
+    {
+      "name": "SnippetEngine",
+      "contract": "Environment snapshot then reserved/template expansion; per-invocation shared input and GUID; inline field and dialog state independent from text mutation",
+      "evidence": [
+        "integrated-spec.json"
+      ],
+      "unknown": "All reserved values, nested/escaped templates and inline Undo"
+    },
+    {
+      "name": "ValidationOracle",
+      "contract": "Per-feature original input/output/version/settings/caret/Undo/UI/key/performance evidence; full parity only when all relevant gates pass",
+      "evidence": [
+        "va-feature-baseline.json",
+        "historical-runtime-comparison.json"
+      ],
+      "unknown": "Required original runtime comparisons remain unexecuted"
+    }
+  ],
+  "currentSourceEvidence": [
+    {
+      "path": "CodeAssist.Extension/FindReferencesCommand.cs",
+      "sha256": "a7e13207978c8ced0b89144a3970adf5c6dce808840b28f3af8a57c7f0bebd1b",
+      "finding": "Per-command linked cancellation source exists; shared command lifecycle not established."
+    },
+    {
+      "path": "CodeAssist.Extension/NavigationCommands.cs",
+      "sha256": "7cf8f342a3f784baa80495a3bbdd7ea7aed3cc926a5cbe278223d95063f4868e",
+      "finding": "Some navigation/refactoring commands delegate to VS commands; delegation is not native VA parity."
+    },
+    {
+      "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+      "sha256": "4a5e06f99b3656fc21c1591e00045a7b9bdc6febb1f41ec85b81637598fc7358",
+      "finding": "Exported creation listener ContentType is C/C++; all-language support not established."
+    },
+    {
+      "path": "CodeAssist.Indexing/ProjectCompilationModel.cs",
+      "sha256": "6e5bbd819c0f95cc06af57161120746025dadb743a5c1bab589c6ee9e20e7cea",
+      "finding": "Raw XML candidate collector differs from evaluated per-file configuration adapter."
+    },
+    {
+      "path": "CodeAssist.Extension/CompilerRename.cs",
+      "sha256": "b6104fe31fcd86d78202ca8fc9a279b4b4172895bc4ded0556f820a8523c9db7",
+      "finding": "Rename-specific preview and UndoContext handling exists; shared edit transaction not established."
+    }
+  ],
+  "batchImplementationEntryCriteria": [
+    "Finish feature-specific analysis and resolve or explicitly test each unknown before claiming equivalence.",
+    "Confirm original2630 command/option/language availability including additional candidates.",
+    "Compare original runtime inputs before setting factory defaults or replacing semantic behaviors."
+  ],
+  "fullParityCount": 0,
+  "completeAnalysisCount": 0,
+  "productCodeChanged": false
+}

@@ -125,6 +125,11 @@ namespace CodeAssist.Extension
                         var projectCacheLoaded = projectIndex.Load(projectCachePath);
                         var engineCacheLoaded = engineIndex.Load(engineCachePath);
                         Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
+                        var engineInputsPath = projectCachePath + ".engine-inputs";
+                        var engineInputs = string.IsNullOrWhiteSpace(engineRoot) ? null :
+                            IndexInputFingerprint.Create(PersistentSymbolIndex.InputFiles(engineRoot, projectRoot));
+                        var engineInputsCurrent = engineInputs != null && File.Exists(engineInputsPath) &&
+                            File.ReadAllText(engineInputsPath) == engineInputs;
                         var changed = false;
                         if (!projectCacheLoaded || !configurationCurrent || !IsCacheCurrent(projectRoot, projectCachePath))
                         {
@@ -135,7 +140,7 @@ namespace CodeAssist.Extension
                             changed = true;
                         }
 
-                        if (!string.IsNullOrWhiteSpace(engineRoot))
+                        if (!string.IsNullOrWhiteSpace(engineRoot) && (!engineCacheLoaded || !engineInputsCurrent))
                         {
                             // The existing engine cache remains searchable while the modules used by
                             // this project are scanned and merged into the shared engine installation cache.
@@ -145,6 +150,7 @@ namespace CodeAssist.Extension
                             ReportIndexingStatus("엔진 공용 캐시 저장 중...", 85);
                             engineIndex.ReplaceWith(engineIndex, refreshedEngine);
                             engineIndex.Save(engineCachePath);
+                            File.WriteAllText(engineInputsPath, engineInputs);
                             changed = true;
                         }
 
@@ -258,7 +264,7 @@ namespace CodeAssist.Extension
             var cacheTime = File.GetLastWriteTimeUtc(cachePath);
             try
             {
-                return !Directory.EnumerateFiles(projectRoot, "*.*", SearchOption.AllDirectories)
+                return !PersistentSymbolIndex.InputFiles(projectRoot)
                     .Where(path => path.EndsWith(".h", StringComparison.OrdinalIgnoreCase) ||
                                    path.EndsWith(".hpp", StringComparison.OrdinalIgnoreCase) ||
                                    path.EndsWith(".cpp", StringComparison.OrdinalIgnoreCase) ||

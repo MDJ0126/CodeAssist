@@ -24,16 +24,19 @@ namespace CodeAssist.Indexing
         public string Fingerprint { get; private set; } = string.Empty;
         public IReadOnlyList<IndexedSymbol> HeaderCandidates(IEnumerable<string> indexedFiles)
         {
+            var roots = Targets.SelectMany(target => target.IncludeDirectories.Select(directory =>
+                Path.GetFullPath(Path.IsPathRooted(directory) ? directory : Path.Combine(Path.GetDirectoryName(target.ProjectFile), directory))
+                    .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar) + Path.DirectorySeparatorChar))
+                .Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
             var candidates = new List<IndexedSymbol>();
-            foreach (var file in indexedFiles.Where(path => new[] { ".h", ".hpp", ".hh", ".inl" }.Contains(Path.GetExtension(path).ToLowerInvariant())))
-            foreach (var target in Targets)
-            foreach (var directory in target.IncludeDirectories)
+            foreach (var file in indexedFiles)
             {
-                var includeRoot = Path.GetFullPath(Path.IsPathRooted(directory) ? directory : Path.Combine(Path.GetDirectoryName(target.ProjectFile), directory))
-                    .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar) + Path.DirectorySeparatorChar;
+                var extension = Path.GetExtension(file);
+                if (!new[] { ".h", ".hpp", ".hh", ".inl" }.Contains(extension, StringComparer.OrdinalIgnoreCase)) continue;
                 var fullFile = Path.GetFullPath(file);
-                if (fullFile.StartsWith(includeRoot, StringComparison.OrdinalIgnoreCase))
-                    candidates.Add(new IndexedSymbol(fullFile.Substring(includeRoot.Length).Replace('\\', '/'), CodeAssist.Core.SymbolKind.Header, file, 1, 1));
+                foreach (var includeRoot in roots)
+                    if (fullFile.StartsWith(includeRoot, StringComparison.OrdinalIgnoreCase))
+                        candidates.Add(new IndexedSymbol(fullFile.Substring(includeRoot.Length).Replace('\\', '/'), CodeAssist.Core.SymbolKind.Header, file, 1, 1));
             }
             return candidates.GroupBy(item => item.Name, StringComparer.OrdinalIgnoreCase).Select(group => group.First()).ToArray();
         }

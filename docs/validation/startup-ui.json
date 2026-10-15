@@ -1,0 +1,90 @@
+{
+  "version": "0.0.55",
+  "tests": {
+    "total": 103,
+    "passed": 103,
+    "failed": 0,
+    "newStartupCases": 6
+  },
+  "verification": {
+    "releaseBuild": true,
+    "offlineWpfRender": [
+      "welcome-preview.png",
+      "first-run-preview.png",
+      "settings-preview.png"
+    ],
+    "actualVisualStudioUi": "unverified",
+    "va2630RuntimeComparison": "unverified",
+    "themeRegression": {
+      "previousVersion": "0.0.52",
+      "oldFailureReproduced": true,
+      "offlineThemes": [
+        "Light",
+        "Dark"
+      ],
+      "screens": [
+        "FirstRun",
+        "Settings",
+        "Welcome"
+      ],
+      "actualIdeThemeSwitch": "unverified"
+    }
+  },
+  "implemented": [
+    "first-run integration dialog",
+    "persisted integration preferences",
+    "welcome tool window",
+    "main-window InfoBar",
+    "settings menu",
+    "banana code icon",
+    "color recommendation selector and swatches",
+    "native small banana icons"
+  ],
+  "limitations": [
+    "VA document tab hosting not reproduced",
+    "recommended shortcut selection not implemented",
+    "pixel/theme/focus defaults unverified",
+    "Unreal editing and CPU regression unverified"
+  ],
+  "evidence": [
+    {
+      "installedFile": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\FirstRun\\firstRun.html",
+      "sha256": "7a40dcef0b0811160268110da53558f72c2fdf4d9eb8639c879639d30f58716a",
+      "use": "read-only structure evidence; not included in product"
+    },
+    {
+      "installedFile": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\Misc\\welcome.mustache",
+      "sha256": "809736d8202e2cedd90c89a626f592dd1bc9f88cea8dd0f4031158fcda6da4c7",
+      "use": "read-only structure evidence; not included in product"
+    }
+  ],
+  "metrics": {
+    "documentContracts": {
+      "covered": 108,
+      "total": 108
+    },
+    "overallReverseEngineering": "unverified",
+    "fullParity": {
+      "verified": 0,
+      "total": 108
+    },
+    "partialMapping": {
+      "mapped": 26,
+      "total": 108
+    }
+  },
+  "iconRevision": "Plain unpeeled banana; code symbol removed",
+  "installationEvidence": "install-0.0.55.json",
+  "startupOrder": [
+    "Welcome",
+    "InfoBar",
+    "IntegrationSetup"
+  ],
+  "welcomeHost": {
+    "implementation": "IVsUIShell.CreateDocumentWindow + WindowPane",
+    "floatingToolWindowRegistrationRemoved": true,
+    "runtimeFrameTypeCheck": 1,
+    "actualEditorTabLayout": "unverified"
+  },
+  "currentInterfaceEvidence": "product-surfaces.json"
+}

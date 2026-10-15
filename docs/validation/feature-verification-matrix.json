@@ -1,0 +1,6026 @@
+{
+  "scope": "108 public catalog features; not all VA settings or product requirements",
+  "ledgerSHA256": "0596d2f321d816788f632f54abf7026c6dd45658f9e07a2b4d446efcc598e8d3",
+  "denominator": 108,
+  "documentedPartial": 108,
+  "partialSourceMappings": 26,
+  "partialSourceMappingPercent": 24.1,
+  "implementationCompleteVerified": 0,
+  "verifiedImplementationPercent": 0,
+  "actualImplementationPercent": null,
+  "parityCompleteVerified": 0,
+  "verifiedParityPercent": 0,
+  "actualParityPercent": null,
+  "rules": [
+    "A mapping, command registration, screenshot or unit-test count does not constitute a completed feature.",
+    "Implementation completion requires every agreed scenario and applicable gate to pass in CodeAssist; untested or failed gates block completion.",
+    "Parity additionally requires VA2630 and CodeAssist isolated runs on the same inputs, settings and IDE version, with compared results and artifacts.",
+    "Record versions, extension DLL SHA256, fixture SHA256, input/caret, expected and observed output, settings, keys, Undo and timings per scenario.",
+    "Record non-applicable gates with a reason; never silently skip a required gate.",
+    "Keep cold/warm startup, p50/p95 latency, CPU and memory separate; establish the acceptance budget from measured VA results before evaluating CodeAssist.",
+    "Hash and retain raw logs/screenshots/result files and reject evidence from a different build or modified fixture.",
+    "New requirements expand a versioned denominator; never shrink the denominator to implemented features.",
+    "This audit checks the existing ledger and generates unverified checklists; it does not execute VA or certify evidence automatically."
+  ],
+  "additionalProductRequirements": [
+    {
+      "name": "Welcome opens as editor document tab",
+      "state": "runtime-verified",
+      "version": "0.0.61",
+      "checks": [
+        "Startup Welcome document tab",
+        "Close Welcome tab",
+        "Second banana click reopens Welcome",
+        "Repeated click retains single Welcome tab",
+        "Code main.cpp remains alongside Welcome"
+      ],
+      "evidence": [
+        {
+          "path": "welcome-live-ui-0.0.61.json",
+          "sha256": "0b519912ed6c58c4e6be0ae9d3e1e44e039cb3c4c6f6c7b5048cfd055b9aa65b"
+        },
+        {
+          "path": "welcome-native-0.0.61.log",
+          "sha256": "e9d951120b12adde87587ad72b027bc29878756295346db3b54cea81d814d052"
+        },
+        {
+          "path": "pc-verification-1792052494775-1.jpg",
+          "sha256": "578281d902de479ea11a72a208e470223b06ecb94145f3b9856223c55d188a0c"
+        }
+      ],
+      "scope": "Separate product requirement, not a completed VA catalog feature"
+    }
+  ],
+  "features": [
+    {
+      "id": "VA-F001",
+      "name": "Find by Context",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "동명 지역/멤버/중첩 scope 비교",
+        "첫/마지막 참조의 경계 및 선택 방향 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F002",
+      "name": "Find References",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F003",
+      "name": "Find Symbol in Solution",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "prefix/contains·대소문자·부정/경계 조합 비교",
+        "선택 초기화·이전 필터 복원 및 system 범위 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F004",
+      "name": "GoTo Implementation",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "단일/복수/overload 및 주석 scope 비교",
+        "project 제한·system 예외·후보 없음 fallback 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F005",
+      "name": "GoTo Member",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "각 구조종류·inherited toggle·동명member·type/name sort"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F006",
+      "name": "GoTo Related",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "다이아몬드 상속·override·overload 메뉴 비교",
+        "include 역방향 의존성·주석 후보 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F007",
+      "name": "Highlight Current Line",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "theme·포커스·색·표시방식 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F008",
+      "name": "List Methods in File",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "macro 메서드·namespace·parameter 표시 조합 비교",
+        "편집 revision 갱신 및 ESC/포커스 종료 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F009",
+      "name": "Move Scope",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "괄호와 brace 혼합 중첩 및 global 이동 비교",
+        "문자열/주석 내 delimiter와 불완전 코드 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F010",
+      "name": "Navigate Back and Forward",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "편집/파일전환/Find reference waypoint와 cursor column 복원",
+        "keyboard conflict·history branch·닫힌문서"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F011",
+      "name": "Open Corresponding File",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "다중 대응·project외·이름접두사·경로동명 후보"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F012",
+      "name": "Open File in Solution",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "다중 project 중복/결합·공급원 변경 및 취소 비교",
+        "persistent filter 숨김/해제·line/column 조건 비교",
+        "fuzzy·case·prefix·다중 선택 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F013",
+      "name": "VA Hashtags",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "주석/전처리·case·편집갱신·숨김범위",
+        "외부변경·read-only·solution/global 전환"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F014",
+      "name": "VA Navigation Bar",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "문서·theme·namespace·Go설정·project 전환"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F015",
+      "name": "Access to Refactoring Commands",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F016",
+      "name": "Change Signature",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "기본 인수 추가와 필수 인수 추가의 호출부 차이",
+        "여러 인수 이름 변경+재정렬 모호성",
+        "파생 클래스·외부 헤더·선택 호출부·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F017",
+      "name": "Convert Between Pointer and Instance",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "new/delete와 address/dereference 혼합",
+        "raw/unique/shared/custom 및 explicit type",
+        "지원 불가 변수·escape하는 참조"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F018",
+      "name": "Encapsulate Field",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "m_nItemsCount·hWindow·밑줄 이름",
+        "getter/setter 한쪽 생략·복합 참조",
+        "배열/char pointer 제한과 선택 참조 범위"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F019",
+      "name": "Extract Method",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "read/write 혼합·멤버·로컬·단일 반환값",
+        "단일문/다중문·early return·매크로 선택 경계"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F020",
+      "name": "Introduce Variable",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "동일 표현식의 선택 전/후와 다른 scope",
+        "단일문 while/if·부작용 표현식",
+        "반환값 capture와 residual parentheses"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F021",
+      "name": "Move Implementation to Header File",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "선언없음·default이름차이·전처리·주석·선택복원"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F022",
+      "name": "Move Implementation to Source File",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "template 두단계·overload·EOF·snippet·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F023",
+      "name": "Move Method Implementations to Source File",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "중첩class·선택subset·template·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F024",
+      "name": "Move Selection to New File",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "부분줄·기존destination·언어template·include·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F025",
+      "name": "Rename",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "상속·주석proximity·범위/제외·취소",
+        "다중project·중단검색·preview focus·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F026",
+      "name": "Rename Files",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "related files·include·SCC·충돌·read-only·save/Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F027",
+      "name": "Simplify Instance Declaration",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "local/nonlocal·타입/initializer·주석·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F028",
+      "name": "Add Forward Declaration",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "pointer와 by-value 다른 사용 혼재",
+        "namespace/template·include group·커서 유지"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F029",
+      "name": "Add Member",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "reference·method/field·systemdir·snippet·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F030",
+      "name": "Add Missing Case Statements",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "일부/all enum 누락·default 존재",
+        "같은 값 alias·scoped enum·중첩 switch"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F031",
+      "name": "Add Similar Member",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "base/derived·stub/body·배치·systemdir·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F032",
+      "name": "Add Using Directive",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "C#listbox설정·동명namespace·기존using·caret·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F033",
+      "name": "Add include Directive",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "ifdef 속 include·중복·umbrella·generated header",
+        "여러 include roots와 경로 스타일 옵션",
+        "설정별 후보 부재·커서 유지"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F034",
+      "name": "Add/Remove Braces",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "dangling else·nested·복수macro·toggle·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F035",
+      "name": "Create Declaration",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "헤더 존재/없음·이웃 순서",
+        "기본 인수 주석·static/const/template"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F036",
+      "name": "Create File",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "짝없는파일·언어별·project외·include·caret"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F037",
+      "name": "Create from Usage",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "new Foo와 new Foo()·상수 생성자 인수",
+        "클래스 멤버/지역/전역/인수/enum 선택",
+        "추론 실패 UnknownType 및 snippet customizations"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F038",
+      "name": "Create Implementation",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "source 존재/없음·EOF/이웃 배치",
+        "default 인수 옵션·정적 멤버·snippet 삭제"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F039",
+      "name": "Create Method Implementations",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "일부기구현·대응없음·overload·배치·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F040",
+      "name": "Document Method",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "declaration/definition·return/parameter·snippet·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F041",
+      "name": "Implement Interface / Virtual Methods",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "다중/diamond 상속·이미 구현한 메서드",
+        "필터 반복 후 체크 유지·정렬 전환",
+        "추상/구체 혼합과 virtual/override 설정"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F042",
+      "name": "Acronyms",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "camel/Pascal/underscore·중복 약어·최근 사용·목록별 가용성"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F043",
+      "name": "Auto-Extend Multi-Line Comments",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "block·single-line·끝줄·선두공백 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F044",
+      "name": "Enhanced Listboxes",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "member/completion/suggestion 전환 및 필터 조합 비교",
+        "commit 설정·우측 텍스트 overwrite·취소 비교",
+        "C++/C#·::·include·주석 데이터 공급원 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F045",
+      "name": "Format After Paste",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "단일/다중 줄 paste 및 Undo 단계 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F046",
+      "name": "Insert () and Closing Brackets and Quotes",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "typing 중단·중복닫힘·commit·brace 위치 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F047",
+      "name": "Insert _ After m and Shift",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "Shift 타이밍·연속입력·IME 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F048",
+      "name": "Multiple Clipboards",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "capacity·중복·선택·표준paste·Undo 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F049",
+      "name": "Reset Editor Zoom",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "추천키 충돌·창별/global zoom·focus"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F050",
+      "name": "Shorthand",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "부분 문자열·prefix 제한·약어 충돌·우선 선택"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F051",
+      "name": "Smart Select",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "네 명령의 교차 사용 및 외부 선택 후 shrink 비교",
+        "leading whitespace·문자열/주석·case/underscore 옵션 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F052",
+      "name": "Smart Suggestions",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "타입/overload·enum·사용자 snippet·comma 입력"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F053",
+      "name": "Sort Selected Lines",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F054",
+      "name": "Suggestion Lists",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "정의/참조 문맥·C# 공급원·commit·우측 문자열"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F055",
+      "name": "Surround Selection",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "부분/전체/복수 줄·기존주석·snippet·Undo 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F056",
+      "name": "Surround With",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "문자·메뉴·다중 snippet·선택/Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F057",
+      "name": "Column Indicator",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "가변/고정폭·zoom·theme·가로 스크롤"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F058",
+      "name": "Context Field",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "동명 scope·unknown·global·resize·IME/Unicode"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F059",
+      "name": "Definition Field",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "복수 정의·include 경로·macro/typedef·복사"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F060",
+      "name": "Enhanced Syntax Coloring",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "light/dark·unknown theme·contrast fallback 비교",
+        "IDE reset·추가 요소·창별 적용 비교",
+        "동명 다른 종류 심볼 및 include 없는 macro 색 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F061",
+      "name": "Local Symbols in Bold",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "동명 다른 scope·다른 파일의 class member·theme"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F062",
+      "name": "Highlight Find Results",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "새검색·ESC·문서전환·theme 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F063",
+      "name": "Highlight Matching Words",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "주석/문자열에서 동명 다른 scope·대소문자·부분 단어 비교",
+        "code로 이동 및 선택·ESC 수명 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F064",
+      "name": "Highlight References to Symbol Under Cursor",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "동명 shadowing·read/write·공백·ESC 비교",
+        "IDE 중복 표시·테마 및 프로젝트 외 파일 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F065",
+      "name": "Parameter Info",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "중간 인자 복귀·overload·macro·C#·재시작"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F066",
+      "name": "Print in Color",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "전체/일부 출력·theme·VS버전·context"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F067",
+      "name": "Quick Info",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "VS버전·IDE 병합/대체·source/header 주석·macro·ESC"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F068",
+      "name": "System Symbols in Italics",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "동명 override·NuGet/Vcpkg·ProgramFiles·재파싱"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F069",
+      "name": "Convert Dot to ->",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "pointer·instance·smart object·철회 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F070",
+      "name": "Highlight Files in Output Window",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "solution 내부/외부·상대/절대경로·출력갱신 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F071",
+      "name": "Highlight Matching Braces and Parentheses",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "중첩·문자열/주석 delimiter·caret 경계 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F072",
+      "name": "Highlight Mismatching Braces and Parentheses",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "불완전코드·여는/닫는짝·macro 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F073",
+      "name": "Repair Case",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "단일/복수 후보·C# 조건·Undo 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F074",
+      "name": "Underline Spelling Errors",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "언어사전·주석/문자열·사전수명·Undo 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F075",
+      "name": "Underline Unknown Symbols",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "IDE표시 토글·정의중·include/macro·취소 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F076",
+      "name": "Code Inspection Settings",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "checker/level·설정 reset·조정·source suppression"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F077",
+      "name": "Code Issues in the Editor",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "표시 토글·겹친 issue·level5·tracking"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F078",
+      "name": "Quick Fixes in the Editor",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "다중 fix·겹침·stale span·취소·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F079",
+      "name": "Quick Fixes in a Tool Window",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "그룹/복수 선택·sort·tracking·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F080",
+      "name": "VA Snippets",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "유형별 메뉴·수정 반영·언어·직렬화·caret"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F081",
+      "name": "for Refactoring",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "title 변경/삭제·언어별 필수값·reserved 문맥"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F082",
+      "name": "for Smart Suggestions",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "타입/typedef·빈 제안·삭제와 재생성·정렬"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F083",
+      "name": "for Surround With",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "선택 없음·부분/전체 줄·문자 충돌·accelerator"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F084",
+      "name": "with Shortcuts",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "case·중복 쌍·language·commit·Undo"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F085",
+      "name": "Create from Selection",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "여러 줄·공백·문자 escape·입력·caret"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F086",
+      "name": "Environment Placeholders",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F087",
+      "name": "Input Placeholders",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F088",
+      "name": "Reserved Strings",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F089",
+      "name": "Address Resolver",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "base/ASLR·PDB 불일치·여러 모듈·입력 형식·실패"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F090",
+      "name": "PDB Explorer",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "release/debug PDB·base·중복주소·module refresh·disassembly 이동"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F091",
+      "name": "VA Memory View",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "세션전/중 토글·재시작·debugger state 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F092",
+      "name": "VA Step Filter",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "global/solution 우선순위·창숨김·권한·세션수명 비교"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F093",
+      "name": "VA Outline",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "편집/선택/Undo·comment 포함·자동갱신·다중노드"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F094",
+      "name": "VA View",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "MRU 수명·다중 IDE·overload·include hierarchy·focus"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F095",
+      "name": "Simple Link Patterns",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "keyword/suffix 공백·quote·타입 불일치",
+        "동일 줄 edit/재배치·plain text gate·comment classification"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F096",
+      "name": "Complex Link Patterns",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "RE= 대소문자·빈/잘못된pattern·group",
+        "timeout 생성 실패fallback·긴match·재활성화 수명"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F097",
+      "name": "Connect to FogBugz and GitHub",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "공유/사용자 설정·권한 실패·tooltip 취소·browser login"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F098",
+      "name": "Preview Files",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "로컬/network·경로공백·환경값·미존재파일·형식별 preview"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F099",
+      "name": "Open Hyperlinks in an External Browser",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "plugin override·internal/external·URL expansion",
+        "실행실패·keyboard/mouse/QuickInfo·선택 URI"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F100",
+      "name": "Custom Plug-ins",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "올바른/잘못된 type·의존성 누락·validation 예외",
+        "plugin settings scope·설정변경·dispose·reload"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F101",
+      "name": "Context Menus",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "symbol/selection/file 문맥·focus·modified mouse"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F102",
+      "name": "Custom File Extensions",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "ignore/reopen·extensionless·custom 언어·VS버전"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F103",
+      "name": "Keyboard Shortcuts",
+      "partialSourceMapping": true,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "기존키 충돌·추천 수락·scope·locale·다중 shortcut"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F104",
+      "name": "Mouse",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "click 조합·wheel 방향·selection·IDE 충돌"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F105",
+      "name": "Multiple Platforms",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "Win32/x64/custom·build/edit 차이·재시작"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F106",
+      "name": "Non-Microsoft Build Processes",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "solution없음·custom 경로순서·환경값·Rebuild"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F107",
+      "name": "Parse Concurrency",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [
+        "설정/재시작·프로젝트 시작/편집·검사동시성·실제CPU"
+      ],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    },
+    {
+      "id": "VA-F108",
+      "name": "Options Dialog",
+      "partialSourceMapping": false,
+      "documentSpecification": "documented-partially",
+      "scenarios": [],
+      "gates": [
+        {
+          "requirement": "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "접근: 메뉴·키·문맥 가용성·충돌 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        },
+        {
+          "requirement": "성능: 시작·캐시 재사용·편집·검색·메모리 비교",
+          "implementation": "unverified",
+          "parity": "unverified",
+          "evidence": []
+        }
+      ],
+      "implementationCompleteVerified": false,
+      "parityCompleteVerified": false
+    }
+  ],
+  "requiredGateCount": 756,
+  "unverifiedGateCount": 756,
+  "unmappedFeatureCount": 82
+}

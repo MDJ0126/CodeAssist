@@ -16,6 +16,10 @@ namespace CodeAssist.Core
     {
         public static SelectionRange Expand(string text, int start, int length, bool blockOnly)
         {
+            return Expand(text, start, length, blockOnly, false, false);
+        }
+        public static SelectionRange Expand(string text, int start, int length, bool blockOnly, bool splitWords, bool trimWhitespace)
+        {
             text = text ?? "";
             start = Math.Max(0, Math.Min(start, text.Length));
             var end = Math.Min(text.Length, start + Math.Max(0, length));
@@ -25,6 +29,17 @@ namespace CodeAssist.Core
                 var left = start; var right = end;
                 while (left > 0 && Word(text[left - 1])) left--;
                 while (right < text.Length && Word(text[right])) right++;
+                if (splitWords && right > left)
+                {
+                    var boundaries = new List<int> { left };
+                    for (var i = left + 1; i < right; i++)
+                        if (text[i - 1] == '_' || text[i] == '_' ||
+                            (char.IsLower(text[i - 1]) && char.IsUpper(text[i])) ||
+                            (char.IsUpper(text[i - 1]) && char.IsUpper(text[i]) && i + 1 < right && char.IsLower(text[i + 1]))) boundaries.Add(i);
+                    boundaries.Add(right);
+                    for (var i = 0; i + 1 < boundaries.Count; i++)
+                        candidates.Add(new SelectionRange(boundaries[i], boundaries[i + 1] - boundaries[i]));
+                }
                 if (right > left) candidates.Add(new SelectionRange(left, right - left));
             }
             var code = CppCodeMask.Create(text);
@@ -59,6 +74,13 @@ namespace CodeAssist.Core
                 var lineStart = start == 0 ? 0 : text.LastIndexOf('\n', start - 1) + 1;
                 var lineEnd = text.IndexOf('\n', end);
                 if (lineEnd < 0) lineEnd = text.Length;
+                if (trimWhitespace)
+                {
+                    var first = lineStart; var last = lineEnd;
+                    while (first < last && char.IsWhiteSpace(text[first])) first++;
+                    while (last > first && char.IsWhiteSpace(text[last - 1])) last--;
+                    candidates.Add(new SelectionRange(first, last - first));
+                }
                 candidates.Add(new SelectionRange(lineStart, lineEnd - lineStart));
             }
             candidates.Add(new SelectionRange(0, text.Length));
@@ -72,10 +94,10 @@ namespace CodeAssist.Core
         private readonly Stack<SelectionRange> history = new Stack<SelectionRange>();
         private string text;
         private SelectionRange current;
-        public SelectionRange Extend(string value, int start, int length, bool blockOnly)
+        public SelectionRange Extend(string value, int start, int length, bool blockOnly, bool splitWords = false, bool trimWhitespace = false)
         {
             Synchronize(value, start, length);
-            var next = CppSelection.Expand(value, start, length, blockOnly);
+            var next = CppSelection.Expand(value, start, length, blockOnly, splitWords, trimWhitespace);
             if (next.Start != start || next.Length != length) history.Push(current);
             return current = next;
         }

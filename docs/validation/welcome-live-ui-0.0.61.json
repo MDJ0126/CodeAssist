@@ -1,0 +1,16 @@
+{
+  "MVID": "8c73d782-f53d-4125-914a-7ec5d88dd034",
+  "Project": "VAParityFixture",
+  "Checks": [
+    "Startup Welcome document tab",
+    "Close Welcome tab",
+    "Second banana click reopens Welcome",
+    "Repeated click retains single Welcome tab",
+    "Code main.cpp remains alongside Welcome"
+  ],
+  "Scope": "Welcome only; no full VA parity claim",
+  "Version": "0.0.61",
+  "Screenshot": "pc-verification-1792052494775-1.jpg",
+  "Mechanism": "Official node_repl MCP via standard MCP SDK; @oai/sky",
+  "Status": "PassedActualPcControl"
+}

@@ -1,0 +1,503 @@
+{
+  "ObservedUtc": "2026-10-15T07:46:55.0677846Z",
+  "ProcessId": 5464,
+  "Scope": "Brief suspended read-only attach; resumed on disposal; no heap values or full dump exported",
+  "Runtimes": [
+    {
+      "Clr": "4.8.9363.0",
+      "Modules": [
+        "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936f\\extensions\\4gx0n2r0.rtt\\CodeAssist.Extension.dll",
+        "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936f\\extensions\\4gx0n2r0.rtt\\CodeAssist.Core.dll",
+        "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936f\\extensions\\4gx0n2r0.rtt\\CodeAssist.Indexing.dll"
+      ],
+      "RelevantThreads": [
+        {
+          "OSThreadId": 28080,
+          "ManagedThreadId": 1,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 26152,
+          "ManagedThreadId": 2,
+          "Frames": [
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 26756,
+          "ManagedThreadId": 3,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 28476,
+          "ManagedThreadId": 4,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 24404,
+          "ManagedThreadId": 13,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 27704,
+          "ManagedThreadId": 14,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 22512,
+          "ManagedThreadId": 15,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 17504,
+          "ManagedThreadId": 19,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 27200,
+          "ManagedThreadId": 21,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 10576,
+          "ManagedThreadId": 22,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 27940,
+          "ManagedThreadId": 23,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 3888,
+          "ManagedThreadId": 26,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 26404,
+          "ManagedThreadId": 27,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 27992,
+          "ManagedThreadId": 28,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 12476,
+          "ManagedThreadId": 8,
+          "Frames": [
+            "Runtime: System.Threading.Thread.SleepInternal(Int32)",
+            "ManagedMethod: System.Threading.Thread.Sleep(Int32)",
+            "ManagedMethod: System.Threading.Thread.Sleep(System.TimeSpan)",
+            "ManagedMethod: Microsoft.VisualStudio.PlatformUI.Diagnostics.ThreadPoolWatcher.WatcherThread()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 14580,
+          "ManagedThreadId": 7,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 17204,
+          "ManagedThreadId": 31,
+          "Frames": [
+            "Runtime: [InlinedCallFrame]",
+            "Runtime: [InlinedCallFrame]",
+            "ManagedMethod: DomainNeutralILStubClass.IL_STUB_PInvoke(System.Windows.Interop.MSG ByRef, System.Runtime.InteropServices.HandleRef, Int32, Int32)",
+            "ManagedMethod: MS.Win32.UnsafeNativeMethods.GetMessageW(System.Windows.Interop.MSG ByRef, System.Runtime.InteropServices.HandleRef, Int32, Int32)",
+            "ManagedMethod: System.Windows.Threading.Dispatcher.GetMessage(System.Windows.Interop.MSG ByRef, IntPtr, Int32, Int32)",
+            "ManagedMethod: System.Windows.Threading.Dispatcher.PushFrameImpl(System.Windows.Threading.DispatcherFrame)",
+            "ManagedMethod: Microsoft.Internal.VisualStudio.PlatformUI.BackgroundDispatcher.ThreadProc(System.Object)",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart(System.Object)",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 7164,
+          "ManagedThreadId": 32,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 23240,
+          "ManagedThreadId": 38,
+          "Frames": [
+            "Runtime: [GCFrame]",
+            "Runtime: System.Threading.Monitor.ObjWait(Boolean, Int32, System.Object)",
+            "ManagedMethod: System.Threading.SemaphoreSlim.WaitUntilCountOrTimeout(Int32, UInt32, System.Threading.CancellationToken)",
+            "ManagedMethod: System.Threading.SemaphoreSlim.Wait(Int32, System.Threading.CancellationToken)",
+            "ManagedMethod: System.Collections.Concurrent.BlockingCollection\u00601[[System.__Canon, mscorlib]].TryTakeWithNoTimeValidation(System.__Canon ByRef, Int32, System.Threading.CancellationToken, System.Threading.CancellationTokenSource)",
+            "ManagedMethod: System.Collections.Concurrent.BlockingCollection\u00601\u002B\u003CGetConsumingEnumerable\u003Ed__68[[System.__Canon, mscorlib]].MoveNext()",
+            "ManagedMethod: Microsoft.VisualStudio.ProjectSystem.PriorityTaskScheduler.ThreadProc()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 21020,
+          "ManagedThreadId": 39,
+          "Frames": [
+            "Runtime: System.Threading.WaitHandle.WaitMultiple(System.Threading.WaitHandle[], Int32, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.WaitAny(System.Threading.WaitHandle[], Int32, Boolean)",
+            "ManagedMethod: Microsoft.Build.BackEnd.Logging.LoggingService.\u003CStartLoggingEventProcessing\u003Eg__LoggingEventProc|151_0()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 20848,
+          "ManagedThreadId": 40,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 22000,
+          "ManagedThreadId": 41,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 4396,
+          "ManagedThreadId": 37,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 10040,
+          "ManagedThreadId": 35,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 6336,
+          "ManagedThreadId": 34,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 25464,
+          "ManagedThreadId": 47,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 1824,
+          "ManagedThreadId": 45,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 28956,
+          "ManagedThreadId": 48,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 8628,
+          "ManagedThreadId": 50,
+          "Frames": [
+            "Runtime: System.Threading.WaitHandle.WaitOneNative(System.Runtime.InteropServices.SafeHandle, UInt32, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.InternalWaitOne(System.Runtime.InteropServices.SafeHandle, Int64, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.WaitOne(Int32, Boolean)",
+            "ManagedMethod: Microsoft.VisualStudio.Telemetry.Common.Synchronization.WindowsProcessLock.TryAcquire()",
+            "ManagedMethod: Microsoft.VisualStudio.Telemetry.Common.Synchronization.WindowsProcessLock.Acquire(System.Action, System.Threading.CancellationToken)",
+            "ManagedMethod: Microsoft.VisualStudio.ApplicationInsights.Channel.PersistenceTransmitter.AcquireMutex(System.Action)",
+            "ManagedMethod: System.Threading.Tasks.Task.Execute()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef)",
+            "ManagedMethod: System.Threading.Tasks.Task.ExecuteEntry(Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart(System.Object)",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 8216,
+          "ManagedThreadId": 46,
+          "Frames": [
+            "Runtime: System.Threading.WaitHandle.WaitOneNative(System.Runtime.InteropServices.SafeHandle, UInt32, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.InternalWaitOne(System.Runtime.InteropServices.SafeHandle, Int64, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.WaitOne(System.TimeSpan, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.WaitOne(System.TimeSpan)",
+            "ManagedMethod: Microsoft.VisualStudio.ApplicationInsights.Channel.FlushManager.FlushLoop()",
+            "ManagedMethod: System.Threading.Tasks.Task.Execute()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.Tasks.Task.ExecuteWithThreadLocal(System.Threading.Tasks.Task ByRef)",
+            "ManagedMethod: System.Threading.Tasks.Task.ExecuteEntry(Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart(System.Object)",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 25564,
+          "ManagedThreadId": 56,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 13956,
+          "ManagedThreadId": 62,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 10516,
+          "ManagedThreadId": 64,
+          "Frames": [
+            "Runtime: System.Threading.WaitHandle.WaitMultiple(System.Threading.WaitHandle[], Int32, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.WaitAny(System.Threading.WaitHandle[], Int32, Boolean)",
+            "ManagedMethod: Microsoft.Build.BackEnd.InProcNode.Run(System.Exception ByRef)",
+            "ManagedMethod: Microsoft.Build.BackEnd.NodeProviderInProc.InProcNodeThreadProc()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 28624,
+          "ManagedThreadId": 69,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 26032,
+          "ManagedThreadId": 70,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 24068,
+          "ManagedThreadId": 71,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 13036,
+          "ManagedThreadId": 72,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 14812,
+          "ManagedThreadId": 73,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 22724,
+          "ManagedThreadId": 76,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 18120,
+          "ManagedThreadId": 77,
+          "Frames": [
+            "Runtime: [GCFrame]",
+            "Runtime: System.Threading.Monitor.ObjWait(Boolean, Int32, System.Object)",
+            "ManagedMethod: System.Threading.SemaphoreSlim.WaitUntilCountOrTimeout(Int32, UInt32, System.Threading.CancellationToken)",
+            "ManagedMethod: System.Threading.SemaphoreSlim.Wait(Int32, System.Threading.CancellationToken)",
+            "ManagedMethod: System.Collections.Concurrent.BlockingCollection\u00601[[System.__Canon, mscorlib]].TryTakeWithNoTimeValidation(System.__Canon ByRef, Int32, System.Threading.CancellationToken, System.Threading.CancellationTokenSource)",
+            "ManagedMethod: System.Collections.Concurrent.BlockingCollection\u00601\u002B\u003CGetConsumingEnumerable\u003Ed__68[[System.__Canon, mscorlib]].MoveNext()",
+            "ManagedMethod: Microsoft.Build.BackEnd.RequestBuilder\u002BDedicatedThreadsTaskScheduler.\u003CInjectThread\u003Eb__6_0()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 22516,
+          "ManagedThreadId": 51,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 27768,
+          "ManagedThreadId": 79,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 4456,
+          "ManagedThreadId": 80,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 21952,
+          "ManagedThreadId": 81,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 24036,
+          "ManagedThreadId": 82,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 22248,
+          "ManagedThreadId": 83,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 25868,
+          "ManagedThreadId": 92,
+          "Frames": [
+            "Runtime: System.Threading.Thread.SleepInternal(Int32)",
+            "ManagedMethod: vaIPCnet.stats.PrintThread()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        },
+        {
+          "OSThreadId": 2776,
+          "ManagedThreadId": 93,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 23432,
+          "ManagedThreadId": 101,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 8540,
+          "ManagedThreadId": 100,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 15712,
+          "ManagedThreadId": 94,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 4592,
+          "ManagedThreadId": 86,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 24696,
+          "ManagedThreadId": 65,
+          "Frames": [
+            "ManagedMethod: \u003Cnative frame\u003E"
+          ]
+        },
+        {
+          "OSThreadId": 24260,
+          "ManagedThreadId": 55,
+          "Frames": [
+            "Runtime: System.Threading.WaitHandle.WaitMultiple(System.Threading.WaitHandle[], Int32, Boolean, Boolean)",
+            "ManagedMethod: System.Threading.WaitHandle.WaitAny(System.Threading.WaitHandle[], Int32, Boolean)",
+            "ManagedMethod: System.Net.TimerThread.ThreadProc()",
+            "ManagedMethod: System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object, Boolean)",
+            "ManagedMethod: System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext, System.Threading.ContextCallback, System.Object)",
+            "ManagedMethod: System.Threading.ThreadHelper.ThreadStart()",
+            "Runtime: [GCFrame]",
+            "Runtime: [DebuggerU2MCatchHandlerFrame]"
+          ]
+        }
+      ]
+    }
+  ]
+}

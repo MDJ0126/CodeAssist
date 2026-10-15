@@ -1,0 +1,23 @@
+﻿{
+    "Version":  "0.0.66",
+    "ToolbarOrder":  [
+                         "SettingsCommandId",
+                         "OpenFileCommandId",
+                         "FindSymbolCommandId",
+                         "FindReferencesCommandId",
+                         "PreviousContextCommandId",
+                         "NextContextCommandId",
+                         "SnippetCommandId",
+                         "SpellCheckCommandId",
+                         "CorrespondingFileCommandId",
+                         "SkipBreakpointsCommandId",
+                         "ThreadBreakpointsCommandId",
+                         "WelcomeCommandId"
+                     ],
+    "NativeVsClick":  "Unverified",
+    "SettingsInvocations":  1,
+    "MissingServiceRejected":  true,
+    "ToolbarButton":  "WelcomeCommandId",
+    "ServiceType":  "System.ComponentModel.Design.MenuCommandService",
+    "WelcomeInvocations":  1
+}

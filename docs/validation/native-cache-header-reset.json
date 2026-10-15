@@ -1,0 +1,64 @@
+{
+  "scope": "Bounded original LLVM disassembly; analyst reconstruction not original execution",
+  "artifactSHA256": "a13323cffc447f5712375cbc0e19827b73e5d95c40dd994ae6c66960e3e8813f",
+  "functions": [
+    {
+      "rva": "0x32b250",
+      "endRetRva": "0x32b29d",
+      "artifact": "cache-header-key.asm.txt",
+      "sha256": "188752f710fdf03f0a167c48d2fbf413dbd5c0515e027e127873f6b1426e81ce"
+    },
+    {
+      "rva": "0x3780e0",
+      "unwindEndRva": "0x378246",
+      "artifact": "cache-reset.asm.txt",
+      "sha256": "80525fe3ed28f3af6a92a1f5ff6a850f98685726daf2f7e6697882f10e28b421"
+    }
+  ],
+  "findings": [
+    "Header calculation is a 32-bit rolling operation over NUL-terminated UTF16 units; ordinary branch h=129*h+unit modulo2^32.",
+    "ASCII uppercase A-Z takes special packed-bit branch; uppercase and lowercase do not simply normalize to the same hash.",
+    "Reset enters critical section at object+0x30 and clears two container sentinels plus size fields at object+0x08 and +0x18.",
+    "Reset calls context-producing helpers and combines outputs with semicolon literal into object+0x60. Exact context meaning unverified.",
+    "Previously observed loader compares loaded dword to this header calculation and resets on mismatch; comparison is not sufficient to prove mtime/content fingerprint."
+  ],
+  "reconstructionSamples": [
+    {
+      "inputKind": "empty",
+      "reconstructionValue": "0x0"
+    },
+    {
+      "inputKind": "lowercase-a",
+      "reconstructionValue": "0x61"
+    },
+    {
+      "inputKind": "uppercase-A",
+      "reconstructionValue": "0x51000061"
+    },
+    {
+      "inputKind": "lowercase-ab",
+      "reconstructionValue": "0x3143"
+    },
+    {
+      "inputKind": "uppercase-Ab",
+      "reconstructionValue": "0xd1003143"
+    },
+    {
+      "inputKind": "semicolon-separated",
+      "reconstructionValue": "0x18bf7e"
+    },
+    {
+      "inputKind": "nul-terminated",
+      "reconstructionValue": "0x61"
+    }
+  ],
+  "sampleExecutionScope": "Independent Python leaf reconstruction only; not native oracle or parity pass",
+  "unknowns": [
+    "Meaning and provenance of context-producing helper outputs",
+    "All loader parse fields and corrupt input rules",
+    "Header collisions and invalidation coverage",
+    "Thread model and lock release on every exception path",
+    "Cache relation to semantic reference index"
+  ],
+  "fullParityPassed": false
+}

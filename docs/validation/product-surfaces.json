@@ -1,0 +1,146 @@
+{
+  "version": "0.0.55",
+  "reference": "Three user-provided VA screenshots; independent CodeAssist UI implementation",
+  "implemented": [
+    "branded Welcome document content",
+    "searchable options tree with draft/save/cancel",
+    "banana toolbar settings button",
+    "inspection selection InfoBar",
+    "C/C++ Context Bar",
+    "project basic syntax inspection and Error List adapter"
+  ],
+  "tests": {
+    "corePassed": 103,
+    "coreFailed": 0,
+    "views": {
+      "Views": [
+        {
+          "ContrastChecks": 3,
+          "Page": "",
+          "Screen": "Settings",
+          "Theme": "Dark",
+          "Image": "options-dark-preview.png"
+        },
+        {
+          "ContrastChecks": 3,
+          "Page": "",
+          "Screen": "Settings",
+          "Theme": "Light",
+          "Image": "options-light-preview.png"
+        },
+        {
+          "ContrastChecks": 5,
+          "Page": "Editor / Coloring",
+          "Screen": "Settings",
+          "Theme": "Dark",
+          "Image": "options-coloring-dark.png"
+        },
+        {
+          "ContrastChecks": 5,
+          "Page": "Editor / Coloring",
+          "Screen": "Settings",
+          "Theme": "Light",
+          "Image": "options-coloring-light.png"
+        },
+        {
+          "ContrastChecks": 4,
+          "Page": "Code Inspection",
+          "Screen": "Settings",
+          "Theme": "Dark",
+          "Image": "options-inspection-dark.png"
+        },
+        {
+          "ContrastChecks": 1,
+          "Page": "Advanced / Performance",
+          "Screen": "Settings",
+          "Theme": "Dark",
+          "Image": "options-performance-dark.png"
+        },
+        {
+          "ContrastChecks": 1,
+          "Page": "",
+          "Screen": "Welcome",
+          "Theme": "Dark",
+          "Image": "welcome-dark-preview.png"
+        },
+        {
+          "ContrastChecks": 1,
+          "Page": "",
+          "Screen": "Welcome",
+          "Theme": "Light",
+          "Image": "welcome-preview.png"
+        },
+        {
+          "ContrastChecks": 3,
+          "Page": "",
+          "Screen": "FirstRun",
+          "Theme": "Dark",
+          "Image": "first-run-dark-preview.png"
+        }
+      ],
+      "Passed": 9,
+      "Scope": "Offline owned WPF views and control interactions; not actual VS document/toolbar/margin host testing"
+    },
+    "interactionsDark": {
+      "InvalidColorBlocksSave": true,
+      "ValidColorEnablesSave": true,
+      "DraftDoesNotMutateLivePreferences": true,
+      "SettingKeywordSearchFilters": true,
+      "Scope": "Offline owned WPF controls; no actual IDE automation"
+    },
+    "interactionsLight": {
+      "InvalidColorBlocksSave": true,
+      "ValidColorEnablesSave": true,
+      "DraftDoesNotMutateLivePreferences": true,
+      "SettingKeywordSearchFilters": true,
+      "Scope": "Offline owned WPF controls; no actual IDE automation"
+    },
+    "actualUnrealProject": {
+      "Root": "C:\\Projects\\UnrealTestProject",
+      "Files": 4,
+      "Findings": [],
+      "ElapsedMs": 135.759,
+      "Scope": "Headless project basic syntax checks; not VA checker equivalence or IDE Error List routing."
+    }
+  },
+  "installation": {
+    "ActualIdeUi": "Unverified",
+    "Status": "VerifiedInstalled",
+    "Version": "0.0.55",
+    "MatchingBinaries": 6,
+    "Manifest": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\pvvkeyae.zlf\\extension.vsixmanifest",
+    "InstallerExitCode": 0
+  },
+  "nativeIdeInteraction": "unverified",
+  "limitations": [
+    "unsupported settings have informational pages",
+    "project inspection is basic syntax only",
+    "inspection preferences are user-wide",
+    "context functions include call candidates",
+    "native document/toolbar/margin/InfoBar/Error List interaction unverified"
+  ],
+  "sourceSha256": {
+    "CodeAssist.Extension/ProductOptions.cs": "2e047c2c53a89e819223ce630be21c9f8f6962181532bdb613ecc39f9cb2bfe8",
+    "CodeAssist.Extension/ProductWelcome.cs": "016744cd2a135d1d3f655a902afda7301c8c5b996f0776a55b9a191be96e4172",
+    "CodeAssist.Extension/ContextBar.cs": "dfea4c26618f88ea9a0d99be154cd94e5994fa1244fbe500e5eba445d2cc9cc7",
+    "CodeAssist.Extension/ProjectInspection.cs": "f09b6af26f7c07c918b1effb99198c88b44826d3fba729bd658b4905a110d7f2",
+    "CodeAssist.Extension/StartupUi.cs": "267db2a4b84e24b1881f872ebd698eb7b7ce90b65017dfb176af35a06350a10c",
+    "CodeAssist.Indexing/ProjectSyntaxInspection.cs": "25ef2150be55793d80f96f31650db287cc8da1f454b06b927b62786d990c283f",
+    "CodeAssist.Core/StartupPreferences.cs": "ecd347bc224d3851c43938c98b489c6e364f6c37a3acaf82ea58750582541568"
+  },
+  "metrics": {
+    "documentContracts": {
+      "covered": 108,
+      "total": 108
+    },
+    "overallReverseEngineering": "unverified",
+    "fullParity": {
+      "verified": 0,
+      "total": 108
+    },
+    "partialMapping": {
+      "mapped": 26,
+      "total": 108
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "observedAtUTC": "2026-10-14T17:17:49.459343+00:00",
+  "root": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\Data\\vs17_1",
+  "scope": "Passive existing VA data directory; target not launched or modified",
+  "fileCount": 620,
+  "totalBytes": 47438073,
+  "groupStats": {
+    "fileids.va": {
+      "files": 1,
+      "bytes": 1449042
+    },
+    "version.dat": {
+      "files": 1,
+      "bytes": 9
+    },
+    "cache": {
+      "files": 3,
+      "bytes": 0
+    },
+    "cpp": {
+      "files": 459,
+      "bytes": 45837515
+    },
+    "DbInfo": {
+      "files": 6,
+      "bytes": 2270
+    },
+    "net": {
+      "files": 98,
+      "bytes": 0
+    },
+    "Proj": {
+      "files": 2,
+      "bytes": 20
+    },
+    "ProjectInfo": {
+      "files": 1,
+      "bytes": 6690
+    },
+    "Proj_3001577562": {
+      "files": 48,
+      "bytes": 142484
+    },
+    "typeHist": {
+      "files": 1,
+      "bytes": 43
+    }
+  },
+  "extensionCounts": {
+    ".va": 12,
+    ".dat": 1,
+    ".dbx": 309,
+    ".db": 206,
+    ".sdb": 46,
+    ".idx": 45,
+    ".txt": 1
+  },
+  "prefixSamples": [
+    {
+      "relativePath": "fileids.va",
+      "length": 1449042,
+      "prefixLength": 4096,
+      "prefixSHA256": "f1a123ce74067818103677e98fd2faea41f46b3191f2980ecb6404ea2f78b5c7",
+      "stableMetadataDuringRead": true,
+      "bom": "none",
+      "utf16SectionDelimiterCount": 0,
+      "asciiNewlineCount": 19,
+      "scope": "4096-byte prefix only; no source content or private paths copied"
+    },
+    {
+      "relativePath": "cpp/Db0Ds.db",
+      "length": 154314,
+      "prefixLength": 4096,
+      "prefixSHA256": "e09499668b0caa096204e7740ec6c27e710c7a75f0019f1894f25b64b936753f",
+      "stableMetadataDuringRead": true,
+      "bom": "none",
+      "utf16SectionDelimiterCount": 0,
+      "asciiNewlineCount": 55,
+      "scope": "4096-byte prefix only; no source content or private paths copied"
+    },
+    {
+      "relativePath": "cpp/Db0Idx.db",
+      "length": 44608,
+      "prefixLength": 4096,
+      "prefixSHA256": "06567e9579a5c00fe525596bc4f790e0cd17b168d59684da146bb836ab0f03ed",
+      "stableMetadataDuringRead": true,
+      "bom": "none",
+      "utf16SectionDelimiterCount": 0,
+      "asciiNewlineCount": 8,
+      "scope": "4096-byte prefix only; no source content or private paths copied"
+    },
+    {
+      "relativePath": "ProjectInfo/7bd8209f.va",
+      "length": 6690,
+      "prefixLength": 4096,
+      "prefixSHA256": "9c8adfc9fece63f7f38a32c104227f86c3eb849bda0edd96d1335c25d021bba0",
+      "stableMetadataDuringRead": true,
+      "bom": "none",
+      "utf16SectionDelimiterCount": 0,
+      "asciiNewlineCount": 31,
+      "scope": "4096-byte prefix only; no source content or private paths copied"
+    }
+  ],
+  "fileFinderSerializationMatched": false,
+  "limitations": [
+    "Files may be stale, partially written or from earlier sessions.",
+    "Timestamp and file naming do not establish producer function or semantic schema.",
+    "Nonempty data does not prove all references pre-baked or packaged.",
+    "No cache creation, invalidation, startup or UI comparison executed.",
+    "Only this vs17_1 data root surveyed; absence here is not global absence."
+  ]
+}

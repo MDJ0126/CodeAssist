@@ -1,0 +1,84 @@
+{
+  "evidence_id": "ev_172717c41226a81efcf40e651053485f107725a68d4b9f9628a744eb84cd54e0",
+  "parentEvidence": "ev_489c7411dd7b5e658ff0c089f8a1ff918e4df82263fbf7dcdf38baa9f671c854",
+  "subject": {
+    "name": "VaCodeInspections.VisualStudio.17.0.dll",
+    "digest": {
+      "sha256": "59c3982ee42cee3e0413ba771acc5cc66874fad6d248533db55eb3bfd218be8e"
+    },
+    "local_path": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\VaCodeInspections.VisualStudio.17.0.dll",
+    "format": "pe",
+    "architecture": null
+  },
+  "methodCount": 47,
+  "sourceHashMatches": 47,
+  "unresolvedTypeWarnings": 0,
+  "executedOriginal": false,
+  "scope": "Entire managed inspection VS configuration adapter reconstruction; native general parser not established",
+  "changeEventProperties": [
+    "WindowsTargetPlatformVersion",
+    "AdditionalIncludeDirectories",
+    "NMakePreprocessorDefinitions",
+    "CompileAsManaged",
+    "LanguageStandard",
+    "PlatformToolset",
+    "PreprocessorDefinitions",
+    "TargetMachine",
+    "CLRSupport",
+    "CompileAs",
+    "ForcedIncludeFiles",
+    "IncludePath",
+    "NMakeIncludeSearchPath",
+    "NMakeForcedIncludes",
+    "AdditionalOptions"
+  ],
+  "findings": [
+    {
+      "token": "0x0600001d",
+      "fact": "Cache invalidation clears project options, sanitize, directory-exists, unavailable-file-tool, makefile settings and project-file caches, then increments generation under shared lock."
+    },
+    {
+      "token": "0x06000017",
+      "fact": "Every ItemPropertyChange2 clears caches; SomethingChanged only for active configuration and listed property names."
+    },
+    {
+      "token": "0x06000019",
+      "fact": "Makefile cache key projectPath+NUL+configuration; compute outside lock, admit only unchanged generation."
+    },
+    {
+      "token": "0x0600001a",
+      "fact": "Microsoft.Build.Evaluation loads project with Configuration/Platform globals; ClCompile/ClInclude evaluated metadata yields file forced includes, extra include directories, definitions; first duplicate full path wins with OrdinalIgnoreCase; UnloadProject in finally."
+    },
+    {
+      "token": "0x0600001c",
+      "fact": "Per-file makefile lookup overrides forced includes, directories and preprocessor definitions; exceptions logged and caught."
+    },
+    {
+      "token": "0x06000012",
+      "fact": "Sanitize cache key combines include text, project directory and relative-path flag; cache-generation check controls admission."
+    },
+    {
+      "token": "0x0600000e",
+      "fact": "Evaluated rule CompileAs distinguishes C/C++; non-C LanguageStandard maps14/17/20/latest99; AdditionalOptions can override standard."
+    }
+  ],
+  "comparisonCases": [
+    "Change active/inactive configuration properties and observe cache invalidation vs reparse event",
+    "Conditional evaluated per-file metadata in makefile ClCompile/ClInclude items",
+    "Duplicate file paths with differing case",
+    "Invalidate while a cache miss calculation is pending",
+    "CompileAsC vs CompileAsCpp with .c extension fallback",
+    "LanguageStandard versus trailing /std additional options",
+    "MSBuild missing project/invalid path/exception cleanup"
+  ],
+  "comparisonState": "Original runtime comparisons unexecuted",
+  "limitations": [
+    "Decompiler output is imported as reconstruction evidence and analyst inference; metadata and IL observations remain canonical.",
+    "This operation did not execute, load, reflect over, debug, instrument, patch, or decompile the target artifact.",
+    "The imported reconstruction is valid only for the exact artifact SHA-256, MVID, method signature, and normalized IL shape recorded here.",
+    "Obfuscated names, decompiler variables, and control-flow restructuring are not treated as proof without separate validation.",
+    "47 managed methods reconstructed does not imply all algorithms or behavior proven.",
+    "No original MSBuild project evaluation or VS event injection executed.",
+    "Not proof of C# support or whole native semantic indexing."
+  ]
+}

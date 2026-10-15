@@ -1,0 +1,25 @@
+﻿{
+    "Screen":  "Settings",
+    "Theme":  "Light",
+    "Controls":  [
+                     {
+                         "Label":  "자동 완성 사용",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "심볼 색상 표시",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     }
+                 ],
+    "Scope":  "Offline WPF resource and label-color regression; not actual Visual Studio UI"
+}

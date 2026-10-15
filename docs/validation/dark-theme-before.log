@@ -1,0 +1,7 @@
+Unreadable Dark toggle: 전체 통합 — 자동 완성 및 코드 색상 표시: #FF000000 expected #FFF1F1F1
+At C:\Projects\CodeAssist\tools\RenderStartup.ps1:62 char:38
++ ... expected) { throw "Unreadable $Theme toggle: $($node.Content): $actua ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Unreadable Dark...ected #FFF1F1F1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Unreadable Dark toggle: 전체 통합 — 자동 완성 및 코드 색상 표시: #FF000000 expected #FFF1F1F1
+ 

@@ -1,0 +1,131 @@
+{
+  "links": [
+    {
+      "featureId": "VA-F002",
+      "name": "Find References",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/FindReferences.html",
+          "sha256": "635a8300304d0f41924c703a19f3e0865834c67f5623d8a3fce5cde2697b4228"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F003",
+      "name": "Find Symbol in Solution",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/FindSymbolDialog.html",
+          "sha256": "56d356304d4671362504d1d19bc3b225c831535e80177e3460c8257dbf4d567c"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F004",
+      "name": "GoTo Implementation",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/GotoImplementation.html",
+          "sha256": "a608d481427b0824646bc7756b9ccc9b7d5d679e35dc56feef250c1eafb4360c"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F006",
+      "name": "GoTo Related",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/GotoRelated.html",
+          "sha256": "9d250ecb10bb61e648c72f4bd95c11c9234fd6fb1ec963ca210064195608327d"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F009",
+      "name": "Move Scope",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/ScopeNext.html",
+          "sha256": "af0aa341dab4036557a92fb166be40790d3b5c0aa91d024f9d4d961c5ae3be3d"
+        },
+        {
+          "file": "OptKeyBindsHelp/ScopePrevious.html",
+          "sha256": "af0aa341dab4036557a92fb166be40790d3b5c0aa91d024f9d4d961c5ae3be3d"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F011",
+      "name": "Open Corresponding File",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/OpenCorrespondingFile.html",
+          "sha256": "2cb49eccb0ca6487c43cc9339b65e23cc077a0854de9a6da99ed53999e687969"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F012",
+      "name": "Open File in Solution",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/OpenFileInSolutionDialog.html",
+          "sha256": "01592d1c428b5d37da477ee0649dcec2781c76878b945e9425a0361bf82f0688"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F013",
+      "name": "VA Hashtags",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/VAHashtags.html",
+          "sha256": "927c2a1ba7f66989168425213c98079c433761f5ff2fc99f72a9c742efe3415a"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F048",
+      "name": "Multiple Clipboards",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/Paste.html",
+          "sha256": "e6634eb042b703fe5bf3fdf523a897f202b37f6fe176e52cfd9a874d546a8ac3"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F049",
+      "name": "Reset Editor Zoom",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/ResetEditorZoom.html",
+          "sha256": "49bad08a78db75eb3d0ba5dc8b5007fcac0630c9fbc4c342c803e8fafb2f93b7"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    },
+    {
+      "featureId": "VA-F063",
+      "name": "Highlight Matching Words",
+      "candidateHelpResources": [
+        {
+          "file": "OptKeyBindsHelp/FindSelected.html",
+          "sha256": "9d6562e8503bb42570858c1fd1e83aade60431f2e00c867ba39b9edd856190b9"
+        }
+      ],
+      "status": "resource-name match; runtime/command binding not proven"
+    }
+  ],
+  "count": 11,
+  "rule": "Exact normalized label/stem or explicit alias; candidate-only"
+}

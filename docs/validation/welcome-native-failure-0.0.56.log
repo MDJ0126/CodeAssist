@@ -1,0 +1,12 @@
+2026-10-15T05:03:25.2537450Z CreateDocumentWindow HRESULT=0x80070057
+System.ArgumentException: 매개 변수가 틀립니다. (예외가 발생한 HRESULT: 0x80070057 (E_INVALIDARG))
+   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   위치: CodeAssist.Extension.WelcomeDocumentWindow.Show(AsyncPackage package)
+2026-10-15T05:03:57.1394951Z CreateDocumentWindow HRESULT=0x80070057
+System.ArgumentException: 값이 예상 범위를 벗어났습니다.
+   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   위치: CodeAssist.Extension.WelcomeDocumentWindow.Show(AsyncPackage package)
+2026-10-15T05:05:08.4870622Z CreateDocumentWindow HRESULT=0x80070057
+System.ArgumentException: 매개 변수가 틀립니다. (예외가 발생한 HRESULT: 0x80070057 (E_INVALIDARG))
+   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   위치: CodeAssist.Extension.WelcomeDocumentWindow.Show(AsyncPackage package)

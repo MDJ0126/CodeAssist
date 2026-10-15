@@ -1,0 +1,55 @@
+{
+  "evidence_id": "ev_0c5d0ff58f98cf1c751a85587a134b5daba9c187994e783bd2bd2de4c5c16bfe",
+  "parent_evidence_id": "ev_29d9742623c6bfb42b665dcb98b9b4e074051f06b178779ff55829d33560e213",
+  "subject": {
+    "name": "VaOptKeyBinds.17.dll",
+    "digest": {
+      "sha256": "43fa552b1b10f38c9b107f5cd260ac60b3a338c634b701afcd7b5ce64edad8a3"
+    },
+    "local_path": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\VaOptKeyBinds.17.dll",
+    "format": "pe",
+    "architecture": null
+  },
+  "operation": "import_managed_reconstruction",
+  "methodCount": 88,
+  "executed": false,
+  "warnings": 0,
+  "findings": [
+    {
+      "token": "0x06000090",
+      "finding": "番号-index registry fields Command/Binding/Enabled/CommandScope; empty command or shortcut rejects record; semicolon scopes Global/Text Editor; undefined Enabled remains distinct"
+    },
+    {
+      "token": "0x06000093",
+      "finding": "Shortcut chords preserve comma-space sequence; plus components uppercase and sort before comparison; component order does not matter but chord order does"
+    },
+    {
+      "token": "0x06000094",
+      "finding": "FindBestMatch scores command and shortcut 10 each, scope equality 1 each; exact 22 returns immediately; ties retain earliest encountered"
+    },
+    {
+      "token": "0x0600008e",
+      "finding": "RemoveExistingScopes removes only intersecting Global/Text Editor flags"
+    },
+    {
+      "token": "0x06000092",
+      "finding": "Only defined Enabled state is written by WriteStatusToRegistry"
+    },
+    {
+      "token": "0x06000078",
+      "finding": "GetDefaultMapping lists 11 existing IDE command conflict descriptions; these are not VA shortcut assignments"
+    },
+    {
+      "token": "0x06000057",
+      "finding": "Dialog OK handler returns OK and closes; this handler alone does not apply IDE key bindings"
+    }
+  ],
+  "limitations": [
+    "Decompiler output is imported as reconstruction evidence and analyst inference; metadata and IL observations remain canonical.",
+    "This operation did not execute, load, reflect over, debug, instrument, patch, or decompile the target artifact.",
+    "The imported reconstruction is valid only for the exact artifact SHA-256, MVID, method signature, and normalized IL shape recorded here.",
+    "Obfuscated names, decompiler variables, and control-flow restructuring are not treated as proof without separate validation.",
+    "Actual IDE assignment and collision resolution runtime unverified.",
+    "Complete factory shortcut mapping not recovered by these methods."
+  ]
+}

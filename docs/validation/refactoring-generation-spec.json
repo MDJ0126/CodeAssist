@@ -1,0 +1,224 @@
+{
+  "scope": "Current official documentation requirements; installed 2630 internal algorithm and runtime equivalence unverified",
+  "date": "2026-10-15",
+  "features": {
+    "Change Signature": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/change-signature",
+      "facts": [
+        "함수 이름 위치에서 선언·정의·참조 및 호출부 변경; 다중 파일 Undo 지원",
+        "인수 이름 변경은 선언/정의, 인수 추가는 호출부까지 변경",
+        "기본 인수를 서명에 추가하면 기존 호출부를 변경하지 않음; 추가 인수 호출값 기본은 TODO",
+        "모호한 변경은 OK 비활성화; 이름 변경과 재정렬은 구분",
+        "C++ 가시성 변경은 지원하지 않음; 문서는 overload·system-directory 제한을 명시",
+        "프로젝트 검색 범위는 Find References·Rename과 공유"
+      ],
+      "unknowns": [
+        "2630 실제 overload 가용성 및 ambiguity 판정",
+        "호출부 인수 대응·매크로·상속·템플릿 처리",
+        "정확한 다중 파일 Undo·UI·locale·서식"
+      ],
+      "tests": [
+        "기본 인수 추가와 필수 인수 추가의 호출부 차이",
+        "여러 인수 이름 변경+재정렬 모호성",
+        "파생 클래스·외부 헤더·선택 호출부·Undo"
+      ]
+    },
+    "Extract Method": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/extract-method",
+      "facts": [
+        "선택 코드와 주변 문맥에서 인수/반환형을 추론하고 원래 위치를 호출로 대체",
+        "전역/멤버와 새 함수 내부 로컬은 인수에서 제외",
+        "읽기값은 값 전달, 쓰기값과 dot로 참조되는 객체는 참조 전달",
+        "단일 변경 값은 반환값으로 원래 함수에서 대입할 수 있음"
+      ],
+      "unknowns": [
+        "탈출·return·goto·예외·템플릿 문맥",
+        "설정 기반 생성 위치·주석·서식·수정자",
+        "2630의 부작용과 type inference 상세"
+      ],
+      "tests": [
+        "read/write 혼합·멤버·로컬·단일 반환값",
+        "단일문/다중문·early return·매크로 선택 경계"
+      ]
+    },
+    "Create from Usage": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/create-from-usage",
+      "facts": [
+        "class·enum·변수·함수 및 local/class/global 생성 선택",
+        "클래스 생성은 생성자 인수에서 멤버/초기화 추론; 파일명 변경 가능",
+        "미확정 타입은 UnknownType; 생성 문법/본문은 언어별 스니펫",
+        "인수 생성은 선언/정의에 반영; enum 사용 문맥 및 scope 구분"
+      ],
+      "unknowns": [
+        "2630 target inference와 후보 순위",
+        "기본 생성 본문·명명·파일 배치",
+        "복수파일·템플릿·const·overload 추론"
+      ],
+      "tests": [
+        "new Foo와 new Foo()·상수 생성자 인수",
+        "클래스 멤버/지역/전역/인수/enum 선택",
+        "추론 실패 UnknownType 및 snippet customizations"
+      ]
+    },
+    "Implement Interface / Virtual Methods": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/implement-interface-virtual-methods",
+      "facts": [
+        "깊은 상속과 다중 상속의 메서드 후보; 구현된 것은 선택 불가",
+        "pure virtual은 기본 체크, 나머지는 기본 미체크",
+        "필터를 바꿔도 체크 상태 유지; 기본 정렬은 선언 순서",
+        "virtual/override 생성 키워드와 본문 snippet 설정"
+      ],
+      "unknowns": [
+        "인터페이스 자동 전체 적용과 pure-virtual 선택창의 정확한 조건",
+        "중복 signature·diamond 상속·template 처리",
+        "2630 키워드 기본값·후보 가시성"
+      ],
+      "tests": [
+        "다중/diamond 상속·이미 구현한 메서드",
+        "필터 반복 후 체크 유지·정렬 전환",
+        "추상/구체 혼합과 virtual/override 설정"
+      ]
+    },
+    "Encapsulate Field": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/encapsulate-field",
+      "facts": [
+        "C++ 선언 위치에서 getter/setter 생성; 이름 공백이면 해당 accessor 생략",
+        "필드 가시성 조정; private/protected 필드의 accessor는 기본 public",
+        "참조 선택 범위를 조절해 읽기/쓰기를 accessor로 변경",
+        "접두사 제거·대문자화 및 스니펫 GeneratedPropertyName으로 accessor 이름 구성",
+        "C++ accessor는 선언 헤더에 배치; 배열/char pointer는 수동 보완이 필요할 수 있음"
+      ],
+      "unknowns": [
+        "2630 명명 규칙·복합 increment/decrement 처리",
+        "배열·참조반환·template·visibility 레이아웃",
+        "커서·Undo·정확한 서식"
+      ],
+      "tests": [
+        "m_nItemsCount·hWindow·밑줄 이름",
+        "getter/setter 한쪽 생략·복합 참조",
+        "배열/char pointer 제한과 선택 참조 범위"
+      ]
+    },
+    "Introduce Variable": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/introduce-variable",
+      "facts": [
+        "표현식의 가장 안쪽 scope에 변수 선언 후 선택 표현식 교체",
+        "반복 교체는 선택 이후의 현재 scope 후보에 한정",
+        "필요하면 한 줄 if/else/while에 braces 추가",
+        "빈 공간에서도 함수 반환값 capture에 이용 가능"
+      ],
+      "unknowns": [
+        "표현식 동등성·type inference·부작용 처리",
+        "scope 중첩·macro·brace 설정",
+        "2630 기본 이름과 서식"
+      ],
+      "tests": [
+        "동일 표현식의 선택 전/후와 다른 scope",
+        "단일문 while/if·부작용 표현식",
+        "반환값 capture와 residual parentheses"
+      ]
+    },
+    "Add Missing Case Statements": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/add-missing-case-statements",
+      "facts": [
+        "enum switch 안에서 누락된 enum case 추가; switch 키워드 자체 위치는 필수 아님"
+      ],
+      "unknowns": [
+        "2630 삽입 순서·본문·default·중복 값·scoped enum",
+        "nested switch 구분과 가용성"
+      ],
+      "tests": [
+        "일부/all enum 누락·default 존재",
+        "같은 값 alias·scoped enum·중첩 switch"
+      ]
+    },
+    "Convert Between Pointer and Instance": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/convert-between-pointer-and-instance",
+      "facts": [
+        "지역 변수 선언에서 pointer/instance 전환 및 참조의 dot/arrow·dereference/address 수정",
+        "pointer→instance는 선택한 참조를 변환하고 delete 참조 제거",
+        "instance→pointer는 raw/unique/shared/custom 생성 선택; 기본 auto",
+        "지원 불가 문맥에서는 안내"
+      ],
+      "unknowns": [
+        "2630 lifetime·custom template·복합 참조 적용 규칙",
+        "후보 판정·smart pointer 서식·Undo"
+      ],
+      "tests": [
+        "new/delete와 address/dereference 혼합",
+        "raw/unique/shared/custom 및 explicit type",
+        "지원 불가 변수·escape하는 참조"
+      ]
+    },
+    "Create Declaration": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/create-declaration",
+      "facts": [
+        "C/C++ 정의에서 일치 인수의 선언을 이웃 선언 근처 헤더에 생성",
+        "적절한 헤더 없으면 source에 생성",
+        "정의에서 주석이거나 없는 default 인수는 자동 노출하지 않음"
+      ],
+      "unknowns": [
+        "2630 파일/위치 선정·template·qualifier",
+        "forward declaration/중복 선언 가용성·Undo"
+      ],
+      "tests": [
+        "헤더 존재/없음·이웃 순서",
+        "기본 인수 주석·static/const/template"
+      ]
+    },
+    "Create Implementation": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/create-implementation",
+      "facts": [
+        "C/C++ 메서드/정적 멤버 선언에서 stub 생성",
+        "기본 인수는 기본적으로 block comment로 구현 인수에 유지; 옵션으로 생략",
+        "이웃 구현 근처/EOF 위치 설정; source 없으면 헤더에 생성",
+        "언어별 스니펫으로 서식; 필수 snippet 삭제 시 기본 복원"
+      ],
+      "unknowns": [
+        "2630 정확한 기본 본문/템플릿/선택 유지",
+        "파일 배치·정적 멤버 header-only 판단"
+      ],
+      "tests": [
+        "source 존재/없음·EOF/이웃 배치",
+        "default 인수 옵션·정적 멤버·snippet 삭제"
+      ]
+    },
+    "Add Forward Declaration": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/add-forward-declaration",
+      "facts": [
+        "미확정 참조 symbol에서 forward declaration 제공",
+        "기존 forward 선언 또는 첫 include 그룹 뒤 등 적절한 위치; 커서 유지",
+        "현재 symbol 참조를 근거로 하며 다른 참조를 평가해 include 충분성을 결정하지 않음"
+      ],
+      "unknowns": [
+        "2630 namespace/template/enum·insertion heuristic",
+        "이미 선언된 symbol과 가용성"
+      ],
+      "tests": [
+        "pointer와 by-value 다른 사용 혼재",
+        "namespace/template·include group·커서 유지"
+      ]
+    },
+    "Add include Directive": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/add-include-directive",
+      "facts": [
+        "미확정 symbol의 파싱된 헤더 후보에서 include 생성",
+        "마지막 include 뒤의 ifdef 밖에 추가하고 커서 유지",
+        "정의 헤더 우선이며 Boost/Qt 일부는 umbrella 예외",
+        "기본 가장 짧은 경로; 상대/프로젝트 경로·quote/angle·filename-only 설정",
+        "기존 include delimiter를 따르며 없으면 IDE 설정 이용"
+      ],
+      "unknowns": [
+        "2630 후보 순위·umbrella 예외 목록",
+        "generated Unreal header 정렬 및 조건부/다중 include 구분",
+        "외부 SDK·compile configuration별 가용성"
+      ],
+      "tests": [
+        "ifdef 속 include·중복·umbrella·generated header",
+        "여러 include roots와 경로 스타일 옵션",
+        "설정별 후보 부재·커서 유지"
+      ]
+    }
+  },
+  "productCodeChanged": false
+}

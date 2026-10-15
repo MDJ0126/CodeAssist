@@ -21,13 +21,13 @@ namespace CodeAssist.Extension
         [ClassificationType(ClassificationTypeNames = Name)]
         [Name(Name)]
         [UserVisible(true)]
-        [Order(After = Priority.Default)]
+        [Order(After = Priority.High)]
         internal sealed class FormatDefinition : ClassificationFormatDefinition
         {
             public FormatDefinition()
             {
                 DisplayName = "CodeAssist Unreal Macro";
-                ForegroundColor = Color.FromRgb(190, 183, 255);
+                ForegroundColor = Color.FromRgb(189, 99, 197);
             }
         }
     }
@@ -39,12 +39,9 @@ namespace CodeAssist.Extension
         [Import]
         internal IClassificationTypeRegistryService ClassificationRegistry = null;
 
-        [Import]
-        internal CppColorSynchronizer ColorSynchronizer = null;
 
         public IClassifier GetClassifier(ITextBuffer textBuffer)
         {
-            ColorSynchronizer.Synchronize();
             return textBuffer.Properties.GetOrCreateSingletonProperty(
                 () => new UnrealMacroClassifier(
                     textBuffer,
@@ -65,12 +62,23 @@ namespace CodeAssist.Extension
             this.textBuffer = textBuffer;
             this.classificationType = classificationType;
             textBuffer.Changed += OnBufferChanged;
+            var weak = new WeakReference(this);
+            Action settingsChanged = null;
+            settingsChanged = () =>
+            {
+                var target = weak.Target as UnrealMacroClassifier;
+                if (target == null) { StartupUi.SettingsApplied -= settingsChanged; return; }
+                var snapshot = target.textBuffer.CurrentSnapshot;
+                target.ClassificationChanged?.Invoke(target, new ClassificationChangedEventArgs(new SnapshotSpan(snapshot, 0, snapshot.Length)));
+            };
+            StartupUi.SettingsApplied += settingsChanged;
         }
 
         public event EventHandler<ClassificationChangedEventArgs> ClassificationChanged;
 
         public IList<ClassificationSpan> GetClassificationSpans(SnapshotSpan span)
         {
+            if (!StartupUi.Preferences.ColoringEnabled) return new List<ClassificationSpan>();
             var results = new List<ClassificationSpan>();
             var snapshot = span.Snapshot;
             IReadOnlyList<MacroOccurrence> macros;

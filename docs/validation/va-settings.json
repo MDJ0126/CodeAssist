@@ -1,0 +1,316 @@
+{
+  "Build": 2630,
+  "Source": "HKCU/Software/Whole Tomato/Visual Assist X/VaNet17/Format",
+  "Scope": "Observed installed configuration; factory defaults and other themes unverified",
+  "Colors": [
+    {
+      "Name": "TypoError",
+      "Bytes": [
+        255,
+        0,
+        0,
+        0,
+        255,
+        0,
+        0,
+        0
+      ],
+      "Hex": "FF-00-00-00-FF-00-00-00"
+    },
+    {
+      "Name": "ContextError",
+      "Bytes": [
+        0,
+        255,
+        0,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "00-FF-00-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "ColumnIndicator",
+      "Bytes": [
+        128,
+        128,
+        128,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "80-80-80-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Text",
+      "Bytes": [
+        220,
+        220,
+        220,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "DC-DC-DC-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Keyword",
+      "Bytes": [
+        86,
+        156,
+        214,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "56-9C-D6-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Matched Brace/Paren",
+      "Bytes": [
+        220,
+        220,
+        220,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "DC-DC-DC-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Mismatched Brace/Paren",
+      "Bytes": [
+        255,
+        0,
+        0,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "FF-00-00-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Classes and Types",
+      "Bytes": [
+        255,
+        215,
+        0,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "FF-D7-00-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Macros",
+      "Bytes": [
+        189,
+        99,
+        197,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "BD-63-C5-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Variable",
+      "Bytes": [
+        189,
+        183,
+        107,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "BD-B7-6B-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Functions",
+      "Bytes": [
+        255,
+        128,
+        0,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "FF-80-00-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Comment",
+      "Bytes": [
+        87,
+        166,
+        74,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "57-A6-4A-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Number",
+      "Bytes": [
+        181,
+        206,
+        168,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "B5-CE-A8-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "String",
+      "Bytes": [
+        214,
+        157,
+        133,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "D6-9D-85-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Operator",
+      "Bytes": [
+        180,
+        180,
+        180,
+        0,
+        30,
+        30,
+        30,
+        0
+      ],
+      "Hex": "B4-B4-B4-00-1E-1E-1E-00"
+    },
+    {
+      "Name": "Undefined",
+      "Bytes": [
+        255,
+        0,
+        0,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "FF-00-00-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Reference",
+      "Bytes": [
+        185,
+        185,
+        0,
+        0,
+        65,
+        65,
+        0,
+        0
+      ],
+      "Hex": "B9-B9-00-00-41-41-00-00"
+    },
+    {
+      "Name": "ReferenceAssign",
+      "Bytes": [
+        255,
+        255,
+        0,
+        0,
+        65,
+        65,
+        0,
+        0
+      ],
+      "Hex": "FF-FF-00-00-41-41-00-00"
+    },
+    {
+      "Name": "FindResultsHighlight",
+      "Bytes": [
+        255,
+        255,
+        255,
+        0,
+        98,
+        98,
+        0,
+        0
+      ],
+      "Hex": "FF-FF-FF-00-62-62-00-00"
+    },
+    {
+      "Name": "HighlightCurrentLine",
+      "Bytes": [
+        128,
+        128,
+        128,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Hex": "80-80-80-00-00-00-00-00"
+    },
+    {
+      "Name": "EnumMembers",
+      "Bytes": [
+        185,
+        119,
+        30,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "B9-77-1E-00-FF-FF-FF-00"
+    },
+    {
+      "Name": "Namespaces",
+      "Bytes": [
+        184,
+        215,
+        163,
+        0,
+        255,
+        255,
+        255,
+        0
+      ],
+      "Hex": "B8-D7-A3-00-FF-FF-FF-00"
+    }
+  ],
+  "ClipboardItemCount": 10
+}

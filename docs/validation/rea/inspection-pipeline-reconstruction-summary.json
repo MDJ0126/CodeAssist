@@ -1,0 +1,1786 @@
+[
+  {
+    "evidence_id": "ev_6ad0aa79cdedf05fc6a1e29967a52fd7235dda51b360c6449681098d0fd0441a",
+    "operation": "import_managed_reconstruction",
+    "subject": {
+      "name": "VaCodeInspectionsAsync.17.dll",
+      "digest": {
+        "sha256": "6d0340b92807a26feabe4ba36ec068e4bdcbca71d074ff6e5c4b795e2e996cc5"
+      },
+      "local_path": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\VaCodeInspectionsAsync.17.dll",
+      "format": "pe",
+      "architecture": null
+    },
+    "executed": false,
+    "methodCount": 215,
+    "warningCount": 30,
+    "methods": [
+      {
+        "Token": "0x06000266",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000266.cs",
+        "SourceSHA256": "F81D3AB9B4E69370A9AED0531FDE21F123A301371DA0DC099A4F0FA1D2E1FEDF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000267",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000267.cs",
+        "SourceSHA256": "171048FA14B3C5C21F97042EA4CA4FCF7F22C0A0D2AE146D6B909BAAADCFB6AC",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000268",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000268.cs",
+        "SourceSHA256": "1FC83B83A9120479EB722F6E790FEA26965A0FD02559805B2D5EF6861E93596B",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000269",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "GetModifiedBuffers",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000269.cs",
+        "SourceSHA256": "2C0AC792A125E8F54BDC6630CD85A14F00DF080BDA6469436260A24B05D9CC20",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600026a",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "FromCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600026a.cs",
+        "SourceSHA256": "79AC32D20AFEEC5DBD5A8CE6CCB5D9EAD37CBAD5052237BC9B913A4CDCE9806F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600026b",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "Parse",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600026b.cs",
+        "SourceSHA256": "5DA6A8260F118C5A1A7A4B660CEF2E52F6CE8F60AC2DD7704E30BDE7964330F2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600026c",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "ConstructFromCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600026c.cs",
+        "SourceSHA256": "A4A3432520E36D7173FB3F811FCD25BB80649B8D87B8BE74CF60C0A3B7519DFA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600026d",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "UpdateCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600026d.cs",
+        "SourceSHA256": "E8005610CC622BD0B5F8039D1EC45DC5A56F1511C262C1BC531345536414C249",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600026e",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "ClearCaches",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600026e.cs",
+        "SourceSHA256": "2A57249176F2167472102527F5B7A74DA6708E2D5A6A863E1158767189BBAD06",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600026f",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "GetAllRelatedFilenamesFromCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600026f.cs",
+        "SourceSHA256": "2956E5A60BBF3D9C085C1A85F4CF88FA31295A26ED6B34C5F2F2067BAF91C6F4",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000270",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "NormalizePath",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000270.cs",
+        "SourceSHA256": "A87110425E51B4BB74E0E5902F3D0C492C2F9A9915E3E55C58A2D8549A1ACB0F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000271",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "CalculateMD5FileHash",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000271.cs",
+        "SourceSHA256": "5053D2993E6D6D280578002D0204921218447BE55A9A4F9578ECE01BA808F027",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000272",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "get_Snapshot",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000272.cs",
+        "SourceSHA256": "FD225DACD7AD363A194AD026E81E00A754CBE6C799924602A198202D66241D9F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000273",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "set_Snapshot",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000273.cs",
+        "SourceSHA256": "794C33098CAB9AB0A35D1647F8CF897FFF9358B5ACCC611E6FF01A1D116DD35B",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000274",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "get_CurrentFileFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000274.cs",
+        "SourceSHA256": "4E9EAA31215371BB4A34E9DEE7336B50A689A37102F7561B9B77ADD0219260A3",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000275",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "set_CurrentFileFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000275.cs",
+        "SourceSHA256": "643CA8028E811089C474672B857E4E2DD17C79F25A2CF4944EEE15E2CE5FB115",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000276",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "get_AllFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000276.cs",
+        "SourceSHA256": "988FDD7C0D79144AF31115EBA4029F47DF6EA5F3F12F4105D6CE901B4BB8EBF7",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000277",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "set_AllFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000277.cs",
+        "SourceSHA256": "1D8BD81631BF67F8986BA8A7BAF581D93732197DAAF2068FB211C983F34E7A7E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000278",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "get_info",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000278.cs",
+        "SourceSHA256": "1C023997122F2F77BE09FE0ECBE06B1A8718A962E549154E0FF2AAE7B982C6BF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000279",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "set_info",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000279.cs",
+        "SourceSHA256": "8FCF6552AEC532980F1AD470765F3766AA01E157C4A18DBBAE0C3931B8E60CDA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600027a",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": ".cctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600027a.cs",
+        "SourceSHA256": "1EEF1E0D7CE0E61D0812821C9799EA3DB903BB0F44C1DA7AD35C02148E5D85C4",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600027b",
+        "Type": "WholeTomato.VaCodeInspections.ParseResultsCT",
+        "Name": "<Parse>g__IsHeaderFile|7_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600027b.cs",
+        "SourceSHA256": "C25D01CA2A802EC64434847973E0C3588769B0E0978C84223E10C9DD9150B957",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600027c",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "get_Snapshot",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600027c.cs",
+        "SourceSHA256": "FD225DACD7AD363A194AD026E81E00A754CBE6C799924602A198202D66241D9F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600027d",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "set_Snapshot",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600027d.cs",
+        "SourceSHA256": "63FB4C3FD37A7F72845F28D735A21FDA2E0C97048598B6BE0A25D008774D4B91",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600027e",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "get_CurrentFileFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600027e.cs",
+        "SourceSHA256": "4E9EAA31215371BB4A34E9DEE7336B50A689A37102F7561B9B77ADD0219260A3",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600027f",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "set_CurrentFileFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600027f.cs",
+        "SourceSHA256": "643CA8028E811089C474672B857E4E2DD17C79F25A2CF4944EEE15E2CE5FB115",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000280",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "get_AllFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000280.cs",
+        "SourceSHA256": "988FDD7C0D79144AF31115EBA4029F47DF6EA5F3F12F4105D6CE901B4BB8EBF7",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000281",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "set_AllFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000281.cs",
+        "SourceSHA256": "1D8BD81631BF67F8986BA8A7BAF581D93732197DAAF2068FB211C983F34E7A7E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000282",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "get_info",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000282.cs",
+        "SourceSHA256": "1C023997122F2F77BE09FE0ECBE06B1A8718A962E549154E0FF2AAE7B982C6BF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000283",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "set_info",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000283.cs",
+        "SourceSHA256": "72E2D09CF0758DE0F8F1191D7CA61575DE851CD908994406F6408F2E93FD2E65",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000284",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "Fetch",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000284.cs",
+        "SourceSHA256": "B47913D25741473C5DCB695DBD5FAAB8E401F5D1DF42327B8DF709184C0CB355",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000285",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "SetCheckerFilter",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000285.cs",
+        "SourceSHA256": "5B29BF4BF85EF341445206D1F8D61489DD21FF5D5DB53AC0A4D149DAC49C45F3",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000286",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "GetCheckerFilter",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000286.cs",
+        "SourceSHA256": "D6D4140153352488FC24A8767D2175AC9EBB162D8C0E353F4B221149940FCC11",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000287",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "AdvanceGenerations",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000287.cs",
+        "SourceSHA256": "C87B3A9070EB84E98D663AFD207BE9EBBEE31311D956A485724328D79A351A96",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000288",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "ClearCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000288.cs",
+        "SourceSHA256": "4E3263621A232DC658E31F7CEAEB4A78E0FD51B68C7CFD1081C6ECF8616F6FEE",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000289",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "StoreInCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000289.cs",
+        "SourceSHA256": "7287ACF267C5B12048FC57AD0DE235EBB9C8C4F3FF620F3D7AD8183D0FE7B916",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600028a",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "FetchDetailsDirect",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600028a.cs",
+        "SourceSHA256": "36D915075822B461184CC6CB58F462A5DFA866A8EFB6DE79E08916E41F71B2CB",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600028b",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "FetchDetailsViaList",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600028b.cs",
+        "SourceSHA256": "56D09F8FF5CC96069106544CA600D022D1D5219F9E7FA36D8C51F8986F1B6A69",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600028c",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": "MakeParent",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600028c.cs",
+        "SourceSHA256": "97115990C874A5A1CAD36A9305A9B90748727D10650B84410B47494AE99E29B2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600028d",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600028d.cs",
+        "SourceSHA256": "E66A642C5844433A62874B4DBBF33AECD3D08B1286FE7F2EA4F9A71ED6745298",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600028e",
+        "Type": "WholeTomato.VaCodeInspections.PwParseResults",
+        "Name": ".cctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600028e.cs",
+        "SourceSHA256": "59B7A0040499BB3DAED7874CCFB172D63DF6002C3CB729FAEC2BA5023E42A01F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000522",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000522.cs",
+        "SourceSHA256": "8ABFE328966E4E50B5D1A571776A91ED2273FF8A6BCE1D6FB77D03D3E1BDAABE",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000523",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_QuickFixList",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000523.cs",
+        "SourceSHA256": "539414DF601946AB405258CCCA4738FCE4D6927A06A1391A392ACC5F3A36CF85",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000524",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_ItemUnderCaret",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000524.cs",
+        "SourceSHA256": "4B82D9BE5914271C3A4C751F5CF55DF1371C06EDB7A4582E2DEE04CBFA998679",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000525",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "set_ItemUnderCaret",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000525.cs",
+        "SourceSHA256": "93B202B0208FB27515C79ED3B1F9F6AFBA684C2A7524654824439B921BB83977",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000526",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "add_PropertyChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000526.cs",
+        "SourceSHA256": "2EF958BAF026D2C7CD458B92F990C9D6AF61BCB3D15A4F65C1CE8006E627DE6C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000527",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "remove_PropertyChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000527.cs",
+        "SourceSHA256": "938C220CCEFDBF7366490AF75C48D8EAE61926B25A0F53AB3118CF438E685E52",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000528",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "OnPropertyChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000528.cs",
+        "SourceSHA256": "03B9C3AFFDA7D1B18C9561D841EA34B12B3F3B7336DF8EA7C73ED5A8CB0EB76A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000529",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_IsVisible",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000529.cs",
+        "SourceSHA256": "6E3F52C95BE1562C2DFF5B37A83DF641BE38A43F9D2EB23BEC9DE313F0C6C712",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600052a",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "set_IsVisible",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600052a.cs",
+        "SourceSHA256": "69ADA2628131B93F7395D307948C103C795A4581FBDB3592DFD5168CE207554A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600052b",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_TrackCaret",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600052b.cs",
+        "SourceSHA256": "8B76CEF54C2B775A51260B9646EB3C30BA0DD7B62A9B00ABF3632746859EB63A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600052c",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "set_TrackCaret",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600052c.cs",
+        "SourceSHA256": "E427520A0BDBBA75E8A08044D8BCFF7DF327386AA979B421B0CD60F233074714",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600052d",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "StartCaretTracking",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600052d.cs",
+        "SourceSHA256": "44B8B428DAC31DBB2C7A5CE93055426043FCFA93F227FFA61F3033A57F68883A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600052e",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "StopCaretTracking",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600052e.cs",
+        "SourceSHA256": "2FF330B093240F64B2935B0CC53B8C10254A8452ED0E464EF16AA7E0F7C92772",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600052f",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_ShowCurrentFileOnly",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600052f.cs",
+        "SourceSHA256": "5007F6716BA44E2B44161C07FBCEE116F37464C036F1A0FB176BF85B02982C01",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000530",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "set_ShowCurrentFileOnly",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000530.cs",
+        "SourceSHA256": "5D317AAEFB8B3C9DDC5A81813D68C7F616F1BC4975F22128C9CE052D81345557",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000531",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_QuickFixScopeToCheckerCanEnable",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000531.cs",
+        "SourceSHA256": "EBD22A90A29D4B92E490061FDD308DBFB90548348A817A7281F970D76982E97B",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000532",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_QuickFixScopeToCheckerList",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000532.cs",
+        "SourceSHA256": "7A472AF5F61999089C63AD4F9BE230BBC68E1128CB85B17DC78B97D1C7337648",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000533",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "set_QuickFixScopeToCheckerList",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000533.cs",
+        "SourceSHA256": "DA32986B7CBCD5D35A9E305934464B58846A334F1EF7A22A556A783258445D17",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000534",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_QuickFixApplySelectedCanEnable",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000534.cs",
+        "SourceSHA256": "42DA23893E9A69224DBCCE629DC4B3CDDFFA39ACFC35BEB9F6DD84EBA89E640A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000535",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "get_QuickFixApplyAllCanEnable",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000535.cs",
+        "SourceSHA256": "0CC29694F0C99B23F8322F769173EBDA025874852DA2C544E9E05145E64E2550",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000536",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "ScopeToCheckerList",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000536.cs",
+        "SourceSHA256": "2227080314EF4AF7DAAAABB06853703E63550379131829A9AAA6AB80A0F3C124",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000537",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "OnActiveViewChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000537.cs",
+        "SourceSHA256": "7F12AB04B42C573587AC40CABD51F550909539354E142A9F2D65DE8996A83A5F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000538",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "Init",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000538.cs",
+        "SourceSHA256": "C6BBB2985762A8E78FF1C485F77F24CEBDE883FF97A81A7D50BF500F33B6B614",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000539",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "OnCaretPositionChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000539.cs",
+        "SourceSHA256": "AF45CA6A5D6938FFE1CBD1A03FC863CACAD751759589136C17036E11ABCAB250",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600053a",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "OnColorsChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600053a.cs",
+        "SourceSHA256": "72D59886B10724C8C21F36D380E58C01E4AF75AB614296AA9DF7899A3CC4DAD7",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600053b",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "Uninit",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600053b.cs",
+        "SourceSHA256": "5FA99F317284E140746C99BCBBAEFB1B3AB87B3D7D79E00240CD62216EEC8572",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600053c",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "OnBufferListenerResultsUpdated",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600053c.cs",
+        "SourceSHA256": "3C9CE3E48A2EE2374D89E64755628FEF0281996D24FEE66B29FF2E3A2B6757B2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600053d",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "QueueUpdateFiltered",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600053d.cs",
+        "SourceSHA256": "856AFB72B3C56498228F6ADB8F1B1D50F0CEF35B359BD02FEF72A5B468BF1A48",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600053e",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "QueueUpdate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600053e.cs",
+        "SourceSHA256": "08BFAE311D281A33A1B616D45F3B4045224840EE338DF3DA095450C513355664",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600053f",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "DebugTabsUpdate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600053f.cs",
+        "SourceSHA256": "D35DA8089B51ED2B56F2F7F77339EE935C0BF5495A805AFD856DB60D0363FE78",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000540",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "QueueUpdate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000540.cs",
+        "SourceSHA256": "9D687E9DB5B80C471B6DD1E7066B0484763BDE47532C4228E7748872E437B985",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000541",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "QueueUpdateInvalidFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000541.cs",
+        "SourceSHA256": "CC032B3993ED351E11F265559FF08AA96B0B28F407A2D81433ADB526BC6BB407",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000542",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "RunOnUIThread",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000542.cs",
+        "SourceSHA256": "F43C87C978FEAB8F2884BA4C90E7B19DEF2402C30D3BEA947D45D7E24D7D0B52",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000543",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "RefreshList",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000543.cs",
+        "SourceSHA256": "5F0F17D41C61BEED0E316016EA93FC67E12184C2F114418F54D89B267AEEC0AB",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000544",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "SyncCaretPosition",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000544.cs",
+        "SourceSHA256": "F26D04D576E9945888BE7C763FDD042A7FE9CFBBBDDE1BD7A1C3BB1096AA5CC6",
+        "Warnings": 5
+      },
+      {
+        "Token": "0x06000545",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "Goto",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000545.cs",
+        "SourceSHA256": "89834C8C420DFEB1E76F3DE34DE907BFE718836AA4EA4075191EDBA2B1008293",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000546",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "CanDisableChecker",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000546.cs",
+        "SourceSHA256": "8AFC41F1B2786AA5C831CEDE043E768D934B9132F6F544ABD90BE62B44A15D1C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000547",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "DisableChecker",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000547.cs",
+        "SourceSHA256": "7705ECCD9559608D716FB73A8E5CB8950D43AC0D2EAB6B09ADE244A98556D267",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000548",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "GetActionableItemsPrivate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000548.cs",
+        "SourceSHA256": "EDA7E75FEB462A7783DE5BE70CBDB6617172D641645407D80DB49402136C2F74",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000549",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "GetActionableItems",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000549.cs",
+        "SourceSHA256": "8DFDAC4C92043FC1551D9F86996D188B8D8BD736201F612E9F5CC9F8B910AD39",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600054a",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "GetActionableItemsGrouped",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600054a.cs",
+        "SourceSHA256": "C39B64E5AD3CA56A1E076007ABA67FA790BE91459146FAD5927F155D691BA9AF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600054b",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "GetActionableItemsWithFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600054b.cs",
+        "SourceSHA256": "26360B018373E1DCF42AFFDE5DC2220256D955000172B254E046FC567161E1F1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600054c",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "GetCheckersFromItems",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600054c.cs",
+        "SourceSHA256": "D541E408FEF3FC157CD4EDAAF45040896B15D83988CCA61246F618804B62AD4D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600054d",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "ApplyFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600054d.cs",
+        "SourceSHA256": "CEB58D20D593E58BF5ED7BA780EFE1C362BB1CC01987BE37A7BE705F26FB6362",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600054e",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "CanApplyFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600054e.cs",
+        "SourceSHA256": "8B0F63DF6F3B0253545B40A7343FD3B62F024EE5A92D57137384D50A944932CA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600054f",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "Reparse",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600054f.cs",
+        "SourceSHA256": "F478333CC132AD7D4AAE806D651FC91AB6B3EDB345AD4B71FF4D2CF4969197F2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000550",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "<OnColorsChanged>b__39_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000550.cs",
+        "SourceSHA256": "D1FD64649B585DA455D9DC6DF44DAC264F4D65532095A4F1883B3229DD977886",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000551",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "<QueueUpdateFiltered>b__42_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000551.cs",
+        "SourceSHA256": "131FC277D2F823EE35F4E7DAB9BC5801069607F7EA1208FA56C888F5AF4906CB",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000552",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "<DebugTabsUpdate>g__UpdateRichTextBox|44_1",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000552.cs",
+        "SourceSHA256": "E3731263635330141FF200EA1A56B3C1B2CCC8BAE5A49B91E195C611FB2837AC",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000553",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "<QueueUpdateInvalidFixes>b__46_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000553.cs",
+        "SourceSHA256": "864C61E5C21AB1EDBF6151B2F0D41E4FAF0F05E69DEE7CA241C832C0A8874029",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000554",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixControlViewModel",
+        "Name": "<Goto>b__56_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000554.cs",
+        "SourceSHA256": "945BEAD0069A90A3B8ABD38A1322BA59B11D6EEF4A6717D30E5B942512828CAB",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000555",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixNavigator",
+        "Name": "Goto",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000555.cs",
+        "SourceSHA256": "A8C9BAA5361C238CA865EE175C5A225FC9F51F4BF7F5D4495278E43E67893EAA",
+        "Warnings": 6
+      },
+      {
+        "Token": "0x06000556",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixNavigator",
+        "Name": "ApplyFixes",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000556.cs",
+        "SourceSHA256": "56AB2D692513C63301ACC0E73F6806B9DA00B0DC89CABBABF4100997D0BE224F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000557",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixNavigator",
+        "Name": "GetReplacementSpans",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000557.cs",
+        "SourceSHA256": "43318B41CD4173DA2C7E144819F0AE45C09D3496816EB0909D908B5AE0F56232",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000558",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixNavigator",
+        "Name": "HasOverlappingReplacementSpans",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000558.cs",
+        "SourceSHA256": "9A47430009478D1DAE0A74ACC969DBF280F77E0653148C34735AA44F0C712A16",
+        "Warnings": 4
+      },
+      {
+        "Token": "0x06000559",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixNavigator",
+        "Name": "<ApplyFixes>g__File_OpenFile|1_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x06000559.cs",
+        "SourceSHA256": "39399FA69EE63A3B14FB10ECBAB0D8E9E520E3F97FB52915674F62C64E996BE3",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600055a",
+        "Type": "WholeTomato.VaCodeInspections.ViewModels.QuickFixNavigator",
+        "Name": "<ApplyFixes>g__GetListenerAndView|1_1",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x0600055a.cs",
+        "SourceSHA256": "12740B84EA15E79C40615FE413F8CBAD70E63D618136C933A597262D21C45D0A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007ca",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007ca.cs",
+        "SourceSHA256": "AF99F18B162C3C469A22D7AD6CE5F36AC9D892DF8E78DF7ABE8D734BF90F540A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007cb",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Create",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007cb.cs",
+        "SourceSHA256": "89D842C3D65A25AF9D9F87E9EB9149354DF4F68FDBED8DA55FA0076C367CBEBA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007cc",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Destructor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007cc.cs",
+        "SourceSHA256": "769D2957EC8F6CA7C350896908DB1A1F4AF9CB617A2A763FD5E8D47DD2BC8AD1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007cd",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "CheckInstance",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007cd.cs",
+        "SourceSHA256": "3278F9B94EA9186F08593D7373BD9BD871E2E6B1A667A9269AE5EC82F5E6B221",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007ce",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Enable",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007ce.cs",
+        "SourceSHA256": "A4E3B693B367543E85608A4BE2963AA597E0095CEE21F2BC0FD8E1C5FE4DBB61",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007cf",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Parse",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007cf.cs",
+        "SourceSHA256": "F357E80EDE841E4BED0BFE781FB9CEF9293F58E6644CF1DB6D43D13BE8E4397D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d0",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Parse",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d0.cs",
+        "SourceSHA256": "95913967F02ED456A30B68BD7AC2B3A20F7F006487EEF356264F4720B58607B1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d1",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Parse",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d1.cs",
+        "SourceSHA256": "E11546BADC1E4998029D1A4208AC80820EE383658708FAE8FA5DE4D7E74E08DF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d2",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Parse2",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d2.cs",
+        "SourceSHA256": "17158F547CE2AA293C4433965D03740B8E752765D2BE2462D10ACA4CDFC5D3B1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d3",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "ShouldFileBeParsed",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d3.cs",
+        "SourceSHA256": "BA92C69042BA2FB257E99E62B183EFC97C4A004D6A25056E528E6743F850A1AF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d4",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "FilterCheckers",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d4.cs",
+        "SourceSHA256": "A4CC142F940FA1420DAEA41B29E8A27A33DF6CE9F7121903B4C2D51835A4A3BE",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d5",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "FilterCheckersByVSVer",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d5.cs",
+        "SourceSHA256": "8BD97DC1482F697C43CC3DA89372909508846694C15A3F75E9783F268460A418",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d6",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "PlatformToolsetToVSYear",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d6.cs",
+        "SourceSHA256": "8A90C3A1AAEB8F8BA9CBF3FBA63A0C2F7BA1D2DD60E87F22A1F3536E2F37A2EC",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d7",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "VSVerToVSYear",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d7.cs",
+        "SourceSHA256": "71E4D55CBC24252B578366DD2FADB8D6710F4068F78FD106C5E5759C23113BE6",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d8",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "VSVerToVSYear",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d8.cs",
+        "SourceSHA256": "9BF67A55573A968031341FBD2422C490063B0A839785A84689387C488EC06D36",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007d9",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "get_filePath",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007d9.cs",
+        "SourceSHA256": "23B236CEBB4D08688012E74B80241D42AF2D57D3C08423DF3C592423ED8DF201",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007da",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "ClaimReplacementsNew",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007da.cs",
+        "SourceSHA256": "0388CAA95CDE2A4179F8CFFA5EB250F28DBA47C4905425AB4A10EF265DF291FC",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007db",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "DumpAll",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007db.cs",
+        "SourceSHA256": "7459C5EF668411361606DC362DC723C4367CBE746D6A6A61FFBAE42265B09302",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007dc",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "FormatCode",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007dc.cs",
+        "SourceSHA256": "0AD3ED37FCCE052246475C1686FFA200B1FCFFDCDDE214D577DCFFE8755D6E57",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007dd",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Dispose",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007dd.cs",
+        "SourceSHA256": "8DFA3D2B07502593DD4C60C044745D9D6EA36EB614D40EE86AA3AED70577ED02",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007de",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Finalize",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007de.cs",
+        "SourceSHA256": "E38A75817C75C4B003682E99F33564E7BABB972B190960C0DF64299841C03806",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007df",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "Dispose",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007df.cs",
+        "SourceSHA256": "B5C83724CE0A0A6EF747CE48B8B18829AAA75D1C454B04A6801891B382CBACC8",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e0",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "get_compilationOptions",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e0.cs",
+        "SourceSHA256": "8B43142771D9D05C5F1A5B238679F8EC495A4A66104A746B473E8C9FCBA6DC60",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e1",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "set_compilationOptions",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e1.cs",
+        "SourceSHA256": "E8D2250F2AC965F4C1A6191B2C800CE636855ECBDDA329F29D87EB63F0F014B7",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e2",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "get_broken",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e2.cs",
+        "SourceSHA256": "34DAFAB58E213F5AE337733AF03237E04E6AB5D8DCC94163D1B1D9E77396B15E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e3",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "set_broken",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e3.cs",
+        "SourceSHA256": "AFC5A44CDAE71CC9819B8CD15C106DD8AFF06B66E7E0946372E4F4B075D2CD92",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e4",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "get_exception",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e4.cs",
+        "SourceSHA256": "F77D3CCCFC778624F408ECB7E56FF8CAC7FA8FA14BFAD6401403F008D8B43775",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e5",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "set_exception",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e5.cs",
+        "SourceSHA256": "45352C31AA261BAB3C93874BB60AFA3DB2B07566480CC9632CD6A7F841325A6D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e6",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": ".cctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e6.cs",
+        "SourceSHA256": "EBB7AACE65F99DB0F7E0DE5CF4B421D8EE9C778306AF2E0B808466B29D57A196",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e7",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "<Parse2>b__8_2",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e7.cs",
+        "SourceSHA256": "F06DDF2D178872036B3AEF91F4B7737BB154CD5A3A0170934A0A93E661339571",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x060007e8",
+        "Type": "WholeTomato.VaCodeInspections.IPC.FileParser_client",
+        "Name": "<ShouldFileBeParsed>g__CleanupPath|12_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\pipeline-decompiled\\0x060007e8.cs",
+        "SourceSHA256": "844965026020B1CAF67BA8F024815B5A6C13B5CA06F5785BC132169D8887684A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000046",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "AcquireFor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000046.cs",
+        "SourceSHA256": "7F0ECF30A8B55716550B868CBBB7B35AC7771A865F4CAED1EE3D75ECA9342620",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000047",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnAfterOpenProject",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000047.cs",
+        "SourceSHA256": "CDD82F1A3F9C0C3D35CD72AE20DC5E8640AA08DB00B89E24944BDC73C04AD33F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000048",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnQueryCloseProject",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000048.cs",
+        "SourceSHA256": "501A09DC6564A74B299ADED7FB90ECB951822F4AE4E0250E2B61CC06DBB438EA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000049",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnBeforeCloseProject",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000049.cs",
+        "SourceSHA256": "53CB444DD5EF432FE12B34A4603B0E81EBA4CD6F172DAEDDE8E26E7BE10D75F6",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600004a",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnAfterLoadProject",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600004a.cs",
+        "SourceSHA256": "8DA02BB377C3745A58CA0156FE2593D8C405C6F16B5A11EC6E010893EEC81827",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600004b",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnQueryUnloadProject",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600004b.cs",
+        "SourceSHA256": "0E3A75A47F57E899790B5EE63362CD1DAA82130863AC6B19BEC368D8256EEEA2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600004c",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnBeforeUnloadProject",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600004c.cs",
+        "SourceSHA256": "E030E79F81F13FF39D10AF44032EA72434D44C0859E54110A498BFF3265EAD75",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600004d",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnAfterOpenSolution",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600004d.cs",
+        "SourceSHA256": "737D2971F08B8BD206FEC3C64FF1B0ECFC19CC8D089D3125AE7405C1B106C74C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600004e",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnQueryCloseSolution",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600004e.cs",
+        "SourceSHA256": "1A046D8380B4459E1FEA525C4EA8C65923C3F9AA0CC8D650D409592CDFD31448",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600004f",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnBeforeCloseSolution",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600004f.cs",
+        "SourceSHA256": "0B2A98EB5BA3C10E2A53B2E281DA5A81110DA95E87A95D6B7BF48876261EEE37",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000050",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnAfterCloseSolution",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000050.cs",
+        "SourceSHA256": "EA6926DB7F2F1C689B91A17FE4709833FC7E5717674E4912653548459D58FECA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000051",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnBeforeActiveSolutionCfgChange",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000051.cs",
+        "SourceSHA256": "CC00CFD7F308164F6F588B64329357F86A7F52343ABB335F3043873F7BB1AB1E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000052",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnAfterActiveSolutionCfgChange",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000052.cs",
+        "SourceSHA256": "C2CDB01C08ED0D01E732C5E815E76F5CBEA9818C8C2529E43C145160B6A225EA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000053",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnItemAdded",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000053.cs",
+        "SourceSHA256": "9D8A2090D2AAB5DDF8D5F68F03A2CBCBDA3BA356967AF434751FF65A41059BAD",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000054",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnItemsAppended",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000054.cs",
+        "SourceSHA256": "17FE70DD14554FBD9131A55BE992E0595936BB9EA86A9ED8DC8E7E3470563E1E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000055",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnItemDeleted",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000055.cs",
+        "SourceSHA256": "F8938C6060214F8ACC1200BF85E9590C6F387A441F69F5447079B2F2FB8D7C69",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000056",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnPropertyChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000056.cs",
+        "SourceSHA256": "B1EC55CA425B6B5A081FE1E5EC3121B54AD13D5A502E29F4B1BA1DBD3EB2126A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000057",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnInvalidateItems",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000057.cs",
+        "SourceSHA256": "B0EC6F3919B36BE1A132BF28EDC53B199837EA166AB1C4548E3550F828FA7E4C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000058",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnInvalidateIcon",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000058.cs",
+        "SourceSHA256": "B2B6EABFDCD9964A82C48EE29990A5C73FC3F6E3E8445FE154128543B80F0F59",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000059",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "DisposeAll",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000059.cs",
+        "SourceSHA256": "F2E4F1AC4FE50A2F0EF4095BF66D6BA956D14127CAAF518BFEE35D7C44DC663D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600005a",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Dispose",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600005a.cs",
+        "SourceSHA256": "6FC62A3A174CC043FA97D982A93E1EB89B0220902EC643BFB126ED3B9F6B1BF7",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600005b",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Activate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600005b.cs",
+        "SourceSHA256": "97FF9E9C49ED5A486789F4DF8C84DE5383FE155549942096550901D8A9991D82",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600005c",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Activate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600005c.cs",
+        "SourceSHA256": "D978A494742FF3D7D871632D6C200A3FFB1BC59B6891BEFC2847A975CC37234F",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600005d",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Reactivate",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600005d.cs",
+        "SourceSHA256": "02B1FCD348C479620F1409150311B8FC5DBBE719B2A840B5FE28E3DA912C814D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600005e",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Reparse",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600005e.cs",
+        "SourceSHA256": "E70AE71149B1A6A4FA3332F93EF453F8A89D60375ECE37386ED8E03DF3E67C91",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600005f",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "ReparseActive",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600005f.cs",
+        "SourceSHA256": "8B84C35230002B797BACE6CF8427367203E284D661A5B976E0466ED775579516",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000060",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "get_ActiveFilePath",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000060.cs",
+        "SourceSHA256": "CFDD3D5A1AE46635E17FE1F721665754B7B0BC9CB79D05FD4D1429A9CFD7717C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000061",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "ReparseAll",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000061.cs",
+        "SourceSHA256": "2608B18B4BEC9D3FB6A9B74B589ECED965FD12447802854B6C8EAB69BE0CC871",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000062",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "ReparseCommand",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000062.cs",
+        "SourceSHA256": "22C00526FFF77D9BAA03CBE338BB09051BCEE420272FF1A45B66D37E3BAC13E5",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000063",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "get_Results",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000063.cs",
+        "SourceSHA256": "365A78433AF0AB3B7A7DCC318261D0BA0EAA2FCB23F86CF91B5274A580C4283A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000064",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "add_ResultsUpdated",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000064.cs",
+        "SourceSHA256": "F3013FDD48C51C9022B3DE9EDC81E4A88933EDF4B16F0DC55FBF3BD545CD1AB5",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000065",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "remove_ResultsUpdated",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000065.cs",
+        "SourceSHA256": "E8A08B897669A34D683CCCB6119D50CAC12A65810A882B62D7BF601BBD89CAAB",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000066",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Kick",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000066.cs",
+        "SourceSHA256": "DA30FC44414E88B69BDA76A27EA80B6C982F33FD3F38791DD373E5E308E1C250",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000067",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "add_AnyBufferContentChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000067.cs",
+        "SourceSHA256": "3737F6E86BAE7B68BD152B04E68D8E8F7B7DD42849A4B109FB031613C8DDEBC0",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000068",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "remove_AnyBufferContentChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000068.cs",
+        "SourceSHA256": "15BCD07178BB4515F0BB4E4F9ECAC6901151972A793D853313B509A658EBDE24",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000069",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "add_DocumentRenamed",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000069.cs",
+        "SourceSHA256": "753AA866D9AB8A03638AA1EC777A9DD442170DF0F13741D9AE902EA2F9D7B30D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600006a",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "remove_DocumentRenamed",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600006a.cs",
+        "SourceSHA256": "EC60153CCADF7A794F2E0D4DEC19715604D731F228B940D855A9FCE408EC76A1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600006b",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": ".ctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600006b.cs",
+        "SourceSHA256": "52EC7C4878167B70D2724F827CF1689F1F119F036AD070C89B9882801BCF6C3E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600006c",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "FindInstance",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600006c.cs",
+        "SourceSHA256": "A486C3B7D4224155DB5A2B97BCC520FF4433791E31260F5DCD8FF1EB4A9CB838",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600006d",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "AddRef",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600006d.cs",
+        "SourceSHA256": "214ADAF3F1F9BC96E55DA9815425C2C116BE0513E6AA600F81599C8BE1509556",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600006e",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "FinalizeInit",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600006e.cs",
+        "SourceSHA256": "7ADF91A0839CBBA1857716E591C8F471A194BB7F5537BA3EE2915A2A2EC4495E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600006f",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetProjectAndProjectItem",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600006f.cs",
+        "SourceSHA256": "EA46AA83D198CC42E6F5AE02303430FA1A45FBAC6569B8DD4F02DFAB868ECF89",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000070",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "Init",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000070.cs",
+        "SourceSHA256": "189E7271B09F6D05760F4D3C982ABEA424EEE6805379A9AA17CDBCC772A4DD31",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000071",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "get_Enabled",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000071.cs",
+        "SourceSHA256": "D47B1FD426DEA7F0849FCDC3BC84378998ED2664532AA60FA3FFCDE6FA5B3A5E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000072",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "set_Enabled",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000072.cs",
+        "SourceSHA256": "2632234A75879C6A64D18F4CFCDA37CA80A53ACF60BB2199BC5F8F3E6CF649CD",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000073",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "NotifyResultsModified",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000073.cs",
+        "SourceSHA256": "4CD5A4D38FEC25C110B5363D1A2578CBC13E66BF4768F4674EC35C97DB5992B1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000074",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "QueueDeactivationTask",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000074.cs",
+        "SourceSHA256": "C74216D8BD5667809CC9300B473131A38AE3CE4E9692BB9078BFE74E403E8EA5",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000075",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "ClearResults",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000075.cs",
+        "SourceSHA256": "0F6876B2E730F91AC830376CFB1C5E908D05FBCA2A5EB1E85350D70AAF4CB844",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000076",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "QueueActivationTask",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000076.cs",
+        "SourceSHA256": "19D3A08F22D27D87A08F14A0E6779CE2F92F539014BA65B83DC692302DF9B01E",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000077",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "LoadInspector",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000077.cs",
+        "SourceSHA256": "39207C6F8D4CE1DCD59CF99052B8B4461D7580898A96A3ACB0524CA1D72EA59B",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000078",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "RebuildFileParser",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000078.cs",
+        "SourceSHA256": "33FF9312672256D07F87C283FEF6D5FE904E19BB8E8F466D65E40427207E9EE2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000079",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetCompilationOptions",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000079.cs",
+        "SourceSHA256": "D48638F426E4D9A6F8260EDB6A4DF70DF008986828E999686594BEE03AF62417",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600007a",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetCompilationOptions",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600007a.cs",
+        "SourceSHA256": "6E6BA805D7D905F7CB5F7DD0C13C4D8D1B71DD5627F98570C28D58EDA9E032E2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600007b",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetCompilationOptions",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600007b.cs",
+        "SourceSHA256": "C5128118128CFF19EBC7F46BEC3D9128059495D4F701AF5E5F4318240CE8422A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600007c",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "LogConfigurationOptions",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600007c.cs",
+        "SourceSHA256": "7B9995166253A1A362E10DA233BDCAFC6B5EDF4018F4BB8D1A82BB4D18225870",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600007d",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetFirstVcproj",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600007d.cs",
+        "SourceSHA256": "84BA879879E7249600EF0E51646DE4DA0039F9610E125F4BD8125DE504AF72BA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600007e",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "CancelMyPendingParses",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600007e.cs",
+        "SourceSHA256": "13A9FBC25FE62E932EC07525403FC1EE2621B9CA2AE0ECD2BFA2BF01F2E38AB2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600007f",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "CancelSurplusParses",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600007f.cs",
+        "SourceSHA256": "3218EF19F97C6B3DDF7F09D416A4718F4378550A4B91515D8F5329AE06F1D9EA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000080",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "RemoveIf",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000080.cs",
+        "SourceSHA256": "799F322196BF14F2F3A0AB763B90207E94AD24A1D7E630F63BAF2AFBB76CA077",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000081",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "NormalizeFilePath",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000081.cs",
+        "SourceSHA256": "857CE4D286B657B33D73EF9B155B881360D5752536164CC2BFA2385E007099AD",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000082",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "QueueParseTask",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000082.cs",
+        "SourceSHA256": "A17D0FDED9AF416C9D9A4F2BFDCCFF012836ED456BCAEEBBD2545BCC158195BA",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000083",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "UpdateWithResultsFromCache",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000083.cs",
+        "SourceSHA256": "4CF317E2C8EA47660FA63BA1E429308004CD75C0654F9BA626252226419D7EF7",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000084",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "UpdateSpanMap",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000084.cs",
+        "SourceSHA256": "20911AC15E66A556A30115DBA090D094BC412DC0AF5E73D2157924782A781D03",
+        "Warnings": 7
+      },
+      {
+        "Token": "0x06000085",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "QueueInvalidationTask",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000085.cs",
+        "SourceSHA256": "2367CB7DC9289ECC34D20E725E9963D34F14CB92E487982CB923E75CA35C3ECD",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000086",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "QueueDisposeTask",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000086.cs",
+        "SourceSHA256": "99F420FFB2DB219F129CF1DCD5CA4AE5886CAABC649C9C64220C12FF92D93CB2",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000087",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnServerRestartTick",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000087.cs",
+        "SourceSHA256": "E8B0641913376F4A78FFDF826105F31FC63FE8C17150EDBF22508FEF183FF8D9",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000088",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnProjectSettingsChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000088.cs",
+        "SourceSHA256": "A3A2F5B7FDA8ABC8BF658800A160EDCA2DB067A5C357B5A17B198ECDA104F106",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000089",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnSettingsChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000089.cs",
+        "SourceSHA256": "9F39BFF1CF6480FD806765B10A6EC24BF91DF28BA1C88DAED77D7574448CF61C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600008a",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnTextBufferChanged",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600008a.cs",
+        "SourceSHA256": "3881B5996C5C50F4B04514BA6F76265977E02D1E38E92BA290477CDE67C0BDDB",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600008b",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnTextBufferChanged_NotifyPW",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600008b.cs",
+        "SourceSHA256": "9B9B0A7BECD3AA935D0A39CDE30BE5FC7CF2F85CBF83AC3888D5A946388ADF39",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600008c",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "UpdateLineNumbers",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600008c.cs",
+        "SourceSHA256": "D5CBD3B16112C0F6748F206AAB3789477A06539055C003E5ACEB79F47C1B431D",
+        "Warnings": 2
+      },
+      {
+        "Token": "0x0600008d",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "InvalidateFixesWithEditedTriggerSpans",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600008d.cs",
+        "SourceSHA256": "7D4666D01A400E51350E6D9BB881217C0345C49E7482CFF0307CBA0A98047B20",
+        "Warnings": 4
+      },
+      {
+        "Token": "0x0600008e",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnTimerTick",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600008e.cs",
+        "SourceSHA256": "79414EF5ADC92F652B2954AECEF428B91C5A49111C692928737A3C395E2B8ABD",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600008f",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "OnFileActionAccured",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600008f.cs",
+        "SourceSHA256": "6A853DC54AD327802CD4102EFF73F143B08247A4257AB709983B670DFD00895C",
+        "Warnings": 2
+      },
+      {
+        "Token": "0x06000090",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetAutoDetectUtf8Setting",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000090.cs",
+        "SourceSHA256": "CDF9366583AB2313777F2C9D9B80119882BC239761D436ECBA13F90991B6EB11",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000091",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "AddView",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000091.cs",
+        "SourceSHA256": "26BE7A84C45E620684DB4EBA78DDBB9F1F7E42246F58353D7D5E6BE84C60C94C",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000092",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "PrintDebug",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000092.cs",
+        "SourceSHA256": "9874D60B68136B86754F6253995268D3227EE7F94C85212B590ED04DDC8BB053",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000093",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetText",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000093.cs",
+        "SourceSHA256": "8685EE11AFF44FBECF4B52291FA1DB6FAB492748DE79421B2875E45EDFDF359B",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000094",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetExpectedDiskSha",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000094.cs",
+        "SourceSHA256": "0902BE9D6A24EB0F333CC6ED28082041C99A5F2CF8EAAA9D1091F5E09B21A0BE",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000095",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetFilePath",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000095.cs",
+        "SourceSHA256": "76E004409E4FC4C69D8449964242299809AD61B8DDEB3B1CB1F6FB9D25CC123B",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000096",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "IsFileModified",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000096.cs",
+        "SourceSHA256": "BA4554AC025956C3293A70CBDE9475F9398B19CEC60307E62D4C92E7473E6DE9",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000097",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "GetTextSnapshot",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000097.cs",
+        "SourceSHA256": "F457B6A66A50DA02B9D3D36170EAADA1C1E23CCAA5FFF7545497E44B24F814F1",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000098",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": ".cctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000098.cs",
+        "SourceSHA256": "63D643E3000088A3807AF51DC61AB9790746898E4257AA4175DA9530F41B482D",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000099",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "<CancelMyPendingParses>b__68_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x06000099.cs",
+        "SourceSHA256": "1561EBCA2CD51E2A6592E4CC7898A51A077EBAD2B530347C03E6275FFB0CE3FF",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600009a",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "<QueueInvalidationTask>b__75_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600009a.cs",
+        "SourceSHA256": "C627F9DBA15C3EDC9976553CB38CC51193F3EE3F314F0F7FEE7E9F13C5FEE288",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x0600009b",
+        "Type": "WholeTomato.VaCodeInspections.BufferListener",
+        "Name": "<GetAutoDetectUtf8Setting>b__89_0",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\buffer-decompiled\\0x0600009b.cs",
+        "SourceSHA256": "D91E748B9934EA47821B81FBCC3F4010115871781ECAB490A33D12CD4F682C79",
+        "Warnings": 0
+      }
+    ],
+    "limitations": [
+      "Decompiler output is imported as reconstruction evidence and analyst inference; metadata and IL observations remain canonical.",
+      "This operation did not execute, load, reflect over, debug, instrument, patch, or decompile the target artifact.",
+      "The imported reconstruction is valid only for the exact artifact SHA-256, MVID, method signature, and normalized IL shape recorded here.",
+      "Obfuscated names, decompiler variables, and control-flow restructuring are not treated as proof without separate validation."
+    ]
+  },
+  {
+    "evidence_id": "ev_1bd04e63cdfdf8efb80b530acfda5dce2fcaa952c6ce84be73524844b53f4b08",
+    "operation": "import_managed_reconstruction",
+    "subject": {
+      "name": "VaCodeInspectionsAsync.17.dll",
+      "digest": {
+        "sha256": "6d0340b92807a26feabe4ba36ec068e4bdcbca71d074ff6e5c4b795e2e996cc5"
+      },
+      "local_path": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim\\VaCodeInspectionsAsync.17.dll",
+      "format": "pe",
+      "architecture": null
+    },
+    "executed": false,
+    "methodCount": 2,
+    "warningCount": 0,
+    "methods": [
+      {
+        "Token": "0x06000e1e",
+        "Type": "ParserStats",
+        "Name": "get_max_in_parallel",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\parser-stats-decompiled\\0x06000e1e.cs",
+        "SourceSHA256": "F8282F5E8A6E740EBA58D5C2DECCAC370EEE5A2965A2302AB7E4B67F590CD10A",
+        "Warnings": 0
+      },
+      {
+        "Token": "0x06000e1f",
+        "Type": "ParserStats",
+        "Name": ".cctor",
+        "SourcePath": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\parser-stats-decompiled\\0x06000e1f.cs",
+        "SourceSHA256": "E0B555891B90AEB370AFD3FC4B2C0C8B99865702AA2B8AC682D06443B2751F1B",
+        "Warnings": 0
+      }
+    ],
+    "limitations": [
+      "Decompiler output is imported as reconstruction evidence and analyst inference; metadata and IL observations remain canonical.",
+      "This operation did not execute, load, reflect over, debug, instrument, patch, or decompile the target artifact.",
+      "The imported reconstruction is valid only for the exact artifact SHA-256, MVID, method signature, and normalized IL shape recorded here.",
+      "Obfuscated names, decompiler variables, and control-flow restructuring are not treated as proof without separate validation."
+    ]
+  }
+]

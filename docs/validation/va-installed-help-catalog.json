@@ -1,0 +1,3134 @@
+{
+  "installedRoot": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\zgy5sun1.aim",
+  "build": 2630,
+  "count": 278,
+  "records": [
+    {
+      "file": "OptionsHelp/About/ButtonAcknowledgements.html",
+      "sha256": "16070f72fafa566b06dca892b72a03c23627c2ffe4ab3a6a9bf738b70ca040ef",
+      "category": "About",
+      "resourceStem": "ButtonAcknowledgements",
+      "textCharacters": 96,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/About/ButtonDocumentation.html",
+      "sha256": "a43540a9df34808a9b200aaa313c475debd0de0b7e9c6fae39a222c5b6d165dd",
+      "category": "About",
+      "resourceStem": "ButtonDocumentation",
+      "textCharacters": 43,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/About/ButtonForums.html",
+      "sha256": "6e695b5bff4b2c304169e8bab47f94260342329084a38f904d4ddda51e226bd7",
+      "category": "About",
+      "resourceStem": "ButtonForums",
+      "textCharacters": 46,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/About/ButtonGohome.html",
+      "sha256": "bdb3559fe44d32084405e66472efc8f84bfb50a9b244d0ddfea3c418d541cb28",
+      "category": "About",
+      "resourceStem": "ButtonGohome",
+      "textCharacters": 26,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ButtonsAndIcons/CheckDisplayRefactoringButton.html",
+      "sha256": "f4ff05eff78a0ce8e35700e82d77a29512f284665902ea6376930c30ed0f75cd",
+      "category": "ButtonsAndIcons",
+      "resourceStem": "CheckDisplayRefactoringButton",
+      "textCharacters": 235,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=accessRefactoring"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ButtonsAndIcons/CheckTomatosInUi.html",
+      "sha256": "dddd046a3f264658add9bb5fcdbfb80346f0d07b8126c5555d3f4f3dbe94922d",
+      "category": "ButtonsAndIcons",
+      "resourceStem": "CheckTomatosInUi",
+      "textCharacters": 197,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ButtonsAndIcons/CheckWatermark.html",
+      "sha256": "c69bc0797fe91a40c13945c429b60516bc789d9919d063e0e19a78647e6e263c",
+      "category": "ButtonsAndIcons",
+      "resourceStem": "CheckWatermark",
+      "textCharacters": 90,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/AddIncludePath.html",
+      "sha256": "ea281b43dca353636c8cac38f428dbc03a7cfdb57fd1cff2f6a81190af7267fd",
+      "category": "CodeGeneration",
+      "resourceStem": "AddIncludePath",
+      "textCharacters": 322,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=addIncludePath"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/AddIncludeStyle.html",
+      "sha256": "e16e89d972e74785849dd68d0cd38c5b174c21852ba6792582a3745a4f0d7e2e",
+      "category": "CodeGeneration",
+      "resourceStem": "AddIncludeStyle",
+      "textCharacters": 178,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=addIncludeStyle"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/AddKeywordToGeneratedMethods.html",
+      "sha256": "df076b1406af2cc0af6945dd7c371c24b73bf3012cb958d3a29a2d0a3136a848",
+      "category": "CodeGeneration",
+      "resourceStem": "AddKeywordToGeneratedMethods",
+      "textCharacters": 114,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=implementInterfaceVirtual"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/CheckFindSimilarLocation.html",
+      "sha256": "19c96c915cd6cc6a0744459501deae23a1df1de114808d99419e420b0a244854",
+      "category": "CodeGeneration",
+      "resourceStem": "CheckFindSimilarLocation",
+      "textCharacters": 169,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=createImplementation"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/CheckIncludeDefaultParameterValues.html",
+      "sha256": "fefec770bda3890dd7674f645b4f98da7fd54f471c308166918f8e1c1642aa19",
+      "category": "CodeGeneration",
+      "resourceStem": "CheckIncludeDefaultParameterValues",
+      "textCharacters": 121,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=createImplementationParameter"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/CheckInsertOpenBraceOnNewLine.html",
+      "sha256": "1e73f8e2a6a9f9b8fb7ab9bbe60f7dbb289faed92e685131a2562d3b3f7e3c3e",
+      "category": "CodeGeneration",
+      "resourceStem": "CheckInsertOpenBraceOnNewLine",
+      "textCharacters": 91,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=addBraces",
+        "https://www.wholetomato.com/support/tooltip.asp?option=introduceVariable"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeGeneration/LinesBetweenMethods.html",
+      "sha256": "72c5225411eec9de98dac5acdb8a3e51212db2f2933893b4e5586a8ac940b6ee",
+      "category": "CodeGeneration",
+      "resourceStem": "LinesBetweenMethods",
+      "textCharacters": 86,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/AutoReparse.html",
+      "sha256": "b1c7a8e4f27c2fa236cbc0c7c0198e759c04ff8561779a716b9b6fbbf6b5fc77",
+      "category": "CodeInspection",
+      "resourceStem": "AutoReparse",
+      "textCharacters": 205,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/AutoReparseOnBattery.html",
+      "sha256": "6d703c700ce4e8251fa632ee970d2e7965002320e312510d0cd45485d987d5b5",
+      "category": "CodeInspection",
+      "resourceStem": "AutoReparseOnBattery",
+      "textCharacters": 165,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/CheckerFilter.html",
+      "sha256": "4d7c89428e652f60b89b55286cbad13467964d7019b80dc7568093b49fbd56e3",
+      "category": "CodeInspection",
+      "resourceStem": "CheckerFilter",
+      "textCharacters": 130,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/CheckerList.html",
+      "sha256": "73b29c364862cb2b7677b43841dfe38262ca46ab9b99196f0b27eff960a3dd02",
+      "category": "CodeInspection",
+      "resourceStem": "CheckerList",
+      "textCharacters": 58,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=codeInspectionList"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/CollapseAll.html",
+      "sha256": "5651e7038e746a5b828f172ca1ab24a7e5ea484b74a5654fcbba0316ef1aa795",
+      "category": "CodeInspection",
+      "resourceStem": "CollapseAll",
+      "textCharacters": 36,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/ConfigurationSet.html",
+      "sha256": "9e5df7f14aa9cd2caa9fede7e0e1ceb68e2508bad71c740b66f387a49ca69b8e",
+      "category": "CodeInspection",
+      "resourceStem": "ConfigurationSet",
+      "textCharacters": 40,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/CustomizeSet.html",
+      "sha256": "cb5805b447249a35fe4e9a59de8c16c13ce9a16753f265f5f009f704fd08dfcd",
+      "category": "CodeInspection",
+      "resourceStem": "CustomizeSet",
+      "textCharacters": 71,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/Duplicate.html",
+      "sha256": "f271bd8b727782eae5997190113756440a61ae8b4bb87d8a9b05a9d1eae65b81",
+      "category": "CodeInspection",
+      "resourceStem": "Duplicate",
+      "textCharacters": 69,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/Enable.html",
+      "sha256": "65beebec6ac7c4cee7f631aca78ede4f5b3b9d83319b588c28f5e1bc9bb9a792",
+      "category": "CodeInspection",
+      "resourceStem": "Enable",
+      "textCharacters": 130,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=codeInspection"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/EnableIssuesInHeaders.html",
+      "sha256": "9f984d80464104658cb1773e1fbc2eebb7a5ad63846d70f6b754ea66575d470b",
+      "category": "CodeInspection",
+      "resourceStem": "EnableIssuesInHeaders",
+      "textCharacters": 89,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=codeInspectionInHeaders"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/EnableWhileDebugging.html",
+      "sha256": "73ac25f1418cea3f2a13006ec88dc57cb8b2da39bc38aca5c331417caf09d89d",
+      "category": "CodeInspection",
+      "resourceStem": "EnableWhileDebugging",
+      "textCharacters": 56,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/ExpandAll.html",
+      "sha256": "524f3dc265058a077078fcea991992dcd1cdb9cca164739f2f4de4a0d562c00b",
+      "category": "CodeInspection",
+      "resourceStem": "ExpandAll",
+      "textCharacters": 46,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/Remove.html",
+      "sha256": "05159a16e3de3696ae26caba3c0db773b9a70093d34748dc96985f417f1ce940",
+      "category": "CodeInspection",
+      "resourceStem": "Remove",
+      "textCharacters": 35,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/Scrollbar.html",
+      "sha256": "a20d6b77df27f8158a15c3f9a5dd7e34c1efd99d9de6c67a2725c7fa73d414cc",
+      "category": "CodeInspection",
+      "resourceStem": "Scrollbar",
+      "textCharacters": 144,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=codeInspectionScrollbar"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/ShowClangNames.html",
+      "sha256": "1ecb510e4ba6cf3e4fb10e96fab8e0979b789feea53bdbaac41beb07ebaf9555",
+      "category": "CodeInspection",
+      "resourceStem": "ShowClangNames",
+      "textCharacters": 4,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/ShowUnevaluatedCheckers.html",
+      "sha256": "972d92743734475ad8636a194877b9c28a829c6c2fa3817971a36d9c7239048a",
+      "category": "CodeInspection",
+      "resourceStem": "ShowUnevaluatedCheckers",
+      "textCharacters": 417,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/Underlines.html",
+      "sha256": "0fef2602e93cf2dfc9df4ecb14c276e4937c04ce08aa12b5842d7ec3f358b152",
+      "category": "CodeInspection",
+      "resourceStem": "Underlines",
+      "textCharacters": 237,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=codeInspectionUnderline"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CodeInspection/UseDefaults.html",
+      "sha256": "f91a6d05388a35e5c44f1dac0e7d3668a68eae9e5d270111f9fe5dd94e1e5e07",
+      "category": "CodeInspection",
+      "resourceStem": "UseDefaults",
+      "textCharacters": 71,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckAutolistMembers.html",
+      "sha256": "25e29f0fbae32356b2be97f4cd6c0d27900f5f2b76e971a506b031e6f9512d64",
+      "category": "Cpp6",
+      "resourceStem": "CheckAutolistMembers",
+      "textCharacters": 94,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=listboxes"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckAutoParamInfo.html",
+      "sha256": "0a3b393949d086dbbcdb09655ef5526c8f5fde64c51767548c8d18ba294a593e",
+      "category": "Cpp6",
+      "resourceStem": "CheckAutoParamInfo",
+      "textCharacters": 193,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=parameterInfo"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckAutoTypeInfo.html",
+      "sha256": "6a4d813c5114b0a3c40923f2d1815d1c740a125185c441a87979bdace031185e",
+      "category": "Cpp6",
+      "resourceStem": "CheckAutoTypeInfo",
+      "textCharacters": 62,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hover"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckBypassListsAfterF1.html",
+      "sha256": "68325def9f6c892647cf4a41453369b3f5337e6fb008e89e34fa66a78417cc34",
+      "category": "Cpp6",
+      "resourceStem": "CheckBypassListsAfterF1",
+      "textCharacters": 97,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=f1"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckCodeComments.html",
+      "sha256": "481b4e0723cf8434e33605481e19119e91e1742592c57e36a8e77cd3fb99fedc",
+      "category": "Cpp6",
+      "resourceStem": "CheckCodeComments",
+      "textCharacters": 98,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckCopyRtfToClipboard.html",
+      "sha256": "61ee9f18d867314eea31b9a2fda612ccb58f7230d1adf488472ff4d5b4aa250a",
+      "category": "Cpp6",
+      "resourceStem": "CheckCopyRtfToClipboard",
+      "textCharacters": 48,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=rtf"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckPrintInColor.html",
+      "sha256": "060cae9048a5c531d84c9d1fe1a5a0856a00c9a362ee70cd8d782841ff73107e",
+      "category": "Cpp6",
+      "resourceStem": "CheckPrintInColor",
+      "textCharacters": 27,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=print"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/CheckSaveUnnamedBookmarks.html",
+      "sha256": "6006137a76a7d0f2e36106a7eea8d9afb3ebb46a79c1f0e5773326c9c037814c",
+      "category": "Cpp6",
+      "resourceStem": "CheckSaveUnnamedBookmarks",
+      "textCharacters": 60,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=bookmark"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Cpp6/EnableVaview.html",
+      "sha256": "eefc3db48026a2c5a0e8ef738b941923cfa6db2ae9ce0215c306fc57525bdfb5",
+      "category": "Cpp6",
+      "resourceStem": "EnableVaview",
+      "textCharacters": 285,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=vaOutline",
+        "https://www.wholetomato.com/support/tooltip.asp?option=vaview"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ButtonDelInclude.html",
+      "sha256": "c1edc25f40f27358846669fe8b4fefe3944f5fdd9dfb3f6c7edd07c1a622f4f9",
+      "category": "CPPDirectories",
+      "resourceStem": "ButtonDelInclude",
+      "textCharacters": 12,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ButtonDownOne.html",
+      "sha256": "0fd58a86babfdd95eaf1eefc87a91892274b3042580f0e8f43b56719748f28c0",
+      "category": "CPPDirectories",
+      "resourceStem": "ButtonDownOne",
+      "textCharacters": 26,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ButtonExport.html",
+      "sha256": "a2ec5eb3ccdbf7e9ef84c9e7ec298500d71c06223e37577453a3ab1989e9f75d",
+      "category": "CPPDirectories",
+      "resourceStem": "ButtonExport",
+      "textCharacters": 34,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ButtonImport.html",
+      "sha256": "9639824fadd2148cdff0b331e5102fa322139662f9bc855701f31d74b31f7db3",
+      "category": "CPPDirectories",
+      "resourceStem": "ButtonImport",
+      "textCharacters": 37,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ButtonNewInclude.html",
+      "sha256": "54b2287a4209a7d7b74a9c0e617b8a25e82794b18c10d1bab0a1070a1492bc2f",
+      "category": "CPPDirectories",
+      "resourceStem": "ButtonNewInclude",
+      "textCharacters": 9,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ButtonUpOne.html",
+      "sha256": "5b2edfbd633ae37567838b41f8c2896c44bc9419cea922a35639444efe5e2eb1",
+      "category": "CPPDirectories",
+      "resourceStem": "ButtonUpOne",
+      "textCharacters": 22,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ComboIncludesOther.html",
+      "sha256": "c9312b739e76f84cd0380d3bf7453f238d33e0977c5049ec102e69d43bc31ce0",
+      "category": "CPPDirectories",
+      "resourceStem": "ComboIncludesOther",
+      "textCharacters": 116,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ComboIncludesSrcFiles.html",
+      "sha256": "c9312b739e76f84cd0380d3bf7453f238d33e0977c5049ec102e69d43bc31ce0",
+      "category": "CPPDirectories",
+      "resourceStem": "ComboIncludesSrcFiles",
+      "textCharacters": 116,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ComboIncludesStable.html",
+      "sha256": "c9312b739e76f84cd0380d3bf7453f238d33e0977c5049ec102e69d43bc31ce0",
+      "category": "CPPDirectories",
+      "resourceStem": "ComboIncludesStable",
+      "textCharacters": 116,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ComboPlatforms.html",
+      "sha256": "607c1697ff8a8a65df0970b91e8aa1b6470c44a8973b3da30753b3b86d0f792f",
+      "category": "CPPDirectories",
+      "resourceStem": "ComboPlatforms",
+      "textCharacters": 377,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ListIncludesOther.html",
+      "sha256": "29672ee80dda96b811e68c046fb92ba465bff3ec8af0ed631b9db210bf759340",
+      "category": "CPPDirectories",
+      "resourceStem": "ListIncludesOther",
+      "textCharacters": 51,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ListIncludesSrcFiles.html",
+      "sha256": "b02c45455636fe0d24807a0d618ea75baaa9a7a407bf4ba1b84799246c439408",
+      "category": "CPPDirectories",
+      "resourceStem": "ListIncludesSrcFiles",
+      "textCharacters": 98,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/CPPDirectories/ListIncludesStable.html",
+      "sha256": "617acd72d7401722f8200b7391f857c7f545e9f3b610b82133d557d8a907f27f",
+      "category": "CPPDirectories",
+      "resourceStem": "ListIncludesStable",
+      "textCharacters": 394,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=platform"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Debug/CheckNativeDebuggerStepFilter.html",
+      "sha256": "9fef924bc6cb2388e21a5ce9fb8d2115fa6a70a8bbf2f8c60e5e138a5091b766",
+      "category": "Debug",
+      "resourceStem": "CheckNativeDebuggerStepFilter",
+      "textCharacters": 376,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dbgStepFilter",
+        "https://www.wholetomato.com/support/tooltip.asp?option=memoryView"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Debug/RadioStepFilterDirAppdata.html",
+      "sha256": "3d500a15d0b80764054e6c95d20a2a1aa9be1def479f8a503070e84b26f2fb1f",
+      "category": "Debug",
+      "resourceStem": "RadioStepFilterDirAppdata",
+      "textCharacters": 226,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dbgStepFilterDirectory"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Debug/RadioStepFilterDirVa.html",
+      "sha256": "26a2ee73394f303fe4d5955f90010c3a39094b7f2177c80ab6b3a83178ba8416",
+      "category": "Debug",
+      "resourceStem": "RadioStepFilterDirVa",
+      "textCharacters": 346,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dbgStepFilterDirectory"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckDisplayIndicatorInColumn.html",
+      "sha256": "a0527e8ec5dd9bf621e3e0e9a52d8e64c26c682a0157f8843835b73b1326fca0",
+      "category": "Display",
+      "resourceStem": "CheckDisplayIndicatorInColumn",
+      "textCharacters": 71,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=column"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckEnableEnhancedMacroExpansion.html",
+      "sha256": "ecb54434a8ef3dcd7da888ec6528e86ac427909d760d26fd43a87fd5c6ef3dd7",
+      "category": "Display",
+      "resourceStem": "CheckEnableEnhancedMacroExpansion",
+      "textCharacters": 83,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckEnableQuickinfoTooltips.html",
+      "sha256": "35326230b470efb7885fc739f1e0db569c236951b96986af1ef5e28bc051e506",
+      "category": "Display",
+      "resourceStem": "CheckEnableQuickinfoTooltips",
+      "textCharacters": 132,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hover"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckEnableScopeTooltips.html",
+      "sha256": "24c24148e69d9520129ac3c522dcfba26b73a52193e7695178ce16d8d0cf49e1",
+      "category": "Display",
+      "resourceStem": "CheckEnableScopeTooltips",
+      "textCharacters": 161,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=contextTooltips"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckEnhancedMacroExpansionKeepBoth.html",
+      "sha256": "c4261ae1eec9db4d014d9ff00b61599730c0873a1b6cf897c87887c0f0e341b5",
+      "category": "Display",
+      "resourceStem": "CheckEnhancedMacroExpansionKeepBoth",
+      "textCharacters": 93,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckEnhancedMacroExpansionUseLastContext.html",
+      "sha256": "59dc39da300037f93f52370cd186427a75d32b5b911ce221ca248d388d72092f",
+      "category": "Display",
+      "resourceStem": "CheckEnhancedMacroExpansionUseLastContext",
+      "textCharacters": 91,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckFormatDoxygen.html",
+      "sha256": "9ff6f47ec6c1bf4790182124bccd29c8691ed7267308462abdb164ea4c3a454e",
+      "category": "Display",
+      "resourceStem": "CheckFormatDoxygen",
+      "textCharacters": 65,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=doxygen"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckFormatEnhancedMacroExpansion.html",
+      "sha256": "8305475fba78f7a789893eef3eacfaea054bfb59fde5e937f52ad44852139b04",
+      "category": "Display",
+      "resourceStem": "CheckFormatEnhancedMacroExpansion",
+      "textCharacters": 67,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckGiveCommentsPrecedence.html",
+      "sha256": "4ae4b7604803a9242629b3070c6ddccbda5a0d41c7c5cf6f7851a71bf1cee3a8",
+      "category": "Display",
+      "resourceStem": "CheckGiveCommentsPrecedence",
+      "textCharacters": 131,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hover"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckGiveCommentsPrecedenceV11.html",
+      "sha256": "effa4a5069e2bcea671f9f82b5609e69e750dedd2b51c7c75f22e7676193c982",
+      "category": "Display",
+      "resourceStem": "CheckGiveCommentsPrecedenceV11",
+      "textCharacters": 85,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hover"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckOldStyleMenu.html",
+      "sha256": "a25b58bc2134cf7ec0ee6b86e88d9c00e3f4c58006101f5a2a3b7b2bbff5cbc4",
+      "category": "Display",
+      "resourceStem": "CheckOldStyleMenu",
+      "textCharacters": 201,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckUseSlashForIncludePaths.html",
+      "sha256": "3356f4e916f8c01be4b79e3520b2fd6fb27b05c96092243a92167e84b43696ba",
+      "category": "Display",
+      "resourceStem": "CheckUseSlashForIncludePaths",
+      "textCharacters": 160,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/CheckViewContextFields.html",
+      "sha256": "a172cf3fea807a67df64c2e68610e0302651c2cf668a758108930511938f0619",
+      "category": "Display",
+      "resourceStem": "CheckViewContextFields",
+      "textCharacters": 142,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=context"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/EditIndicatorColumn.html",
+      "sha256": "e1118e1ae178197687ef66f5e81acf66926de17c682bb89e45bd99ea352832e9",
+      "category": "Display",
+      "resourceStem": "EditIndicatorColumn",
+      "textCharacters": 15,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/RadioContextOnBottom.html",
+      "sha256": "453accaaed2ff45407942d144deb6b507141717f2cb7f98e7375704c567f8832",
+      "category": "Display",
+      "resourceStem": "RadioContextOnBottom",
+      "textCharacters": 67,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=top"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/RadioContextOnTop.html",
+      "sha256": "eae0b2642ff12df98d18bd8c9bc064cf8120459242243c984ebbd317b95affb8",
+      "category": "Display",
+      "resourceStem": "RadioContextOnTop",
+      "textCharacters": 64,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=top"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/RadioSortByAlpha.html",
+      "sha256": "2be8610694b0ad0f444e4e4e9c2de57585c6afea27cbf7775a231b6319cbcc39",
+      "category": "Display",
+      "resourceStem": "RadioSortByAlpha",
+      "textCharacters": 113,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/RadioSortByOccurrence.html",
+      "sha256": "64b3c51a4d31b436f65fa39d0b0e8059b66909410f9a90c128b589b978cef277",
+      "category": "Display",
+      "resourceStem": "RadioSortByOccurrence",
+      "textCharacters": 108,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=methods"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Display/StaticIndicatorColumnUsing.html",
+      "sha256": "4282a5df23b24bf305c79bd7ce2b831369ef4b2e354f60cb692e4e8476befb9f",
+      "category": "Display",
+      "resourceStem": "StaticIndicatorColumnUsing",
+      "textCharacters": 41,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckConvertDotToArrow.html",
+      "sha256": "1204c204ebc73acd63e5f0aa379ee3c271a3ee8479a40054c58826ec86f12d7a",
+      "category": "Editor",
+      "resourceStem": "CheckConvertDotToArrow",
+      "textCharacters": 92,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dot"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckDisplayPasteMenu.html",
+      "sha256": "9a7a772f4d329715a356a43bd5ee1301fb307e10a15143eaf3c4cb3789d8a95f",
+      "category": "Editor",
+      "resourceStem": "CheckDisplayPasteMenu",
+      "textCharacters": 52,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=clipboard"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckDoubleKeyRepeat.html",
+      "sha256": "4acacf2fd5b482fe3c06ea74dc0cbf00f7b1270d72e2aa0f28a9afa6ac2f4007",
+      "category": "Editor",
+      "resourceStem": "CheckDoubleKeyRepeat",
+      "textCharacters": 59,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckExtendComments.html",
+      "sha256": "88d87eb4b9d6f3efcac114f97c7f786df3e8435280c8b87ff8213e054084f11c",
+      "category": "Editor",
+      "resourceStem": "CheckExtendComments",
+      "textCharacters": 198,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=extendComment"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckFormatAfterPaste.html",
+      "sha256": "957680d697911e5987b156876ae94fe997f70b99a875fd65155e949470e3fa2f",
+      "category": "Editor",
+      "resourceStem": "CheckFormatAfterPaste",
+      "textCharacters": 152,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=format"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckInsertClosingBrace.html",
+      "sha256": "8cf74ebdd80c364a387727a78ca87650ead15d6b4eb3b5abc197042af93b2c83",
+      "category": "Editor",
+      "resourceStem": "CheckInsertClosingBrace",
+      "textCharacters": 230,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=insert"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckInsertSpaceAfterComment.html",
+      "sha256": "49d35a586f8d9559b4fdc71ee7847ca4d3155fcf82ba12508a34f0303b6def02",
+      "category": "Editor",
+      "resourceStem": "CheckInsertSpaceAfterComment",
+      "textCharacters": 113,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=surroundCommentSpace"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckInsertUnderscoreAfterM.html",
+      "sha256": "38e3f46863a675457b96073e396786b15726878e2c207de5f85461b494a43ce1",
+      "category": "Editor",
+      "resourceStem": "CheckInsertUnderscoreAfterM",
+      "textCharacters": 83,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=m"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckRepairCase.html",
+      "sha256": "c41aa42c01ae7d254c259575dfbfda59f525d3b27f758e2e0af30eb7d5969532",
+      "category": "Editor",
+      "resourceStem": "CheckRepairCase",
+      "textCharacters": 183,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=case"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSmartConvertDotToArrow.html",
+      "sha256": "199ce8d72a6ec1319127f0b1f6ac07a247163a2fb4826ac0d7ec572d8e8af020",
+      "category": "Editor",
+      "resourceStem": "CheckSmartConvertDotToArrow",
+      "textCharacters": 140,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dot"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundChar1.html",
+      "sha256": "79d534448b24f942de9cf95a13aab40a77cb6f8934ab81bd91b044f46f2f5781",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundChar1",
+      "textCharacters": 178,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundChar2.html",
+      "sha256": "5338b8fa09d2b2aae635921f5a0b78e42b583367ccb38d155399d0e9b76da061",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundChar2",
+      "textCharacters": 118,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundChar3.html",
+      "sha256": "96ecbd57294253bf5b7e1ae1603d227a4ab70aa30e4a099a42fae216592dfab8",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundChar3",
+      "textCharacters": 42,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundChar4.html",
+      "sha256": "8cd9201604ebc6f842b7b987fd2d791dcb0fc7ff693d987b3b48d6e4e0b5c4c3",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundChar4",
+      "textCharacters": 37,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundChar5.html",
+      "sha256": "9aeea799d55f8a162d16d8493287f32e172b7bc44fb65ee50e9385065bf4c2fe",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundChar5",
+      "textCharacters": 124,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=ifdef"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundCharSnippet.html",
+      "sha256": "cbc23bd61f500577c5a7ea79413c703a16f8505236737b185f1f12555decc09b",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundCharSnippet",
+      "textCharacters": 182,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=surroundWith"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/CheckSurroundSelectionOn.html",
+      "sha256": "6d3b256a08fc03ed51754b812ddc1661b0db33b96f9b48afba8f25c526637c3b",
+      "category": "Editor",
+      "resourceStem": "CheckSurroundSelectionOn",
+      "textCharacters": 128,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=surround"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/EditClosingBraceSpace.html",
+      "sha256": "3d7c9f951829e140b5d04e6c2915a419082f81bd26d76818336c459466884842",
+      "category": "Editor",
+      "resourceStem": "EditClosingBraceSpace",
+      "textCharacters": 27,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/EditPasteMenuItems.html",
+      "sha256": "c43232f18137ad28440b8b3779db4519a894b591585b72576abcd4bb94195854",
+      "category": "Editor",
+      "resourceStem": "EditPasteMenuItems",
+      "textCharacters": 51,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/RadioInsertBraceAfterBlankLine.html",
+      "sha256": "84c132d62acbbc309bfd7b48cf02eaf9f2ffd64866fcfa65003c3fb6e37fa433",
+      "category": "Editor",
+      "resourceStem": "RadioInsertBraceAfterBlankLine",
+      "textCharacters": 40,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/RadioInsertBraceOnNextLine.html",
+      "sha256": "0f66db87a47d1774fd68bf1f5cb5614e00e861cf3aa8fc58d1cf697482bca4a4",
+      "category": "Editor",
+      "resourceStem": "RadioInsertBraceOnNextLine",
+      "textCharacters": 38,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/RadioInsertBraceOnSameLine.html",
+      "sha256": "0d145359756274176c580d79a965d2004bae425c474dc1fd1936c14fe37f0b73",
+      "category": "Editor",
+      "resourceStem": "RadioInsertBraceOnSameLine",
+      "textCharacters": 38,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Editor/StaticPasteMenuItems.html",
+      "sha256": "9a7a772f4d329715a356a43bd5ee1301fb307e10a15143eaf3c4cb3789d8a95f",
+      "category": "Editor",
+      "resourceStem": "StaticPasteMenuItems",
+      "textCharacters": 52,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=clipboard"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/ButtonSynColorUseDefaults.html",
+      "sha256": "03668a4278f1532327865d8bc82a8ae07b73aacca359ec8a6ffcbf9fd8c8af62",
+      "category": "FontsAndColors",
+      "resourceStem": "ButtonSynColorUseDefaults",
+      "textCharacters": 37,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhColorListboxes.html",
+      "sha256": "d6251e02f697be7630075f0f4e71d14d15776e7d2bd447fed7946e8d305eb4ad",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhColorListboxes",
+      "textCharacters": 95,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhColorObjectBrowser.html",
+      "sha256": "cf77c5ecdeda7721c76a3d56c777a9dd09a1aa2174f326541906abfb58c29d60",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhColorObjectBrowser",
+      "textCharacters": 53,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhColorSourcewins.html",
+      "sha256": "9d7b393a9546d48ea53251b2287075a73093999315b4c9801d9c62214703bc56",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhColorSourcewins",
+      "textCharacters": 211,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=colorDarkBackground"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhColorTooltips.html",
+      "sha256": "201f027c944d77b62c1c22f48439f4a47c0fbb7a2bec36f0650c5b8fdf97417b",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhColorTooltips",
+      "textCharacters": 84,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhColorViews.html",
+      "sha256": "dda590b42e0a2722efd6bed1cdffb9bc8cc4253f8d886fb3f4af72baad6cd1d0",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhColorViews",
+      "textCharacters": 123,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhColorWizardbar.html",
+      "sha256": "84c9716dc12d561a2e249334a5a8a865db50e226dc3285f61dcbb75ab415bae6",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhColorWizardbar",
+      "textCharacters": 56,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=top"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckEnhSyntaxColor.html",
+      "sha256": "69830e71ef5e518520a98c949aa8fb2843286f49ebf29a2ead42bd298a4cc447",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckEnhSyntaxColor",
+      "textCharacters": 164,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=color"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckLocalSymsBold.html",
+      "sha256": "e473d9bcf20cd97b46bd0d24f59d3c07dce595762e3d3fdb85fb98e2f4f45ae2",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckLocalSymsBold",
+      "textCharacters": 62,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=bold"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/CheckStableSymsItalics.html",
+      "sha256": "6ea3ba7a8aa94ce2968e87d0b7b6f22dbb63ab31cb64d8282f177f1b77fd1a84",
+      "category": "FontsAndColors",
+      "resourceStem": "CheckStableSymsItalics",
+      "textCharacters": 162,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=italic"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/StaticClasses.html",
+      "sha256": "d919a971d8dab1b4f0a557132af89f8859418f05ca402834082d92ff7478dc58",
+      "category": "FontsAndColors",
+      "resourceStem": "StaticClasses",
+      "textCharacters": 74,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=palette"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/StaticEnumMembers.html",
+      "sha256": "fed32cdc01e6939a93efe34bc8fc9103662375c6f87eb4c708f17c697f4e5658",
+      "category": "FontsAndColors",
+      "resourceStem": "StaticEnumMembers",
+      "textCharacters": 34,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=palette"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/StaticMethods.html",
+      "sha256": "c5c8e8bae6a0f52bb13f7d6b50d65173da6007bd28ab58652584e379b69eb9f5",
+      "category": "FontsAndColors",
+      "resourceStem": "StaticMethods",
+      "textCharacters": 43,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=palette"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/StaticNamespaces.html",
+      "sha256": "465f9fe9e00606c51cd42170e21e2de138853f0d24f7421561c4726e00a7d5f4",
+      "category": "FontsAndColors",
+      "resourceStem": "StaticNamespaces",
+      "textCharacters": 58,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=palette"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/StaticPreprocessor.html",
+      "sha256": "048c4bd2ad40a18f99ddc7d84ab6f0fcf0959bb7ef63ab09b5b5b6fb7834f4e5",
+      "category": "FontsAndColors",
+      "resourceStem": "StaticPreprocessor",
+      "textCharacters": 41,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=palette"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/FontsAndColors/StaticVariables.html",
+      "sha256": "8f02ff8a11855a1f8e0b4c1b281fb78ace0ba77b9ecee1af9b63c6625214822a",
+      "category": "FontsAndColors",
+      "resourceStem": "StaticVariables",
+      "textCharacters": 31,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=palette"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/CheckGotoProjectFilter.html",
+      "sha256": "4944ac579b9212ffc2c297f22a031fcb78546eb552c4c254b218daf6863dd07b",
+      "category": "Goto",
+      "resourceStem": "CheckGotoProjectFilter",
+      "textCharacters": 232,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=goto"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/CheckGotoSolutionFilter.html",
+      "sha256": "958de27c8ba8de135ad358f63af350e894a40e9b6e9d426bf7611997a7c80611",
+      "category": "Goto",
+      "resourceStem": "CheckGotoSolutionFilter",
+      "textCharacters": 140,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/ComboOverloadModeGoto.html",
+      "sha256": "f6b236efee3524ddab33620cdcf157d3fb8413c279c323bb01459f272aa0585e",
+      "category": "Goto",
+      "resourceStem": "ComboOverloadModeGoto",
+      "textCharacters": 133,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/ExecuteGoto.html",
+      "sha256": "448d3f40cbe4b10dfaf11e76305a5b5bdebfe84473b9d766c8bfc52a8512a9a6",
+      "category": "Goto",
+      "resourceStem": "ExecuteGoto",
+      "textCharacters": 162,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=gotoNavigationBar"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/ExecuteGotoRelated.html",
+      "sha256": "00a219bca36967da688981731d16e75fc03206a202b986a7c5e84084cfb2ed22",
+      "category": "Goto",
+      "resourceStem": "ExecuteGotoRelated",
+      "textCharacters": 208,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=gotoRelated"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/JumpToImpl.html",
+      "sha256": "383ec660de2fed53e7f1d46b27553a512f57e97ffad6744ae80406683deb4262",
+      "category": "Goto",
+      "resourceStem": "JumpToImpl",
+      "textCharacters": 340,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Goto/SelectSymbolOnGoto.html",
+      "sha256": "d9b93c66127a8597095ed1bc1013d81bc62368233453ca1d15fc89445dcbb9e4",
+      "category": "Goto",
+      "resourceStem": "SelectSymbolOnGoto",
+      "textCharacters": 331,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Hashtags/AllowHypens.html",
+      "sha256": "588e68e767f4de1617834ba89b8d6207d17793e8084ea537d11057d0c9fec53f",
+      "category": "Hashtags",
+      "resourceStem": "AllowHypens",
+      "textCharacters": 211,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hashtagsHyphen"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Hashtags/Default.html",
+      "sha256": "64bf99e60ee59652e62bd39efeec63e57e121c1a2d563f7c03c78215916afe18",
+      "category": "Hashtags",
+      "resourceStem": "Default",
+      "textCharacters": 120,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Hashtags/GlobalCommandsInHashtagsToolwindow.html",
+      "sha256": "869b3bc01846efdc125b2012b27880a8f77b8364b8af6d5eb2658813f47a9368",
+      "category": "Hashtags",
+      "resourceStem": "GlobalCommandsInHashtagsToolwindow",
+      "textCharacters": 302,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hashtagsHide"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Hashtags/IgnoreHexaHashtags.html",
+      "sha256": "dba949dab7d355093ab262801064fee77ea40f3f846543155f4664765e879c27",
+      "category": "Hashtags",
+      "resourceStem": "IgnoreHexaHashtags",
+      "textCharacters": 286,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hashtagsHexadecimal"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Hashtags/MinLenOfHashtags.html",
+      "sha256": "ce5f2b3c9cc134d70d422367da64cefbc5a5641621e3b43d6eb20a2fdccc69cd",
+      "category": "Hashtags",
+      "resourceStem": "MinLenOfHashtags",
+      "textCharacters": 150,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=hashtagsLength"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckAndColorHighlightBraces.html",
+      "sha256": "cc5aebead9cdd0375a7f10f5d0b75fc1255d936b083b7f4e98e19c38b74bcb60",
+      "category": "Highlighting",
+      "resourceStem": "CheckAndColorHighlightBraces",
+      "textCharacters": 69,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=match"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckAndColorHighlightMismatchingBraces.html",
+      "sha256": "7e1dd871bd4cce13f268f1d0147d59a1630a97f4bac1e6432881c84124e7c99d",
+      "category": "Highlighting",
+      "resourceStem": "CheckAndColorHighlightMismatchingBraces",
+      "textCharacters": 73,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mismatch"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckAndColorsHiliteReferences.html",
+      "sha256": "0182f9470822628884e044f216ba646ea6a95b37eecbf18557c361b76e650747",
+      "category": "Highlighting",
+      "resourceStem": "CheckAndColorsHiliteReferences",
+      "textCharacters": 168,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=highlightReferences"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckAutomaticRefsHighlight.html",
+      "sha256": "63f7a0531b8c8ce826b8108a17541404c02ede24680bf4174355b02c019e3248",
+      "category": "Highlighting",
+      "resourceStem": "CheckAutomaticRefsHighlight",
+      "textCharacters": 140,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=highlightUnderCursor"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckHighlightActiveLine.html",
+      "sha256": "f405da5b54c82f6c251b5e03a38d16536af8901d69d6836ec0dfce898e3d0c87",
+      "category": "Highlighting",
+      "resourceStem": "CheckHighlightActiveLine",
+      "textCharacters": 191,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=highlightCurrentLine"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckHighlightBuildOutput.html",
+      "sha256": "ded21ebf63190ace29a68b5d6ae4a059f8c3363ddcc62a6357b7fdf121c14060",
+      "category": "Highlighting",
+      "resourceStem": "CheckHighlightBuildOutput",
+      "textCharacters": 122,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=outputPaths"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckHighlightFindResults.html",
+      "sha256": "b03607d81bd57fde36372895a7d4634ce8059c6a28860f05dc8ea8a261161b20",
+      "category": "Highlighting",
+      "resourceStem": "CheckHighlightFindResults",
+      "textCharacters": 250,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=highlightFindResults"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/CheckSimpleWordMatchHighlights.html",
+      "sha256": "611c7bbde05f746f6db82144b13609e90ab1d98957d014595e04a61540d3376f",
+      "category": "Highlighting",
+      "resourceStem": "CheckSimpleWordMatchHighlights",
+      "textCharacters": 146,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=highlightMatchingWord"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/RadioBackground.html",
+      "sha256": "e1f94cb22a0d9d6c2618a4e489c4c908580cdaeb19a9e73e05e13f6f5f186d9d",
+      "category": "Highlighting",
+      "resourceStem": "RadioBackground",
+      "textCharacters": 69,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/RadioBackgroundOnly.html",
+      "sha256": "2543a764b7fb1e4ea8a9af8bc9e5d962f46589373dcf9e0a0bcfdff49fcd55d1",
+      "category": "Highlighting",
+      "resourceStem": "RadioBackgroundOnly",
+      "textCharacters": 126,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/RadioDottedBox.html",
+      "sha256": "4bfe381bf524e717fb5eafbab6b67511d73322ced6e5c87ebb7477c62c1cc801",
+      "category": "Highlighting",
+      "resourceStem": "RadioDottedBox",
+      "textCharacters": 62,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/RadioRayLines.html",
+      "sha256": "bb097bed82f03717ad29ba706a0fb432db37af7abffdb852588a970b0f7e409d",
+      "category": "Highlighting",
+      "resourceStem": "RadioRayLines",
+      "textCharacters": 67,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Highlighting/RadioSolidBox.html",
+      "sha256": "dec4ac9547c8c537e93023aa96d2e52e67c0b830dda29eebbc42ca580e50f31d",
+      "category": "Highlighting",
+      "resourceStem": "RadioSolidBox",
+      "textCharacters": 61,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/License/ButtonCopyInfo.html",
+      "sha256": "2e20a653abf401cf67cb8cc0f25e2aa377628c80393f8ab4087a3b72f5e9e8c4",
+      "category": "License",
+      "resourceStem": "ButtonCopyInfo",
+      "textCharacters": 91,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/License/ButtonEnterkey.html",
+      "sha256": "017c28d7fcec4d35901fb9fdac0096a8c45f896235c704b8ef38efd1de0779de",
+      "category": "License",
+      "resourceStem": "ButtonEnterkey",
+      "textCharacters": 124,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckAllowShorthand.html",
+      "sha256": "ac3e4ccd789d97160d72944096bbdd3c27e81e1481ce7c30153afba2de7a3d5c",
+      "category": "ListBoxes",
+      "resourceStem": "CheckAllowShorthand",
+      "textCharacters": 140,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=acronym",
+        "https://www.wholetomato.com/support/tooltip.asp?option=shorthand"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckBoldNoninheritedMembers.html",
+      "sha256": "570ee16a52271d26f1c9afaed357d085f7411803ecf48b61ea13620eb431a197",
+      "category": "ListBoxes",
+      "resourceStem": "CheckBoldNoninheritedMembers",
+      "textCharacters": 57,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=boldNonInherited"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckCompleteWithAny.html",
+      "sha256": "420d92ef5c8e38c4905f149ca5ddf8366c707227d1bb35baca1f45735e7dec2d",
+      "category": "ListBoxes",
+      "resourceStem": "CheckCompleteWithAny",
+      "textCharacters": 60,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestionTab"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckCompleteWithAnyOld.html",
+      "sha256": "4f5dea847badfd4ad738168d786257426c58979ff1637b514ccf8c333c04c868",
+      "category": "ListBoxes",
+      "resourceStem": "CheckCompleteWithAnyOld",
+      "textCharacters": 54,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestionTab"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckCompleteWithReturn.html",
+      "sha256": "abedd34ab232ea96f9df04b6007f41363429f308e0fb3d10997e2cc770e56281",
+      "category": "ListBoxes",
+      "resourceStem": "CheckCompleteWithReturn",
+      "textCharacters": 41,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestionTab"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckCompleteWithTab.html",
+      "sha256": "88f4e3faaaa6685d0d445f3b7e73b2b42bd4f6b4f17b43eafd66bf9b78981c3d",
+      "category": "ListBoxes",
+      "resourceStem": "CheckCompleteWithTab",
+      "textCharacters": 39,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestionTab"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckFilteringToolbar.html",
+      "sha256": "9425d93128b2d0450c13406ead04ae19bef8a97dc107f970987ed67dad8c6b8e",
+      "category": "ListBoxes",
+      "resourceStem": "CheckFilteringToolbar",
+      "textCharacters": 140,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=filter"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckListNoninheritedFirst.html",
+      "sha256": "2b1ed9808e600388a87db3c4bafadfcbe8ad1371dad3ec43d81693baedf846c5",
+      "category": "ListBoxes",
+      "resourceStem": "CheckListNoninheritedFirst",
+      "textCharacters": 118,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=listNonInheritedFirst"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckMembersCompleteWithAny.html",
+      "sha256": "351594b31449100b61941da53f08a19498d74526a00eb22bcb43d3d6bd9f06e8",
+      "category": "ListBoxes",
+      "resourceStem": "CheckMembersCompleteWithAny",
+      "textCharacters": 153,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/CheckShrinkMemberListboxes.html",
+      "sha256": "7302b63fa323ecd362ae4d52113994fbb5df86c8d1ccf51452cecfa48c361bea",
+      "category": "ListBoxes",
+      "resourceStem": "CheckShrinkMemberListboxes",
+      "textCharacters": 47,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=shrink"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/OverwriteTextListbox.html",
+      "sha256": "66324a8be5d9adecfaf5836b702da7e264a835d244d1a8859a6fb77d9cd01ec8",
+      "category": "ListBoxes",
+      "resourceStem": "OverwriteTextListbox",
+      "textCharacters": 324,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/RadioAllowAcronymsPrefer.html",
+      "sha256": "43908a9f52e717a7e8f64809f67db1c2994698b45ed48a1b56784b02642896c1",
+      "category": "ListBoxes",
+      "resourceStem": "RadioAllowAcronymsPrefer",
+      "textCharacters": 124,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/RadioUseDefaultIntellisense.html",
+      "sha256": "e2609250fd11945d8aa8e0768701be806397a6474545f11e1549e03be2723a08",
+      "category": "ListBoxes",
+      "resourceStem": "RadioUseDefaultIntellisense",
+      "textCharacters": 82,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=defaultIntellisense"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/RadioUseDefaultIntellisenseV6.html",
+      "sha256": "f025149df4b4c2879f90c931de4a494cd631df679de01c70f3a62ccbbc74dd8f",
+      "category": "ListBoxes",
+      "resourceStem": "RadioUseDefaultIntellisenseV6",
+      "textCharacters": 212,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=defaultIntellisense"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/RadioUseVisualAssist.html",
+      "sha256": "8b6578db158a530ed538cd7829c89c10aa8c27389ef883ca8fbd2d13a1d5f5b9",
+      "category": "ListBoxes",
+      "resourceStem": "RadioUseVisualAssist",
+      "textCharacters": 70,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=defaultIntellisense"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ListBoxes/RadioUseVisualAssistV6.html",
+      "sha256": "7dfe00e6633b812400886dc54d91219cb0e2f0b94fffb5b9aac428c5540eaed4",
+      "category": "ListBoxes",
+      "resourceStem": "RadioUseVisualAssistV6",
+      "textCharacters": 200,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=defaultIntellisense"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableAltLeftClick.html",
+      "sha256": "4544d4f34e8d269c8f5f5369b89a13931560b810e5766ec5679dcbd96691b132",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableAltLeftClick",
+      "textCharacters": 134,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mouseButtons"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableCtrlLeftClick.html",
+      "sha256": "ee55a91cc0e05671b4e414af92611b0bb1d39e0f4e2d9a20dfde239e18ee6666",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableCtrlLeftClick",
+      "textCharacters": 135,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mouseButtons"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableCtrlShiftWheel.html",
+      "sha256": "a50d4887339f2bfa6147e430c73b274b78afd237a3c5419715d8864bcf08c9fa",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableCtrlShiftWheel",
+      "textCharacters": 205,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mouseButtons"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableCtrlWheel.html",
+      "sha256": "d57c8c7e0c0fb10b56ee4d1201c9aeab6abc7e692370478a0e8494f081e53400",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableCtrlWheel",
+      "textCharacters": 199,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mouseButtons"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableHelpOnHover.html",
+      "sha256": "7babc19c033e4a9fd13a6309cee989cd74b9816ba24b6d5e6888e315132c8a09",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableHelpOnHover",
+      "textCharacters": 214,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableMiddleClick.html",
+      "sha256": "99232a5ed5b2791711b9d218f2ccf4668defa2dcdac9b015b50dc97333efe18a",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableMiddleClick",
+      "textCharacters": 132,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mouseButtons"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckEnableShiftRightClick.html",
+      "sha256": "12267cfd1301312a9ca96a71191039320e004d32c5e7bb5e43cc531961fda753",
+      "category": "Mouse",
+      "resourceStem": "CheckEnableShiftRightClick",
+      "textCharacters": 137,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mouseButtons"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Mouse/CheckExtendContextMenuMargin.html",
+      "sha256": "3be8978cbed6824e65a2409b79f750c46b1d2db9cbd2eb47832d1afc05acdf40",
+      "category": "Mouse",
+      "resourceStem": "CheckExtendContextMenuMargin",
+      "textCharacters": 65,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/ButtonClearHistory.html",
+      "sha256": "86fc3d07afc70e8c997ce9d7708a4b9da673a9bc7f762b9c7d29fea14c3924db",
+      "category": "PerfGeneral",
+      "resourceStem": "ButtonClearHistory",
+      "textCharacters": 86,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=reclaimDiskSpace"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/ButtonExportVaxSettings.html",
+      "sha256": "f399ef70ab7c8a4b027aacc44e02074493aaca82c9e4564ee4c96a93458d2b2d",
+      "category": "PerfGeneral",
+      "resourceStem": "ButtonExportVaxSettings",
+      "textCharacters": 333,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=transfer"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/ButtonRebuildSymbols.html",
+      "sha256": "043b2ccb32f555fc8b4f5adbb818cf7b4d66848bbb57f2d5343a96edd946b1e0",
+      "category": "PerfGeneral",
+      "resourceStem": "ButtonRebuildSymbols",
+      "textCharacters": 268,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=location"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckEnableAutoRecovery.html",
+      "sha256": "2c71fb3218693bfa35bbc252cd44e1e1e015297e2ed42ac10a4b3e889f55aa07",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckEnableAutoRecovery",
+      "textCharacters": 65,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=autoRecovery"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckEnableLogging.html",
+      "sha256": "155a312c15b3981bd1fac544c8305691c5b4ed206e4f904d948c0e30fb55d1da",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckEnableLogging",
+      "textCharacters": 364,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=log"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckKeepSymbolsInMemory.html",
+      "sha256": "b2b58258859ef9db0ba4be5dc3d6e7a0a1e19c44578b32e4d5e5c0e19234ded0",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckKeepSymbolsInMemory",
+      "textCharacters": 117,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckMaxThreadCount.html",
+      "sha256": "7596fb3a10eca2625aa776d99e876c7cf3c378958fba93ec2e32fbd0eccf6878",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckMaxThreadCount",
+      "textCharacters": 177,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=maxConcurrentThreads"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckMultithreadParsing.html",
+      "sha256": "aab036a0cf6e310a1c4679f3c23bb819ec318e00792d25d03752f2f3dbc9ea26",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckMultithreadParsing",
+      "textCharacters": 48,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=multithreadedParsing"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckParseAllFilesOnOpen.html",
+      "sha256": "19e852b963d58ac1cdb2a3792c3fe908c1adb303518dca5939e63a72d08f8fe9",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckParseAllFilesOnOpen",
+      "textCharacters": 260,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckRemoteDesktopOptimization.html",
+      "sha256": "3ac25e3a2fff60b08e1b5bf2b935e6834f10549618e105cf4d4493c254e7a52e",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckRemoteDesktopOptimization",
+      "textCharacters": 356,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckWatchFilesExternally.html",
+      "sha256": "d3b7d3ffcd74fea5460a0cc0ce189e69bebdb262270238be06b329644efa5532",
+      "category": "PerfGeneral",
+      "resourceStem": "CheckWatchFilesExternally",
+      "textCharacters": 92,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/ComboThreadPriority.html",
+      "sha256": "10c7e5a4e7d9b089dba1e05fe345844162b25f6b9c66a41d5c72e13f43110c22",
+      "category": "PerfGeneral",
+      "resourceStem": "ComboThreadPriority",
+      "textCharacters": 187,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=concurrentThreadPriority"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/EditMaxThreadCount.html",
+      "sha256": "f2fd84f4aa8c2bac48ec2fa3d6ebc4e8ddb31df9073fcae4c49ed73eb980636a",
+      "category": "PerfGeneral",
+      "resourceStem": "EditMaxThreadCount",
+      "textCharacters": 103,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=maxConcurrentThreads"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/ExploreHistory.html",
+      "sha256": "095c06c9d32f965a8e48088784a194e910718f708bd9b8f807771c17a743cfa0",
+      "category": "PerfGeneral",
+      "resourceStem": "ExploreHistory",
+      "textCharacters": 97,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=autoRecovery"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/RespectVsCodeExcludedFiles.html",
+      "sha256": "1fa16e0eb1058d55c0211c32e77174dec72c37cf7e85a440111be559cfc15316",
+      "category": "PerfGeneral",
+      "resourceStem": "RespectVsCodeExcludedFiles",
+      "textCharacters": 134,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/StaticClearHistory.html",
+      "sha256": "86fc3d07afc70e8c997ce9d7708a4b9da673a9bc7f762b9c7d29fea14c3924db",
+      "category": "PerfGeneral",
+      "resourceStem": "StaticClearHistory",
+      "textCharacters": 86,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=reclaimDiskSpace"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/StaticExportSettings.html",
+      "sha256": "281fa310da4fbab8d4f41688802f481fc203fb149fb65af50d9d2f90ae453b3c",
+      "category": "PerfGeneral",
+      "resourceStem": "StaticExportSettings",
+      "textCharacters": 239,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=transfer"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/StaticRebuildSymbols.html",
+      "sha256": "5cc2d0c884cc2773ecdb5d5d20b3c5331839956f1c0c0d31adec6ae4be7603ba",
+      "category": "PerfGeneral",
+      "resourceStem": "StaticRebuildSymbols",
+      "textCharacters": 160,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/StaticThreadPriority.html",
+      "sha256": "10c7e5a4e7d9b089dba1e05fe345844162b25f6b9c66a41d5c72e13f43110c22",
+      "category": "PerfGeneral",
+      "resourceStem": "StaticThreadPriority",
+      "textCharacters": 187,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=concurrentThreadPriority"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/UserDataDir.html",
+      "sha256": "4246ee7ad916bad5710295996c90c7f792d44610bde7cb4faac6aa69f250784b",
+      "category": "PerfGeneral",
+      "resourceStem": "UserDataDir",
+      "textCharacters": 358,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=databaseDirectory"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/CheckEnumerateVslangRefs.html",
+      "sha256": "19eb3795ee91b03f075a9af677a600c0cc5844c287bf1ef9a2ca30002431607d",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "CheckEnumerateVslangRefs",
+      "textCharacters": 233,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=enumerateThoroughly"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/CheckParseAllFilesEmptySolution.html",
+      "sha256": "ee680efc6019fac288519827b9a0a8e290c633d270e3484c01819b6319034732",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "CheckParseAllFilesEmptySolution",
+      "textCharacters": 309,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/CheckParseAllFilesWithSolution.html",
+      "sha256": "d9f1c56174c95aff5f4618420ab9eb2f4347d9c3b3f560ee7e2c413d3c7eb6ac",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "CheckParseAllFilesWithSolution",
+      "textCharacters": 324,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/CheckParseFilesWithoutExtensions.html",
+      "sha256": "b5d29092652026da674f5f5561fe6b1a1814efe24895df1556c905ab18cf0dad",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "CheckParseFilesWithoutExtensions",
+      "textCharacters": 159,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=extensionlessHeader"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/CheckProjectNodeInReferencesResults.html",
+      "sha256": "becb84b13b3b28e5262d54380b858fab3662ce1a82e63412954e5110d82582de",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "CheckProjectNodeInReferencesResults",
+      "textCharacters": 149,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=findReferencesProjectNodes"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/CheckProjectNodeInRenameResults.html",
+      "sha256": "cc706015b973a762ac7a81a6a75b320870333718bb27cd01f71d0852da91af85",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "CheckProjectNodeInRenameResults",
+      "textCharacters": 110,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=renameProjectNodes"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/EditExtensionsToIgnore.html",
+      "sha256": "fe755e891bb8bad5aeab9d9003be96bbd04811367d38533a0f416076d81b557f",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "EditExtensionsToIgnore",
+      "textCharacters": 112,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/ProjectsAndFiles/StaticExtensionsToIgnore.html",
+      "sha256": "f6e0a23a11cc9a0fde382cbf0f64616e4997278a6bf79e858e820985e050407c",
+      "category": "ProjectsAndFiles",
+      "resourceStem": "StaticExtensionsToIgnore",
+      "textCharacters": 100,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=ignore"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SmartSelect/Case.html",
+      "sha256": "00bae272623e3ca425c8e68db92787575155d3b325cd14719d9dffdfe62af4b3",
+      "category": "SmartSelect",
+      "resourceStem": "Case",
+      "textCharacters": 81,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=smartSelectCase"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SmartSelect/StartSmall.html",
+      "sha256": "0f41c7a5db7a479e6ba5a4f246b8f098ab177323340e5a9b6f8e42ce67e9d2b6",
+      "category": "SmartSelect",
+      "resourceStem": "StartSmall",
+      "textCharacters": 324,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=smartSelectStartSmall"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SmartSelect/StartWord.html",
+      "sha256": "a2b909792a78f8060269ad44472a6ce6781bc4345151ac6e51fa538d0ab265b5",
+      "category": "SmartSelect",
+      "resourceStem": "StartWord",
+      "textCharacters": 196,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=smartSelectStartWord"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SmartSelect/Underscore.html",
+      "sha256": "5364706c216777474e7e9302637f78c73cc9f0ec5fc7ec7a28df7092ea06f6c3",
+      "category": "SmartSelect",
+      "resourceStem": "Underscore",
+      "textCharacters": 77,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=smartSelectUnderscore"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Add.html",
+      "sha256": "35a1d81964bf70a8a0d15459785426eea0e68083f99c894f972c2c4b567adfe9",
+      "category": "SourceLinks",
+      "resourceStem": "Add",
+      "textCharacters": 264,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Behavior.html",
+      "sha256": "5d185fca72a3d1c478448ca548b7f43c3934d6d6c619d69e002a1259cf1313d2",
+      "category": "SourceLinks",
+      "resourceStem": "Behavior",
+      "textCharacters": 159,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksBehavior"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Duplicate.html",
+      "sha256": "269bd8fb545961b1ee40b5fb8b0d106c695391feaa8d663312d9a00cd0971da3",
+      "category": "SourceLinks",
+      "resourceStem": "Duplicate",
+      "textCharacters": 34,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Enable.html",
+      "sha256": "0ffcb78428481ebe13718c597de4d63694e5c1e69df4acb06c0ef26cceb8f7da",
+      "category": "SourceLinks",
+      "resourceStem": "Enable",
+      "textCharacters": 195,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksEnable"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/ExeArgs.html",
+      "sha256": "48089fcd5feb0b27e8a60c4c9e718f98dd33f141d96ed96b8556f71b05cbbd57",
+      "category": "SourceLinks",
+      "resourceStem": "ExeArgs",
+      "textCharacters": 208,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksArgs"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Keywords.html",
+      "sha256": "94c05f6ddd9a156a19acc05a287f8af9238e0ea800784ab44191b10fb8b98689",
+      "category": "SourceLinks",
+      "resourceStem": "Keywords",
+      "textCharacters": 200,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksPatterns"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/List.html",
+      "sha256": "a7a8318311fc5d8728d0d28d0bf7275be4dde786ab3a68f2b9389974a9f7d490",
+      "category": "SourceLinks",
+      "resourceStem": "List",
+      "textCharacters": 249,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksList"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Name.html",
+      "sha256": "723fda40c222fd0c3f5c138c6256aaa41098336d4dbde45c6764085c94729497",
+      "category": "SourceLinks",
+      "resourceStem": "Name",
+      "textCharacters": 78,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksName"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/OpenWith.html",
+      "sha256": "fb0d026cd9fa807154e3582ae6a310f9d6e4b5bd2967f7394a3c662e3d249d2c",
+      "category": "SourceLinks",
+      "resourceStem": "OpenWith",
+      "textCharacters": 31,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Plugin.html",
+      "sha256": "3ed82263e544ce33108fa11d5c64124c18041300f58d207db58abb4c69985047",
+      "category": "SourceLinks",
+      "resourceStem": "Plugin",
+      "textCharacters": 219,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksPlugin"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/PluginConfig.html",
+      "sha256": "2a1e14ec3a30d93196603aa7c61aa28fd8fc18f451bdbbb314aca07d62e3039c",
+      "category": "SourceLinks",
+      "resourceStem": "PluginConfig",
+      "textCharacters": 275,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/PluginPaths.html",
+      "sha256": "ec12c7f68f057f729cb9d10fbbd73020dbf21b7d5f6d3389ca9529bd8d4c65a0",
+      "category": "SourceLinks",
+      "resourceStem": "PluginPaths",
+      "textCharacters": 157,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Remove.html",
+      "sha256": "d2cfe62e6499b2670ab549a22c5afbc181931982fbfda6374e5288eb1ff9f892",
+      "category": "SourceLinks",
+      "resourceStem": "Remove",
+      "textCharacters": 114,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/ShowAction.html",
+      "sha256": "086a19b3f5ae82342713d2e611ac96c9be3ed27365b2b2a09ed6f678a1578fe8",
+      "category": "SourceLinks",
+      "resourceStem": "ShowAction",
+      "textCharacters": 113,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Suffixes.html",
+      "sha256": "5ac7fe6c3a3a46b990794e161eb080c572387018c55474986953b1f5e66d1db8",
+      "category": "SourceLinks",
+      "resourceStem": "Suffixes",
+      "textCharacters": 163,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/UrlExe.html",
+      "sha256": "72d504255208425b43b5c259e2eed36b91fa90db2ada7a46fe4cbf245a6618dc",
+      "category": "SourceLinks",
+      "resourceStem": "UrlExe",
+      "textCharacters": 200,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=sourceLinksUrl"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/SourceLinks/Value.html",
+      "sha256": "1e6b271d2609acaeb9808c2807ee689e49e3479ea82f0dabb9a4fd079a1b6b8d",
+      "category": "SourceLinks",
+      "resourceStem": "Value",
+      "textCharacters": 190,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Startup/ButtonCheckNow.html",
+      "sha256": "5dde8ffd17de1ad98717808a27e02db25327c8e41e633df9f3d1deb2623b3e87",
+      "category": "Startup",
+      "resourceStem": "ButtonCheckNow",
+      "textCharacters": 129,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Startup/CheckCheckForNewBetaVersion.html",
+      "sha256": "23d53afcb711411b14946b81f0c27d5eaf967acd3341b44114a56f37ffe386c1",
+      "category": "Startup",
+      "resourceStem": "CheckCheckForNewBetaVersion",
+      "textCharacters": 67,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Startup/CheckCheckForNewVersion.html",
+      "sha256": "3568cb52c2145543748763be29f72f5faa835e7d1089d848346e8c40a3ff758a",
+      "category": "Startup",
+      "resourceStem": "CheckCheckForNewVersion",
+      "textCharacters": 221,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Startup/CheckRecommendAfterExpires.html",
+      "sha256": "4c0f0de1c84b36188c12497e01350b582ee17d861de6dfe799d32b4681ce4122",
+      "category": "Startup",
+      "resourceStem": "CheckRecommendAfterExpires",
+      "textCharacters": 86,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Startup/CheckShowTipoftheday.html",
+      "sha256": "a7b17d77e9788a9864f679c6c621746f23fd77063691c7e07209ac0951d46e09",
+      "category": "Startup",
+      "resourceStem": "CheckShowTipoftheday",
+      "textCharacters": 93,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/ButtonEditAutotext.html",
+      "sha256": "62fd3b4d9e607e70245e396dc76e82e355624f4b1e3fe5e9637d6dd205e40c8d",
+      "category": "Suggestions",
+      "resourceStem": "ButtonEditAutotext",
+      "textCharacters": 83,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=VASnippetsEdit"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/ButtonEditAutotext_vs10.html",
+      "sha256": "33d3f81b2f04d4eb170a9b3d81227371215d9fd9077030418fcc4167a3a5dd4b",
+      "category": "Suggestions",
+      "resourceStem": "ButtonEditAutotext_vs10",
+      "textCharacters": 83,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=VASnippetsEdit2"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckDisplayXSuggestions.html",
+      "sha256": "14ec532028fd87fa84848150d2d0afc60cc29ba2481c5c76cff80888af4be001",
+      "category": "Suggestions",
+      "resourceStem": "CheckDisplayXSuggestions",
+      "textCharacters": 121,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestion"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckEnableListboxesInCs.html",
+      "sha256": "0a8d7ff072271d19b465aad74e01ecfd002c07ed03b7ddba8877f436ee7c7bd8",
+      "category": "Suggestions",
+      "resourceStem": "CheckEnableListboxesInCs",
+      "textCharacters": 149,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=listboxesCSharp"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckEnableVACompletion.html",
+      "sha256": "5efd895fbaf8531c1945ada1e4d0bfa2067d260fecf33321a8ce7845dd9ec7b4",
+      "category": "Suggestions",
+      "resourceStem": "CheckEnableVACompletion",
+      "textCharacters": 150,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=listboxes"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckEnableVACompletion_AVR.html",
+      "sha256": "234153f0ebc99835ce30193ea0d54b1d4f137aeffb9d1be224fbd8bdc6bfd0b2",
+      "category": "Suggestions",
+      "resourceStem": "CheckEnableVACompletion_AVR",
+      "textCharacters": 168,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=listboxes"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckIncludeAutotext.html",
+      "sha256": "f7c6ebe558774a60d35267401eb15cd2ce9dafc4897ae5355db8429f085152f3",
+      "category": "Suggestions",
+      "resourceStem": "CheckIncludeAutotext",
+      "textCharacters": 123,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestionAutotext"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckIncludeRefactoringInListboxes.html",
+      "sha256": "fe0c60a27638ea2c279f07ec7046fd28319827729c8511538e171de2cdf0afaa",
+      "category": "Suggestions",
+      "resourceStem": "CheckIncludeRefactoringInListboxes",
+      "textCharacters": 118,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=renameSuggestions"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/CheckSuggestBits.html",
+      "sha256": "0fb059f725e86702aff0ba6a88d9c9fee88daeecf5f48c49eb3c0337482bcdce",
+      "category": "Suggestions",
+      "resourceStem": "CheckSuggestBits",
+      "textCharacters": 128,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=suggestionBits"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/IncludeSmartSuggestions.html",
+      "sha256": "212a11f30ad464365a105ea6b8c2d61ff5b2b6575c23e5908d3f931e81bb3a23",
+      "category": "Suggestions",
+      "resourceStem": "IncludeSmartSuggestions",
+      "textCharacters": 141,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=smartSuggestions"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/SuggestionsInManagedCode.html",
+      "sha256": "e531c226f680fbd75e2db483a300bfc5515f65f92f826697400af32646e7ba1a",
+      "category": "Suggestions",
+      "resourceStem": "SuggestionsInManagedCode",
+      "textCharacters": 128,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=filterManagedCode"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Suggestions/SuggestionsInManagedCode_vs15.html",
+      "sha256": "1d08113102bde529d49e2b9e70fa6ae6840483aac1fde4dbd235b463d5abcf17",
+      "category": "Suggestions",
+      "resourceStem": "SuggestionsInManagedCode_vs15",
+      "textCharacters": 115,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=filterManagedCode"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Underlining/CheckUnderlineErrorsUsing.html",
+      "sha256": "41c3f205308e937f15419af65a982b437df3738faaa725c1cda3f7439df5c646",
+      "category": "Underlining",
+      "resourceStem": "CheckUnderlineErrorsUsing",
+      "textCharacters": 123,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=misspelled"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Underlining/CheckUnderlineMistypedSymbols.html",
+      "sha256": "6e56e3b5880192f9f995bab557770ec42d5a8db7b556fccc7721fa100a426fd5",
+      "category": "Underlining",
+      "resourceStem": "CheckUnderlineMistypedSymbols",
+      "textCharacters": 125,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=mistyped"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/Underlining/DefaultV10.html",
+      "sha256": "d76af1bce87491f006de18b51f47ee987fc89ff2333b65639eb01f679003bf84",
+      "category": "Underlining",
+      "resourceStem": "DefaultV10",
+      "textCharacters": 162,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckAddIncludeUnrealUseQuotation.html",
+      "sha256": "0c040515dc686aa0c013519cf8ce6ca5b196891de8ec7e7c0c30d5f4ebd521b2",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckAddIncludeUnrealUseQuotation",
+      "textCharacters": 139,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckAllowSnippetsInUnrealMarkup.html",
+      "sha256": "60b74beb6d8d9b047cef8b7488cb1937660acd20b59a4754fb5a512721849c0e",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckAllowSnippetsInUnrealMarkup",
+      "textCharacters": 99,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=ue4snippets"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckAlwaysDisplayUnrealSymbolsInItalics.html",
+      "sha256": "45e57b29904b73edfcf3b10f2870e0388b45948d9ac644e6cb199db7a5c8b498",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckAlwaysDisplayUnrealSymbolsInItalics",
+      "textCharacters": 232,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=ue4italics"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckColorInsideUnrealMarkup.html",
+      "sha256": "6104fee50ae971fdbec6193c1074ad50e77fd82a8cdd23dc53fbb367915a549d",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckColorInsideUnrealMarkup",
+      "textCharacters": 221,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=ue4macroColor"
+      ],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckCudaSupport.html",
+      "sha256": "327d3cbba35ff38de7df063b3d00a22ea1b84d200ceefbc66aedc96f0fccb3a1",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckCudaSupport",
+      "textCharacters": 116,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckDisableUeAutoformatOnPaste.html",
+      "sha256": "26076b9edd451867fb3d7292e304956e198e9503ebdd587123e2cee1520400ff",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckDisableUeAutoformatOnPaste",
+      "textCharacters": 334,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/CheckShaderSupport.html",
+      "sha256": "3803e1e5908f6c2210d9ee43175ea4f6e653ce52c96f4c144ca6339f826f35db",
+      "category": "UnrealEngine",
+      "resourceStem": "CheckShaderSupport",
+      "textCharacters": 117,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/EditShaderExtensions.html",
+      "sha256": "3035f4110e5833a98126e7356082480e9fa4de7bfeb909341b984bb3a205ccae",
+      "category": "UnrealEngine",
+      "resourceStem": "EditShaderExtensions",
+      "textCharacters": 135,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/RadioIndexPluginsAll.html",
+      "sha256": "8d236a3190700f90729899793feb17082e459e42d248e445086670fe1d577429",
+      "category": "UnrealEngine",
+      "resourceStem": "RadioIndexPluginsAll",
+      "textCharacters": 161,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/RadioIndexPluginsNone.html",
+      "sha256": "5470a45d7f157be2fbe56f268bb2be47425995a3ae418e4435aa454b509dfa20",
+      "category": "UnrealEngine",
+      "resourceStem": "RadioIndexPluginsNone",
+      "textCharacters": 124,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/UnrealEngine/RadioIndexPluginsRef.html",
+      "sha256": "28912b4dcbed3da4bd47d4237ddefa48869b0a55af9f0a69a2a40d36fa953a0a",
+      "category": "UnrealEngine",
+      "resourceStem": "RadioIndexPluginsRef",
+      "textCharacters": 201,
+      "officialLinks": [],
+      "mentionsDefault": true,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/VAIntelligence/ButtonCancel.html",
+      "sha256": "8e01a43c33e894f8aca75716bdc5a5d6549170eb3dabf10cbab1b7ccb21ab809",
+      "category": "VAIntelligence",
+      "resourceStem": "ButtonCancel",
+      "textCharacters": 186,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/VAIntelligence/ButtonRemoveFiles.html",
+      "sha256": "9d52b05483045bffbcfaea1858ed3885bf56b9abbc59483da511e3aad1e54ffe",
+      "category": "VAIntelligence",
+      "resourceStem": "ButtonRemoveFiles",
+      "textCharacters": 179,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/VAIntelligence/ButtonSetup.html",
+      "sha256": "07eece41f81d06b850e0cad4180031a51a981335180401457051ad9c5ec6ae77",
+      "category": "VAIntelligence",
+      "resourceStem": "ButtonSetup",
+      "textCharacters": 234,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptionsHelp/VAIntelligence/EnableExplainWithAI.html",
+      "sha256": "ab341986e5c3decc6d043e8ba67da73a1188d2f04d48855e7478732e52cc42a0",
+      "category": "VAIntelligence",
+      "resourceStem": "EnableExplainWithAI",
+      "textCharacters": 223,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/AllCommands.html",
+      "sha256": "3adaeaf45322eee8170b1e9b769c58115d7c136ef6be95c3ab0f451e09c933e8",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "AllCommands",
+      "textCharacters": 93,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/CloseDocumentWindow.html",
+      "sha256": "68e90d5dba1e8845cbe8872486146a12aadf655fe86aa78a5a40d7b4f3815f92",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "CloseDocumentWindow",
+      "textCharacters": 80,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/Customize.html",
+      "sha256": "f4831edcc1d97fc12311857c399f25289e871279c184285c18fce9dd40d407c9",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "Customize",
+      "textCharacters": 111,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/FindReferences.html",
+      "sha256": "635a8300304d0f41924c703a19f3e0865834c67f5623d8a3fce5cde2697b4228",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "FindReferences",
+      "textCharacters": 130,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipFindReferences&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/FindSelected.html",
+      "sha256": "9d6562e8503bb42570858c1fd1e83aade60431f2e00c867ba39b9edd856190b9",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "FindSelected",
+      "textCharacters": 198,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=findSelected&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/FindSymbolDialog.html",
+      "sha256": "56d356304d4671362504d1d19bc3b225c831535e80177e3460c8257dbf4d567c",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "FindSymbolDialog",
+      "textCharacters": 176,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dlgFsis&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/GotoImplementation.html",
+      "sha256": "a608d481427b0824646bc7756b9ccc9b7d5d679e35dc56feef250c1eafb4360c",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "GotoImplementation",
+      "textCharacters": 115,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipGoto&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/GotoRelated.html",
+      "sha256": "9d250ecb10bb61e648c72f4bd95c11c9234fd6fb1ec963ca210064195608327d",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "GotoRelated",
+      "textCharacters": 141,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipGotoRelated&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/ListMethodsInCurrentFile.html",
+      "sha256": "98ee8d11f0995e6d3763335abac510c5f21f09963c6fa775cfae176e37d84299",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "ListMethodsInCurrentFile",
+      "textCharacters": 104,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=methods&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/NavigateBack.html",
+      "sha256": "749d14dd5fbdaba8d714a1a1a596ea8cae2f72af8b7293db91c4ac8f777bdf46",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "NavigateBack",
+      "textCharacters": 175,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=navigate&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/NavigateForward.html",
+      "sha256": "749d14dd5fbdaba8d714a1a1a596ea8cae2f72af8b7293db91c4ac8f777bdf46",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "NavigateForward",
+      "textCharacters": 175,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=navigate&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/OpenContextMenu.html",
+      "sha256": "7caf3ead7fa3da88c86bbb4623953fcf86a6d1314c1f09d3bdfdcb5a4ff5d28d",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "OpenContextMenu",
+      "textCharacters": 94,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipContextMenu&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/OpenCorrespondingFile.html",
+      "sha256": "2cb49eccb0ca6487c43cc9339b65e23cc077a0854de9a6da99ed53999e687969",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "OpenCorrespondingFile",
+      "textCharacters": 110,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=openCorresponding&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/OpenFileInSolutionDialog.html",
+      "sha256": "01592d1c428b5d37da477ee0649dcec2781c76878b945e9425a0361bf82f0688",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "OpenFileInSolutionDialog",
+      "textCharacters": 142,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dlgOfis&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/Paste.html",
+      "sha256": "e6634eb042b703fe5bf3fdf523a897f202b37f6fe176e52cfd9a874d546a8ac3",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "Paste",
+      "textCharacters": 98,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=clipboard&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/Print.html",
+      "sha256": "68a7214f16c37f6d82655ae6bf7d931cf92123ca7bd838ee74a22ffa061ab0b2",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "Print",
+      "textCharacters": 64,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/Recommended.html",
+      "sha256": "781a55a9fceee30e5708a6f0bafebd4b1d8355ba5cfffa4c618d3a27bad0907a",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "Recommended",
+      "textCharacters": 105,
+      "officialLinks": [],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/RefactorContextMenu.html",
+      "sha256": "b422678b940660c72389dd7b4de198a0cf60ab5ec5263441e1f30e7f30dc46c8",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "RefactorContextMenu",
+      "textCharacters": 147,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=accessRefactoring&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/RefactorCreateFromUsage.html",
+      "sha256": "e1be1f6054afe8f831fc8a226c3260c9922d5545444e37a53f117ab35799781e",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "RefactorCreateFromUsage",
+      "textCharacters": 150,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=dlgCreateFromUsage&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/RefactorRename.html",
+      "sha256": "3784050e561c88c0ade07021a632dc93c9f6b1942b67eb26a3962d140ba26923",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "RefactorRename",
+      "textCharacters": 125,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=rename&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/ResetEditorZoom.html",
+      "sha256": "49bad08a78db75eb3d0ba5dc8b5007fcac0630c9fbc4c342c803e8fafb2f93b7",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "ResetEditorZoom",
+      "textCharacters": 48,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=zoom&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/ScopeNext.html",
+      "sha256": "af0aa341dab4036557a92fb166be40790d3b5c0aa91d024f9d4d961c5ae3be3d",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "ScopeNext",
+      "textCharacters": 205,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipMoveScope&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/ScopePrevious.html",
+      "sha256": "af0aa341dab4036557a92fb166be40790d3b5c0aa91d024f9d4d961c5ae3be3d",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "ScopePrevious",
+      "textCharacters": 205,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipMoveScope&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/SmartSelectExtend.html",
+      "sha256": "2796d22fe9b1b6a3a33b9fedef0c8ab9436609a230ef2f062f340c736a04c6ff",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "SmartSelectExtend",
+      "textCharacters": 86,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipSmartSelect&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/SmartSelectExtendBlock.html",
+      "sha256": "b99809287e7b8b78d3a2f63e4ebc8812526687aa59a416f51b4699b00434e154",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "SmartSelectExtendBlock",
+      "textCharacters": 86,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipSmartSelect&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/SmartSelectShrink.html",
+      "sha256": "be3340a06849cce49a85b1c1889e53ced2fb25f69c793d7e0a4bfa9a65b3c1ce",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "SmartSelectShrink",
+      "textCharacters": 88,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipSmartSelect&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/SmartSelectShrinkBlock.html",
+      "sha256": "730593a4c9765b8e012d6fb2e0988a0dab860e973170d277a164a95affffac1f",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "SmartSelectShrinkBlock",
+      "textCharacters": 88,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipSmartSelect&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    },
+    {
+      "file": "OptKeyBindsHelp/VAHashtags.html",
+      "sha256": "927c2a1ba7f66989168425213c98079c433761f5ff2fc99f72a9c742efe3415a",
+      "category": "OptKeyBindsHelp",
+      "resourceStem": "VAHashtags",
+      "textCharacters": 112,
+      "officialLinks": [
+        "https://www.wholetomato.com/support/tooltip.asp?option=tipVaHashtags&source=shortcuts"
+      ],
+      "mentionsDefault": false,
+      "scope": "Shipped 2630 help resource; filename is not proof of registry binding or enabled availability"
+    }
+  ],
+  "limitations": [
+    "Help resource existence does not prove command availability.",
+    "Help text references may point to newer online documentation.",
+    "Factory defaults require source or reset-profile observations."
+  ]
+}

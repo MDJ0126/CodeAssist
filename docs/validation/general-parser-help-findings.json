@@ -1,0 +1,35 @@
+{
+  "build": 2630,
+  "observations": [
+    {
+      "file": "OptionsHelp/CodeInspection/AutoReparse.html",
+      "sha256": "b1c7a8e4f27c2fa236cbc0c7c0198e759c04ff8561779a716b9b6fbbf6b5fc77",
+      "meaning": "Code Inspection parsing is described as independent of other VA feature parsing."
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckMultithreadParsing.html",
+      "sha256": "aab036a0cf6e310a1c4679f3c23bb819ec318e00792d25d03752f2f3dbc9ea26",
+      "meaning": "Multithreaded solution parsing option exists."
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/CheckMaxThreadCount.html",
+      "sha256": "7596fb3a10eca2625aa776d99e876c7cf3c378958fba93ec2e32fbd0eccf6878",
+      "meaning": "Thread limit change requires IDE restart."
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/EditMaxThreadCount.html",
+      "sha256": "f2fd84f4aa8c2bac48ec2fa3d6ebc4e8ddb31df9073fcae4c49ed73eb980636a",
+      "meaning": "Maximum parsing thread count is configurable and requires restart."
+    },
+    {
+      "file": "OptionsHelp/PerfGeneral/ComboThreadPriority.html",
+      "sha256": "10c7e5a4e7d9b089dba1e05fe345844162b25f6b9c66a41d5c72e13f43110c22",
+      "meaning": "Thread priority is configurable; help explicitly names Normal as default and requires restart."
+    }
+  ],
+  "limitations": [
+    "These are shipped help claims, not execution observations.",
+    "General parser thread-count factory value remains unknown.",
+    "Control stems are not proven registry key names."
+  ]
+}

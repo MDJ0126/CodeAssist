@@ -1,0 +1,7 @@
+[mcp_servers.xerj_codeassist]
+command = 'C:\Users\ehdwn\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe'
+args = ['-NoProfile', '-File', 'C:\Projects\CodeAssist\tools\Xerj.ps1', 'Mcp']
+cwd = 'C:\Projects\CodeAssist'
+startup_timeout_sec = 30
+tool_timeout_sec = 60
+

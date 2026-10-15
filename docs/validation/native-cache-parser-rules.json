@@ -1,0 +1,86 @@
+{
+  "artifactSHA256": "a13323cffc447f5712375cbc0e19827b73e5d95c40dd994ae6c66960e3e8813f",
+  "scope": "Original bounded LLVM disassembly plus PE literal bytes; target not executed; not REA native provider",
+  "functions": [
+    {
+      "rva": "0x37a0f0",
+      "endRva": "0x37a62f",
+      "artifact": "cache-parser-current.asm.txt",
+      "sha256": "b09759771490d2091a514ca3a9afac0e1da0669ba8fc66c93f5da03b62b0ebdd"
+    },
+    {
+      "rva": "0x46c530",
+      "retRva": "0x46c555",
+      "artifact": "cache-number-parser.asm.txt",
+      "sha256": "3f6d620644abaec41a808a093cbc5385d01feb8d547b9cca02ebb2fb59a2ca13"
+    }
+  ],
+  "observedRules": [
+    {
+      "rva": "0x37a159",
+      "rule": "A file-content helper is retried on false; Sleep100ms between failures up to10 iterations. Helper exact read/encoding behavior unverified."
+    },
+    {
+      "rva": "0x37a2b4",
+      "rule": "First newline required; missing newline takes cleanup path before header and entries are added."
+    },
+    {
+      "rva": "0x37a334",
+      "rule": "First-line substring is parsed through numeric helper and assigned to output dword+8."
+    },
+    {
+      "rva": "0x37a385",
+      "rule": "Find first section-sign delimiter after current cursor; absence exits entries loop."
+    },
+    {
+      "rva": "0x37a3ee",
+      "rule": "Prefix before first delimiter is parsed as hex through helper whose PE format literal is %x."
+    },
+    {
+      "rva": "0x37a41b",
+      "rule": "Find second section-sign; middle substring retained as string; absent delimiter exits entries loop."
+    },
+    {
+      "rva": "0x37a49b",
+      "rule": "Final numeric substring terminates at newline or end-of-buffer if newline missing."
+    },
+    {
+      "rva": "0x37a502",
+      "rule": "Container helper called with first numeric value; nested helper called with middle string; status assigned afterward."
+    },
+    {
+      "rva": "0x37a525",
+      "rule": "Status 0 or 0xffffffff follows invalid branch: stores0xffffffff and clears associated string+0x30; other unsigned values are accepted."
+    },
+    {
+      "rva": "0x46c539",
+      "rule": "Numeric helper initializes output to0, calls scanner with %x, ignores scanner return count and returns local output."
+    }
+  ],
+  "formatModel": "hex header newline; repeated hex outer key § middle string § hex status newline. Exact key/string/status semantic names unverified.",
+  "integratedDesignImplications": [
+    "Separate FileFinder persistence from semantic references and inspection compilation caches.",
+    "Treat header-context mismatch and partial entry loads as explicit states.",
+    "Do not assume parsing is transactional: entries are processed incrementally before malformed later delimiter terminates loop.",
+    "Model retry budgets and thread affinity separately from CPU-use assumptions."
+  ],
+  "comparisonCases": [
+    "Missing header newline",
+    "Missing first or second section-sign",
+    "Final entry with no newline",
+    "Invalid/empty hexadecimal field",
+    "Status0/status0xffffffff/status1/status0xfffffffe",
+    "Header-context mismatch",
+    "Partial read failure and retry exhaustion"
+  ],
+  "comparisonState": "All original runtime cases unexecuted",
+  "unknowns": [
+    "Actual read helper UTF16 normalization and filesystem errors",
+    "Scanner permissiveness/overflow/locale behavior",
+    "Key and string meaning",
+    "Container insertion semantics and duplicate keys",
+    "Atomicity and lifecycle after partial load",
+    "Runtime origin thread and timing"
+  ],
+  "fullParityPassed": false
+}

@@ -13,6 +13,14 @@ namespace CodeAssist.Extension
 {
     internal static class SnippetInsertion
     {
+        private static Dictionary<string, string> environment;
+        internal static void CaptureEnvironment()
+        {
+            if (environment != null) return;
+            environment = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (System.Collections.DictionaryEntry entry in Environment.GetEnvironmentVariables())
+                environment[(string)entry.Key] = (string)entry.Value;
+        }
         private static readonly SnippetTemplate[] BuiltIns =
         {
             new SnippetTemplate("Include", "include", "#include \"$Header$\"$end$"),
@@ -23,7 +31,7 @@ namespace CodeAssist.Extension
             new SnippetTemplate("Unreal struct", "ustruct", "USTRUCT($Specifiers$)\nstruct $Name$\n{\n    GENERATED_BODY()\n\n    $selected$$end$\n};"),
             new SnippetTemplate("Header guard", "guard", "#ifndef $FILE_BASE$_H\n#define $FILE_BASE$_H\n\n$selected$$end$\n\n#endif")
         };
-        internal static void Show(IWpfTextView view, string file, string projectRoot, IntPtr owner)
+        internal static void Show(IWpfTextView view, string file, string projectRoot, IntPtr owner, string projectFile = null, string solutionFile = null)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             var snapshot = view.TextSnapshot;
@@ -37,7 +45,11 @@ namespace CodeAssist.Extension
                 catch (IOException) { }
                 catch (UnauthorizedAccessException) { }
             }
+            CaptureEnvironment();
+            templates = templates.Select(template => template.WithEnvironment(name => environment.TryGetValue(name, out var value) ? value : "")).ToList();
             var reserved = SnippetReservedValues.Create(file, selection.GetText(), DateTime.Now, System.Globalization.CultureInfo.CurrentCulture);
+            SnippetReservedValues.AddWorkspace(reserved, projectFile, solutionFile, Guid.NewGuid(), System.Globalization.CultureInfo.CurrentCulture);
+            var clipboardCaptured = false;
             var panel = new DockPanel { Margin = new Thickness(12) };
             var choice = new ComboBox { ItemsSource = templates, Margin = new Thickness(0, 0, 0, 10) };
             var fields = new StackPanel();
@@ -62,10 +74,20 @@ namespace CodeAssist.Extension
             choice.SelectionChanged += (s, e) =>
             {
                 inputs.Clear(); fields.Children.Clear();
-                foreach (var name in ((SnippetTemplate)choice.SelectedItem).Variables().Where(name => !reserved.ContainsKey(name)))
+                if (((SnippetTemplate)choice.SelectedItem).Variables().Contains("clipboard") && !clipboardCaptured)
                 {
+                    try { reserved["clipboard"] = Clipboard.ContainsText() ? Clipboard.GetText() : ""; clipboardCaptured = true; }
+                    catch (System.Runtime.InteropServices.ExternalException) { reserved["clipboard"] = ""; }
+                }
+                var inputFields = ((SnippetTemplate)choice.SelectedItem).Inputs(reserved);
+                insert.IsEnabled = inputFields.Length <= 8;
+                if (inputFields.Length > 8) fields.Children.Add(new TextBlock { Text = "입력 자리표시자는 최대 8개까지 지원합니다." });
+                foreach (var field in inputFields)
+
+                {
+                    var name = field.Name;
                     fields.Children.Add(new TextBlock { Text = name });
-                    var input = new TextBox { Margin = new Thickness(0, 2, 0, 7) }; inputs[name] = input; fields.Children.Add(input);
+                    var input = new TextBox { Text = field.DefaultValue ?? "", Margin = new Thickness(0, 2, 0, 7) }; inputs[name] = input; fields.Children.Add(input);
                     input.TextChanged += (sender, args) => preview.Text = expand().Text;
                 }
                 preview.Text = expand().Text;

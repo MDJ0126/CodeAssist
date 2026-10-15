@@ -1,0 +1,82 @@
+{
+  "source": "https://www.wholetomato.com/documentation/refactoring/access-to-refactoring-and-code-generation",
+  "scope": "Additional current documentation navigation entries; installed 2630 availability and overlap with baseline not yet resolved",
+  "items": [
+    {
+      "name": "Convert Unscoped Enum to Scoped Enum",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "VA Modify Expression",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "VA Share with Team Member",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Move Class to New File",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Sort Methods in Source",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Insert Path",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "RTF in the Clipboard",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Bind Breakpoints to Current Thread",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Skip All Breakpoints",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "VA Code Inspection Results",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Reclaim Disk Space",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Project Directories",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Enable and Disable",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Reparse",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Enable Logging",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Transfer Settings",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Enumerate References",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Explain Code with AI",
+      "status": "requires-version-and-duplicate-check"
+    },
+    {
+      "name": "Change Code with AI",
+      "status": "requires-version-and-duplicate-check"
+    }
+  ]
+}

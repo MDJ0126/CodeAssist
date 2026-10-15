@@ -1,0 +1,28 @@
+{
+  "mcpSearchSucceeded": true,
+  "initialJunkFiles": 0,
+  "mcpFirstLine": 6,
+  "version": "v1.0.0-rc.95",
+  "mcpFirstPath": "CodeAssist.Core/ClipboardHistory.cs",
+  "initialCodeFiles": 95,
+  "initialFiles": 177,
+  "notes": [
+    "Project watcher state must be outside watched root",
+    "Native generated JSON excluded after snapshot stalled",
+    "Codex current-session tool reload unverified",
+    "Token savings unmeasured"
+  ],
+  "initialRecords": 3236,
+  "refresh": {
+    "afterHits": 2,
+    "deletedHits": 0,
+    "beforeHits": 0
+  },
+  "mcpToolCount": 13,
+  "jsonSchemaWatchLimitation": "New JSON schemas caused unsupported dataset/schema evolution; JSON excluded and watcher restarted",
+  "mcpWrapperVerified": true,
+  "finalGeneration": 4,
+  "finalFiles": 149,
+  "finalRecords": 1198,
+  "projectWatchVerified": "docs/xerj.md modification automatically indexed in 8.0s; changed text retrieved at docs/xerj.md"
+}

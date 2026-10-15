@@ -1,0 +1,56 @@
+{
+  "artifactSHA256": "a13323cffc447f5712375cbc0e19827b73e5d95c40dd994ae6c66960e3e8813f",
+  "imageBase": "0x1ed000000",
+  "evidenceKind": "Earlier Ghidra decompilation plus LLVM string xrefs; revalidated original and pseudocode hashes; not a new REA native-provider run",
+  "reviewedFunctions": [
+    {
+      "rva": "0x378360",
+      "artifact": "rva-00378360.c.txt",
+      "sha256": "B4FFC449142F4FE564EF892974751D5AF299A46AFA184AA616E0C678FEDA3FF0",
+      "scope": "FileFinder statistics reader; not cache lookup or persistence algorithm"
+    },
+    {
+      "rva": "0x1722b0",
+      "artifact": "rva-001722b0.c.txt",
+      "sha256": "07BD803801E3E01B216758EB2A717727A2DEDB92C5BD662270CB99BAB8746698",
+      "scope": "BCL cache warnings; object/context meaning unverified"
+    },
+    {
+      "rva": "0x18f220",
+      "artifact": "rva-0018f220.c.txt",
+      "sha256": "E38807976B942080659035F4E72A14837D3C82F751602CD91BA269A2DCE8D09D",
+      "scope": "Spaghetti.db path passed to callee; database format and semantic role unverified"
+    },
+    {
+      "rva": "0x2956b0",
+      "artifact": "rva-002956b0.c.txt",
+      "sha256": "8D11E783BC5522BDC5B3B71D54E26B1605CBA5B8B37361CC7E23C38C33B0136B",
+      "scope": "cache and netImport directory strings; initialization and persistence semantics unverified"
+    }
+  ],
+  "fileFinderStatsXrefCount": 13,
+  "observations": [
+    "Statistics function reads cache-hit/miss, filesystem avoidance and include-resolution counters.",
+    "Four entry counts are reported for main/local caches with and without relative-directory context.",
+    "Shared SRW lock protects traversal when collecting directory/entry statistics.",
+    "A registry-reading helper is invoked for NewFileFinderCacheTest in a one-time initialization branch; flag meaning/default runtime unverified."
+  ],
+  "nextNativeTargets": [
+    {
+      "functionRva": "0x378a70",
+      "instructionRva": "0x378abe",
+      "stringRva": "0xe1a880",
+      "reason": "Cache-save trace anchor only; algorithm not decompiled"
+    }
+  ],
+  "unknowns": [
+    "Cache key and directory-context normalization",
+    "Entry creation, invalidation, stale-file detection and lookup algorithm",
+    "Disk save/load format, startup lifecycle and thread budget",
+    "Relation to semantic symbol/reference index",
+    "Whether all references are pre-baked",
+    "CPU100 origin in live VS"
+  ],
+  "runtimeCompared": false,
+  "fullParityPassed": false
+}

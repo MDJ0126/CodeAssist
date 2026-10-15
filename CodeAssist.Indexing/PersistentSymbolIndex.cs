@@ -669,6 +669,12 @@ namespace CodeAssist.Indexing
             public int Depth { get; }
         }
 
+        public static string[] InputFiles(string root, string projectRoot = null)
+        {
+            return (projectRoot == null ? EnumerateProjectFiles(root) : EnumerateEngineApiFiles(root, CollectEngineModules(projectRoot)))
+                .Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(path => path, StringComparer.OrdinalIgnoreCase).ToArray();
+        }
+
         private static IEnumerable<string> EnumerateProjectFiles(string root)
         {
             if (string.IsNullOrWhiteSpace(root) || !Directory.Exists(root)) yield break;

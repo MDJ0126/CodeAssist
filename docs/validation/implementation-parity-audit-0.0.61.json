@@ -1,0 +1,545 @@
+{
+  "version": "0.0.61",
+  "scope": "Evidence audit of 108 catalog features; no new isolated VA comparison runs",
+  "analysis": {
+    "documented": 108,
+    "denominator": 108,
+    "documentPercent": 100,
+    "fullReverseEngineeringPercent": null
+  },
+  "implementation": {
+    "completeVerified": 0,
+    "denominator": 108,
+    "verifiedCompletionPercent": 0,
+    "actualCompletionPercent": null,
+    "partialMappings": 26,
+    "partialMappingPercent": 24.1,
+    "unmapped": 82
+  },
+  "parity": {
+    "completeVerified": 0,
+    "denominator": 108,
+    "verifiedPercent": 0,
+    "actualSimilarityPercent": null
+  },
+  "gates": {
+    "required": 756,
+    "unverifiedImplementation": 756,
+    "note": "Unverified means evidence missing; it does not mean runtime failure."
+  },
+  "currentChecks": {
+    "testCounters": {
+      "total": "103",
+      "executed": "103",
+      "passed": "103",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "packageBinaries": 6,
+    "registeredBindings": 24,
+    "welcomeSeparateProductRequirement": [
+      {
+        "name": "Welcome opens as editor document tab",
+        "state": "runtime-verified",
+        "version": "0.0.61",
+        "checks": [
+          "Startup Welcome document tab",
+          "Close Welcome tab",
+          "Second banana click reopens Welcome",
+          "Repeated click retains single Welcome tab",
+          "Code main.cpp remains alongside Welcome"
+        ],
+        "evidence": [
+          {
+            "path": "welcome-live-ui-0.0.61.json",
+            "sha256": "0b519912ed6c58c4e6be0ae9d3e1e44e039cb3c4c6f6c7b5048cfd055b9aa65b"
+          },
+          {
+            "path": "welcome-native-0.0.61.log",
+            "sha256": "e9d951120b12adde87587ad72b027bc29878756295346db3b54cea81d814d052"
+          },
+          {
+            "path": "pc-verification-1792052494775-1.jpg",
+            "sha256": "578281d902de479ea11a72a208e470223b06ecb94145f3b9856223c55d188a0c"
+          }
+        ],
+        "scope": "Separate product requirement, not a completed VA catalog feature"
+      }
+    ]
+  },
+  "partialFeatureMappings": [
+    {
+      "id": "VA-F002",
+      "name": "Find References"
+    },
+    {
+      "id": "VA-F003",
+      "name": "Find Symbol in Solution"
+    },
+    {
+      "id": "VA-F004",
+      "name": "GoTo Implementation"
+    },
+    {
+      "id": "VA-F006",
+      "name": "GoTo Related"
+    },
+    {
+      "id": "VA-F008",
+      "name": "List Methods in File"
+    },
+    {
+      "id": "VA-F009",
+      "name": "Move Scope"
+    },
+    {
+      "id": "VA-F010",
+      "name": "Navigate Back and Forward"
+    },
+    {
+      "id": "VA-F011",
+      "name": "Open Corresponding File"
+    },
+    {
+      "id": "VA-F012",
+      "name": "Open File in Solution"
+    },
+    {
+      "id": "VA-F013",
+      "name": "VA Hashtags"
+    },
+    {
+      "id": "VA-F015",
+      "name": "Access to Refactoring Commands"
+    },
+    {
+      "id": "VA-F025",
+      "name": "Rename"
+    },
+    {
+      "id": "VA-F037",
+      "name": "Create from Usage"
+    },
+    {
+      "id": "VA-F048",
+      "name": "Multiple Clipboards"
+    },
+    {
+      "id": "VA-F049",
+      "name": "Reset Editor Zoom"
+    },
+    {
+      "id": "VA-F051",
+      "name": "Smart Select"
+    },
+    {
+      "id": "VA-F053",
+      "name": "Sort Selected Lines"
+    },
+    {
+      "id": "VA-F060",
+      "name": "Enhanced Syntax Coloring"
+    },
+    {
+      "id": "VA-F063",
+      "name": "Highlight Matching Words"
+    },
+    {
+      "id": "VA-F080",
+      "name": "VA Snippets"
+    },
+    {
+      "id": "VA-F086",
+      "name": "Environment Placeholders"
+    },
+    {
+      "id": "VA-F087",
+      "name": "Input Placeholders"
+    },
+    {
+      "id": "VA-F088",
+      "name": "Reserved Strings"
+    },
+    {
+      "id": "VA-F093",
+      "name": "VA Outline"
+    },
+    {
+      "id": "VA-F094",
+      "name": "VA View"
+    },
+    {
+      "id": "VA-F103",
+      "name": "Keyboard Shortcuts"
+    }
+  ],
+  "unmappedFeatures": [
+    {
+      "id": "VA-F001",
+      "name": "Find by Context"
+    },
+    {
+      "id": "VA-F005",
+      "name": "GoTo Member"
+    },
+    {
+      "id": "VA-F007",
+      "name": "Highlight Current Line"
+    },
+    {
+      "id": "VA-F014",
+      "name": "VA Navigation Bar"
+    },
+    {
+      "id": "VA-F016",
+      "name": "Change Signature"
+    },
+    {
+      "id": "VA-F017",
+      "name": "Convert Between Pointer and Instance"
+    },
+    {
+      "id": "VA-F018",
+      "name": "Encapsulate Field"
+    },
+    {
+      "id": "VA-F019",
+      "name": "Extract Method"
+    },
+    {
+      "id": "VA-F020",
+      "name": "Introduce Variable"
+    },
+    {
+      "id": "VA-F021",
+      "name": "Move Implementation to Header File"
+    },
+    {
+      "id": "VA-F022",
+      "name": "Move Implementation to Source File"
+    },
+    {
+      "id": "VA-F023",
+      "name": "Move Method Implementations to Source File"
+    },
+    {
+      "id": "VA-F024",
+      "name": "Move Selection to New File"
+    },
+    {
+      "id": "VA-F026",
+      "name": "Rename Files"
+    },
+    {
+      "id": "VA-F027",
+      "name": "Simplify Instance Declaration"
+    },
+    {
+      "id": "VA-F028",
+      "name": "Add Forward Declaration"
+    },
+    {
+      "id": "VA-F029",
+      "name": "Add Member"
+    },
+    {
+      "id": "VA-F030",
+      "name": "Add Missing Case Statements"
+    },
+    {
+      "id": "VA-F031",
+      "name": "Add Similar Member"
+    },
+    {
+      "id": "VA-F032",
+      "name": "Add Using Directive"
+    },
+    {
+      "id": "VA-F033",
+      "name": "Add include Directive"
+    },
+    {
+      "id": "VA-F034",
+      "name": "Add/Remove Braces"
+    },
+    {
+      "id": "VA-F035",
+      "name": "Create Declaration"
+    },
+    {
+      "id": "VA-F036",
+      "name": "Create File"
+    },
+    {
+      "id": "VA-F038",
+      "name": "Create Implementation"
+    },
+    {
+      "id": "VA-F039",
+      "name": "Create Method Implementations"
+    },
+    {
+      "id": "VA-F040",
+      "name": "Document Method"
+    },
+    {
+      "id": "VA-F041",
+      "name": "Implement Interface / Virtual Methods"
+    },
+    {
+      "id": "VA-F042",
+      "name": "Acronyms"
+    },
+    {
+      "id": "VA-F043",
+      "name": "Auto-Extend Multi-Line Comments"
+    },
+    {
+      "id": "VA-F044",
+      "name": "Enhanced Listboxes"
+    },
+    {
+      "id": "VA-F045",
+      "name": "Format After Paste"
+    },
+    {
+      "id": "VA-F046",
+      "name": "Insert () and Closing Brackets and Quotes"
+    },
+    {
+      "id": "VA-F047",
+      "name": "Insert _ After m and Shift"
+    },
+    {
+      "id": "VA-F050",
+      "name": "Shorthand"
+    },
+    {
+      "id": "VA-F052",
+      "name": "Smart Suggestions"
+    },
+    {
+      "id": "VA-F054",
+      "name": "Suggestion Lists"
+    },
+    {
+      "id": "VA-F055",
+      "name": "Surround Selection"
+    },
+    {
+      "id": "VA-F056",
+      "name": "Surround With"
+    },
+    {
+      "id": "VA-F057",
+      "name": "Column Indicator"
+    },
+    {
+      "id": "VA-F058",
+      "name": "Context Field"
+    },
+    {
+      "id": "VA-F059",
+      "name": "Definition Field"
+    },
+    {
+      "id": "VA-F061",
+      "name": "Local Symbols in Bold"
+    },
+    {
+      "id": "VA-F062",
+      "name": "Highlight Find Results"
+    },
+    {
+      "id": "VA-F064",
+      "name": "Highlight References to Symbol Under Cursor"
+    },
+    {
+      "id": "VA-F065",
+      "name": "Parameter Info"
+    },
+    {
+      "id": "VA-F066",
+      "name": "Print in Color"
+    },
+    {
+      "id": "VA-F067",
+      "name": "Quick Info"
+    },
+    {
+      "id": "VA-F068",
+      "name": "System Symbols in Italics"
+    },
+    {
+      "id": "VA-F069",
+      "name": "Convert Dot to ->"
+    },
+    {
+      "id": "VA-F070",
+      "name": "Highlight Files in Output Window"
+    },
+    {
+      "id": "VA-F071",
+      "name": "Highlight Matching Braces and Parentheses"
+    },
+    {
+      "id": "VA-F072",
+      "name": "Highlight Mismatching Braces and Parentheses"
+    },
+    {
+      "id": "VA-F073",
+      "name": "Repair Case"
+    },
+    {
+      "id": "VA-F074",
+      "name": "Underline Spelling Errors"
+    },
+    {
+      "id": "VA-F075",
+      "name": "Underline Unknown Symbols"
+    },
+    {
+      "id": "VA-F076",
+      "name": "Code Inspection Settings"
+    },
+    {
+      "id": "VA-F077",
+      "name": "Code Issues in the Editor"
+    },
+    {
+      "id": "VA-F078",
+      "name": "Quick Fixes in the Editor"
+    },
+    {
+      "id": "VA-F079",
+      "name": "Quick Fixes in a Tool Window"
+    },
+    {
+      "id": "VA-F081",
+      "name": "for Refactoring"
+    },
+    {
+      "id": "VA-F082",
+      "name": "for Smart Suggestions"
+    },
+    {
+      "id": "VA-F083",
+      "name": "for Surround With"
+    },
+    {
+      "id": "VA-F084",
+      "name": "with Shortcuts"
+    },
+    {
+      "id": "VA-F085",
+      "name": "Create from Selection"
+    },
+    {
+      "id": "VA-F089",
+      "name": "Address Resolver"
+    },
+    {
+      "id": "VA-F090",
+      "name": "PDB Explorer"
+    },
+    {
+      "id": "VA-F091",
+      "name": "VA Memory View"
+    },
+    {
+      "id": "VA-F092",
+      "name": "VA Step Filter"
+    },
+    {
+      "id": "VA-F095",
+      "name": "Simple Link Patterns"
+    },
+    {
+      "id": "VA-F096",
+      "name": "Complex Link Patterns"
+    },
+    {
+      "id": "VA-F097",
+      "name": "Connect to FogBugz and GitHub"
+    },
+    {
+      "id": "VA-F098",
+      "name": "Preview Files"
+    },
+    {
+      "id": "VA-F099",
+      "name": "Open Hyperlinks in an External Browser"
+    },
+    {
+      "id": "VA-F100",
+      "name": "Custom Plug-ins"
+    },
+    {
+      "id": "VA-F101",
+      "name": "Context Menus"
+    },
+    {
+      "id": "VA-F102",
+      "name": "Custom File Extensions"
+    },
+    {
+      "id": "VA-F104",
+      "name": "Mouse"
+    },
+    {
+      "id": "VA-F105",
+      "name": "Multiple Platforms"
+    },
+    {
+      "id": "VA-F106",
+      "name": "Non-Microsoft Build Processes"
+    },
+    {
+      "id": "VA-F107",
+      "name": "Parse Concurrency"
+    },
+    {
+      "id": "VA-F108",
+      "name": "Options Dialog"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/validation/feature-verification-matrix.json",
+      "sha256": "6a57e830f4e0630c1908801b4dd568a99101052b501227ff79f6b27316321993"
+    },
+    {
+      "path": "docs/validation/package.json",
+      "sha256": "96bb87f636dc71774afea8482a2eeb6c234caa66e1d2d91f4069583f5add25ca"
+    },
+    {
+      "path": "docs/validation/install-0.0.61.json",
+      "sha256": "8fd099766675f868312f56931bfa15d471efa17eae373298aedff793d63a525b"
+    },
+    {
+      "path": "docs/validation/welcome-live-ui-0.0.61.json",
+      "sha256": "0b519912ed6c58c4e6be0ae9d3e1e44e039cb3c4c6f6c7b5048cfd055b9aa65b"
+    },
+    {
+      "path": "docs/validation/test-results/implementation-audit-0.0.61.trx",
+      "sha256": "1d62ab8376443bc53edefc60d045d18ac68b6fffbe0dcea3b1d100c690fae0d3"
+    }
+  ],
+  "limitations": [
+    "103 passing tests are code scenarios, not 103 of the 108 catalog features.",
+    "24.1% is partial mapping coverage, not implementation completion or behavioral similarity.",
+    "No VA/CodeAssist isolated same-input comparison was performed in this audit.",
+    "Welcome live test is additional product UI coverage; it does not increase full catalog parity."
+  ]
+}

@@ -1,0 +1,806 @@
+{
+  "scope": "Current official documented contracts; installed2630 runtime parity unverified",
+  "features": {
+    "GoTo Member": {
+      "source": "https://www.wholetomato.com/documentation/navigation/goto-member",
+      "facts": [
+        "현재 type/variable 또는 enclosing structure 공백에서 해당 member 탐색; enum/interface/namespace/struct/typedef 지원",
+        "base member 포함 옵션·다중문자/negative/점prefix 필터·복사·Find References·type별 정렬"
+      ],
+      "cases": [
+        "각 구조종류·inherited toggle·동명member·type/name sort"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Navigate Back and Forward": {
+      "source": "https://www.wholetomato.com/documentation/navigation/navigate-back-and-forward",
+      "facts": [
+        "단순 caret 이동 waypoint는 제외; Alt+Left/Right는 다른 명령 바인딩 영향을 받음",
+        "Alt+Right의 Edit.CompleteWord 바인딩 제거 조건; waypoint 종류의 icon 표는 별도 확인 필요"
+      ],
+      "cases": [
+        "편집/파일전환/Find reference waypoint와 cursor column 복원",
+        "keyboard conflict·history branch·닫힌문서"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Open Corresponding File": {
+      "source": "https://www.wholetomato.com/documentation/navigation/open-corresponding-file",
+      "facts": [
+        "Alt+O: 대응 하나면 직접 열고 복수면 선택 메뉴; C++ 및 C# design/codebehind 등 관계 지원",
+        "현재 directory 우선; 없으면 project·parent·inc/include 검색; type 미확정이면 유사prefix 후보"
+      ],
+      "cases": [
+        "다중 대응·project외·이름접두사·경로동명 후보"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "VA Hashtags": {
+      "source": "https://www.wholetomato.com/documentation/navigation/va-hashtags",
+      "facts": [
+        "주석 내 공백없는 tag; 대소문자 무시·다중tag·Goto exact/창 substring 검색",
+        "자동갱신·tag/file 그룹·AND/negative/OR필터·Shift+Alt+H/F8/Shift+F8",
+        "숨김은 tag/file/recursive directory/project 범위; tool window만 영향·Goto/완성 가능",
+        "solution .vaHashtags 외부변경은 IDE재시작; read-only면 규칙 저장 불가"
+      ],
+      "cases": [
+        "주석/전처리·case·편집갱신·숨김범위",
+        "외부변경·read-only·solution/global 전환"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "VA Navigation Bar": {
+      "source": "https://www.wholetomato.com/documentation/navigation/va-navigation-bar",
+      "facts": [
+        "source창 상단/하단·표시 옵션; context/method list/scope arrows/definition/Go 구성",
+        "Go 기본은 implementation이며 related로 변경 가능; namespace 표시 문맥메뉴",
+        "공식 현재 문서의 다중 project 전환은2630 가용성 별도 확인"
+      ],
+      "cases": [
+        "문서·theme·namespace·Go설정·project 전환"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Rename": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/rename",
+      "facts": [
+        "선언/정의/참조 및 선택적 comment/string·상속chain 변경; project/solution 범위",
+        "이전 Rename/ChangeSignature/FindReferences scope 공유; 동일줄 복수ref는 복수항목",
+        "scope변경으로 결과 재검색하면 제외선택 소실; preview double-click은 원본파일focus 유지",
+        "Stop/Ctrl+Break로 검색중단 가능; 불완전검색 commit의 실패 가능성 문서 경고"
+      ],
+      "cases": [
+        "상속·주석proximity·범위/제외·취소",
+        "다중project·중단검색·preview focus·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Move Implementation to Source File": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/move-implementation-to-source-file",
+      "facts": [
+        "header에 declaration 남김; class/overload 인접배치·CreateImplementation snippet 사용",
+        "기본 인접배치 또는EOF 옵션; inline template는 먼저 class밖 header로 이동하고 다음 실행에 source로 이동",
+        "이동 후 VA history로 source/header 왕복"
+      ],
+      "cases": [
+        "template 두단계·overload·EOF·snippet·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Move Selection to New File": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/move-selection-to-new-file",
+      "facts": [
+        "전체줄 선택만; destination은 미존재파일·header면 현재파일 include 옵션",
+        "언어·header/source별 생성snippet으로 새파일 내용 구성"
+      ],
+      "cases": [
+        "부분줄·기존destination·언어template·include·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Rename Files": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/rename-files",
+      "facts": [
+        "관련 C++ h/cpp 및 C# designer/resx 함께 rename; include/project/solution/source-control 반영",
+        "기존directory 유지; rename전 저장·rename후 변경내용은 자동저장 안함",
+        "단일Undo 불가; nonproject/solution없는 파일에서는 의도 확인"
+      ],
+      "cases": [
+        "related files·include·SCC·충돌·read-only·save/Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Move Method Implementations to Source File": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/move-method-implementations-to-source-file",
+      "facts": [
+        "class이름에서 모든method 이동 command·선택dialog",
+        "nested class 선택 시 두번째dialog; template/배치 규칙은 단일move와 공유"
+      ],
+      "cases": [
+        "중첩class·선택subset·template·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Move Implementation to Header File": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/move-implementation-to-header-file-class-declaration",
+      "facts": [
+        "free function는 header, member는 class내부; 기존declaration 대체·없어도 생성",
+        "declaration의 preprocessor/default값 보존·parameter이름은 implementation 사용",
+        "연관성이 충분한 선행주석 이동·이동구현 선택 유지·생성snippet 사용"
+      ],
+      "cases": [
+        "선언없음·default이름차이·전처리·주석·선택복원"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Simplify Instance Declaration": {
+      "source": "https://www.wholetomato.com/documentation/refactoring/simplify-instance-declaration",
+      "facts": [
+        "local object declaration에서만 제공; 생성된 instance를 불필요하게 다시 설정하는 declaration 단순화"
+      ],
+      "cases": [
+        "local/nonlocal·타입/initializer·주석·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Add Member": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/add-member",
+      "facts": [
+        "class reference에서 signaturedialog 후method/variable 추가; C++method는 inline header",
+        "CreateImplementation snippet 사용·system directory class에는 제공안함·VS현대버전 한Undo"
+      ],
+      "cases": [
+        "reference·method/field·systemdir·snippet·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Add Similar Member": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/add-similar-member",
+      "facts": [
+        "class아닌 memberreference에서 기존signature dialog·원member 근처에stub추가·body복사안함",
+        "base member에서 실행하면 base class에 추가·systemdir 제외·현대VS 한Undo"
+      ],
+      "cases": [
+        "base/derived·stub/body·배치·systemdir·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Document Method": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/document-method",
+      "facts": [
+        "선언/정의에서 method 앞 commentblock·return/parameter 각각의 문서항목 생성",
+        "DocumentMethod snippet과 refactoring전용 reserved값으로형식변경"
+      ],
+      "cases": [
+        "declaration/definition·return/parameter·snippet·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Create File": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/create-file",
+      "facts": [
+        "현재파일 directory에 생성·현재project에추가·C++/C#/idl/rc/xaml관련파일에서제공",
+        "짝없는 h/cpp는 대응파일이 기본후보·cpp생성시同名headerinclude·header면 include옵션",
+        "CreateFile snippet이 초기내용/caret 위치 결정"
+      ],
+      "cases": [
+        "짝없는파일·언어별·project외·include·caret"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Create Method Implementations": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/create-method-implementations",
+      "facts": [
+        "class declaration에서미구현method선택·구현된method는목록제외",
+        "대응source없으면 declaration아래생성·생성snippet·인접/EOF 옵션"
+      ],
+      "cases": [
+        "일부기구현·대응없음·overload·배치·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Add/Remove Braces": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/addremove-braces",
+      "facts": [
+        "단일statement add/remove/toggle·nested if/else/for/while 문맥",
+        "복수statement compound는remove불가·indent만으로복수줄add불가",
+        "source상단일macro가복수statement로확장하면 remove가동작변경가능하다는문서경고"
+      ],
+      "cases": [
+        "dangling else·nested·복수macro·toggle·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Add Using Directive": {
+      "source": "https://www.wholetomato.com/documentation/code-generation/add-using-directive",
+      "facts": [
+        "C# common.NET type 사용시목록suggestion·C#listbox활성필요",
+        "accept하면상단using삽입·caret위치유지"
+      ],
+      "cases": [
+        "C#listbox설정·동명namespace·기존using·caret·Undo"
+      ],
+      "unknowns": [
+        "Current official documentation may differ from2630; installed availability and output need comparison",
+        "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ]
+    },
+    "Acronyms": {
+      "source": "https://www.wholetomato.com/documentation/coding-assistance/acronyms",
+      "facts": [
+        "축소 목록 옵션이 필요하며 첫 글자와 대문자/underscore 경계로 후보를 좁힘",
+        "project 및 최근 사용 symbol 중심; 파일/심볼 검색 dialog와 method list에서는 사용하지 않음"
+      ],
+      "cases": [
+        "camel/Pascal/underscore·중복 약어·최근 사용·목록별 가용성"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Shorthand": {
+      "source": "https://www.wholetomato.com/documentation/coding-assistance/shorthand",
+      "facts": [
+        "축소 목록에서 여러 부분 문자열로 후보 검색; acronym 우선과 최근 사용 영향",
+        "목록 밖에서는 첫 입력 글자로 시작하는 symbol로 제한; Ctrl+Space로 전체 completion 전환"
+      ],
+      "cases": [
+        "부분 문자열·prefix 제한·약어 충돌·우선 선택"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Reset Editor Zoom": {
+      "source": "https://www.wholetomato.com/documentation/coding-assistance/reset-editor-zoom",
+      "facts": [
+        "editor scope에서100%로 복원; Ctrl+0은 추천키 수락 조건",
+        "VS2015+는 새 창의 global zoom도100%로 설정"
+      ],
+      "cases": [
+        "추천키 충돌·창별/global zoom·focus"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Smart Suggestions": {
+      "source": "https://www.wholetomato.com/documentation/coding-assistance/smart-suggestions",
+      "facts": [
+        "생성자·enum 대입/비교·인자 타입에 맞는 local 변수·주석 hashtag를 제안",
+        "타입 이름의 Smart Suggestions snippet으로 값을 확장; 인자 comma+space는 다음 제안 유도"
+      ],
+      "cases": [
+        "타입/overload·enum·사용자 snippet·comma 입력"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Suggestion Lists": {
+      "source": "https://www.wholetomato.com/documentation/coding-assistance/suggestion-lists",
+      "facts": [
+        "최근/주변 symbol과 code bits; C#에서는 IDE 목록에 병합하거나 VA 목록 사용",
+        "symbol 정의 중에는 자동 선택하지 않고 Down으로 선택; parameter list 제안은 global scope 및 Tab/Enter commit",
+        "오른쪽이 알려진 symbol이면 유지하고 모르는 잔여 문자열은 제거"
+      ],
+      "cases": [
+        "정의/참조 문맥·C# 공급원·commit·우측 문자열"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Surround With": {
+      "source": "https://www.wholetomato.com/documentation/coding-assistance/surround-with",
+      "facts": [
+        "선택을 snippet 코드로 감싸며 메뉴와 지정 surround 문자로 접근",
+        "단순 Surround Selection과 별개이며 Outline과 editor에서 가용 메뉴가 다름"
+      ],
+      "cases": [
+        "문자·메뉴·다중 snippet·선택/Undo"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Column Indicator": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/column-indicator",
+      "facts": [
+        "지정 column의 뒤쪽 경계에 표시; 위치/색 옵션",
+        "가변폭 글꼴은 m 글자 폭의 배수로 위치 산정"
+      ],
+      "cases": [
+        "가변/고정폭·zoom·theme·가로 스크롤"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Context Field": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/context-field",
+      "facts": [
+        "symbol 문맥·scope 표시, unknown이면 비움; global scope는 현재 파일명",
+        "field 폭 조절·scope 표시 축소·method dropdown·scope arrows·복사 메뉴"
+      ],
+      "cases": [
+        "동명 scope·unknown·global·resize·IME/Unicode"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Definition Field": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/definition-field",
+      "facts": [
+        "symbol 정의·scope 상세·include 실제 경로 표시; 복수정의 목록은 정보용으로 선택해도 이동 안함",
+        "unknown은 비움; typedef/macro를 적당히 평가하며 aggressive 평가 옵션 별도"
+      ],
+      "cases": [
+        "복수 정의·include 경로·macro/typedef·복사"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Local Symbols in Bold": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/local-symbols-in-bold",
+      "facts": [
+        "enhanced coloring이 필요하며 현재 파일에 정의된 이름에 bold 적용",
+        "semantic scope와 별개로 동명 occurrence 모두 bold 가능; inherited listbox bold와 다른 옵션"
+      ],
+      "cases": [
+        "동명 다른 scope·다른 파일의 class member·theme"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Parameter Info": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/parameter-info",
+      "facts": [
+        "method 뒤 여는 괄호 또는 Ctrl+Shift+Space; 현재 인자 bold·위/아래로 overload 탐색",
+        "C# 공급원은 default IntelliSense; disable 반영에는 IDE 재시작 조건"
+      ],
+      "cases": [
+        "중간 인자 복귀·overload·macro·C#·재시작"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Print in Color": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/print-in-color",
+      "facts": [
+        "VS2015+ print에 VA 색을 포함하며 IDE 버전별 지원이 다름",
+        "출력 selection만 따로 파싱하므로 잘린 문맥의 색이 원본과 다를 수 있음"
+      ],
+      "cases": [
+        "전체/일부 출력·theme·VS버전·context"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Quick Info": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/quick-info",
+      "facts": [
+        "IDE tooltip 보완/대체·source 주석·닫는 brace/구조 keyword 문맥·Doxygen 형식 옵션",
+        "IDE 버전별 공급원과 중복주석 조건이 다름; mouse 이동/ESC로 해제"
+      ],
+      "cases": [
+        "VS버전·IDE 병합/대체·source/header 주석·macro·ESC"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "System Symbols in Italics": {
+      "source": "https://www.wholetomato.com/documentation/code-understanding/system-symbols-in-italics",
+      "facts": [
+        "system include와 Program Files의 symbol 등은 italics 후보이며 project override는 구별",
+        "system 선언 DB는 solutions 간 공유 읽기 전용이며 처음 포함한 solution에서 파싱"
+      ],
+      "cases": [
+        "동명 override·NuGet/Vcpkg·ProgramFiles·재파싱"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Code Inspection Settings": {
+      "source": "https://www.wholetomato.com/documentation/code-inspection/introduction-to-code-inspection",
+      "facts": [
+        "개별 검사 활성·quickfix 조정·level1~5 설정; level은 UI 색이며5는 dim 처리",
+        "editor에서 개별 검사를 enable/disable할 수 없고 tool window에서는 disable만 가능"
+      ],
+      "cases": [
+        "checker/level·설정 reset·조정·source suppression"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Code Issues in the Editor": {
+      "source": "https://www.wholetomato.com/documentation/code-inspection/introduction-to-code-inspection",
+      "facts": [
+        "solid 또는 dim은 fix 가능, dotted는 불가; underline과 scrollbar 위치 표시 별도",
+        "scrollbar의 중복 issue 세부정보는 중복 제거; 표시 비활성이어도 결과 창에서 접근"
+      ],
+      "cases": [
+        "표시 토글·겹친 issue·level5·tracking"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Quick Fixes in the Editor": {
+      "source": "https://www.wholetomato.com/documentation/code-inspection/introduction-to-code-inspection",
+      "facts": [
+        "hover tomato 또는 issue 앞부분 caret에서 Shift+Alt+Q로 fix 접근",
+        "그룹 fix는 editor Undo 한 번으로 복원; 파서는 다른 VA 파서와 독립"
+      ],
+      "cases": [
+        "다중 fix·겹침·stale span·취소·Undo"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Quick Fixes in a Tool Window": {
+      "source": "https://www.wholetomato.com/documentation/code-inspection/introduction-to-code-inspection",
+      "facts": [
+        "현재 파일 issue 기본 line 정렬; 단일/복수 선택과 checker/level 그룹 fix",
+        "tracking·열 정렬·double click 이동; fix Undo는 결과 창이 아니라 editor에서 수행"
+      ],
+      "cases": [
+        "그룹/복수 선택·sort·tracking·Undo"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "VA Snippets": {
+      "source": "https://www.wholetomato.com/documentation/code-snippets/introduction-to-va-snippets",
+      "facts": [
+        "shortcut·title-only·surround·smart suggestion·refactoring 유형을 공유할 수 있음",
+        "편집 즉시 반영·IDE 간 사용자 snippet 공유·reserved 값과 caret 위치 확장"
+      ],
+      "cases": [
+        "유형별 메뉴·수정 반영·언어·직렬화·caret"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "for Refactoring": {
+      "source": "https://www.wholetomato.com/documentation/code-snippets/va-snippets-for-refactoring-and-code-generation",
+      "facts": [
+        "지정 title로 필수 snippet을 찾고 삭제 시 기본 snippet 재생성",
+        "refactoring 전용 reserved 값이 있으며 일반 symbol-context reserved는 null 확장"
+      ],
+      "cases": [
+        "title 변경/삭제·언어별 필수값·reserved 문맥"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "for Smart Suggestions": {
+      "source": "https://www.wholetomato.com/documentation/code-snippets/va-snippets-for-smart-suggestions",
+      "facts": [
+        "class/loop/switch 및 타입 이름 snippet이 제안 값을 제공",
+        "목록은 알파벳 정렬이므로 template 내 값 순서는 영향 없음"
+      ],
+      "cases": [
+        "타입/typedef·빈 제안·삭제와 재생성·정렬"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "for Surround With": {
+      "source": "https://www.wholetomato.com/documentation/code-snippets/va-snippets-for-surround-with",
+      "facts": [
+        "selected reserved 값은 현재 선택 또는 빈 문자열; 같은 surround 문자가 복수면 메뉴",
+        "surround 문자 실행은 관련 옵션 필요; title accelerator 및 메뉴/shortcut 겸용"
+      ],
+      "cases": [
+        "선택 없음·부분/전체 줄·문자 충돌·accelerator"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "with Shortcuts": {
+      "source": "https://www.wholetomato.com/documentation/code-snippets/va-snippets-with-shortcuts",
+      "facts": [
+        "shortcut은 case-sensitive; 중복 shortcut은 모두 표시하지만 동일 shortcut-title 쌍은 하나만 표시",
+        "수락하면 shortcut을 expanded 코드로 교체; 제목 없으면 코드 앞부분 표시"
+      ],
+      "cases": [
+        "case·중복 쌍·language·commit·Undo"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Create from Selection": {
+      "source": "https://www.wholetomato.com/documentation/code-snippets/va-snippets-create-from-selection",
+      "facts": [
+        "editor 선택으로 snippet editor를 열고 title/shortcut/description 지정",
+        "input placeholder와 end reserved를 편집하여 입력 dialog와 최종 caret 구성"
+      ],
+      "cases": [
+        "여러 줄·공백·문자 escape·입력·caret"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Address Resolver": {
+      "source": "https://www.wholetomato.com/documentation/debug-assistance/address-resolver",
+      "facts": [
+        "EXE/DLL/PDB 여러 모듈의 주소를 symbol로 해석; 올바른 실행 base 필요",
+        "PDB 없이 exports 모드·절대/relative 주소 형식; 미해결 주소는???·비주소 텍스트는 유지",
+        "symbol server는 VS 설정 사용; 주소에서 symbol 단방향 해석"
+      ],
+      "cases": [
+        "base/ASLR·PDB 불일치·여러 모듈·입력 형식·실패"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "PDB Explorer": {
+      "source": "https://www.wholetomato.com/documentation/debug-assistance/pdb-explorer",
+      "facts": [
+        "한 모듈의 import/export 및 release PDB symbol 탐색; running process 없이도 가능",
+        "debugger 이동에는 base 필요·종류/unit/zero/duplicate address 필터·열 정렬"
+      ],
+      "cases": [
+        "release/debug PDB·base·중복주소·module refresh·disassembly 이동"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "VA Outline": {
+      "source": "https://www.wholetomato.com/documentation/tool-window/va-outline",
+      "facts": [
+        "현재 문서와 양방향 동기화·현재 scope bold·SAL 표시 제거",
+        "다중 선택·refactor 가용성·source 편집/drag/drop·comment/region 노드·hover",
+        "AutoUpdate 꺼지면 focus 시 갱신; 자동expand는 기존노드를 자동collapse하지 않음"
+      ],
+      "cases": [
+        "편집/선택/Undo·comment 포함·자동갱신·다중노드"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "VA View": {
+      "source": "https://www.wholetomato.com/documentation/tool-window/va-view",
+      "facts": [
+        "파일/심볼 dropdown·MRU·hover class browser와 include hierarchy 구성",
+        "MRU는 solution별 저장·재오픈 복원·여러 IDE는 마지막 종료가 저장",
+        "HCB는 hover symbol 기준이며 공백/주석/unknown에서 갱신하지 않음"
+      ],
+      "cases": [
+        "MRU 수명·다중 IDE·overload·include hierarchy·focus"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Connect to FogBugz and GitHub": {
+      "source": "https://www.wholetomato.com/documentation/source-links/built-in-plug-ins",
+      "facts": [
+        "issue/case tooltip은 plugin 설정과 read 권한 필요; 열기는 별도 browser login 필요할 수 있음",
+        "외부 서비스 API/인증의 현재 상태와2630 호환성은 미확인"
+      ],
+      "cases": [
+        "공유/사용자 설정·권한 실패·tooltip 취소·browser login"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Preview Files": {
+      "source": "https://www.wholetomato.com/documentation/source-links/built-in-plug-ins",
+      "facts": [
+        "File Viewer는 comment 경로의 text/HTML/XAML/RTF/image/video 등을 preview",
+        "relative 경로는 활성문서 기준·공백 quote/%20·환경값·HTML anchor 지원"
+      ],
+      "cases": [
+        "로컬/network·경로공백·환경값·미존재파일·형식별 preview"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Context Menus": {
+      "source": "https://www.wholetomato.com/documentation/configuration/context-menus",
+      "facts": [
+        "IDE context 메뉴를 확장할 때 VA submenu 구분",
+        "별도 VA 메뉴는 지정 modified mouse로 호출 가능"
+      ],
+      "cases": [
+        "symbol/selection/file 문맥·focus·modified mouse"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Custom File Extensions": {
+      "source": "https://www.wholetomato.com/documentation/configuration/custom-file-extensions",
+      "facts": [
+        "무시 확장자는 세미콜론 구분·이미 열린 파일은 다시 열어 반영",
+        "extensionless C++ header는 VA 옵션과 IDE 언어 mapping 필요; custom extension 절차는 IDE별 차이"
+      ],
+      "cases": [
+        "ignore/reopen·extensionless·custom 언어·VS버전"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Keyboard Shortcuts": {
+      "source": "https://www.wholetomato.com/documentation/configuration/keyboard-shortcuts",
+      "facts": [
+        "기본키가 비어 있을 때만 설치 배정하며 기존 배정을 덮어쓰지 않음",
+        "추천키로 scope 확대·충돌키 재배정; global/editor scope 구분·현재키 조회"
+      ],
+      "cases": [
+        "기존키 충돌·추천 수락·scope·locale·다중 shortcut"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Mouse": {
+      "source": "https://www.wholetomato.com/documentation/configuration/mouse",
+      "facts": [
+        "modified click은 GoTo/Related/VA 메뉴에 연결하며 editor scope",
+        "modified wheel은 no-op 또는 selection/block 확장·축소; Ctrl+Alt+wheel zoom은 유지"
+      ],
+      "cases": [
+        "click 조합·wheel 방향·selection·IDE 충돌"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Multiple Platforms": {
+      "source": "https://www.wholetomato.com/documentation/configuration/project-directories",
+      "facts": [
+        "편집 platform은 build platform 변경만으로 전환되지 않으며 C++ directories에서 선택 후 재시작",
+        "platform별 header 검색 경로와 정의를 구별해야 함"
+      ],
+      "cases": [
+        "Win32/x64/custom·build/edit 차이·재시작"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Non-Microsoft Build Processes": {
+      "source": "https://www.wholetomato.com/documentation/configuration/project-directories",
+      "facts": [
+        "IDE 프로젝트 설정이 비어 있는 외부 build 환경은 Custom directories로 보완",
+        "검색 순서 유지·한 custom set 보존·변경 인식 Rebuild 조건; 모든 build system 자동 지원은 미확인"
+      ],
+      "cases": [
+        "solution없음·custom 경로순서·환경값·Rebuild"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    },
+    "Parse Concurrency": {
+      "source": "https://www.wholetomato.com/documentation/configuration/parse-concurrency",
+      "facts": [
+        "현재 공식 문서 기본은 모든 CPU/core; single 또는 maximum threads 제한 가능",
+        "thread 제한 변경은 IDE 재시작; 검사 전용 max1/queue4와 일반 파서 설정은 별개"
+      ],
+      "cases": [
+        "설정/재시작·프로젝트 시작/편집·검사동시성·실제CPU"
+      ],
+      "unknowns": [
+        "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "evidenceTier": "publisher documentation; not original runtime parity"
+    }
+  },
+  "sourceLevelCompletion": "Document/help coverage only; native/runtime/2630 validation incomplete"
+}

@@ -6,6 +6,23 @@ namespace CodeAssist.Core.Tests
     public class CppSemanticParserTests
     {
         [Fact]
+        public void Parse_KeepsIdentifierBoundariesDuringSinglePass()
+        {
+            var tokens = CppSemanticParser.Parse("int Value1; int Value10; Value1 = Value10;");
+            Assert.Equal(2, tokens.Count(t => t.Name == "Value1"));
+            Assert.Equal(2, tokens.Count(t => t.Name == "Value10"));
+        }
+
+        [Fact]
+        public void Parse_FunctionWinsOnlyAtItsOwnOccurrence()
+        {
+            var tokens = CppSemanticParser.Parse("int Execute; Execute();");
+            Assert.Single(tokens.Where(t => t.Name == "Execute" && t.Kind == SemanticTokenKind.Variable));
+            Assert.Single(tokens.Where(t => t.Name == "Execute" && t.Kind == SemanticTokenKind.Function));
+            Assert.Equal(tokens.Count, tokens.Select(t => t.Start).Distinct().Count());
+        }
+
+        [Fact]
         public void Parse_ClassifiesUnrealTypesAndVariables()
         {
             const string code = "class AR1Actor : public AActor { int32 HP; float Speed; AR1Actor* Target; };";

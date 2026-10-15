@@ -1,0 +1,8 @@
+﻿{
+    "SaveUnavailable":  "Passed",
+    "Version":  "0.0.66",
+    "EditorGuid":  "fcb5ef5d-27a7-43f4-8e97-cfcf48219013",
+    "FactoryAndNativeShell":  "Unverified; factory requires a real VS UI thread",
+    "PersistDocDataQueryInterface":  "Passed",
+    "Dirty":  0
+}

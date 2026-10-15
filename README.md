@@ -2,7 +2,7 @@
 
 현재 개발 버전: `0.0.49`
 
-**Visual Studio용 Unreal Engine C++ 생산성 확장입니다.** IntelliSense가 준비되는 동안 Unreal 매크로와 의미 색상을 먼저 표시하고, 빠른 정의 탐색을 제공합니다.
+**Visual Studio용 범용 개발 보조 확장입니다. 현재 C++와 Unreal 지원을 구현하고 있습니다.** IntelliSense가 준비되는 동안 Unreal 매크로와 의미 색상을 먼저 표시하고, 빠른 정의 탐색을 제공합니다.
 
 > **CodeAssist는 누구나 무료로 사용할 수 있는 MIT 라이선스 오픈소스 도구입니다.**
 
@@ -27,7 +27,7 @@
 - Unreal 프로젝트 자동 감지
 - `UCLASS`, `UPROPERTY`, `GENERATED_BODY`, `<모듈명>_API` 등 Unreal 매크로 즉시 표시
 - 클래스·타입·변수·함수 및 `Super` 의미 색상 즉시 표시
-- Visual Studio C++ 사용자 색상 설정과 자동 동기화
+- VA 2630 설치 설정과 대조한 타입·변수·함수·매크로 기본색
 - IntelliSense 준비 전 초기 오진 밑줄은 숨기고, 준비 후 기본 진단으로 자동 전환
 - 인덱스 심볼과 대소문자가 다른 명확한 오타는 CodeAssist가 즉시 표시
   - Unreal 타입 형태만 검사하며 주석·문자열은 제외

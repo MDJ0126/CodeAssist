@@ -1,0 +1,82 @@
+{
+  "artifactSHA256": "a13323cffc447f5712375cbc0e19827b73e5d95c40dd994ae6c66960e3e8813f",
+  "functions": [
+    {
+      "functionRva": "0x378a70",
+      "unwindEndRva": "0x378cc2",
+      "assemblySHA256": "a7b3f25ab7444cdd42fce0bf52e8a0d3a723e130b0e4f98316db822c1f0cca3a",
+      "artifact": "tools\\obj\\rea\\cache-save-current.asm.txt",
+      "provider": "LLVM objdump from VS2022; not REA native provider",
+      "executedTarget": false
+    },
+    {
+      "functionRva": "0x3795a0",
+      "unwindEndRva": "0x379800",
+      "assemblySHA256": "e6afeb90a352d29c120ac5635e30d136216077f023df9f699e91584258aa211b",
+      "artifact": "tools\\obj\\rea\\cache-serialize-current.asm.txt",
+      "provider": "LLVM objdump from VS2022; not REA native provider",
+      "executedTarget": false
+    }
+  ],
+  "literalFormats": [
+    {
+      "rva": "0xe1a8a8",
+      "fileOffset": "0xe194a8",
+      "encoding": "utf-16le",
+      "value": "%x"
+    },
+    {
+      "rva": "0xe0c85c",
+      "fileOffset": "0xe0b45c",
+      "encoding": "utf-16le",
+      "value": "\n"
+    },
+    {
+      "rva": "0xe1a944",
+      "fileOffset": "0xe19544",
+      "encoding": "utf-16le",
+      "value": "%x"
+    },
+    {
+      "rva": "0xe1a930",
+      "fileOffset": "0xe19530",
+      "encoding": "utf-16le",
+      "value": "%s§%s§%x\n"
+    }
+  ],
+  "observations": [
+    {
+      "instructionRva": "0x378a85",
+      "fact": "Early return if dword at pointer from object+0x58 minus0x10 is zero; exact string/object type unverified"
+    },
+    {
+      "instructionRva": "0x378a96",
+      "fact": "Early return if global pointer 0x127c780 null or byte at pointed object+0x1ec9 zero; option identity unverified"
+    },
+    {
+      "instructionRva": "0x378b6b",
+      "fact": "Pass container at object+0x00 to function RVA0x3795a0"
+    },
+    {
+      "instructionRva": "0x378c3c",
+      "fact": "Pass container at object+0x10 to same function RVA0x3795a0"
+    },
+    {
+      "instructionRva": "0x379676",
+      "fact": "Formatting helper receives UTF16 record template %s§%s§%x followed by newline"
+    },
+    {
+      "instructionRva": "0x37968d",
+      "fact": "Indirect call at vtable+0x78 receives character length doubled; concrete stream class and write implementation unverified"
+    }
+  ],
+  "unknowns": [
+    "Meaning of hex header and record fields",
+    "Concrete writer type, paths, atomicity and errors",
+    "Filtering status at node+0x28",
+    "Load parser and invalidation lifecycle",
+    "Whether cache concerns files/includes only or semantic symbols",
+    "Runtime serialized bytes not captured"
+  ],
+  "fullParityPassed": false
+}

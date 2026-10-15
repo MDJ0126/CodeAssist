@@ -1,0 +1,69 @@
+{
+  "Scope": "Offline owned WPF views and control interactions; not actual VS document/toolbar/margin host testing",
+  "Views": [
+    {
+      "Page": "",
+      "Screen": "Settings",
+      "Image": "options-dark-preview.png",
+      "ContrastChecks": 3,
+      "Theme": "Dark"
+    },
+    {
+      "Page": "",
+      "Screen": "Settings",
+      "Image": "options-light-preview.png",
+      "ContrastChecks": 3,
+      "Theme": "Light"
+    },
+    {
+      "Page": "Editor / Coloring",
+      "Screen": "Settings",
+      "Image": "options-coloring-dark.png",
+      "ContrastChecks": 5,
+      "Theme": "Dark"
+    },
+    {
+      "Page": "Editor / Coloring",
+      "Screen": "Settings",
+      "Image": "options-coloring-light.png",
+      "ContrastChecks": 5,
+      "Theme": "Light"
+    },
+    {
+      "Page": "Code Inspection",
+      "Screen": "Settings",
+      "Image": "options-inspection-dark.png",
+      "ContrastChecks": 4,
+      "Theme": "Dark"
+    },
+    {
+      "Page": "Advanced / Performance",
+      "Screen": "Settings",
+      "Image": "options-performance-dark.png",
+      "ContrastChecks": 1,
+      "Theme": "Dark"
+    },
+    {
+      "Page": "",
+      "Screen": "Welcome",
+      "Image": "welcome-dark-preview.png",
+      "ContrastChecks": 1,
+      "Theme": "Dark"
+    },
+    {
+      "Page": "",
+      "Screen": "Welcome",
+      "Image": "welcome-preview.png",
+      "ContrastChecks": 1,
+      "Theme": "Light"
+    },
+    {
+      "Page": "",
+      "Screen": "FirstRun",
+      "Image": "first-run-dark-preview.png",
+      "ContrastChecks": 3,
+      "Theme": "Dark"
+    }
+  ],
+  "Passed": 9
+}

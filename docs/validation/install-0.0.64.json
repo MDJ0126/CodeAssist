@@ -1,0 +1,31 @@
+{
+  "Manifest": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\x5bwncmx.eio\\extension.vsixmanifest",
+  "Version": "0.0.64",
+  "Files": [
+    {
+      "Match": true,
+      "File": "CodeAssist.Extension.dll"
+    },
+    {
+      "Match": true,
+      "File": "CodeAssist.Core.dll"
+    },
+    {
+      "Match": true,
+      "File": "CodeAssist.Indexing.dll"
+    },
+    {
+      "Match": true,
+      "File": "CodeAssist.Worker.exe"
+    },
+    {
+      "Match": true,
+      "File": "CodeAssist.Semantics.dll"
+    },
+    {
+      "Match": true,
+      "File": "Newtonsoft.Json.dll"
+    }
+  ],
+  "InstallerExitCode": 0
+}

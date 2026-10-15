@@ -1,0 +1,13 @@
+﻿{
+    "Screen":  "Welcome",
+    "Theme":  "Dark",
+    "Controls":  [
+                     {
+                         "Label":  "Visual Studio 시작 시 Welcome 열기",
+                         "Foreground":  "#FFB9BFCC",
+                         "Background":  "#FF05070B",
+                         "Contrast":  10.931512987692248
+                     }
+                 ],
+    "Scope":  "Offline WPF resource and label-color regression; not actual Visual Studio UI"
+}

@@ -30,6 +30,8 @@ namespace CodeAssist.Core
 
     public static class CppSemanticParser
     {
+        private static readonly Regex IdentifierPattern = new Regex(@"\b[A-Za-z_]\w*\b", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+
         private static readonly Regex DeclaredTypePattern = new Regex(
             @"\b(?:class|struct|enum(?:\s+class)?)\s+(?:\w+_API\s+)?(?<name>[A-Za-z_]\w*)",
             RegexOptions.Compiled | RegexOptions.CultureInvariant);
@@ -90,8 +92,12 @@ namespace CodeAssist.Core
             variableNames.ExceptWith(typeNames);
 
             var tokens = new List<SemanticToken>();
-            AddOccurrences(text, typeNames, SemanticTokenKind.Type, tokens);
-            AddOccurrences(text, variableNames, SemanticTokenKind.Variable, tokens);
+            foreach (Match identifier in IdentifierPattern.Matches(text))
+            {
+                var name = identifier.Value;
+                if (typeNames.Contains(name)) tokens.Add(new SemanticToken(name, identifier.Index, identifier.Length, SemanticTokenKind.Type));
+                else if (variableNames.Contains(name)) tokens.Add(new SemanticToken(name, identifier.Index, identifier.Length, SemanticTokenKind.Variable));
+            }
             AddFunctionOccurrences(text, tokens);
             return tokens.OrderBy(token => token.Start).ToArray();
         }
@@ -107,19 +113,10 @@ namespace CodeAssist.Core
             return names;
         }
 
-        private static void AddOccurrences(string text, IEnumerable<string> names, SemanticTokenKind kind, ICollection<SemanticToken> tokens)
-        {
-            foreach (var name in names)
-            {
-                foreach (Match match in Regex.Matches(text, @"\b" + Regex.Escape(name) + @"\b"))
-                {
-                    tokens.Add(new SemanticToken(name, match.Index, match.Length, kind));
-                }
-            }
-        }
-
         private static void AddFunctionOccurrences(string text, ICollection<SemanticToken> tokens)
         {
+            var functions = new List<SemanticToken>();
+            var positions = new HashSet<int>();
             foreach (Match match in FunctionUsagePattern.Matches(text))
             {
                 var group = match.Groups["name"];
@@ -129,14 +126,12 @@ namespace CodeAssist.Core
                     continue;
                 }
 
-                var overlapping = tokens.FirstOrDefault(token => token.Start == group.Index && token.Length == group.Length);
-                if (overlapping != null)
-                {
-                    tokens.Remove(overlapping);
-                }
-
-                tokens.Add(new SemanticToken(name, group.Index, group.Length, SemanticTokenKind.Function));
+                positions.Add(group.Index);
+                functions.Add(new SemanticToken(name, group.Index, group.Length, SemanticTokenKind.Function));
             }
+            var list = (List<SemanticToken>)tokens;
+            list.RemoveAll(token => positions.Contains(token.Start));
+            list.AddRange(functions);
         }
 
         private static bool IsUnrealMacro(string name)

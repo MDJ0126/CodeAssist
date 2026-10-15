@@ -1,0 +1,6 @@
+*.vsix
+*.index
+docs/validation/rea/
+docs/reverse-engineering/va-2630/native/*.json
+# Structured JSON schemas evolve during analysis; read these directly.
+*.json

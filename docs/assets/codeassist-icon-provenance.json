@@ -1,0 +1,16 @@
+{
+  "generator": "built-in image_gen",
+  "transparent": true,
+  "source": "exec-784168e9-2d45-478f-8a7c-e314967214d9.png",
+  "master": "codeassist-icon-master.png",
+  "packagedIcon": "../../CodeAssist.Extension/Resources/CodeAssist.png",
+  "packaging": "128x128 RGBA PNG resized from generated master",
+  "designPrompt": "One ordinary unpeeled yellow banana, classic elongated crescent fruit, visible short brown stem and dried tip. Side view, natural proportions, golden underside shading, subtle highlight, transparent background. No peeled skin, code symbols, text, face or background tile.",
+  "revision": "User requested recognizable plain banana; replaced prior banana/code mark.",
+  "sizes": {
+    "menu": 16,
+    "header": 24,
+    "favicon": 32,
+    "vsixMetadata": 128
+  }
+}

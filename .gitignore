@@ -34,3 +34,6 @@ packages/
 Thumbs.db
 *.swp
 *.tmp
+
+# Local XERJ binary, index, journals and logs
+.local/

@@ -1,0 +1,18 @@
+{
+  "reaVersion": "6.5.0",
+  "source": "C:\\Projects\\CodeAssist\\tools\\obj\\rea\\runtime\\node_modules\\rea-agents\\dist\\ghidra\\GhidraLauncher.js",
+  "sha256": "739676ebc64bd7b23ed1bc4a9395d596efe7bf8080eb67af1ff3e00d86609a67",
+  "observedLaunchArguments": [
+    "projectRoot",
+    "rea-project",
+    "-import",
+    "targetPath"
+  ],
+  "scope": "Installed default launcher source inspection only",
+  "externalGhidraProjectReuse": "unverified; no existing .gpr invocation attempted while game constraint applies",
+  "existingProject": "tools/obj/ghidra-projects/VA2630.gpr",
+  "limitations": [
+    "Default import path does not prove all reuse mechanisms are absent.",
+    "No native provider run or decompilation occurred in this review."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "version": "0.0.52",
+  "observedBefore": {
+    "CodeAssist": "0.0.49",
+    "UEAssist": "0.0.49",
+    "samePackageGuid": true,
+    "impactOnCpuAndColor": "unverified"
+  },
+  "installation": {
+    "legacyBackup": ".local/install-backups/UEAssist-0.0.49.zip",
+    "legacyUninstallExitCode": 0,
+    "newInstallExitCode": 0,
+    "installedDirectory": "C:\\Users\\ehdwn\\AppData\\Local\\Microsoft\\VisualStudio\\17.0_ca39936f\\Extensions\\b3kqg2ct.djx",
+    "installedVersion": "0.0.52",
+    "binaries": [
+      {
+        "file": "CodeAssist.Extension.dll",
+        "matchesBuild": true,
+        "sha256": "dbd08c15fc7caeae914bf4b710fc8e74cd85362c05b7fc82f914551d6fed3390"
+      },
+      {
+        "file": "CodeAssist.Core.dll",
+        "matchesBuild": true,
+        "sha256": "8b08f18cf300420b220b01196aa86d6b0ad1ae8b982930729626164d458f6da9"
+      },
+      {
+        "file": "CodeAssist.Indexing.dll",
+        "matchesBuild": true,
+        "sha256": "fc97d6f98939028bea31295c4a220716ba32b3c6f20d3a78c48f05b52d46e70f"
+      },
+      {
+        "file": "CodeAssist.Semantics.dll",
+        "matchesBuild": true,
+        "sha256": "a1ced75f533172b896f03d57e6ee177977830477f791aa9135b68700420ba937"
+      },
+      {
+        "file": "CodeAssist.Worker.exe",
+        "matchesBuild": true,
+        "sha256": "9e5fb9cbc412197b96da07efd2d2971902cbafece8692428107ea9973d4f36e2"
+      },
+      {
+        "file": "Newtonsoft.Json.dll",
+        "matchesBuild": true,
+        "sha256": "e1e27af7b07eeedf5ce71a9255f0422816a6fc5849a483c6714e1b472044fa9d"
+      }
+    ]
+  },
+  "tests": {
+    "passed": 93,
+    "failed": 0
+  },
+  "performance": {
+    "before": {
+      "Characters": 105559,
+      "Variables": 2000,
+      "Tokens": 6000,
+      "SamplesMs": [
+        176.9044,
+        172.4065,
+        177.1769
+      ],
+      "Scope": "Headless .NET 8 parser benchmark; not VS UI or VA comparison."
+    },
+    "after": {
+      "Characters": 105559,
+      "Variables": 2000,
+      "Tokens": 6000,
+      "SamplesMs": [
+        42.3027,
+        28.9035,
+        27.7702
+      ],
+      "Scope": "Headless .NET 8 parser benchmark; not VS UI or VA comparison."
+    },
+    "scope": "Parser only, .NET8; actual VS CPU and VA comparison unverified."
+  },
+  "ui": "Offline WPF rendered; actual IDE UI unverified",
+  "changes": [
+    "color recommendation checkbox and swatches",
+    "classification format map update",
+    "open editor classification invalidation",
+    "single identifier scan and hashed function positions",
+    "16px menu icon, native tab and InfoBar icon, 32px favicon, 24px header"
+  ]
+}

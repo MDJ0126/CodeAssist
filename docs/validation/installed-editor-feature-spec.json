@@ -1,0 +1,389 @@
+{
+  "scope": "Shipped2630 help constraints, not source implementation or original runtime equivalence",
+  "features": {
+    "Auto-Extend Multi-Line Comments": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckExtendComments.html",
+          "sha256": "88d87eb4b9d6f3efcac114f97c7f786df3e8435280c8b87ff8213e054084f11c"
+        }
+      ],
+      "facts": [
+        "줄바꿈 시 block comment 및 연속 single-line comment marker를 현재 줄에서 이어받음"
+      ],
+      "cases": [
+        "block·single-line·끝줄·선두공백 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Format After Paste": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckFormatAfterPaste.html",
+          "sha256": "957680d697911e5987b156876ae94fe997f70b99a875fd65155e949470e3fa2f"
+        }
+      ],
+      "facts": [
+        "여러 줄 paste 이후 IDE Format Selection으로 서식 지정",
+        "Undo로 formatting 철회 가능"
+      ],
+      "cases": [
+        "단일/다중 줄 paste 및 Undo 단계 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Insert () and Closing Brackets and Quotes": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckInsertClosingBrace.html",
+          "sha256": "8cf74ebdd80c364a387727a78ca87650ead15d6b4eb3b5abc197042af93b2c83"
+        },
+        {
+          "file": "OptionsHelp/Editor/RadioInsertBraceAfterBlankLine.html",
+          "sha256": "84c132d62acbbc309bfd7b48cf02eaf9f2ffd64866fcfa65003c3fb6e37fa433"
+        },
+        {
+          "file": "OptionsHelp/Editor/RadioInsertBraceOnNextLine.html",
+          "sha256": "0f66db87a47d1774fd68bf1f5cb5614e00e861cf3aa8fc58d1cf697482bca4a4"
+        },
+        {
+          "file": "OptionsHelp/Editor/RadioInsertBraceOnSameLine.html",
+          "sha256": "0d145359756274176c580d79a965d2004bae425c474dc1fd1936c14fe37f0b73"
+        }
+      ],
+      "facts": [
+        "여는 delimiter 뒤 닫는 delimiter·method commit 후 괄호 삽입",
+        "Undo/Backspace 철회; 입력 중단 전 inserted delimiter 입력은 해당 문자 덮어쓰기",
+        "닫는 brace 위치는 same/next/blank-line 옵션"
+      ],
+      "cases": [
+        "typing 중단·중복닫힘·commit·brace 위치 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Insert _ After m and Shift": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckInsertUnderscoreAfterM.html",
+          "sha256": "38e3f46863a675457b96073e396786b15726878e2c207de5f85461b494a43ce1"
+        }
+      ],
+      "facts": [
+        "m 입력 직후 Shift를 빠르게 눌렀다 놓으면 underscore 삽입"
+      ],
+      "cases": [
+        "Shift 타이밍·연속입력·IME 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Multiple Clipboards": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckDisplayPasteMenu.html",
+          "sha256": "9a7a772f4d329715a356a43bd5ee1301fb307e10a15143eaf3c4cb3789d8a95f"
+        },
+        {
+          "file": "OptionsHelp/Editor/EditPasteMenuItems.html",
+          "sha256": "c43232f18137ad28440b8b3779db4519a894b591585b72576abcd4bb94195854"
+        }
+      ],
+      "facts": [
+        "Ctrl+Shift+V 최근 clipboard 메뉴",
+        "표시 개수는 별도 설정이며 해당 도움말은 수치를 명시하지 않음"
+      ],
+      "cases": [
+        "capacity·중복·선택·표준paste·Undo 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Repair Case": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckRepairCase.html",
+          "sha256": "c41aa42c01ae7d254c259575dfbfda59f525d3b27f758e2e0af30eb7d5969532"
+        }
+      ],
+      "facts": [
+        "typing 중 symbol 대소문자 수정; 여러 교정 후보가 있으면 수정하지 않음",
+        "C#은 suggestion/completion 목록 활성 필요"
+      ],
+      "cases": [
+        "단일/복수 후보·C# 조건·Undo 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Convert Dot to ->": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckConvertDotToArrow.html",
+          "sha256": "1204c204ebc73acd63e5f0aa379ee3c271a3ee8479a40054c58826ec86f12d7a"
+        },
+        {
+          "file": "OptionsHelp/Editor/CheckSmartConvertDotToArrow.html",
+          "sha256": "199ce8d72a6ec1319127f0b1f6ac07a247163a2fb4826ac0d7ec572d8e8af020"
+        }
+      ],
+      "facts": [
+        "적절한 문맥에서 dot를 arrow로 바꿈; operator-> smart object 변형은 별도 옵션",
+        "Delete/Undo/Backspace로 철회"
+      ],
+      "cases": [
+        "pointer·instance·smart object·철회 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Surround Selection": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Editor/CheckSurroundChar1.html",
+          "sha256": "79d534448b24f942de9cf95a13aab40a77cb6f8934ab81bd91b044f46f2f5781"
+        },
+        {
+          "file": "OptionsHelp/Editor/CheckSurroundChar2.html",
+          "sha256": "5338b8fa09d2b2aae635921f5a0b78e42b583367ccb38d155399d0e9b76da061"
+        },
+        {
+          "file": "OptionsHelp/Editor/CheckSurroundChar3.html",
+          "sha256": "96ecbd57294253bf5b7e1ae1603d227a4ab70aa30e4a099a42fae216592dfab8"
+        },
+        {
+          "file": "OptionsHelp/Editor/CheckSurroundChar4.html",
+          "sha256": "8cd9201604ebc6f842b7b987fd2d791dcb0fc7ff693d987b3b48d6e4e0b5c4c3"
+        },
+        {
+          "file": "OptionsHelp/Editor/CheckSurroundCharSnippet.html",
+          "sha256": "cbc23bd61f500577c5a7ea79413c703a16f8505236737b185f1f12555decc09b"
+        }
+      ],
+      "facts": [
+        "slash는 완전한 줄/복수 줄이면 line comment, 부분 줄이면 block comment 토글",
+        "asterisk는 block comment 토글; parentheses/braces surround",
+        "surround character가 있는 snippet 입력은 선택을 expansion으로 대체"
+      ],
+      "cases": [
+        "부분/전체/복수 줄·기존주석·snippet·Undo 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Highlight Current Line": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Highlighting/CheckHighlightActiveLine.html",
+          "sha256": "f405da5b54c82f6c251b5e03a38d16536af8901d69d6836ec0dfce898e3d0c87"
+        },
+        {
+          "file": "OptionsHelp/Highlighting/RadioBackground.html",
+          "sha256": "e1f94cb22a0d9d6c2618a4e489c4c908580cdaeb19a9e73e05e13f6f5f186d9d"
+        },
+        {
+          "file": "OptionsHelp/Highlighting/RadioBackgroundOnly.html",
+          "sha256": "2543a764b7fb1e4ea8a9af8bc9e5d962f46589373dcf9e0a0bcfdff49fcd55d1"
+        },
+        {
+          "file": "OptionsHelp/Highlighting/RadioDottedBox.html",
+          "sha256": "4bfe381bf524e717fb5eafbab6b67511d73322ced6e5c87ebb7477c62c1cc801"
+        },
+        {
+          "file": "OptionsHelp/Highlighting/RadioRayLines.html",
+          "sha256": "bb097bed82f03717ad29ba706a0fb432db37af7abffdb852588a970b0f7e409d"
+        },
+        {
+          "file": "OptionsHelp/Highlighting/RadioSolidBox.html",
+          "sha256": "dec4ac9547c8c537e93023aa96d2e52e67c0b830dda29eebbc42ca580e50f31d"
+        }
+      ],
+      "facts": [
+        "caret 줄 표시; VA Current Line IDE 색 설정 사용",
+        "배경·색상/frame·점선·실선·margin까지 ray 형식"
+      ],
+      "cases": [
+        "theme·포커스·색·표시방식 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Highlight Files in Output Window": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Highlighting/CheckHighlightBuildOutput.html",
+          "sha256": "ded21ebf63190ace29a68b5d6ae4a059f8c3363ddcc62a6357b7fdf121c14060"
+        }
+      ],
+      "facts": [
+        "build output에서 solution 파일 경로를 다른 파일 경로와 구별해 강조"
+      ],
+      "cases": [
+        "solution 내부/외부·상대/절대경로·출력갱신 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Highlight Find Results": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Highlighting/CheckHighlightFindResults.html",
+          "sha256": "b03607d81bd57fde36372895a7d4634ce8059c6a28860f05dc8ea8a261161b20"
+        }
+      ],
+      "facts": [
+        "IDE find 후 editor matches 강조; ESC로 해제; IDE Find Result(VA) 배경색 사용"
+      ],
+      "cases": [
+        "새검색·ESC·문서전환·theme 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Highlight Matching Braces and Parentheses": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Highlighting/CheckAndColorHighlightBraces.html",
+          "sha256": "cc5aebead9cdd0375a7f10f5d0b75fc1255d936b083b7f4e98e19c38b74bcb60"
+        }
+      ],
+      "facts": [
+        "caret가 scope 안에 있을 때 matching delimiter 강조"
+      ],
+      "cases": [
+        "중첩·문자열/주석 delimiter·caret 경계 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Highlight Mismatching Braces and Parentheses": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Highlighting/CheckAndColorHighlightMismatchingBraces.html",
+          "sha256": "7e1dd871bd4cce13f268f1d0147d59a1630a97f4bac1e6432881c84124e7c99d"
+        }
+      ],
+      "facts": [
+        "caret 문맥에서 균형이 맞지 않는 delimiter 강조"
+      ],
+      "cases": [
+        "불완전코드·여는/닫는짝·macro 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Underline Spelling Errors": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Underlining/CheckUnderlineErrorsUsing.html",
+          "sha256": "41c3f205308e937f15419af65a982b437df3738faaa725c1cda3f7439df5c646"
+        }
+      ],
+      "facts": [
+        "주석과 문자열 spelling 표시; 문맥 메뉴에서 교정 또는 사전 추가"
+      ],
+      "cases": [
+        "언어사전·주석/문자열·사전수명·Undo 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "Underline Unknown Symbols": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Underlining/CheckUnderlineMistypedSymbols.html",
+          "sha256": "6e56e3b5880192f9f995bab557770ec42d5a8db7b556fccc7721fa100a426fd5"
+        }
+      ],
+      "facts": [
+        "mistyped/context-invalid symbol 표시; IDE squiggle 표시가 비활성일 때만 적용"
+      ],
+      "cases": [
+        "IDE표시 토글·정의중·include/macro·취소 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "VA Memory View": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Debug/CheckNativeDebuggerStepFilter.html",
+          "sha256": "9fef924bc6cb2388e21a5ce9fb8d2115fa6a70a8bbf2f8c60e5e138a5091b766"
+        }
+      ],
+      "facts": [
+        "debug session 시작 전에 integration 활성 필요; 완전한 분리는 IDE 재시작 필요"
+      ],
+      "cases": [
+        "세션전/중 토글·재시작·debugger state 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    },
+    "VA Step Filter": {
+      "resources": [
+        {
+          "file": "OptionsHelp/Debug/CheckNativeDebuggerStepFilter.html",
+          "sha256": "9fef924bc6cb2388e21a5ce9fb8d2115fa6a70a8bbf2f8c60e5e138a5091b766"
+        },
+        {
+          "file": "OptionsHelp/Debug/RadioStepFilterDirAppdata.html",
+          "sha256": "3d500a15d0b80764054e6c95d20a2a1aa9be1def479f8a503070e84b26f2fb1f"
+        },
+        {
+          "file": "OptionsHelp/Debug/RadioStepFilterDirVa.html",
+          "sha256": "26a2ee73394f303fe4d5955f90010c3a39094b7f2177c80ab6b3a83178ba8416"
+        }
+      ],
+      "facts": [
+        "integration 활성 시 창 숨김 상태에서도 active filter 적용",
+        "solution filter는 APPDATA 또는 .va/shared; global/builtin 상태는 APPDATA",
+        "공유 위치에 신규 solution filter 저장하려면 .vadbg 쓰기 권한 필요"
+      ],
+      "cases": [
+        "global/solution 우선순위·창숨김·권한·세션수명 비교"
+      ],
+      "unknowns": [
+        "Actual control/registry binding and factory default unverified",
+        "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ]
+    }
+  },
+  "count": 17,
+  "originalHelpHashesMatched": true,
+  "comparisonState": "unexecuted"
+}

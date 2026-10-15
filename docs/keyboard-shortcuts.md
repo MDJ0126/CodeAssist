@@ -6,7 +6,7 @@ Visual Assist 공식 [단축키 안내](https://www.wholetomato.com/documentatio
 |---|---|---|
 | Alt+G / F12 | 정의 후보 탐색 | 독립 구현, 복수 후보 선택, VS fallback |
 | Shift+Alt+F / Shift+F12 | 참조 후보 검색 | 어휘·일반 지역 블록 기준 |
-| Shift+Alt+O | 파일 검색 | 인덱싱 파일, 이름·경로 문자 순서 검색 |
+| Shift+Alt+O | 파일 검색 | 인덱싱 파일, 이름·경로 포함/제외·OR·앵커·행 지정 검색 |
 | Shift+Alt+S | 심볼 검색 | 클래스·함수·멤버 후보 |
 | Alt+O | 대응 파일 열기 | 같은 기본 이름의 파일 |
 | Alt+M | 현재 파일 메서드 목록 | 저장하지 않은 문서 포함 |
@@ -19,7 +19,7 @@ Visual Assist 공식 [단축키 안내](https://www.wholetomato.com/documentatio
 | Alt+] / Alt+[ | 블록 선택 확장·축소 | 중괄호 블록과 복원 기록 |
 | Ctrl+Shift+V | 다중 클립보드 | 확장 실행 중 C++ 선택 복사·잘라내기 기록 |
 | Alt+K | 현재 단어 강조 | F3·Shift+F3 이동, Esc 해제 |
-| Shift+Alt+R | 이름 변경 | Visual Studio Rename 호출 |
+| Shift+Alt+R | 이름 변경 | 구성된 clangd 변경 계획·미리보기, 미구성 시 VS Rename |
 | Shift+Alt+Q | 빠른 작업 | Visual Studio Quick Actions 호출 |
 | Shift+Alt+C | 사용 위치의 생성 작업 | Visual Studio Quick Actions 메뉴 호출; 생성 항목은 VS 문맥에 따름 |
 | Ctrl+Space | 자동완성 수동 호출 | 기존 VS 편집기 명령과 CodeAssist 후보 |
@@ -40,3 +40,7 @@ VSCT에 기본 키를 등록했습니다. Visual Studio의 사용자 지정 할�
 ## 등록 파일
 
 명령 ID와 기본 키는 `CodeAssist.Extension/CodeAssistCommands.vsct`, 명령 실행은 `GoToSymbolCommand`, `FindReferencesCommand`, `NavigationCommands`, 후보 확정은 `CompletionCommandFilter`에 있습니다.
+
+## 명령별 검증 상태
+
+[기계 판독 명령 대응표](validation/command-coverage.json)에 현재 30개 명령과 24개 키 등록·제한을 보존합니다. 원본 명령 존재와 메뉴 등록은 전체 동등성의 근거가 아닙니다. Ctrl+Space·Tab·Enter는 VS 편집기 명령 경로를 사용하는 별도 항목입니다.

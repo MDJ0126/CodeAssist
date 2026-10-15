@@ -3,6 +3,14 @@ namespace CodeAssist.Core.Tests;
 public class ClipboardHistoryTests
 {
     [Fact]
+    public void DefaultCapacityMatchesObservedVaSetting()
+    {
+        var history = new ClipboardHistory();
+        for (var i = 0; i < 11; i++) history.Record(i.ToString());
+        Assert.Equal(10, history.Items().Length);
+        Assert.DoesNotContain("0", history.Items());
+    }
+    [Fact]
     public void DuplicateMovesToFrontAndCapacityEvictsOldest()
     {
         var history = new ClipboardHistory(2);

@@ -1,0 +1,20 @@
+﻿{
+    "NativeVsWelcomeClick":  "Unverified; registered editor factory and explicit DocData require actual VS open/close/reopen verification",
+    "Before":  {
+                   "PathGetFullPath":  "NotSupportedException",
+                   "WelcomeMoniker":  "codeassist://welcome",
+                   "ClosedMethodSelection":  [
+                                                 "▾",
+                                                 "CodeAssist.Core.SemanticToken"
+                                             ]
+               },
+    "Version":  "0.0.66",
+    "After":  {
+                  "PathGetFullPath":  "Passed",
+                  "WelcomeMoniker":  "C:\\Users\\ehdwn\\AppData\\Local\\CodeAssist\\Welcome.codeassist",
+                  "ClosedMethodSelection":  [
+                                                "▾",
+                                                "BeginPlay"
+                                            ]
+              }
+}

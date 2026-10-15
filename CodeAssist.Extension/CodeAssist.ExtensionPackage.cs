@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.ComponentModelHost;
 using System;
@@ -29,7 +30,10 @@ namespace CodeAssist.Extension
     [ProvideAutoLoad(UIContextGuids80.NoSolution, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
     [ProvideMenuResource("CTMENU", 1)]
-    [InstalledProductRegistration("#110", "#112", "0.0.49")]
+    [ProvideEditorFactory(typeof(WelcomeEditorFactory), 110)]
+    [ProvideEditorExtension(typeof(WelcomeEditorFactory), ".codeassist", 32)]
+    [ProvideEditorLogicalView(typeof(WelcomeEditorFactory), "00000000-0000-0000-0000-000000000000")]
+    [InstalledProductRegistration("#110", "#112", "0.0.66")]
     [ProvideToolWindow(typeof(OutlineToolWindow))]
     [ProvideToolWindow(typeof(WorkspaceToolWindow))]
     [ProvideToolWindow(typeof(ReferenceResultsToolWindow), MultiInstances = true)]
@@ -61,8 +65,14 @@ namespace CodeAssist.Extension
         // Do any initialization that requires the UI thread after switching to the UI thread.
         await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
         Current = this;
+        RegisterEditorFactory(new WelcomeEditorFactory(this));
+        await StartupUi.InitializeAsync(this);
+        SnippetInsertion.CaptureEnvironment();
         var componentModel = await GetServiceAsync(typeof(SComponentModel)) as IComponentModel;
         indexService = componentModel?.GetService<ProjectIndexService>();
+        StartupUi.AttachInspection(indexService);
+        RecommendedColors.Apply(componentModel);
+        StartupUi.SettingsApplied += () => { ThreadHelper.ThrowIfNotOnUIThread(); RecommendedColors.Apply(componentModel); };
         var semanticDte = await GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
         if (semanticDte != null) CompilerSemanticService.Instance.EditorExecutable = semanticDte.FullName;
         try
@@ -83,6 +93,9 @@ namespace CodeAssist.Extension
         await FindReferencesCommand.InitializeAsync(this, squiggleController, indexService);
         await StatusCommand.InitializeAsync(this, squiggleController, indexService);
         await NavigationCommands.InitializeAsync(this, indexService, squiggleController);
+          await ToolbarCommands.InitializeAsync(this);
+        await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+        StartupUi.CompleteInitialization();
     }
 
     protected override void Dispose(bool disposing)
@@ -96,6 +109,7 @@ namespace CodeAssist.Extension
             });
         }
 
+        if (disposing && Current != null) ThreadHelper.JoinableTaskFactory.Run(async () => { await JoinableTaskFactory.SwitchToMainThreadAsync(); ToolbarCommands.Shutdown(); StartupUi.Shutdown(); });
         if (disposing) indexingStatusReporter?.Dispose();
         if (disposing) indexService?.Dispose();
         if (disposing) CompilerSemanticService.Instance.Dispose();
@@ -107,3 +121,4 @@ namespace CodeAssist.Extension
     #endregion
 }
 }
+

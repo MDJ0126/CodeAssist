@@ -2,22 +2,32 @@
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
   <Extern href="stdidcmd.h" />
   <Extern href="vsshlids.h" />
+  <Include href="KnownImageIds.vsct" />
 
   <Commands package="guidCodeAssistPackage">
+    <Menus>
+      <Menu guid="guidCodeAssistCommandSet" id="CodeAssistToolbar" priority="0x0100" type="Toolbar">
+        <CommandFlag>DefaultDocked</CommandFlag><Strings><ButtonText>CodeAssist</ButtonText><CommandName>CodeAssist</CommandName></Strings>
+      </Menu>
+    </Menus>
     <Groups>
+      <Group guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbar" /></Group>
       <Group guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
       </Group>
     </Groups>
 
     <Buttons>
+      <Button guid="guidCodeAssistCommandSet" id="WelcomeCommandId" priority="0x0100" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Icon guid="guidCodeAssistImages" id="BananaIcon" /><Strings><ButtonText>CodeAssist: Welcome</ButtonText><ToolTipText>CodeAssist Welcome 문서 열기</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SettingsCommandId" priority="0x0101" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Icon guid="guidCodeAssistImages" id="BananaIcon" /><Strings><ButtonText>CodeAssist: Settings</ButtonText><ToolTipText>CodeAssist 옵션 열기</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SortLinesCommandId" priority="0x013b" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Sort Selected Lines</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="ReparseCommandId" priority="0x013a" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reparse Current File</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="ReferencesResultsCommandId" priority="0x0139" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reference Results</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="CloneReferencesCommandId" priority="0x013a" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Clone Reference Results</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="FindSelectedCommandId" priority="0x0138" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Selected</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="OutlineCommandId" priority="0x0136" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Outline</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="WorkspaceCommandId" priority="0x0137" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Workspace Symbols</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SnippetCommandId" priority="0x0135" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Insert Snippet</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SnippetCommandId" priority="0x0135" type="Button"><Icon guid="ImageCatalogGuid" id="Snippet"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Insert Snippet</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="ClipboardCommandId" priority="0x0133" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Multiple Clipboards</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="HashtagsCommandId" priority="0x012d" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Hashtags</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="IncludesCommandId" priority="0x012e" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Include Files</ButtonText></Strings></Button>
@@ -26,9 +36,9 @@
       <Button guid="guidCodeAssistCommandSet" id="SelectBlockExtendCommandId" priority="0x0131" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Extend Block Selection</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="SelectBlockShrinkCommandId" priority="0x0132" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Shrink Block Selection</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="ResetZoomCommandId" priority="0x012c" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reset Editor Zoom</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="OpenFileCommandId" priority="0x0120" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open File</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" priority="0x0121" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Symbol</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="CorrespondingFileCommandId" priority="0x0122" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open Corresponding File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="OpenFileCommandId" priority="0x0120" type="Button"><Icon guid="ImageCatalogGuid" id="OpenFileDialog"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" priority="0x0121" type="Button"><Icon guid="ImageCatalogGuid" id="FindSymbol"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Symbol</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="CorrespondingFileCommandId" priority="0x0122" type="Button"><Icon guid="ImageCatalogGuid" id="SwitchSourceOrTarget"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open Corresponding File</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="ListMethodsCommandId" priority="0x0123" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: List Methods</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="RelatedSymbolsCommandId" priority="0x0124" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Related Symbol Candidates</ButtonText></Strings></Button>
       <Button guid="guidCodeAssistCommandSet" id="NavigateBackCommandId" priority="0x0125" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Navigate Back</ButtonText></Strings></Button>
@@ -50,15 +60,35 @@
           <ButtonText>CodeAssist: Status</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" priority="0x0108" type="Button">
+      <Button guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" priority="0x0108" type="Button"><Icon guid="ImageCatalogGuid" id="Search"/><CommandFlag>IconIsMoniker</CommandFlag>
         <Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" />
         <Strings>
           <ButtonText>CodeAssist: Find References</ButtonText>
         </Strings>
       </Button>
+      <Button guid="guidCodeAssistCommandSet" id="PreviousContextCommandId" priority="0x0150" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="FindPrevious"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Find Previous by Context</ButtonText><ToolTipText>Find Previous by Context</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="NextContextCommandId" priority="0x0151" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="FindNext"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Find Next by Context</ButtonText><ToolTipText>Find Next by Context</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SpellCheckCommandId" priority="0x0152" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="SpellCheck"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Spell Check (Visual Studio)</ButtonText><ToolTipText>Spell Check (Visual Studio)</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SkipBreakpointsCommandId" priority="0x0153" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="BreakpointDisabled"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Skip All Breakpoints</ButtonText><ToolTipText>Skip All Breakpoints</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ThreadBreakpointsCommandId" priority="0x0154" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="Thread"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Bind Breakpoints to Current Thread</ButtonText><ToolTipText>Bind Breakpoints to Current Thread</ToolTipText></Strings></Button>
     </Buttons>
+    <Bitmaps><Bitmap guid="guidCodeAssistImages" href="Resources/CodeAssist16.png" usedList="BananaIcon" /></Bitmaps>
   </Commands>
 
+  <CommandPlacements>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="SettingsCommandId" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="OpenFileCommandId" priority="0x0101"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" priority="0x0102"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" priority="0x0103"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="PreviousContextCommandId" priority="0x0104"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="NextContextCommandId" priority="0x0105"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="SnippetCommandId" priority="0x0106"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="SpellCheckCommandId" priority="0x0107"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="CorrespondingFileCommandId" priority="0x0108"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="SkipBreakpointsCommandId" priority="0x0109"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="ThreadBreakpointsCommandId" priority="0x010a"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="WelcomeCommandId" priority="0x010b"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
+  </CommandPlacements>
   <KeyBindings>
     <KeyBinding guid="guidCodeAssistCommandSet" id="FindSelectedCommandId" editor="guidVSStd97" key1="K" mod1="ALT" />
     <KeyBinding guid="guidCodeAssistCommandSet" id="ClipboardCommandId" editor="guidVSStd97" key1="V" mod1="CONTROL SHIFT" />
@@ -87,11 +117,22 @@
   </KeyBindings>
 
   <Symbols>
+    <GuidSymbol name="guidCodeAssistImages" value="{11a04c98-43f9-4d52-8da2-aa957e0e8ab5}"><IDSymbol name="BananaIcon" value="1" /></GuidSymbol>
     <GuidSymbol name="guidCodeAssistPackage" value="{28053c53-4f17-4fe3-9f58-b4f3cf573bad}" />
     <GuidSymbol name="guidCodeAssistCommandSet" value="{f9d77864-fac8-457e-bd4f-552715151b6c}">
+      <IDSymbol name="PreviousContextCommandId" value="0x0150" />
+      <IDSymbol name="NextContextCommandId" value="0x0151" />
+      <IDSymbol name="SpellCheckCommandId" value="0x0152" />
+      <IDSymbol name="SkipBreakpointsCommandId" value="0x0153" />
+      <IDSymbol name="ThreadBreakpointsCommandId" value="0x0154" />
+      <IDSymbol name="WelcomeCommandId" value="0x0140" />
+      <IDSymbol name="SettingsCommandId" value="0x0141" />
+      <IDSymbol name="CodeAssistToolbar" value="0x1030" />
+      <IDSymbol name="CodeAssistToolbarGroup" value="0x1031" />
       <IDSymbol name="CodeAssistCommandGroup" value="0x1020" />
       <IDSymbol name="GoToSymbolCommandId" value="0x0100" />
       <IDSymbol name="StatusCommandId" value="0x0101" />
+      <IDSymbol name="SortLinesCommandId" value="0x011e" />
       <IDSymbol name="ReparseCommandId" value="0x011d" />
       <IDSymbol name="ReferencesResultsCommandId" value="0x011b" />
       <IDSymbol name="CloneReferencesCommandId" value="0x011c" />

@@ -1,0 +1,155 @@
+{
+  "scope": "16 explicit defaults in shipped VA2630 help; factory-reset execution and setting binding remain unverified",
+  "defaults": [
+    {
+      "resource": "OptionsHelp/Goto/CheckGotoProjectFilter.html",
+      "sha256": "4944ac579b9212ffc2c297f22a031fcb78546eb552c4c254b218daf6863dd07b",
+      "helpDocumentedDefault": "Project",
+      "scope": "GoTo destination scope; system symbols may temporarily expand scope",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/Goto/SelectSymbolOnGoto.html",
+      "sha256": "d9b93c66127a8597095ed1bc1013d81bc62368233453ca1d15fc89445dcbb9e4",
+      "helpDocumentedDefault": true,
+      "scope": "Select symbol after GoTo",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/Hashtags/MinLenOfHashtags.html",
+      "sha256": "ce5f2b3c9cc134d70d422367da64cefbc5a5641621e3b43d6eb20a2fdccc69cd",
+      "helpDocumentedDefault": 3,
+      "scope": "Minimum hashtag length excluding leading hash",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/ListBoxes/OverwriteTextListbox.html",
+      "sha256": "66324a8be5d9adecfaf5836b702da7e264a835d244d1a8859a6fb77d9cd01ec8",
+      "helpDocumentedDefault": "replace-unless-right-text-is-known-symbol",
+      "scope": "C/C++ enhanced listbox commit; never/always alternatives",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/PerfGeneral/CheckParseAllFilesOnOpen.html",
+      "sha256": "19e852b963d58ac1cdb2a3792c3fe908c1adb303518dca5939e63a72d08f8fe9",
+      "helpDocumentedDefault": true,
+      "scope": "Project opening parse including forced includes; startup cost relevant",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/PerfGeneral/CheckWatchFilesExternally.html",
+      "sha256": "d3b7d3ffcd74fea5460a0cc0ce189e69bebdb262270238be06b329644efa5532",
+      "helpDocumentedDefault": false,
+      "scope": "Reparse headers modified externally during IDE session",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/PerfGeneral/ComboThreadPriority.html",
+      "sha256": "10c7e5a4e7d9b089dba1e05fe345844162b25f6b9c66a41d5c72e13f43110c22",
+      "helpDocumentedDefault": "Normal",
+      "scope": "General parser threads; requires IDE restart",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/PerfGeneral/RespectVsCodeExcludedFiles.html",
+      "sha256": "1fa16e0eb1058d55c0211c32e77174dec72c37cf7e85a440111be559cfc15316",
+      "helpDocumentedDefault": false,
+      "scope": "Initial parse honors .vscode/settings.json files.exclude only when enabled",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/PerfGeneral/UserDataDir.html",
+      "sha256": "4246ee7ad916bad5710295996c90c7f792d44610bde7cb4faac6aa69f250784b",
+      "helpDocumentedDefault": "LOCALAPPDATA/VS-specific-extension/Data",
+      "scope": "Symbol database location example is VS2012+; directory change requires restart",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/ProjectsAndFiles/CheckEnumerateVslangRefs.html",
+      "sha256": "19eb3795ee91b03f075a9af677a600c0cc5844c287bf1ef9a2ca30002431607d",
+      "helpDocumentedDefault": true,
+      "scope": "Full project-reference enumeration; managed/native solution performance distinction",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/ProjectsAndFiles/CheckParseAllFilesEmptySolution.html",
+      "sha256": "ee680efc6019fac288519827b9a0a8e290c633d270e3484c01819b6319034732",
+      "helpDocumentedDefault": true,
+      "scope": "Parse sibling files when no solution or empty solution",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/ProjectsAndFiles/CheckParseAllFilesWithSolution.html",
+      "sha256": "d9f1c56174c95aff5f4618420ab9eb2f4347d9c3b3f560ee7e2c413d3c7eb6ac",
+      "helpDocumentedDefault": false,
+      "scope": "Parse sibling files with a loaded solution",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/ProjectsAndFiles/CheckParseFilesWithoutExtensions.html",
+      "sha256": "b5d29092652026da674f5f5561fe6b1a1814efe24895df1556c905ab18cf0dad",
+      "helpDocumentedDefault": false,
+      "scope": "Extensionless project files treated as C/C++ headers when enabled",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/UnrealEngine/CheckAllowSnippetsInUnrealMarkup.html",
+      "sha256": "60b74beb6d8d9b047cef8b7488cb1937660acd20b59a4754fb5a512721849c0e",
+      "helpDocumentedDefault": false,
+      "scope": "Snippet shortcuts inside UE macros",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/UnrealEngine/CheckColorInsideUnrealMarkup.html",
+      "sha256": "6104fee50ae971fdbec6193c1074ad50e77fd82a8cdd23dc53fbb367915a549d",
+      "helpDocumentedDefault": false,
+      "scope": "UE macro arguments extra coloring",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    },
+    {
+      "resource": "OptionsHelp/UnrealEngine/RadioIndexPluginsRef.html",
+      "sha256": "28912b4dcbed3da4bd47d4237ddefa48869b0a55af9f0a69a2a40d36fa953a0a",
+      "helpDocumentedDefault": "referenced-or-enabled-by-default",
+      "scope": "UE plugin directory parsing and indexing",
+      "registryBinding": "unverified",
+      "runtimeResetProfile": "unverified",
+      "sourceKind": "shipped 2630 help; not runtime or code default"
+    }
+  ],
+  "limitations": [
+    "Default word occurrence alone does not prove an option default.",
+    "No current registry value is promoted to factory default.",
+    "Inspection ParserStats constants do not define general-parser settings.",
+    "Not a complete list of all factory defaults."
+  ]
+}

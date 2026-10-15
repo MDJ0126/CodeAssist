@@ -1,0 +1,58 @@
+{
+  "sourceLevel": "Current official publisher documentation plus historical installed inventory; native2630 schema/runtime not fully verified",
+  "sources": [
+    "https://www.wholetomato.com/documentation/configuration/project-directories",
+    "https://www.wholetomato.com/documentation/code-understanding/system-symbols-in-italics"
+  ],
+  "documentedModel": [
+    "Publisher states VA does not ship pre-built symbol databases.",
+    "System symbol declarations are stored in fast-access read-only database shared across solutions.",
+    "Dynamic/project declarations use a read-write database and are parsed on first project open and changed headers.",
+    "System parsing follows a new VA build or explicit Rebuild; custom platform editing context differs from build context."
+  ],
+  "installedInventory": {
+    "files": 1052,
+    "bytes": 145142212,
+    "largestModules": [
+      {
+        "path": "valibclang2_64.dll",
+        "bytes": 64157280,
+        "sha256": "e68ffc2dabf1e02c63097fa067fa652e686a04e02f6e6694bc8a071e63b55dec"
+      },
+      {
+        "path": "VA_X64.dll",
+        "bytes": 21643360,
+        "sha256": "a13323cffc447f5712375cbc0e19827b73e5d95c40dd994ae6c66960e3e8813f"
+      },
+      {
+        "path": "VaAux64.dll",
+        "bytes": 6268928,
+        "sha256": "7d12322fc9e7efe4749d228ecb33c5e99dfc3ac7688757819889ad88172a47f5"
+      },
+      {
+        "path": "VAOpsWin64.dll",
+        "bytes": 3996160,
+        "sha256": "db2c1c7b478533adad469df3ebe2c36ccd5eacc4e7a9ef49624f4fd279577763"
+      },
+      {
+        "path": "VaCodeInspectionsPWServer/e_sqlite3.dll",
+        "bytes": 1978880,
+        "sha256": "b7385d722c83fb52142a00477a726723745916d22a555711ee89834c1111fb2e"
+      },
+      {
+        "path": "VaAux2_64.dll",
+        "bytes": 1757184,
+        "sha256": "f83133c1d25d765b495c79844b4fcb1e23db8a4776db104eaeec769a67aad1e2"
+      }
+    ],
+    "dbOrDbxExtensionEntries": 0
+  },
+  "correctedHypothesis": "Installer size is not evidence of pre-baked user-project references. Publisher model explicitly says symbols are parsed locally.",
+  "unknowns": [
+    "Exact installed2630 schema and update lifecycle",
+    "All installer-embedded resources and compressed members",
+    "Whether and how general references use system/dynamic declaration data",
+    "Live VS CPU100 cause and comparative performance"
+  ],
+  "fullParityPassed": false
+}

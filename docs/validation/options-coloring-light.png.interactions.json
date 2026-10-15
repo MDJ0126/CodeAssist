@@ -1,0 +1,7 @@
+﻿{
+    "InvalidColorBlocksSave":  true,
+    "ValidColorEnablesSave":  true,
+    "DraftDoesNotMutateLivePreferences":  true,
+    "SettingKeywordSearchFilters":  true,
+    "Scope":  "Offline owned WPF controls; no actual IDE automation"
+}

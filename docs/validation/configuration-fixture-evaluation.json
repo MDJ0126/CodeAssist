@@ -1,0 +1,54 @@
+{
+  "scope": "Independent MSBuild fixture evaluation, not VA DLL execution or product-parity pass",
+  "fixture": "tests/ConfigurationParityFixture/ConfigurationParity.vcxproj",
+  "fixtureSHA256": "392f6a1380778dc804884d68c8c8d4d199cdd77cd4236dd5a765c772342a1c59",
+  "propsSHA256": "ebcef4ecd2639c8c7e23d8351df97153c0ff9289fc874550d8ca06747420b667",
+  "evaluations": [
+    {
+      "configuration": "Debug",
+      "platform": "x64",
+      "firstFile": "Actor.cpp",
+      "definitions": "DEBUG=1;BASE=1",
+      "forcedIncludes": "base.h",
+      "includeSuffix": "/debug",
+      "compileItemCount": 2,
+      "headerItemCount": 1,
+      "evaluationOutputSHA256": "fa6453c891a4430435e64896a26a8aa0a051f8fb9f1a0db69a245114b982cd78",
+      "assertionsPassed": true
+    },
+    {
+      "configuration": "Release",
+      "platform": "Win32",
+      "firstFile": "Actor.cpp",
+      "definitions": "BASE=1",
+      "forcedIncludes": "win32.h;base.h",
+      "includeSuffix": "/release",
+      "compileItemCount": 2,
+      "headerItemCount": 1,
+      "evaluationOutputSHA256": "edd98e4b3207859c085c63980b7d65fe640e27ce5d4d649be1b08dce2524a449",
+      "assertionsPassed": true
+    }
+  ],
+  "currentSourceReview": {
+    "path": "CodeAssist.Indexing/ProjectCompilationModel.cs",
+    "sha256": "6e5bbd819c0f95cc06af57161120746025dadb743a5c1bab589c6ee9e20e7cea",
+    "finding": "Current reader selects PropertyGroup/ItemDefinitionGroup descendants and substitutes ProjectDir/SolutionDir text; does not evaluate Import, metadata condition or ItemGroup file settings in this path.",
+    "fixturePropertyGroupCount": 0,
+    "fixtureItemDefinitionGroupCount": 0,
+    "fixtureImportCount": 1,
+    "productRuntimeComparison": "not executed"
+  },
+  "designRequirements": [
+    "Evaluated project configuration and per-file metadata require a separate collector from raw generated-project candidate scanning.",
+    "Preserve Configuration/Platform and imported metadata inheritance; do not collapse all targets into one current context.",
+    "Apply per-file overrides to copied immutable option snapshot; cache admission must reject changed generation.",
+    "Keep raw candidate fallback visibly incomplete when compiler/evaluation backend unavailable."
+  ],
+  "remaining": [
+    "Run original VA inspection adapter on same fixture",
+    "Compare VS evaluated VCProjectEngine path with independent MSBuild fixture",
+    "Decide trusted project evaluation boundary and account for property functions/imports",
+    "Support general projects and Unreal without assuming all configurations are active"
+  ],
+  "fullParityPassed": false
+}

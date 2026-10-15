@@ -45,8 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CppColorSynchronizer.cs" />
     <Compile Include="CompletionCommandFilter.cs" />
+    <Compile Include="ToolbarCommands.cs" />
+    <Compile Include="CompletionColorProvider.cs" />
     <Compile Include="CppSemanticClassifier.cs" />
     <Compile Include="FindReferencesCommand.cs" />
     <Compile Include="GoToSymbolCommand.cs" />
@@ -64,6 +65,13 @@
     <Compile Include="ProjectIndexService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusCommand.cs" />
+    <Compile Include="StartupUi.cs" />
+    <Compile Include="ContextBar.cs" />
+    <Compile Include="ProjectInspection.cs" />
+    <Compile Include="ProductWelcome.cs" />
+    <Compile Include="ProductOptions.cs" />
+    <Compile Include="WelcomeDocumentWindow.cs" />
+    <Compile Include="RecommendedColors.cs" />
     <Compile Include="SymbolTypoTagger.cs" />
     <Compile Include="UnrealMacroClassifier.cs" />
     <Compile Include="CodeAssist.ExtensionPackage.cs" />
@@ -76,6 +84,8 @@
     <EmbeddedResource Include="VSPackage.resx"><MergeWithCTO>true</MergeWithCTO><ManifestResourceName>CodeAssist.Extension.VSPackage</ManifestResourceName></EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\CodeAssistHelp.html"><IncludeInVSIX>true</IncludeInVSIX><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="Resources\CodeAssist.png"><IncludeInVSIX>true</IncludeInVSIX><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -83,6 +93,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Design" />
     <Reference Include="WindowsBase" />

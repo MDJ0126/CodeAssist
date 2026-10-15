@@ -1,0 +1,74 @@
+{
+  "scope": "Bounded LLVM disassembly and PE vtable/import bytes; no target execution; not a REA native-provider result",
+  "artifactSHA256": "a13323cffc447f5712375cbc0e19827b73e5d95c40dd994ae6c66960e3e8813f",
+  "artifacts": [
+    {
+      "file": "cache-writer-current.asm.txt",
+      "sha256": "2b4ed03cb06b5e856a6943503a500400437607b9b7ba813ecc4fd88e8490629c"
+    },
+    {
+      "file": "cache-open-current.asm.txt",
+      "sha256": "f7d166415bc5e1da538a8adf4ff6a86f4c4869cee9bed9a0f704305b84fee3ba"
+    },
+    {
+      "file": "cache-load-current.asm.txt",
+      "sha256": "a8093c27b7400f65056efea28f483b2283f1e3a104209e815c64b0305b30513d"
+    }
+  ],
+  "resolvedVtable": {
+    "vtableRva": "0xdc7a90",
+    "slotOffset": "0xb0",
+    "absoluteTarget": "0x1ed182d00",
+    "targetRva": "0x182d00"
+  },
+  "apiEvidence": {
+    "0xdb7060": {
+      "dll": "KERNEL32.dll",
+      "symbol": "Sleep"
+    },
+    "0xdb7038": {
+      "dll": "KERNEL32.dll",
+      "symbol": "CreateFileW"
+    },
+    "0xdb6ee8": {
+      "dll": "KERNEL32.dll",
+      "symbol": "WideCharToMultiByte"
+    }
+  },
+  "findings": [
+    {
+      "rva": "0x3799c3",
+      "fact": "Writer-construction helper passes 0x1091 to vtable+0xb0; PE slot resolves to RVA0x182d00"
+    },
+    {
+      "rva": "0x3799d9",
+      "fact": "If indirect operation returns zero, Sleep(250) then increment retry count; repeats while count<10. Worst path includes 10 sleeps; current thread unknown."
+    },
+    {
+      "rva": "0x182f70",
+      "fact": "Resolved operation invokes CreateFileW through import RVA0xdb7038; modes derive from flag bits. Actual flags and error behavior still require full path evaluation."
+    },
+    {
+      "rva": "0x377e58",
+      "fact": "Load and save share global object byte +0x1ec9 gate; exact setting identity not established."
+    },
+    {
+      "rva": "0x377eef",
+      "fact": "Load calls RVA0x37a0f0 then compares stack-local dword against value from RVA0x32b250. Mismatch calls RVA0x3780e0; meaning of reset/header value unverified."
+    },
+    {
+      "rva": "0x377f35",
+      "fact": "Second load uses same object+0x58 with different static suffix pointer, matching two-path save structure."
+    }
+  ],
+  "unknowns": [
+    "Thread used by retry loop and actual observed blocking duration",
+    "Flag semantics and exact file paths",
+    "Header-generation input/hash semantics",
+    "Reset operation and cache invalidation",
+    "Loader parsing and corrupt/truncated file handling",
+    "Full semantic/reference index relationship"
+  ],
+  "runtimeCompared": false,
+  "fullParityPassed": false
+}

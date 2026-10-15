@@ -7,8 +7,9 @@ namespace CodeAssist.Core
     {
         private readonly object gate = new object();
         private readonly List<string> values = new List<string>();
-        private readonly int capacity;
-        public ClipboardHistory(int capacity = 20) { if (capacity < 1) throw new ArgumentOutOfRangeException(nameof(capacity)); this.capacity = capacity; }
+        private int capacity;
+        public int Capacity { get { lock (gate) return capacity; } set { if (value < 1) throw new ArgumentOutOfRangeException(nameof(value)); lock (gate) { capacity = value; if (values.Count > capacity) values.RemoveRange(capacity, values.Count - capacity); } } }
+        public ClipboardHistory(int capacity = 10) { if (capacity < 1) throw new ArgumentOutOfRangeException(nameof(capacity)); this.capacity = capacity; }
         public void Record(string value)
         {
             if (string.IsNullOrEmpty(value) || value.Length > 1024 * 1024) return;

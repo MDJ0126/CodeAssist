@@ -1,0 +1,25 @@
+﻿{
+    "Screen":  "Settings",
+    "Theme":  "Dark",
+    "Controls":  [
+                     {
+                         "Label":  "Smart Select 사용",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "대문자와 밑줄 경계에서 단어 나누기",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "줄 선택 전에 앞뒤 공백을 제외한 범위 선택",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     }
+                 ],
+    "Scope":  "Offline WPF resource and label-color regression; not actual Visual Studio UI"
+}

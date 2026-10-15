@@ -1,0 +1,77 @@
+{
+  "scope": "Managed code-inspection pipeline only; native global symbol/reference indexing is unverified",
+  "evidence_ids": [
+    "ev_6ad0aa79cdedf05fc6a1e29967a52fd7235dda51b360c6449681098d0fd0441a",
+    "ev_1bd04e63cdfdf8efb80b530acfda5dce2fcaa952c6ce84be73524844b53f4b08"
+  ],
+  "observations": [
+    {
+      "method": "BufferListener.QueueParseTask",
+      "token": "0x06000082",
+      "facts": [
+        "UI thread entry captures snapshot and parser/path",
+        "prior cancellation cookie cancelled",
+        "pending queue pruned before adding new entry",
+        "worker waits for parallel slot and same-path exclusion",
+        "cancellation checked before and after parse",
+        "PW results fetch may be attempted; live parser fallback",
+        "finally releases active filename slot and signals event; queued entry removed"
+      ]
+    },
+    {
+      "method": "BufferListener.OnTextBufferChanged / OnTimerTick",
+      "tokens": [
+        "0x0600008a",
+        "0x0600008e"
+      ],
+      "facts": [
+        "edited trigger spans invalidated and line numbers updated",
+        "timer callback only queues parsing for enabled active listener",
+        "missing parser rebuilt when inspections enabled"
+      ]
+    },
+    {
+      "method": "FileParser_client.Parse",
+      "token": "0x060007d1",
+      "facts": [
+        "per-file crash limit checked",
+        "cancellation propagated",
+        "server crash increments per-file counter and marks client broken"
+      ]
+    },
+    {
+      "method": "QuickFixNavigator.ApplyFixes",
+      "token": "0x06000556",
+      "facts": [
+        "UI-thread requirement",
+        "overlapping replacements rejected per file before application",
+        "fix groups sorted; spans recreated where needed",
+        "file opening can temporarily stop global parsing",
+        "finally resets stop flag and reactivates listener"
+      ]
+    },
+    {
+      "method": "ParserStats",
+      "tokens": [
+        "0x06000e1e",
+        "0x06000e1f"
+      ],
+      "constants": {
+        "max_in_parallel": 1,
+        "max_queued": 4,
+        "recheck_period_ms": 250,
+        "timer_interval_ms": 500,
+        "timer_penalty_queue_full": 1.0,
+        "timer_penalty_max_parses": 1.0
+      }
+    }
+  ],
+  "unknowns": [
+    "Native parser server internals",
+    "General indexer/Find References bake cache",
+    "Inspection Undo rollback for every action",
+    "Unresolved decompiler type annotations",
+    "Timing multipliers/options at actual runtime",
+    "Thread switching and all cross-buffer event interactions"
+  ]
+}

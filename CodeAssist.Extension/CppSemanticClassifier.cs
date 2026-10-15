@@ -31,13 +31,13 @@ namespace CodeAssist.Extension
         [ClassificationType(ClassificationTypeNames = TypeName)]
         [Name(TypeName)]
         [UserVisible(true)]
-        [Order(After = Priority.Default)]
+        [Order(After = Priority.High)]
         internal sealed class TypeFormat : ClassificationFormatDefinition
         {
             public TypeFormat()
             {
                 DisplayName = "CodeAssist C++ Type";
-                ForegroundColor = Color.FromRgb(78, 201, 176);
+                ForegroundColor = Color.FromRgb(255, 215, 0);
             }
         }
 
@@ -45,13 +45,13 @@ namespace CodeAssist.Extension
         [ClassificationType(ClassificationTypeNames = VariableName)]
         [Name(VariableName)]
         [UserVisible(true)]
-        [Order(After = Priority.Default)]
+        [Order(After = Priority.High)]
         internal sealed class VariableFormat : ClassificationFormatDefinition
         {
             public VariableFormat()
             {
                 DisplayName = "CodeAssist C++ Variable";
-                ForegroundColor = Color.FromRgb(156, 220, 254);
+                ForegroundColor = Color.FromRgb(189, 183, 107);
             }
         }
 
@@ -59,13 +59,13 @@ namespace CodeAssist.Extension
         [ClassificationType(ClassificationTypeNames = FunctionName)]
         [Name(FunctionName)]
         [UserVisible(true)]
-        [Order(After = Priority.Default)]
+        [Order(After = Priority.High)]
         internal sealed class FunctionFormat : ClassificationFormatDefinition
         {
             public FunctionFormat()
             {
                 DisplayName = "CodeAssist C++ Function";
-                ForegroundColor = Color.FromRgb(220, 220, 170);
+                ForegroundColor = Color.FromRgb(255, 128, 0);
             }
         }
     }
@@ -77,12 +77,9 @@ namespace CodeAssist.Extension
         [Import]
         internal IClassificationTypeRegistryService Registry = null;
 
-        [Import]
-        internal CppColorSynchronizer ColorSynchronizer = null;
 
         public IClassifier GetClassifier(ITextBuffer textBuffer)
         {
-            ColorSynchronizer.Synchronize();
             return textBuffer.Properties.GetOrCreateSingletonProperty(
                 () => new CppSemanticClassifier(
                     textBuffer,
@@ -108,12 +105,23 @@ namespace CodeAssist.Extension
             this.variableClassification = variableClassification;
             this.functionClassification = functionClassification;
             textBuffer.Changed += OnBufferChanged;
+            var weak = new WeakReference(this);
+            Action settingsChanged = null;
+            settingsChanged = () =>
+            {
+                var target = weak.Target as CppSemanticClassifier;
+                if (target == null) { StartupUi.SettingsApplied -= settingsChanged; return; }
+                var snapshot = target.textBuffer.CurrentSnapshot;
+                target.ClassificationChanged?.Invoke(target, new ClassificationChangedEventArgs(new SnapshotSpan(snapshot, 0, snapshot.Length)));
+            };
+            StartupUi.SettingsApplied += settingsChanged;
         }
 
         public event EventHandler<ClassificationChangedEventArgs> ClassificationChanged;
 
         public IList<ClassificationSpan> GetClassificationSpans(SnapshotSpan span)
         {
+            if (!StartupUi.Preferences.ColoringEnabled) return new List<ClassificationSpan>();
             EnsureParsed(span.Snapshot);
             var results = new List<ClassificationSpan>();
             foreach (var token in cachedTokens)

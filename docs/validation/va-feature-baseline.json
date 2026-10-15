@@ -1,0 +1,993 @@
+{
+  "source": "https://www.wholetomato.com/features",
+  "date": "2026-10-15",
+  "baseline": "VA public feature catalog v1, feature labels deduplicated; transcribed from browser-returned official catalog after direct HTTP 403",
+  "denominator": 108,
+  "completeParity": 0,
+  "verifiedParityPercent": 0,
+  "partialMappings": 26,
+  "limitations": [
+    "Not every option or key combination is an independent feature row.",
+    "Installed 2630 availability not yet confirmed for every official feature.",
+    "Full feature parity requires behavior, UI, shortcut, defaults and relevant edge-case comparison.",
+    "unverified does not conclusively mean no implementation."
+  ],
+  "features": [
+    {
+      "id": "VA-F001",
+      "name": "Find by Context",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F002",
+      "name": "Find References",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "FindReferencesCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F003",
+      "name": "Find Symbol in Solution",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "FindSymbolCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F004",
+      "name": "GoTo Implementation",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "GoToSymbolCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F005",
+      "name": "GoTo Member",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F006",
+      "name": "GoTo Related",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "RelatedSymbolsCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F007",
+      "name": "Highlight Current Line",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F008",
+      "name": "List Methods in File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "ListMethodsCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F009",
+      "name": "Move Scope",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "NextScopeCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F010",
+      "name": "Navigate Back and Forward",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "NavigateBackCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F011",
+      "name": "Open Corresponding File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "CorrespondingFileCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F012",
+      "name": "Open File in Solution",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "OpenFileCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F013",
+      "name": "VA Hashtags",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "HashtagsCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F014",
+      "name": "VA Navigation Bar",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F015",
+      "name": "Access to Refactoring Commands",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "QuickActionsCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F016",
+      "name": "Change Signature",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F017",
+      "name": "Convert Between Pointer and Instance",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F018",
+      "name": "Encapsulate Field",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F019",
+      "name": "Extract Method",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F020",
+      "name": "Introduce Variable",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F021",
+      "name": "Move Implementation to Header File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F022",
+      "name": "Move Implementation to Source File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F023",
+      "name": "Move Method Implementations to Source File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F024",
+      "name": "Move Selection to New File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F025",
+      "name": "Rename",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "RenameCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F026",
+      "name": "Rename Files",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F027",
+      "name": "Simplify Instance Declaration",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F028",
+      "name": "Add Forward Declaration",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F029",
+      "name": "Add Member",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F030",
+      "name": "Add Missing Case Statements",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F031",
+      "name": "Add Similar Member",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F032",
+      "name": "Add Using Directive",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F033",
+      "name": "Add include Directive",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F034",
+      "name": "Add/Remove Braces",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F035",
+      "name": "Create Declaration",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F036",
+      "name": "Create File",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F037",
+      "name": "Create from Usage",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "CreateDeclarationCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F038",
+      "name": "Create Implementation",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F039",
+      "name": "Create Method Implementations",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F040",
+      "name": "Document Method",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F041",
+      "name": "Implement Interface / Virtual Methods",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F042",
+      "name": "Acronyms",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F043",
+      "name": "Auto-Extend Multi-Line Comments",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F044",
+      "name": "Enhanced Listboxes",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F045",
+      "name": "Format After Paste",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F046",
+      "name": "Insert () and Closing Brackets and Quotes",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F047",
+      "name": "Insert _ After m and Shift",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F048",
+      "name": "Multiple Clipboards",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "ClipboardCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F049",
+      "name": "Reset Editor Zoom",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "ResetZoomCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F050",
+      "name": "Shorthand",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F051",
+      "name": "Smart Select",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "SelectExtendCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F052",
+      "name": "Smart Suggestions",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F053",
+      "name": "Sort Selected Lines",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "SortLinesCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "evidence": "SelectedLineSort.cs and SelectedLineSortTests.cs; official EOF/partial selection behavior; VA execution comparison pending"
+    },
+    {
+      "id": "VA-F054",
+      "name": "Suggestion Lists",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F055",
+      "name": "Surround Selection",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F056",
+      "name": "Surround With",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F057",
+      "name": "Column Indicator",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F058",
+      "name": "Context Field",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F059",
+      "name": "Definition Field",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F060",
+      "name": "Enhanced Syntax Coloring",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F061",
+      "name": "Local Symbols in Bold",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F062",
+      "name": "Highlight Find Results",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F063",
+      "name": "Highlight Matching Words",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "FindSelectedCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F064",
+      "name": "Highlight References to Symbol Under Cursor",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F065",
+      "name": "Parameter Info",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F066",
+      "name": "Print in Color",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F067",
+      "name": "Quick Info",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F068",
+      "name": "System Symbols in Italics",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F069",
+      "name": "Convert Dot to ->",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F070",
+      "name": "Highlight Files in Output Window",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F071",
+      "name": "Highlight Matching Braces and Parentheses",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F072",
+      "name": "Highlight Mismatching Braces and Parentheses",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F073",
+      "name": "Repair Case",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F074",
+      "name": "Underline Spelling Errors",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F075",
+      "name": "Underline Unknown Symbols",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F076",
+      "name": "Code Inspection Settings",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F077",
+      "name": "Code Issues in the Editor",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F078",
+      "name": "Quick Fixes in the Editor",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F079",
+      "name": "Quick Fixes in a Tool Window",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F080",
+      "name": "VA Snippets",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "SnippetCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F081",
+      "name": "for Refactoring",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F082",
+      "name": "for Smart Suggestions",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F083",
+      "name": "for Surround With",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F084",
+      "name": "with Shortcuts",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F085",
+      "name": "Create from Selection",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F086",
+      "name": "Environment Placeholders",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "SnippetCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "evidence": "SnippetTemplate.WithEnvironment and SnippetInputTests; process snapshot at extension initialization; actual VA execution comparison pending"
+    },
+    {
+      "id": "VA-F087",
+      "name": "Input Placeholders",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "SnippetCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "evidence": "Default values, shared repeated fields, case-sensitive modifiers and up to eight dialog inputs; in-line prompts pending"
+    },
+    {
+      "id": "VA-F088",
+      "name": "Reserved Strings",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "SnippetCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "evidence": "Date/time/file/project/solution UPPER/LOWER, GUID_STRING/GUID_SYMBOL shared per dialog, selected and on-demand clipboard; full GUID/context/case rules and VA execution pending"
+    },
+    {
+      "id": "VA-F089",
+      "name": "Address Resolver",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F090",
+      "name": "PDB Explorer",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F091",
+      "name": "VA Memory View",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F092",
+      "name": "VA Step Filter",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F093",
+      "name": "VA Outline",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "OutlineCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F094",
+      "name": "VA View",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "WorkspaceCommandId",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F095",
+      "name": "Simple Link Patterns",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F096",
+      "name": "Complex Link Patterns",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F097",
+      "name": "Connect to FogBugz and GitHub",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F098",
+      "name": "Preview Files",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F099",
+      "name": "Open Hyperlinks in an External Browser",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F100",
+      "name": "Custom Plug-ins",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F101",
+      "name": "Context Menus",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F102",
+      "name": "Custom File Extensions",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F103",
+      "name": "Keyboard Shortcuts",
+      "source": "https://www.wholetomato.com/features",
+      "status": "partial",
+      "mappedCommand": "",
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F104",
+      "name": "Mouse",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F105",
+      "name": "Multiple Platforms",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F106",
+      "name": "Non-Microsoft Build Processes",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F107",
+      "name": "Parse Concurrency",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    },
+    {
+      "id": "VA-F108",
+      "name": "Options Dialog",
+      "source": "https://www.wholetomato.com/features",
+      "status": "unverified",
+      "mappedCommand": null,
+      "fullParityPassed": false,
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+    }
+  ]
+}

@@ -52,6 +52,16 @@ namespace CodeAssist.Extension
             this.buffer = buffer;
             this.indexService = indexService;
             buffer.Changed += OnBufferChanged;
+            var weak = new WeakReference(this);
+            Action settings = null;
+            settings = () => {
+                var target = weak.Target as SymbolTypoTagger;
+                if(target == null) {StartupUi.SettingsApplied -= settings;return;}
+                target.cachedSnapshot = null;
+                var snapshot = target.buffer.CurrentSnapshot;
+                target.TagsChanged?.Invoke(target,new SnapshotSpanEventArgs(new SnapshotSpan(snapshot,0,snapshot.Length)));
+            };
+            StartupUi.SettingsApplied += settings;
             indexService.IndexUpdated += OnIndexUpdated;
         }
 
@@ -59,7 +69,7 @@ namespace CodeAssist.Extension
 
         public IEnumerable<ITagSpan<IErrorTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
-            if (spans.Count == 0 || indexService.Index.Count == 0) yield break;
+            if (StartupUi.Preferences.InspectionMode == InspectionMode.Disabled || spans.Count == 0 || indexService.Index.Count == 0) yield break;
             var snapshot = spans[0].Snapshot;
             EnsureParsed(snapshot);
             foreach (var requestedSpan in spans)

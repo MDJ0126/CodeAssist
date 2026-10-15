@@ -1,0 +1,9 @@
+﻿{
+    "UnsupportedLogicalViewRejected":  true,
+    "Version":  "0.0.66",
+    "UnavailableActivityLogDoesNotBreakMapping":  true,
+    "MapResult":  0,
+    "NativeShell":  "Unverified",
+    "PrimaryView":  "Welcome",
+    "UnsupportedPhysicalViewRejected":  true
+}

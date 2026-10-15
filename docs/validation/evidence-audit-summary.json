@@ -1,0 +1,613 @@
+{
+  "observedAtUTC": "2026-10-15T02:05:33.587428+00:00",
+  "scope": "Evidence provenance and integrated-ledger consistency audit only; no VA runtime parity tests",
+  "checks": [
+    {
+      "check": "108 unique feature IDs",
+      "passed": true
+    },
+    {
+      "check": "Documented partial count matches actual rows",
+      "passed": true
+    },
+    {
+      "check": "No unsupported full parity claim",
+      "passed": true
+    },
+    {
+      "check": "Evidence link compilerConfigurationEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link inspectionPipelineEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link installedHelpCatalog",
+      "passed": true
+    },
+    {
+      "check": "Evidence link installedHelpLinks",
+      "passed": true
+    },
+    {
+      "check": "Evidence link generalParserHelpEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link nativeProjectReuseReview",
+      "passed": true
+    },
+    {
+      "check": "Evidence link refactoringGenerationEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link navigationEditVisualEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link installedHelpDefaultEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link keybindingEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link nativeCacheReview",
+      "passed": true
+    },
+    {
+      "check": "Evidence link nativeCacheSaveFlow",
+      "passed": true
+    },
+    {
+      "check": "Evidence link passiveVADataSnapshot",
+      "passed": true
+    },
+    {
+      "check": "Evidence link nativeCacheOpenLoadFlow",
+      "passed": true
+    },
+    {
+      "check": "Evidence link nativeCacheHeaderReset",
+      "passed": true
+    },
+    {
+      "check": "Evidence link nativeCacheParserRules",
+      "passed": true
+    },
+    {
+      "check": "Evidence link evidenceProvenanceAudit",
+      "passed": true
+    },
+    {
+      "check": "Evidence link historicalRuntimeComparison",
+      "passed": true
+    },
+    {
+      "check": "Evidence link vsConfigurationEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link configurationFixtureEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link integratedArchitectureDesign",
+      "passed": true
+    },
+    {
+      "check": "Evidence link installedEditorFeatureEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link sourceLinksEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link wholeScopeDocumentEvidence",
+      "passed": true
+    },
+    {
+      "check": "Evidence link sharedSymbolDatabaseModel",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/Goto/CheckGotoProjectFilter.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/Goto/SelectSymbolOnGoto.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/Hashtags/MinLenOfHashtags.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/ListBoxes/OverwriteTextListbox.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/PerfGeneral/CheckParseAllFilesOnOpen.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/PerfGeneral/CheckWatchFilesExternally.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/PerfGeneral/ComboThreadPriority.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/PerfGeneral/RespectVsCodeExcludedFiles.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/PerfGeneral/UserDataDir.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/ProjectsAndFiles/CheckEnumerateVslangRefs.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/ProjectsAndFiles/CheckParseAllFilesEmptySolution.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/ProjectsAndFiles/CheckParseAllFilesWithSolution.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/ProjectsAndFiles/CheckParseFilesWithoutExtensions.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/UnrealEngine/CheckAllowSnippetsInUnrealMarkup.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/UnrealEngine/CheckColorInsideUnrealMarkup.html",
+      "passed": true
+    },
+    {
+      "check": "Installed help hash OptionsHelp/UnrealEngine/RadioIndexPluginsRef.html",
+      "passed": true
+    },
+    {
+      "check": "Keybinding exact original DLL hash",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000011",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000012",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000013",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000014",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000015",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000016",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000017",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000018",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000019",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600001a",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600001b",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600001c",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600001d",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600001e",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600001f",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000020",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600004c",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600004d",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600004e",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600004f",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000050",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000051",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000052",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000053",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000054",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000055",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000056",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000057",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000058",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000059",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600005a",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600005b",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600005c",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000060",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000061",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000062",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000063",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000064",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000065",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000066",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000067",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000068",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000069",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600006a",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600006b",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600006c",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600006d",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600006e",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600006f",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000070",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000071",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000072",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000073",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000074",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000075",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000076",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000077",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000078",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000079",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600007a",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600007b",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600007c",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600007d",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600007e",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600007f",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000080",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000081",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000082",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000083",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000084",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000085",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000086",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000087",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000088",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000089",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600008a",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600008b",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600008c",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600008d",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600008e",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x0600008f",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000090",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000091",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000092",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000093",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000094",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000095",
+      "passed": true
+    },
+    {
+      "check": "Key reconstruction 0x06000096",
+      "passed": true
+    },
+    {
+      "check": "native-cache-save-flow.json exact original DLL hash",
+      "passed": true
+    },
+    {
+      "check": "native-cache-save-flow.json analysis artifact cache-save-current.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-save-flow.json analysis artifact cache-serialize-current.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-open-load-flow.json exact original DLL hash",
+      "passed": true
+    },
+    {
+      "check": "native-cache-open-load-flow.json analysis artifact cache-writer-current.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-open-load-flow.json analysis artifact cache-open-current.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-open-load-flow.json analysis artifact cache-load-current.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-header-reset.json exact original DLL hash",
+      "passed": true
+    },
+    {
+      "check": "native-cache-header-reset.json analysis artifact cache-header-key.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-header-reset.json analysis artifact cache-reset.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-parser-rules.json exact original DLL hash",
+      "passed": true
+    },
+    {
+      "check": "native-cache-parser-rules.json analysis artifact cache-parser-current.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "native-cache-parser-rules.json analysis artifact cache-number-parser.asm.txt",
+      "passed": true
+    },
+    {
+      "check": "HTML evidence link native-cache-parser-rules.json",
+      "passed": true
+    },
+    {
+      "check": "HTML evidence link rea/keybinding-reconstruction-summary.json",
+      "passed": true
+    },
+    {
+      "check": "HTML evidence link installed-help-defaults.json",
+      "passed": true
+    }
+  ],
+  "passedCount": 149,
+  "failedCount": 0,
+  "featureCount": 108,
+  "documentedPartialCount": 108,
+  "runtimeEvidenceRows": 3,
+  "fullParityCount": 0,
+  "limitations": [
+    "Passing provenance does not prove interpretation correctness or functional equivalence.",
+    "Raw reconstruction remains analyst inference.",
+    "No native provider or UI/runtime comparison executed by this audit."
+  ]
+}
