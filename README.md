@@ -1,12 +1,30 @@
-# CodeAssist for Visual Studio
+<p align="center">
+  <img src="docs/assets/codeassist-logo.png" alt="CodeAssist logo" width="80">
+</p>
+<h1 align="center">CodeAssist</h1>
+<p align="center"><strong>Code insight. Navigation. Completion.</strong></p>
+<p align="center">
+  <a href="https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix">다운로드</a> &middot;
+  <a href="docs/index.html"><strong>사용 안내</strong></a> &middot;
+  <a href="#설치">설치</a> &middot;
+  <a href="LICENSE">MIT License</a>
+</p>
 
-현재 개발 버전: `0.0.49`
+---
 
-**Visual Studio용 범용 개발 보조 확장입니다. 현재 C++와 Unreal 지원을 구현하고 있습니다.** IntelliSense가 준비되는 동안 Unreal 매크로와 의미 색상을 먼저 표시하고, 빠른 정의 탐색을 제공합니다.
+**Visual Studio에서 코드의 의미를 표시하고, 심볼을 찾고, 자동완성 후보를 확인하세요.**
 
-> **CodeAssist는 누구나 무료로 사용할 수 있는 MIT 라이선스 오픈소스 도구입니다.**
+CodeAssist는 Visual Studio 2022용 범용 개발 보조 확장입니다. 현재 C++와 Unreal Engine을 대상으로 의미 색상, 심볼 캐시, 자동완성 후보와 정의·참조 탐색을 구현하고 있습니다.
 
-[![CodeAssist 다운로드](https://img.shields.io/badge/CodeAssist-VSIX%20다운로드-7B68EE?style=for-the-badge&logo=visualstudio)](https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix)
+> 누구나 무료로 사용할 수 있는 MIT 라이선스 오픈소스 도구입니다.
+
+<p align="center">
+  <img src="docs/assets/codeassist-overview.png" alt="CodeAssist 작동 구조: 프로젝트 코드를 심볼 인덱스와 프로젝트·엔진 캐시에 저장하고 Visual Studio의 의미 색상, 자동완성 후보, 정의·참조 탐색에 연결합니다. IntelliSense는 병행하여 타입 분석과 진단을 처리합니다." width="100%">
+</p>
+
+설명 이미지는 작동 구조를 표현한 도식이며 실제 Visual Studio 화면이 아닙니다.
+
+[![CodeAssist 다운로드](https://img.shields.io/badge/CodeAssist-VSIX%20다운로드-1677FF?style=for-the-badge)](https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix)
 
 ## 설치
 
