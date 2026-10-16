@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/codeassist-logo.png" alt="CodeAssist logo" width="80">
+  <img src="docs/assets/codeassist-logo.png" alt="CodeAssist 노란색 바나나 로고" width="80">
 </p>
 <h1 align="center">CodeAssist</h1>
 <p align="center"><strong>Code insight. Navigation. Completion.</strong></p>
@@ -24,7 +24,7 @@ CodeAssist는 Visual Studio 2022용 범용 개발 보조 확장입니다. 현재
 
 설명 이미지는 작동 구조를 표현한 도식이며 실제 Visual Studio 화면이 아닙니다.
 
-[![CodeAssist 다운로드](https://img.shields.io/badge/CodeAssist-VSIX%20다운로드-1677FF?style=for-the-badge)](https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix)
+[![CodeAssist 다운로드](https://img.shields.io/badge/CodeAssist-VSIX%20다운로드-F5C542?style=for-the-badge)](https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix)
 
 ## 설치
 
