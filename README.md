@@ -1,22 +1,20 @@
 <p align="center">
-  <img src="docs/assets/codeassist-logo.png" alt="CodeAssist 노란색 바나나 로고" width="80">
+  <img src="docs/assets/codeassist-logo.png" alt="CodeAssist 노란색 바나나 로고" width="64">
 </p>
 <h1 align="center">CodeAssist</h1>
-<p align="center"><strong>Code insight. Navigation. Completion.</strong></p>
+<p align="center"><strong>코드를 읽고, 심볼을 찾고, 다음 코드를 완성하세요.</strong></p>
 <p align="center">
   <a href="https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix">다운로드</a> &middot;
   <a href="docs/index.html"><strong>사용 안내</strong></a> &middot;
-  <a href="#설치">설치</a> &middot;
+  <a href="docs/feature-details.md">상세 기능</a> &middot;
   <a href="LICENSE">MIT License</a>
 </p>
 
 ---
 
-**Visual Studio에서 코드의 의미를 표시하고, 심볼을 찾고, 자동완성 후보를 확인하세요.**
+**Visual Studio에서 코드의 의미를 확인하고, 필요한 파일과 심볼로 이동하세요.**
 
-CodeAssist는 Visual Studio 2022용 범용 개발 보조 확장입니다. 현재 C++와 Unreal Engine을 대상으로 의미 색상, 심볼 캐시, 자동완성 후보와 정의·참조 탐색을 구현하고 있습니다.
-
-> 누구나 무료로 사용할 수 있는 MIT 라이선스 오픈소스 도구입니다.
+CodeAssist는 Visual Studio 2022용 오픈소스 개발 보조 확장입니다. 현재 **C++와 Unreal Engine**을 대상으로 의미 색상, 자동완성 후보, 파일·심볼 검색과 정의·참조 탐색을 구현하고 있습니다.
 
 <p align="center">
   <img src="docs/assets/codeassist-overview.png" alt="CodeAssist 작동 구조: 프로젝트 코드를 심볼 인덱스와 프로젝트·엔진 캐시에 저장하고 Visual Studio의 의미 색상, 자동완성 후보, 정의·참조 탐색에 연결합니다. IntelliSense는 병행하여 타입 분석과 진단을 처리합니다." width="100%">
@@ -24,106 +22,64 @@ CodeAssist는 Visual Studio 2022용 범용 개발 보조 확장입니다. 현재
 
 설명 이미지는 작동 구조를 표현한 도식이며 실제 Visual Studio 화면이 아닙니다.
 
-[![CodeAssist 다운로드](https://img.shields.io/badge/CodeAssist-VSIX%20다운로드-F5C542?style=for-the-badge)](https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix)
+## 설치 후에는 어떻게 사용하나요?
+
+1. Visual Studio에서 프로젝트를 열고 코드를 편집합니다.
+2. CodeAssist가 프로젝트 심볼을 분석하고 색상과 자동완성 후보를 편집기에 연결합니다.
+3. 단축키로 파일·심볼을 검색하거나 정의·참조 후보로 이동합니다.
+
+프로젝트별 심볼 캐시와 Unreal Engine 설치별 공용 캐시를 저장합니다. 같은 엔진을 사용하는 다른 프로젝트에서는 엔진 캐시를 재사용합니다.
+
+## 어떤 기능이 있나요?
+
+| 기능 | 동작 |
+| --- | --- |
+| 의미 색상 | 클래스·타입·변수·함수와 Unreal 리플렉션 매크로를 구분해 표시합니다. |
+| 자동완성 후보 | 저장된 심볼 인덱스에서 입력 접두사, 소유 타입과 상속 관계에 맞는 후보를 조회합니다. |
+| 파일·심볼 검색 | 파일, 심볼과 현재 파일의 메서드를 검색합니다. |
+| 정의·참조 탐색 | 정의와 참조 후보를 찾고, 대응하는 헤더·소스로 이동합니다. |
+| Unreal 문맥 | 리플렉션 지정자와 include 경로에 맞는 후보를 추천합니다. |
+
+세부 동작과 제한은 [상세 기능](docs/feature-details.md), [사용 안내](docs/index.html)와 [검증 기록](docs/validation/index.html)에서 확인하실 수 있습니다. HTML 안내는 저장소를 내려받은 뒤 브라우저에서 열어 주세요.
 
 ## 설치
 
-1. 위 버튼으로 `CodeAssist.vsix`를 다운로드합니다.
+[**CodeAssist.vsix 다운로드**](https://github.com/MDJ0126/CodeAssist/raw/refs/heads/main/CodeAssist.vsix)
+
+1. 위 링크에서 `CodeAssist.vsix`를 다운로드합니다.
 2. Visual Studio를 모두 종료합니다.
 3. VSIX를 실행하고 Visual Studio 2022에 설치합니다.
+4. Visual Studio를 다시 실행하고 프로젝트를 엽니다.
 
-## 주요 기능
+**무료로 사용할 수 있으며, 별도 구독 없이 MIT 라이선스로 배포합니다.**
 
-- Visual Assist와 같은 주요 탐색 단축키: `Alt+G`, `Shift+Alt+F/S/O/G`, `Alt+O/M`
-- 파일·심볼·현재 파일 메서드 검색 창과 대응 헤더/소스 이동
-- 문서 종료 시 분석 작업 정리와 오래된 수정 결과 차단
-- 문자열·블록 주석을 제외하고 지역 블록을 구분하는 참조 후보 검색
-- 컴파일 구성 변경에 따른 프로젝트 캐시 갱신과 선택형 별도 인덱싱 작업자
+## 자주 사용하는 단축키
 
-사용법, 단축키별 동작 범위와 검증 결과는 [HTML 문서](docs/index.html)를 참고하세요. 브라우저에서 `docs/index.html`을 열면 됩니다.
+| 단축키 | 기능 |
+| --- | --- |
+| `Alt+G` | 빠른 정의 탐색 |
+| `F12` | CodeAssist 정의 탐색 후, 찾지 못하면 Visual Studio 기본 기능 실행 |
+| `Shift+F12` | 참조 후보 검색 후, 찾지 못하면 Visual Studio 기본 참조 찾기 실행 |
+| `Ctrl+Space` | 자동완성 후보 수동 호출 |
 
-- Unreal 프로젝트 자동 감지
-- `UCLASS`, `UPROPERTY`, `GENERATED_BODY`, `<모듈명>_API` 등 Unreal 매크로 즉시 표시
-- 클래스·타입·변수·함수 및 `Super` 의미 색상 즉시 표시
-- VA 2630 설치 설정과 대조한 타입·변수·함수·매크로 기본색
-- IntelliSense 준비 전 초기 오진 밑줄은 숨기고, 준비 후 기본 진단으로 자동 전환
-- 인덱스 심볼과 대소문자가 다른 명확한 오타는 CodeAssist가 즉시 표시
-  - Unreal 타입 형태만 검사하며 주석·문자열은 제외
-  - `UCLASS`, `UPROPERTY`, `UFUNCTION`, `GENERATED_BODY` 등 Unreal 매크로는 타입 오타 검사에서 제외
-  - `asec` 또는 `asec;`처럼 한 줄에 단독으로 작성된 정의되지 않은 식별자는 즉시 오류 표시
-  - 세미콜론으로 끝난 호출문에 닫는 괄호 `)`가 빠진 명확한 구문 오류를 즉시 표시
-  - 닫힌 지역 범위의 변수를 다른 블록에서 다시 사용하면 범위 이탈 오류 표시
-  - 함수 호출에 선언되지 않은 단독 식별자를 인자로 전달하면 미정의 오류 표시
-- 프로젝트 코드는 작은 프로젝트별 캐시로, Unreal API는 엔진 설치별 공용 캐시로 분리
-- 엔진 캐시가 없는 첫 실행에도 주요 Unreal 타입과 함수의 내장 API 스냅샷을 즉시 제공
-- 같은 엔진을 사용하는 다른 프로젝트에서는 기존 Unreal API 캐시를 즉시 재사용
-- 공용 캐시를 먼저 검색하면서 사용 중인 Unreal 모듈은 저점유율 병렬 처리로 백그라운드 최신화
-- Visual Studio 상태 표시줄에서 프로젝트·엔진 API 분석과 캐시 저장 진행 상태 표시
-- 디스크 캐시 기반 자동완성
-  - 식별자 입력 시 자동 표시하며 `.`, `->`, `::` 직후에는 `Ctrl+Space`로 전체 멤버 표시
-  - `Ctrl+Space`로 미리보기를 수동 호출
-  - 현재 메서드의 소유 클래스와 상속 관계를 따라 멤버·함수 반환형 후보 제공
-  - 동일 함수명의 템플릿 오버로드를 구분하고 `TObjectPtr` 등 Unreal 포인터 래퍼의 내부 타입 조회
-  - 멤버 후보를 접두사·부분 일치·문자 순서 연관성으로 정렬
-  - 클래스·함수·변수 및 소유 타입 조회에서 대소문자를 구분하지 않음
-  - Unreal 리플렉션 매크로는 정확한 대문자 이름과 매크로 아이콘으로 최우선 추천
-  - `UPROPERTY`·`UFUNCTION` 내부에서 `VisibleAnywhere`, `BlueprintReadOnly` 등 지정자 문맥 추천
-  - `#include` 문자열에서는 프로젝트·Unreal Engine 헤더 경로만 문맥 추천
-  - 함수 내부의 일반 선언 및 생성자 형식 지역 변수도 프로젝트 인덱스에 포함
-  - IntelliSense가 준비되는 동안 누락된 후보를 CodeAssist 목록으로 우선 표시
-  - IntelliSense 후보가 충분해지면 Visual Studio 기본 목록으로 자연스럽게 전환
-  - Visual Studio 기본 타입·메서드·필드 아이콘과 빠른 접두사 검색 제공
-  - 입력한 문자와 일치하는 후보 부분을 굵게 표시
-  - 미리보기 항목 오른쪽에 `CodeAssist` 출처 표시
-  - 접두사·타입·멤버·정의·반환형·상속 관계를 미리 해시 인덱스로 구성하여 입력 중 즉시 조회
-  - 숫자 리터럴과 초기화 구문에서는 불필요한 미리보기를 자동으로 닫음
-  - 미리보기는 입력 문자를 후보 확정 문자로 소비하지 않음
-  - CodeAssist 후보가 포함된 목록은 다음 글자 입력 전에 안전하게 갱신하여 현재 접두사를 즉시 반영
-  - 선택한 CodeAssist 후보를 `Tab` 또는 `Enter`로 입력
-  - 백스페이스·Delete로 후보가 닫히면 식별자 입력 문맥에서 다시 표시
-  - 대규모 엔진 해시 테이블은 잠금 밖에서 완성한 뒤 원자적으로 교체하여 입력 검색을 차단하지 않음
-- 빠른 정의 탐색
-  - `F12`: CodeAssist 우선, 실패하면 Visual Studio 기본 기능 실행
-  - `Alt+G`: CodeAssist 빠른 탐색
-- 빠른 참조 후보 검색
-  - `Shift+F12`: CodeAssist 우선, 실패하면 Visual Studio 기본 참조 찾기 실행
-  - 결과는 `CodeAssist References` 출력 창에 파일·줄 번호로 표시
-- `도구 → CodeAssist: Status`에서 감지 및 적용 상태 확인
+추가 탐색 단축키와 동작 범위는 [단축키 안내](docs/keyboard-shortcuts.html)를 참고해 주세요.
 
-## 작동 원리
+## Visual Studio IntelliSense와 함께 작동합니다
 
-Visual Studio IntelliSense는 Unreal의 대규모 헤더와 생성 코드를 분석하는 동안 초기 로딩이 느릴 수 있습니다. CodeAssist는 편집 중인 문서를 먼저 가볍게 분석하여 매크로, 타입, 변수와 탐색 정보를 즉시 제공합니다.
+CodeAssist는 편집 중인 코드와 저장된 심볼 인덱스에서 표시·탐색·자동완성 후보를 먼저 구성합니다. Visual Studio IntelliSense는 병행하여 완전한 C++ 타입 추론, 템플릿·조건부 컴파일 분석과 정밀 진단을 처리합니다.
 
-```text
-문서 열기/수정
- ├─ CodeAssist가 즉시 분석 및 표시
- ├─ 로컬 심볼 캐시에서 자동완성·탐색 후보 제공
- └─ Visual Studio IntelliSense는 백그라운드에서 계속 로드
-
-F12
- ├─ CodeAssist가 선언 발견 → 즉시 이동
- └─ 찾지 못함 → Visual Studio 기본 Go To Definition 실행
-```
-
-최초 실행 시 프로젝트 `Source`와 `.Build.cs`에서 확인된 Unreal Runtime 모듈의 `Public/Classes` 헤더를 백그라운드에서 분석합니다. 인덱스는 `%LOCALAPPDATA%\CodeAssist\Indexes`에 저장되며 소스가 변경되지 않았으면 다음 실행부터 즉시 재사용합니다.
-
-CodeAssist는 IntelliSense 전체를 대체하지 않습니다. 자동완성·참조 검색은 빠른 후보를 먼저 제공하며, 완전한 C++ 타입 추론, 템플릿·조건부 컴파일 분석과 정밀 진단은 Visual Studio IntelliSense가 담당합니다.
+참조 검색과 자동완성 결과는 후보이며, 완전한 C++ 의미 분석과 같은 범위로 검증된 것은 아닙니다.
 
 ## 개발
 
-Visual Assist 10.9.2630.0의 정적 역분석 근거, 미확인 사항과 CodeAssist 적용 후보는 [분석 기록](docs/reverse-engineering/va-2630/index.html)에 정리되어 있습니다. 재현 도구는 `tools/VAStaticAnalysis`에 있습니다.
-
-요구 사항:
-
-- Visual Studio 2022
-- Visual Studio 확장 개발 워크로드
-- C++를 사용한 데스크톱 개발 워크로드
-- .NET 8 SDK
+요구 사항은 Visual Studio 2022, Visual Studio 확장 개발 및 C++ 데스크톱 개발 워크로드, .NET 8 SDK입니다.
 
 `CodeAssist.sln`을 열고 `CodeAssist.Extension`을 시작 프로젝트로 설정한 뒤 `F5`를 누르면 실험용 Visual Studio에서 테스트할 수 있습니다. Release 빌드 시 루트의 `CodeAssist.vsix`가 갱신됩니다.
 
+Visual Assist 10.9.2630.0의 분석 근거와 미확인 사항은 [분석 기록](docs/reverse-engineering/va-2630/index.html)에 있습니다. 일부 기능 구현을 Visual Assist 전체와의 동등성 검증으로 간주하지 않습니다.
+
 ## 라이선스
 
-[MIT License](./LICENSE)
+[MIT License](LICENSE)
 
 CodeAssist는 독립 프로젝트이며 Microsoft 또는 Epic Games와 제휴하거나 공식 승인을 받은 제품이 아닙니다.
