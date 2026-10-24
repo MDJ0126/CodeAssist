@@ -5,7 +5,7 @@
   "denominator": 108,
   "completeParity": 0,
   "verifiedParityPercent": 0,
-  "partialMappings": 26,
+  "partialMappings": 38,
   "limitations": [
     "Not every option or key combination is an independent feature row.",
     "Installed 2630 availability not yet confirmed for every official feature.",
@@ -17,10 +17,21 @@
       "id": "VA-F001",
       "name": "Find by Context",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "활성 파일 문맥 참조 이동; 전체 의미 분석 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/ContextReferenceNavigation.cs",
+          "sha256": "e4a03286004e1b0da0f2c6d5fef362274604fea892c9804bace3bb248eb6b22d"
+        },
+        {
+          "path": "CodeAssist.Extension/ToolbarCommands.cs",
+          "sha256": "4fe8b3e82485b4878fc3ee23bb00cfba76f5e99592d80c7763d7b46f9d55b1b2"
+        }
+      ]
     },
     {
       "id": "VA-F002",
@@ -134,10 +145,17 @@
       "id": "VA-F014",
       "name": "VA Navigation Bar",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "경로와 메서드 탐색; Context/Definition 필드 전체 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ContextBar.cs",
+          "sha256": "13ecac8b44b7cba39971c5962e6cc1a50f776d9664945af890fddd9d90448127"
+        }
+      ]
     },
     {
       "id": "VA-F015",
@@ -395,37 +413,77 @@
       "id": "VA-F043",
       "name": "Auto-Extend Multi-Line Comments",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "주석 이어쓰기; 원본 비교 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/CppEditing.cs",
+          "sha256": "73d6f515617e9f2e2b942d85ce1a5b291c0ed5c330d1c46eb403fa2457e42a12"
+        },
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ]
     },
     {
       "id": "VA-F044",
       "name": "Enhanced Listboxes",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "추천 색상·자체 아이콘·VS 기본색 복원; 원본 필터/UI 전체 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionColorProvider.cs",
+          "sha256": "b3356fd5d9575441575f959a414551a06aa6984b8278cbafc95e33140f917f37"
+        },
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "97823592cb6163b14294739f486cb18daff7e29639d99edcd4ef7283ed8ab052"
+        }
+      ]
     },
     {
       "id": "VA-F045",
       "name": "Format After Paste",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "다중 줄 붙여넣기 후 VS 선택 서식 명령; 별도 Undo 가능",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ]
     },
     {
       "id": "VA-F046",
       "name": "Insert () and Closing Brackets and Quotes",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "괄호·따옴표·중괄호 위치·함수 괄호; 원본 비교 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/CppPairing.cs",
+          "sha256": "e7ea920f226632b3531913e96a37fcd6a3547142f538e8018ab0e2d2feede1f8"
+        },
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ]
     },
     {
       "id": "VA-F047",
@@ -504,10 +562,21 @@
       "id": "VA-F055",
       "name": "Surround Selection",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "/, *, (, { 감싸기; #·Snippet 문자 토글 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/CppEditing.cs",
+          "sha256": "73d6f515617e9f2e2b942d85ce1a5b291c0ed5c330d1c46eb403fa2457e42a12"
+        },
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ]
     },
     {
       "id": "VA-F056",
@@ -612,10 +681,17 @@
       "id": "VA-F067",
       "name": "Quick Info",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "인덱스 후보 툴팁; 컴파일러 문맥 선택 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SymbolQuickInfo.cs",
+          "sha256": "d27f1ab0e8a7f2726101aca55214ab143f913ca3a6d6e24818717a28fcd61126"
+        }
+      ]
     },
     {
       "id": "VA-F068",
@@ -684,28 +760,57 @@
       "id": "VA-F075",
       "name": "Underline Unknown Symbols",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "제한된 식별자 밑줄; 전체 언어 해석 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SymbolTypoTagger.cs",
+          "sha256": "599169f237288a428978bee4c72a60effe560c30564e983d36c71b54fb5d26a3"
+        }
+      ]
     },
     {
       "id": "VA-F076",
       "name": "Code Inspection Settings",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "끄기·파일·프로젝트 검사; 전체 checker set 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProductOptions.cs",
+          "sha256": "83a23a512ec05e58bf8ef1921c62d12cf96618405b746071a5b1dc494752fd49"
+        },
+        {
+          "path": "CodeAssist.Extension/ProjectInspection.cs",
+          "sha256": "f09b6af26f7c07c918b1effb99198c88b44826d3fba729bd658b4905a110d7f2"
+        }
+      ]
     },
     {
       "id": "VA-F077",
       "name": "Code Issues in the Editor",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "기본 구문·스코프 후보 진단; 원본 검사 엔진 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SymbolTypoTagger.cs",
+          "sha256": "599169f237288a428978bee4c72a60effe560c30564e983d36c71b54fb5d26a3"
+        },
+        {
+          "path": "CodeAssist.Extension/ProjectInspection.cs",
+          "sha256": "f09b6af26f7c07c918b1effb99198c88b44826d3fba729bd658b4905a110d7f2"
+        }
+      ]
     },
     {
       "id": "VA-F078",
@@ -984,10 +1089,21 @@
       "id": "VA-F108",
       "name": "Options Dialog",
       "source": "https://www.wholetomato.com/features",
-      "status": "unverified",
+      "status": "partial",
       "mappedCommand": null,
       "fullParityPassed": false,
-      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation"
+      "versionScope": "Current official catalog; presence and semantics in installed 2630 require confirmation",
+      "implementationScope": "작동하는 옵션·한영 테이블; 전체 범주와 기본값 미완료",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProductOptions.cs",
+          "sha256": "83a23a512ec05e58bf8ef1921c62d12cf96618405b746071a5b1dc494752fd49"
+        },
+        {
+          "path": "CodeAssist.Core/Localization/ui.xml",
+          "sha256": "5691afcf2369313a2970d2aedd3545e74700822474472384c0990a343b243bdd"
+        }
+      ]
     }
   ]
 }

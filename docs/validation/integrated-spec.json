@@ -2,7 +2,7 @@
   "scope": "VA 2630 full reconstruction specification, incomplete analysis; product changes gated until integrated specification is sufficiently evidenced",
   "baselineDenominator": 108,
   "fullParityCount": 0,
-  "partialImplementationCount": 26,
+  "partialImplementationCount": 108,
   "completeAnalysisCount": 0,
   "documentedPartialCount": 108,
   "features": [
@@ -10,7 +10,7 @@
       "id": "VA-F001",
       "name": "Find by Context",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -42,7 +42,18 @@
       "unknowns": [
         "설치 2630의 실제 동작·옵션 초기값·UI·키 충돌 미확인",
         "native 구현·취소·성능·언어별 경계 사례 미확인"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/ContextReferenceNavigation.cs",
+          "sha256": "e4a03286004e1b0da0f2c6d5fef362274604fea892c9804bace3bb248eb6b22d"
+        },
+        {
+          "path": "CodeAssist.Extension/ToolbarCommands.cs",
+          "sha256": "4fe8b3e82485b4878fc3ee23bb00cfba76f5e99592d80c7763d7b46f9d55b1b2"
+        }
+      ],
+      "implementationScope": "활성 파일 문맥 참조 이동; 전체 의미 분석 미완료"
     },
     {
       "id": "VA-F002",
@@ -187,7 +198,7 @@
       "id": "VA-F005",
       "name": "GoTo Member",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -218,7 +229,15 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "인덱스 기반 멤버 선택·이동; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F006",
@@ -270,7 +289,7 @@
       "id": "VA-F007",
       "name": "Highlight Current Line",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -327,7 +346,15 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "implementationScope": "VS 현재 줄 강조 옵션 연결; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorGuides.cs",
+          "sha256": "0002d2ea789cfb07f69545a575bea731391dacba5bc3280279478c9bb0cb6c3b"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F008",
@@ -619,7 +646,7 @@
       "id": "VA-F014",
       "name": "VA Navigation Bar",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -651,7 +678,14 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ContextBar.cs",
+          "sha256": "13ecac8b44b7cba39971c5962e6cc1a50f776d9664945af890fddd9d90448127"
+        }
+      ],
+      "implementationScope": "경로와 메서드 탐색; Context/Definition 필드 전체 미완료"
     },
     {
       "id": "VA-F015",
@@ -693,7 +727,7 @@
       "id": "VA-F016",
       "name": "Change Signature",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -732,13 +766,21 @@
         "2630 실제 overload 가용성 및 ambiguity 판정",
         "호출부 인수 대응·매크로·상속·템플릿 처리",
         "정확한 다중 파일 Undo·UI·locale·서식"
+      ],
+      "implementationScope": "컴파일러가 찾은 선언·정의·호출부의 매개변수 순서 재배치; 인수 추가·삭제·타입 변경과 함수 포인터·생략 기본 인수 미지원; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SemanticRefactoringCommands.cs",
+          "sha256": "56ea1d4ceb93d664425167d1beae6808a3ac9acb460530e8616b6bac42938633"
+        }
       ]
     },
     {
       "id": "VA-F017",
       "name": "Convert Between Pointer and Instance",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -773,13 +815,21 @@
       "unknowns": [
         "2630 lifetime·custom template·복합 참조 적용 규칙",
         "후보 판정·smart pointer 서식·Undo"
+      ],
+      "implementationScope": "지역 변수의 멤버 접근 전용 포인터↔인스턴스 변환; 주소 유출·delete·포인터 연산 거부; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "ee1698ca4d7c90b2b0074fb6597c07d40c93a3163f7288f6fcf00174a08fa8de"
+        }
       ]
     },
     {
       "id": "VA-F018",
       "name": "Encapsulate Field",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -817,13 +867,21 @@
         "2630 명명 규칙·복합 increment/decrement 처리",
         "배열·참조반환·template·visibility 레이아웃",
         "커서·Undo·정확한 서식"
+      ],
+      "implementationScope": "선택 필드 private 처리 및 getter/setter 생성; 외부 참조 치환 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F019",
       "name": "Extract Method",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -859,13 +917,21 @@
         "탈출·return·goto·예외·템플릿 문맥",
         "설정 기반 생성 위치·주석·서식·수정자",
         "2630의 부작용과 type inference 상세"
+      ],
+      "implementationScope": "전역 void 함수로 선택 문장 추출; 입력·출력 매개변수는 사용자 지정, 클래스·템플릿·제어 이전 제외; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "ee1698ca4d7c90b2b0074fb6597c07d40c93a3163f7288f6fcf00174a08fa8de"
+        }
       ]
     },
     {
       "id": "VA-F020",
       "name": "Introduce Variable",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -902,13 +968,21 @@
         "표현식 동등성·type inference·부작용 처리",
         "scope 중첩·macro·brace 설정",
         "2630 기본 이름과 서식"
-      ]
+      ],
+      "implementationScope": "clangd 변수 추출 변경 미리보기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerActions.cs",
+          "sha256": "7628bea9a7d96f2782db4618952f2c36eba27755b8e1923a3e54242600913e8d"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F021",
       "name": "Move Implementation to Header File",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -940,13 +1014,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "clangd 소스→헤더 구현 이동 미리보기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerActions.cs",
+          "sha256": "7628bea9a7d96f2782db4618952f2c36eba27755b8e1923a3e54242600913e8d"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F022",
       "name": "Move Implementation to Source File",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -978,13 +1060,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "clangd 헤더→소스 구현 이동 미리보기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerActions.cs",
+          "sha256": "7628bea9a7d96f2782db4618952f2c36eba27755b8e1923a3e54242600913e8d"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F023",
       "name": "Move Method Implementations to Source File",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1015,13 +1105,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "clangd out-of-line 수정을 메모리에서 순차 합성 후 일괄 미리보기; 기존 대응 파일 필요, 200회·30초 한도; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SemanticRefactoringCommands.cs",
+          "sha256": "56ea1d4ceb93d664425167d1beae6808a3ac9acb460530e8616b6bac42938633"
+        }
       ]
     },
     {
       "id": "VA-F024",
       "name": "Move Selection to New File",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1052,7 +1150,15 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "선택 텍스트 새 파일 이동; include·프로젝트 추가 자동화 없음; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F025",
@@ -1098,7 +1204,7 @@
       "id": "VA-F026",
       "name": "Rename Files",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1130,13 +1236,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "프로젝트 항목 이름 변경; include 갱신 없음; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F027",
       "name": "Simplify Instance Declaration",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1166,13 +1280,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "동일 타입 생성자 재초기화 단순화; 지원 문법 제한; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F028",
       "name": "Add Forward Declaration",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1205,13 +1327,21 @@
       "unknowns": [
         "2630 namespace/template/enum·insertion heuristic",
         "이미 선언된 symbol과 가용성"
-      ]
+      ],
+      "implementationScope": "명시적으로 입력한 클래스·구조체 전방 선언; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F029",
       "name": "Add Member",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1242,13 +1372,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "현재 줄에 사용자 지정 멤버 선언 추가; 클래스 자동 탐색 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F030",
       "name": "Add Missing Case Statements",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1279,13 +1417,21 @@
       "unknowns": [
         "2630 삽입 순서·본문·default·중복 값·scoped enum",
         "nested switch 구분과 가용성"
+      ],
+      "implementationScope": "선택 switch와 사용자가 입력한 scoped enum에서 누락 case 추가; 복합 enum 표현식 제한; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F031",
       "name": "Add Similar Member",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1316,13 +1462,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "선택 선언 복제 및 멤버명 교체; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F032",
       "name": "Add Using Directive",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1353,13 +1507,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "현재 줄에 using namespace 지시문 추가; 참조 축약 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F033",
       "name": "Add include Directive",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1397,13 +1559,21 @@
         "2630 후보 순위·umbrella 예외 목록",
         "generated Unreal header 정렬 및 조건부/다중 include 구분",
         "외부 SDK·compile configuration별 가용성"
-      ]
+      ],
+      "implementationScope": "중복 방지 include 추가; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F034",
       "name": "Add/Remove Braces",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1435,13 +1605,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "선택 문장 괄호 추가; 단일 함수 호출 문장만 제거 허용; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F035",
       "name": "Create Declaration",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1474,13 +1652,21 @@
       "unknowns": [
         "2630 파일/위치 선정·template·qualifier",
         "forward declaration/중복 선언 가용성·Undo"
+      ],
+      "implementationScope": "선택 정의의 선언 생성·삽입; 헤더 자동 선택 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F036",
       "name": "Create File",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1512,7 +1698,15 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "새 파일 생성·열기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F037",
@@ -1561,7 +1755,7 @@
       "id": "VA-F038",
       "name": "Create Implementation",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1595,13 +1789,21 @@
       "unknowns": [
         "2630 정확한 기본 본문/템플릿/선택 유지",
         "파일 배치·정적 멤버 header-only 판단"
+      ],
+      "implementationScope": "선택 선언에서 파일 끝에 구현 틀 생성; throw 미구현 본문; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F039",
       "name": "Create Method Implementations",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1632,13 +1834,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
+      ],
+      "implementationScope": "선택한 여러 선언의 구현 틀 생성; 지원 문법 제한; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F040",
       "name": "Document Method",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1669,13 +1879,21 @@
       "unknowns": [
         "Current official documentation may differ from2630; installed availability and output need comparison",
         "Native algorithm·factory options·UI·key routing·Undo/performance not fully verified"
-      ]
+      ],
+      "implementationScope": "메서드 Doxygen 주석 생성; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F041",
       "name": "Implement Interface / Virtual Methods",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1712,13 +1930,21 @@
         "인터페이스 자동 전체 적용과 pure-virtual 선택창의 정확한 조건",
         "중복 signature·diamond 상속·template 처리",
         "2630 키워드 기본값·후보 가시성"
+      ],
+      "implementationScope": "사용자가 입력한 가상 선언의 override 구현 틀 삽입; 기저 클래스 자동 열거 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "65ca344e4db416b7f5f9029a1a4c59b867053ec5db9486c2c5c0e359fa3edb39"
+        }
       ]
     },
     {
       "id": "VA-F042",
       "name": "Acronyms",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1747,13 +1973,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "머리글자 약어 추천 후보; IDE 필터 통과 미검증; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "dd54f989fce9cf7cf85818c8976f35c3c07342fd7cb5cd23d65cab36cda48cf6"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F043",
       "name": "Auto-Extend Multi-Line Comments",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1789,13 +2023,24 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/CppEditing.cs",
+          "sha256": "73d6f515617e9f2e2b942d85ce1a5b291c0ed5c330d1c46eb403fa2457e42a12"
+        },
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ],
+      "implementationScope": "주석 이어쓰기; 원본 비교 미완료"
     },
     {
       "id": "VA-F044",
       "name": "Enhanced Listboxes",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1832,13 +2077,24 @@
       "unknowns": [
         "설치 2630의 실제 동작·옵션 초기값·UI·키 충돌 미확인",
         "native 구현·취소·성능·언어별 경계 사례 미확인"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionColorProvider.cs",
+          "sha256": "b3356fd5d9575441575f959a414551a06aa6984b8278cbafc95e33140f917f37"
+        },
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "97823592cb6163b14294739f486cb18daff7e29639d99edcd4ef7283ed8ab052"
+        }
+      ],
+      "implementationScope": "추천 색상·자체 아이콘·VS 기본색 복원; 원본 필터/UI 전체 미완료"
     },
     {
       "id": "VA-F045",
       "name": "Format After Paste",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1875,13 +2131,20 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ],
+      "implementationScope": "다중 줄 붙여넣기 후 VS 선택 서식 명령; 별도 Undo 가능"
     },
     {
       "id": "VA-F046",
       "name": "Insert () and Closing Brackets and Quotes",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1931,13 +2194,24 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/CppPairing.cs",
+          "sha256": "e7ea920f226632b3531913e96a37fcd6a3547142f538e8018ab0e2d2feede1f8"
+        },
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ],
+      "implementationScope": "괄호·따옴표·중괄호 위치·함수 괄호; 원본 비교 미완료"
     },
     {
       "id": "VA-F047",
       "name": "Insert _ After m and Shift",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -1973,6 +2247,14 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "m 다음 짧은 Shift 입력으로 밑줄 추가; 옵션 기본 꺼짐; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "b0f9c299b621f31abeba8584b052eb7fc32e888008a164242f73957346ba5086"
+        }
       ]
     },
     {
@@ -2073,7 +2355,7 @@
       "id": "VA-F050",
       "name": "Shorthand",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2102,7 +2384,15 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "축약어 추천 후보; IDE 필터 통과 미검증; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "dd54f989fce9cf7cf85818c8976f35c3c07342fd7cb5cd23d65cab36cda48cf6"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F051",
@@ -2160,7 +2450,7 @@
       "id": "VA-F052",
       "name": "Smart Suggestions",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2189,6 +2479,14 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "bool·포인터 선언의 예상 타입 리터럴 추천; 전체 문맥 추천 아님; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "26465bfd62c534daa23e5edf16a12a026a8759acb4a14a5fc49ec5a1de616f9c"
+        }
       ]
     },
     {
@@ -2228,7 +2526,7 @@
       "id": "VA-F054",
       "name": "Suggestion Lists",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2258,13 +2556,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "추천 목록 사용 토글 및 C++·스니펫·컴파일러 후보 연결; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "26465bfd62c534daa23e5edf16a12a026a8759acb4a14a5fc49ec5a1de616f9c"
+        }
       ]
     },
     {
       "id": "VA-F055",
       "name": "Surround Selection",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2318,13 +2624,24 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Core/CppEditing.cs",
+          "sha256": "73d6f515617e9f2e2b942d85ce1a5b291c0ed5c330d1c46eb403fa2457e42a12"
+        },
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "42cc6aaf4689a3c15637d2beca79fa11557927c819c81daabe869eab0f1ff801"
+        }
+      ],
+      "implementationScope": "/, *, (, { 감싸기; #·Snippet 문자 토글 미완료"
     },
     {
       "id": "VA-F056",
       "name": "Surround With",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2353,13 +2670,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "선택 영역 스니펫 감싸기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SnippetInsertion.cs",
+          "sha256": "dcc372eeff88e09d803e7a707f34ed0ef247aef2e48e1804748115ab3fe6295a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F057",
       "name": "Column Indicator",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2388,13 +2713,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "설정 가능한 컬럼 기준선; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorGuides.cs",
+          "sha256": "0002d2ea789cfb07f69545a575bea731391dacba5bc3280279478c9bb0cb6c3b"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F058",
       "name": "Context Field",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2423,13 +2756,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "지연 갱신 소유 타입 문맥 필드; 전체 VA 문맥 UI와 다름; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ContextBar.cs",
+          "sha256": "7653804f493a1a31615cb33f6ccbfc8791dc8fe129e488acb34b28d44670e85d"
+        }
       ]
     },
     {
       "id": "VA-F059",
       "name": "Definition Field",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2458,6 +2799,14 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "커서 단어의 인덱스 서명 표시; 오버로드 의미 선택 미구현; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ContextBar.cs",
+          "sha256": "7653804f493a1a31615cb33f6ccbfc8791dc8fe129e488acb34b28d44670e85d"
+        }
       ]
     },
     {
@@ -2506,7 +2855,7 @@
       "id": "VA-F061",
       "name": "Local Symbols in Bold",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2535,13 +2884,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "렉시컬 지역 변수 식별자를 굵게 표시; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CppSemanticClassifier.cs",
+          "sha256": "e85e7a3865778ce8272e0137478d387f34a0bc89bcbf81722700c7fe25f71a2e"
+        }
       ]
     },
     {
       "id": "VA-F062",
       "name": "Highlight Find Results",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2577,6 +2934,14 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "검색 결과 버퍼에서 VS FindWhat 리터럴 강조; 정규식 검색·정확한 콘텐츠 타입 동작 미검증; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ResultHighlighting.cs",
+          "sha256": "da12e58b1d8b1953c74936ddf47464c979fd5b95691eb03a49938e434fc990fa"
+        }
       ]
     },
     {
@@ -2627,7 +2992,7 @@
       "id": "VA-F064",
       "name": "Highlight References to Symbol Under Cursor",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2661,13 +3026,21 @@
       "unknowns": [
         "설치 2630의 실제 동작·옵션 초기값·UI·키 충돌 미확인",
         "native 구현·취소·성능·언어별 경계 사례 미확인"
+      ],
+      "implementationScope": "지연·단일 작업·캐시를 적용한 커서 심볼 렉시컬 참조 강조; 컴파일러 동등성 미검증; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ReferenceHighlighting.cs",
+          "sha256": "aae4db6002c047d4c427a0ff6a51d6295b36bf20f86cb83e9c749533ef2cee4a"
+        }
       ]
     },
     {
       "id": "VA-F065",
       "name": "Parameter Info",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2696,13 +3069,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "컴파일러 signatureHelp 결과 및 현재 인수 번호 표시; 타이핑 자동 팝업 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/UtilityCommands.cs",
+          "sha256": "92f608c308104f76b2aea8d06392b9cd98a2c1716809b06de2c38ee15f2ab9d4"
+        }
       ]
     },
     {
       "id": "VA-F066",
       "name": "Print in Color",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2731,13 +3112,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "CodeAssist 분류색을 이용한 사용자 확인 후 컬러 인쇄; 주석·문자열 전체 VS 색상 재현 아님; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/UtilityCommands.cs",
+          "sha256": "92f608c308104f76b2aea8d06392b9cd98a2c1716809b06de2c38ee15f2ab9d4"
+        }
       ]
     },
     {
       "id": "VA-F067",
       "name": "Quick Info",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2766,13 +3155,20 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SymbolQuickInfo.cs",
+          "sha256": "d27f1ab0e8a7f2726101aca55214ab143f913ca3a6d6e24818717a28fcd61126"
+        }
+      ],
+      "implementationScope": "인덱스 후보 툴팁; 컴파일러 문맥 선택 미완료"
     },
     {
       "id": "VA-F068",
       "name": "System Symbols in Italics",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2801,13 +3197,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "외부 SDK·엔진 경로 심볼 기울임; SDK 경로 휴리스틱; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CppSemanticClassifier.cs",
+          "sha256": "e85e7a3865778ce8272e0137478d387f34a0bc89bcbf81722700c7fe25f71a2e"
+        }
       ]
     },
     {
       "id": "VA-F069",
       "name": "Convert Dot to ->",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2848,13 +3252,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "확정 포인터 타입에서 점 입력을 화살표로 변환; 오버로드 operator-> 제외; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "b0f9c299b621f31abeba8584b052eb7fc32e888008a164242f73957346ba5086"
+        }
       ]
     },
     {
       "id": "VA-F070",
       "name": "Highlight Files in Output Window",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2890,13 +3302,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "출력·검색 버퍼의 C/C++ 파일 경로 분류색; 클릭 탐색은 VS 제공; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ResultHighlighting.cs",
+          "sha256": "da12e58b1d8b1953c74936ddf47464c979fd5b95691eb03a49938e434fc990fa"
+        }
       ]
     },
     {
       "id": "VA-F071",
       "name": "Highlight Matching Braces and Parentheses",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2932,13 +3352,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "implementationScope": "문자열·주석 제외 괄호 짝 강조; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorGuides.cs",
+          "sha256": "0002d2ea789cfb07f69545a575bea731391dacba5bc3280279478c9bb0cb6c3b"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F072",
       "name": "Highlight Mismatching Braces and Parentheses",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -2974,13 +3402,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "implementationScope": "불일치·미닫힘 괄호 강조; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorGuides.cs",
+          "sha256": "0002d2ea789cfb07f69545a575bea731391dacba5bc3280279478c9bb0cb6c3b"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F073",
       "name": "Repair Case",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3017,13 +3453,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "인덱스 기반 타입명 대소문자 교정; 지역 변수 교정 제외; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompletionCommandFilter.cs",
+          "sha256": "b0f9c299b621f31abeba8584b052eb7fc32e888008a164242f73957346ba5086"
+        }
       ]
     },
     {
       "id": "VA-F074",
       "name": "Underline Spelling Errors",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3059,13 +3503,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "WPF 사전 기반 주석·문자열 소문자 단어 밑줄; OS 사전 유무·IDE 실행 미검증; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SpellingTagger.cs",
+          "sha256": "e662d1c28094b2838c61825a0abd49584004d7ea9e27fc94fcf48cb1e8c5890a"
+        }
       ]
     },
     {
       "id": "VA-F075",
       "name": "Underline Unknown Symbols",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3101,13 +3553,20 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SymbolTypoTagger.cs",
+          "sha256": "599169f237288a428978bee4c72a60effe560c30564e983d36c71b54fb5d26a3"
+        }
+      ],
+      "implementationScope": "제한된 식별자 밑줄; 전체 언어 해석 미완료"
     },
     {
       "id": "VA-F076",
       "name": "Code Inspection Settings",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3136,13 +3595,24 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProductOptions.cs",
+          "sha256": "83a23a512ec05e58bf8ef1921c62d12cf96618405b746071a5b1dc494752fd49"
+        },
+        {
+          "path": "CodeAssist.Extension/ProjectInspection.cs",
+          "sha256": "f09b6af26f7c07c918b1effb99198c88b44826d3fba729bd658b4905a110d7f2"
+        }
+      ],
+      "implementationScope": "끄기·파일·프로젝트 검사; 전체 checker set 미완료"
     },
     {
       "id": "VA-F077",
       "name": "Code Issues in the Editor",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3171,13 +3641,24 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SymbolTypoTagger.cs",
+          "sha256": "599169f237288a428978bee4c72a60effe560c30564e983d36c71b54fb5d26a3"
+        },
+        {
+          "path": "CodeAssist.Extension/ProjectInspection.cs",
+          "sha256": "f09b6af26f7c07c918b1effb99198c88b44826d3fba729bd658b4905a110d7f2"
+        }
+      ],
+      "implementationScope": "기본 구문·스코프 후보 진단; 원본 검사 엔진 미완료"
     },
     {
       "id": "VA-F078",
       "name": "Quick Fixes in the Editor",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3206,13 +3687,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "커서·선택 범위의 clangd quickfix 선택과 미리보기; 자체 전구 UI 미구현; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerActions.cs",
+          "sha256": "50317d6c73d23a75502976c5c1bf6810a7c223cb6fedc3fdd767986cac1cbbae"
+        }
       ]
     },
     {
       "id": "VA-F079",
       "name": "Quick Fixes in a Tool Window",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3241,6 +3730,14 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "도구 창에서 clangd quickfix 선택·미리보기·적용; 프로젝트 전체 수정 목록 아님; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerActions.cs",
+          "sha256": "50317d6c73d23a75502976c5c1bf6810a7c223cb6fedc3fdd767986cac1cbbae"
+        }
       ]
     },
     {
@@ -3282,7 +3779,7 @@
       "id": "VA-F081",
       "name": "for Refactoring",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3311,13 +3808,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "메서드 구현 생성의 사용자 본문 템플릿과 예약 변수; 모든 리팩터링 템플릿 아님; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/RefactoringCommands.cs",
+          "sha256": "ee1698ca4d7c90b2b0074fb6597c07d40c93a3163f7288f6fcf00174a08fa8de"
+        }
       ]
     },
     {
       "id": "VA-F082",
       "name": "for Smart Suggestions",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3346,13 +3851,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "기본·프로젝트 스니펫 추천과 Tab·Enter·마우스 커밋 연결; 실제 IDE 입력 검증 미완료; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CodeAssistCompletionSource.cs",
+          "sha256": "26465bfd62c534daa23e5edf16a12a026a8759acb4a14a5fc49ec5a1de616f9c"
+        }
       ]
     },
     {
       "id": "VA-F083",
       "name": "for Surround With",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3381,13 +3894,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "selected 템플릿만 필터해 감싸기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SnippetInsertion.cs",
+          "sha256": "dcc372eeff88e09d803e7a707f34ed0ef247aef2e48e1804748115ab3fe6295a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F084",
       "name": "with Shortcuts",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3416,13 +3937,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "단축어+Tab 확장; 추천 목록 활성 중에는 기존 처리 우선; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/SnippetInsertion.cs",
+          "sha256": "dcc372eeff88e09d803e7a707f34ed0ef247aef2e48e1804748115ab3fe6295a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F085",
       "name": "Create from Selection",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3451,7 +3980,15 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "선택 영역 스니펫 저장; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F086",
@@ -3558,7 +4095,7 @@
       "id": "VA-F089",
       "name": "Address Resolver",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3588,13 +4125,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "LLVM symbolizer를 이용한 바이너리 RVA 해석; 절대 주소·런타임 모듈 자동 매핑 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/UtilityCommands.cs",
+          "sha256": "92f608c308104f76b2aea8d06392b9cd98a2c1716809b06de2c38ee15f2ab9d4"
+        }
       ]
     },
     {
       "id": "VA-F090",
       "name": "PDB Explorer",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3623,13 +4168,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "LLVM pdbutil publics/globals 결과 열람; 형식 트리·전체 PDB 옵션 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/UtilityCommands.cs",
+          "sha256": "92f608c308104f76b2aea8d06392b9cd98a2c1716809b06de2c38ee15f2ab9d4"
+        }
       ]
     },
     {
       "id": "VA-F091",
       "name": "VA Memory View",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3665,13 +4218,21 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "중단 모드에서 명시 주소의 64바이트 디버거 표현식 읽기; 라이브 실행 미검증; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/UtilityCommands.cs",
+          "sha256": "92f608c308104f76b2aea8d06392b9cd98a2c1716809b06de2c38ee15f2ab9d4"
+        }
       ]
     },
     {
       "id": "VA-F092",
       "name": "VA Step Filter",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3717,6 +4278,14 @@
       "unknowns": [
         "Actual control/registry binding and factory default unverified",
         "Original runtime, key routing, Undo grouping and version/language edges unverified"
+      ],
+      "implementationScope": "함수 wildcard 기반 step 이벤트의 최대 20회 step-out; 중단점 이벤트 제외, 실제 디버깅 검증 미완료; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ToolbarCommands.cs",
+          "sha256": "bd3172091fd99e28eeda3466d6fab16f9f7c3ef470ba1b610100aa68c90bdb51"
+        }
       ]
     },
     {
@@ -3795,7 +4364,7 @@
       "id": "VA-F095",
       "name": "Simple Link Patterns",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3828,13 +4397,21 @@
       "unknowns": [
         "실제2630 UI·factory설정·원본 실행 비교 미실행",
         "미해결 decompiler 타입·regex group 의미·plugin lifecycle 추가 확인 필요"
-      ]
+      ],
+      "implementationScope": "단순 소스 링크 규칙과 커서 위치 열기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F096",
       "name": "Complex Link Patterns",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3868,13 +4445,21 @@
       "unknowns": [
         "실제2630 UI·factory설정·원본 실행 비교 미실행",
         "미해결 decompiler 타입·regex group 의미·plugin lifecycle 추가 확인 필요"
-      ]
+      ],
+      "implementationScope": "정규식·이름 있는 캡처·타임아웃 소스 링크; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F097",
       "name": "Connect to FogBugz and GitHub",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3903,13 +4488,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "GitHub·FogBugz URL 규칙 예제; 서비스 API 연동 없음; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProductOptions.cs",
+          "sha256": "414b75c3179e03f4a602775ccf2b90fc34e5625f2b8cd28596f7a88d2badae9c"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F098",
       "name": "Preview Files",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3938,13 +4531,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "2 MiB 이하 파일의 읽기 전용 색상 미리보기 도구 창; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/UtilityCommands.cs",
+          "sha256": "92f608c308104f76b2aea8d06392b9cd98a2c1716809b06de2c38ee15f2ab9d4"
+        }
       ]
     },
     {
       "id": "VA-F099",
       "name": "Open Hyperlinks in an External Browser",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -3977,13 +4578,21 @@
       "unknowns": [
         "실제2630 UI·factory설정·원본 실행 비교 미실행",
         "미해결 decompiler 타입·regex group 의미·plugin lifecycle 추가 확인 필요"
-      ]
+      ],
+      "implementationScope": "http·https 링크 외부 열기; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/EditorFeatureCommands.cs",
+          "sha256": "e25d9a6e3524f55c8d94be3190764f6cc46b577eef75c01fa5e757db9c4d0a5a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F100",
       "name": "Custom Plug-ins",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4017,13 +4626,21 @@
       "unknowns": [
         "실제2630 UI·factory설정·원본 실행 비교 미실행",
         "미해결 decompiler 타입·regex group 의미·plugin lifecycle 추가 확인 필요"
+      ],
+      "implementationScope": "설치된 VSIX MEF ICodeAssistPlugin 계약·문서 편집·미리보기·Undo; 별도 플러그인 SDK 배포·호환성 검증 없음; VA 동등성 미검증",
+      "batchVersion": "0.0.76",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/PluginCommands.cs",
+          "sha256": "32eb4dbd5355acdc9bd53fcc02a64c1e86a7d788f07180523900d9fe1509af8d"
+        }
       ]
     },
     {
       "id": "VA-F101",
       "name": "Context Menus",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4052,13 +4669,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "실제 명령을 편집기 우클릭 메뉴에 배치; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CodeAssistCommands.vsct",
+          "sha256": "116be191cfce624d109d5955f185cd21b0d5f62f0dc2bfa4c7abe2da63c8693a"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F102",
       "name": "Custom File Extensions",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4087,6 +4712,14 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "사용자 확장자 인덱싱·작업자·캐시 fingerprint; VS 언어 서비스 연결은 사용자 설정; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProjectIndexService.cs",
+          "sha256": "bf20cc867a56ca9e709bccf65cdde76b63172480480f638653d852d62fafff7b"
+        }
       ]
     },
     {
@@ -4128,7 +4761,7 @@
       "id": "VA-F104",
       "name": "Mouse",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4157,13 +4790,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "선택 옵션 Alt+클릭 정의 이동; VA 전체 마우스 제스처 미구현; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ReferenceHighlighting.cs",
+          "sha256": "aae4db6002c047d4c427a0ff6a51d6295b36bf20f86cb83e9c749533ef2cee4a"
+        }
       ]
     },
     {
       "id": "VA-F105",
       "name": "Multiple Platforms",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4192,13 +4833,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "타깃별 compilation database 디렉터리 선택; 원격 플랫폼 디버깅 없음; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerSemanticService.cs",
+          "sha256": "ba13c3d1bfe8d590a115665612afbf6603e2cee3d3781ddda2f5a43b9eb9af59"
+        }
       ]
     },
     {
       "id": "VA-F106",
       "name": "Non-Microsoft Build Processes",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4227,13 +4876,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
+      ],
+      "implementationScope": "외부 빌드 시스템 compile_commands.json을 clangd에 지정; 빌드 명령은 실행 안 함; 실제 IDE 및 VA 비교 미검증",
+      "batchVersion": "0.0.75",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/CompilerSemanticService.cs",
+          "sha256": "ba13c3d1bfe8d590a115665612afbf6603e2cee3d3781ddda2f5a43b9eb9af59"
+        }
       ]
     },
     {
       "id": "VA-F107",
       "name": "Parse Concurrency",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4262,13 +4919,21 @@
       "analysisStatus": "documented-partially",
       "unknowns": [
         "현재 공식 문서와 설치2630 차이·factory값·native 흐름·UI/키/Undo/성능 전체 대조 미완료"
-      ]
+      ],
+      "implementationScope": "파서 스레드 수 설정과 작업자 전달; 실제 IDE·VA 비교 미검증",
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProjectIndexService.cs",
+          "sha256": "99ac81683488b79698ae01b81ff8ec162a319b1def164a90da9991b4a5e03aea"
+        }
+      ],
+      "batchVersion": "0.0.74"
     },
     {
       "id": "VA-F108",
       "name": "Options Dialog",
       "catalogSource": "https://www.wholetomato.com/features",
-      "implementationState": "unverified",
+      "implementationState": "partial",
       "fullParityPassed": false,
       "requiredGates": [
         "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
@@ -4297,7 +4962,18 @@
       "unknowns": [
         "2630 전체 옵션 항목·종속성·공장 초기값",
         "사용자 값 보존·테마 및 VS 버전별 차이"
-      ]
+      ],
+      "sourceEvidence": [
+        {
+          "path": "CodeAssist.Extension/ProductOptions.cs",
+          "sha256": "83a23a512ec05e58bf8ef1921c62d12cf96618405b746071a5b1dc494752fd49"
+        },
+        {
+          "path": "CodeAssist.Core/Localization/ui.xml",
+          "sha256": "5691afcf2369313a2970d2aedd3545e74700822474472384c0990a343b243bdd"
+        }
+      ],
+      "implementationScope": "작동하는 옵션·한영 테이블; 전체 범주와 기본값 미완료"
     }
   ],
   "sharedEvidence": [

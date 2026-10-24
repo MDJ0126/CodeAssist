@@ -1,0 +1,4 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import setup,save,launch,OUT;from background_client import RUN,module
+h=json.loads((RUN/'hosts.json').read_text());text='class ViewAudit103 { public: void First() {} void Second() {} };\r\n'
+setup('VA','va-view-probe',text,text.index('Second')+2);v,_=module('VA','queue-command',windowTitle='',command='VAssistX.VAView',focusEditor=True);save('VA.view-audit.queued.json',v);time.sleep(.3);q=launch(['ui-tree',h['VA']['pid'],OUT/'VA.view-audit.tree.json']);q.wait(timeout=15);r=json.loads((OUT/'VA.view-audit.tree.json').read_text(encoding='utf-8-sig'));print([(x['type'],x['name'],x['id'],x.get('value')) for x in r if x['type'] in ['ControlType.Edit','ControlType.List','ControlType.ListItem','ControlType.TreeItem']][:28],flush=True)

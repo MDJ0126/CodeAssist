@@ -1,0 +1,23 @@
+using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Security.Cryptography;
+using CodeAssist.Core;
+using CodeAssist.Indexing;
+var root=Path.GetFullPath(args[0]);
+var original=Path.Combine(root,"docs/reverse-engineering/va-2630/runtime/file-search.json");
+var observed=JsonDocument.Parse(File.ReadAllText(original));
+var files=new[]{"FixtureActor.cpp","FixtureActor.h","main.cpp"};
+var cases=observed.RootElement.GetProperty("observations").EnumerateArray().Select(o=>{
+ var query=o.GetProperty("query").GetString();var expected=o.GetProperty("files").EnumerateArray().Select(x=>x.GetString()).OrderBy(x=>x).ToArray();
+ var filter=new NavigationQuery(query);var actual=files.Where(f=>filter.Matches(f,@"C:\Projects\CodeAssist\tests\VAParityFixture\"+f)).OrderBy(x=>x).ToArray();
+ return new{query,expected,actual,passed=expected.SequenceEqual(actual)};
+}).ToArray();
+var vaRaw=File.ReadAllText(Path.Combine(root,"docs/validation/compare-0.0.78/va-symbols.json"));
+var vaJson=JsonDocument.Parse(vaRaw);var tree=string.Join("\n",vaJson.RootElement.GetProperty("result").GetProperty("content").EnumerateArray().Where(x=>x.TryGetProperty("text",out _)).Select(x=>x.GetProperty("text").GetString()));
+var vaNames=Regex.Matches(tree,@"(?<index>\d+) 목록 항목 \(selectable\) (?<name>.+?) Description:").GroupBy(m=>m.Groups["index"].Value).Select(g=>g.First().Groups["name"].Value.Replace("operator->","->")).OrderBy(x=>x).ToArray();
+var fixture=Path.Combine(root,"tests/VAParityFixture");
+var symbols=files.SelectMany(f=>PersistentSymbolIndex.ReadDocumentSymbols(Path.Combine(fixture,f),File.ReadAllText(Path.Combine(fixture,f)))).Where(s=>!s.IsLocal).GroupBy(s=>s.Kind+"|"+s.OwnerType+"|"+s.Name+"|"+s.Signature+"|"+s.ValueType).Select(g=>g.First());
+var caNames=symbols.Select(s=>(s.OwnerType.Length>0?s.OwnerType+".":"")+s.Name.Replace("operator->","->")).OrderBy(x=>x).ToArray();
+var report=new{version="0.0.86",scope="Current Core execution against retained VA2630 observations; not fresh VA UI or whole-feature parity",originalObservationSHA256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(original))),fileSearch=new{passed=cases.Count(x=>x.passed),total=cases.Length,cases},symbolSet=new{passed=vaNames.SequenceEqual(caNames),vaNames,caNames},completedUtc=DateTime.UtcNow};
+File.WriteAllText(args[1],JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
+Console.WriteLine($"VA historical file queries: {cases.Count(x=>x.passed)}/{cases.Length}; symbol set: {vaNames.Length} vs {caNames.Length}, equal={vaNames.SequenceEqual(caNames)}");

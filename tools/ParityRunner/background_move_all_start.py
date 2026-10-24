@@ -1,0 +1,7 @@
+import sys,json,base64,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import setup,save,launch,OUT;from background_client import RUN,module
+header='#pragma once\r\nclass MoveAllAudit103\r\n{\r\npublic:\r\n    int First() const\r\n    {\r\n        return 7;\r\n    }\r\n    int Second() const\r\n    {\r\n        return 8;\r\n    }\r\n};\r\n';cpp='#include "move-all-audit103.h"\r\n';journal=[]
+for role in ['VA','CA']:
+ folder=RUN/role;flags=folder/'compile_flags.txt';journal.append(dict(role=role,path=str(flags),original=base64.b64encode(flags.read_bytes()).decode() if flags.exists() else None));flags.write_bytes(b'-std=c++17\n');(folder/'move-all-audit103.h').write_bytes(header.encode());(folder/'move-all-audit103.cpp').write_bytes(cpp.encode());setup(role,'move-all-source',header,header.index('MoveAllAudit103')+3,file='move-all-audit103.h',extras=['move-all-audit103.cpp'])
+save('move-all-source.flags-transaction.json',dict(state='in-progress',entries=journal));save('move-all-source.input.json',dict(header=header,source=cpp))
+v,p=module('VA','queue-command',windowTitle='',command='VAssistX.RefactorMoveImplementationToSourceFile',focusEditor=True);save('VA.move-all-source.queued.json',v);time.sleep(.4);v,p=module('VA','window-read',windowTitle='Move');save('VA.move-all-source.dialog.json',v);print(v['status'],v.get('result',{}).get('title'),[(x['type'],x.get('name'),x.get('value')) for x in v.get('result',{}).get('controls',[])][:26],flush=True)

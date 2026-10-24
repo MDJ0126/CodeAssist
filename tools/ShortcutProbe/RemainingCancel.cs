@@ -1,0 +1,1 @@
+using System;class RemainingCancel{static int Main(){Console.Error.WriteLine("Disabled: global window closing races with the case-owned controller. Use bounded.py.");return 95;}}

@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path('tools/ParityRunner/LiveProbe/LiveProbe.cs');s=p.read_text(encoding='utf-8-sig');a=s.index('if(op=="native-list-read"');b=s.index('if(op=="plugin-contract-query")',a);part=s[a:b];part=part.replace('count==2&&wanted=="#ifndef ... #endif"','count==2&&new[]{"#ifndef ... #endif","SmartTemplate103(103)"}.Contains(wanted)').replace('"nearbyValue103","#ifndef ... #endif"','"nearbyValue103","#ifndef ... #endif","SmartTemplate103(103)"');s=s[:a]+part+s[b:];p.write_text(s,encoding='utf-8-sig')

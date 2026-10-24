@@ -1,0 +1,152 @@
+{
+  "cases": [
+    {
+      "id": "sort-lines",
+      "feature": 53,
+      "text": "charlie\r\nalpha\r\nbravo\r\n",
+      "start": 0,
+      "length": 23,
+      "undo": true,
+      "eligible": true,
+      "vaCommand": "VAssistX.SortSelectedLines",
+      "caCommand": 286
+    },
+    {
+      "id": "smart-extend",
+      "feature": 51,
+      "text": "void Sample() { int value = 1; }\r\n",
+      "start": 20,
+      "length": 5,
+      "undo": false,
+      "eligible": true,
+      "vaCommand": "VAssistX.SmartSelectExtend",
+      "caCommand": 274
+    },
+    {
+      "id": "smart-shrink",
+      "feature": 51,
+      "text": "void Sample() { int value = 1; }\r\n",
+      "start": 16,
+      "length": 14,
+      "undo": false,
+      "eligible": true,
+      "vaCommand": "VAssistX.SmartSelectShrink",
+      "caCommand": 275
+    },
+    {
+      "id": "scope-next",
+      "feature": 9,
+      "text": "void First() {}\r\nvoid Second() {}\r\n",
+      "start": 0,
+      "length": 0,
+      "undo": false,
+      "eligible": true,
+      "vaCommand": "VAssistX.ScopeNext",
+      "caCommand": 269
+    },
+    {
+      "id": "scope-prev",
+      "feature": 9,
+      "text": "void First() {}\r\nvoid Second() {}\r\n",
+      "start": 33,
+      "length": 0,
+      "undo": false,
+      "eligible": true,
+      "vaCommand": "VAssistX.ScopePrevious",
+      "caCommand": 270
+    },
+    {
+      "id": "toggle-braces",
+      "feature": 34,
+      "text": "void Probe() { if (true) Call(); }\r\n",
+      "start": 25,
+      "length": 7,
+      "undo": true,
+      "eligible": true,
+      "vaCommand": "VAssistX.BracesToggle",
+      "caCommand": 389
+    },
+    {
+      "id": "document-method",
+      "feature": 40,
+      "text": "int Sum(int left, int right);\r\n",
+      "start": 0,
+      "length": 29,
+      "undo": true,
+      "eligible": true,
+      "vaCommand": "VAssistX.RefactorDocumentMethod",
+      "caCommand": 376
+    },
+    {
+      "id": "create-implementation",
+      "feature": 38,
+      "text": "class Audit { public: void Update(); };\r\n",
+      "start": 22,
+      "length": 14,
+      "undo": true,
+      "eligible": true,
+      "vaCommand": "VAssistX.RefactorCreateImplementation",
+      "caCommand": 391
+    },
+    {
+      "id": "comment-continuation",
+      "feature": 43,
+      "text": "// note",
+      "start": 7,
+      "length": 0,
+      "undo": true,
+      "eligible": true,
+      "keys": [
+        "ENTER"
+      ]
+    },
+    {
+      "id": "acronym",
+      "feature": 42,
+      "text": "struct AuditLongTypeName {};\r\nvoid Probe() { ALTN }\r\n",
+      "start": 49,
+      "length": 0,
+      "undo": false,
+      "eligible": true,
+      "keys": [
+        "CTRL+SPACE"
+      ]
+    },
+    {
+      "id": "substring-shorthand",
+      "feature": 50,
+      "text": "struct AuditLongTypeName {};\r\nvoid Probe() { LongType }\r\n",
+      "start": 53,
+      "length": 0,
+      "undo": false,
+      "eligible": true,
+      "keys": [
+        "CTRL+SPACE"
+      ]
+    },
+    {
+      "id": "dot-to-arrow",
+      "feature": 69,
+      "text": "struct AuditNode { int Value; };\r\nvoid Probe() { AuditNode* pointer = nullptr; pointer }\r\n",
+      "start": 86,
+      "length": 0,
+      "undo": false,
+      "eligible": false,
+      "keys": [
+        "PERIOD"
+      ]
+    },
+    {
+      "id": "repair-case",
+      "feature": 73,
+      "text": "struct AuditWidget {};\r\nvoid Probe() { auditwidget }\r\n",
+      "start": 50,
+      "length": 0,
+      "undo": false,
+      "eligible": false,
+      "keys": [
+        "SPACE"
+      ]
+    }
+  ]
+}

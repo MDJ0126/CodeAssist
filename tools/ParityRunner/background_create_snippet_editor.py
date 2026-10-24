@@ -1,0 +1,3 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,launch,OUT;from background_client import RUN
+h=json.loads((RUN/'hosts.json').read_text());p=OUT/'VA.create-snippet-selection.pick.spec.json';save(p.name,dict(row='Create VA Snippet from selection...'));q=launch(['native-menu-pick',h['VA']['pid'],OUT/'VA.create-snippet-selection.actual-pick.json',p]);q.wait(timeout=15);time.sleep(.3);q=launch(['ui-tree',h['VA']['pid'],OUT/'VA.create-snippet-selection.editor-tree.json']);q.wait(timeout=15);r=json.loads((OUT/'VA.create-snippet-selection.editor-tree.json').read_text(encoding='utf-8-sig'));print([(x['type'],x['name'],x['id'],x.get('value')) for x in r[:24]],flush=True)

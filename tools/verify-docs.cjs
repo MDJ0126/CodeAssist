@@ -4,7 +4,7 @@ const {pathToFileURL}=require('node:url');
 const {chromium}=require('playwright');
 (async()=>{
   const root=path.resolve(__dirname,'..','docs');
-  const files=['localization.html','progress-audit.html','interface.html','startup.html','handoff.html','integrated-spec.html','index.html','usage.html','keyboard-shortcuts.html','architecture.html','analysis-integration.html','validation/index.html','reverse-engineering/va-2630/index.html'];
+  const files=['remaining-features.html','localization.html','progress-audit.html','interface.html','startup.html','handoff.html','integrated-spec.html','index.html','usage.html','keyboard-shortcuts.html','architecture.html','analysis-integration.html','validation/index.html','reverse-engineering/va-2630/index.html'];
   const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'});
   try{
     const page=await browser.newPage({viewport:{width:1440,height:1000}});

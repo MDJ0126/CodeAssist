@@ -1,0 +1,1 @@
+using System;class LegacyBatchDisabled{static int Main(){Console.Error.WriteLine("Retired unbounded runner. Run tools/ParityRunner/bounded.py; each paired item is capped at 5 seconds.");return 95;}}

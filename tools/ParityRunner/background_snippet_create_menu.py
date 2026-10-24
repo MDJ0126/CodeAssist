@@ -1,0 +1,3 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import setup,save,launch,OUT;from background_client import RUN,module
+h=json.loads((RUN/'hosts.json').read_text());text='void SelectionSnippet103()\r\n{\r\n    int value = 103;\r\n}\r\n';selected='int value = 103;';setup('VA','create-snippet-selection',text,text.index(selected),len(selected));v,_=module('VA','queue-command',windowTitle='',command='VAssistX.RefactorContextMenu',focusEditor=True);save('VA.create-snippet-selection.queued.json',v);time.sleep(.2);q=launch(['native-menus',h['VA']['pid'],OUT/'VA.create-snippet-selection.menu.json']);q.wait(timeout=15);print((OUT/'VA.create-snippet-selection.menu.json').read_text(encoding='utf-8-sig')[:2600],flush=True)

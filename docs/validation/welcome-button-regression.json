@@ -8,7 +8,7 @@
                                                  "CodeAssist.Core.SemanticToken"
                                              ]
                },
-    "Version":  "0.0.66",
+    "Version":  "0.0.73",
     "After":  {
                   "PathGetFullPath":  "Passed",
                   "WelcomeMoniker":  "C:\\Users\\ehdwn\\AppData\\Local\\CodeAssist\\Welcome.codeassist",

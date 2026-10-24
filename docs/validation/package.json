@@ -1,35 +1,35 @@
 {
-  "Version": "0.0.66",
-  "PackageSHA256": "4BE4616CC16A993CD7D56FA6D66AD1ECD71FC131986C960B9341E544BC326E52",
+  "Version": "0.0.93",
+  "PackageSHA256": "F6A0A42A648E41D37C8023434978F02E1CB68632B4D5AFEFCFDB72641BC63E51",
   "Files": [
     {
       "File": "CodeAssist.Extension.dll",
-      "Bytes": 275456,
-      "SHA256": "D387763474A07BB254D01BB8A98BC8C4B42FEF7F70F5A61DF31EF64EADF8DA8E",
+      "Bytes": 447488,
+      "SHA256": "E8FAE848A6E4E469F777D9A08D260FBB5E0EAC251177BA3603ECD02F44C6C234",
       "MatchesReleaseBuild": true
     },
     {
       "File": "CodeAssist.Core.dll",
-      "Bytes": 80896,
-      "SHA256": "234F18FA9F86EB2EE4AF7969D8E62061D19F8C77279C671834DF99EEE1F22A55",
+      "Bytes": 192512,
+      "SHA256": "111C1A24040DAE3C047A499A2DE7A47F736D1D04114382D5266922F47304D77C",
       "MatchesReleaseBuild": true
     },
     {
       "File": "CodeAssist.Indexing.dll",
-      "Bytes": 64512,
-      "SHA256": "C8123BB0D74057FCAC3986A575C6EE1554A09C4DD0B53051765A25F8A9D2C03A",
+      "Bytes": 67584,
+      "SHA256": "550D1460C07ABAF4A999C95D99EAF612DB0D554310C85E3782B937C910C10C53",
       "MatchesReleaseBuild": true
     },
     {
       "File": "CodeAssist.Worker.exe",
-      "Bytes": 5120,
-      "SHA256": "71331857F03C166CCE7F56F1EB2BABE034BC8560F5698EE52D4256CA6E6F435C",
+      "Bytes": 5632,
+      "SHA256": "88E79EB941727A02849ADE2FBADB34E08FA4CCD4AA9CA0B702C4B23BB2C50804",
       "MatchesReleaseBuild": true
     },
     {
       "File": "CodeAssist.Semantics.dll",
-      "Bytes": 23552,
-      "SHA256": "A1CED75F533172B896F03D57E6EE177977830477F791AA9135B68700420BA937",
+      "Bytes": 27648,
+      "SHA256": "09BA2FF2BD40308A77BF37D7AF0CBE6A553C27FA8539F841F6A6BB9CE323A1D2",
       "MatchesReleaseBuild": true
     },
     {
@@ -40,6 +40,126 @@
     }
   ],
   "KeyBindings": [
+    {
+      "Command": "FindSelectedCommandId",
+      "Key": "K",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ClipboardCommandId",
+      "Key": "V",
+      "Modifiers": "CONTROL SHIFT"
+    },
+    {
+      "Command": "HashtagsCommandId",
+      "Key": "H",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectExtendCommandId",
+      "Key": "VK_OEM_6",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectShrinkCommandId",
+      "Key": "VK_OEM_4",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectBlockExtendCommandId",
+      "Key": "VK_OEM_6",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "SelectBlockShrinkCommandId",
+      "Key": "VK_OEM_4",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ResetZoomCommandId",
+      "Key": "0",
+      "Modifiers": "CONTROL"
+    },
+    {
+      "Command": "GoToSymbolCommandId",
+      "Key": "VK_F12",
+      "Modifiers": null
+    },
+    {
+      "Command": "GoToSymbolCommandId",
+      "Key": "G",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "FindReferencesCommandId",
+      "Key": "VK_F12",
+      "Modifiers": "SHIFT"
+    },
+    {
+      "Command": "FindReferencesCommandId",
+      "Key": "F",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "OpenFileCommandId",
+      "Key": "O",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "FindSymbolCommandId",
+      "Key": "S",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "CorrespondingFileCommandId",
+      "Key": "O",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ListMethodsCommandId",
+      "Key": "M",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "RelatedSymbolsCommandId",
+      "Key": "G",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "NavigateBackCommandId",
+      "Key": "VK_LEFT",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "NavigateForwardCommandId",
+      "Key": "VK_RIGHT",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "RenameCommandId",
+      "Key": "R",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "QuickActionsCommandId",
+      "Key": "Q",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "CreateDeclarationCommandId",
+      "Key": "C",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "NextScopeCommandId",
+      "Key": "VK_DOWN",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "PreviousScopeCommandId",
+      "Key": "VK_UP",
+      "Modifiers": "ALT"
+    },
     {
       "Command": "FindSelectedCommandId",
       "Key": "K",

@@ -1,0 +1,178 @@
+{
+  "cases": [
+    {
+      "id": "scope-next",
+      "text": "void First() {}\r\nvoid Second() {}\r\n",
+      "start": 0,
+      "length": 0,
+      "keys": [
+        "ALT+DOWN"
+      ],
+      "expected": {
+        "text": "void First() {}\r\nvoid Second() {}\r\n",
+        "caret": 17,
+        "selectionStart": 17,
+        "selectionLength": 0,
+        "selectedText": "",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\scope-next.cpp"
+      },
+      "expectedUndo": null,
+      "verifyUndo": false,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b"
+    },
+    {
+      "id": "pair-insert",
+      "text": "",
+      "start": 0,
+      "length": 0,
+      "keys": [
+        "SHIFT+9"
+      ],
+      "expected": {
+        "text": "()",
+        "caret": 1,
+        "selectionStart": 1,
+        "selectionLength": 0,
+        "selectedText": "",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\pair-insert.cpp"
+      },
+      "expectedUndo": null,
+      "verifyUndo": false,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b"
+    },
+    {
+      "id": "smart-select",
+      "text": "void Sample() { int value = 1; }\r\n",
+      "start": 20,
+      "length": 5,
+      "keys": [
+        "ALT+SHIFT+]"
+      ],
+      "expected": {
+        "text": "void Sample() { int value = 1; }\r\n",
+        "caret": 30,
+        "selectionStart": 16,
+        "selectionLength": 14,
+        "selectedText": "int value = 1;",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\smart-select.cpp"
+      },
+      "expectedUndo": null,
+      "verifyUndo": false,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b"
+    },
+    {
+      "id": "surround-word",
+      "text": "int value;",
+      "start": 4,
+      "length": 5,
+      "keys": [
+        "SHIFT+9"
+      ],
+      "expected": {
+        "text": "int(value);",
+        "caret": 10,
+        "selectionStart": 10,
+        "selectionLength": 0,
+        "selectedText": "",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\surround-word.cpp"
+      },
+      "expectedUndo": {
+        "text": "int value;",
+        "caret": 9,
+        "selectionStart": 4,
+        "selectionLength": 5,
+        "selectedText": "value",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\surround-word.cpp"
+      },
+      "verifyUndo": true,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b"
+    },
+    {
+      "id": "completion",
+      "text": "struct AuditLongTypeName {};\r\nvoid Probe() { AuditLongTypeN }\r\n",
+      "start": 59,
+      "length": 0,
+      "keys": [
+        "CTRL+SPACE"
+      ],
+      "expected": {
+        "text": "struct AuditLongTypeName {};\r\nvoid Probe() { AuditLongTypeName }\r\n",
+        "caret": 62,
+        "selectionStart": 62,
+        "selectionLength": 0,
+        "selectedText": "",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\completion.cpp"
+      },
+      "expectedUndo": null,
+      "verifyUndo": false,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b"
+    },
+    {
+      "id": "shorthand",
+      "text": "struct AuditLongTypeName {};\r\nvoid Probe() { AuditLong }\r\n",
+      "start": 54,
+      "length": 0,
+      "keys": [
+        "CTRL+SPACE"
+      ],
+      "expected": {
+        "text": "struct AuditLongTypeName {};\r\nvoid Probe() { AuditLongTypeName }\r\n",
+        "caret": 62,
+        "selectionStart": 62,
+        "selectionLength": 0,
+        "selectedText": "",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\shorthand.cpp"
+      },
+      "expectedUndo": null,
+      "verifyUndo": false,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b",
+      "acceptanceEligible": false,
+      "acceptanceReason": "현재 입력 AuditLong은 일반 prefix 완성과 구분되지 않아 부분 문자열 Shorthand 기능을 판정할 수 없음"
+    },
+    {
+      "id": "reset-zoom",
+      "text": "void Sample() {}\r\n",
+      "start": 0,
+      "length": 0,
+      "keys": [
+        "CTRL+0"
+      ],
+      "expected": {
+        "text": "void Sample() {}\r\n",
+        "caret": 0,
+        "selectionStart": 0,
+        "selectionLength": 0,
+        "selectedText": "",
+        "zoom": 100,
+        "activeFile": "C:\\Projects\\CodeAssist\\.local\\parity-runs\\20261018-015759-745\\VA\\epoch-18976\\reset-zoom.cpp"
+      },
+      "expectedUndo": null,
+      "verifyUndo": false,
+      "oracleFile": ".local\\parity-runs\\20261018-015759-745\\VA.results.json",
+      "oracleSha256": "7c195fa34805e9a923e5a1f463202e7cc17b6dd4b54bb3bd398889880d3e8b5b",
+      "preZoom": 140,
+      "compareFields": [
+        "text",
+        "caret",
+        "selectionStart",
+        "selectionLength",
+        "selectedText",
+        "zoom"
+      ]
+    }
+  ],
+  "scope": "7 actual VA runtime editor outputs, not 108 full features"
+}

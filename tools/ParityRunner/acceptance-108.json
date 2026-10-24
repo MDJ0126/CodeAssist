@@ -1,0 +1,2593 @@
+{
+  "schema": 1,
+  "denominator": 108,
+  "baselineIds": [
+    "VA-F001",
+    "VA-F002",
+    "VA-F003",
+    "VA-F004",
+    "VA-F005",
+    "VA-F006",
+    "VA-F007",
+    "VA-F008",
+    "VA-F009",
+    "VA-F010",
+    "VA-F011",
+    "VA-F012",
+    "VA-F013",
+    "VA-F014",
+    "VA-F015",
+    "VA-F016",
+    "VA-F017",
+    "VA-F018",
+    "VA-F019",
+    "VA-F020",
+    "VA-F021",
+    "VA-F022",
+    "VA-F023",
+    "VA-F024",
+    "VA-F025",
+    "VA-F026",
+    "VA-F027",
+    "VA-F028",
+    "VA-F029",
+    "VA-F030",
+    "VA-F031",
+    "VA-F032",
+    "VA-F033",
+    "VA-F034",
+    "VA-F035",
+    "VA-F036",
+    "VA-F037",
+    "VA-F038",
+    "VA-F039",
+    "VA-F040",
+    "VA-F041",
+    "VA-F042",
+    "VA-F043",
+    "VA-F044",
+    "VA-F045",
+    "VA-F046",
+    "VA-F047",
+    "VA-F048",
+    "VA-F049",
+    "VA-F050",
+    "VA-F051",
+    "VA-F052",
+    "VA-F053",
+    "VA-F054",
+    "VA-F055",
+    "VA-F056",
+    "VA-F057",
+    "VA-F058",
+    "VA-F059",
+    "VA-F060",
+    "VA-F061",
+    "VA-F062",
+    "VA-F063",
+    "VA-F064",
+    "VA-F065",
+    "VA-F066",
+    "VA-F067",
+    "VA-F068",
+    "VA-F069",
+    "VA-F070",
+    "VA-F071",
+    "VA-F072",
+    "VA-F073",
+    "VA-F074",
+    "VA-F075",
+    "VA-F076",
+    "VA-F077",
+    "VA-F078",
+    "VA-F079",
+    "VA-F080",
+    "VA-F081",
+    "VA-F082",
+    "VA-F083",
+    "VA-F084",
+    "VA-F085",
+    "VA-F086",
+    "VA-F087",
+    "VA-F088",
+    "VA-F089",
+    "VA-F090",
+    "VA-F091",
+    "VA-F092",
+    "VA-F093",
+    "VA-F094",
+    "VA-F095",
+    "VA-F096",
+    "VA-F097",
+    "VA-F098",
+    "VA-F099",
+    "VA-F100",
+    "VA-F101",
+    "VA-F102",
+    "VA-F103",
+    "VA-F104",
+    "VA-F105",
+    "VA-F106",
+    "VA-F107",
+    "VA-F108"
+  ],
+  "policy": {
+    "representative-match": "Asserted actual VA/CA output match; not full feature certification",
+    "different": "Observed result or documented default-key access mismatch",
+    "unverified": "No adequate functional result comparison; options/dialog probes never pass"
+  },
+  "features": [
+    {
+      "id": "VA-F001",
+      "name": "Find by Context",
+      "assertions": [
+        "같은 이름이어도 다른 scope 객체는 제외하며 활성 파일의 다음/이전 참조로 이동",
+        "커서 또는 선택 심볼에서 실행; 전체 파일 간 검색은 Find References에 해당"
+      ],
+      "proposedCases": [
+        "동명 지역/멤버/중첩 scope 비교",
+        "첫/마지막 참조의 경계 및 선택 방향 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F002",
+      "name": "Find References",
+      "assertions": [
+        "창별 D/R/W 필터 및 적용 가능한 필터만 표시",
+        "D/R/W는 새 검색마다 해당 결과 전체로 시작",
+        "프로젝트 검색 범위는 이전 검색 상태 유지; 지역 변수는 파일 범위 고정",
+        "단일 행의 복수 참조는 복수 결과로 표시",
+        "상속/override·주석/문자열·생성/구성·scope 결과 필터",
+        "결과 내 Ctrl+F·F3·Shift+F3 탐색"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F003",
+      "name": "Find Symbol in Solution",
+      "assertions": [
+        "드롭다운은 대소문자 무시; 대화상자는 다중 AND·제외·점 경계 필터와 선택적 uppercase case matching",
+        "기본 선택은 prefix 우선, 없으면 첫 contains; 심볼 이름 알파벳 정렬은 열 클릭으로 변경되지 않음",
+        "solution/system 범위 및 classes/struct/namespaces 제한; 선택 초기화 후 Ctrl+Z로 이전 필터 복원",
+        "지역 변수 제외; 선언 위치·언어별 포함 심볼 규칙 구분"
+      ],
+      "proposedCases": [
+        "prefix/contains·대소문자·부정/경계 조합 비교",
+        "선택 초기화·이전 필터 복원 및 system 범위 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F004",
+      "name": "GoTo Implementation",
+      "assertions": [
+        "Alt+G: 목적지 하나면 직접 이동, 복수면 메뉴; 구현 항목은 {...} 표시",
+        "활성 project/solution 범위 설정과 system symbol의 임시 범위 확대",
+        "주석 scope가 없으면 동명 후보 메뉴; hashtag와 프로젝트 밖 파일 지원",
+        "C/C++에서 VA 후보가 없고 IntelliSense가 켜져 있으면 IDE GoTo Definition 호출",
+        "구현 검색은 선언 디렉터리와 ../src·../source 및 구성 경로 사용"
+      ],
+      "proposedCases": [
+        "단일/복수/overload 및 주석 scope 비교",
+        "project 제한·system 예외·후보 없음 fallback 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F005",
+      "name": "GoTo Member",
+      "assertions": [
+        "현재 type/variable 또는 enclosing structure 공백에서 해당 member 탐색; enum/interface/namespace/struct/typedef 지원",
+        "base member 포함 옵션·다중문자/negative/점prefix 필터·복사·Find References·type별 정렬"
+      ],
+      "proposedCases": [
+        "각 구조종류·inherited toggle·동명member·type/name sort"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F006",
+      "name": "GoTo Related",
+      "assertions": [
+        "Shift+Alt+G: 심볼 종류별 base/derived·override·생성자·type/typedef·선언/정의·header 목적지",
+        "상속 관계는 하위 메뉴; 가능한 파일/줄/namespace 표시",
+        "include에서는 관련 명령 및 해당 header를 include하는 파일; 주석에서는 가장 가능성 높은 심볼 선택",
+        "오버로드 목적지 순서와 call signature matching은 옵션 영향"
+      ],
+      "proposedCases": [
+        "다이아몬드 상속·override·overload 메뉴 비교",
+        "include 역방향 의존성·주석 후보 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F007",
+      "name": "Highlight Current Line",
+      "assertions": [
+        "caret 줄 표시; VA Current Line IDE 색 설정 사용",
+        "배경·색상/frame·점선·실선·margin까지 ray 형식"
+      ],
+      "proposedCases": [
+        "theme·포커스·색·표시방식 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F008",
+      "name": "List Methods in File",
+      "assertions": [
+        "Alt+M: 편집에 따라 갱신; 기본 파일 등장 순서 및 상단 navigation bar",
+        "다중 AND·negative·점 경계·comma OR 필터",
+        "class/method/macro 확장 method/member/struct/enum/define/event/property/region 항목 옵션",
+        "namespace·parameter 표시 및 정렬 옵션; ESC/외부 클릭 닫힘"
+      ],
+      "proposedCases": [
+        "macro 메서드·namespace·parameter 표시 조합 비교",
+        "편집 revision 갱신 및 ESC/포커스 종료 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F009",
+      "name": "Move Scope",
+      "assertions": [
+        "Alt+Down/Up: enclosing brace/parenthesis 바깥 scope의 시작/끝 이동",
+        "global scope에 도달하면 메서드 간 이동"
+      ],
+      "proposedCases": [
+        "괄호와 brace 혼합 중첩 및 global 이동 비교",
+        "문자열/주석 내 delimiter와 불완전 코드 비교"
+      ],
+      "liveAdapterReady": true,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F010",
+      "name": "Navigate Back and Forward",
+      "assertions": [
+        "단순 caret 이동 waypoint는 제외; Alt+Left/Right는 다른 명령 바인딩 영향을 받음",
+        "Alt+Right의 Edit.CompleteWord 바인딩 제거 조건; waypoint 종류의 icon 표는 별도 확인 필요"
+      ],
+      "proposedCases": [
+        "편집/파일전환/Find reference waypoint와 cursor column 복원",
+        "keyboard conflict·history branch·닫힌문서"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F011",
+      "name": "Open Corresponding File",
+      "assertions": [
+        "Alt+O: 대응 하나면 직접 열고 복수면 선택 메뉴; C++ 및 C# design/codebehind 등 관계 지원",
+        "현재 directory 우선; 없으면 project·parent·inc/include 검색; type 미확정이면 유사prefix 후보"
+      ],
+      "proposedCases": [
+        "다중 대응·project외·이름접두사·경로동명 후보"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F012",
+      "name": "Open File in Solution",
+      "assertions": [
+        "Shift+Alt+O: 다중 선택과 Ctrl+A; 범위·IDE key scheme에 따라 기본 shortcut scope 차이",
+        "AND·negative·점 경계·comma OR·path 필터·fuzzy 옵션; base filename prefix 선택 우선",
+        "숨겨도 적용되는 persistent filter와 Ctrl+R 해제",
+        "solution·directory·private/shared system·external·open 파일 공급원 및 project 중복 결합 옵션",
+        "line/column qualifier는 형식별 조건; 기본 base filename 정렬 및 열별 reverse 정렬",
+        "ESC/Stop은 non-solution 로딩만 중단하고 solution 파일은 유지"
+      ],
+      "proposedCases": [
+        "다중 project 중복/결합·공급원 변경 및 취소 비교",
+        "persistent filter 숨김/해제·line/column 조건 비교",
+        "fuzzy·case·prefix·다중 선택 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F013",
+      "name": "VA Hashtags",
+      "assertions": [
+        "주석 내 공백없는 tag; 대소문자 무시·다중tag·Goto exact/창 substring 검색",
+        "자동갱신·tag/file 그룹·AND/negative/OR필터·Shift+Alt+H/F8/Shift+F8",
+        "숨김은 tag/file/recursive directory/project 범위; tool window만 영향·Goto/완성 가능",
+        "solution .vaHashtags 외부변경은 IDE재시작; read-only면 규칙 저장 불가"
+      ],
+      "proposedCases": [
+        "주석/전처리·case·편집갱신·숨김범위",
+        "외부변경·read-only·solution/global 전환"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F014",
+      "name": "VA Navigation Bar",
+      "assertions": [
+        "source창 상단/하단·표시 옵션; context/method list/scope arrows/definition/Go 구성",
+        "Go 기본은 implementation이며 related로 변경 가능; namespace 표시 문맥메뉴",
+        "공식 현재 문서의 다중 project 전환은2630 가용성 별도 확인"
+      ],
+      "proposedCases": [
+        "문서·theme·namespace·Go설정·project 전환"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F015",
+      "name": "Access to Refactoring Commands",
+      "assertions": [
+        "Shift+Alt+Q는 커서·선택 문맥에 맞는 가능한 명령만 표시",
+        "적용 가능성에 따라 명령 순서 결정",
+        "include·symbol·whitespace 문맥을 구분",
+        "편집기·Outline·VA View에서 명령을 제공"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F016",
+      "name": "Change Signature",
+      "assertions": [
+        "함수 이름 위치에서 선언·정의·참조 및 호출부 변경; 다중 파일 Undo 지원",
+        "인수 이름 변경은 선언/정의, 인수 추가는 호출부까지 변경",
+        "기본 인수를 서명에 추가하면 기존 호출부를 변경하지 않음; 추가 인수 호출값 기본은 TODO",
+        "모호한 변경은 OK 비활성화; 이름 변경과 재정렬은 구분",
+        "C++ 가시성 변경은 지원하지 않음; 문서는 overload·system-directory 제한을 명시",
+        "프로젝트 검색 범위는 Find References·Rename과 공유"
+      ],
+      "proposedCases": [
+        "기본 인수 추가와 필수 인수 추가의 호출부 차이",
+        "여러 인수 이름 변경+재정렬 모호성",
+        "파생 클래스·외부 헤더·선택 호출부·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F017",
+      "name": "Convert Between Pointer and Instance",
+      "assertions": [
+        "지역 변수 선언에서 pointer/instance 전환 및 참조의 dot/arrow·dereference/address 수정",
+        "pointer→instance는 선택한 참조를 변환하고 delete 참조 제거",
+        "instance→pointer는 raw/unique/shared/custom 생성 선택; 기본 auto",
+        "지원 불가 문맥에서는 안내"
+      ],
+      "proposedCases": [
+        "new/delete와 address/dereference 혼합",
+        "raw/unique/shared/custom 및 explicit type",
+        "지원 불가 변수·escape하는 참조"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F018",
+      "name": "Encapsulate Field",
+      "assertions": [
+        "C++ 선언 위치에서 getter/setter 생성; 이름 공백이면 해당 accessor 생략",
+        "필드 가시성 조정; private/protected 필드의 accessor는 기본 public",
+        "참조 선택 범위를 조절해 읽기/쓰기를 accessor로 변경",
+        "접두사 제거·대문자화 및 스니펫 GeneratedPropertyName으로 accessor 이름 구성",
+        "C++ accessor는 선언 헤더에 배치; 배열/char pointer는 수동 보완이 필요할 수 있음"
+      ],
+      "proposedCases": [
+        "m_nItemsCount·hWindow·밑줄 이름",
+        "getter/setter 한쪽 생략·복합 참조",
+        "배열/char pointer 제한과 선택 참조 범위"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F019",
+      "name": "Extract Method",
+      "assertions": [
+        "선택 코드와 주변 문맥에서 인수/반환형을 추론하고 원래 위치를 호출로 대체",
+        "전역/멤버와 새 함수 내부 로컬은 인수에서 제외",
+        "읽기값은 값 전달, 쓰기값과 dot로 참조되는 객체는 참조 전달",
+        "단일 변경 값은 반환값으로 원래 함수에서 대입할 수 있음"
+      ],
+      "proposedCases": [
+        "read/write 혼합·멤버·로컬·단일 반환값",
+        "단일문/다중문·early return·매크로 선택 경계"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F020",
+      "name": "Introduce Variable",
+      "assertions": [
+        "표현식의 가장 안쪽 scope에 변수 선언 후 선택 표현식 교체",
+        "반복 교체는 선택 이후의 현재 scope 후보에 한정",
+        "필요하면 한 줄 if/else/while에 braces 추가",
+        "빈 공간에서도 함수 반환값 capture에 이용 가능"
+      ],
+      "proposedCases": [
+        "동일 표현식의 선택 전/후와 다른 scope",
+        "단일문 while/if·부작용 표현식",
+        "반환값 capture와 residual parentheses"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F021",
+      "name": "Move Implementation to Header File",
+      "assertions": [
+        "free function는 header, member는 class내부; 기존declaration 대체·없어도 생성",
+        "declaration의 preprocessor/default값 보존·parameter이름은 implementation 사용",
+        "연관성이 충분한 선행주석 이동·이동구현 선택 유지·생성snippet 사용"
+      ],
+      "proposedCases": [
+        "선언없음·default이름차이·전처리·주석·선택복원"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F022",
+      "name": "Move Implementation to Source File",
+      "assertions": [
+        "header에 declaration 남김; class/overload 인접배치·CreateImplementation snippet 사용",
+        "기본 인접배치 또는EOF 옵션; inline template는 먼저 class밖 header로 이동하고 다음 실행에 source로 이동",
+        "이동 후 VA history로 source/header 왕복"
+      ],
+      "proposedCases": [
+        "template 두단계·overload·EOF·snippet·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F023",
+      "name": "Move Method Implementations to Source File",
+      "assertions": [
+        "class이름에서 모든method 이동 command·선택dialog",
+        "nested class 선택 시 두번째dialog; template/배치 규칙은 단일move와 공유"
+      ],
+      "proposedCases": [
+        "중첩class·선택subset·template·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F024",
+      "name": "Move Selection to New File",
+      "assertions": [
+        "전체줄 선택만; destination은 미존재파일·header면 현재파일 include 옵션",
+        "언어·header/source별 생성snippet으로 새파일 내용 구성"
+      ],
+      "proposedCases": [
+        "부분줄·기존destination·언어template·include·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F025",
+      "name": "Rename",
+      "assertions": [
+        "선언/정의/참조 및 선택적 comment/string·상속chain 변경; project/solution 범위",
+        "이전 Rename/ChangeSignature/FindReferences scope 공유; 동일줄 복수ref는 복수항목",
+        "scope변경으로 결과 재검색하면 제외선택 소실; preview double-click은 원본파일focus 유지",
+        "Stop/Ctrl+Break로 검색중단 가능; 불완전검색 commit의 실패 가능성 문서 경고"
+      ],
+      "proposedCases": [
+        "상속·주석proximity·범위/제외·취소",
+        "다중project·중단검색·preview focus·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F026",
+      "name": "Rename Files",
+      "assertions": [
+        "관련 C++ h/cpp 및 C# designer/resx 함께 rename; include/project/solution/source-control 반영",
+        "기존directory 유지; rename전 저장·rename후 변경내용은 자동저장 안함",
+        "단일Undo 불가; nonproject/solution없는 파일에서는 의도 확인"
+      ],
+      "proposedCases": [
+        "related files·include·SCC·충돌·read-only·save/Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F027",
+      "name": "Simplify Instance Declaration",
+      "assertions": [
+        "local object declaration에서만 제공; 생성된 instance를 불필요하게 다시 설정하는 declaration 단순화"
+      ],
+      "proposedCases": [
+        "local/nonlocal·타입/initializer·주석·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F028",
+      "name": "Add Forward Declaration",
+      "assertions": [
+        "미확정 참조 symbol에서 forward declaration 제공",
+        "기존 forward 선언 또는 첫 include 그룹 뒤 등 적절한 위치; 커서 유지",
+        "현재 symbol 참조를 근거로 하며 다른 참조를 평가해 include 충분성을 결정하지 않음"
+      ],
+      "proposedCases": [
+        "pointer와 by-value 다른 사용 혼재",
+        "namespace/template·include group·커서 유지"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F029",
+      "name": "Add Member",
+      "assertions": [
+        "class reference에서 signaturedialog 후method/variable 추가; C++method는 inline header",
+        "CreateImplementation snippet 사용·system directory class에는 제공안함·VS현대버전 한Undo"
+      ],
+      "proposedCases": [
+        "reference·method/field·systemdir·snippet·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F030",
+      "name": "Add Missing Case Statements",
+      "assertions": [
+        "enum switch 안에서 누락된 enum case 추가; switch 키워드 자체 위치는 필수 아님"
+      ],
+      "proposedCases": [
+        "일부/all enum 누락·default 존재",
+        "같은 값 alias·scoped enum·중첩 switch"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F031",
+      "name": "Add Similar Member",
+      "assertions": [
+        "class아닌 memberreference에서 기존signature dialog·원member 근처에stub추가·body복사안함",
+        "base member에서 실행하면 base class에 추가·systemdir 제외·현대VS 한Undo"
+      ],
+      "proposedCases": [
+        "base/derived·stub/body·배치·systemdir·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F032",
+      "name": "Add Using Directive",
+      "assertions": [
+        "C# common.NET type 사용시목록suggestion·C#listbox활성필요",
+        "accept하면상단using삽입·caret위치유지"
+      ],
+      "proposedCases": [
+        "C#listbox설정·동명namespace·기존using·caret·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F033",
+      "name": "Add include Directive",
+      "assertions": [
+        "미확정 symbol의 파싱된 헤더 후보에서 include 생성",
+        "마지막 include 뒤의 ifdef 밖에 추가하고 커서 유지",
+        "정의 헤더 우선이며 Boost/Qt 일부는 umbrella 예외",
+        "기본 가장 짧은 경로; 상대/프로젝트 경로·quote/angle·filename-only 설정",
+        "기존 include delimiter를 따르며 없으면 IDE 설정 이용"
+      ],
+      "proposedCases": [
+        "ifdef 속 include·중복·umbrella·generated header",
+        "여러 include roots와 경로 스타일 옵션",
+        "설정별 후보 부재·커서 유지"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F034",
+      "name": "Add/Remove Braces",
+      "assertions": [
+        "단일statement add/remove/toggle·nested if/else/for/while 문맥",
+        "복수statement compound는remove불가·indent만으로복수줄add불가",
+        "source상단일macro가복수statement로확장하면 remove가동작변경가능하다는문서경고"
+      ],
+      "proposedCases": [
+        "dangling else·nested·복수macro·toggle·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F035",
+      "name": "Create Declaration",
+      "assertions": [
+        "C/C++ 정의에서 일치 인수의 선언을 이웃 선언 근처 헤더에 생성",
+        "적절한 헤더 없으면 source에 생성",
+        "정의에서 주석이거나 없는 default 인수는 자동 노출하지 않음"
+      ],
+      "proposedCases": [
+        "헤더 존재/없음·이웃 순서",
+        "기본 인수 주석·static/const/template"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F036",
+      "name": "Create File",
+      "assertions": [
+        "현재파일 directory에 생성·현재project에추가·C++/C#/idl/rc/xaml관련파일에서제공",
+        "짝없는 h/cpp는 대응파일이 기본후보·cpp생성시同名headerinclude·header면 include옵션",
+        "CreateFile snippet이 초기내용/caret 위치 결정"
+      ],
+      "proposedCases": [
+        "짝없는파일·언어별·project외·include·caret"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F037",
+      "name": "Create from Usage",
+      "assertions": [
+        "class·enum·변수·함수 및 local/class/global 생성 선택",
+        "클래스 생성은 생성자 인수에서 멤버/초기화 추론; 파일명 변경 가능",
+        "미확정 타입은 UnknownType; 생성 문법/본문은 언어별 스니펫",
+        "인수 생성은 선언/정의에 반영; enum 사용 문맥 및 scope 구분"
+      ],
+      "proposedCases": [
+        "new Foo와 new Foo()·상수 생성자 인수",
+        "클래스 멤버/지역/전역/인수/enum 선택",
+        "추론 실패 UnknownType 및 snippet customizations"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F038",
+      "name": "Create Implementation",
+      "assertions": [
+        "C/C++ 메서드/정적 멤버 선언에서 stub 생성",
+        "기본 인수는 기본적으로 block comment로 구현 인수에 유지; 옵션으로 생략",
+        "이웃 구현 근처/EOF 위치 설정; source 없으면 헤더에 생성",
+        "언어별 스니펫으로 서식; 필수 snippet 삭제 시 기본 복원"
+      ],
+      "proposedCases": [
+        "source 존재/없음·EOF/이웃 배치",
+        "default 인수 옵션·정적 멤버·snippet 삭제"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F039",
+      "name": "Create Method Implementations",
+      "assertions": [
+        "class declaration에서미구현method선택·구현된method는목록제외",
+        "대응source없으면 declaration아래생성·생성snippet·인접/EOF 옵션"
+      ],
+      "proposedCases": [
+        "일부기구현·대응없음·overload·배치·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F040",
+      "name": "Document Method",
+      "assertions": [
+        "선언/정의에서 method 앞 commentblock·return/parameter 각각의 문서항목 생성",
+        "DocumentMethod snippet과 refactoring전용 reserved값으로형식변경"
+      ],
+      "proposedCases": [
+        "declaration/definition·return/parameter·snippet·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F041",
+      "name": "Implement Interface / Virtual Methods",
+      "assertions": [
+        "깊은 상속과 다중 상속의 메서드 후보; 구현된 것은 선택 불가",
+        "pure virtual은 기본 체크, 나머지는 기본 미체크",
+        "필터를 바꿔도 체크 상태 유지; 기본 정렬은 선언 순서",
+        "virtual/override 생성 키워드와 본문 snippet 설정"
+      ],
+      "proposedCases": [
+        "다중/diamond 상속·이미 구현한 메서드",
+        "필터 반복 후 체크 유지·정렬 전환",
+        "추상/구체 혼합과 virtual/override 설정"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F042",
+      "name": "Acronyms",
+      "assertions": [
+        "축소 목록 옵션이 필요하며 첫 글자와 대문자/underscore 경계로 후보를 좁힘",
+        "project 및 최근 사용 symbol 중심; 파일/심볼 검색 dialog와 method list에서는 사용하지 않음"
+      ],
+      "proposedCases": [
+        "camel/Pascal/underscore·중복 약어·최근 사용·목록별 가용성"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F043",
+      "name": "Auto-Extend Multi-Line Comments",
+      "assertions": [
+        "줄바꿈 시 block comment 및 연속 single-line comment marker를 현재 줄에서 이어받음"
+      ],
+      "proposedCases": [
+        "block·single-line·끝줄·선두공백 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F044",
+      "name": "Enhanced Listboxes",
+      "assertions": [
+        "member는 dot/arrow, completion은 Ctrl+Space; private member도 목록 표시",
+        "C/C++ 기본 활성·C# 기본 비활성이라는 문서 조건; 언어별 원본 값 별도 검증 필요",
+        "비상속 bold/우선 배치·축소·acronym/shorthand·종류/가시성 toolbar 필터",
+        "Tab/Enter 비활성은 목록을 닫고 입력 문자 삽입; Ctrl 투명화; 추가 commit 문자는 IDE/언어별 차이",
+        "include 경로·snippet 및 주석/문자열 Ctrl+Space 문맥 없는 파일 텍스트 후보",
+        "C/C++ 데이터 공급원 선택; :: 및 C#은 default IntelliSense; 우측 텍스트 overwrite는 별도 valid symbol 여부 영향"
+      ],
+      "proposedCases": [
+        "member/completion/suggestion 전환 및 필터 조합 비교",
+        "commit 설정·우측 텍스트 overwrite·취소 비교",
+        "C++/C#·::·include·주석 데이터 공급원 비교"
+      ],
+      "liveAdapterReady": true,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F045",
+      "name": "Format After Paste",
+      "assertions": [
+        "여러 줄 paste 이후 IDE Format Selection으로 서식 지정",
+        "Undo로 formatting 철회 가능"
+      ],
+      "proposedCases": [
+        "단일/다중 줄 paste 및 Undo 단계 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F046",
+      "name": "Insert () and Closing Brackets and Quotes",
+      "assertions": [
+        "여는 delimiter 뒤 닫는 delimiter·method commit 후 괄호 삽입",
+        "Undo/Backspace 철회; 입력 중단 전 inserted delimiter 입력은 해당 문자 덮어쓰기",
+        "닫는 brace 위치는 same/next/blank-line 옵션"
+      ],
+      "proposedCases": [
+        "typing 중단·중복닫힘·commit·brace 위치 비교"
+      ],
+      "liveAdapterReady": true,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F047",
+      "name": "Insert _ After m and Shift",
+      "assertions": [
+        "m 입력 직후 Shift를 빠르게 눌렀다 놓으면 underscore 삽입"
+      ],
+      "proposedCases": [
+        "Shift 타이밍·연속입력·IME 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F048",
+      "name": "Multiple Clipboards",
+      "assertions": [
+        "Ctrl+Shift+V 최근 clipboard 메뉴",
+        "표시 개수는 별도 설정이며 해당 도움말은 수치를 명시하지 않음"
+      ],
+      "proposedCases": [
+        "capacity·중복·선택·표준paste·Undo 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F049",
+      "name": "Reset Editor Zoom",
+      "assertions": [
+        "editor scope에서100%로 복원; Ctrl+0은 추천키 수락 조건",
+        "VS2015+는 새 창의 global zoom도100%로 설정"
+      ],
+      "proposedCases": [
+        "추천키 충돌·창별/global zoom·focus"
+      ],
+      "liveAdapterReady": true,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F050",
+      "name": "Shorthand",
+      "assertions": [
+        "축소 목록에서 여러 부분 문자열로 후보 검색; acronym 우선과 최근 사용 영향",
+        "목록 밖에서는 첫 입력 글자로 시작하는 symbol로 제한; Ctrl+Space로 전체 completion 전환"
+      ],
+      "proposedCases": [
+        "부분 문자열·prefix 제한·약어 충돌·우선 선택"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ],
+      "adapterLimitation": "Prefix-only completion probe; discriminating substring shorthand scenario still required"
+    },
+    {
+      "id": "VA-F051",
+      "name": "Smart Select",
+      "assertions": [
+        "Extend/Shrink와 Block Extend/Shrink 네 명령; Shift+Alt+]/[ 및 Alt+]/[",
+        "초기 범위는 커서 위치·leading whitespace·statement/block에 따라 구분",
+        "상대적 작은 증가·항상 word 시작·case/underscore word 분할 옵션과 종속성",
+        "댓글/문자열에서도 일반 extend/shrink 가능; block 명령은 block 수준 유지",
+        "선택이 화면 높이를 넘으면 시작 위치를 알리는 임시 창"
+      ],
+      "proposedCases": [
+        "네 명령의 교차 사용 및 외부 선택 후 shrink 비교",
+        "leading whitespace·문자열/주석·case/underscore 옵션 비교"
+      ],
+      "liveAdapterReady": true,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F052",
+      "name": "Smart Suggestions",
+      "assertions": [
+        "생성자·enum 대입/비교·인자 타입에 맞는 local 변수·주석 hashtag를 제안",
+        "타입 이름의 Smart Suggestions snippet으로 값을 확장; 인자 comma+space는 다음 제안 유도"
+      ],
+      "proposedCases": [
+        "타입/overload·enum·사용자 snippet·comma 입력"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F053",
+      "name": "Sort Selected Lines",
+      "assertions": [
+        "부분 마지막 줄 포함",
+        "마지막 줄 EOF이면 EOL 추가",
+        "정렬 옵션 대화상자"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F054",
+      "name": "Suggestion Lists",
+      "assertions": [
+        "최근/주변 symbol과 code bits; C#에서는 IDE 목록에 병합하거나 VA 목록 사용",
+        "symbol 정의 중에는 자동 선택하지 않고 Down으로 선택; parameter list 제안은 global scope 및 Tab/Enter commit",
+        "오른쪽이 알려진 symbol이면 유지하고 모르는 잔여 문자열은 제거"
+      ],
+      "proposedCases": [
+        "정의/참조 문맥·C# 공급원·commit·우측 문자열"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F055",
+      "name": "Surround Selection",
+      "assertions": [
+        "slash는 완전한 줄/복수 줄이면 line comment, 부분 줄이면 block comment 토글",
+        "asterisk는 block comment 토글; parentheses/braces surround",
+        "surround character가 있는 snippet 입력은 선택을 expansion으로 대체"
+      ],
+      "proposedCases": [
+        "부분/전체/복수 줄·기존주석·snippet·Undo 비교"
+      ],
+      "liveAdapterReady": true,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F056",
+      "name": "Surround With",
+      "assertions": [
+        "선택을 snippet 코드로 감싸며 메뉴와 지정 surround 문자로 접근",
+        "단순 Surround Selection과 별개이며 Outline과 editor에서 가용 메뉴가 다름"
+      ],
+      "proposedCases": [
+        "문자·메뉴·다중 snippet·선택/Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F057",
+      "name": "Column Indicator",
+      "assertions": [
+        "지정 column의 뒤쪽 경계에 표시; 위치/색 옵션",
+        "가변폭 글꼴은 m 글자 폭의 배수로 위치 산정"
+      ],
+      "proposedCases": [
+        "가변/고정폭·zoom·theme·가로 스크롤"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F058",
+      "name": "Context Field",
+      "assertions": [
+        "symbol 문맥·scope 표시, unknown이면 비움; global scope는 현재 파일명",
+        "field 폭 조절·scope 표시 축소·method dropdown·scope arrows·복사 메뉴"
+      ],
+      "proposedCases": [
+        "동명 scope·unknown·global·resize·IME/Unicode"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F059",
+      "name": "Definition Field",
+      "assertions": [
+        "symbol 정의·scope 상세·include 실제 경로 표시; 복수정의 목록은 정보용으로 선택해도 이동 안함",
+        "unknown은 비움; typedef/macro를 적당히 평가하며 aggressive 평가 옵션 별도"
+      ],
+      "proposedCases": [
+        "복수 정의·include 경로·macro/typedef·복사"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F060",
+      "name": "Enhanced Syntax Coloring",
+      "assertions": [
+        "light/dark 기본 세트를 설치 시 IDE 설정으로 결정; 대비 부족 시 black/white fallback",
+        "IDE coloring보다 우선; source/listbox/tool window 적용 선택 및 theme 인식 영향",
+        "추가 요소·배경색·reset 경로는 VS 버전별 차이",
+        "색은 심볼 사용 앞뒤 문자 영향을 받으며 정의가 항상 결정 요인은 아님",
+        "C/C++ macro는 해당 header include 여부와 별개로 global 문맥으로 취급"
+      ],
+      "proposedCases": [
+        "light/dark·unknown theme·contrast fallback 비교",
+        "IDE reset·추가 요소·창별 적용 비교",
+        "동명 다른 종류 심볼 및 include 없는 macro 색 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F061",
+      "name": "Local Symbols in Bold",
+      "assertions": [
+        "enhanced coloring이 필요하며 현재 파일에 정의된 이름에 bold 적용",
+        "semantic scope와 별개로 동명 occurrence 모두 bold 가능; inherited listbox bold와 다른 옵션"
+      ],
+      "proposedCases": [
+        "동명 다른 scope·다른 파일의 class member·theme"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F062",
+      "name": "Highlight Find Results",
+      "assertions": [
+        "IDE find 후 editor matches 강조; ESC로 해제; IDE Find Result(VA) 배경색 사용"
+      ],
+      "proposedCases": [
+        "새검색·ESC·문서전환·theme 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F063",
+      "name": "Highlight Matching Words",
+      "assertions": [
+        "문자열/주석 안 active word에서 시작하고 파일 내 동일 단어에도 적용; scope 무시",
+        "대소문자 일치·전체 단어만; read reference highlight 색 공유"
+      ],
+      "proposedCases": [
+        "주석/문자열에서 동명 다른 scope·대소문자·부분 단어 비교",
+        "code로 이동 및 선택·ESC 수명 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F064",
+      "name": "Highlight References to Symbol Under Cursor",
+      "assertions": [
+        "같은 semantic context 참조만; read/write 구분",
+        "공백 이동 시 유지·ESC 임시 해제·project 외 파일 지원",
+        "Find References 색 공유; 문서는 일반적으로 write MistyRose/read LightCyan으로 설명하며 실제 테마별 값 별도 검증",
+        "IDE 유사 기능을 disable/re-enable할 기회 제공"
+      ],
+      "proposedCases": [
+        "동명 shadowing·read/write·공백·ESC 비교",
+        "IDE 중복 표시·테마 및 프로젝트 외 파일 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F065",
+      "name": "Parameter Info",
+      "assertions": [
+        "method 뒤 여는 괄호 또는 Ctrl+Shift+Space; 현재 인자 bold·위/아래로 overload 탐색",
+        "C# 공급원은 default IntelliSense; disable 반영에는 IDE 재시작 조건"
+      ],
+      "proposedCases": [
+        "중간 인자 복귀·overload·macro·C#·재시작"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F066",
+      "name": "Print in Color",
+      "assertions": [
+        "VS2015+ print에 VA 색을 포함하며 IDE 버전별 지원이 다름",
+        "출력 selection만 따로 파싱하므로 잘린 문맥의 색이 원본과 다를 수 있음"
+      ],
+      "proposedCases": [
+        "전체/일부 출력·theme·VS버전·context"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F067",
+      "name": "Quick Info",
+      "assertions": [
+        "IDE tooltip 보완/대체·source 주석·닫는 brace/구조 keyword 문맥·Doxygen 형식 옵션",
+        "IDE 버전별 공급원과 중복주석 조건이 다름; mouse 이동/ESC로 해제"
+      ],
+      "proposedCases": [
+        "VS버전·IDE 병합/대체·source/header 주석·macro·ESC"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F068",
+      "name": "System Symbols in Italics",
+      "assertions": [
+        "system include와 Program Files의 symbol 등은 italics 후보이며 project override는 구별",
+        "system 선언 DB는 solutions 간 공유 읽기 전용이며 처음 포함한 solution에서 파싱"
+      ],
+      "proposedCases": [
+        "동명 override·NuGet/Vcpkg·ProgramFiles·재파싱"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F069",
+      "name": "Convert Dot to ->",
+      "assertions": [
+        "적절한 문맥에서 dot를 arrow로 바꿈; operator-> smart object 변형은 별도 옵션",
+        "Delete/Undo/Backspace로 철회"
+      ],
+      "proposedCases": [
+        "pointer·instance·smart object·철회 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F070",
+      "name": "Highlight Files in Output Window",
+      "assertions": [
+        "build output에서 solution 파일 경로를 다른 파일 경로와 구별해 강조"
+      ],
+      "proposedCases": [
+        "solution 내부/외부·상대/절대경로·출력갱신 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F071",
+      "name": "Highlight Matching Braces and Parentheses",
+      "assertions": [
+        "caret가 scope 안에 있을 때 matching delimiter 강조"
+      ],
+      "proposedCases": [
+        "중첩·문자열/주석 delimiter·caret 경계 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F072",
+      "name": "Highlight Mismatching Braces and Parentheses",
+      "assertions": [
+        "caret 문맥에서 균형이 맞지 않는 delimiter 강조"
+      ],
+      "proposedCases": [
+        "불완전코드·여는/닫는짝·macro 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F073",
+      "name": "Repair Case",
+      "assertions": [
+        "typing 중 symbol 대소문자 수정; 여러 교정 후보가 있으면 수정하지 않음",
+        "C#은 suggestion/completion 목록 활성 필요"
+      ],
+      "proposedCases": [
+        "단일/복수 후보·C# 조건·Undo 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "editor-command-sample",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F074",
+      "name": "Underline Spelling Errors",
+      "assertions": [
+        "주석과 문자열 spelling 표시; 문맥 메뉴에서 교정 또는 사전 추가"
+      ],
+      "proposedCases": [
+        "언어사전·주석/문자열·사전수명·Undo 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F075",
+      "name": "Underline Unknown Symbols",
+      "assertions": [
+        "mistyped/context-invalid symbol 표시; IDE squiggle 표시가 비활성일 때만 적용"
+      ],
+      "proposedCases": [
+        "IDE표시 토글·정의중·include/macro·취소 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F076",
+      "name": "Code Inspection Settings",
+      "assertions": [
+        "개별 검사 활성·quickfix 조정·level1~5 설정; level은 UI 색이며5는 dim 처리",
+        "editor에서 개별 검사를 enable/disable할 수 없고 tool window에서는 disable만 가능"
+      ],
+      "proposedCases": [
+        "checker/level·설정 reset·조정·source suppression"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F077",
+      "name": "Code Issues in the Editor",
+      "assertions": [
+        "solid 또는 dim은 fix 가능, dotted는 불가; underline과 scrollbar 위치 표시 별도",
+        "scrollbar의 중복 issue 세부정보는 중복 제거; 표시 비활성이어도 결과 창에서 접근"
+      ],
+      "proposedCases": [
+        "표시 토글·겹친 issue·level5·tracking"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F078",
+      "name": "Quick Fixes in the Editor",
+      "assertions": [
+        "hover tomato 또는 issue 앞부분 caret에서 Shift+Alt+Q로 fix 접근",
+        "그룹 fix는 editor Undo 한 번으로 복원; 파서는 다른 VA 파서와 독립"
+      ],
+      "proposedCases": [
+        "다중 fix·겹침·stale span·취소·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F079",
+      "name": "Quick Fixes in a Tool Window",
+      "assertions": [
+        "현재 파일 issue 기본 line 정렬; 단일/복수 선택과 checker/level 그룹 fix",
+        "tracking·열 정렬·double click 이동; fix Undo는 결과 창이 아니라 editor에서 수행"
+      ],
+      "proposedCases": [
+        "그룹/복수 선택·sort·tracking·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F080",
+      "name": "VA Snippets",
+      "assertions": [
+        "shortcut·title-only·surround·smart suggestion·refactoring 유형을 공유할 수 있음",
+        "편집 즉시 반영·IDE 간 사용자 snippet 공유·reserved 값과 caret 위치 확장"
+      ],
+      "proposedCases": [
+        "유형별 메뉴·수정 반영·언어·직렬화·caret"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F081",
+      "name": "for Refactoring",
+      "assertions": [
+        "지정 title로 필수 snippet을 찾고 삭제 시 기본 snippet 재생성",
+        "refactoring 전용 reserved 값이 있으며 일반 symbol-context reserved는 null 확장"
+      ],
+      "proposedCases": [
+        "title 변경/삭제·언어별 필수값·reserved 문맥"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F082",
+      "name": "for Smart Suggestions",
+      "assertions": [
+        "class/loop/switch 및 타입 이름 snippet이 제안 값을 제공",
+        "목록은 알파벳 정렬이므로 template 내 값 순서는 영향 없음"
+      ],
+      "proposedCases": [
+        "타입/typedef·빈 제안·삭제와 재생성·정렬"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F083",
+      "name": "for Surround With",
+      "assertions": [
+        "selected reserved 값은 현재 선택 또는 빈 문자열; 같은 surround 문자가 복수면 메뉴",
+        "surround 문자 실행은 관련 옵션 필요; title accelerator 및 메뉴/shortcut 겸용"
+      ],
+      "proposedCases": [
+        "선택 없음·부분/전체 줄·문자 충돌·accelerator"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F084",
+      "name": "with Shortcuts",
+      "assertions": [
+        "shortcut은 case-sensitive; 중복 shortcut은 모두 표시하지만 동일 shortcut-title 쌍은 하나만 표시",
+        "수락하면 shortcut을 expanded 코드로 교체; 제목 없으면 코드 앞부분 표시"
+      ],
+      "proposedCases": [
+        "case·중복 쌍·language·commit·Undo"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F085",
+      "name": "Create from Selection",
+      "assertions": [
+        "editor 선택으로 snippet editor를 열고 title/shortcut/description 지정",
+        "input placeholder와 end reserved를 편집하여 입력 dialog와 최종 caret 구성"
+      ],
+      "proposedCases": [
+        "여러 줄·공백·문자 escape·입력·caret"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F086",
+      "name": "Environment Placeholders",
+      "assertions": [
+        "IDE 환경 snapshot",
+        "case-insensitive 이름·미정의 빈 값·입력보다 먼저 확장"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F087",
+      "name": "Input Placeholders",
+      "assertions": [
+        "기본값·반복 값 공유·case-sensitive 이름/수정자·최대8입력",
+        "인라인 입력과 문맥에 따른 대화상자 전환"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F088",
+      "name": "Reserved Strings",
+      "assertions": [
+        "날짜·파일·프로젝트·솔루션·선택·클립보드·GUID·심볼 문맥·refactor 예약 값"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F089",
+      "name": "Address Resolver",
+      "assertions": [
+        "EXE/DLL/PDB 여러 모듈의 주소를 symbol로 해석; 올바른 실행 base 필요",
+        "PDB 없이 exports 모드·절대/relative 주소 형식; 미해결 주소는???·비주소 텍스트는 유지",
+        "symbol server는 VS 설정 사용; 주소에서 symbol 단방향 해석"
+      ],
+      "proposedCases": [
+        "base/ASLR·PDB 불일치·여러 모듈·입력 형식·실패"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F090",
+      "name": "PDB Explorer",
+      "assertions": [
+        "한 모듈의 import/export 및 release PDB symbol 탐색; running process 없이도 가능",
+        "debugger 이동에는 base 필요·종류/unit/zero/duplicate address 필터·열 정렬"
+      ],
+      "proposedCases": [
+        "release/debug PDB·base·중복주소·module refresh·disassembly 이동"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F091",
+      "name": "VA Memory View",
+      "assertions": [
+        "debug session 시작 전에 integration 활성 필요; 완전한 분리는 IDE 재시작 필요"
+      ],
+      "proposedCases": [
+        "세션전/중 토글·재시작·debugger state 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F092",
+      "name": "VA Step Filter",
+      "assertions": [
+        "integration 활성 시 창 숨김 상태에서도 active filter 적용",
+        "solution filter는 APPDATA 또는 .va/shared; global/builtin 상태는 APPDATA",
+        "공유 위치에 신규 solution filter 저장하려면 .vadbg 쓰기 권한 필요"
+      ],
+      "proposedCases": [
+        "global/solution 우선순위·창숨김·권한·세션수명 비교"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F093",
+      "name": "VA Outline",
+      "assertions": [
+        "현재 문서와 양방향 동기화·현재 scope bold·SAL 표시 제거",
+        "다중 선택·refactor 가용성·source 편집/drag/drop·comment/region 노드·hover",
+        "AutoUpdate 꺼지면 focus 시 갱신; 자동expand는 기존노드를 자동collapse하지 않음"
+      ],
+      "proposedCases": [
+        "편집/선택/Undo·comment 포함·자동갱신·다중노드"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F094",
+      "name": "VA View",
+      "assertions": [
+        "파일/심볼 dropdown·MRU·hover class browser와 include hierarchy 구성",
+        "MRU는 solution별 저장·재오픈 복원·여러 IDE는 마지막 종료가 저장",
+        "HCB는 hover symbol 기준이며 공백/주석/unknown에서 갱신하지 않음"
+      ],
+      "proposedCases": [
+        "MRU 수명·다중 IDE·overload·include hierarchy·focus"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F095",
+      "name": "Simple Link Patterns",
+      "assertions": [
+        "설치 도움말: comment keyword는 세미콜론 분리·대소문자 무시, suffix는 단일 문자 집합",
+        "value 양끝 공백 무시·복수단어는 quote·타입 불일치면 link 미생성",
+        "정적 line cache는 comment classification 범위를 검사하고 별도 plain-text 허용 gate가 있음"
+      ],
+      "proposedCases": [
+        "keyword/suffix 공백·quote·타입 불일치",
+        "동일 줄 edit/재배치·plain text gate·comment classification"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F096",
+      "name": "Complex Link Patterns",
+      "assertions": [
+        "HwPrefs.GetRegexPattern은 RE= 접두사를 대소문자 무시로 판정하고 뒤 pattern 반환",
+        "CreateRegex는 IgnoreCase/Singleline 사용; runtime은 Compiled 추가",
+        "timeout 생성자를 reflection으로 시도하고 실패하면 timeout 없는 생성자로 fallback",
+        "marker match 시간이 threshold 이상이면 해당 regex/group 슬롯 비활성화; 기본 getter fallback100ms는 실제 전체 실행시간 상한 보장 아님"
+      ],
+      "proposedCases": [
+        "RE= 대소문자·빈/잘못된pattern·group",
+        "timeout 생성 실패fallback·긴match·재활성화 수명"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F097",
+      "name": "Connect to FogBugz and GitHub",
+      "assertions": [
+        "issue/case tooltip은 plugin 설정과 read 권한 필요; 열기는 별도 browser login 필요할 수 있음",
+        "외부 서비스 API/인증의 현재 상태와2630 호환성은 미확인"
+      ],
+      "proposedCases": [
+        "공유/사용자 설정·권한 실패·tooltip 취소·browser login"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F098",
+      "name": "Preview Files",
+      "assertions": [
+        "File Viewer는 comment 경로의 text/HTML/XAML/RTF/image/video 등을 preview",
+        "relative 경로는 활성문서 기준·공백 quote/%20·환경값·HTML anchor 지원"
+      ],
+      "proposedCases": [
+        "로컬/network·경로공백·환경값·미존재파일·형식별 preview"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "dialog-cancel-or-direct-command",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F099",
+      "name": "Open Hyperlinks in an External Browser",
+      "assertions": [
+        "설치 도움말: plugin이 URL을 제공하면 behavior 설정으로 internal/external browser 결정",
+        "plugin이 override한 preference는 read-only로 표시됨",
+        "URL template은 Value 및 선택 Keyword placeholder를 사용; 실제 launch/escape 처리는 미확인"
+      ],
+      "proposedCases": [
+        "plugin override·internal/external·URL expansion",
+        "실행실패·keyboard/mouse/QuickInfo·선택 URI"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F100",
+      "name": "Custom Plug-ins",
+      "assertions": [
+        "REA metadata: IPluginFactory Name/CreatePlugin, IPlugin Flags/GetTooltip/GetUrl/Execute/ContextExecute/GetRegex/Configure 계약 존재",
+        "ValidateType은 분리 AppDomain helper에서 검증하고 finally에 validation domain 참조를 해제",
+        "검색 경로는 known directories·AppDomain base/relative path·추가 plugin paths를 모음",
+        "SourceLinksAST에는 automation/test helper가 포함되므로 grammar parser로 해석하지 않음"
+      ],
+      "proposedCases": [
+        "올바른/잘못된 type·의존성 누락·validation 예외",
+        "plugin settings scope·설정변경·dispose·reload"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F101",
+      "name": "Context Menus",
+      "assertions": [
+        "IDE context 메뉴를 확장할 때 VA submenu 구분",
+        "별도 VA 메뉴는 지정 modified mouse로 호출 가능"
+      ],
+      "proposedCases": [
+        "symbol/selection/file 문맥·focus·modified mouse"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F102",
+      "name": "Custom File Extensions",
+      "assertions": [
+        "무시 확장자는 세미콜론 구분·이미 열린 파일은 다시 열어 반영",
+        "extensionless C++ header는 VA 옵션과 IDE 언어 mapping 필요; custom extension 절차는 IDE별 차이"
+      ],
+      "proposedCases": [
+        "ignore/reopen·extensionless·custom 언어·VS버전"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F103",
+      "name": "Keyboard Shortcuts",
+      "assertions": [
+        "기본키가 비어 있을 때만 설치 배정하며 기존 배정을 덮어쓰지 않음",
+        "추천키로 scope 확대·충돌키 재배정; global/editor scope 구분·현재키 조회"
+      ],
+      "proposedCases": [
+        "기존키 충돌·추천 수락·scope·locale·다중 shortcut"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F104",
+      "name": "Mouse",
+      "assertions": [
+        "modified click은 GoTo/Related/VA 메뉴에 연결하며 editor scope",
+        "modified wheel은 no-op 또는 selection/block 확장·축소; Ctrl+Alt+wheel zoom은 유지"
+      ],
+      "proposedCases": [
+        "click 조합·wheel 방향·selection·IDE 충돌"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F105",
+      "name": "Multiple Platforms",
+      "assertions": [
+        "편집 platform은 build platform 변경만으로 전환되지 않으며 C++ directories에서 선택 후 재시작",
+        "platform별 header 검색 경로와 정의를 구별해야 함"
+      ],
+      "proposedCases": [
+        "Win32/x64/custom·build/edit 차이·재시작"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F106",
+      "name": "Non-Microsoft Build Processes",
+      "assertions": [
+        "IDE 프로젝트 설정이 비어 있는 외부 build 환경은 Custom directories로 보완",
+        "검색 순서 유지·한 custom set 보존·변경 인식 Rebuild 조건; 모든 build system 자동 지원은 미확인"
+      ],
+      "proposedCases": [
+        "solution없음·custom 경로순서·환경값·Rebuild"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F107",
+      "name": "Parse Concurrency",
+      "assertions": [
+        "현재 공식 문서 기본은 모든 CPU/core; single 또는 maximum threads 제한 가능",
+        "thread 제한 변경은 IDE 재시작; 검사 전용 max1/queue4와 일반 파서 설정은 별개"
+      ],
+      "proposedCases": [
+        "설정/재시작·프로젝트 시작/편집·검사동시성·실제CPU"
+      ],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    },
+    {
+      "id": "VA-F108",
+      "name": "Options Dialog",
+      "assertions": [
+        "도구 창 문맥 메뉴에도 옵션 존재",
+        "다른 IDE 인스턴스는 재시작 전 변경 미반영",
+        "문서 screenshot은 최신 VA 기준일 수 있음"
+      ],
+      "proposedCases": [],
+      "liveAdapterReady": false,
+      "historicalProbeScope": "options-page-only",
+      "fullFeatureGates": [
+        "동작: 동일 입력·문맥에서 반환/변경 결과를 원본과 비교",
+        "편집: 범위·커서·선택·Undo/Redo·저장 전 버퍼 확인",
+        "접근: 메뉴·키·문맥 가용성·충돌 확인",
+        "설정: 현재 설치 값과 공장 기본값·테마별 값 구분",
+        "수명: 취소·문서/프로젝트 변경·창 닫힘 확인",
+        "지원: C++ 외 지원 언어·VS/VA 버전·Unreal 변형 확인",
+        "성능: 시작·캐시 재사용·편집·검색·메모리 비교"
+      ]
+    }
+  ]
+}

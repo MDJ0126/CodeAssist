@@ -1,0 +1,29 @@
+from pathlib import Path
+import json,shutil,html,hashlib,zipfile
+from datetime import datetime,timezone,timedelta
+P=Path('C:/Projects/CodeAssist');R=P/'.local/parity-runs/20261018-111600-ui-debug';D=P/'docs/validation/debug-0.0.89';D.mkdir(exist_ok=True,parents=True)
+for n in ['CA.results.json','CA.plan.json'] :shutil.copy2(R/n,D/n)
+for f in (R/'screenshots').iterdir():shutil.copy2(f,D/f.name)
+old=P/'docs/validation/automated-runner-20261018/20261018-021854-OptionsVerified/screenshots/VA-feature-008-dialog.png';shutil.copy2(old,D/'VA-display-reference.png')
+r=json.loads((R/'CA.results.json').read_text(encoding='utf-8-sig'));prior=json.loads((P/'docs/validation/ui-comparison-0.0.88-20261018/summary.json').read_text(encoding='utf-8'));unobserved=[x for x in prior['rows'] if x['score'] is None];(D/'pending-ui-scenarios.json').write_text(json.dumps(unobserved,ensure_ascii=False,indent=2),encoding='utf-8')
+checks={c['id']:{'error':c.get('error'),'status':(c.get('probe') or {}).get('status'),'title':(c.get('probe') or {}).get('title')} for c in r['cases']}
+installed=Path.home()/'AppData/Local/Microsoft/VisualStudio/17.0_ca39936fExp/Extensions/tkmulg30.2nq/CodeAssist.Extension.dll'
+with zipfile.ZipFile(P/'installers/0.0.89/CodeAssist.vsix') as z:packageHash=hashlib.sha256(z.read('CodeAssist.Extension.dll')).hexdigest()
+assert hashlib.sha256(installed.read_bytes()).hexdigest()==packageHash
+assert checks['feature-005']['title'].endswith('[2]')
+assert checks['ui-welcome']['status']=='surface-captured-only'
+assert checks['feature-008']['status']=='dialog-observed-and-cancelled'
+now=datetime.now(timezone(timedelta(hours=9)));elapsed=int((now-datetime(2026,10,18,11,7,22,tzinfo=now.tzinfo)).total_seconds())
+summary={'version':'0.0.89','started':'2026-10-18T11:07:22+09:00','reportCompleted':now.isoformat(),'elapsedSeconds':elapsed,'latestRun':str(R),'checks':checks,'completedScenarios':len(r['cases']),'observedSurfaces':4,'unassertedQuickAction':1,'settingsTestsPassed':11,'syntheticRunnerChecksPassed':12,'packageBinaryMatches':6,'registeredBindings':24,'installedExtensionSHA256':packageHash,'wholeProductSimilarity':None,'priorPixelScore':74.02,'priorScoreUniqueFamilies':26,'priorCatalogUniqueFamilies':66,'limitations':['VA reference screenshots were not recaptured in this task','No physical key validation','No full 108 rerun of 0.0.89','Light/dark supplemental renders are offline, not IDE theme switches','Navigation sorting is wired; actual live sorting toggle sequence not separately asserted']}
+(D/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
+def img(name,label):return '<figure><figcaption>'+label+'</figcaption><a href="validation/debug-0.0.89/'+name+'"><img loading="lazy" src="validation/debug-0.0.89/'+name+'"></a></figure>'
+s='''<!doctype html><html lang="ko"><meta charset="utf-8"><title>CodeAssist 0.0.89 실행 디버깅</title><style>body{background:#161820;color:#edf0fa;font:15px/1.65 Segoe UI,sans-serif;margin:30px}h1,h2{color:#ffdb64}a{color:#8dcaff}table{border-collapse:collapse;width:100%}td,th{border:1px solid #454958;padding:12px;text-align:left}.pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}figure{margin:10px 0;min-width:0}img{width:100%}section{margin:30px 0}</style><h1>0.0.89 직접 실행 디버깅</h1><p>실제 CA 별도 VS에서 재현·수정·재실행했습니다. VA는 이전 실행 기준 화면을 참조했습니다. 이번 작업에서 두 제품을 새로 동시 촬영한 것은 아닙니다.</p><table><tr><th>작업</th><th>결과·범위</th></tr><tr><td>미촬영 화면</td><td>Welcome 문서 탭·전체 IDE 상단 촬영 추가. 자동완성 모든 상태·모든 테마의 실실행 촬영은 남음.</td></tr><tr><td>실패 검사 조사</td><td>멤버 이동이 Health 필드에서 실행되던 입력을 Audit 타입으로 수정. 변수 추출을 일반 빠른 작업에 연결한 기존 시나리오는 전용 구현 검증이 아님을 확인.</td></tr><tr><td>Display 옵션</td><td>메서드 이름순/등장순 정렬을 실제 목록 코드에 연결. 열 표시 설정을 Display에도 배치. Quick Info 세부 옵션·탐색 표시줄 상하 위치 등은 미구현.</td></tr><tr><td>테마·언어</td><td>실제 창의 ‘멤버로 이동’ 한국어 제목 확인. 영어 다크/라이트 WPF 렌더 및 열린 뷰 리소스 전환 검사 각각 통과. 실제 VS 테마 전환과 구분.</td></tr><tr><td>기능 검증</td><td>설정 직렬화·복사 포함 테스트 11/11 통과. 멤버 창 2개 결과 표시, Welcome 탭 표시. 단축키는 패키지 등록 24개 확인이며 물리 입력 검증은 미실행.</td></tr><tr><td>재실행·기록</td><td>최종 5개 시나리오 실행 완료. 화면 관찰 4개, Quick Actions는 팝업 미관찰 1개. 이를 5개 기능 통과로 간주하지 않음.</td></tr></table><h2>Display: VA 이전 실화면 / 수정 CA 최신 실화면</h2><div class="pair">'''
+s+=img('VA-display-reference.png','VA build2630 · 이전 올바른 페이지 촬영')+img('CA-feature-008-dialog.png','CA 0.0.89 · 이번 실제 VS 촬영')+'</div><h2>Welcome: 실제 문서 탭</h2>'+img('CA-ui-welcome-dialog.png','CA 0.0.89 · 실제 VS 전체 창, Welcome·툴바·안내 바')+'<h2>멤버 이동: 한국어 제목·2개 결과</h2>'+img('CA-feature-005-dialog.png','수정된 입력과 현재 문서 심볼 병합 적용 후 실제 실행')+'<h2>보조 테마 렌더 — 실제 IDE 촬영 아님</h2><div class="pair">'+img('display-dark-en.png','영어 Dark · 독립 WPF 렌더')+img('display-light-en.png','영어 Light · 독립 WPF 렌더')+'</div>'
+s+='<h2>동기화 수치와 남은 작업</h2><p>이전 0.0.88의 26/66개 분류(39.39%)에서 계산한 픽셀 점수 74.02%는 과거 기준이며 최신 전체 유사도로 재사용하지 않습니다. 최신 전체 UI·기능 동기화율은 미확정입니다. 이번 관찰 화면 4/5개(80%)는 촬영·관찰 비율이며 기능 일치율이 아닙니다.</p><p>VA 재촬영, 나머지 고유 명령·화면 40개 분류의 관찰, Quick Info 세부 설정과 리팩터링 전용 동작, 물리 단축키, 모든 테마·자동완성 상태 비교가 남아 있습니다.</p><p><a href="validation/debug-0.0.89/summary.json">검증 요약·실행 DLL 해시</a> · <a href="validation/debug-0.0.89/CA.results.json">원본 실행 기록</a> · <a href="validation/debug-0.0.89/pending-ui-scenarios.json">이전 점수 제외 시나리오</a> · <a href="ui-comparison-0.0.88.html">이전 108개 대조</a></p><p><a href="../installers/0.0.89/CodeAssist.vsix">최신 계열 설치 파일</a> · <a href="../installers/0.0.89/CodeAssist.VS2019.vsix">VS2019 설치 파일</a></p>'
+s+=f'<p>제안 시간: 10분 · 실제 보고서 완료까지 {elapsed//60}분 {elapsed%60}초 · {now:%Y-%m-%d %H:%M:%S} KST. XERJ 사용 — 현재 소스와 실행으로 확인.</p></html>'
+(P/'docs/debug-0.0.89.html').write_text(s,encoding='utf-8')
+for name in ['handoff.html','layout-0.0.88.html','ui-comparison-0.0.88.html']:
+ p=P/'docs'/name
+ if p.exists():
+  text=p.read_text(encoding='utf-8');link='<p><a href="debug-0.0.89.html">최신 0.0.89 실행 디버깅·미완료 항목</a></p>';p.write_text(text.replace('</html>',link+'</html>') if '</html>' in text else text+link,encoding='utf-8')
+print(json.dumps(summary,ensure_ascii=False))

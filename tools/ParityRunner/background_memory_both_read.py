@@ -1,0 +1,4 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,launch,OUT;from background_client import RUN,module
+h=json.loads((RUN/'hosts.json').read_text());address=json.loads((OUT/'VA.debuggee103.break-state.json').read_text())['result']['expression']['value'];v,_=module('VA','native-memory-read',windowTitle='',address=address);save('VA.memory103.actual-read.json',v);print('VA',v,flush=True)
+address=json.loads((OUT/'CA.debuggee103.break-state.json').read_text())['result']['expression']['value'];p=OUT/'CA.memory103.prompt.spec.json';save(p.name,dict(title='CodeAssist',button='Save',edit=address,privateFocus=True));q=launch(['drive',h['CA']['pid'],OUT/'CA.memory103.prompt.result.json',p]);q.wait(timeout=15);time.sleep(.4);v,_=module('CA','memory-utility-read',windowTitle='',address=address);save('CA.memory103.actual-read.json',v);print('CA',v,flush=True)

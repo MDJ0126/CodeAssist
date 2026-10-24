@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+<Metadata><Identity Id="CodeAssist.ParityRunner.b0ee348d-a28b-41b9-991a-93bc052e2d9a" Version="0.8.5" Language="en-US" Publisher="CodeAssist development"/><DisplayName>CodeAssist automated parity runner</DisplayName><Description>Opt-in isolated integration scenarios for VA and CodeAssist. Edits only run-owned fixtures.</Description></Metadata>
+<Installation><InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)"><ProductArchitecture>amd64</ProductArchitecture></InstallationTarget></Installation>
+<Dependencies><Dependency Id="Microsoft.Framework.NDP" DisplayName=".NET Framework" Version="[4.7.2,)"/></Dependencies>
+<Prerequisites><Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,)" DisplayName="Visual Studio core editor"/></Prerequisites>
+<Assets><Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|"/><Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|"/></Assets></PackageManifest>

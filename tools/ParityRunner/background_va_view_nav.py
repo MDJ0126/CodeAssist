@@ -1,0 +1,3 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import setup,launch,save,OUT;from background_client import RUN,module
+h=json.loads((RUN/'hosts.json').read_text());target=RUN/'VA/ViewFileTarget103.h';target.write_bytes(b'#pragma once\r\nclass ViewFileTarget103 {};\r\n');setup('VA','view-file-caller','// caller of VA View\r\n',0,extras=[target.name]);v,_=module('VA','queue-command',windowTitle='',command='VAssistX.VAView',focusEditor=True);save('VA.view-file-nav.queued.json',v);time.sleep(.4);q=launch(['native-file-combo',h['VA']['pid'],OUT/'VA.view-file-nav.actual.json',target]);q.wait(timeout=15);print((OUT/'VA.view-file-nav.actual.json').read_text(encoding='utf-8-sig'),flush=True)

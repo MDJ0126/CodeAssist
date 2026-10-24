@@ -1,0 +1,3 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,OUT;from background_client import RUN,module
+v,_=module('CA','index-reinitialize',windowTitle='');save('CA.view-file-nav.index-preparation-retry.json',v);print(v,flush=True);time.sleep(.5);v,_=module('CA','pane-read',windowTitle='',pane='workspace');save('CA.view-file-nav.tree-ready.json',v);print('target', [x for x in v.get('result',{}).get('labels',[]) if 'ViewFile' in x],flush=True);v,_=module('CA','pane-navigate',windowTitle='',pane='workspace',label='ViewFileTarget103.h',fileNode=str(RUN/'CA/ViewFileTarget103.h'));save('CA.view-file-nav.actual-ready.json',v);print(v,flush=True)

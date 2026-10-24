@@ -1,0 +1,3 @@
+import sys,json
+sys.path.insert(0,'tools/ParityRunner');from background_steps import launch,OUT;from background_client import RUN
+h=json.loads((RUN/'hosts.json').read_text());q=launch(['ui-tree',h['VA']['pid'],OUT/'VA.create-snippet-selection.editor-ready-tree.json']);q.wait(timeout=15);r=json.loads((OUT/'VA.create-snippet-selection.editor-ready-tree.json').read_text(encoding='utf-8-sig'));print([(x['type'],x['name'],x['id'],x.get('value')) for x in r if 'snippet' in x['name'].lower() or x['id'].lower().startswith(('text','tb_'))][:30]);print((OUT/'VA.create-snippet-selection.actual-pick.json').read_text())

@@ -8,7 +8,7 @@ const versionMatch = manifest.match(/<Identity\b[^>]*\bVersion="([^"]+)"/);
 if (!versionMatch) throw new Error('VSIX Identity version missing');
 const version = versionMatch[1];
 const pages = [
-  ['README.md', '문서 홈'], ['interface.md', 'CodeAssist 인터페이스'], ['progress-audit.md', '동기화율 · 구현율 검증'], ['localization.md', '언어 설정 · 번역표'], ['startup.md', '첫 실행 · Welcome'], ['handoff.md', '작업 인계'], ['usage.md', '사용 안내'], ['keyboard-shortcuts.md', '단축키'],
+  ['README.md', '문서 홈'], ['remaining-features.md', '남은 70개 항목'], ['interface.md', 'CodeAssist 인터페이스'], ['progress-audit.md', '동기화율 · 구현율 검증'], ['localization.md', '언어 설정 · 번역표'], ['startup.md', '첫 실행 · Welcome'], ['handoff.md', '작업 인계'], ['usage.md', '사용 안내'], ['keyboard-shortcuts.md', '단축키'],
   ['architecture.md', '구조와 캐시'], ['integrated-spec.md', '통합 분석 명세'], ['analysis-integration.md', '분석 적용 현황'],
   ['validation/README.md', '검증 결과'], ['reverse-engineering/va-2630/README.md', '역분석 기록'],
 ];

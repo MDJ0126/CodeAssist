@@ -1,0 +1,3 @@
+import sys,json
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,OUT;from background_client import module
+r=json.loads((OUT/'VA.snippet-create-accelerator.tree.json').read_text(encoding='utf-8-sig'));print([(x['type'],x['name'],x['id'],x.get('value')) for x in r if x['type'] in ['ControlType.Edit','ControlType.ComboBox'] or x['type']=='ControlType.Button' and x['name']][:22]);v,_=module('VA','window-read',windowTitle='Snippet Editor');save('VA.create-snippet-selection.actual-editor.json',v);print(v.get('result',{}).get('status'),v.get('result',{}).get('windows'),[(x['type'],x['name'],x.get('value')) for x in v.get('result',{}).get('controls',[]) if x['type']=='TextBox'][:10],flush=True)

@@ -1,0 +1,5 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import setup,save,launch,OUT;from background_client import RUN,module
+h=json.loads((RUN/'hosts.json').read_text());text='class RelBase103\r\n{\r\npublic:\r\n    virtual int Act() { return 1; }\r\n};\r\nclass RelDerived103 : public RelBase103\r\n{\r\npublic:\r\n    int Act() override { return 2; }\r\n};\r\n'
+for role in ['VA','CA']:
+ setup(role,'related-symbols-menu',text,text.index('RelDerived103')+3,file='related-symbols.cpp');v,p=module(role,'queue-command',windowTitle='',command='VAssistX.GotoRelated' if role=='VA' else '263',focusEditor=True);save(role+'.related-symbols.queued.json',v);time.sleep(.4);q=launch(['ui-tree',h[role]['pid'],OUT/(role+'.related-symbols.menu-tree.json')]);q.wait(timeout=15);a=json.loads((OUT/(role+'.related-symbols.menu-tree.json')).read_text(encoding='utf-8-sig'));print(role,[(x['type'],x['name']) for x in a if x['type'] in ['ControlType.MenuItem','ControlType.ListItem','ControlType.DataItem']][:24],flush=True)

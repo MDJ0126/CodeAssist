@@ -1,0 +1,6 @@
+import sys,json
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,OUT;from compiler_contracts import build_run;from adjudicate_background import update
+r={}
+for role in ['VA','CA']:
+ v=json.loads((OUT/(role+'.native-autosuggest.actual-accept.json')).read_text());after=v['result']['after'];compile=build_run('smart-bool',role,after['text']+'\nint main(){return NativeSuggestion103()?0:1;}\n','expected-type true inserted, runtime returns true');assert compile['passed'];r[role]=after;save(role+'.native-autosuggest.bundle.json',dict(observed=v,compiler=compile,scope='boolean expected-type literal; not enum, constructors or all argument cases',nativeImage='VA.autosuggest.snapshot.native-list-0.png' if role=='VA' else None))
+update(52,'representative-match','bool 대입 문맥에 tru를 입력하고 양쪽 실제 추천의 true를 선택했습니다. VA 고유 목록은 촬영으로 true 한 행을 확인했고 CA 목록은 CodeAssist expected-type literal 출처를 확인했습니다. 삽입 본문·커서·선택 범위가 같고 컴파일·실행도 모두 성공했습니다. bool 대표 사례이며 enum·생성자·인자 전체 인증은 아닙니다.',{x:x+'.native-autosuggest.bundle.json' for x in r},dict(actualRecommendationAcceptedBoth=True,actualGeneratedRuntimeBoth=True,textIdentical=r['VA']['text']==r['CA']['text'],caretIdentical=r['VA']['caret']==r['CA']['caret'],selectionIdentical=r['VA']['selectionLength']==r['CA']['selectionLength']))

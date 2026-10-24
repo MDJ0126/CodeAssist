@@ -1,0 +1,6 @@
+import sys,json
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,OUT;from background_client import module;from adjudicate_background import update
+expected=json.loads((OUT/'VA.snippet-abbreviation-menu.typed.json').read_text())['result']['after']['text'];v,_=module('VA','native-list-accept',windowTitle='',hwnd=3283458,choice='#ifndef ... #endif',expectedText=expected);save('VA.snippet-abbreviation-menu.accept.json',v);print(v,flush=True);assert v['status']=='complete' and '#endif' in v['result']['after']['text']
+for role in ['VA','CA']:
+ save(role+'.snippet-abbreviation-menu.bundle.json',dict(observation=v if role=='VA' else json.loads((OUT/'CA.snippet-abbreviation-menu.session.json').read_text()),template='#ifndef $end$\n$selected$\n#endif\n',libraryRestore=json.loads((OUT/'snippet-abbreviation-menu.library-restore.json').read_text()),scope='abbreviation-triggered suggestion and selecting actual native snippet; not physical Tab certification'))
+update(84,'different','원본 고유 #ifn 축약어를 실제 입력하면 VA는 #ifndef ... #endif 스니펫을 제안하며 촬영한 해당 행을 선택하자 블록이 실제 삽입됐습니다. 같은 본문·축약어를 CA 테스트 라이브러리에 넣어도 CA 완료 세션이 생성되지 않았습니다. 선택 방식은 소유 팝업 메시지이며 물리 Tab 검증으로 확대하지 않습니다. 라이브러리는 복원했습니다.',{x:x+'.snippet-abbreviation-menu.bundle.json' for x in ['VA','CA']},dict(nativeAbbreviationExpanded=True,caAbbreviationSessionCreated=False,libraryRestored=True))

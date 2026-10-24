@@ -1,0 +1,10 @@
+from pathlib import Path
+import json,hashlib,re
+root=Path('docs/validation/background-103');va=json.loads((root/'VA.snippet-header.final.json').read_text(encoding='utf-8-sig'));ca=json.loads((root/'CA.snippet-header.final.json').read_text(encoding='utf-8-sig'));assert va['status']==ca['status']=='complete';assert va['before']['text']==ca['before']['text']
+for r in [va,ca]:assert '\\author MDJ' in r['after']['text'] and '\\file snippet-menu.cpp' in r['after']['text'] and '$FILE_BASE$' not in r['after']['text'] and '%USERNAME%' not in r['after']['text']
+assert va['after']['text']!=ca['after']['text'];assert '\ufffd' in va['after']['text'] and '\ufffd' not in ca['after']['text'];assert json.loads((root/'snippet-library-restore.json').read_text())['restored']
+e={role:dict(file=role+'.snippet-header.final.json',sha256=hashlib.sha256((root/(role+'.snippet-header.final.json')).read_bytes()).hexdigest(),data=r) for role,r in [('VA',va),('CA',ca)]}
+f=json.loads((root/'features.json').read_text());d=json.loads((root/'adjudicated.json').read_text())
+for n,state,reason in [(80,'different','VA 고유 VaSnippetInsert 메뉴와 CA 스니펫 선택창에서 동일 본문을 실제 삽입. 양쪽 삽입 성공, 줄별 들여쓰기·추가 빈 줄과 선택 UI가 다름.'),(86,'representative-match','동일 본문의 %USERNAME%가 양쪽 실제 편집기에서 MDJ로 치환됨. 사용자 환경변수 1개 대표 검증이며 전체 환경변수 인증은 아님.'),(88,'different','동일 본문 FILE_BASE/FILE_EXT는 양쪽 snippet-menu.cpp로 치환. MONTHLONGNAME은 VA 실행 결과에 U+FFFD가 있고 CA는 10월. YEAR는 VA에서 입력창으로 지정, CA는 예약값으로 자동 치환. 원인은 미확인.')]:
+ id='VA-F%03d'%n;next(x for x in f if x['id']==id).update(state=state,reason=reason,mainEvidence='background-103/VA.snippet-header.final.json',comparisonEvidence='background-103/CA.snippet-header.final.json',fullFeatureCertified=False);d['newJudgments']=[x for x in d['newJudgments'] if x['id']!=id]+[dict(id=id,state=state,reason=reason,evidence=e)]
+d['counts']={s:sum(x['state']==s for x in f) for s in ['representative-match','different','unverified']};d['determinate']=108-d['counts']['unverified'];(root/'features.json').write_text(json.dumps(f,ensure_ascii=False,indent=2));(root/'adjudicated.json').write_text(json.dumps(d,ensure_ascii=False,indent=2));print(d['counts'])

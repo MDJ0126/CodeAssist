@@ -1,0 +1,3 @@
+import sys,json,time
+sys.path.insert(0,'tools/ParityRunner');from background_client import module,RUN;from background_steps import launch,OUT,save
+h=json.loads((RUN/'hosts.json').read_text());v,p=module('VA','queue-command',windowTitle='',command='VAssistX.AddressResolver',focusEditor=True);save('VA.address-resolver.queued.json',v);time.sleep(.6);q=launch(['ui-tree',h['VA']['pid'],OUT/'VA.address-resolver.initial-tree.json']);q.wait(timeout=15);a=json.loads((OUT/'VA.address-resolver.initial-tree.json').read_text(encoding='utf-8-sig'));print([(x['type'],x['name'],x['id'],str(x.get('value'))[:120]) for x in a if x['type'] in ['ControlType.Window','ControlType.Edit','ControlType.Button']][:26])

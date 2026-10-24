@@ -1,0 +1,4 @@
+import json,sys,time
+sys.path.insert(0,'tools/ParityRunner');from background_steps import save,launch,OUT;from background_client import RUN,send
+h=json.loads((RUN/'hosts.json').read_text());a=json.loads((OUT/'CA.pdb-explorer.picker-tree.json').read_text(encoding='utf-8-sig'));print([(x['name'],x['id']) for x in a if x['type']=='ControlType.Button' and x['id'] in ['1','2']])
+p=OUT/'CA.pdb-explorer.set-id.json';save(p.name,dict(id='1148',value=str(RUN/'debug-artifacts/PdbAudit103.pdb'),invokeId='1'));q=launch(['set-id',h['CA']['pid'],OUT/'CA.pdb-explorer.set-id-result.json',p]);q.wait(timeout=15);time.sleep(1);q=launch(['ui-tree',h['CA']['pid'],OUT/'CA.pdb-explorer.loaded-tree.json']);q.wait(timeout=15);a=json.loads((OUT/'CA.pdb-explorer.loaded-tree.json').read_text(encoding='utf-8-sig'));print('CA target',[(x['type'],str(x.get('value') or x['name'])[:250]) for x in a if 'PdbTarget103' in str(x.get('value') or x['name'])][:5],flush=True)

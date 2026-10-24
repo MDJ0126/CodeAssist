@@ -1,0 +1,8 @@
+import sys,json,time,hashlib
+sys.path.insert(0,'tools/ParityRunner');from background_steps import launch,save,OUT;from background_client import RUN,module
+h=json.loads((RUN/'hosts.json').read_text());f=json.loads((OUT/'pdb-fixture.json').read_text());exe=f['exe'];sha=hashlib.sha256(__import__('pathlib').Path(exe).read_bytes()).hexdigest()
+v,p=module('CA','queue-command',windowTitle='',command='401',focusEditor=True);save('CA.address-resolver.queued.json',v);time.sleep(.5)
+s=OUT/'CA.address-resolver.filename.json';save(s.name,dict(id='1148',value=exe));q=launch(['set-id',h['CA']['pid'],OUT/'CA.address-resolver.filename-result.json',s]);q.wait(timeout=15);r=json.loads((OUT/'CA.address-resolver.filename-result.json').read_text(encoding='utf-8-sig'));assert r['applied']
+s=OUT/'CA.address-resolver.open.driver.json';save(s.name,dict(title='CodeAssist: Address Resolver',button='열기(O)',requiredFile=exe,requiredSha256=sha));q=launch(['drive',h['CA']['pid'],OUT/'CA.address-resolver.open-result.json',s]);q.wait(timeout=15);r=json.loads((OUT/'CA.address-resolver.open-result.json').read_text(encoding='utf-8-sig'));assert r['acted']
+s=OUT/'CA.address-resolver.rva.driver.json';save(s.name,dict(title='CodeAssist',button='Save',edit='0x1000'));q=launch(['drive',h['CA']['pid'],OUT/'CA.address-resolver.rva-result.json',s]);q.wait(timeout=15);time.sleep(.7)
+q=launch(['ui-tree',h['CA']['pid'],OUT/'CA.address-resolver.output-tree.json']);q.wait(timeout=15);a=json.loads((OUT/'CA.address-resolver.output-tree.json').read_text(encoding='utf-8-sig'));out=[str(x.get('value')) for x in a if x['type']=='ControlType.Edit' and 'PdbTarget103' in str(x.get('value'))];print('output tail',[(t[:180],len(t)) for t in out],flush=True)

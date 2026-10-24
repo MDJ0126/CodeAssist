@@ -1,6 +1,6 @@
 # 언어 설정·번역 테이블
 
-설정 → 고급 → 언어에서 시스템 언어 / 한국어 / English를 선택하고 저장합니다. 선택은 startup.xml의 UiLanguage에 보존됩니다. 저장 후 새로 여는 옵션·Welcome에 적용됩니다. 이미 열린 화면의 언어를 즉시 교체하는 기능은 아직 없습니다.
+설정 → 고급 → 언어에서 시스템 언어 / 한국어 / English를 선택하고 저장합니다. 선택은 startup.xml의 UiLanguage에 보존됩니다. 저장 후 새로 여는 옵션·Welcome에 적용됩니다. Welcome의 언어 선택은 현재 Welcome 문서를 즉시 갱신합니다. 다른 화면은 다시 열면 적용됩니다.
 
 ## 새 언어 추가
 
@@ -135,5 +135,109 @@
 |ui.d0db8b5e364b|설정|Options|
 |ui.c205924de0fe|문서|Documentation|
 |ui.700fe314615c|CodeAssist 설정|CodeAssist Options|
-
-분석율: 명세108/108(100%), 전체 역분석 미확인. 구현율: 전체 완성률 미확인, 기존 부분 대응26/108(24.1%). VA 동기화율: 완전 검증0/108. 미완료: VA 전체 옵션·토글·기본값·위치·성능 비교와 나머지 구현.
+|ui.completion.native.colors|Visual Studio 기본 추천 색상 사용|Use Visual Studio default completion colors|
+|ui.a56868aef2b0|붙여넣기 후 서식 지정|Format after paste|
+|ui.a6be008f0700|여러 줄 주석 이어쓰기|Extend multi-line comments|
+|ui.831adbacdb7c|괄호 및 따옴표 자동 닫기|Insert () and closing brackets and quotes|
+|ui.eebaedfe2e25|메서드 이름과 () 사이 공백 수|Spaces between method name and ()|
+|ui.e6d6496e29d7|닫는 중괄호 삽입 위치:|Insert closing brace:|
+|ui.2643d0f6e0cc|빈 줄 다음에|after a blank line|
+|ui.b1370abbc8fb|다음 줄에|on the next line|
+|ui.3b8bcde1684a|같은 줄에|on the same line|
+|ui.4b204809ab8b|문자 입력으로 선택 영역 감싸기|Surround Selection via character toggles|
+|ui.2b0ca3e64f3d|줄 주석으로 전환할 때 공백 삽입|Insert a space when toggling a line into a comment|
+|ui.46758ba762cb|아직 구현되지 않은 편집기 옵션은 검증 문서에 기록되어 있습니다.|Editor options not yet implemented remain listed in the verification document.|
+|ui.cabd5db317ee|선택 영역을 작은 단위로 시작하고 확장|Start and grow selections by relatively small increments|
+|ui.6953fca6d81e|블록 외 선택은 현재 단어부터 시작|Start non-block selections with the current word|
+|ui.c88fdf0422ce|대소문자 변화로 현재 단어 구분|Changes in case delimit current word|
+|ui.7c735049e710|밑줄로 현재 단어 구분|Underscores delimit current word|
+|ui.11b7f118602a|심볼 빠른 정보 표시|Show symbol Quick Info|
+|ui.95b56e296256|{0}에 오신 것을 환영합니다|Welcome to {0}|
+|ui.f838a6ae341f|CodeAssist의 주요 기능|What's New with CodeAssist|
+|ui.333f43c3a7f6|CodeAssist 사용 안내|Learn More about CodeAssist|
+|ui.cdc8258f4139|의견 보내기|Share your Feedback|
+|ui.d1ce81b5defa|CodeAssist 단축키|CodeAssist Shortcuts|
+|ui.6344a8cda29c|자세히 보기  ›|Learn More  ›|
+|ui.deaf36c2ab1f|프로젝트 코드 검사|PROJECT CODE INSPECTION|
+|ui.9d92b907a576|편집기와 색상|EDITOR & COLORING|
+|ui.9f1583fb5cf0|빠른 심볼 탐색|FAST SYMBOL NAVIGATION|
+|ui.2a29c155ad46|Unreal 및 C/C++|UNREAL & C/C++|
+|ui.a87f916d683c|모든 참조 찾기|Find References|
+|ui.aaf5ca5d1020|선택 항목 찾기|Find Selected|
+|ui.1ae07f0c49e8|심볼 찾기|Find Symbol|
+|ui.43cdaa928810|정의 / 구현으로 이동|Go to Definition / Implementation|
+|ui.f706e26e03a5|관련 항목으로 이동|Go to Related|
+|ui.7c2cc19ecf81|메서드 목록|List Methods|
+|ui.270b2597810e|대응 파일|Corresponding File|
+|ui.1e8d18f62f2d|파일 열기|Open File|
+|ui.8b796de5fa8f|클립보드 기록|Multiple Clipboards|
+|ui.2cc2b6f7f200|빠른 작업|Quick Actions|
+|ui.3064d79a295c|이름 바꾸기|Rename|
+|ui.eb485662972f|해시태그|Hashtags|
+|ui.3806efdd2870|도움말 검색|Search help|
+|ui.b969b3f35d14|일치하는 도움말이 없습니다.|No matching topics|
+|ui.2b4e345dd511|복사했습니다. 원하는 이슈나 대화에 붙여넣으세요.|Copied. Paste it into your issue or message.|
+|ui.85045ccc0567|변경 적용|Apply changes|
+|ui.5d9f33f62e13|새 파일 이름|New file name|
+|ui.e899adf5b91f|스니펫 제목|Snippet title|
+|ui.603c2c4b14f2|스니펫 축약어|Snippet shortcut|
+|ui.6990d3217b77|파일 생성|Create file|
+|ui.b4baa1847b67|헤더 이름 (시스템 헤더는 <...> 형식)|Header name (use <...> for system headers)|
+|ui.4d73aa616ceb|타입 이름 (class 또는 struct)|Qualified type name (class or struct)|
+|ui.b691cb2fecc3|먼저 프로젝트 파일을 선택하세요.|Select a project file first.|
+|ui.40537c0fd7bc|파일 이름을 바꾸기 전에 저장하세요.|Save the document before renaming it.|
+|ui.eb8557710479|http 또는 https 링크 안에 커서를 놓으세요.|Place the caret inside an http or https link.|
+|ui.711911a20eab|메서드 선언 또는 시그니처 줄을 선택하세요.|Select a method declaration or its signature line.|
+|ui.9de309162c5f|소스 링크 규칙|Source link rules|
+|ui.df174a3f2faa|사용|Enabled|
+|ui.cdfc76a8a310|정규식|Regular expression|
+|ui.709a23220f2c|이름|Name|
+|ui.1fff6a31661b|패턴|Pattern|
+|ui.b7d8a4de2bb4|대상 URL|Target URL|
+|ui.362f56c8c8a6|추가 / 수정|Add / Update|
+|ui.f6fdbe48dc54|삭제|Delete|
+|ui.f0c6d84fef53|GitHub 예제|GitHub example|
+|ui.41cedf44cce7|FogBugz 예제|FogBugz example|
+|ui.c8da1aec1918|커서 위치에 일치하는 소스 링크가 없습니다. 탐색 / 소스 링크에서 규칙을 설정하세요.|No source link matches the caret. Configure Navigation / Source Links.|
+|ui.d3d692b75295|파서 스레드 수|Parser threads|
+|ui.83fbf47616cd|현재 줄 강조|Highlight current line|
+|ui.6c70407e51a5|짝이 맞는 괄호 강조|Highlight matching braces|
+|ui.d5fe9f9d4f71|짝이 맞지 않는 괄호 강조|Highlight mismatching braces|
+|ui.6a6f65a7a63b|컬럼 기준선 표시|Show column indicator|
+|ui.65ba00e95e60|컬럼|Column|
+|ui.dacf9a998adb|Tab으로 스니펫 단축어 확장|Expand snippet shortcuts with Tab|
+|ui.929a28d26142|편집기 안내선|Guides|
+|ui.c1ab6c9b9947|머리글자 약어 완성|Acronym completion|
+|ui.260c7eefec33|축약어 완성|Shorthand completion|
+|ui.d55d8bc694be|포인터 점 입력을 화살표로 변환|Convert pointer dot to arrow|
+|ui.ea72a2efaba7|타입 이름 대소문자 교정|Repair type name case|
+|ui.2f212a9db758|m 다음 Shift 입력으로 밑줄 추가|Insert underscore after m and Shift|
+|ui.2f20a3a85415|지역 심볼 굵게 표시|Local symbols in bold|
+|ui.01edbff07fc7|시스템 심볼 기울임 표시|System symbols in italics|
+|ui.709372269d87|커서 심볼 참조 강조|Highlight references under caret|
+|ui.090b00969817|Alt + 클릭: 정의로 이동|Alt + click: Go to definition|
+|ui.71ebe244f1d9|출력 창 파일 이름 강조|Highlight output filenames|
+|ui.ca58964377c1|검색 결과 강조|Highlight find results|
+|ui.89a97ba0cdd5|주석·문자열 맞춤법 밑줄|Underline comment and string spelling|
+|ui.cfad97405a76|스텝 필터 사용|Step filter enabled|
+|ui.49cd9ccbc3da|추천 목록 사용|Suggestion lists|
+|ui.e7cb457f2e1e|예상 타입 리터럴 추천|Expected-type literal suggestions|
+|ui.12dc3fe9f937|스니펫 추천|Snippet suggestions|
+|ui.2ae9d5f291d4|추가 C/C++ 파일 확장자|Additional C/C++ file extensions|
+|ui.65c84dfe8cf3|컴파일 데이터베이스 폴더|Compilation database directory|
+|ui.d346424d2b38|파일 확장자|File Extensions|
+|ui.04996d9e3e7c|컴파일 데이터베이스|Compilation Database|
+|ui.dcd0aa3ea0bf|생성 템플릿|Generation Templates|
+|ui.7fdfbeec1c20|메서드 구현 본문 템플릿|Method implementation body template|
+|ui.4eef27df518f|선택한 수정 미리보기|Preview selected fix|
+|ui.602fc62a31eb|지원하지 않는 구문입니다. 완전한 선언이나 표현식을 선택하세요.|The selected syntax is unsupported. Select the complete declaration or expression.|
+|ui.ba5e8c04aa2a|새 매개변수 순서 (1부터 시작, 예: 2,1; 순서 변경만 지원)|New parameter order (one-based, e.g. 2,1; reorder only)|
+|ui.880a8ec6fc89|새 전역 함수 서명 (출력은 참조 매개변수로 지정)|New free-function signature (use reference parameters for outputs)|
+|ui.eaa81b86f0f6|접근자 이름 접미사|Accessor name suffix|
+|ui.fe8b32e06a54|멤버 선언|Member declaration|
+|ui.1febbd946f48|새 멤버 이름|New member name|
+|ui.0449e1003dd0|네임스페이스|Namespace|
+|ui.e4647330ae63|한정된 소유 타입 (전역 함수는 비워 두세요)|Qualified owner type (empty for free function)|
+|ui.ef413eac416e|파생 클래스에서 구현할 가상 함수 선언|Virtual declarations to implement in the derived class|
+|ui.8bd702d198ef|한정된 scoped enum 이름|Qualified scoped enum name|
+|ui.2cc1946e9d75|enum 선언|Enum declaration|

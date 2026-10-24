@@ -1,10 +1,10 @@
 {
   "scope": "108 public catalog features; not all VA settings or product requirements",
-  "ledgerSHA256": "0596d2f321d816788f632f54abf7026c6dd45658f9e07a2b4d446efcc598e8d3",
+  "ledgerSHA256": "a18af91bb697fa3544b6922d91eadfd96371a29afb11b62b025ec492e6e0d078",
   "denominator": 108,
   "documentedPartial": 108,
-  "partialSourceMappings": 26,
-  "partialSourceMappingPercent": 24.1,
+  "partialSourceMappings": 108,
+  "partialSourceMappingPercent": 100.0,
   "implementationCompleteVerified": 0,
   "verifiedImplementationPercent": 0,
   "actualImplementationPercent": null,
@@ -49,13 +49,42 @@
         }
       ],
       "scope": "Separate product requirement, not a completed VA catalog feature"
+    },
+    {
+      "name": "Isolated actual VS editor integration",
+      "state": "runtime-verified",
+      "version": "0.0.73",
+      "checks": [
+        "Pair insert and caret",
+        "Empty pair delete",
+        "Pair deletion Undo restores caret",
+        "Pair deletion Redo",
+        "Surround selected word",
+        "Surround Undo restores selection",
+        "Surround Redo restores selection",
+        "Slash comments whole selected line",
+        "Comment Undo restores selection",
+        "Comment continuation",
+        "Comment continuation one Undo",
+        "Brace placement SameLine",
+        "Brace placement NextLine",
+        "Brace placement BlankLine"
+      ],
+      "evidence": [
+        {
+          "path": "editor-integration-0.0.73.json",
+          "sha256": "faf8a1dd3187d2d2109dde73d2f8d93fc056c312547e5aab71585b71257af4c7",
+          "mvid": "a245e294-bb69-49c9-8490-aa3ca91ce564"
+        }
+      ],
+      "scope": "Actual VS editor buffer, command chain, Undo history. Not VA parity."
     }
   ],
   "features": [
     {
       "id": "VA-F001",
       "name": "Find by Context",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "동명 지역/멤버/중첩 scope 비교",
@@ -276,7 +305,7 @@
     {
       "id": "VA-F005",
       "name": "GoTo Member",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "각 구조종류·inherited toggle·동명member·type/name sort"
@@ -387,7 +416,7 @@
     {
       "id": "VA-F007",
       "name": "Highlight Current Line",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "theme·포커스·색·표시방식 비교"
@@ -778,7 +807,7 @@
     {
       "id": "VA-F014",
       "name": "VA Navigation Bar",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "문서·theme·namespace·Go설정·project 전환"
@@ -886,7 +915,7 @@
     {
       "id": "VA-F016",
       "name": "Change Signature",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "기본 인수 추가와 필수 인수 추가의 호출부 차이",
@@ -943,7 +972,7 @@
     {
       "id": "VA-F017",
       "name": "Convert Between Pointer and Instance",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "new/delete와 address/dereference 혼합",
@@ -1000,7 +1029,7 @@
     {
       "id": "VA-F018",
       "name": "Encapsulate Field",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "m_nItemsCount·hWindow·밑줄 이름",
@@ -1057,7 +1086,7 @@
     {
       "id": "VA-F019",
       "name": "Extract Method",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "read/write 혼합·멤버·로컬·단일 반환값",
@@ -1113,7 +1142,7 @@
     {
       "id": "VA-F020",
       "name": "Introduce Variable",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "동일 표현식의 선택 전/후와 다른 scope",
@@ -1170,7 +1199,7 @@
     {
       "id": "VA-F021",
       "name": "Move Implementation to Header File",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "선언없음·default이름차이·전처리·주석·선택복원"
@@ -1225,7 +1254,7 @@
     {
       "id": "VA-F022",
       "name": "Move Implementation to Source File",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "template 두단계·overload·EOF·snippet·Undo"
@@ -1280,7 +1309,7 @@
     {
       "id": "VA-F023",
       "name": "Move Method Implementations to Source File",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "중첩class·선택subset·template·Undo"
@@ -1335,7 +1364,7 @@
     {
       "id": "VA-F024",
       "name": "Move Selection to New File",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "부분줄·기존destination·언어template·include·Undo"
@@ -1446,7 +1475,7 @@
     {
       "id": "VA-F026",
       "name": "Rename Files",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "related files·include·SCC·충돌·read-only·save/Undo"
@@ -1501,7 +1530,7 @@
     {
       "id": "VA-F027",
       "name": "Simplify Instance Declaration",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "local/nonlocal·타입/initializer·주석·Undo"
@@ -1556,7 +1585,7 @@
     {
       "id": "VA-F028",
       "name": "Add Forward Declaration",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "pointer와 by-value 다른 사용 혼재",
@@ -1612,7 +1641,7 @@
     {
       "id": "VA-F029",
       "name": "Add Member",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "reference·method/field·systemdir·snippet·Undo"
@@ -1667,7 +1696,7 @@
     {
       "id": "VA-F030",
       "name": "Add Missing Case Statements",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "일부/all enum 누락·default 존재",
@@ -1723,7 +1752,7 @@
     {
       "id": "VA-F031",
       "name": "Add Similar Member",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "base/derived·stub/body·배치·systemdir·Undo"
@@ -1778,7 +1807,7 @@
     {
       "id": "VA-F032",
       "name": "Add Using Directive",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "C#listbox설정·동명namespace·기존using·caret·Undo"
@@ -1833,7 +1862,7 @@
     {
       "id": "VA-F033",
       "name": "Add include Directive",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "ifdef 속 include·중복·umbrella·generated header",
@@ -1890,7 +1919,7 @@
     {
       "id": "VA-F034",
       "name": "Add/Remove Braces",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "dangling else·nested·복수macro·toggle·Undo"
@@ -1945,7 +1974,7 @@
     {
       "id": "VA-F035",
       "name": "Create Declaration",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "헤더 존재/없음·이웃 순서",
@@ -2001,7 +2030,7 @@
     {
       "id": "VA-F036",
       "name": "Create File",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "짝없는파일·언어별·project외·include·caret"
@@ -2113,7 +2142,7 @@
     {
       "id": "VA-F038",
       "name": "Create Implementation",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "source 존재/없음·EOF/이웃 배치",
@@ -2169,7 +2198,7 @@
     {
       "id": "VA-F039",
       "name": "Create Method Implementations",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "일부기구현·대응없음·overload·배치·Undo"
@@ -2224,7 +2253,7 @@
     {
       "id": "VA-F040",
       "name": "Document Method",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "declaration/definition·return/parameter·snippet·Undo"
@@ -2279,7 +2308,7 @@
     {
       "id": "VA-F041",
       "name": "Implement Interface / Virtual Methods",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "다중/diamond 상속·이미 구현한 메서드",
@@ -2336,7 +2365,7 @@
     {
       "id": "VA-F042",
       "name": "Acronyms",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "camel/Pascal/underscore·중복 약어·최근 사용·목록별 가용성"
@@ -2391,7 +2420,7 @@
     {
       "id": "VA-F043",
       "name": "Auto-Extend Multi-Line Comments",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "block·single-line·끝줄·선두공백 비교"
@@ -2441,12 +2470,20 @@
         }
       ],
       "implementationCompleteVerified": false,
-      "parityCompleteVerified": false
+      "parityCompleteVerified": false,
+      "implementationEvidence": [
+        {
+          "path": "editor-integration-0.0.73.json",
+          "sha256": "faf8a1dd3187d2d2109dde73d2f8d93fc056c312547e5aab71585b71257af4c7",
+          "mvid": "a245e294-bb69-49c9-8490-aa3ca91ce564"
+        }
+      ],
+      "implementationEvidenceScope": "Selected editor scenarios passed; other options, languages and VA comparison unverified"
     },
     {
       "id": "VA-F044",
       "name": "Enhanced Listboxes",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "member/completion/suggestion 전환 및 필터 조합 비교",
@@ -2503,7 +2540,7 @@
     {
       "id": "VA-F045",
       "name": "Format After Paste",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "단일/다중 줄 paste 및 Undo 단계 비교"
@@ -2558,7 +2595,7 @@
     {
       "id": "VA-F046",
       "name": "Insert () and Closing Brackets and Quotes",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "typing 중단·중복닫힘·commit·brace 위치 비교"
@@ -2608,12 +2645,20 @@
         }
       ],
       "implementationCompleteVerified": false,
-      "parityCompleteVerified": false
+      "parityCompleteVerified": false,
+      "implementationEvidence": [
+        {
+          "path": "editor-integration-0.0.73.json",
+          "sha256": "faf8a1dd3187d2d2109dde73d2f8d93fc056c312547e5aab71585b71257af4c7",
+          "mvid": "a245e294-bb69-49c9-8490-aa3ca91ce564"
+        }
+      ],
+      "implementationEvidenceScope": "Selected editor scenarios passed; other options, languages and VA comparison unverified"
     },
     {
       "id": "VA-F047",
       "name": "Insert _ After m and Shift",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "Shift 타이밍·연속입력·IME 비교"
@@ -2778,7 +2823,7 @@
     {
       "id": "VA-F050",
       "name": "Shorthand",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "부분 문자열·prefix 제한·약어 충돌·우선 선택"
@@ -2889,7 +2934,7 @@
     {
       "id": "VA-F052",
       "name": "Smart Suggestions",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "타입/overload·enum·사용자 snippet·comma 입력"
@@ -2997,7 +3042,7 @@
     {
       "id": "VA-F054",
       "name": "Suggestion Lists",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "정의/참조 문맥·C# 공급원·commit·우측 문자열"
@@ -3052,7 +3097,7 @@
     {
       "id": "VA-F055",
       "name": "Surround Selection",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "부분/전체/복수 줄·기존주석·snippet·Undo 비교"
@@ -3102,12 +3147,20 @@
         }
       ],
       "implementationCompleteVerified": false,
-      "parityCompleteVerified": false
+      "parityCompleteVerified": false,
+      "implementationEvidence": [
+        {
+          "path": "editor-integration-0.0.73.json",
+          "sha256": "faf8a1dd3187d2d2109dde73d2f8d93fc056c312547e5aab71585b71257af4c7",
+          "mvid": "a245e294-bb69-49c9-8490-aa3ca91ce564"
+        }
+      ],
+      "implementationEvidenceScope": "Selected editor scenarios passed; other options, languages and VA comparison unverified"
     },
     {
       "id": "VA-F056",
       "name": "Surround With",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "문자·메뉴·다중 snippet·선택/Undo"
@@ -3162,7 +3215,7 @@
     {
       "id": "VA-F057",
       "name": "Column Indicator",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "가변/고정폭·zoom·theme·가로 스크롤"
@@ -3217,7 +3270,7 @@
     {
       "id": "VA-F058",
       "name": "Context Field",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "동명 scope·unknown·global·resize·IME/Unicode"
@@ -3272,7 +3325,7 @@
     {
       "id": "VA-F059",
       "name": "Definition Field",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "복수 정의·include 경로·macro/typedef·복사"
@@ -3384,7 +3437,7 @@
     {
       "id": "VA-F061",
       "name": "Local Symbols in Bold",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "동명 다른 scope·다른 파일의 class member·theme"
@@ -3439,7 +3492,7 @@
     {
       "id": "VA-F062",
       "name": "Highlight Find Results",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "새검색·ESC·문서전환·theme 비교"
@@ -3550,7 +3603,7 @@
     {
       "id": "VA-F064",
       "name": "Highlight References to Symbol Under Cursor",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "동명 shadowing·read/write·공백·ESC 비교",
@@ -3606,7 +3659,7 @@
     {
       "id": "VA-F065",
       "name": "Parameter Info",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "중간 인자 복귀·overload·macro·C#·재시작"
@@ -3661,7 +3714,7 @@
     {
       "id": "VA-F066",
       "name": "Print in Color",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "전체/일부 출력·theme·VS버전·context"
@@ -3716,7 +3769,7 @@
     {
       "id": "VA-F067",
       "name": "Quick Info",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "VS버전·IDE 병합/대체·source/header 주석·macro·ESC"
@@ -3771,7 +3824,7 @@
     {
       "id": "VA-F068",
       "name": "System Symbols in Italics",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "동명 override·NuGet/Vcpkg·ProgramFiles·재파싱"
@@ -3826,7 +3879,7 @@
     {
       "id": "VA-F069",
       "name": "Convert Dot to ->",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "pointer·instance·smart object·철회 비교"
@@ -3881,7 +3934,7 @@
     {
       "id": "VA-F070",
       "name": "Highlight Files in Output Window",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "solution 내부/외부·상대/절대경로·출력갱신 비교"
@@ -3936,7 +3989,7 @@
     {
       "id": "VA-F071",
       "name": "Highlight Matching Braces and Parentheses",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "중첩·문자열/주석 delimiter·caret 경계 비교"
@@ -3991,7 +4044,7 @@
     {
       "id": "VA-F072",
       "name": "Highlight Mismatching Braces and Parentheses",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "불완전코드·여는/닫는짝·macro 비교"
@@ -4046,7 +4099,7 @@
     {
       "id": "VA-F073",
       "name": "Repair Case",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "단일/복수 후보·C# 조건·Undo 비교"
@@ -4101,7 +4154,7 @@
     {
       "id": "VA-F074",
       "name": "Underline Spelling Errors",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "언어사전·주석/문자열·사전수명·Undo 비교"
@@ -4156,7 +4209,7 @@
     {
       "id": "VA-F075",
       "name": "Underline Unknown Symbols",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "IDE표시 토글·정의중·include/macro·취소 비교"
@@ -4211,7 +4264,7 @@
     {
       "id": "VA-F076",
       "name": "Code Inspection Settings",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "checker/level·설정 reset·조정·source suppression"
@@ -4266,7 +4319,7 @@
     {
       "id": "VA-F077",
       "name": "Code Issues in the Editor",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "표시 토글·겹친 issue·level5·tracking"
@@ -4321,7 +4374,7 @@
     {
       "id": "VA-F078",
       "name": "Quick Fixes in the Editor",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "다중 fix·겹침·stale span·취소·Undo"
@@ -4376,7 +4429,7 @@
     {
       "id": "VA-F079",
       "name": "Quick Fixes in a Tool Window",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "그룹/복수 선택·sort·tracking·Undo"
@@ -4486,7 +4539,7 @@
     {
       "id": "VA-F081",
       "name": "for Refactoring",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "title 변경/삭제·언어별 필수값·reserved 문맥"
@@ -4541,7 +4594,7 @@
     {
       "id": "VA-F082",
       "name": "for Smart Suggestions",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "타입/typedef·빈 제안·삭제와 재생성·정렬"
@@ -4596,7 +4649,7 @@
     {
       "id": "VA-F083",
       "name": "for Surround With",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "선택 없음·부분/전체 줄·문자 충돌·accelerator"
@@ -4651,7 +4704,7 @@
     {
       "id": "VA-F084",
       "name": "with Shortcuts",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "case·중복 쌍·language·commit·Undo"
@@ -4706,7 +4759,7 @@
     {
       "id": "VA-F085",
       "name": "Create from Selection",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "여러 줄·공백·문자 escape·입력·caret"
@@ -4920,7 +4973,7 @@
     {
       "id": "VA-F089",
       "name": "Address Resolver",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "base/ASLR·PDB 불일치·여러 모듈·입력 형식·실패"
@@ -4975,7 +5028,7 @@
     {
       "id": "VA-F090",
       "name": "PDB Explorer",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "release/debug PDB·base·중복주소·module refresh·disassembly 이동"
@@ -5030,7 +5083,7 @@
     {
       "id": "VA-F091",
       "name": "VA Memory View",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "세션전/중 토글·재시작·debugger state 비교"
@@ -5085,7 +5138,7 @@
     {
       "id": "VA-F092",
       "name": "VA Step Filter",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "global/solution 우선순위·창숨김·권한·세션수명 비교"
@@ -5250,7 +5303,7 @@
     {
       "id": "VA-F095",
       "name": "Simple Link Patterns",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "keyword/suffix 공백·quote·타입 불일치",
@@ -5306,7 +5359,7 @@
     {
       "id": "VA-F096",
       "name": "Complex Link Patterns",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "RE= 대소문자·빈/잘못된pattern·group",
@@ -5362,7 +5415,7 @@
     {
       "id": "VA-F097",
       "name": "Connect to FogBugz and GitHub",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "공유/사용자 설정·권한 실패·tooltip 취소·browser login"
@@ -5417,7 +5470,7 @@
     {
       "id": "VA-F098",
       "name": "Preview Files",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "로컬/network·경로공백·환경값·미존재파일·형식별 preview"
@@ -5472,7 +5525,7 @@
     {
       "id": "VA-F099",
       "name": "Open Hyperlinks in an External Browser",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "plugin override·internal/external·URL expansion",
@@ -5528,7 +5581,7 @@
     {
       "id": "VA-F100",
       "name": "Custom Plug-ins",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "올바른/잘못된 type·의존성 누락·validation 예외",
@@ -5584,7 +5637,7 @@
     {
       "id": "VA-F101",
       "name": "Context Menus",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "symbol/selection/file 문맥·focus·modified mouse"
@@ -5639,7 +5692,7 @@
     {
       "id": "VA-F102",
       "name": "Custom File Extensions",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "ignore/reopen·extensionless·custom 언어·VS버전"
@@ -5749,7 +5802,7 @@
     {
       "id": "VA-F104",
       "name": "Mouse",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "click 조합·wheel 방향·selection·IDE 충돌"
@@ -5804,7 +5857,7 @@
     {
       "id": "VA-F105",
       "name": "Multiple Platforms",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "Win32/x64/custom·build/edit 차이·재시작"
@@ -5859,7 +5912,7 @@
     {
       "id": "VA-F106",
       "name": "Non-Microsoft Build Processes",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "solution없음·custom 경로순서·환경값·Rebuild"
@@ -5914,7 +5967,7 @@
     {
       "id": "VA-F107",
       "name": "Parse Concurrency",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [
         "설정/재시작·프로젝트 시작/편집·검사동시성·실제CPU"
@@ -5969,7 +6022,7 @@
     {
       "id": "VA-F108",
       "name": "Options Dialog",
-      "partialSourceMapping": false,
+      "partialSourceMapping": true,
       "documentSpecification": "documented-partially",
       "scenarios": [],
       "gates": [
@@ -6022,5 +6075,5 @@
   ],
   "requiredGateCount": 756,
   "unverifiedGateCount": 756,
-  "unmappedFeatureCount": 82
+  "unmappedFeatureCount": 0
 }

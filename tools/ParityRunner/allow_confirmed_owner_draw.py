@@ -1,0 +1,4 @@
+from pathlib import Path
+p=Path('tools/ParityRunner/LiveProbe/LiveProbe.cs');s=p.read_text(encoding='utf-8-sig');anchor='if(op=="native-list-accept"){if(!new[]{"true","false","nearbyValue103"}.Contains(wanted)||chosen<0)'
+new='''if(op=="native-list-accept"){if(chosen<0&&count==1&&wanted=="true"&&request.ContainsKey("expectedText")){var activeDoc=dte.ActiveDocument;var currentText=(EnvDTE.TextDocument)activeDoc.Object("TextDocument");if(!Path.GetFullPath(activeDoc.FullName).StartsWith(Path.GetFullPath(root)+Path.DirectorySeparatorChar,StringComparison.OrdinalIgnoreCase)||currentText.StartPoint.CreateEditPoint().GetText(currentText.EndPoint)!=(string)request["expectedText"])throw new InvalidOperationException("Owner-draw expected text changed");chosen=0;}if(!new[]{"true","false","nearbyValue103"}.Contains(wanted)||chosen<0)'''
+assert s.count(anchor)==1;s=s.replace(anchor,new);p.write_text(s,encoding='utf-8-sig')

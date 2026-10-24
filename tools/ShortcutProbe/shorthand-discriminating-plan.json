@@ -1,0 +1,56 @@
+{
+  "featureId": "VA-F050",
+  "status": "prepared_not_executed_in_ide",
+  "scope": "Global C++ suggestion list; VA expectation requires actual observation",
+  "fixture": "void GetWorldLocation() {}\r\nvoid GetWorldRotation() {}\r\nvoid Probe() { GWrLoc }\r\n",
+  "query": "GWrLoc",
+  "target": "GetWorldLocation",
+  "negativeCandidate": "GetWorldRotation",
+  "distinguishes": [
+    "query is not a prefix",
+    "query is not the GWL acronym",
+    "toggle acronym and shorthand independently"
+  ],
+  "cases": [
+    {
+      "acronym": false,
+      "shorthand": false,
+      "localIndexExpectedTarget": false,
+      "VAObservedTarget": null,
+      "CAIdeObservedTarget": null,
+      "result": "unverified"
+    },
+    {
+      "acronym": true,
+      "shorthand": false,
+      "localIndexExpectedTarget": false,
+      "VAObservedTarget": null,
+      "CAIdeObservedTarget": null,
+      "result": "unverified"
+    },
+    {
+      "acronym": false,
+      "shorthand": true,
+      "localIndexExpectedTarget": true,
+      "VAObservedTarget": null,
+      "CAIdeObservedTarget": null,
+      "result": "unverified"
+    },
+    {
+      "acronym": true,
+      "shorthand": true,
+      "localIndexExpectedTarget": true,
+      "VAObservedTarget": null,
+      "CAIdeObservedTarget": null,
+      "result": "unverified"
+    }
+  ],
+  "requiredEvidence": [
+    "same initial saved fixture and caret",
+    "effective preferences for both applications",
+    "visible candidate list before commit",
+    "committed buffer and caret",
+    "Undo restores original buffer"
+  ],
+  "newRuntimePasses": 0
+}
