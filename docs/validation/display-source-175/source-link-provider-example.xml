@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceLinks>
+  <Rule>
+    <Name>Team GitHub issues</Name><Enabled>true</Enabled><PluginId>GitHub</PluginId>
+    <Provider>Url</Provider><Pattern>issue #{id}</Pattern>
+    <Target>https://github.com/OWNER/REPOSITORY/issues/{id}</Target>
+  </Rule>
+</SourceLinks>

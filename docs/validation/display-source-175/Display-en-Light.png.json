@@ -1,0 +1,97 @@
+﻿{
+    "Screen":  "Settings",
+    "Theme":  "Light",
+    "Controls":  [
+                     {
+                         "Label":  "Switch to integrated main menu",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Display CodeAssist Navigation Bar",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Top",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Bottom",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Display indicator after column",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Show Quick Info tooltips for more symbols",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Show comments from source files when available",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Show tooltips for braces and structural keywords",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Format doxygen comments in Quick Info tooltips",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Use enhanced macro expansion",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Format enhanced expansion",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Keep both original and enhanced expansions",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Use last active document context for miscellaneous files",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     },
+                     {
+                         "Label":  "Use forward slashes in navigation bar for include paths",
+                         "Foreground":  "#FF000000",
+                         "Background":  "#FFFFFFFF",
+                         "Contrast":  21
+                     }
+                 ],
+    "Scope":  "Offline WPF resource and label-color regression; not actual Visual Studio UI"
+}

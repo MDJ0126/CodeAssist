@@ -1,0 +1,91 @@
+﻿{
+    "Screen":  "Settings",
+    "Theme":  "Dark",
+    "Controls":  [
+                     {
+                         "Label":  "Enable Source Links",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "Show action",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "Regular expression",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     }
+                 ],
+    "Scope":  "Offline WPF resource and label-color regression; not actual Visual Studio UI"
+}

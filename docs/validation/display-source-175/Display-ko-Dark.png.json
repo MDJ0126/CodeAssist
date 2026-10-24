@@ -1,0 +1,97 @@
+﻿{
+    "Screen":  "Settings",
+    "Theme":  "Dark",
+    "Controls":  [
+                     {
+                         "Label":  "통합 기본 메뉴로 전환",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "CodeAssist 탐색 표시줄 표시",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "위",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "아래",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "Display indicator after column",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "심볼 빠른 정보 표시",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "소스 주석이 있으면 표시",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "괄호·구조 키워드 툴팁 표시",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "빠른 정보의 Doxygen 주석 서식 적용",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "향상된 매크로 확장 사용",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "확장 결과 서식 적용",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "원본과 향상된 확장 결과 함께 표시",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "기타 파일에 마지막 활성 문서 문맥 사용",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     },
+                     {
+                         "Label":  "탐색 표시줄의 include 경로에 슬래시 사용",
+                         "Foreground":  "#FFF1F1F1",
+                         "Background":  "#FF1E1E1E",
+                         "Contrast":  14.759886310925728
+                     }
+                 ],
+    "Scope":  "Offline WPF resource and label-color regression; not actual Visual Studio UI"
+}

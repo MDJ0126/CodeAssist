@@ -1,0 +1,152 @@
+﻿{
+    "pages":  [
+                  {
+                      "page":  "Goto",
+                      "constructed":  true,
+                      "checkboxBindings":  2,
+                      "comboBindings":  1,
+                      "numericValidation":  0,
+                      "topLevelGroups":  9
+                  },
+                  {
+                      "page":  "Highlighting",
+                      "constructed":  true,
+                      "checkboxBindings":  8,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  17
+                  },
+                  {
+                      "page":  "Underlining",
+                      "constructed":  true,
+                      "checkboxBindings":  2,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  4
+                  },
+                  {
+                      "page":  "Display",
+                      "constructed":  true,
+                      "checkboxBindings":  12,
+                      "comboBindings":  0,
+                      "numericValidation":  1,
+                      "topLevelGroups":  18
+                  },
+                  {
+                      "page":  "Hashtags",
+                      "constructed":  true,
+                      "checkboxBindings":  3,
+                      "comboBindings":  0,
+                      "numericValidation":  1,
+                      "topLevelGroups":  4
+                  },
+                  {
+                      "page":  "Enhanced Listboxes",
+                      "constructed":  true,
+                      "checkboxBindings":  9,
+                      "comboBindings":  1,
+                      "numericValidation":  0,
+                      "topLevelGroups":  14
+                  },
+                  {
+                      "page":  "Projects and Files",
+                      "constructed":  true,
+                      "checkboxBindings":  6,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  9
+                  },
+                  {
+                      "page":  "C/C++ Directories",
+                      "constructed":  true,
+                      "checkboxBindings":  0,
+                      "comboBindings":  2,
+                      "numericValidation":  0,
+                      "topLevelGroups":  4
+                  },
+                  {
+                      "page":  "Code Generation",
+                      "constructed":  true,
+                      "checkboxBindings":  3,
+                      "comboBindings":  3,
+                      "numericValidation":  1,
+                      "topLevelGroups":  7
+                  },
+                  {
+                      "page":  "Project-Wide",
+                      "constructed":  true,
+                      "checkboxBindings":  5,
+                      "comboBindings":  11,
+                      "numericValidation":  7,
+                      "topLevelGroups":  34
+                  },
+                  {
+                      "page":  "Per-File",
+                      "constructed":  true,
+                      "checkboxBindings":  5,
+                      "comboBindings":  1,
+                      "numericValidation":  0,
+                      "topLevelGroups":  6
+                  },
+                  {
+                      "page":  "Debug Assistance",
+                      "constructed":  true,
+                      "checkboxBindings":  1,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  6
+                  },
+                  {
+                      "page":  "Mouse",
+                      "constructed":  true,
+                      "checkboxBindings":  8,
+                      "comboBindings":  6,
+                      "numericValidation":  0,
+                      "topLevelGroups":  14
+                  },
+                  {
+                      "page":  "Performance",
+                      "constructed":  true,
+                      "checkboxBindings":  6,
+                      "comboBindings":  1,
+                      "numericValidation":  2,
+                      "topLevelGroups":  11
+                  },
+                  {
+                      "page":  "Startup",
+                      "constructed":  true,
+                      "checkboxBindings":  4,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  5
+                  },
+                  {
+                      "page":  "Logging and Recovery",
+                      "constructed":  true,
+                      "checkboxBindings":  2,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  5
+                  },
+                  {
+                      "page":  "System Info",
+                      "constructed":  true,
+                      "checkboxBindings":  0,
+                      "comboBindings":  0,
+                      "numericValidation":  0,
+                      "topLevelGroups":  6
+                  },
+                  {
+                      "page":  "Source Links",
+                      "constructed":  true,
+                      "providerAdd":  6,
+                      "duplicate":  true,
+                      "remove":  true,
+                      "targetEditing":  true,
+                      "invalidTargetGate":  true
+                  }
+              ],
+    "scope":  "Offline WPF actual event handlers; no window Show, no Computer Use, no IDE input or settings save",
+    "total":  18,
+    "passed":  18
+}

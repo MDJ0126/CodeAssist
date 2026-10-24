@@ -1,0 +1,868 @@
+{
+  "version": "0.0.175",
+  "startedAt": "2026-10-24T16:38:10+09:00",
+  "recordedAt": "2026-10-24T17:03:34.503473+09:00",
+  "proposed": "20–30 minutes",
+  "elapsedSeconds": 1618,
+  "computerUseUsed": false,
+  "installed": false,
+  "scope": "기존96개 구성 체크. 픽셀 비교 또는 전체108개 기능의 실제 VA/CA 실행 동기화율이 아님. 이전94개 판정을 유지하고 이번 두 본문을 재평가.",
+  "structural": {
+    "percent": 100,
+    "points": 96,
+    "total": 96,
+    "similar": 96,
+    "partial": 0,
+    "missing": 0
+  },
+  "requestedRemaining": {
+    "completed": 2,
+    "total": 2,
+    "percent": 100
+  },
+  "original18": {
+    "completed": 18,
+    "total": 18,
+    "percent": 100,
+    "scope": "구성 항목 보완 범위"
+  },
+  "coreTests": {
+    "passed": 495,
+    "total": 495,
+    "percent": 100
+  },
+  "optionEventTests": {
+    "passed": 18,
+    "total": 18,
+    "percent": 100,
+    "sourceLinkAddProviders": 6,
+    "duplicateAndRemove": true,
+    "invalidTargetGate": true
+  },
+  "newRenderings": {
+    "passed": 8,
+    "total": 8,
+    "scope": "2페이지 × 2언어 × 2테마; Source Links는 메모리 내 예제6개를 넣은 오프스크린 촬영. 설치 설정을 바꾸지 않음."
+  },
+  "documentAnalysis": {
+    "count": 108,
+    "total": 108,
+    "percent": 100,
+    "scope": "문서·설치 도움말 기반 부분 명세. 전체 역분석 완료율 아님"
+  },
+  "wholeProductRuntimeParityPercent": null,
+  "sourceCommit": "3066478a540d38f80cf739da2ec245a1859f1383",
+  "release": {
+    "url": "https://github.com/MDJ0126/CodeAssist/releases/tag/v0.0.175",
+    "publishedAt": "2026-10-24T08:03:01Z",
+    "tag": "v0.0.175",
+    "assets": [
+      {
+        "name": "CodeAssist.VS2019.vsix",
+        "bytes": 761603,
+        "sha256": "e86fe90afab89424d4eaeeea21c2d8a099c7adf748325f3b3488eb472e749281",
+        "url": "https://github.com/MDJ0126/CodeAssist/releases/download/v0.0.175/CodeAssist.VS2019.vsix",
+        "digestVerified": true,
+        "version": "0.0.175",
+        "displayImplementationPresent": true,
+        "sourceLinkEditorPresent": true
+      },
+      {
+        "name": "CodeAssist.vsix",
+        "bytes": 760196,
+        "sha256": "277467d72f9ef6da0c5980bc47803099136630f12579e18c68365a96e3aafc6f",
+        "url": "https://github.com/MDJ0126/CodeAssist/releases/download/v0.0.175/CodeAssist.vsix",
+        "digestVerified": true,
+        "version": "0.0.175",
+        "displayImplementationPresent": true,
+        "sourceLinkEditorPresent": true
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "bytes": 173,
+        "sha256": "1d19821a957d1e48c3fc24ad621565ae18e247e67336d538c227325bd753e85c",
+        "url": "https://github.com/MDJ0126/CodeAssist/releases/download/v0.0.175/SHA256SUMS.txt",
+        "digestVerified": true
+      }
+    ],
+    "status": "published-and-downloaded-verified"
+  },
+  "limits": [
+    "새 VS 실행·물리 키 입력·설치 검증은 수행하지 않음",
+    "매크로 미리보기는 현재 문서의 object/function-like 정의를 처리하는 bounded preview이며 전체 컴파일러 전처리기를 대체하지 않음",
+    "Source Links 플러그인 가져오기는 XML 공급자 정의 방식. 네이티브 VA DLL ABI 호환을 주장하지 않음",
+    "기존96개 구성 체크 밖의 AI·GPU·부동 툴바 등 전체 VA 제품의 완전 구현을 의미하지 않음"
+  ],
+  "xerj": "사용 — SourceLinks Display integrated menu macro expansion 검색 후 현재 소스·실행 결과로 확인",
+  "items": [
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Advanced",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "System Info",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ProductOptions.cs / ReferenceOptions.cs / 15~17 Dark·Light PNG",
+      "note": "동일 Advanced 계층에 독립 페이지 추가. Performance → Logging and Recovery → Startup → System Info 순서"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Startup",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ProductOptions.cs / ReferenceOptions.cs / 15~17 Dark·Light PNG",
+      "note": "동일 Advanced 계층에 독립 페이지 추가. Performance → Logging and Recovery → Startup → System Info 순서"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Logging and Recovery",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ProductOptions.cs / ReferenceOptions.cs / 15~17 Dark·Light PNG",
+      "note": "동일 Advanced 계층에 독립 페이지 추가. Performance → Logging and Recovery → Startup → System Info 순서"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Performance",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Games & GPUs",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Debug Assistance",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "VA Intelligence",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Code Inspection",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Checker Sets",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Per-File",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Project-Wide",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Code Generation",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Projects",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "C/C++ Directories",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Projects and Files",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Suggestions",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Enhanced Listboxes",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Navigation",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "VA Hashtags",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Source Links",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Goto",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Editor",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Mouse",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Display",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Smart Select",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Floating Elements",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Highlighting",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Underlining",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "옵션 탐색 항목",
+      "item": "Coloring",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "VA.results.json treeHeaders / ProductOptions.cs Group·Page",
+      "note": "브랜드명 차이는 허용. 같은 상위 범주에 대응 항목 존재"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Options",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Open File in Solution",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Find Symbol",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Find References",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Find Previous by Context",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Find Next by Context",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Insert Snippet",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Spell Check",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Open Corresponding File",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Skip All Breakpoints",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "도구 모음",
+      "item": "Bind Breakpoints to Current Thread",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "사용자 VA 도구 모음 참조 / CodeAssistCommands.vsct:132–142",
+      "note": "동일 기능 순서. CA Welcome 추가 버튼은 누락으로 계산하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 1",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 2",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 3",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 4",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 5",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 6",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 7",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 8",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 9",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 10",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 11",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 12",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 13",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 14",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 15",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 16",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Editor 체크박스 17",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 1",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 2",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 3",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 4",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 5",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 6",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 7",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 8",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 체크박스 9",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 색상 선택 1",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 색상 선택 2",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 색상 선택 3",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 색상 선택 4",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 색상 선택 5",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "기준 컨트롤 개수",
+      "item": "Coloring 색상 선택 6",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-126/summary.json ui + ProductOptions.cs:315–373 + options-160 대응 화면",
+      "note": "기준 컨트롤 존재 여부. 동작·설정값 동일 여부는 채점하지 않음"
+    },
+    {
+      "category": "공통 배치",
+      "item": "검색은 좌측 상단",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-160 VA·CA 화면 / ProductOptions.cs:186–271",
+      "note": "픽셀·폭·브랜드·문자열 길이 차이는 감점하지 않음"
+    },
+    {
+      "category": "공통 배치",
+      "item": "탐색 트리는 좌측",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-160 VA·CA 화면 / ProductOptions.cs:186–271",
+      "note": "픽셀·폭·브랜드·문자열 길이 차이는 감점하지 않음"
+    },
+    {
+      "category": "공통 배치",
+      "item": "선택 페이지 본문은 우측",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-160 VA·CA 화면 / ProductOptions.cs:186–271",
+      "note": "픽셀·폭·브랜드·문자열 길이 차이는 감점하지 않음"
+    },
+    {
+      "category": "공통 배치",
+      "item": "페이지 제목은 본문 상단",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-160 VA·CA 화면 / ProductOptions.cs:186–271",
+      "note": "픽셀·폭·브랜드·문자열 길이 차이는 감점하지 않음"
+    },
+    {
+      "category": "공통 배치",
+      "item": "저장·취소는 우측 하단",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-160 VA·CA 화면 / ProductOptions.cs:186–271",
+      "note": "픽셀·폭·브랜드·문자열 길이 차이는 감점하지 않음"
+    },
+    {
+      "category": "공통 배치",
+      "item": "본문 세로 스크롤",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "options-160 VA·CA 화면 / ProductOptions.cs:186–271",
+      "note": "픽셀·폭·브랜드·문자열 길이 차이는 감점하지 않음"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Goto",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Highlighting",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Display",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "DisplayQuickInfo.cs / SourceLinks.cs / SourceLinkOptions.cs / bindings.json / 비교 PNG",
+      "note": "통합 메뉴 전환 추가, 매크로 확장·원본·서식·주석/Doxygen/구조 정보 연결. 한영·다크라이트 렌더링 및 설정 이벤트 검사 통과."
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "VA Hashtags",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Editor",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "layout-audit-0.0.92 기존 VA 화면 + 현재 ProductOptions.cs",
+      "note": "기준 17 체크박스와 하위 들여쓰기·괄호 라디오·Surround 그룹 존재"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Enhanced Listboxes",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Coloring",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "layout-audit-0.0.92 기존 VA 화면 + 현재 ProductOptions.cs",
+      "note": "6색 세로 목록·적용 대상 2행 3열·글꼴 속성 그룹 대응"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Underlining",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Project-Wide",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Per-File",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Code Generation",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Debug Assistance",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Source Links",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "DisplayQuickInfo.cs / SourceLinks.cs / SourceLinkOptions.cs / bindings.json / 비교 PNG",
+      "note": "6종 공급자 예제/식별자, URL·파일 보기·외부 도구 실행 경로, 인수, 3열 목록·복제/제거·공급자 편집·XML 정의 가져오기·열기 제스처 연결."
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Projects and Files",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Mouse",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "C/C++ Directories",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    },
+    {
+      "category": "옵션 본문 17종",
+      "item": "Performance",
+      "state": "비슷함",
+      "points": 1,
+      "evidence": "ReferenceOptions.cs / bindings.json / 해당 Dark·Light PNG",
+      "note": "기존 안내문 또는 부족한 본문을 실제 저장 가능한 대응 컨트롤 그룹으로 교체. 픽셀·공장 기본값·전체 런타임 동일성은 점수 범위 밖"
+    }
+  ],
+  "completedAt": "2026-10-24T17:05:07.700568+09:00"
+}

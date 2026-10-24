@@ -1,0 +1,8 @@
+
+  CodeAssist.Core -> <workspace>\CodeAssist.Core\bin\Release\netstandard2.0\CodeAssist.Core.dll
+  CodeAssist.Indexing -> <workspace>\CodeAssist.Indexing\bin\Release\netstandard2.0\CodeAssist.Indexing.dll
+  CodeAssist.Worker -> <workspace>\CodeAssist.Worker\bin\Release\CodeAssist.Worker.exe
+  CodeAssist.Semantics -> <workspace>\CodeAssist.Semantics\bin\Release\netstandard2.0\CodeAssist.Semantics.dll
+  CodeAssist.Extension -> <workspace>\CodeAssist.Extension\bin\VS2019\Release\CodeAssist.Extension.dll
+  CodeAssist.Extension -> <workspace>\CodeAssist.Extension\bin\VS2019\Release\CodeAssist.Extension.vsix
+  Installer: <workspace>\CodeAssist.Extension\..\installers\0.0.175\CodeAssist.VS2019.vsix
