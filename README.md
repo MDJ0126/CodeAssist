@@ -8,6 +8,12 @@ Visual Studio용 오픈소스 개발 보조 확장입니다. C/C++ 코드의 자
 
 [사용 안내](docs/index.html) · [상세 기능](docs/feature-details.md) · [단축키](docs/keyboard-shortcuts.html) · [MIT License](LICENSE)
 
+<p align="center">
+  <img src="docs/assets/codeassist-overview.png" alt="CodeAssist 작동 구조: 프로젝트 코드와 심볼 인덱스·캐시를 의미 색상, 자동완성, 정의·참조 탐색에 연결합니다." width="100%">
+</p>
+
+*작동 구조를 설명한 도식이며 실제 Visual Studio 화면은 아닙니다.*
+
 ## 주요 기능
 
 - **코드 읽기** — 타입·변수·함수 의미 색상과 심볼 정보 표시
