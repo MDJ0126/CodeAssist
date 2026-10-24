@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-24T15:20:05.117982+09:00",
+  "startedAt": "2026-10-24T14:52:13+09:00",
+  "budgetStartedAt": "2026-10-24T14:53:50+09:00",
+  "elapsedSeconds": 1672,
+  "elapsedSinceBudgetSeconds": 1575,
+  "testedCAVersion": "0.0.172",
+  "welcomeFixVersion": "0.0.173",
+  "catalogRows": 108,
+  "processedRows": 108,
+  "actualCompletedPairs": 1,
+  "actualCompletedPairsPercent": 0.93,
+  "representativeMatches": 1,
+  "representativeConfirmedLowerBoundPercent": 0.93,
+  "different": 0,
+  "unverified": 107,
+  "fullFeatureCertified": 0,
+  "wholeProductSimilarity": null,
+  "coreTests": {
+    "passed": 461,
+    "total": 461
+  },
+  "scope": "Fresh current172 execution only. Skipped cases and dialog probes are not functional passes. No historical CA results included.",
+  "welcomeCommit": "6ff9790",
+  "status": "incomplete",
+  "remaining": [
+    "107 features lack a successful complete functional comparison in this run",
+    "Physical held-key repeat rate",
+    "Ctrl/Shift+mouse filter selection",
+    "Post-upgrade173 Welcome visual QA"
+  ],
+  "xerj": "Used Copy feedback search; current call sites verified with rg"
+}

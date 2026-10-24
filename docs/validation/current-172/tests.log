@@ -1,0 +1,7 @@
+C:\Projects\CodeAssist\CodeAssist.Core.Tests\bin\Debug\net8.0\CodeAssist.Core.Tests.dll(.NETCoreApp,Version=v8.0)에 대한 테스트 실행
+VSTest 버전 17.14.1 (x64)
+
+테스트 실행을 시작하는 중입니다. 잠시 기다려 주세요...
+지정된 패턴과 일치한 총 테스트 파일 수는 1개입니다.
+
+통과!  - 실패:     0, 통과:   461, 건너뜀:     0, 전체:   461, 기간: 669 ms - CodeAssist.Core.Tests.dll (net8.0)

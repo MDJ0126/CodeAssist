@@ -1,0 +1,974 @@
+[
+  {
+    "id": "VA-F001",
+    "name": "Find by Context",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F002",
+    "name": "Find References",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F003",
+    "name": "Find Symbol in Solution",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F004",
+    "name": "GoTo Implementation",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F005",
+    "name": "GoTo Member",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F006",
+    "name": "GoTo Related",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F007",
+    "name": "Highlight Current Line",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F008",
+    "name": "List Methods in File",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F009",
+    "name": "Move Scope",
+    "status": "representative-match",
+    "VA": "complete",
+    "CA": "complete",
+    "reason": "Only this explicit representative behavior matches",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F010",
+    "name": "Navigate Back and Forward",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F011",
+    "name": "Open Corresponding File",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F012",
+    "name": "Open File in Solution",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F013",
+    "name": "VA Hashtags",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F014",
+    "name": "VA Navigation Bar",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F015",
+    "name": "Access to Refactoring Commands",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F016",
+    "name": "Change Signature",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F017",
+    "name": "Convert Between Pointer and Instance",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F018",
+    "name": "Encapsulate Field",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F019",
+    "name": "Extract Method",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F020",
+    "name": "Introduce Variable",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F021",
+    "name": "Move Implementation to Header File",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F022",
+    "name": "Move Implementation to Source File",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F023",
+    "name": "Move Method Implementations to Source File",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F024",
+    "name": "Move Selection to New File",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F025",
+    "name": "Rename",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F026",
+    "name": "Rename Files",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F027",
+    "name": "Simplify Instance Declaration",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F028",
+    "name": "Add Forward Declaration",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F029",
+    "name": "Add Member",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F030",
+    "name": "Add Missing Case Statements",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F031",
+    "name": "Add Similar Member",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F032",
+    "name": "Add Using Directive",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F033",
+    "name": "Add include Directive",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F034",
+    "name": "Add/Remove Braces",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F035",
+    "name": "Create Declaration",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F036",
+    "name": "Create File",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F037",
+    "name": "Create from Usage",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F038",
+    "name": "Create Implementation",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F039",
+    "name": "Create Method Implementations",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F040",
+    "name": "Document Method",
+    "status": "timeout",
+    "VA": "action-error",
+    "CA": "timeout",
+    "reason": "Diagnostic worker exceeded shared item budget",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F041",
+    "name": "Implement Interface / Virtual Methods",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F042",
+    "name": "Acronyms",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F043",
+    "name": "Auto-Extend Multi-Line Comments",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F044",
+    "name": "Enhanced Listboxes",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F045",
+    "name": "Format After Paste",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F046",
+    "name": "Insert () and Closing Brackets and Quotes",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F047",
+    "name": "Insert _ After m and Shift",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F048",
+    "name": "Multiple Clipboards",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F049",
+    "name": "Reset Editor Zoom",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F050",
+    "name": "Shorthand",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F051",
+    "name": "Smart Select",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F052",
+    "name": "Smart Suggestions",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F053",
+    "name": "Sort Selected Lines",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F054",
+    "name": "Suggestion Lists",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F055",
+    "name": "Surround Selection",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F056",
+    "name": "Surround With",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F057",
+    "name": "Column Indicator",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F058",
+    "name": "Context Field",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F059",
+    "name": "Definition Field",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F060",
+    "name": "Enhanced Syntax Coloring",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F061",
+    "name": "Local Symbols in Bold",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F062",
+    "name": "Highlight Find Results",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F063",
+    "name": "Highlight Matching Words",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F064",
+    "name": "Highlight References to Symbol Under Cursor",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F065",
+    "name": "Parameter Info",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F066",
+    "name": "Print in Color",
+    "status": "timeout",
+    "VA": "timeout",
+    "CA": "host-quarantined",
+    "reason": "Diagnostic worker exceeded shared item budget",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F067",
+    "name": "Quick Info",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F068",
+    "name": "System Symbols in Italics",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F069",
+    "name": "Convert Dot to ->",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F070",
+    "name": "Highlight Files in Output Window",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F071",
+    "name": "Highlight Matching Braces and Parentheses",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F072",
+    "name": "Highlight Mismatching Braces and Parentheses",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F073",
+    "name": "Repair Case",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F074",
+    "name": "Underline Spelling Errors",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F075",
+    "name": "Underline Unknown Symbols",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F076",
+    "name": "Code Inspection Settings",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F077",
+    "name": "Code Issues in the Editor",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F078",
+    "name": "Quick Fixes in the Editor",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F079",
+    "name": "Quick Fixes in a Tool Window",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F080",
+    "name": "VA Snippets",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F081",
+    "name": "for Refactoring",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F082",
+    "name": "for Smart Suggestions",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F083",
+    "name": "for Surround With",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F084",
+    "name": "with Shortcuts",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F085",
+    "name": "Create from Selection",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F086",
+    "name": "Environment Placeholders",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F087",
+    "name": "Input Placeholders",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F088",
+    "name": "Reserved Strings",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F089",
+    "name": "Address Resolver",
+    "status": "unverified",
+    "VA": "host-quarantined",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F090",
+    "name": "PDB Explorer",
+    "status": "unverified",
+    "VA": "host-quarantined",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F091",
+    "name": "VA Memory View",
+    "status": "unverified",
+    "VA": "action-error",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F092",
+    "name": "VA Step Filter",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F093",
+    "name": "VA Outline",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F094",
+    "name": "VA View",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F095",
+    "name": "Simple Link Patterns",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F096",
+    "name": "Complex Link Patterns",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F097",
+    "name": "Connect to FogBugz and GitHub",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F098",
+    "name": "Preview Files",
+    "status": "unverified",
+    "VA": "host-quarantined",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F099",
+    "name": "Open Hyperlinks in an External Browser",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F100",
+    "name": "Custom Plug-ins",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F101",
+    "name": "Context Menus",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F102",
+    "name": "Custom File Extensions",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F103",
+    "name": "Keyboard Shortcuts",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F104",
+    "name": "Mouse",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F105",
+    "name": "Multiple Platforms",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F106",
+    "name": "Non-Microsoft Build Processes",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F107",
+    "name": "Parse Concurrency",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  },
+  {
+    "id": "VA-F108",
+    "name": "Options Dialog",
+    "status": "unverified",
+    "VA": "complete",
+    "CA": "host-quarantined",
+    "reason": "Host/worker blocked; no pass inferred",
+    "fullFeatureCertified": false
+  }
+]
