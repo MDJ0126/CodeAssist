@@ -1,0 +1,70 @@
+{
+  "startedAt": "2026-10-24T14:12:43+09:00",
+  "recordedAt": "2026-10-24T14:40:49.0959286+09:00",
+  "proposed": "20–30 minutes",
+  "version": "0.0.172",
+  "historicalWholeCatalog": {
+    "percent": 15.74,
+    "total": 108,
+    "sourceSHA256": "1C4794F3C4C93E780772CFB0F205673BF5A8FF9E1998413C6C1AA7F0CF686E45",
+    "matched": 17,
+    "different": 91,
+    "date": "2026-10-19T12:24:09.393332+09:00",
+    "unverified": 0,
+    "scope": "Historical representative behavior, not current172 full parity"
+  },
+  "currentWholeProductPercent": null,
+  "currentFullCatalogRetested": 0,
+  "selectedOptions": {
+    "passed": 11,
+    "total": 12,
+    "scope": "Cumulative selected OnOff sample; not product-wide",
+    "percent": 91.67
+  },
+  "snippet": {
+    "passed": 4,
+    "checks": [
+      {
+        "passed": true,
+        "state": "on",
+        "criterion": "Full text including newline"
+      },
+      {
+        "passed": true,
+        "state": "on",
+        "criterion": "Caret"
+      },
+      {
+        "passed": true,
+        "state": "off",
+        "criterion": "Full text including newline"
+      },
+      {
+        "passed": true,
+        "state": "off",
+        "criterion": "Caret"
+      }
+    ],
+    "total": 4,
+    "percent": 100
+  },
+  "coreTests": {
+    "passed": 458,
+    "total": 458,
+    "percent": 100
+  },
+  "partialDocumentSpecification": {
+    "count": 108,
+    "total": 108,
+    "percent": 100
+  },
+  "remaining": [
+    "Physical held-key repeat rate: supported Computer Use API cannot hold a key",
+    "Ctrl/Shift+mouse multi-filter input: supported API cannot hold modifiers during click",
+    "Full108 certification on current172, including UI, keys and remaining differences"
+  ],
+  "implementationCommit": "8fdf90b",
+  "xerj": "Used DoubleKeyRepeat search; confirmed current source with rg",
+  "completion": "partial: physical input and full current catalog remain",
+  "elapsedSeconds": 1686.0
+}

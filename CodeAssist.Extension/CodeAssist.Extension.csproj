@@ -150,7 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\CodeAssist.Worker\bin\$(Configuration)\CodeAssist.Worker.exe"><Link>CodeAssist.Worker.exe</Link><IncludeInVSIX>true</IncludeInVSIX><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
-    <Content Include="bin\$(Configuration)\Newtonsoft.Json.dll"><Link>Newtonsoft.Json.dll</Link><IncludeInVSIX>true</IncludeInVSIX></Content>
+    <Content Include="$(OutputPath)Newtonsoft.Json.dll"><Link>Newtonsoft.Json.dll</Link><IncludeInVSIX>true</IncludeInVSIX></Content>
     <Content Include="Newtonsoft.Json.LICENSE.md"><IncludeInVSIX>true</IncludeInVSIX></Content>
     <ProjectReference Include="..\CodeAssist.Worker\CodeAssist.Worker.csproj"><Project>{9C3DE21B-BC7B-4C87-BDC4-6F3C97689FA8}</Project><Name>CodeAssist.Worker</Name><ReferenceOutputAssembly>false</ReferenceOutputAssembly></ProjectReference>
     <ProjectReference Include="..\CodeAssist.Core\CodeAssist.Core.csproj">

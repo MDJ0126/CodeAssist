@@ -1,0 +1,8 @@
+{
+  "pid": 52816,
+  "startTicks": 639284163755181448,
+  "method": "ClrMD process snapshot / CLR EnumerateModules",
+  "module": "c:\\users\\ehdwn\\appdata\\local\\microsoft\\visualstudio\\17.0_ca39936fcodeassistbackgroundca\\extensions\\goyx5fgp.4mr\\CodeAssist.Extension.dll",
+  "sha256": "56C8E7FD5EF641F347C3EC4230F661F002DD3992563B40995C6A2665B1622671",
+  "elapsedMilliseconds": 1064.3407
+}

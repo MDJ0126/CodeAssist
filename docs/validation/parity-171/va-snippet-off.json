@@ -1,0 +1,12 @@
+{
+  "readOnly": true,
+  "case": "va-snippet-off",
+  "editorText": "z",
+  "selection": {
+    "anchorLine": 1,
+    "anchorColumn": 2,
+    "activeLine": 1,
+    "activeColumn": 2,
+    "text": ""
+  }
+}

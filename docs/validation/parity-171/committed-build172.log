@@ -1,0 +1,12 @@
+
+  복원할 프로젝트를 확인하는 중...
+  C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Indexing\CodeAssist.Indexing.csproj을(를) 1.31초 동안 복원했습니다.
+  C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Core\CodeAssist.Core.csproj을(를) 1.31초 동안 복원했습니다.
+  C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Semantics\CodeAssist.Semantics.csproj을(를) 1.31초 동안 복원했습니다.
+  C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Extension\CodeAssist.Extension.csproj을(를) 1.41초 동안 복원했습니다.
+  CodeAssist.Core -> C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Core\bin\Release\netstandard2.0\CodeAssist.Core.dll
+  CodeAssist.Indexing -> C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Indexing\bin\Release\netstandard2.0\CodeAssist.Indexing.dll
+  CodeAssist.Worker -> C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Worker\bin\Release\CodeAssist.Worker.exe
+  CodeAssist.Semantics -> C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Semantics\bin\Release\netstandard2.0\CodeAssist.Semantics.dll
+  CodeAssist.Extension -> C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Extension\bin\VS2019\Release\CodeAssist.Extension.dll
+VSSDK : error VSSDK1025: Could not add the file 'C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Extension\bin\Release\Newtonsoft.Json.dll' to the zip package 'bin\VS2019\Release\CodeAssist.Extension.vsix'. 'C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Extension\bin\Release\Newtonsoft.Json.dll' 경로의 일부를 찾을 수 없습니다. [C:\Projects\CodeAssist\.local\reproduce-8fdf90b\CodeAssist.Extension\CodeAssist.Extension.csproj]

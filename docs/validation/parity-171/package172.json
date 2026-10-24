@@ -1,0 +1,285 @@
+{
+  "Version": "0.0.172",
+  "PackageSHA256": "D9A09D2EB6E957844B327F549A3C90E645D97D5BBB8FA23A6645F4F4587CCF2F",
+  "Files": [
+    {
+      "File": "CodeAssist.Extension.dll",
+      "Bytes": 544768,
+      "SHA256": "56C8E7FD5EF641F347C3EC4230F661F002DD3992563B40995C6A2665B1622671",
+      "MatchesReleaseBuild": true
+    },
+    {
+      "File": "CodeAssist.Core.dll",
+      "Bytes": 226816,
+      "SHA256": "26C7FB912FD0D52E7250B1426608038D12518C1539922DED3D36EDD370A0501D",
+      "MatchesReleaseBuild": true
+    },
+    {
+      "File": "CodeAssist.Indexing.dll",
+      "Bytes": 74240,
+      "SHA256": "8A5DC47671D486529D1B350378A30CCB017AA4C638F027810AA86F228B40B5C9",
+      "MatchesReleaseBuild": true
+    },
+    {
+      "File": "CodeAssist.Worker.exe",
+      "Bytes": 5632,
+      "SHA256": "DAE5F15FAC4428ECF6C2C84D057C5D8424F8A6BDDD62257B6DAE01DD430E06D4",
+      "MatchesReleaseBuild": true
+    },
+    {
+      "File": "CodeAssist.Semantics.dll",
+      "Bytes": 27648,
+      "SHA256": "73DB479C439E607CE448E3797050BF843440D48613B6D4C319A56FB9C43EDD5B",
+      "MatchesReleaseBuild": true
+    },
+    {
+      "File": "Newtonsoft.Json.dll",
+      "Bytes": 711952,
+      "SHA256": "E1E27AF7B07EEEDF5CE71A9255F0422816A6FC5849A483C6714E1B472044FA9D",
+      "MatchesReleaseBuild": true
+    }
+  ],
+  "KeyBindings": [
+    {
+      "Command": "FindSelectedCommandId",
+      "Key": "K",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ClipboardCommandId",
+      "Key": "V",
+      "Modifiers": "CONTROL SHIFT"
+    },
+    {
+      "Command": "HashtagsCommandId",
+      "Key": "H",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectExtendCommandId",
+      "Key": "VK_OEM_6",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectShrinkCommandId",
+      "Key": "VK_OEM_4",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectBlockExtendCommandId",
+      "Key": "VK_OEM_6",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "SelectBlockShrinkCommandId",
+      "Key": "VK_OEM_4",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ResetZoomCommandId",
+      "Key": "0",
+      "Modifiers": "CONTROL"
+    },
+    {
+      "Command": "GoToSymbolCommandId",
+      "Key": "VK_F12",
+      "Modifiers": null
+    },
+    {
+      "Command": "GoToSymbolCommandId",
+      "Key": "G",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "FindReferencesCommandId",
+      "Key": "VK_F12",
+      "Modifiers": "SHIFT"
+    },
+    {
+      "Command": "FindReferencesCommandId",
+      "Key": "F",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "OpenFileCommandId",
+      "Key": "O",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "FindSymbolCommandId",
+      "Key": "S",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "CorrespondingFileCommandId",
+      "Key": "O",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ListMethodsCommandId",
+      "Key": "M",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "RelatedSymbolsCommandId",
+      "Key": "G",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "NavigateBackCommandId",
+      "Key": "VK_LEFT",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "NavigateForwardCommandId",
+      "Key": "VK_RIGHT",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "RenameCommandId",
+      "Key": "R",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "QuickActionsCommandId",
+      "Key": "Q",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "CreateDeclarationCommandId",
+      "Key": "C",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "NextScopeCommandId",
+      "Key": "VK_DOWN",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "PreviousScopeCommandId",
+      "Key": "VK_UP",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "FindSelectedCommandId",
+      "Key": "K",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ClipboardCommandId",
+      "Key": "V",
+      "Modifiers": "CONTROL SHIFT"
+    },
+    {
+      "Command": "HashtagsCommandId",
+      "Key": "H",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectExtendCommandId",
+      "Key": "VK_OEM_6",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectShrinkCommandId",
+      "Key": "VK_OEM_4",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "SelectBlockExtendCommandId",
+      "Key": "VK_OEM_6",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "SelectBlockShrinkCommandId",
+      "Key": "VK_OEM_4",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ResetZoomCommandId",
+      "Key": "0",
+      "Modifiers": "CONTROL"
+    },
+    {
+      "Command": "GoToSymbolCommandId",
+      "Key": "VK_F12",
+      "Modifiers": null
+    },
+    {
+      "Command": "GoToSymbolCommandId",
+      "Key": "G",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "FindReferencesCommandId",
+      "Key": "VK_F12",
+      "Modifiers": "SHIFT"
+    },
+    {
+      "Command": "FindReferencesCommandId",
+      "Key": "F",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "OpenFileCommandId",
+      "Key": "O",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "FindSymbolCommandId",
+      "Key": "S",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "CorrespondingFileCommandId",
+      "Key": "O",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "ListMethodsCommandId",
+      "Key": "M",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "RelatedSymbolsCommandId",
+      "Key": "G",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "NavigateBackCommandId",
+      "Key": "VK_LEFT",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "NavigateForwardCommandId",
+      "Key": "VK_RIGHT",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "RenameCommandId",
+      "Key": "R",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "QuickActionsCommandId",
+      "Key": "Q",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "CreateDeclarationCommandId",
+      "Key": "C",
+      "Modifiers": "ALT SHIFT"
+    },
+    {
+      "Command": "NextScopeCommandId",
+      "Key": "VK_DOWN",
+      "Modifiers": "ALT"
+    },
+    {
+      "Command": "PreviousScopeCommandId",
+      "Key": "VK_UP",
+      "Modifiers": "ALT"
+    }
+  ],
+  "Scope": "Static package and VSCT verification; actual IDE key routing is unverified."
+}
