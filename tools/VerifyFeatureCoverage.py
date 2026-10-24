@@ -66,6 +66,19 @@ if welcome_path.exists():
                      for p in (welcome_path, log_path, screenshot_path)],
         "scope": "Separate product requirement, not a completed VA catalog feature",
     })
+# Retain actual editor evidence without promoting a whole catalog feature.
+editor_path = BASE / "editor-integration-0.0.73.json"
+if editor_path.exists():
+    editor = json.loads(editor_path.read_text(encoding="utf-8-sig"))
+    assert editor["version"] == "0.0.73" and len(editor["cases"]) == 14
+    assert len({c["name"] for c in editor["cases"]}) == 14 and all(c["passed"] for c in editor["cases"])
+    assert not editor.get("error") and not editor.get("cleanupError")
+    evidence = {"path": editor_path.name, "sha256": hashlib.sha256(editor_path.read_bytes()).hexdigest(), "mvid": editor["mvid"]}
+    report["additionalProductRequirements"].append({"name": "Isolated actual VS editor integration", "state": "runtime-verified", "version": editor["version"], "checks": [c["name"] for c in editor["cases"]], "evidence": [evidence], "scope": editor["scope"]})
+    for row in rows:
+        if row["id"] in ("VA-F043", "VA-F046", "VA-F055"):
+            row["implementationEvidence"] = [evidence]
+            row["implementationEvidenceScope"] = "Selected editor scenarios passed; other options, languages and VA comparison unverified"
 report["requiredGateCount"] = sum(len(row["gates"]) for row in rows)
 report["unverifiedGateCount"] = sum(g["implementation"] == "unverified" for row in rows for g in row["gates"])
 report["unmappedFeatureCount"] = len(rows) - counts["partial"]

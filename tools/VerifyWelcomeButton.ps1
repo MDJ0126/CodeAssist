@@ -1,4 +1,4 @@
-param([string]$Output = "$PSScriptRoot/../docs/validation/welcome-preview.png", [ValidateSet("Welcome","FirstRun","Settings")][string]$Screen = "Welcome", [ValidateSet("Light","Dark")][string]$Theme = "Light", [string]$OptionsPage = "", [switch]$TestInteractions, [string]$AssemblyDirectory = "$PSScriptRoot/../CodeAssist.Extension/bin/Release")
+﻿param([string]$Output = "$PSScriptRoot/../docs/validation/welcome-preview.png", [ValidateSet("Welcome","FirstRun","Settings")][string]$Screen = "Welcome", [ValidateSet("Light","Dark")][string]$Theme = "Light", [string]$OptionsPage = "", [switch]$TestInteractions, [string]$AssemblyDirectory = "$PSScriptRoot/../CodeAssist.Extension/bin/Release")
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName PresentationFramework,PresentationCore,WindowsBase
 Add-Type @"
@@ -61,7 +61,7 @@ if(($legacyLabels -join ' ') -notmatch 'CodeAssist.Core.SemanticToken') {throw '
 $invalidPathError=$null
 try { [IO.Path]::GetFullPath('codeassist://welcome') | Out-Null } catch { $invalidPathError=$_.Exception.GetBaseException().GetType().Name }
 if($invalidPathError -ne 'NotSupportedException') {throw 'Original moniker validation was not reproduced'}
-$record = @{Version='0.0.66';Before=@{ClosedMethodSelection=$legacyLabels;WelcomeMoniker='codeassist://welcome';PathGetFullPath=$invalidPathError};After=@{ClosedMethodSelection=$labels;WelcomeMoniker=$moniker;PathGetFullPath='Passed'};NativeVsWelcomeClick='Unverified; registered editor factory and explicit DocData require actual VS open/close/reopen verification'}
+$record = @{Version='0.0.76';Before=@{ClosedMethodSelection=$legacyLabels;WelcomeMoniker='codeassist://welcome';PathGetFullPath=$invalidPathError};After=@{ClosedMethodSelection=$labels;WelcomeMoniker=$moniker;PathGetFullPath='Passed'};NativeVsWelcomeClick='Unverified; registered editor factory and explicit DocData require actual VS open/close/reopen verification'}
 $record | ConvertTo-Json -Depth 6 | Set-Content "$PSScriptRoot/../docs/validation/welcome-button-regression.json" -Encoding UTF8
 $record | ConvertTo-Json -Depth 6
 
@@ -84,7 +84,7 @@ try {
 $saveArgs=[object[]]@([Enum]::ToObject($dataType.GetMethod('SaveDocData').GetParameters()[0].ParameterType,0),$null,[int]0)
 $saveResult=$dataType.GetMethod('SaveDocData').Invoke($data,$saveArgs)
 if($saveResult -ge 0 -or $saveArgs[2] -ne 1){throw 'Welcome save should be unavailable'}
-@{Version='0.0.66';PersistDocDataQueryInterface='Passed';Dirty=$dirtyArgs[0];EditorGuid=$editorArgs[0];SaveUnavailable='Passed';FactoryAndNativeShell='Unverified; factory requires a real VS UI thread'} | ConvertTo-Json | Set-Content "$PSScriptRoot/../docs/validation/welcome-editor-contract.json" -Encoding UTF8
+@{Version='0.0.76';PersistDocDataQueryInterface='Passed';Dirty=$dirtyArgs[0];EditorGuid=$editorArgs[0];SaveUnavailable='Passed';FactoryAndNativeShell='Unverified; factory requires a real VS UI thread'} | ConvertTo-Json | Set-Content "$PSScriptRoot/../docs/validation/welcome-editor-contract.json" -Encoding UTF8
 Write-Output 'Welcome DocData COM identity, clean state and save contract passed.'
 
 Add-Type -AssemblyName System.Design
@@ -109,7 +109,7 @@ if($script:welcomeInvocations -ne 1 -or $script:settingsInvocations -ne 1){throw
 $nullRejected=$false
 try{$registration.Invoke($null,@($null,$welcomeAction,$settingsAction))}catch{$nullRejected=$_.Exception.GetBaseException() -is [InvalidOperationException]}
 if(!$nullRejected){throw 'Missing command service was silently ignored'}
-@{Version='0.0.66';ServiceType=$menuService.GetType().FullName;ToolbarButton='WelcomeCommandId';ToolbarOrder=$expectedToolbar;WelcomeInvocations=$script:welcomeInvocations;SettingsInvocations=$script:settingsInvocations;MissingServiceRejected=$nullRejected;NativeVsClick='Unverified'} | ConvertTo-Json | Set-Content "$PSScriptRoot/../docs/validation/welcome-command-routing.json" -Encoding UTF8
+@{Version='0.0.76';ServiceType=$menuService.GetType().FullName;ToolbarButton='WelcomeCommandId';ToolbarOrder=$expectedToolbar;WelcomeInvocations=$script:welcomeInvocations;SettingsInvocations=$script:settingsInvocations;MissingServiceRejected=$nullRejected;NativeVsClick='Unverified'} | ConvertTo-Json | Set-Content "$PSScriptRoot/../docs/validation/welcome-command-routing.json" -Encoding UTF8
 $menuService.Dispose()
 Write-Output 'Actual VSCT Welcome placement -> registered Welcome callback passed; settings is separate; null service rejected.'
 
@@ -125,7 +125,7 @@ if($unsupportedResult -ge 0 -or $null -ne $unsupportedArgs[1]){throw 'Unsupporte
 $invalidArgs=[object[]]@([uint32]1,$moniker,'UnsupportedView',$null,[uint32]::MaxValue,[IntPtr]::Zero,[IntPtr]::Zero,[IntPtr]::Zero,'',[Guid]::Empty,[int]0)
 $invalidResult=$factoryType.GetMethod('CreateEditorInstance').Invoke($factory,$invalidArgs)
 if($invalidResult -ge 0 -or $invalidArgs[6] -ne [IntPtr]::Zero -or $invalidArgs[7] -ne [IntPtr]::Zero){throw 'Unsupported physical view allocated a document'}
-@{Version='0.0.66';PrimaryView=$mapArgs[1];MapResult=$mapResult;UnsupportedLogicalViewRejected=$true;UnsupportedPhysicalViewRejected=$true;UnavailableActivityLogDoesNotBreakMapping=$true;NativeShell='Unverified'} | ConvertTo-Json | Set-Content "$PSScriptRoot/../docs/validation/welcome-view-mapping.json" -Encoding UTF8
+@{Version='0.0.76';PrimaryView=$mapArgs[1];MapResult=$mapResult;UnsupportedLogicalViewRejected=$true;UnsupportedPhysicalViewRejected=$true;UnavailableActivityLogDoesNotBreakMapping=$true;NativeShell='Unverified'} | ConvertTo-Json | Set-Content "$PSScriptRoot/../docs/validation/welcome-view-mapping.json" -Encoding UTF8
 Write-Output 'Named primary view mapping, unsupported view rejection and unavailable ActivityLog tolerance passed.'
 
 $foregroundType=$assembly.GetType('CodeAssist.Extension.CompletionForegroundOverrides',$true)
@@ -146,5 +146,5 @@ $apply.Invoke($foreground,@($resourceText,[Windows.Controls.TextBlock]::Foregrou
 $apply.Invoke($foreground,@($resourceText,[Windows.Controls.TextBlock]::ForegroundProperty,[Windows.Media.Brushes]::Orange,$false))|Out-Null
 $resourceText.Resources['NativeForeground']=[Windows.Media.Brushes]::Yellow
 if($resourceText.Foreground.Color -ne [Windows.Media.Colors]::Yellow){throw 'Visual Studio dynamic resource was not preserved'}
-@{Version='0.0.66';CustomForegroundApplied=$true;NativeBindingRestored=$true;ThemeResourcePreserved=$true;Scope='Owned WPF controls; live popup mode switch checked separately'}|ConvertTo-Json|Set-Content "$PSScriptRoot/../docs/validation/completion-native-color-contract.json" -Encoding UTF8
+@{Version='0.0.76';CustomForegroundApplied=$true;NativeBindingRestored=$true;ThemeResourcePreserved=$true;Scope='Owned WPF controls; live popup mode switch checked separately'}|ConvertTo-Json|Set-Content "$PSScriptRoot/../docs/validation/completion-native-color-contract.json" -Encoding UTF8
 Write-Output 'Native completion foreground bindings and theme resources restored.'

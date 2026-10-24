@@ -48,7 +48,7 @@ if wholeDocs:
 rows=[]
 for feature in base['features']:
  detail=known.get(feature['name'],{})
- rows.append({'id':feature['id'],'name':feature['name'],'catalogSource':feature['source'],'implementationState':feature['status'],'fullParityPassed':False,'requiredGates':common,'documentationSpec':detail,'nativeEvidence':[],'runtimeEvidence':[],'analysisStatus':'documented-partially' if detail else 'analysis-required','unknowns':detail.get('unknowns',['개별 공식 명세·2630 존재·네이티브/runtime 근거·초기값 미확인'])})
+ rows.append({'id':feature['id'],'name':feature['name'],'catalogSource':feature['source'],'implementationState':feature['status'],'fullParityPassed':False,'requiredGates':common,'documentationSpec':detail,'nativeEvidence':[],'runtimeEvidence':[],'sourceEvidence':feature.get('sourceEvidence',[]),'implementationScope':feature.get('implementationScope'),'analysisStatus':'documented-partially' if detail else 'analysis-required','unknowns':detail.get('unknowns',['개별 공식 명세·2630 존재·네이티브/runtime 근거·초기값 미확인'])})
 runtimePath=r/'docs/validation/historical-runtime-comparison.json'
 runtime=json.loads(runtimePath.read_text(encoding='utf-8')) if runtimePath.exists() else None
 if runtime:
@@ -87,7 +87,7 @@ for name,detail in known.items():
  lines+=['### '+name,'','[공식 근거]('+detail['source']+')','']+['- '+x for x in detail['observedSpec']]+['','미확인: '+'; '.join(detail['unknowns'])+'.','']
 lines+=['## 108개 항목 분석 장부','','| ID | 기능 | 현재 구현 | 분석 상태 |','|---|---|---|---|']
 for x in rows:lines.append('| '+x['id']+' | '+x['name'].replace('|','/')+' | '+x['implementationState']+' | '+x['analysisStatus']+' |')
-lines+=['','## 현재 상태','','동기화 검증 **0/108 = 0%**, 일부 대응 구현 **26/108 = 24.1%**. 전체 분석을 완료한 항목도 아직 0개입니다. 문서 일부 확인을 완료로 승격하지 않습니다. 제품 코드는 이 단계에서 추가하지 않았습니다.','', '미완료: 전체 네이티브/runtime 근거, 개별 옵션 기본값, 통합 설계 확정, 배치 구현, 실제 UnrealTestProject 성능 및 VA 원본 비교.']
+lines+=['','## 현재 상태','',f"원본 유사도는 미측정입니다. 완료 검증 0개, 부분 구현 {base['partialMappings']}개 / 기준 {len(rows)}개입니다. 부분 구현 개수를 원본 유사도로 환산하지 않습니다.",'', '미완료: 전체 네이티브/runtime 근거, 개별 옵션 기본값, 통합 설계 확정, 배치 구현, 실제 UnrealTestProject 성능 및 VA 원본 비교.']
 if flow:
  lines+=['','## 컴파일 옵션 캐시의 메서드 수준 분석','','[REA 재구성 요약](validation/rea/compilation-options-reconstruction-summary.json) · [세부 분석 장부](validation/compiler-configuration-findings.json)','']+['- '+claim for claim in flow['findings']]+['','원본을 실행하지 않은 ILSpy 재구성입니다. REA로 원본 token·signature 및 IL 해시를 대조했으며 native 심볼/참조 인덱스의 구현을 입증하는 자료는 아닙니다.','', '미확인: '+'; '.join(flow['unknowns'])+'.']
 extras=r/'docs/validation/extra-feature-candidates.json'

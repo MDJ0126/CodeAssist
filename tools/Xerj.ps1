@@ -24,8 +24,8 @@ function Start-Node {
     }
     throw "XERJ startup failed; see $localRoot\server.stderr.log"
 }
-$stateRoot = Join-Path $env:LOCALAPPDATA 'CodeAssist\Xerj\state'
-$indexArgs = @('autoindex',$projectRoot,'--url',$url,'--prefix','codeassist','--state-dir',$stateRoot,'--no-graph','--code-analyzer','code','--workers','4','--json')
+$stateRoot = Join-Path $env:LOCALAPPDATA 'CodeAssist\Xerj\state-v3'
+$indexArgs = @('autoindex',$projectRoot,'--url',$url,'--prefix','codeassist-v3','--state-dir',$stateRoot,'--no-graph','--code-analyzer','code','--workers','4','--json')
 function Start-Watcher {
     $pidFile = Join-Path $localRoot 'watch.pid'
     if (Test-Path $pidFile) {
@@ -40,8 +40,8 @@ switch ($Action) {
     'Start' { Start-Node }
     'Index' { Start-Node; & $exe @indexArgs; exit $LASTEXITCODE }
     'Watch' { Start-Node; & $exe @indexArgs --watch; exit $LASTEXITCODE }
-    'Search' { Start-Node; & $exe search --url $url --prefix codeassist $Query; exit $LASTEXITCODE }
-    'Def' { Start-Node; & $exe def --url $url --prefix codeassist $Query; exit $LASTEXITCODE }
+    'Search' { Start-Node; & $exe search --url $url --prefix codeassist-v3 $Query; exit $LASTEXITCODE }
+    'Def' { Start-Node; & $exe def --url $url --prefix codeassist-v3 $Query; exit $LASTEXITCODE }
     'Mcp' { Start-Node; Start-Watcher; & $exe mcp --url $url; exit $LASTEXITCODE }
     'Status' { if (!(Test-Node)) { throw 'XERJ node is not running' }; Invoke-RestMethod "$url/_cat/indices?format=json" | Select-Object index,'docs.count' }
 }
