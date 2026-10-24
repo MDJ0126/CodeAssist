@@ -1,4 +1,4 @@
-﻿using CodeAssist.Core;
+using CodeAssist.Core;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -67,19 +67,25 @@ namespace CodeAssist.Extension
             learn.Children.Add(Text(UiText.Get("설치·권장 색상·탐색·검사 기능의 사용 방법과 검증 범위를 확인하세요.", StartupUi.Preferences.UiLanguage)));
             learn.Children.Add(ProductTheme.Button(UiText.Get("오프라인 사용 안내", StartupUi.Preferences.UiLanguage),()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.OpenHelp("startup"); }));
             learn.Children.Add(new Border { Height=20 });
-            learn.Children.Add(ProductTheme.Button("심볼 찾기  Alt+Shift+S",()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.Execute(0x104); }));
+            learn.Children.Add(ProductTheme.Button("심볼 찾기 Alt+Shift+S",()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.Execute(0x104); }));
             learn.Children.Add(new Border { Height=10 });
-            learn.Children.Add(ProductTheme.Button("파일 열기  Alt+Shift+O",()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.Execute(0x103); }));
+            learn.Children.Add(ProductTheme.Button("파일 열기 Alt+Shift+O",()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.Execute(0x103); }));
             var left=CardView(learn);left.Margin=new Thickness(0,0,12,24);lower.Children.Add(left);
             var feedback=Body();var feedbackTitle=Text("Share your Feedback",26);feedbackTitle.FontWeight=FontWeights.SemiBold;feedback.Children.Add(feedbackTitle);
-            feedback.Children.Add(Text(UiText.Get("개선할 점이나 재현 방법을 적어 복사하세요. 내용은 자동 전송하지 않습니다.", StartupUi.Preferences.UiLanguage)));
+            feedback.Children.Add(Text(UiText.Get("Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit.", StartupUi.Preferences.UiLanguage)));
             var note=new TextBox { AcceptsReturn=true, TextWrapping=TextWrapping.Wrap, Height=120, Padding=new Thickness(10), Background=Canvas, Foreground=Ink, BorderBrush=Brushes.DimGray, Margin=new Thickness(0,0,0,16), VerticalScrollBarVisibility=ScrollBarVisibility.Auto };
             System.Windows.Automation.AutomationProperties.SetName(note,UiText.Get("피드백 내용", StartupUi.Preferences.UiLanguage));
             feedback.Children.Add(note);
-            var copied=Text("",12);copied.Foreground=ProductTheme.Accent;
-            feedback.Children.Add(ProductTheme.Button(UiText.Get("피드백 내용 복사", StartupUi.Preferences.UiLanguage),()=> { try { Clipboard.SetText("CodeAssist "+ExtensionPackage.ProductVersion+"\n"+note.Text);copied.Text=UiText.Get("Copied. Paste it into your issue or message.",StartupUi.Preferences.UiLanguage); }
-                catch(System.Runtime.InteropServices.ExternalException) {copied.Text=UiText.Get("클립보드에 복사하지 못했습니다. 잠시 뒤 다시 시도하세요.", StartupUi.Preferences.UiLanguage);} }));
-            feedback.Children.Add(copied);
+            var status=Text("",12);status.Foreground=ProductTheme.Accent;
+            feedback.Children.Add(ProductTheme.Button("Open GitHub issue",()=> {
+                try {
+                    var url=FeedbackIssueLink.Create(ExtensionPackage.ProductVersion,note.Text);
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(url) {UseShellExecute=true});
+                    status.Text=UiText.Get("Review and submit your issue on GitHub.",StartupUi.Preferences.UiLanguage);
+                } catch(System.ComponentModel.Win32Exception) {status.Text=UiText.Get("Could not open GitHub. Please try again.",StartupUi.Preferences.UiLanguage);}
+                  catch(InvalidOperationException) {status.Text=UiText.Get("Could not open GitHub. Please try again.",StartupUi.Preferences.UiLanguage);}
+            }));
+            feedback.Children.Add(status);
             var right=CardView(feedback);right.Margin=new Thickness(12,0,0,24);Grid.SetColumn(right,1);lower.Children.Add(right);content.Children.Add(lower);
             var keys=Body();keys.Children.Add(Text("CodeAssist Shortcuts",28));
             var shortcutGrid=new Grid();shortcutGrid.ColumnDefinitions.Add(new ColumnDefinition());shortcutGrid.ColumnDefinitions.Add(new ColumnDefinition { Width=new GridLength(210) });

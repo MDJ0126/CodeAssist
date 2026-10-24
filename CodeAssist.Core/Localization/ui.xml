@@ -1544,4 +1544,8 @@
   <entry key="completion.filter.fields" source="Show fields"><text lang="ko">필드 표시</text><text lang="en">Show fields</text></entry>
   <entry key="completion.filter.methods" source="Show methods"><text lang="ko">함수 표시</text><text lang="en">Show methods</text></entry>
   <entry key="completion.local.first" source="List non-inherited entries first"><text lang="ko">상속되지 않은 멤버 먼저 표시</text><text lang="en">List non-inherited entries first</text></entry>
+  <entry key="welcome.issue.description" source="Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit."><text lang="en">Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit.</text><text lang="ko">피드백이나 재현 방법을 적어 GitHub 이슈를 여세요. 내용을 확인한 뒤 등록해 주세요.</text></entry>
+  <entry key="welcome.issue.open" source="Open GitHub issue"><text lang="en">Open GitHub issue</text><text lang="ko">GitHub 이슈 작성</text></entry>
+  <entry key="welcome.issue.review" source="Review and submit your issue on GitHub."><text lang="en">Review and submit your issue on GitHub.</text><text lang="ko">GitHub에서 내용을 확인하고 이슈를 등록해 주세요.</text></entry>
+  <entry key="welcome.issue.error" source="Could not open GitHub. Please try again."><text lang="en">Could not open GitHub. Please try again.</text><text lang="ko">GitHub를 열지 못했습니다. 다시 시도해 주세요.</text></entry>
 </translations>
