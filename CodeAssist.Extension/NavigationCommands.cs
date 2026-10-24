@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
@@ -239,7 +239,7 @@ namespace CodeAssist.Extension
                     try
                     {
                         var contents = string.Equals(path, activeFile, StringComparison.OrdinalIgnoreCase) && activeText != null ? activeText : File.ReadAllText(path);
-                        return CppDocumentNavigation.Hashtags(contents).Select(tag => new NavigationEntry(tag.Name, path, tag.Line, 1)).ToArray();
+                        return CppDocumentNavigation.Hashtags(contents,StartupUi.Preferences).Select(tag => new NavigationEntry(tag.Name, path, tag.Line, 1)).ToArray();
                     }
                     catch (IOException) { return Array.Empty<NavigationEntry>(); }
                     catch (UnauthorizedAccessException) { return Array.Empty<NavigationEntry>(); }

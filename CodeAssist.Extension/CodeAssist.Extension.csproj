@@ -109,6 +109,9 @@
     <Compile Include="ProductWelcome.cs" />
     <Compile Include="ProductHelp.cs" />
     <Compile Include="ProductOptions.cs" />
+    <Compile Include="ReferenceOptions.cs" />
+    <Compile Include="SourceLinkOptions.cs" />
+    <Compile Include="ReferenceOptionRuntime.cs" />
     <Compile Include="ColorSelectionPopup.cs" />
     <Compile Include="WelcomeDocumentWindow.cs" />
     <Compile Include="RecommendedColors.cs" />

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
 using System.IO;
@@ -109,7 +109,9 @@ namespace CodeAssist.Extension
 
             var distinct = results.GroupBy(item => item.FilePath + ":" + item.Line + ":" + item.Column).Select(group => group.First()).ToArray();
             var target = distinct[0];
-            if (distinct.Length > 1)
+            if(StartupUi.Preferences.GotoPreferImplementation) distinct=distinct.OrderBy(item=>new[]{".h",".hpp",".hh",".hxx",".inl"}.Contains(Path.GetExtension(item.FilePath),StringComparer.OrdinalIgnoreCase)?1:0).ToArray();
+            target=distinct[0];
+            if (distinct.Length > 1 && StartupUi.Preferences.GotoMatchMode=="Show matches first")
             {
                 var picker = new NavigationPicker("CodeAssist: 정의 후보 선택", distinct.Select(item =>
                     new NavigationEntry(item.Name, item.FilePath, item.Line, item.Column)).ToArray(), package.JoinableTaskFactory);
@@ -122,6 +124,7 @@ namespace CodeAssist.Extension
             if (dte.ActiveDocument?.Selection is EnvDTE.TextSelection targetSelection)
             {
                 targetSelection.MoveToLineAndOffset(target.Line, target.Column, false);
+                if(StartupUi.Preferences.GotoSelectSymbol)targetSelection.CharRight(true,symbolName.Length);
             }
         }
 

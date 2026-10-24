@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System;
@@ -145,11 +145,13 @@ namespace CodeAssist.Extension
             }
         }
 
+        private static string EffectiveDiagnosticPath => string.IsNullOrWhiteSpace(StartupUi.Preferences.DiagnosticLogDirectory)?DiagnosticPath:Path.Combine(Environment.ExpandEnvironmentVariables(StartupUi.Preferences.DiagnosticLogDirectory),"Welcome-host.log");
         internal static void RecordEvent(string text)
         {
+            if(!StartupUi.Preferences.DiagnosticLoggingEnabled)return;
             var message = DateTime.UtcNow.ToString("O") + " MVID=" + typeof(WelcomeDocumentWindow).Module.ModuleVersionId + " " + text;
             TryActivityLog(message, false);
-            try { Directory.CreateDirectory(Path.GetDirectoryName(DiagnosticPath)); File.AppendAllText(DiagnosticPath, message + Environment.NewLine); }
+            try { Directory.CreateDirectory(Path.GetDirectoryName(EffectiveDiagnosticPath)); File.AppendAllText(EffectiveDiagnosticPath, message + Environment.NewLine); }
             catch (IOException) { }
             catch (UnauthorizedAccessException) { }
         }
@@ -160,8 +162,8 @@ namespace CodeAssist.Extension
             TryActivityLog(message, true);
             try
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(DiagnosticPath));
-                File.AppendAllText(DiagnosticPath, message);
+                Directory.CreateDirectory(Path.GetDirectoryName(EffectiveDiagnosticPath));
+                File.AppendAllText(EffectiveDiagnosticPath, message);
             }
             catch (IOException) { }
             catch (UnauthorizedAccessException) { }

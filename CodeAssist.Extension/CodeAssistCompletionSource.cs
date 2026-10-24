@@ -79,7 +79,7 @@ namespace CodeAssist.Extension
         public void AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
         {
             if (tracedQueries++ < 12) WelcomeDocumentWindow.RecordEvent("CompletionQuery file="+filePath+" count="+indexService.Index.Count+" root="+indexService.ProjectRoot);
-            if (!StartupUi.Preferences.CompletionEnabled) return;
+            if (!StartupUi.Preferences.CompletionEnabled || StartupUi.Preferences.CompletionProvider=="Default Intellisense") return;
             if (disposed) return;
             var point = session.GetTriggerPoint(buffer.CurrentSnapshot);
             if (!point.HasValue) return;

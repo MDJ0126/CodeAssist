@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.PlatformUI;
+using Microsoft.VisualStudio.PlatformUI;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
@@ -28,12 +28,20 @@ namespace CodeAssist.Extension
         public IWpfTextViewMargin CreateMargin(IWpfTextViewHost host,IWpfTextViewMargin parent)
         {
             Documents.TryGetTextDocument(host.TextView.TextDataModel.DocumentBuffer,out var document);
-            return new ContextBarMargin(host.TextView,document?.FilePath,Indexes,Glyphs);
+            return new ContextBarMargin(host.TextView,document?.FilePath,Indexes,Glyphs,"Top");
         }
+    }
+    [Export(typeof(IWpfTextViewMarginProvider))][Name("CodeAssist Context Bar Bottom")][MarginContainer(PredefinedMarginNames.Bottom)][ContentType("C/C++")][TextViewRole(PredefinedTextViewRoles.Document)]
+    internal sealed class BottomContextBarProvider:IWpfTextViewMarginProvider {
+      [Import]internal ITextDocumentFactoryService Documents=null;
+      [Import]internal ProjectIndexService Indexes=null;
+      [Import]internal IGlyphService Glyphs=null;
+      public IWpfTextViewMargin CreateMargin(IWpfTextViewHost host,IWpfTextViewMargin parent){Documents.TryGetTextDocument(host.TextView.TextDataModel.DocumentBuffer,out var document);return new ContextBarMargin(host.TextView,document?.FilePath,Indexes,Glyphs,"Bottom");}
     }
     internal sealed class ContextBarMargin : IWpfTextViewMargin
     {
         private const string Name="CodeAssist Context Bar";
+        private readonly string placement;
         private readonly IWpfTextView view;
         private readonly string filePath;
         private ITextSnapshot definitionSnapshot;
@@ -91,13 +99,14 @@ namespace CodeAssist.Extension
         private readonly System.Windows.Threading.DispatcherTimer refresh=new System.Windows.Threading.DispatcherTimer {Interval=TimeSpan.FromMilliseconds(180)};
         private bool disposed;
         private ITextSnapshot methodSnapshot;
-        internal ContextBarMargin(IWpfTextView view,string path,ProjectIndexService indexes=null,IGlyphService glyphs=null)
+        internal ContextBarMargin(IWpfTextView view,string path,ProjectIndexService indexes=null,IGlyphService glyphs=null,string placement="Top")
         {
+            this.placement=placement;
             this.view=view;this.filePath=path;this.indexes=indexes;this.glyphs=glyphs;
             if(view.Properties.ContainsProperty(typeof(ContextBarMargin)))view.Properties.RemoveProperty(typeof(ContextBarMargin));view.Properties.AddProperty(typeof(ContextBarMargin),this);ProductTheme.Apply(panel);panel.Height=26;definitionField.SetValue(SymbolNameTextBlock.NormalizeScopesProperty,false);
             refresh.Tick+=RefreshFields;view.Caret.PositionChanged+=CaretChanged;view.TextBuffer.Changed+=BufferChanged;refresh.Start();
             methods.ItemsSource=new[] {new {Caption=UiText.Get("메서드 선택",StartupUi.Preferences.UiLanguage),Glyph=(ImageSource)null}};methods.SelectedIndex=0;
-            var go=ProductTheme.Button("Go",()=> {ThreadHelper.ThrowIfNotOnUIThread();StartupUi.Execute(0x100);});go.MinWidth=36;go.Padding=new Thickness(6,2,6,2);DockPanel.SetDock(go,Dock.Right);panel.Children.Add(go);
+            var go=ProductTheme.Button("Go",()=> {ThreadHelper.ThrowIfNotOnUIThread();StartupUi.Execute(StartupUi.Preferences.GotoButtonAction=="Go to Related"?0x107:0x100);});go.MinWidth=36;go.Padding=new Thickness(6,2,6,2);DockPanel.SetDock(go,Dock.Right);panel.Children.Add(go);
             var corresponding=ProductTheme.Button("⇄",()=> {ThreadHelper.ThrowIfNotOnUIThread();StartupUi.Execute(0x105);});corresponding.Content=ProductTheme.Icon("Corresponding");System.Windows.Automation.AutomationProperties.SetName(corresponding,UiText.Get("대응 파일 (Alt+O)",StartupUi.Preferences.UiLanguage));corresponding.MinWidth=30;corresponding.Padding=new Thickness(6,2,6,2);corresponding.ToolTip=UiText.Get("대응 파일 (Alt+O)",StartupUi.Preferences.UiLanguage);DockPanel.SetDock(corresponding,Dock.Right);panel.Children.Add(corresponding);
             DockPanel.SetDock(methods,Dock.Left);panel.Children.Add(methods);
             var filePath=new DockPanel {Margin=new Thickness(8,0,0,0),VerticalAlignment=VerticalAlignment.Center};
@@ -120,7 +129,8 @@ namespace CodeAssist.Extension
                     methods.Dispatcher.BeginInvoke(new Action(NavigateMethod),System.Windows.Threading.DispatcherPriority.Input);
             };
             settingsChanged=()=> {
-                panel.Visibility=StartupUi.Preferences.ContextBarEnabled?Visibility.Visible:Visibility.Collapsed;
+                if(StartupUi.Preferences.NavigationBarPosition==placement)view.Properties[typeof(ContextBarMargin)]=this;
+            panel.Visibility=StartupUi.Preferences.ContextBarEnabled&&StartupUi.Preferences.NavigationBarPosition==placement?Visibility.Visible:Visibility.Collapsed;
                 go.Content=UiText.Get("Go",StartupUi.Preferences.UiLanguage);
                 corresponding.ToolTip=UiText.Get("대응 파일 (Alt+O)",StartupUi.Preferences.UiLanguage);
                 if(methodSnapshot==null){methods.ItemsSource=new[]{new {Caption=UiText.Get("메서드 선택",StartupUi.Preferences.UiLanguage),Glyph=(ImageSource)null}};methods.SelectedIndex=0;}
@@ -177,7 +187,7 @@ namespace CodeAssist.Extension
         }
         public FrameworkElement VisualElement=>panel;
         public double MarginSize=>panel.Visibility==Visibility.Visible?26:0;
-        public bool Enabled=>!disposed && StartupUi.Preferences.ContextBarEnabled;
+        public bool Enabled=>!disposed && StartupUi.Preferences.ContextBarEnabled && StartupUi.Preferences.NavigationBarPosition==placement;
         public ITextViewMargin GetTextViewMargin(string name)=>string.Equals(name,Name,StringComparison.OrdinalIgnoreCase)?this:null;
         public void Dispose(){if(disposed)return;disposed=true;++methodRequest;if(view.Properties.TryGetProperty(typeof(ContextBarMargin),out ContextBarMargin current)&&ReferenceEquals(current,this))view.Properties.RemoveProperty(typeof(ContextBarMargin));refresh.Stop();refresh.Tick-=RefreshFields;view.Caret.PositionChanged-=CaretChanged;view.TextBuffer.Changed-=BufferChanged;StartupUi.SettingsApplied-=settingsChanged;}
     }

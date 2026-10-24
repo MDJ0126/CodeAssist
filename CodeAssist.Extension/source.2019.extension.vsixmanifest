@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="CodeAssist.Extension.VS2019.dd99a661-836a-478d-8de4-bbd6557ba6bb" Version="0.0.173" Language="en-US" Publisher="MoonDongjun" />
+    <Identity Id="CodeAssist.Extension.VS2019.dd99a661-836a-478d-8de4-bbd6557ba6bb" Version="0.0.175" Language="en-US" Publisher="MoonDongjun" />
     <DisplayName>CodeAssist for Visual Studio 2019</DisplayName>
     <Description>C/C++ completion, navigation, reference search and Unreal Engine support for Visual Studio.</Description>
     <Icon>Resources\CodeAssist.png</Icon>

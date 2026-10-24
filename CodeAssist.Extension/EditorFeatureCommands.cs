@@ -1,4 +1,4 @@
-﻿using CodeAssist.Core;
+using CodeAssist.Core;
 using CodeAssist.Indexing;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Editor;
@@ -56,11 +56,12 @@ namespace CodeAssist.Extension
             var line=snapshot.GetLineFromPosition(caret);var word=IdentifierParser.At(line.GetText(),caret-line.Start.Position);
             if(id==0x17b)
             {
+                if(!StartupUi.Preferences.SourceLinksEnabled)return;
                 var links=SourceLinks.Find(line.GetText(),StartupUi.Preferences.SourceLinkRules).Where(candidate=>caret-line.Start.Position>=candidate.Start&&caret-line.Start.Position<=candidate.Start+candidate.Length).ToArray();
                 if(links.Length==0)throw new InvalidOperationException(UiText.Get("No source link matches the caret. Configure Navigation / Source Links.",StartupUi.Preferences.UiLanguage));
                 var link=links[0];
                 if(links.Length>1){var box=new ListBox {ItemsSource=links,SelectedIndex=0};var dialog=new Window {Title="CodeAssist: Source Links",Content=box,Width=750,Height=320,WindowStartupLocation=WindowStartupLocation.CenterOwner};new System.Windows.Interop.WindowInteropHelper(dialog).Owner=(IntPtr)dte.MainWindow.HWnd;box.MouseDoubleClick+=(s,e)=>dialog.DialogResult=true;dialog.PreviewKeyDown+=(s,e)=>{if(e.Key==System.Windows.Input.Key.Enter)dialog.DialogResult=true;if(e.Key==System.Windows.Input.Key.Escape)dialog.DialogResult=false;};if(dialog.ShowDialog()!=true)return;link=box.SelectedItem as SourceLinkMatch;if(link==null)return;}
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(link.Uri.AbsoluteUri){UseShellExecute=true});return;
+                if(StartupUi.Preferences.SourceLinksAction=="Copy link")System.Windows.Clipboard.SetText(link.Uri.AbsoluteUri);else if(link.Provider==SourceLinkProvider.FileViewer){dte.ItemOperations.OpenFile(link.TargetPath,EnvDTE.Constants.vsViewKindTextView);(dte.ActiveDocument?.Selection as EnvDTE.TextSelection)?.MoveToLineAndOffset(link.Line,1,false);}else if(link.Provider==SourceLinkProvider.ExternalTool){System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(link.TargetPath,link.Arguments){UseShellExecute=false,CreateNoWindow=true});}else System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(link.Uri.AbsoluteUri){UseShellExecute=true});return;
             }
             if(id==0x171)
             {

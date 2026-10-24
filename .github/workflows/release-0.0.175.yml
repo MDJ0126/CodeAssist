@@ -1,0 +1,47 @@
+name: Publish requested v0.0.175 release
+on:
+  push:
+    tags: ['v0.0.175']
+permissions:
+  contents: read
+jobs:
+  requested-release:
+    if: github.repository == 'MDJ0126/CodeAssist' && github.ref == 'refs/tags/v0.0.175'
+    runs-on: windows-2022
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Check exact requested version
+        shell: pwsh
+        run: |
+          [xml]$manifest=Get-Content CodeAssist.Extension/source.extension.vsixmanifest
+          if($manifest.PackageManifest.Metadata.Identity.Version -ne '0.0.175'){throw 'Unexpected version'}
+      - name: Regression tests
+        shell: pwsh
+        run: dotnet test CodeAssist.Core.Tests/CodeAssist.Core.Tests.csproj --configuration Release --logger "trx;LogFileName=release.trx"
+      - name: Build both installers
+        shell: pwsh
+        run: |
+          $vswhere="${env:ProgramFiles(x86)}/Microsoft Visual Studio/Installer/vswhere.exe"
+          $msbuild=& $vswhere -latest -products * -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe' | Select-Object -First 1
+          if(!$msbuild){throw 'MSBuild unavailable'}
+          ./tools/BuildCompatibility.ps1 -MSBuild $msbuild
+      - name: Publish requested release and installers
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $folder='installers/0.0.175'
+          Get-FileHash "$folder/CodeAssist.vsix","$folder/CodeAssist.VS2019.vsix" -Algorithm SHA256 | ForEach-Object { "$($_.Hash.ToLower())  $(Split-Path $_.Path -Leaf)" } | Set-Content "$folder/SHA256SUMS.txt"
+          gh release create v0.0.175 "$folder/CodeAssist.vsix" "$folder/CodeAssist.VS2019.vsix" "$folder/SHA256SUMS.txt" --verify-tag --title 'CodeAssist 0.0.175' --notes-file docs/releases/0.0.175.md
+          if($LASTEXITCODE -ne 0){throw 'Requested release publication failed'}
+      - name: Retain regression results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-0.0.175-test-results
+          path: '**/TestResults/*.trx'

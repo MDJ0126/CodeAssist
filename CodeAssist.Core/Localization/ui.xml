@@ -1540,12 +1540,804 @@
     <text lang="ko">파랑</text>
     <text lang="en">Blue</text>
   </entry>
-  <entry key="completion.filter.all" source="Show all suggestions"><text lang="ko">전체 추천 표시</text><text lang="en">Show all suggestions</text></entry>
-  <entry key="completion.filter.fields" source="Show fields"><text lang="ko">필드 표시</text><text lang="en">Show fields</text></entry>
-  <entry key="completion.filter.methods" source="Show methods"><text lang="ko">함수 표시</text><text lang="en">Show methods</text></entry>
-  <entry key="completion.local.first" source="List non-inherited entries first"><text lang="ko">상속되지 않은 멤버 먼저 표시</text><text lang="en">List non-inherited entries first</text></entry>
-  <entry key="welcome.issue.description" source="Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit."><text lang="en">Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit.</text><text lang="ko">피드백이나 재현 방법을 적어 GitHub 이슈를 여세요. 내용을 확인한 뒤 등록해 주세요.</text></entry>
-  <entry key="welcome.issue.open" source="Open GitHub issue"><text lang="en">Open GitHub issue</text><text lang="ko">GitHub 이슈 작성</text></entry>
-  <entry key="welcome.issue.review" source="Review and submit your issue on GitHub."><text lang="en">Review and submit your issue on GitHub.</text><text lang="ko">GitHub에서 내용을 확인하고 이슈를 등록해 주세요.</text></entry>
-  <entry key="welcome.issue.error" source="Could not open GitHub. Please try again."><text lang="en">Could not open GitHub. Please try again.</text><text lang="ko">GitHub를 열지 못했습니다. 다시 시도해 주세요.</text></entry>
+  <entry key="completion.filter.all" source="Show all suggestions">
+    <text lang="ko">전체 추천 표시</text>
+    <text lang="en">Show all suggestions</text>
+  </entry>
+  <entry key="completion.filter.fields" source="Show fields">
+    <text lang="ko">필드 표시</text>
+    <text lang="en">Show fields</text>
+  </entry>
+  <entry key="completion.filter.methods" source="Show methods">
+    <text lang="ko">함수 표시</text>
+    <text lang="en">Show methods</text>
+  </entry>
+  <entry key="completion.local.first" source="List non-inherited entries first">
+    <text lang="ko">상속되지 않은 멤버 먼저 표시</text>
+    <text lang="en">List non-inherited entries first</text>
+  </entry>
+  <entry key="welcome.issue.description" source="Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit.">
+    <text lang="en">Write feedback or reproduction steps. Open a GitHub issue, review the contents, then submit.</text>
+    <text lang="ko">피드백이나 재현 방법을 적어 GitHub 이슈를 여세요. 내용을 확인한 뒤 등록해 주세요.</text>
+  </entry>
+  <entry key="welcome.issue.open" source="Open GitHub issue">
+    <text lang="en">Open GitHub issue</text>
+    <text lang="ko">GitHub 이슈 작성</text>
+  </entry>
+  <entry key="welcome.issue.review" source="Review and submit your issue on GitHub.">
+    <text lang="en">Review and submit your issue on GitHub.</text>
+    <text lang="ko">GitHub에서 내용을 확인하고 이슈를 등록해 주세요.</text>
+  </entry>
+  <entry key="welcome.issue.error" source="Could not open GitHub. Please try again.">
+    <text lang="en">Could not open GitHub. Please try again.</text>
+    <text lang="ko">GitHub를 열지 못했습니다. 다시 시도해 주세요.</text>
+  </entry>
+  <entry key="ui.489a4a746733" source="Scope of Goto">
+    <text lang="ko">이동 범위</text>
+    <text lang="en">Scope of Goto</text>
+  </entry>
+  <entry key="ui.985959785319" source="Project">
+    <text lang="ko">프로젝트</text>
+    <text lang="en">Project</text>
+  </entry>
+  <entry key="ui.22927695994e" source="Solution">
+    <text lang="ko">솔루션</text>
+    <text lang="en">Solution</text>
+  </entry>
+  <entry key="ui.6a4a45884517" source="Execute on press of Go button">
+    <text lang="ko">Go 버튼 실행 동작</text>
+    <text lang="en">Execute on press of Go button</text>
+  </entry>
+  <entry key="ui.98abff28a940" source="Matches">
+    <text lang="ko">일치 항목</text>
+    <text lang="en">Matches</text>
+  </entry>
+  <entry key="ui.aac89fb1ffa6" source="Show matches first">
+    <text lang="ko">일치 항목 목록 먼저 표시</text>
+    <text lang="en">Show matches first</text>
+  </entry>
+  <entry key="ui.cf5625a76c4f" source="Go directly to first match">
+    <text lang="ko">첫 일치 항목으로 바로 이동</text>
+    <text lang="en">Go directly to first match</text>
+  </entry>
+  <entry key="ui.809e927e1fc2" source="Prefer implementation on Goto">
+    <text lang="ko">이동 시 구현 우선</text>
+    <text lang="en">Prefer implementation on Goto</text>
+  </entry>
+  <entry key="ui.909ca363c0d5" source="Select symbol on Goto">
+    <text lang="ko">이동한 심볼 선택</text>
+    <text lang="en">Select symbol on Goto</text>
+  </entry>
+  <entry key="ui.f3760e2d2bfe" source="Allow hyphens in hashtags">
+    <text lang="ko">해시태그에서 하이픈 허용</text>
+    <text lang="en">Allow hyphens in hashtags</text>
+  </entry>
+  <entry key="ui.81d26a9ee5a6" source="Allow hashtags consisting solely of hexadecimal letters">
+    <text lang="ko">16진수 영문자로만 구성된 해시태그 허용</text>
+    <text lang="en">Allow hashtags consisting solely of hexadecimal letters</text>
+  </entry>
+  <entry key="ui.3c2c25dda6ce" source="Display global commands in hashtag context menu">
+    <text lang="ko">해시태그 문맥 메뉴에 전역 명령 표시</text>
+    <text lang="en">Display global commands in hashtag context menu</text>
+  </entry>
+  <entry key="ui.7742dbd83180" source="Minimum hashtag length">
+    <text lang="ko">해시태그 최소 길이</text>
+    <text lang="en">Minimum hashtag length</text>
+  </entry>
+  <entry key="ui.9e69be83b10e" source="Highlight write references">
+    <text lang="ko">쓰기 참조 강조</text>
+    <text lang="en">Highlight write references</text>
+  </entry>
+  <entry key="ui.30ad4d5bbd43" source="Write references">
+    <text lang="ko">쓰기 참조</text>
+    <text lang="en">Write references</text>
+  </entry>
+  <entry key="ui.5cbd37b0ad41" source="Highlight write and read references to symbol under cursor">
+    <text lang="ko">커서 아래 심볼의 쓰기·읽기 참조 강조</text>
+    <text lang="en">Highlight write and read references to symbol under cursor</text>
+  </entry>
+  <entry key="ui.69824d3b0e70" source="References">
+    <text lang="ko">참조</text>
+    <text lang="en">References</text>
+  </entry>
+  <entry key="ui.42f78988960f" source="Highlight matching words when caret is in comments and strings">
+    <text lang="ko">주석·문자열의 일치 단어 강조</text>
+    <text lang="en">Highlight matching words when caret is in comments and strings</text>
+  </entry>
+  <entry key="ui.3fb79ea2bb16" source="Highlight results of Quick Find and Find in Files">
+    <text lang="ko">빠른 찾기·파일 찾기 결과 강조</text>
+    <text lang="en">Highlight results of Quick Find and Find in Files</text>
+  </entry>
+  <entry key="ui.35fdf0dab7c2" source="Highlight solution file paths in build output window">
+    <text lang="ko">빌드 출력에서 솔루션 파일 경로 강조</text>
+    <text lang="en">Highlight solution file paths in build output window</text>
+  </entry>
+  <entry key="ui.8bd5759cd1a2" source="Highlight current line with">
+    <text lang="ko">현재 줄 강조</text>
+    <text lang="en">Highlight current line with</text>
+  </entry>
+  <entry key="ui.84c92aa159dc" source="Line appearance">
+    <text lang="ko">줄 표시 방식</text>
+    <text lang="en">Line appearance</text>
+  </entry>
+  <entry key="ui.1ae613d4797c" source="Thin frame">
+    <text lang="ko">얇은 테두리</text>
+    <text lang="en">Thin frame</text>
+  </entry>
+  <entry key="ui.3e314dafdf7c" source="Background color">
+    <text lang="ko">배경색</text>
+    <text lang="en">Background color</text>
+  </entry>
+  <entry key="ui.4fbf56035052" source="Ray lines">
+    <text lang="ko">선 표시</text>
+    <text lang="en">Ray lines</text>
+  </entry>
+  <entry key="ui.03cfcbde2223" source="Current line">
+    <text lang="ko">현재 줄</text>
+    <text lang="en">Current line</text>
+  </entry>
+  <entry key="ui.3eb385d9c616" source="Matching braces">
+    <text lang="ko">일치하는 괄호</text>
+    <text lang="en">Matching braces</text>
+  </entry>
+  <entry key="ui.9e57df8046ce" source="Mismatching braces">
+    <text lang="ko">불일치하는 괄호</text>
+    <text lang="en">Mismatching braces</text>
+  </entry>
+  <entry key="ui.1fead7704846" source="Underline spelling errors in comments and strings">
+    <text lang="ko">주석·문자열의 맞춤법 오류에 밑줄</text>
+    <text lang="en">Underline spelling errors in comments and strings</text>
+  </entry>
+  <entry key="ui.224553537836" source="Spelling underline color">
+    <text lang="ko">맞춤법 밑줄 색상</text>
+    <text lang="en">Spelling underline color</text>
+  </entry>
+  <entry key="ui.e685d94f9561" source="Underline unrecognized symbols">
+    <text lang="ko">인식할 수 없는 심볼에 밑줄</text>
+    <text lang="en">Underline unrecognized symbols</text>
+  </entry>
+  <entry key="ui.792f884b2f30" source="Unrecognized symbol underline color">
+    <text lang="ko">심볼 밑줄 색상</text>
+    <text lang="en">Unrecognized symbol underline color</text>
+  </entry>
+  <entry key="ui.6d031af10da7" source="Position">
+    <text lang="ko">위치</text>
+    <text lang="en">Position</text>
+  </entry>
+  <entry key="ui.d5cdfcf7ff75" source="Top">
+    <text lang="ko">위</text>
+    <text lang="en">Top</text>
+  </entry>
+  <entry key="ui.479ad21ac909" source="Bottom">
+    <text lang="ko">아래</text>
+    <text lang="en">Bottom</text>
+  </entry>
+  <entry key="ui.1723e9b6bf1c" source="Show Quick Info tooltips for more symbols">
+    <text lang="ko">심볼 빠른 정보 표시</text>
+    <text lang="en">Show Quick Info tooltips for more symbols</text>
+  </entry>
+  <entry key="ui.ee2bf7f6311c" source="Show comments from source files when available">
+    <text lang="ko">소스 주석이 있으면 표시</text>
+    <text lang="en">Show comments from source files when available</text>
+  </entry>
+  <entry key="ui.7347bebe8d59" source="Show tooltips for braces and structural keywords">
+    <text lang="ko">괄호·구조 키워드 툴팁 표시</text>
+    <text lang="en">Show tooltips for braces and structural keywords</text>
+  </entry>
+  <entry key="ui.2fa07bbaba91" source="Format doxygen comments in Quick Info tooltips">
+    <text lang="ko">빠른 정보의 Doxygen 주석 서식 적용</text>
+    <text lang="en">Format doxygen comments in Quick Info tooltips</text>
+  </entry>
+  <entry key="ui.28e6c94f9bf4" source="Use enhanced macro expansion">
+    <text lang="ko">향상된 매크로 확장 사용</text>
+    <text lang="en">Use enhanced macro expansion</text>
+  </entry>
+  <entry key="ui.d871ce86bf8e" source="Format enhanced expansion">
+    <text lang="ko">확장 결과 서식 적용</text>
+    <text lang="en">Format enhanced expansion</text>
+  </entry>
+  <entry key="ui.b1f6b6706b2b" source="Keep both original and enhanced expansions">
+    <text lang="ko">원본과 향상된 확장 결과 함께 표시</text>
+    <text lang="en">Keep both original and enhanced expansions</text>
+  </entry>
+  <entry key="ui.c4fc798e4b2a" source="Use last active document context for miscellaneous files">
+    <text lang="ko">기타 파일에 마지막 활성 문서 문맥 사용</text>
+    <text lang="en">Use last active document context for miscellaneous files</text>
+  </entry>
+  <entry key="ui.6b92da3fb22f" source="Use forward slashes in navigation bar for include paths">
+    <text lang="ko">탐색 표시줄의 include 경로에 슬래시 사용</text>
+    <text lang="en">Use forward slashes in navigation bar for include paths</text>
+  </entry>
+  <entry key="ui.4c958dffe028" source="Display filtering toolbar when hovering">
+    <text lang="ko">마우스를 올리면 필터 도구 모음 표시</text>
+    <text lang="en">Display filtering toolbar when hovering</text>
+  </entry>
+  <entry key="ui.022d6e20a561" source="Shrink as you type">
+    <text lang="ko">입력하는 동안 목록 축소</text>
+    <text lang="en">Shrink as you type</text>
+  </entry>
+  <entry key="ui.5f18ff9ca0d6" source="Allow Acronyms and Shorthand">
+    <text lang="ko">약어·축약 일치 허용</text>
+    <text lang="en">Allow Acronyms and Shorthand</text>
+  </entry>
+  <entry key="ui.fd2ded12de9f" source="Prefer Acronym matches">
+    <text lang="ko">약어 일치 우선</text>
+    <text lang="en">Prefer Acronym matches</text>
+  </entry>
+  <entry key="ui.ab22a80c92cb" source="Bold non-inherited members">
+    <text lang="ko">비상속 멤버를 굵게 표시</text>
+    <text lang="en">Bold non-inherited members</text>
+  </entry>
+  <entry key="ui.56ed566f0fb0" source="Accept completion with">
+    <text lang="ko">추천 수락 키</text>
+    <text lang="en">Accept completion with</text>
+  </entry>
+  <entry key="ui.ffaecd8e205a" source="Additional characters">
+    <text lang="ko">추가 문자</text>
+    <text lang="en">Additional characters</text>
+  </entry>
+  <entry key="ui.476c28200956" source="Completion list">
+    <text lang="ko">추천 목록</text>
+    <text lang="en">Completion list</text>
+  </entry>
+  <entry key="ui.ffa6edebea53" source="Default Intellisense">
+    <text lang="ko">Visual Studio 기본 IntelliSense</text>
+    <text lang="en">Default Intellisense</text>
+  </entry>
+  <entry key="ui.84e090405396" source="Selection style">
+    <text lang="ko">선택 방식</text>
+    <text lang="en">Selection style</text>
+  </entry>
+  <entry key="ui.21b111cbfe6e" source="Default">
+    <text lang="ko">기본값</text>
+    <text lang="en">Default</text>
+  </entry>
+  <entry key="ui.f17401323b6e" source="Select best match">
+    <text lang="ko">가장 잘 맞는 항목 선택</text>
+    <text lang="en">Select best match</text>
+  </entry>
+  <entry key="ui.743e57e83a5f" source="Select first item">
+    <text lang="ko">첫 항목 선택</text>
+    <text lang="en">Select first item</text>
+  </entry>
+  <entry key="ui.cd074875a9c1" source="Parse files without extensions as headers">
+    <text lang="ko">확장자 없는 파일을 헤더로 분석</text>
+    <text lang="en">Parse files without extensions as headers</text>
+  </entry>
+  <entry key="ui.be87a26a0939" source="Additional file extensions">
+    <text lang="ko">추가 파일 확장자</text>
+    <text lang="en">Additional file extensions</text>
+  </entry>
+  <entry key="ui.05ae79bc3ac2" source="Parse miscellaneous files">
+    <text lang="ko">기타 파일 분석</text>
+    <text lang="en">Parse miscellaneous files</text>
+  </entry>
+  <entry key="ui.9ccfab4012dd" source="If Solution is empty">
+    <text lang="ko">솔루션이 비어 있을 때</text>
+    <text lang="en">If Solution is empty</text>
+  </entry>
+  <entry key="ui.d248878232a4" source="If Solution is not empty">
+    <text lang="ko">솔루션이 비어 있지 않을 때</text>
+    <text lang="en">If Solution is not empty</text>
+  </entry>
+  <entry key="ui.81199961520a" source="Enumerate project references thoroughly">
+    <text lang="ko">프로젝트 참조 전체 열거</text>
+    <text lang="en">Enumerate project references thoroughly</text>
+  </entry>
+  <entry key="ui.4b1d32ca3ac9" source="Display project nodes in Find References results">
+    <text lang="ko">참조 찾기 결과에 프로젝트 노드 표시</text>
+    <text lang="en">Display project nodes in Find References results</text>
+  </entry>
+  <entry key="ui.a8f0e52b4145" source="Display project nodes in Rename dialog references lists">
+    <text lang="ko">이름 변경 참조 목록에 프로젝트 노드 표시</text>
+    <text lang="en">Display project nodes in Rename dialog references lists</text>
+  </entry>
+  <entry key="ui.c78ffe195710" source="Platform">
+    <text lang="ko">플랫폼</text>
+    <text lang="en">Platform</text>
+  </entry>
+  <entry key="ui.494ca78f7374" source="Custom">
+    <text lang="ko">사용자 지정</text>
+    <text lang="en">Custom</text>
+  </entry>
+  <entry key="ui.6ce39ec954c8" source="Show directories for">
+    <text lang="ko">표시할 디렉터리</text>
+    <text lang="en">Show directories for</text>
+  </entry>
+  <entry key="ui.04f8f8f5a569" source="Include files">
+    <text lang="ko">포함 파일</text>
+    <text lang="en">Include files</text>
+  </entry>
+  <entry key="ui.fa125556f136" source="Source files">
+    <text lang="ko">소스 파일</text>
+    <text lang="en">Source files</text>
+  </entry>
+  <entry key="ui.3437a7c07a81" source="Excluded directories">
+    <text lang="ko">제외 디렉터리</text>
+    <text lang="en">Excluded directories</text>
+  </entry>
+  <entry key="ui.0c790e79444e" source="One directory per line; environment variables are supported.">
+    <text lang="ko">한 줄에 디렉터리 하나씩 입력합니다. 환경 변수를 사용할 수 있습니다.</text>
+    <text lang="en">One directory per line; environment variables are supported.</text>
+  </entry>
+  <entry key="ui.30574257532d" source="Maintain order in header and source files for generated implementations">
+    <text lang="ko">생성한 구현의 헤더·소스 순서 유지</text>
+    <text lang="en">Maintain order in header and source files for generated implementations</text>
+  </entry>
+  <entry key="ui.477f818004c6" source="Lines between generated implementations">
+    <text lang="ko">생성한 구현 사이의 빈 줄 수</text>
+    <text lang="en">Lines between generated implementations</text>
+  </entry>
+  <entry key="ui.ce7c44e859d7" source="Include default parameter values in generated implementations">
+    <text lang="ko">생성한 구현에 기본 매개변수 값 포함</text>
+    <text lang="en">Include default parameter values in generated implementations</text>
+  </entry>
+  <entry key="ui.c0653dd5fcfe" source="Add keyword to generated C++ methods">
+    <text lang="ko">생성한 C++ 메서드에 추가할 키워드</text>
+    <text lang="en">Add keyword to generated C++ methods</text>
+  </entry>
+  <entry key="ui.da092ca3f4b9" source="Insert open brace on new line during Introduce Variable and Add Braces">
+    <text lang="ko">변수 도입·괄호 추가 시 여는 괄호를 새 줄에 삽입</text>
+    <text lang="en">Insert open brace on new line during Introduce Variable and Add Braces</text>
+  </entry>
+  <entry key="ui.3f0142542ec9" source="Add Include style">
+    <text lang="ko">include 추가 형식</text>
+    <text lang="en">Add Include style</text>
+  </entry>
+  <entry key="ui.31561e0975d3" source="Context dependent">
+    <text lang="ko">문맥에 따라 결정</text>
+    <text lang="en">Context dependent</text>
+  </entry>
+  <entry key="ui.8dc37869d63b" source="Quotes">
+    <text lang="ko">큰따옴표</text>
+    <text lang="en">Quotes</text>
+  </entry>
+  <entry key="ui.6d449b03f412" source="Angle brackets">
+    <text lang="ko">꺾쇠괄호</text>
+    <text lang="en">Angle brackets</text>
+  </entry>
+  <entry key="ui.beeb33cfec79" source="Add Include path">
+    <text lang="ko">include 추가 경로</text>
+    <text lang="en">Add Include path</text>
+  </entry>
+  <entry key="ui.c72a653909b6" source="Shortest possible path">
+    <text lang="ko">가장 짧은 경로</text>
+    <text lang="en">Shortest possible path</text>
+  </entry>
+  <entry key="ui.be377eecbb03" source="Project relative">
+    <text lang="ko">프로젝트 상대 경로</text>
+    <text lang="en">Project relative</text>
+  </entry>
+  <entry key="ui.ff5bec3a8e4a" source="Full path">
+    <text lang="ko">전체 경로</text>
+    <text lang="en">Full path</text>
+  </entry>
+  <entry key="ui.b446f044ff41" source="Projects to inspect">
+    <text lang="ko">검사할 프로젝트</text>
+    <text lang="en">Projects to inspect</text>
+  </entry>
+  <entry key="ui.046b2d1d259a" source="Current project">
+    <text lang="ko">현재 프로젝트</text>
+    <text lang="en">Current project</text>
+  </entry>
+  <entry key="ui.4b87271b6b81" source="All projects">
+    <text lang="ko">전체 프로젝트</text>
+    <text lang="en">All projects</text>
+  </entry>
+  <entry key="ui.ad65ed03963a" source="Inspection lifetime">
+    <text lang="ko">검사 유지 기간</text>
+    <text lang="en">Inspection lifetime</text>
+  </entry>
+  <entry key="ui.fe1f2d996b21" source="While solution is open">
+    <text lang="ko">솔루션이 열려 있는 동안</text>
+    <text lang="en">While solution is open</text>
+  </entry>
+  <entry key="ui.d32c77bcf30f" source="Until disabled">
+    <text lang="ko">사용 중지할 때까지</text>
+    <text lang="en">Until disabled</text>
+  </entry>
+  <entry key="ui.67de48a5be6c" source="Show inspection window when a question needs an answer">
+    <text lang="ko">응답이 필요하면 검사 창 표시</text>
+    <text lang="en">Show inspection window when a question needs an answer</text>
+  </entry>
+  <entry key="ui.84a6c804a592" source="Show the Stats tab">
+    <text lang="ko">통계 탭 표시</text>
+    <text lang="en">Show the Stats tab</text>
+  </entry>
+  <entry key="ui.b148e439e3c1" source="Skip Unreal Engine project when including all projects">
+    <text lang="ko">전체 프로젝트 검사 시 Unreal Engine 프로젝트 제외</text>
+    <text lang="en">Skip Unreal Engine project when including all projects</text>
+  </entry>
+  <entry key="ui.be775eb416d6" source="Checkers">
+    <text lang="ko">검사기</text>
+    <text lang="en">Checkers</text>
+  </entry>
+  <entry key="ui.8036ed3754e1" source="Combined">
+    <text lang="ko">통합</text>
+    <text lang="en">Combined</text>
+  </entry>
+  <entry key="ui.dc93879e3107" source="Syntax">
+    <text lang="ko">구문</text>
+    <text lang="en">Syntax</text>
+  </entry>
+  <entry key="ui.8d6b1f41b51a" source="Identifiers">
+    <text lang="ko">식별자</text>
+    <text lang="en">Identifiers</text>
+  </entry>
+  <entry key="ui.e1d18ee3a8c2" source="Inspection interval (ms)">
+    <text lang="ko">검사 간격(ms)</text>
+    <text lang="en">Inspection interval (ms)</text>
+  </entry>
+  <entry key="ui.a8ded887f99e" source="Parse what is in the editor before saving">
+    <text lang="ko">저장 전 편집기 내용 분석</text>
+    <text lang="en">Parse what is in the editor before saving</text>
+  </entry>
+  <entry key="ui.56dd9cc2a695" source="Confirm before applying all listed quick fixes">
+    <text lang="ko">전체 빠른 수정 적용 전 확인</text>
+    <text lang="en">Confirm before applying all listed quick fixes</text>
+  </entry>
+  <entry key="ui.478e90b6090f" source="Underline and dim code issues">
+    <text lang="ko">코드 문제에 밑줄·흐리게 표시</text>
+    <text lang="en">Underline and dim code issues</text>
+  </entry>
+  <entry key="ui.fe54076720f2" source="Show ticks in vertical scroll bar">
+    <text lang="ko">세로 스크롤바에 문제 위치 표시</text>
+    <text lang="en">Show ticks in vertical scroll bar</text>
+  </entry>
+  <entry key="ui.66009cdcccc7" source="Reparse automatically">
+    <text lang="ko">자동 재분석</text>
+    <text lang="en">Reparse automatically</text>
+  </entry>
+  <entry key="ui.242510f8ceb2" source="Even when on battery power">
+    <text lang="ko">배터리 사용 중에도 검사</text>
+    <text lang="en">Even when on battery power</text>
+  </entry>
+  <entry key="ui.418dcf7219d5" source="Enable while debugging">
+    <text lang="ko">디버깅 중에도 검사</text>
+    <text lang="en">Enable while debugging</text>
+  </entry>
+  <entry key="ui.f4955454c25d" source="Enable debugger integration required by Step Filter">
+    <text lang="ko">스텝 필터에 필요한 디버거 통합 사용</text>
+    <text lang="en">Enable debugger integration required by Step Filter</text>
+  </entry>
+  <entry key="ui.07e8f5b46108" source="Step filter settings storage">
+    <text lang="ko">스텝 필터 설정 저장 위치</text>
+    <text lang="en">Step filter settings storage</text>
+  </entry>
+  <entry key="ui.b512d97e7cbf" source="User">
+    <text lang="ko">사용자</text>
+    <text lang="en">User</text>
+  </entry>
+  <entry key="ui.d08857225a36" source="Step filter function patterns">
+    <text lang="ko">스텝 필터 함수 패턴</text>
+    <text lang="en">Step filter function patterns</text>
+  </entry>
+  <entry key="ui.96d7bf8d85c0" source="Execute Ctrl + click">
+    <text lang="ko">Ctrl + 클릭 실행</text>
+    <text lang="en">Execute Ctrl + click</text>
+  </entry>
+  <entry key="ui.cc8437a634af" source="Ctrl + click action">
+    <text lang="ko">Ctrl + 클릭 동작</text>
+    <text lang="en">Ctrl + click action</text>
+  </entry>
+  <entry key="ui.6d3472a45f56" source="Execute Ctrl + Shift + click">
+    <text lang="ko">Ctrl + Shift + 클릭 실행</text>
+    <text lang="en">Execute Ctrl + Shift + click</text>
+  </entry>
+  <entry key="ui.ea553da3165f" source="Ctrl + Shift + click action">
+    <text lang="ko">Ctrl + Shift + 클릭 동작</text>
+    <text lang="en">Ctrl + Shift + click action</text>
+  </entry>
+  <entry key="ui.2b62aae6ac7e" source="Execute middle click">
+    <text lang="ko">가운데 클릭 실행</text>
+    <text lang="en">Execute middle click</text>
+  </entry>
+  <entry key="ui.c58f6fc27c08" source="Middle click action">
+    <text lang="ko">가운데 클릭 동작</text>
+    <text lang="en">Middle click action</text>
+  </entry>
+  <entry key="ui.2320bc891c00" source="Execute Alt + middle click">
+    <text lang="ko">Alt + 가운데 클릭 실행</text>
+    <text lang="en">Execute Alt + middle click</text>
+  </entry>
+  <entry key="ui.0b0eb9b3111e" source="Alt + middle click action">
+    <text lang="ko">Alt + 가운데 클릭 동작</text>
+    <text lang="en">Alt + middle click action</text>
+  </entry>
+  <entry key="ui.2fac55c2f06f" source="Override Ctrl + Wheel">
+    <text lang="ko">Ctrl + 휠 동작 재정의</text>
+    <text lang="en">Override Ctrl + Wheel</text>
+  </entry>
+  <entry key="ui.32473773eb1b" source="Ctrl + Wheel action">
+    <text lang="ko">Ctrl + 휠 동작</text>
+    <text lang="en">Ctrl + Wheel action</text>
+  </entry>
+  <entry key="ui.2c7d60f7d6af" source="Override Ctrl + Shift + Wheel">
+    <text lang="ko">Ctrl + Shift + 휠 동작 재정의</text>
+    <text lang="en">Override Ctrl + Shift + Wheel</text>
+  </entry>
+  <entry key="ui.9fdb6d92f8c7" source="Ctrl + Shift + Wheel action">
+    <text lang="ko">Ctrl + Shift + 휠 동작</text>
+    <text lang="en">Ctrl + Shift + Wheel action</text>
+  </entry>
+  <entry key="ui.509c517ede79" source="Zoom">
+    <text lang="ko">확대·축소</text>
+    <text lang="en">Zoom</text>
+  </entry>
+  <entry key="ui.4a7869ccdde4" source="Move scope">
+    <text lang="ko">스코프 이동</text>
+    <text lang="en">Move scope</text>
+  </entry>
+  <entry key="ui.ed70e7af2ac5" source="Navigate references">
+    <text lang="ko">참조 탐색</text>
+    <text lang="en">Navigate references</text>
+  </entry>
+  <entry key="ui.841655c25b20" source="Display help content on hover in options dialog">
+    <text lang="ko">옵션에서 마우스를 올리면 도움말 표시</text>
+    <text lang="en">Display help content on hover in options dialog</text>
+  </entry>
+  <entry key="ui.6795074425bc" source="Enable multithreaded parsing">
+    <text lang="ko">다중 스레드 분석 사용</text>
+    <text lang="en">Enable multithreaded parsing</text>
+  </entry>
+  <entry key="ui.e194636a3633" source="Limit maximum number of concurrent threads">
+    <text lang="ko">최대 동시 스레드 수 제한</text>
+    <text lang="en">Limit maximum number of concurrent threads</text>
+  </entry>
+  <entry key="ui.3b04ba1784f9" source="Thread priority">
+    <text lang="ko">스레드 우선순위</text>
+    <text lang="en">Thread priority</text>
+  </entry>
+  <entry key="ui.a7248eeb45eb" source="Normal">
+    <text lang="ko">보통</text>
+    <text lang="en">Normal</text>
+  </entry>
+  <entry key="ui.ca39352a9a8f" source="Below normal">
+    <text lang="ko">보통 이하</text>
+    <text lang="en">Below normal</text>
+  </entry>
+  <entry key="ui.5c590931c7cc" source="Lowest">
+    <text lang="ko">가장 낮음</text>
+    <text lang="en">Lowest</text>
+  </entry>
+  <entry key="ui.2376db3ce354" source="Watch externally modified files and reparse when necessary">
+    <text lang="ko">외부 파일 변경 감지 후 필요 시 재분석</text>
+    <text lang="en">Watch externally modified files and reparse when necessary</text>
+  </entry>
+  <entry key="ui.7fcc9970a329" source="Parse all files when opening a project">
+    <text lang="ko">프로젝트를 열 때 전체 파일 분석</text>
+    <text lang="en">Parse all files when opening a project</text>
+  </entry>
+  <entry key="ui.63a565b67419" source="Do not parse files excluded by .vscode/settings.json">
+    <text lang="ko">.vscode/settings.json에서 제외한 파일은 분석하지 않음</text>
+    <text lang="en">Do not parse files excluded by .vscode/settings.json</text>
+  </entry>
+  <entry key="ui.b4daa7c2f9a7" source="Use alternate directory for symbol database">
+    <text lang="ko">심볼 데이터베이스에 다른 폴더 사용</text>
+    <text lang="en">Use alternate directory for symbol database</text>
+  </entry>
+  <entry key="ui.e947013d78c4" source="Symbol database directory">
+    <text lang="ko">심볼 데이터베이스 폴더</text>
+    <text lang="en">Symbol database directory</text>
+  </entry>
+  <entry key="ui.d4279f95cab7" source="Document update delay (ms)">
+    <text lang="ko">문서 갱신 지연(ms)</text>
+    <text lang="en">Document update delay (ms)</text>
+  </entry>
+  <entry key="ui.a037f1ae5296" source="Open Welcome on startup">
+    <text lang="ko">시작할 때 Welcome 열기</text>
+    <text lang="en">Open Welcome on startup</text>
+  </entry>
+  <entry key="ui.bcd0e9940fd1" source="Hide project inspection prompt">
+    <text lang="ko">프로젝트 검사 안내 숨기기</text>
+    <text lang="en">Hide project inspection prompt</text>
+  </entry>
+  <entry key="ui.9a42d40a3f31" source="Integration">
+    <text lang="ko">통합 설정</text>
+    <text lang="en">Integration</text>
+  </entry>
+  <entry key="ui.176280e7bbf6" source="Enable enhanced completion">
+    <text lang="ko">향상된 추천 사용</text>
+    <text lang="en">Enable enhanced completion</text>
+  </entry>
+  <entry key="ui.9aea11c42a39" source="Enable enhanced symbol coloring">
+    <text lang="ko">향상된 심볼 색상 사용</text>
+    <text lang="en">Enable enhanced symbol coloring</text>
+  </entry>
+  <entry key="ui.dc07fbd3e496" source="Enable diagnostic logging">
+    <text lang="ko">진단 로그 사용</text>
+    <text lang="en">Enable diagnostic logging</text>
+  </entry>
+  <entry key="ui.dccc13c3cbb5" source="Diagnostic log directory">
+    <text lang="ko">진단 로그 폴더</text>
+    <text lang="en">Diagnostic log directory</text>
+  </entry>
+  <entry key="ui.bd9c8c89de1b" source="Keep previous settings backup for recovery">
+    <text lang="ko">복구용 이전 설정 백업 유지</text>
+    <text lang="en">Keep previous settings backup for recovery</text>
+  </entry>
+  <entry key="ui.aa869d1f9896" source="Settings backup is created when saving preferences. Diagnostic paths are local to this computer.">
+    <text lang="ko">설정을 저장할 때 이전 설정을 백업합니다. 진단 경로는 현재 컴퓨터에만 저장됩니다.</text>
+    <text lang="en">Settings backup is created when saving preferences. Diagnostic paths are local to this computer.</text>
+  </entry>
+  <entry key="ui.c47bb18fada8" source="System Info">
+    <text lang="ko">시스템 정보</text>
+    <text lang="en">System Info</text>
+  </entry>
+  <entry key="ui.65d48235a91e" source="Startup">
+    <text lang="ko">시작 설정</text>
+    <text lang="en">Startup</text>
+  </entry>
+  <entry key="ui.370acbbc7ad0" source="Logging and Recovery">
+    <text lang="ko">로그 및 복구</text>
+    <text lang="en">Logging and Recovery</text>
+  </entry>
+  <entry key="ui.7b111d302de3" source="Enable Source Links">
+    <text lang="ko">소스 링크 사용</text>
+    <text lang="en">Enable Source Links</text>
+  </entry>
+  <entry key="ui.fad2bc387eaf" source="Show action">
+    <text lang="ko">동작 표시</text>
+    <text lang="en">Show action</text>
+  </entry>
+  <entry key="ui.e83095998601" source="Find references">
+    <text lang="ko">참조 찾기</text>
+    <text lang="en">Find references</text>
+  </entry>
+  <entry key="ui.d35cb7699a45" source="No references found">
+    <text lang="ko">참조를 찾지 못했습니다</text>
+    <text lang="en">No references found</text>
+  </entry>
+  <entry key="ui.82b1747631c1" source="Place the caret on a symbol and press Alt+Shift+F. Results will appear here.">
+    <text lang="ko">심볼에 커서를 놓고 Alt+Shift+F를 누르세요. 검색 결과가 이곳에 표시됩니다.</text>
+    <text lang="en">Place the caret on a symbol and press Alt+Shift+F. Results will appear here.</text>
+  </entry>
+  <entry key="ui.b87fbda7bb2d" source="Try a different symbol or clear the filter to show all results.">
+    <text lang="ko">다른 심볼을 검색하거나 필터를 지워 전체 결과를 확인하세요.</text>
+    <text lang="en">Try a different symbol or clear the filter to show all results.</text>
+  </entry>
+  <entry key="ui.9c122496adbd" source="When a solution is opened">
+    <text lang="ko">솔루션을 열 때</text>
+    <text lang="en">When a solution is opened</text>
+  </entry>
+  <entry key="ui.5ff1f4450e69" source="Project-wide inspections">
+    <text lang="ko">프로젝트 전체 검사</text>
+    <text lang="en">Project-wide inspections</text>
+  </entry>
+  <entry key="ui.94e4278037c2" source="Tool window">
+    <text lang="ko">도구 창</text>
+    <text lang="en">Tool window</text>
+  </entry>
+  <entry key="ui.ef2b466900df" source="Show questions in">
+    <text lang="ko">질문 표시 위치</text>
+    <text lang="en">Show questions in</text>
+  </entry>
+  <entry key="ui.1c198cc29583" source="Visual Studio main window">
+    <text lang="ko">Visual Studio 기본 창</text>
+    <text lang="en">Visual Studio main window</text>
+  </entry>
+  <entry key="ui.56d503d25d8e" source="Include initially">
+    <text lang="ko">처음 포함할 프로젝트</text>
+    <text lang="en">Include initially</text>
+  </entry>
+  <entry key="ui.dc1d1f78c3a9" source="When a project is added">
+    <text lang="ko">프로젝트가 추가될 때</text>
+    <text lang="en">When a project is added</text>
+  </entry>
+  <entry key="ui.2fadabf9118e" source="When a project is excluded">
+    <text lang="ko">프로젝트가 제외될 때</text>
+    <text lang="en">When a project is excluded</text>
+  </entry>
+  <entry key="ui.71ae72fb6ae7" source="When the build target changes">
+    <text lang="ko">빌드 대상이 변경될 때</text>
+    <text lang="en">When the build target changes</text>
+  </entry>
+  <entry key="ui.f1a43b184f7d" source="Unsaved editor buffers">
+    <text lang="ko">저장하지 않은 편집기 버퍼</text>
+    <text lang="en">Unsaved editor buffers</text>
+  </entry>
+  <entry key="ui.a957774310db" source="Cores and priorities">
+    <text lang="ko">코어 및 우선순위</text>
+    <text lang="en">Cores and priorities</text>
+  </entry>
+  <entry key="ui.15248ac4e2ec" source="Database and logs">
+    <text lang="ko">데이터베이스 및 로그</text>
+    <text lang="en">Database and logs</text>
+  </entry>
+  <entry key="ui.4d7ccedcb513" source="Results list">
+    <text lang="ko">결과 목록</text>
+    <text lang="en">Results list</text>
+  </entry>
+  <entry key="ui.055dc7614ece" source="Switch to integrated main menu">
+    <text lang="ko">통합 기본 메뉴로 전환</text>
+    <text lang="en">Switch to integrated main menu</text>
+  </entry>
+  <entry key="ui.0377e6457966" source="Plug-in">
+    <text lang="ko">플러그인</text>
+    <text lang="en">Plug-in</text>
+  </entry>
+  <entry key="ui.8bfdb93cafaa" source="Keywords">
+    <text lang="ko">키워드</text>
+    <text lang="en">Keywords</text>
+  </entry>
+  <entry key="ui.95ef5f9316e2" source="Suffixes">
+    <text lang="ko">접미사</text>
+    <text lang="en">Suffixes</text>
+  </entry>
+  <entry key="ui.edf8d3f1781f" source="Behavior">
+    <text lang="ko">동작</text>
+    <text lang="en">Behavior</text>
+  </entry>
+  <entry key="ui.87aeb6c7ef9e" source="URL / Exe">
+    <text lang="ko">URL / 실행 파일</text>
+    <text lang="en">URL / Exe</text>
+  </entry>
+  <entry key="ui.be173a5c121c" source="Exe Args">
+    <text lang="ko">실행 인수</text>
+    <text lang="en">Exe Args</text>
+  </entry>
+  <entry key="ui.8228e1aec4c3" source="Plug-in Directories...">
+    <text lang="ko">플러그인 폴더...</text>
+    <text lang="en">Plug-in Directories...</text>
+  </entry>
+  <entry key="ui.94995913ebd1" source="Source link plug-in directories">
+    <text lang="ko">소스 링크 플러그인 폴더</text>
+    <text lang="en">Source link plug-in directories</text>
+  </entry>
+  <entry key="ui.430d2e5fc672" source="Import XML source-link provider definitions from these folders.">
+    <text lang="ko">이 폴더들에서 XML 형식의 소스 링크 공급자 정의를 가져옵니다.</text>
+    <text lang="en">Import XML source-link provider definitions from these folders.</text>
+  </entry>
+  <entry key="ui.2cff9baabf56" source="Import">
+    <text lang="ko">가져오기</text>
+    <text lang="en">Import</text>
+  </entry>
+  <entry key="ui.02cdaabfca80" source="Duplicate">
+    <text lang="ko">복제</text>
+    <text lang="en">Duplicate</text>
+  </entry>
+  <entry key="ui.c3812fc4acb8" source="Remove">
+    <text lang="ko">제거</text>
+    <text lang="en">Remove</text>
+  </entry>
+  <entry key="ui.9fd728c66c9a" source="Add">
+    <text lang="ko">추가</text>
+    <text lang="en">Add</text>
+  </entry>
+  <entry key="ui.6a78d3191c7b" source="Double-click">
+    <text lang="ko">두 번 클릭</text>
+    <text lang="en">Double-click</text>
+  </entry>
+  <entry key="ui.01b68eaaa3c4" source="Alt+click">
+    <text lang="ko">Alt + 클릭</text>
+    <text lang="en">Alt+click</text>
+  </entry>
+  <entry key="ui.aab63f85c7f1" source="Open link">
+    <text lang="ko">링크 열기</text>
+    <text lang="en">Open link</text>
+  </entry>
+  <entry key="ui.dbf362d4f210" source="Copy link">
+    <text lang="ko">링크 복사</text>
+    <text lang="en">Copy link</text>
+  </entry>
+  <entry key="ui.6f6817d96e83" source="File Viewer">
+    <text lang="ko">파일 보기</text>
+    <text lang="en">File Viewer</text>
+  </entry>
+  <entry key="ui.3aaf089ef566" source="External Tool">
+    <text lang="ko">외부 도구</text>
+    <text lang="en">External Tool</text>
+  </entry>
+  <entry key="ui.bd82cf16699b" source="Number">
+    <text lang="ko">숫자</text>
+    <text lang="en">Number</text>
+  </entry>
+  <entry key="ui.71988c4d8e08" source="Text">
+    <text lang="ko">텍스트</text>
+    <text lang="en">Text</text>
+  </entry>
+  <entry key="ui.b073f6c68ef8" source="Scope">
+    <text lang="ko">범위</text>
+    <text lang="en">Scope</text>
+  </entry>
 </translations>

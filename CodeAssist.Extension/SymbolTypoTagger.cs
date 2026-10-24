@@ -69,7 +69,7 @@ namespace CodeAssist.Extension
 
         public IEnumerable<ITagSpan<IErrorTag>> GetTags(NormalizedSnapshotSpanCollection spans)
         {
-            if (StartupUi.Preferences.InspectionMode == InspectionMode.Disabled || spans.Count == 0 || indexService.Index.Count == 0) yield break;
+            if (!StartupUi.Preferences.InspectionUnderline || !StartupUi.Preferences.UnderlineUnknownSymbols || StartupUi.Preferences.InspectionMode == InspectionMode.Disabled || spans.Count == 0 || indexService.Index.Count == 0) yield break;
             var snapshot = spans[0].Snapshot;
             EnsureParsed(snapshot);
             foreach (var requestedSpan in spans)

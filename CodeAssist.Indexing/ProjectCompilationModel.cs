@@ -22,11 +22,12 @@ namespace CodeAssist.Indexing
     {
         public IReadOnlyList<CompilationTarget> Targets { get; private set; } = Array.Empty<CompilationTarget>();
         public string Fingerprint { get; private set; } = string.Empty;
-        public IReadOnlyList<IndexedSymbol> HeaderCandidates(IEnumerable<string> indexedFiles)
+        public IReadOnlyList<IndexedSymbol> HeaderCandidates(IEnumerable<string> indexedFiles,IEnumerable<string> additionalIncludeDirectories=null)
         {
             var roots = Targets.SelectMany(target => target.IncludeDirectories.Select(directory =>
                 Path.GetFullPath(Path.IsPathRooted(directory) ? directory : Path.Combine(Path.GetDirectoryName(target.ProjectFile), directory))
                     .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar) + Path.DirectorySeparatorChar))
+                .Concat((additionalIncludeDirectories??Array.Empty<string>()).Select(directory=>Path.GetFullPath(directory).TrimEnd(Path.DirectorySeparatorChar,Path.AltDirectorySeparatorChar)+Path.DirectorySeparatorChar))
                 .Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
             var candidates = new List<IndexedSymbol>();
             foreach (var file in indexedFiles)

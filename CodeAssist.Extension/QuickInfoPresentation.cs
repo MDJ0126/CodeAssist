@@ -16,7 +16,7 @@ namespace CodeAssist.Extension
 {
  internal sealed class QuickInfoFallback
  {
-  internal IAsyncQuickInfoSession Session;internal ContainerElement Content;internal string Word;
+  internal IAsyncQuickInfoSession Session;internal ContainerElement Content;internal string Word;public bool KeepAlongsideNative;
   internal static bool HasNativeSignature(object item,string word)
   {
    if(item is ClassifiedTextElement text){if(text.Runs.Any(r=>NativeQuickInfoText.IsSymbolRun(r.ClassificationTypeName,r.Text,word)))return true;var value=NativeQuickInfoText.Normalize(string.Concat(text.Runs.Select(r=>r.Text)));return System.Text.RegularExpressions.Regex.IsMatch(value,@"\b"+System.Text.RegularExpressions.Regex.Escape(word)+@"\s*\(");}
@@ -35,7 +35,7 @@ namespace CodeAssist.Extension
    var fallback=model as QuickInfoFallback;if(fallback==null)return null;
    var host=new Border {Child=Views.CreateViewElement<UIElement>(view,fallback.Content)};
    Action refresh=()=>{
-    if(fallback.Session.Content.Any(c=>!ReferenceEquals(c,fallback)&&QuickInfoFallback.HasNativeSignature(c,fallback.Word)))
+    if(!fallback.KeepAlongsideNative&&fallback.Session.Content.Any(c=>!ReferenceEquals(c,fallback)&&QuickInfoFallback.HasNativeSignature(c,fallback.Word)))
     {host.Visibility=Visibility.Collapsed;WelcomeDocumentWindow.RecordEvent("QuickInfoFallback suppressed nativeSignature=True");}
    };
    refresh();

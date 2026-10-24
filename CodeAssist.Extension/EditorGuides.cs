@@ -52,18 +52,23 @@ namespace CodeAssist.Extension
     internal sealed class ColumnGuide
     {
         private readonly IWpfTextView view;private readonly IAdornmentLayer layer;
-        internal ColumnGuide(IWpfTextView view){this.view=view;layer=view.GetAdornmentLayer("CodeAssist Column Guide");view.LayoutChanged+=Layout;view.Closed+=Closed;StartupUi.SettingsApplied+=Update;Update();}
+        internal ColumnGuide(IWpfTextView view){this.view=view;layer=view.GetAdornmentLayer("CodeAssist Column Guide");view.Caret.PositionChanged+=Caret;view.LayoutChanged+=Layout;view.Closed+=Closed;StartupUi.SettingsApplied+=Update;Update();}
         private void Layout(object sender,TextViewLayoutChangedEventArgs e)=>Update();
+        private void Caret(object sender,CaretPositionChangedEventArgs e)=>Update();
         private void Update()
         {
             if(view.IsClosed)return;layer.RemoveAllAdornments();var p=StartupUi.Preferences;
             if(view.Options.GetOptionValue(DefaultWpfViewOptions.EnableHighlightCurrentLineId)!=p.HighlightCurrentLine)view.Options.SetOptionValue(DefaultWpfViewOptions.EnableHighlightCurrentLineId,p.HighlightCurrentLine);
+            if(p.HighlightCurrentLine&&view.TextViewLines!=null&&view.TextViewLines.Count>0){
+                var current=view.TextViewLines.GetTextViewLineContainingBufferPosition(view.Caret.Position.BufferPosition);
+                if(current!=null){try{var color=(Color)ColorConverter.ConvertFromString(p.CurrentLineColor);var brush=new SolidColorBrush(color);var shape=new Rectangle {Width=Math.Max(0,view.ViewportWidth-2),Height=Math.Max(1,current.Height-1),IsHitTestVisible=false,StrokeThickness=p.CurrentLineStyle=="Ray lines"?2:1};if(p.CurrentLineStyle=="Background color"){shape.Fill=brush;shape.Opacity=.35;}else shape.Stroke=brush;System.Windows.Controls.Canvas.SetTop(shape,current.Top-view.ViewportTop);layer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative,null,null,shape,null);}catch(FormatException){}}
+            }
             if(!p.ColumnIndicatorEnabled||view.ViewportHeight<=0)return;
             var x=view.FormattedLineSource.BaseIndentation+view.FormattedLineSource.ColumnWidth*p.ColumnIndicator-view.ViewportLeft;
             if(x<0||x>view.ViewportWidth)return;
             var line=new Line {X1=x,X2=x,Y1=0,Y2=view.ViewportHeight,Stroke=Brushes.Gray,Opacity=.5,StrokeThickness=1,IsHitTestVisible=false};
             layer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative,null,null,line,null);
         }
-        private void Closed(object sender,EventArgs e){view.LayoutChanged-=Layout;view.Closed-=Closed;StartupUi.SettingsApplied-=Update;}
+        private void Closed(object sender,EventArgs e){view.Caret.PositionChanged-=Caret;view.LayoutChanged-=Layout;view.Closed-=Closed;StartupUi.SettingsApplied-=Update;}
     }
 }

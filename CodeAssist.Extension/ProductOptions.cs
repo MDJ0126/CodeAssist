@@ -250,6 +250,7 @@ namespace CodeAssist.Extension
                 var control = new CheckBox { Content = UiText.Get(title,draft.UiLanguage), IsChecked = value, Margin = new Thickness(0, 0, 0, 7) };
                 control.Click += (s,e) => set(control.IsChecked == true); content.Children.Add(control); return control;
             }
+            void ValidateReference(string key,bool valid) { if(valid) errors.Remove(key);else errors.Add(key);save.IsEnabled=errors.Count==0; }
             void Heading(string section, string page)
             {
                 content.Children.Clear();
@@ -371,18 +372,8 @@ namespace CodeAssist.Extension
                 Toggle(UiText.Get("System symbols in italics",draft.UiLanguage),draft.SystemSymbolsItalic,v=>draft.SystemSymbolsItalic=v);
                 var completion=Toggle(UiText.Get("Visual Studio 기본 추천 색상 사용",draft.UiLanguage),draft.CompletionUseVisualStudioColors,v=>draft.CompletionUseVisualStudioColors=v);completion.Margin=new Thickness(0,22,0,0);
             });
-            Page(editor,"Editor","Underlining",()=> {
-                Toggle(UiText.Get("파일 내 기본 코드 진단 사용", StartupUi.Preferences.UiLanguage),draft.InspectionMode!=InspectionMode.Disabled,v=>draft.InspectionMode=v?InspectionMode.PerFile:InspectionMode.Disabled);
-                content.Children.Add(ProductTheme.Text(UiText.Get("확정 구문·스코프 오류 후보를 표시합니다. 컴파일러 전체 진단과 동일하지 않습니다.", StartupUi.Preferences.UiLanguage)));
-            });
-            Page(editor,"Editor","Highlighting",()=>{
-                Toggle("Highlight references under caret",draft.AutomaticReferenceHighlights,v=>draft.AutomaticReferenceHighlights=v);
-                Toggle("Highlight current line",draft.HighlightCurrentLine,v=>draft.HighlightCurrentLine=v);
-                Toggle("Highlight matching braces",draft.HighlightMatchingBraces,v=>draft.HighlightMatchingBraces=v);
-                Toggle("Highlight mismatching braces",draft.HighlightMismatchingBraces,v=>draft.HighlightMismatchingBraces=v);
-                Toggle("Highlight find results",draft.FindResultHighlighting,v=>draft.FindResultHighlighting=v);
-                Toggle("Highlight output filenames",draft.OutputFileHighlighting,v=>draft.OutputFileHighlighting=v);
-            });
+            Page(editor,"Editor","Underlining",()=>{ ReferenceOptions.Render("Underlining",content,draft,ValidateReference); });
+            Page(editor,"Editor","Highlighting",()=>{ ReferenceOptions.Render("Highlighting",content,draft,ValidateReference); });
             Page(editor,"Editor","Floating Elements",()=>Unavailable(UiText.Get("빠른 작업은 Alt+Shift+Q로 엽니다. 부동 빠른 작업 툴바는 현재 지원하지 않습니다.", StartupUi.Preferences.UiLanguage)));
             Page(editor,"Editor","Smart Select",()=> {
                 Toggle(UiText.Get("Start and grow selections by relatively small increments",StartupUi.Preferences.UiLanguage),draft.SmartSelectSmallIncrements,v=>draft.SmartSelectSmallIncrements=v);
@@ -397,17 +388,7 @@ namespace CodeAssist.Extension
                 Toggle(UiText.Get("줄 선택 전에 앞뒤 공백을 제외한 범위 선택",StartupUi.Preferences.UiLanguage),draft.SmartSelectTrimWhitespace,v=>draft.SmartSelectTrimWhitespace=v);
                 content.Children.Add(ProductTheme.Text(UiText.Get("선택 확장 Alt+Shift+] · 축소 Alt+Shift+[ · 블록 확장 Alt+] · 축소 Alt+[.", StartupUi.Preferences.UiLanguage)));
             });
-            Page(editor,"Editor","Display",()=> {
-                Toggle(UiText.Get("Display CodeAssist Navigation Bar",draft.UiLanguage),draft.ContextBarEnabled,v=>draft.ContextBarEnabled=v);
-                content.Children.Add(new TextBlock {Text=UiText.Get("Sort dropdown by",draft.UiLanguage),Margin=new Thickness(20,2,0,7)});
-                var occurrence=new RadioButton {Content=UiText.Get("Occurrence",draft.UiLanguage),IsChecked=!draft.SortNavigationAlphabetically,GroupName="NavigationSort",Margin=new Thickness(40,0,0,5)};
-                var alphabetical=new RadioButton {Content=UiText.Get("Alphabetically",draft.UiLanguage),IsChecked=draft.SortNavigationAlphabetically,GroupName="NavigationSort",Margin=new Thickness(40,0,0,14)};
-                occurrence.Checked+=(s,e)=>draft.SortNavigationAlphabetically=false;alphabetical.Checked+=(s,e)=>draft.SortNavigationAlphabetically=true;
-                content.Children.Add(occurrence);content.Children.Add(alphabetical);
-                Toggle(UiText.Get("Show column indicator",draft.UiLanguage),draft.ColumnIndicatorEnabled,v=>draft.ColumnIndicatorEnabled=v);
-                Number(UiText.Get("Column",draft.UiLanguage),draft.ColumnIndicator,20,500,v=>draft.ColumnIndicator=v);
-                Toggle(UiText.Get("Show symbol Quick Info",draft.UiLanguage),draft.QuickInfoEnabled,v=>draft.QuickInfoEnabled=v);
-            });
+            Page(editor,"Editor","Display",()=>{ ReferenceOptions.Render("Display",content,draft,ValidateReference); });
             Page(editor,"Editor","Guides",()=>{
                 Toggle(UiText.Get("Local symbols in bold",draft.UiLanguage),draft.LocalSymbolsBold,v=>draft.LocalSymbolsBold=v);
                 Toggle(UiText.Get("System symbols in italics",draft.UiLanguage),draft.SystemSymbolsItalic,v=>draft.SystemSymbolsItalic=v);
@@ -423,38 +404,11 @@ namespace CodeAssist.Extension
                 Number(UiText.Get("Column",draft.UiLanguage),draft.ColumnIndicator,20,500,v=>draft.ColumnIndicator=v);
                 Toggle(UiText.Get("Expand snippet shortcuts with Tab",draft.UiLanguage),draft.SnippetShortcutsEnabled,v=>draft.SnippetShortcutsEnabled=v);
             });
-            Page(editor,"Editor","Mouse",()=>Toggle(UiText.Get("Alt + click: Go to definition",draft.UiLanguage),draft.AltClickGoToDefinition,v=>draft.AltClickGoToDefinition=v));
+            Page(editor,"Editor","Mouse",()=>{ ReferenceOptions.Render("Mouse",content,draft,ValidateReference); });
             var navigation = Group("Navigation",()=>content.Children.Add(ProductTheme.Text(UiText.Get("Alt+G 정의/구현 · Alt+O 대응 파일 · Alt+Shift+S 심볼 · Alt+Shift+O 파일.", StartupUi.Preferences.UiLanguage))));
-            Page(navigation,"Navigation","Goto",()=>{
-                Toggle("Alt + click: Go to definition",draft.AltClickGoToDefinition,v=>draft.AltClickGoToDefinition=v);
-                Toggle("Show symbol Quick Info",draft.QuickInfoEnabled,v=>draft.QuickInfoEnabled=v);
-                Toggle("Context Bar",draft.ContextBarEnabled,v=>draft.ContextBarEnabled=v);
-                content.Children.Add(ProductTheme.Button("Restore VA-compatible shortcuts",()=>{
-                    ThreadHelper.ThrowIfNotOnUIThread();var dte=Package.GetGlobalService(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
-                    status.Text=dte!=null&&KeyboardCompatibility.Apply(dte)?"Keyboard shortcuts restored":"See keyboard-compatibility.json for failed bindings";
-                }));
-            });
-            Page(navigation,"Navigation","Source Links",()=> {
-                content.Children.Add(ProductTheme.Text("Source link rules"));
-                var rules=new System.Collections.ObjectModel.ObservableCollection<SourceLinkRule>(draft.SourceLinkRules??new List<SourceLinkRule>());
-                var list=new ListBox {ItemsSource=rules,DisplayMemberPath="Name",Height=120,Margin=new Thickness(0,0,0,12)};content.Children.Add(list);
-                var name=new TextBox();var pattern=new TextBox();var target=new TextBox();
-                var enabled=new CheckBox {Content=UiText.Get("Enabled",draft.UiLanguage),IsChecked=true,Margin=new Thickness(0,0,0,10)};
-                var complex=new CheckBox {Content=UiText.Get("Regular expression",draft.UiLanguage),Margin=new Thickness(0,0,0,10)};
-                foreach(var pair in new[]{Tuple.Create("Name",name),Tuple.Create("Pattern",pattern),Tuple.Create("Target URL",target)}){content.Children.Add(ProductTheme.Text(pair.Item1));pair.Item2.Margin=new Thickness(0,0,0,10);content.Children.Add(pair.Item2);}
-                content.Children.Add(enabled);content.Children.Add(complex);
-                list.SelectionChanged+=(s,e)=>{if(list.SelectedItem is SourceLinkRule rule){name.Text=rule.Name;pattern.Text=rule.Pattern;target.Text=rule.Target;enabled.IsChecked=rule.Enabled;complex.IsChecked=rule.RegularExpression;}};
-                var buttons=new StackPanel {Orientation=Orientation.Horizontal};content.Children.Add(buttons);
-                buttons.Children.Add(ProductTheme.Button("Add / Update",()=>{
-                    var rule=new SourceLinkRule {Name=name.Text,Pattern=pattern.Text,Target=target.Text,Enabled=enabled.IsChecked==true,RegularExpression=complex.IsChecked==true};
-                    try{SourceLinks.Validate(rule);var oldRule=list.SelectedItem as SourceLinkRule;if(oldRule!=null)rules[rules.IndexOf(oldRule)]=rule;else rules.Add(rule);draft.SourceLinkRules=rules.ToList();list.SelectedItem=rule;status.Text=UiText.Get("설정은 저장할 때 적용됩니다.",draft.UiLanguage);}catch(ArgumentException error){status.Text=error.Message;}
-                }));
-                buttons.Children.Add(ProductTheme.Button("Delete",()=>{if(list.SelectedItem is SourceLinkRule rule){rules.Remove(rule);draft.SourceLinkRules=rules.ToList();}}));
-                buttons.Children.Add(ProductTheme.Button("GitHub example",()=>{list.SelectedItem=null;name.Text="GitHub issues";pattern.Text="issue #{id}";target.Text="https://github.com/OWNER/REPOSITORY/issues/{id}";complex.IsChecked=false;}));
-                buttons.Children.Add(ProductTheme.Button("FogBugz example",()=>{list.SelectedItem=null;name.Text="FogBugz cases";pattern.Text="case {id}";target.Text="https://YOUR-SITE.fogbugz.com/f/cases/{id}";complex.IsChecked=false;}));
-                content.Children.Add(ProductTheme.Text("Simple: issue #{id}. Regex: BUG-(?<id>[0-9]+). Target: https://example.com/issues/{id}. Open a matching link with CodeAssist: Open Source Link."));
-            });
-            Page(navigation,"Navigation","CodeAssist Hashtags",()=>content.Children.Add(ProductTheme.Text(UiText.Get("주석의 #태그를 Alt+Shift+H로 검색합니다.", StartupUi.Preferences.UiLanguage))));
+            Page(navigation,"Navigation","Goto",()=>{ ReferenceOptions.Render("Goto",content,draft,ValidateReference); });
+            Page(navigation,"Navigation","Source Links",()=>SourceLinkOptions.Render(content,draft,ValidateReference));
+            Page(navigation,"Navigation","CodeAssist Hashtags",()=>{ ReferenceOptions.Render("Hashtags",content,draft,ValidateReference); });
             var suggestions = Group("Suggestions",()=>{
                 var enabled=Toggle("Enable Suggestion Lists",draft.SuggestionListsEnabled,v=>draft.SuggestionListsEnabled=v);
                 var smart=Toggle("Include Smart Suggestions",draft.SmartSuggestionsEnabled,v=>draft.SmartSuggestionsEnabled=v);smart.Margin=new Thickness(20,0,0,24);smart.IsEnabled=draft.SuggestionListsEnabled;
@@ -463,19 +417,10 @@ namespace CodeAssist.Extension
                 var cpp=Toggle("Enable in C++",draft.CompletionEnabled,v=>draft.CompletionEnabled=v);cpp.Margin=new Thickness(20,0,0,7);
                 var snippets=Toggle("Include CodeAssist Snippets",draft.SnippetSuggestionsEnabled,v=>draft.SnippetSuggestionsEnabled=v);snippets.Margin=new Thickness(20,0,0,7);
             });
-            Page(suggestions,"Suggestions","Enhanced Listboxes",()=>{
-                Toggle("Suggestion lists",draft.SuggestionListsEnabled,v=>draft.SuggestionListsEnabled=v);
-                Toggle("Acronym completion",draft.AcronymCompletionEnabled,v=>draft.AcronymCompletionEnabled=v);
-                Toggle("Shorthand completion",draft.ShorthandCompletionEnabled,v=>draft.ShorthandCompletionEnabled=v);
-                Toggle("List non-inherited entries first",draft.ListNonInheritedMembersFirst,v=>draft.ListNonInheritedMembersFirst=v);
-                Toggle("Snippet suggestions",draft.SnippetSuggestionsEnabled,v=>draft.SnippetSuggestionsEnabled=v);
-                Toggle("Accept with Tab",draft.CompletionCommitWithTab,v=>draft.CompletionCommitWithTab=v);
-                Toggle("Accept with Enter",draft.CompletionCommitWithEnter,v=>draft.CompletionCommitWithEnter=v);
-                Toggle(UiText.Get("Visual Studio 기본 추천 색상 사용",draft.UiLanguage),draft.CompletionUseVisualStudioColors,v=>draft.CompletionUseVisualStudioColors=v);
-            });
+            Page(suggestions,"Suggestions","Enhanced Listboxes",()=>{ ReferenceOptions.Render("Enhanced Listboxes",content,draft,ValidateReference); });
             var projects = Group("Projects",()=>content.Children.Add(ProductTheme.Text(UiText.Get("범용 C/C++ 프로젝트를 지원하며 Unreal은 추가 지원 대상입니다.", StartupUi.Preferences.UiLanguage))));
-            Page(projects,"Projects","Projects and Files",()=>content.Children.Add(ProductTheme.Text(UiText.Get("현재 프로젝트의 파일과 심볼을 인덱싱합니다. 엔진·시스템 헤더 캐시는 프로젝트 심볼과 분리합니다.", StartupUi.Preferences.UiLanguage))));
-            Page(projects,"Projects","C/C++ Directories",()=>content.Children.Add(ProductTheme.Text(UiText.Get("포함 경로는 프로젝트 컴파일 구성에서 읽습니다. 사용자 경로 편집은 아직 제공하지 않습니다.", StartupUi.Preferences.UiLanguage))));
+            Page(projects,"Projects","Projects and Files",()=>{ ReferenceOptions.Render("Projects and Files",content,draft,ValidateReference); });
+            Page(projects,"Projects","C/C++ Directories",()=>{ ReferenceOptions.Render("C/C++ Directories",content,draft,ValidateReference); });
             Page(projects,"Projects","File Extensions",()=>{
                 content.Children.Add(ProductTheme.Text("Additional C/C++ file extensions"));var input=new TextBox {Text=draft.CustomFileExtensions};content.Children.Add(input);
                 input.TextChanged+=(s,e)=>{try{FileExtensionSettings.Parse(input.Text);draft.CustomFileExtensions=input.Text;errors.Remove("extensions");status.Text=UiText.Get("설정은 저장할 때 적용됩니다.",draft.UiLanguage);}catch(ArgumentException error){errors.Add("extensions");status.Text=error.Message;}save.IsEnabled=errors.Count==0;};
@@ -486,7 +431,7 @@ namespace CodeAssist.Extension
                 input.TextChanged+=(s,e)=>{var value=input.Text.Trim();if(value.Length==0||System.IO.Directory.Exists(value)&&System.IO.File.Exists(System.IO.Path.Combine(value,"compile_commands.json"))){draft.CompilationDatabaseDirectory=value;errors.Remove("database");status.Text=UiText.Get("설정은 저장할 때 적용됩니다.",draft.UiLanguage);}else{errors.Add("database");status.Text="Select a directory containing compile_commands.json.";}save.IsEnabled=errors.Count==0;};
                 content.Children.Add(ProductTheme.Text("CMake, Ninja, Make and other build systems can export compile_commands.json. Select a target-specific directory to use its compiler, flags, target architecture and include paths. CodeAssist reads the database; it does not execute build commands."));
             });
-            Group("Code Generation",()=>content.Children.Add(ProductTheme.Text(UiText.Get("선언 만들기 Alt+Shift+C · 스니펫 삽입은 CodeAssist 메뉴에서 실행합니다.", StartupUi.Preferences.UiLanguage))));
+            Group("Code Generation",()=>{ ReferenceOptions.Render("Code Generation",content,draft,ValidateReference); });
             Page(projects,"Projects","Generation Templates",()=>{
                 content.Children.Add(ProductTheme.Text("Method implementation body template"));var body=new TextBox {Text=draft.MethodBodyTemplate,AcceptsReturn=true,Height=130,VerticalScrollBarVisibility=ScrollBarVisibility.Auto};body.TextChanged+=(s,e)=>draft.MethodBodyTemplate=body.Text;content.Children.Add(body);content.Children.Add(ProductTheme.Text("Placeholders: $Body$, $MethodName$, $ClassName$, $ReturnType$, $Parameters$. Generated implementations use this template; business logic is supplied by you."));
             });
@@ -498,19 +443,20 @@ namespace CodeAssist.Extension
                 }
                 content.Children.Add(ProductTheme.Text(UiText.Get("프로젝트 전체 검사는 로컬 프로젝트 C/C++ 파일의 확정 구문 오류 후보를 검사해 오류 목록에 표시합니다. 컴파일러의 전체 진단을 대체하지 않습니다.", StartupUi.Preferences.UiLanguage)));
             });
-            Page(inspection,"Code Inspection","Project-Wide",()=>pages["Code Inspection"]());
-            Page(inspection,"Code Inspection","Per-File",()=> { Toggle(UiText.Get("파일별 검사 활성화", StartupUi.Preferences.UiLanguage),draft.InspectionMode!=InspectionMode.Disabled,v=>draft.InspectionMode=v?InspectionMode.PerFile:InspectionMode.Disabled); });
+            Page(inspection,"Code Inspection","Project-Wide",()=> { ReferenceOptions.Render("Project-Wide",content,draft,ValidateReference); });
+            Page(inspection,"Code Inspection","Per-File",()=>{ ReferenceOptions.Render("Per-File",content,draft,ValidateReference); });
             Page(inspection,"Code Inspection","Checker Sets",()=>content.Children.Add(ProductTheme.Text(UiText.Get("프로젝트 전체: 괄호·제어문 구문 검사. 파일별: 타입 대소문자·식별자·구문·스코프 후보 검사. 추가 검사기는 미구현입니다.", StartupUi.Preferences.UiLanguage))));
             Group("CodeAssist Intelligence",()=>Unavailable(UiText.Get("로컬 AI·에이전트 연결은 현재 구현하지 않았습니다.", StartupUi.Preferences.UiLanguage)));
-            Group("Debug Assistance",()=>{
-                Toggle(UiText.Get("Step filter enabled",draft.UiLanguage),draft.StepFilterEnabled,v=>draft.StepFilterEnabled=v);var patterns=new TextBox {Text=draft.StepFilterPatterns,AcceptsReturn=true,Height=100};patterns.TextChanged+=(s,e)=>draft.StepFilterPatterns=patterns.Text;content.Children.Add(patterns);content.Children.Add(ProductTheme.Text("Wildcard function patterns separated by semicolons. Applies only to step events, up to 20 automatic step-outs. Breakpoint stops remain stops."));
-            });
+            Group("Debug Assistance",()=>{ ReferenceOptions.Render("Debug Assistance",content,draft,ValidateReference); });
             Group("Games & GPUs",()=>content.Children.Add(ProductTheme.Text(UiText.Get("Unreal 반사 매크로와 메타 지정자·엔진 심볼을 지원합니다. GPU 전용 분석기는 미구현입니다.", StartupUi.Preferences.UiLanguage))));
             var advanced = Group("Advanced",()=> {
                 Toggle(UiText.Get("시작할 때 Welcome 문서 열기", StartupUi.Preferences.UiLanguage),draft.ShowWelcomeOnStartup,v=>draft.ShowWelcomeOnStartup=v);
                 Toggle(UiText.Get("상단 안내바 표시", StartupUi.Preferences.UiLanguage),!draft.HideWelcomeBar,v=>draft.HideWelcomeBar=!v);
                 content.Children.Add(ProductTheme.Button(UiText.Get("CodeAssist 문서", StartupUi.Preferences.UiLanguage),()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.OpenHelp("startup"); }));
             });
+            Page(advanced,"Advanced","Logging and Recovery",()=> { ReferenceOptions.Render("Logging and Recovery",content,draft,ValidateReference); });
+            Page(advanced,"Advanced","Startup",()=> { ReferenceOptions.Render("Startup",content,draft,ValidateReference); });
+            Page(advanced,"Advanced","System Info",()=> { ReferenceOptions.Render("System Info",content,draft,ValidateReference); });
             Page(advanced,"Advanced","Language",()=> {
                 content.Children.Add(ProductTheme.Text("UI 언어"));
                 var choices = new[] { new LanguageChoice("auto",UiText.Get("시스템 언어",StartupUi.Preferences.UiLanguage)) }.Concat(UiText.LanguageCodes.Select(code=>new LanguageChoice(code,UiText.LanguageName(code)))).ToArray();
@@ -519,13 +465,8 @@ namespace CodeAssist.Extension
                 content.Children.Add(language);
                 content.Children.Add(ProductTheme.Text("언어는 저장 후 새로 여는 화면에 적용됩니다."));
             });
-            Page(advanced,"Advanced","Performance",()=> {
-                Number(UiText.Get("Parser threads",draft.UiLanguage),draft.ParseConcurrency,1,16,v=>draft.ParseConcurrency=v);
-                var delays = new ComboBox { ItemsSource = new[] {50,100,150,250,500,1000,draft.LiveUpdateDelay}.Distinct().OrderBy(v=>v).ToArray(), SelectedItem=draft.LiveUpdateDelay, Width=120, HorizontalAlignment=HorizontalAlignment.Left, Margin=new Thickness(0,0,0,12) };
-                content.Children.Add(ProductTheme.Text(UiText.Get("편집 후 문서 인덱스 갱신 대기 (ms)", StartupUi.Preferences.UiLanguage)));
-                delays.SelectionChanged+=(s,e)=>{if(delays.SelectedItem is int v) draft.LiveUpdateDelay=v;};content.Children.Add(delays);
-                content.Children.Add(ProductTheme.Text(UiText.Get("빠른 입력 중 중복 분석을 합칩니다. 초기 인덱싱 시간은 프로젝트 구성에 따라 다릅니다.", StartupUi.Preferences.UiLanguage)));
-            });
+            Page(advanced,"Advanced","Performance",()=>{ ReferenceOptions.Render("Performance",content,draft,ValidateReference); });
+            var performancePage=advanced.Items.OfType<TreeViewItem>().First(i=>(string)i.Tag=="Advanced / Performance");advanced.Items.Remove(performancePage);advanced.Items.Insert(0,performancePage);
             foreach(var parent in new[]{editor,projects}) {
                 foreach(var extra in parent.Items.OfType<TreeViewItem>().Where(i=>new[]{"Editor / Guides","Projects / File Extensions","Projects / Compilation Database","Projects / Generation Templates"}.Contains(i.Tag as string)).ToArray()) {parent.Items.Remove(extra);advanced.Items.Add(extra);}
             }

@@ -14,6 +14,7 @@ namespace CodeAssist.Indexing
     public sealed class PersistentSymbolIndex
     {
         public string[] AdditionalSourceExtensions { get; set; } = Array.Empty<string>();
+        public Func<string,bool> IncludeFile {get;set;} = path=>true;
         private int parseConcurrency=2;
         public int ParseConcurrency { get=>parseConcurrency;set=>parseConcurrency=Math.Max(1,Math.Min(16,value)); }
         private static readonly HashSet<string> SourceExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -90,7 +91,7 @@ namespace CodeAssist.Indexing
 
         public void BuildProject(string projectRoot, CancellationToken cancellation = default(CancellationToken))
         {
-            BuildFiles(EnumerateProjectFiles(projectRoot, AdditionalSourceExtensions), projectRoot, null, cancellation);
+            BuildFiles(EnumerateProjectFiles(projectRoot, AdditionalSourceExtensions).Where(path=>IncludeFile(path)), projectRoot, null, cancellation);
         }
 
         public void BuildEngine(string engineRoot, string projectRoot, CancellationToken cancellation = default(CancellationToken))

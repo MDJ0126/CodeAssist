@@ -26,13 +26,17 @@ namespace CodeAssist.Extension
         private readonly TextBlock title=new TextBlock {Margin=new Thickness(5,3,5,3),TextTrimming=TextTrimming.CharacterEllipsis};
         private readonly TextBox filter=new TextBox {Width=246,Height=22,Margin=new Thickness(4,1,4,1),VerticalContentAlignment=VerticalAlignment.Center};
         private readonly List<TreeViewItem> leaves=new List<TreeViewItem>();
+        private readonly StackPanel emptyState=new StackPanel {VerticalAlignment=VerticalAlignment.Center,HorizontalAlignment=HorizontalAlignment.Center,Margin=new Thickness(24),MaxWidth=350};
+        private readonly TextBlock emptyTitle=new TextBlock {FontSize=18,FontWeight=FontWeights.SemiBold,TextAlignment=TextAlignment.Center,Margin=new Thickness(0,12,0,8)};
+        private readonly TextBlock emptyDescription=new TextBlock {FontSize=12,TextAlignment=TextAlignment.Center,TextWrapping=TextWrapping.Wrap,LineHeight=20};
         private Button refreshButton;private readonly LatestOperationGate refreshGate=new LatestOperationGate();private ReferenceSearchState state;
         private AsyncPackage package;
         internal ReferencePane()
         {
-            var panel=new DockPanel();ProductTheme.Apply(panel);ProductTheme.Apply(tree);
+            var panel=new DockPanel();ProductTheme.Apply(panel);ProductTheme.Apply(tree);ProductTheme.BrushFor(panel,Panel.BackgroundProperty,"ColorEditor");ProductTheme.BrushFor(tree,Control.BackgroundProperty,"ColorEditor");ProductTheme.BrushFor(this,Control.BackgroundProperty,"ColorEditor");
             title.SetResourceReference(TextBlock.ForegroundProperty,Microsoft.VisualStudio.PlatformUI.EnvironmentColors.ToolWindowTextBrushKey);
-            var toolbar=new DockPanel {Height=27};DockPanel.SetDock(toolbar,Dock.Top);panel.Children.Add(toolbar);
+            var toolbar=new DockPanel {Height=65,Margin=new Thickness(8,6,8,6)};DockPanel.SetDock(toolbar,Dock.Top);panel.Children.Add(toolbar);
+            var searchRow=new DockPanel {Height=28,Margin=new Thickness(0,7,0,0)};DockPanel.SetDock(searchRow,Dock.Bottom);toolbar.Children.Add(searchRow);filter.Width=double.NaN;filter.Height=26;filter.Margin=new Thickness(0);
             var buttons=new StackPanel {Orientation=Orientation.Horizontal};DockPanel.SetDock(buttons,Dock.Left);toolbar.Children.Add(buttons);
             foreach(var previous in new[]{false,true}) {
                 var back=previous;var label=UiText.Get(back?"Previous reference":"Next reference",StartupUi.Preferences.UiLanguage);
@@ -42,8 +46,9 @@ namespace CodeAssist.Extension
             refreshButton=ToolbarButton("Refresh references","Refresh",()=>Refresh());buttons.Children.Add(refreshButton);
             buttons.Children.Add(ToolbarButton("Clone Results","Clone",()=>{if(package!=null)package.JoinableTaskFactory.RunAsync(CloneResultsAsync).FileAndForget("CodeAssist/CloneReferences");}));
             System.Windows.Automation.AutomationProperties.SetName(filter,UiText.Get("Filter references",StartupUi.Preferences.UiLanguage));filter.ToolTip=UiText.Get("Filter references",StartupUi.Preferences.UiLanguage);
-            DockPanel.SetDock(filter,Dock.Left);toolbar.Children.Add(filter);
-            var clear=ProductTheme.Button("",()=>filter.Clear());clear.Content=ProductTheme.Icon("Close",12);clear.Width=20;clear.MinWidth=20;clear.Height=22;clear.Padding=new Thickness(2);clear.Margin=new Thickness(0,1,4,1);clear.ToolTip=UiText.Get("Clear filter",StartupUi.Preferences.UiLanguage);System.Windows.Automation.AutomationProperties.SetName(clear,(string)clear.ToolTip);DockPanel.SetDock(clear,Dock.Left);toolbar.Children.Add(clear);toolbar.Children.Add(title);panel.Children.Add(tree);Content=panel;
+            DockPanel.SetDock(filter,Dock.Left);searchRow.Children.Add(filter);
+            var clear=ProductTheme.Button("",()=>filter.Clear());clear.Content=ProductTheme.Icon("Close",12);clear.Width=20;clear.MinWidth=20;clear.Height=22;clear.Padding=new Thickness(2);clear.Margin=new Thickness(0,1,4,1);clear.ToolTip=UiText.Get("Clear filter",StartupUi.Preferences.UiLanguage);System.Windows.Automation.AutomationProperties.SetName(clear,(string)clear.ToolTip);DockPanel.SetDock(clear,Dock.Left);searchRow.Children.Add(clear);DockPanel.SetDock(clear,Dock.Right);searchRow.Children.Remove(filter);searchRow.Children.Add(filter);title.FontWeight=FontWeights.SemiBold;title.VerticalAlignment=VerticalAlignment.Center;toolbar.Children.Add(title);
+            var body=new Grid {Margin=new Thickness(8,0,8,8)};body.Children.Add(tree);var emptyIcon=ProductTheme.Icon("Search",36,"Link");emptyIcon.HorizontalAlignment=HorizontalAlignment.Center;emptyState.Children.Add(emptyIcon);ProductTheme.BrushFor(emptyTitle,TextBlock.ForegroundProperty,"Accent");ProductTheme.BrushFor(emptyDescription,TextBlock.ForegroundProperty,"Muted");emptyState.Children.Add(emptyTitle);emptyState.Children.Add(emptyDescription);body.Children.Add(emptyState);panel.Children.Add(new Border {BorderThickness=new Thickness(1,1,1,0),BorderBrush=new SolidColorBrush(Color.FromArgb(40,128,128,128)),Child=body});Content=panel;Build();
             filter.TextChanged+=(sender,args)=>Build();
             Loaded+=(sender,args)=>StartupUi.SettingsApplied+=Build;Unloaded+=(sender,args)=>StartupUi.SettingsApplied-=Build;
             GotKeyboardFocus+=(sender,args)=>ReferenceResults.ActivePane=this;PreviewMouseDown+=(sender,args)=>ReferenceResults.ActivePane=this;Unloaded+=(sender,args)=>{if(ReferenceEquals(ReferenceResults.ActivePane,this))ReferenceResults.ActivePane=null;};
@@ -84,9 +89,13 @@ namespace CodeAssist.Extension
         private void Build()
         {
             var selected=(tree.SelectedItem as TreeViewItem)?.Tag as NavigationEntry;
-            tree.Items.Clear();leaves.Clear();if(state==null)return;
+            tree.Items.Clear();leaves.Clear();
+            emptyState.Visibility=Visibility.Visible;
+            emptyTitle.Text=UiText.Get(state==null?"Find references":"No references found",StartupUi.Preferences.UiLanguage);
+            emptyDescription.Text=UiText.Get(state==null?"Place the caret on a symbol and press Alt+Shift+F. Results will appear here.":"Try a different symbol or clear the filter to show all results.",StartupUi.Preferences.UiLanguage);
+            if(state==null){title.Text=UiText.Get("References",StartupUi.Preferences.UiLanguage);refreshButton.IsEnabled=false;return;}
             var query=ReferenceFilter.Compile(filter.Text);var terms=query.Terms.ToArray();
-            var root=Row(string.IsNullOrEmpty(state.Project)?UiText.Get("References",StartupUi.Preferences.UiLanguage):state.Project,"Project","Unknown");tree.Items.Add(root);
+            var root=Row(string.IsNullOrEmpty(state.Project)?UiText.Get("References",StartupUi.Preferences.UiLanguage):state.Project,"Project","Unknown");if(StartupUi.Preferences.ReferenceProjectNodes)tree.Items.Add(root);
             foreach(var group in state.Display.Rows.GroupBy(row=>row.File,StringComparer.OrdinalIgnoreCase))
             {
                 var file=Row(group.Key,"File","Unknown");
@@ -96,8 +105,9 @@ namespace CodeAssist.Extension
                     var row=Row(entry.Caption,"Reference",state.Entry(entry.Index).Kind,terms);row.Tag=state.Entry(entry.Index);file.Items.Add(row);leaves.Add(row);
                     if(ReferenceEquals(row.Tag,selected))row.IsSelected=true;
                 }
-                if(file.Items.Count>0)root.Items.Add(file);
+                if(file.Items.Count>0){if(StartupUi.Preferences.ReferenceProjectNodes)root.Items.Add(file);else tree.Items.Add(file);}
             }
+            emptyState.Visibility=leaves.Count==0?Visibility.Visible:Visibility.Collapsed;
             title.Text=state.Description+" — "+leaves.Count+" / "+state.Count;title.ToolTip=title.Text;
         }
         private void Move(int direction)=>MoveAt(direction,null,0,0);

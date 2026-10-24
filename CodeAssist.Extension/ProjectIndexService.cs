@@ -19,6 +19,11 @@ namespace CodeAssist.Extension
     internal sealed class ProjectIndexService : IDisposable
     {
         private string[] configuredExtensions=Array.Empty<string>();
+        private string settingsKey;private string lastProject;private FileSystemWatcher watcher;private System.Threading.Timer watchDelay;
+        public ProjectIndexService(){StartupUi.SettingsApplied+=ReloadSettings;}
+        private void ReloadSettings(){ConfigureWatcher();if(lastProject!=null)Initialize(lastProject);}
+        private void DebounceWatcher(){try{watchDelay?.Change(750,Timeout.Infinite);}catch(ObjectDisposedException){}}
+        private void ConfigureWatcher(){watcher?.Dispose();watcher=null;watchDelay?.Dispose();watchDelay=null;if(!StartupUi.Preferences.ParsingWatchExternal||!Directory.Exists(initializedProjectRoot))return;watchDelay=new System.Threading.Timer(s=>{settingsKey=null;if(lastProject!=null)Initialize(lastProject);},null,Timeout.Infinite,Timeout.Infinite);watcher=new FileSystemWatcher(initializedProjectRoot){IncludeSubdirectories=true,NotifyFilter=NotifyFilters.LastWrite|NotifyFilters.FileName};watcher.Changed+=(s,e)=>{if(new[]{".h",".hpp",".hh",".cpp",".cc",".cxx",".c"}.Concat(configuredExtensions).Contains(Path.GetExtension(e.FullPath),StringComparer.OrdinalIgnoreCase))DebounceWatcher();};watcher.Created+=(s,e)=>DebounceWatcher();watcher.Deleted+=(s,e)=>DebounceWatcher();watcher.EnableRaisingEvents=true;}
         private readonly object gate = new object();
         private Task buildTask;
         private TaskCompletionSource<bool> projectReady;
@@ -49,12 +54,12 @@ namespace CodeAssist.Extension
         }
         private IndexBuildResult BuildIndex(PersistentSymbolIndex target, string mode, string root, string project)
         {
-            target.ParseConcurrency=StartupUi.Preferences.ParseConcurrency;target.AdditionalSourceExtensions=configuredExtensions;
+            target.ParseConcurrency=StartupUi.Preferences.EffectiveParseConcurrency;target.AdditionalSourceExtensions=configuredExtensions;target.IncludeFile=StartupUi.Preferences.IncludeProjectPath;
             return IndexBuildRunner.Build(target, mode, root, project,
                 Path.Combine(Path.GetDirectoryName(typeof(ProjectIndexService).Assembly.Location), "CodeAssist.Worker.exe"),
-                Environment.GetEnvironmentVariable("CODEASSIST_USE_INDEX_WORKER") == "1", shutdown.Token);
+                Environment.GetEnvironmentVariable("CODEASSIST_USE_INDEX_WORKER") == "1"&&string.IsNullOrWhiteSpace(StartupUi.Preferences.UserExcludedDirectories), shutdown.Token);
         }
-        public void Dispose() { shutdown.Cancel(); }
+        public void Dispose() { StartupUi.SettingsApplied-=ReloadSettings;watcher?.Dispose();watchDelay?.Dispose();shutdown.Cancel(); }
 
         public long BeginLiveDocument(string filePath) => liveDocuments.Begin(filePath);
         public void RemoveLiveDocument(string filePath) => liveDocuments.Remove(filePath);
@@ -106,17 +111,19 @@ namespace CodeAssist.Extension
         public void Initialize(string unrealProjectPath)
         {
             if (string.IsNullOrWhiteSpace(unrealProjectPath)) return;
-            var extensions=FileExtensionSettings.Parse(StartupUi.Preferences.CustomFileExtensions);
+            var extensions=FileExtensionSettings.Parse(StartupUi.Preferences.CustomFileExtensions+";"+StartupUi.Preferences.ProjectAdditionalExtensions);
             var projectRoot = Path.GetDirectoryName(unrealProjectPath);
+            lastProject=unrealProjectPath;
+            var optionKey=string.Join("|",StartupUi.Preferences.UserIncludeDirectories,StartupUi.Preferences.UserSourceDirectories,StartupUi.Preferences.UserExcludedDirectories,StartupUi.Preferences.UseAlternateSymbolDirectory,StartupUi.Preferences.AlternateSymbolDirectory,StartupUi.Preferences.EffectiveParseConcurrency);
             var engineRoot = string.Equals(Path.GetExtension(unrealProjectPath),".uproject",StringComparison.OrdinalIgnoreCase) ? FindEngineRoot(unrealProjectPath) : null;
             var projectCachePath = GetProjectCachePath(projectRoot);
             var engineCachePath = GetEngineCachePath(engineRoot);
 
             lock (gate)
             {
-                if (string.Equals(initializedProjectRoot, projectRoot, StringComparison.OrdinalIgnoreCase)&&configuredExtensions.SequenceEqual(extensions)) return;
+                if (string.Equals(initializedProjectRoot, projectRoot, StringComparison.OrdinalIgnoreCase)&&configuredExtensions.SequenceEqual(extensions)&&settingsKey==optionKey) return;
                 if (buildTask != null && !buildTask.IsCompleted) return;
-                initializedProjectRoot = projectRoot;configuredExtensions=extensions;
+                initializedProjectRoot = projectRoot;configuredExtensions=extensions;settingsKey=optionKey;
                 IntelliSenseReady = false;
                 intelliSenseEvidence = 0;
                 var projectIndex = new PersistentSymbolIndex();
@@ -128,13 +135,14 @@ namespace CodeAssist.Extension
                 Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
                 projectReady=new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
                 IsBuilding = true;
+                ConfigureWatcher();
                 ReportIndexingStatus("캐시 확인 중...", 5);
                 buildTask = Task.Run(() =>
                 {
                     try
                     {
                         CompilationModel = ProjectCompilationModel.Load(projectRoot);
-                        var configurationFingerprint=CompilationModel.Fingerprint+"|source-extensions-v4|"+string.Join(";",extensions);
+                        var configurationFingerprint=CompilationModel.Fingerprint+"|source-extensions-v4|"+string.Join(";",extensions)+"|"+optionKey;
                         var configurationPath = projectCachePath + ".configuration";
                         var configurationCurrent = File.Exists(configurationPath) &&
                             File.ReadAllText(configurationPath) == configurationFingerprint;
@@ -147,7 +155,7 @@ namespace CodeAssist.Extension
                         var engineInputsCurrent = engineInputs != null && File.Exists(engineInputsPath) &&
                             File.ReadAllText(engineInputsPath) == engineInputs;
                         var changed = false;
-                        if (!projectCacheLoaded || !configurationCurrent || !IsCacheCurrent(projectRoot, projectCachePath,extensions))
+                        if (StartupUi.Preferences.ParsingOnProjectOpen && (!projectCacheLoaded || !configurationCurrent || !IsCacheCurrent(projectRoot, projectCachePath,extensions)))
                         {
                             ReportIndexingStatus("프로젝트 심볼 분석 중...", 20);
                             LastBuild = BuildIndex(projectIndex, "project", projectRoot, projectRoot);
@@ -173,7 +181,10 @@ namespace CodeAssist.Extension
                         }
 
                         Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
-                        configuredHeaders = CompilationModel.HeaderCandidates(Index.SourceFiles()).ToArray();
+                        foreach(var root in StartupUi.Preferences.ConfiguredDirectories(StartupUi.Preferences.UserIncludeDirectories+";"+StartupUi.Preferences.UserSourceDirectories).Where(Directory.Exists).Where(path=>!string.Equals(Path.GetFullPath(path).TrimEnd(Path.DirectorySeparatorChar),Path.GetFullPath(projectRoot).TrimEnd(Path.DirectorySeparatorChar),StringComparison.OrdinalIgnoreCase))) {
+                            shutdown.Token.ThrowIfCancellationRequested();var additional=new PersistentSymbolIndex {ParseConcurrency=StartupUi.Preferences.EffectiveParseConcurrency,AdditionalSourceExtensions=configuredExtensions,IncludeFile=StartupUi.Preferences.IncludeProjectPath};additional.BuildProject(root,shutdown.Token);Index.ReplaceWith(Index,additional);
+                        }
+                        configuredHeaders = CompilationModel.HeaderCandidates(Index.SourceFiles().Where(StartupUi.Preferences.IncludeProjectPath),StartupUi.Preferences.ConfiguredDirectories(StartupUi.Preferences.UserIncludeDirectories)).ToArray();
                         LastError = null;
                         if (changed) IndexUpdated?.Invoke(this, EventArgs.Empty);
                         ReportIndexingStatus("인덱스 준비 완료", 100, true);
@@ -270,7 +281,7 @@ namespace CodeAssist.Extension
 
         private static string GetIndexRoot()
         {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CodeAssist", "Indexes");
+            return StartupUi.Preferences.SymbolDatabaseDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CodeAssist", "Indexes"));
         }
 
         private static string HashKey(string value)

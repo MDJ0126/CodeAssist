@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -15,7 +16,12 @@ namespace CodeAssist.Core
     {
         public static IReadOnlyList<DocumentNavigationItem> Hashtags(string text)
         {
-            return Items(CppCodeMask.Comments(text), @"(?<![\w#])#[A-Za-z_][A-Za-z_0-9]*");
+            return Hashtags(text,new StartupPreferences { HashtagMinimumLength=1,HashtagAllowHex=true });
+        }
+        public static IReadOnlyList<DocumentNavigationItem> Hashtags(string text,StartupPreferences settings)
+        {
+            var pattern=settings.HashtagAllowHyphens?@"(?<![\w#])#[A-Za-z_][A-Za-z_0-9-]*":@"(?<![\w#])#[A-Za-z_][A-Za-z_0-9]*";
+            return Items(CppCodeMask.Comments(text),pattern).Where(item=>settings.AcceptHashtag(item.Name)).ToArray();
         }
         public static IReadOnlyList<DocumentNavigationItem> Includes(string text)
         {

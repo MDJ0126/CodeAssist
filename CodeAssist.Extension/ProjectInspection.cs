@@ -37,7 +37,7 @@ namespace CodeAssist.Extension
                     var findings=await System.Threading.Tasks.Task.Run(()=>ProjectSyntaxInspection.Scan(root,token),token);
                     await package.JoinableTaskFactory.SwitchToMainThreadAsync(token);
                     errors.Tasks.Clear();
-                    foreach(var finding in findings)
+                    foreach(var finding in findings.Where(f=>StartupUi.Preferences.IncludeProjectPath(f.File)).Take(Math.Max(1,StartupUi.Preferences.InspectionResultLimit)))
                     {
                         var task=new ErrorTask { Document=finding.File,Line=finding.Line-1,Column=finding.Column-1,Text="CodeAssist: "+finding.Message,Category=TaskCategory.CodeSense,ErrorCategory=TaskErrorCategory.Warning };
                         task.Navigate+=(s,e)=> {
@@ -47,7 +47,7 @@ namespace CodeAssist.Extension
                         };
                         errors.Tasks.Add(task);
                     }
-                    errors.Show();
+                    if(StartupUi.Preferences.InspectionShowQuestions)errors.Show();
                     var status=await package.GetServiceAsync(typeof(SVsStatusbar)) as IVsStatusbar;
                     status?.SetText("CodeAssist 기본 구문 검사 완료: "+findings.Count+"개 항목");
                 }

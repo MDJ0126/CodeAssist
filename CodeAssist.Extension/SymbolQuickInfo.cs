@@ -49,7 +49,13 @@ namespace CodeAssist.Extension
                 PersistentSymbolIndex.ReadDocumentSymbols(filePath??"",text).Concat(indexes.FindLiveSymbolDetails(word)),
                 word,filePath,line.LineNumber+1,CppExpressionContext.FindEnclosingFunctionOwner(text,start));
             if(traced++<8)WelcomeDocumentWindow.RecordEvent("QuickInfoQuery word="+word+" candidates="+candidates.Length+" coloring="+StartupUi.Preferences.ColorTooltips);
-            if(candidates.Length==0)return Task.FromResult<QuickInfoItem>(null);
+            var extraRows=new List<object>();
+            var macro=DisplayQuickInfo.MacroPreview(text,start,word,StartupUi.Preferences);
+            foreach(var expansion in macro)extraRows.Add(new ClassifiedTextElement(new ClassifiedTextRun("text",expansion)));
+            if(StartupUi.Preferences.QuickInfoComments)foreach(var symbol in candidates.Where(s=>string.Equals(s.FilePath,filePath,StringComparison.OrdinalIgnoreCase))){var comment=DisplayQuickInfo.CommentAbove(text,symbol.Line,StartupUi.Preferences.QuickInfoDoxygen);if(comment.Length>0)extraRows.Add(new ClassifiedTextElement(new ClassifiedTextRun("text",comment)));}
+            if(candidates.Length==0&&StartupUi.Preferences.QuickInfoStructural){var structural=DisplayQuickInfo.StructuralDescription(word);if(structural!=null)extraRows.Add(new ClassifiedTextElement(new ClassifiedTextRun("keyword",structural)));}
+            if(candidates.Length==0&&extraRows.Count==0)return Task.FromResult<QuickInfoItem>(null);
+
             TraceNativeContent(session);
             session.TextView.Properties[typeof(QuickInfoFallback)]=session;
             var rows=candidates.Select(symbol=>
@@ -65,10 +71,10 @@ namespace CodeAssist.Extension
                 if(cursor<signature.Length)runs.Add(new ClassifiedTextRun("text",signature.Substring(cursor)));
                 return (object)new ClassifiedTextElement(runs);
             }).ToArray();
-            var content=new ContainerElement(ContainerElementStyle.Stacked,rows);
+            var content=new ContainerElement(ContainerElementStyle.Stacked,rows.Concat(extraRows).ToArray());
             cancellationToken.ThrowIfCancellationRequested();
             if(disposed||!ReferenceEquals(snapshot,buffer.CurrentSnapshot))return Task.FromResult<QuickInfoItem>(null);
-            return Task.FromResult(new QuickInfoItem(snapshot.CreateTrackingSpan(start,word.Length,SpanTrackingMode.EdgeInclusive),new QuickInfoFallback {Session=session,Content=content,Word=word}));
+            return Task.FromResult(new QuickInfoItem(snapshot.CreateTrackingSpan(start,word.Length,SpanTrackingMode.EdgeInclusive),new QuickInfoFallback {Session=session,Content=content,Word=word,KeepAlongsideNative=extraRows.Count>0}));
         }
         private void TraceNativeContent(IAsyncQuickInfoSession session)
         {

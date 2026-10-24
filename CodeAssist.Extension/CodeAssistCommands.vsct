@@ -6,7 +6,8 @@
 
   <Commands package="guidCodeAssistPackage">
     <Menus>
-      <Menu guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenu" priority="0x0100" type="Menu"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenuGroup" /><Strings><ButtonText>CodeAssist</ButtonText></Strings></Menu>
+      <Menu guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenu" priority="0x0100" type="Menu"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenuGroup" /><CommandFlag>DynamicVisibility</CommandFlag><Strings><ButtonText>CodeAssist</ButtonText></Strings></Menu>
+      <Menu guid="guidCodeAssistCommandSet" id="CodeAssistMainMenu" priority="0x7000" type="Menu"><Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS"/><CommandFlag>DynamicVisibility</CommandFlag><Strings><ButtonText>CodeAssist</ButtonText></Strings></Menu>
       <Menu guid="guidCodeAssistCommandSet" id="CodeAssistContextMenu" priority="0x0700" type="Menu"><Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" /><Strings><ButtonText>CodeAssist</ButtonText></Strings></Menu>
       <Menu guid="guidCodeAssistCommandSet" id="CodeAssistToolbar" priority="0x0100" type="Toolbar">
         <CommandFlag>DefaultDocked</CommandFlag><Strings><ButtonText>CodeAssist</ButtonText><CommandName>CodeAssist</CommandName></Strings>
@@ -116,6 +117,7 @@
   </Commands>
 
   <CommandPlacements>
+    <CommandPlacement guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistMainMenu"/></CommandPlacement>
 <CommandPlacement guid="guidCodeAssistCommandSet" id="EditorQuickFixesId" priority="0x0180"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup"/></CommandPlacement>
 <CommandPlacement guid="guidCodeAssistCommandSet" id="GoToSymbolCommandId" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
 <CommandPlacement guid="guidCodeAssistCommandSet" id="MemberCommandId" priority="0x0101"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
@@ -242,6 +244,7 @@
       <IDSymbol name="SettingsCommandId" value="0x0141" />
       <IDSymbol name="CodeAssistToolbar" value="0x1030" />
       <IDSymbol name="CodeAssistToolbarGroup" value="0x1031" />
+      <IDSymbol name="CodeAssistMainMenu" value="0x1052" />
       <IDSymbol name="CodeAssistToolsMenu" value="0x1050" />
       <IDSymbol name="CodeAssistToolsMenuGroup" value="0x1051" />
       <IDSymbol name="CodeAssistCommandGroup" value="0x1020" />

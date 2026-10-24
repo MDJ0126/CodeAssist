@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -52,7 +52,7 @@ namespace CodeAssist.Core
             var method=Parse(definition);if(method==null)return null;
             return (method.Returns.Length>0?method.Returns+" ":"")+method.Name.Split(new[]{"::"},StringSplitOptions.None).Last()+"("+method.Arguments+")"+(method.Suffix.Length>0?" "+method.Suffix:"")+";";
         }
-        public static string CreateImplementation(string declaration,string owner,string newline="\n",bool inlineOverride=false,string bodyTemplate=null)
+        public static string CreateImplementation(string declaration,string owner,string newline="\n",bool inlineOverride=false,string bodyTemplate=null,bool includeDefaults=false,string methodKeyword="override")
         {
             var method=Parse(declaration);if(method==null)return null;
             if(owner!=null&&owner.Length>0&&!QualifiedIdentifier(owner))throw new ArgumentException("Invalid owner type");
@@ -63,14 +63,14 @@ namespace CodeAssist.Core
             var values=new Dictionary<string,string>{{"MethodName",method.Name},{"ClassName",owner??""},{"ReturnType",returns},{"Parameters",method.Arguments},{"Body","    throw \"Not implemented\";"}};
             var template=new SnippetTemplate("Method body","methodbody",bodyTemplate??"$Body$");if(template.Inputs(values).Length>0)throw new ArgumentException("Unknown method body template placeholder");
             var body=template.Expand(values).Text.Replace("\r\n","\n").Replace("\n",newline);
-            return (returns.Length>0?returns+" ":"")+name+"("+string.Join(", ",SplitArguments(method.Arguments).Select(WithoutDefault))+")"+(suffix.Length>0?" "+suffix:"")+(inlineOverride?" override":"")+newline+"{"+newline+body+newline+"}"+newline;
+            return (returns.Length>0?returns+" ":"")+name+"("+string.Join(", ",SplitArguments(method.Arguments).Select(argument=>includeDefaults?argument:WithoutDefault(argument)))+")"+(suffix.Length>0?" "+suffix:"")+(inlineOverride&&!string.IsNullOrWhiteSpace(methodKeyword)?" "+methodKeyword:"")+newline+"{"+newline+body+newline+"}"+newline;
         }
-        public static string CreateImplementations(string declarations,string owner,string newline="\n",bool overrides=false,string bodyTemplate=null)
+        public static string CreateImplementations(string declarations,string owner,string newline="\n",bool overrides=false,string bodyTemplate=null,bool includeDefaults=false,int spacing=1,string methodKeyword="override")
         {
             if(declarations==null||declarations.Length>128*1024)return null;
             var output=new List<string>();var code=CppCodeMask.Create(declarations);var depth=0;var start=0;
-            for(var i=0;i<code.Length;i++){if(code[i]=='(')depth++;if(code[i]==')')depth--;if(code[i]==';'&&depth==0){var part=CreateImplementation(declarations.Substring(start,i-start+1),owner,newline,overrides,bodyTemplate);if(part!=null)output.Add(part);start=i+1;}}
-            return output.Count==0?null:string.Join(newline,output);
+            for(var i=0;i<code.Length;i++){if(code[i]=='(')depth++;if(code[i]==')')depth--;if(code[i]==';'&&depth==0){var part=CreateImplementation(declarations.Substring(start,i-start+1),owner,newline,overrides,bodyTemplate,includeDefaults,methodKeyword);if(part!=null)output.Add(part);start=i+1;}}
+            return output.Count==0?null:string.Join(string.Concat(Enumerable.Repeat(newline,Math.Max(0,Math.Min(20,spacing)))),output);
         }
         public static string SimilarMember(string declaration,string newName)
         {

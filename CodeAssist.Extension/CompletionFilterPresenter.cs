@@ -49,6 +49,7 @@ namespace CodeAssist.Extension
             this.completion=completion;this.inner=inner;
             ProductTheme.Apply(root);ProductTheme.BrushFor(footer,Panel.BackgroundProperty,"Palette");
             DockPanel.SetDock(footer,Dock.Bottom);root.Children.Add(footer);
+            if(StartupUi.Preferences.CompletionToolbarOnHover){footer.Visibility=Visibility.Collapsed;root.MouseEnter+=(s,e)=>footer.Visibility=Visibility.Visible;root.MouseLeave+=(s,e)=>footer.Visibility=Visibility.Collapsed;}
             AddFilter("List non-inherited entries first",null,KnownMonikers.Upload);
             AddFilter("Show fields",SymbolKind.Variable,CompletionIcons.For(SymbolKind.Variable));
             AddFilter("Show methods",SymbolKind.Function,CompletionIcons.For(SymbolKind.Function));

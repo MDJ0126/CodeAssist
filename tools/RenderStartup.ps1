@@ -1,4 +1,4 @@
-param([string]$Output = "$PSScriptRoot/../docs/validation/welcome-preview.png", [ValidateSet("Welcome","FirstRun","Settings")][string]$Screen = "Welcome", [ValidateSet("Light","Dark")][string]$Theme = "Light", [string]$OptionsPage = "", [ValidateSet("auto","ko","en")][string]$Language="ko", [switch]$TestInteractions, [string]$AssemblyDirectory = "$PSScriptRoot/../CodeAssist.Extension/bin/Release")
+﻿param([string]$Output = "$PSScriptRoot/../docs/validation/welcome-preview.png", [ValidateSet("Welcome","FirstRun","Settings","Navigation","Help","References")][string]$Screen = "Welcome", [ValidateSet("Light","Dark")][string]$Theme = "Light", [string]$OptionsPage = "", [ValidateSet("auto","ko","en")][string]$Language="ko", [switch]$SeedSourceLinkExamples, [switch]$TestInteractions, [switch]$TestThemeSwitch, [string]$AssemblyDirectory = "$PSScriptRoot/../CodeAssist.Extension/bin/Release")
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName PresentationFramework,PresentationCore,WindowsBase
 Add-Type @"
@@ -29,7 +29,28 @@ $assembly = [Reflection.Assembly]::LoadFrom((Join-Path ([PreviewAssemblyResolver
 $type = $assembly.GetType('CodeAssist.Extension.StartupUi', $true)
 $preferences=$type.GetProperty('Preferences',[Reflection.BindingFlags]'Static,NonPublic').GetValue($null,$null)
 $preferences.UiLanguage=$Language
-if ($Screen -eq 'Welcome') {
+if($SeedSourceLinkExamples){
+ $linkType=[Reflection.Assembly]::LoadFrom((Join-Path ([PreviewAssemblyResolver]::Bin) 'CodeAssist.Core.dll')).GetType('CodeAssist.Core.SourceLinks',$true)
+ $preferences.SourceLinkRules.Clear()
+ foreach($name in @('URL','FogBugz','GitHub','Jira','File Viewer','External Tool')){$preferences.SourceLinkRules.Add($linkType.GetMethod('Preset').Invoke($null,@($name)))}
+}
+
+if ($Screen -eq 'References') {
+    $view=[Activator]::CreateInstance($assembly.GetType('CodeAssist.Extension.ReferencePane',$true),[Reflection.BindingFlags]'Instance,Public,NonPublic',$null,@(),$null)
+} elseif ($Screen -eq 'Help') {
+    $helpType=$assembly.GetType('CodeAssist.Extension.HelpView',$true)
+    $view=[Activator]::CreateInstance($helpType,[Reflection.BindingFlags]'Instance,Public,NonPublic',$null,@(),$null)
+    $helpType.GetMethod('Navigate',[Reflection.BindingFlags]'Instance,NonPublic').Invoke($view,@($(if($OptionsPage){$OptionsPage}else{'shortcuts'}))) | Out-Null
+} elseif ($Screen -eq 'Navigation') {
+    $entryType=$assembly.GetType('CodeAssist.Extension.NavigationEntry',$true)
+    $entries=[Array]::CreateInstance($entryType,3)
+    $entries.SetValue([Activator]::CreateInstance($entryType,@('AFixtureActor::Select','C:/Fixture/FixtureActor.cpp',14,20,'int AFixtureActor::Select(int Value)','Function')),0)
+    $entries.SetValue([Activator]::CreateInstance($entryType,@('AFixtureActor','C:/Fixture/FixtureActor.h',22,7,'class AFixtureActor : public ABaseActor','Type')),1)
+    $entries.SetValue([Activator]::CreateInstance($entryType,@('Health','C:/Fixture/FixtureActor.h',16,11,'float Health','Variable')),2)
+    $pickerType=$assembly.GetType('CodeAssist.Extension.NavigationPicker',$true)
+    $picker=[Activator]::CreateInstance($pickerType,[Reflection.BindingFlags]'Instance,Public,NonPublic',$null,@('CodeAssist: Symbols',$entries,$null,'C:/Fixture',$true),$null)
+    $view=$picker.Content;$picker.Content=$null
+} elseif ($Screen -eq 'Welcome') {
     $method = $type.GetMethod('Welcome', [Reflection.BindingFlags]'Static,NonPublic')
     $view = $method.Invoke($null, @())
 } else {
@@ -38,8 +59,8 @@ if ($Screen -eq 'Welcome') {
     $view = $window.Content
     $window.Content = $null
 }
-$width = if ($Screen -eq "Welcome") { 1440 } else { 940 }
-$height = if ($Screen -eq "Welcome") { 2100 } else { 720 }
+$width = if ($Screen -eq "Welcome") { 1440 } elseif ($Screen -eq "References") { 435 } elseif ($Screen -eq "Navigation") { 886 } elseif ($Screen -eq "Help") { 890 } elseif ($Screen -eq "Settings") { 900 } else { 940 }
+$height = if ($Screen -eq "Welcome") { 2100 } elseif ($Screen -eq "References") { 520 } elseif ($Screen -eq "Navigation") { 396 } elseif ($Screen -eq "Help") { 600 } elseif ($Screen -eq "Settings") { 680 } else { 720 }
 $root = [Windows.Controls.Border]::new()
 $foreground = if ($Theme -eq "Dark") { [Windows.Media.BrushConverter]::new().ConvertFromString("#FFF1F1F1") } else { [Windows.Media.Brushes]::Black }
 $background = if ($Theme -eq "Dark") { [Windows.Media.BrushConverter]::new().ConvertFromString("#FF1E1E1E") } else { [Windows.Media.Brushes]::White }
@@ -64,6 +85,11 @@ if($OptionsPage) {
     Select-OptionsPage $root
     $root.UpdateLayout()
 }
+if($SeedSourceLinkExamples){
+ function Select-SourceFixture($node){if($node -is [Windows.Controls.DataGrid]){$node.SelectedIndex=2};for($i=0;$i -lt [Windows.Media.VisualTreeHelper]::GetChildrenCount($node);$i++){Select-SourceFixture ([Windows.Media.VisualTreeHelper]::GetChild($node,$i))}}
+ Select-SourceFixture $root
+ $root.UpdateLayout()
+}
 if($TestInteractions) {
     $nodes=[Collections.Generic.List[object]]::new()
     function Gather-Nodes($node) {
@@ -71,7 +97,7 @@ if($TestInteractions) {
         for($i=0;$i -lt [Windows.Media.VisualTreeHelper]::GetChildrenCount($node);$i++) { Gather-Nodes ([Windows.Media.VisualTreeHelper]::GetChild($node,$i)) }
     }
     Gather-Nodes $root
-    $picker=$nodes | Where-Object { $_ -is [Windows.Controls.ComboBox] -and $_.Tag -eq '클래스와 타입' } | Select-Object -First 1
+    $picker=$nodes | Where-Object { $_ -is [Windows.Controls.Button] -and $_.Tag -eq '클래스와 타입' } | Select-Object -First 1
     $saveButton=$nodes | Where-Object { $_ -is [Windows.Controls.Button] -and $_.Content -eq '저장' } | Select-Object -First 1
     $searchBox=$nodes | Where-Object { $_ -is [Windows.Controls.TextBox] -and [Windows.Automation.AutomationProperties]::GetName($_) -eq '설정 검색' } | Select-Object -First 1
     $editorGroup=$nodes | Where-Object { $_ -is [Windows.Controls.TreeViewItem] -and $_.Tag -eq 'Editor' } | Select-Object -First 1
@@ -79,21 +105,14 @@ if($TestInteractions) {
     if($null -eq $picker -or $null -eq $saveButton -or $null -eq $searchBox) { throw 'Interaction controls not found' }
     $preferences=$type.GetProperty('Preferences',[Reflection.BindingFlags]'Static,NonPublic').GetValue($null,$null)
     $originalPreference=$preferences.TypeColor
-    $originalColor=$picker.Text
-    $picker.Text='#INVALID'
-    $root.UpdateLayout()
-    if($saveButton.IsEnabled) { throw 'Invalid color did not disable save' }
-    $picker.Text='#4EC9B0'
-    $root.UpdateLayout()
-    if(-not $saveButton.IsEnabled) { throw 'Valid color did not enable save' }
-    if($preferences.TypeColor -ne $originalPreference) { throw 'Draft edit changed live preferences before save' }
+    if([string]$picker.ToolTip -notmatch '^#[0-9A-Fa-f]{6}$') { throw 'Color swatch is not bound to a valid color' }
+    if($preferences.TypeColor -ne $originalPreference) { throw 'Creating color controls mutated live preferences' }
     $searchBox.Text='클립보드'
     $root.UpdateLayout()
     if($editorGroup.Visibility -ne 'Visible' -or $projectGroup.Visibility -ne 'Collapsed') { throw 'Setting keyword search did not filter categories' }
     $searchBox.Text=''
-    $picker.Text=$originalColor
     $root.UpdateLayout()
-    [pscustomobject]@{InvalidColorBlocksSave=$true;ValidColorEnablesSave=$true;DraftDoesNotMutateLivePreferences=$true;SettingKeywordSearchFilters=$true;Scope='Offline owned WPF controls; no actual IDE automation'} | ConvertTo-Json | Set-Content -LiteralPath ($Output+'.interactions.json') -Encoding utf8
+    [pscustomobject]@{ColorSwatchBound=$true;DraftDoesNotMutateLivePreferences=$true;SettingKeywordSearchFilters=$true;Scope='Offline owned WPF controls; no actual IDE automation'} | ConvertTo-Json | Set-Content -LiteralPath ($Output+'.interactions.json') -Encoding utf8
 }
 $checks = [Collections.Generic.List[object]]::new()
 function Confirm-ToggleForeground($node) {
@@ -121,7 +140,19 @@ function Confirm-ToggleForeground($node) {
     }
 }
 Confirm-ToggleForeground $root
-if($checks.Count -eq 0) { throw 'No toggle controls validated.' }
+if($checks.Count -eq 0 -and $Screen -ne 'Help' -and $Screen -ne 'References' -and $OptionsPage -ne 'Advanced / System Info') { throw 'No toggle controls validated.' }
+if($Screen -eq 'Help') {
+    $helpTexts=[Collections.Generic.List[object]]::new()
+    function Get-HelpTextNodes($node) {
+        if($node -is [Windows.Controls.TextBlock]){$helpTexts.Add($node)}
+        for($i=0;$i -lt [Windows.Media.VisualTreeHelper]::GetChildrenCount($node);$i++){Get-HelpTextNodes ([Windows.Media.VisualTreeHelper]::GetChild($node,$i))}
+    }
+    Get-HelpTextNodes $root
+    $keys=@($helpTexts|Where-Object {$_.FontFamily.Source -eq 'Consolas'})
+    if($OptionsPage -eq 'shortcuts' -and $keys.Count -ne 15){throw "Expected 15 separate shortcut rows, found $($keys.Count)"}
+    foreach($key in $keys){if($key.TextWrapping -ne 'NoWrap' -or $key.ActualWidth -lt $key.DesiredSize.Width-1){throw "Shortcut label clipped: $($key.Text)"}}
+    @{Topic=$OptionsPage;Language=$Language;ShortcutRows=$keys.Count;KeyLabelsNotWrapped=$true;Scope='Offline assembled WPF HelpView; not live IDE'}|ConvertTo-Json|Set-Content ($Output+'.layout.json') -Encoding utf8
+}
 [pscustomobject]@{Screen=$Screen; Theme=$Theme; Controls=$checks; Scope='Offline WPF resource and label-color regression; not actual Visual Studio UI'} | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath ($Output+'.json') -Encoding utf8
 $bitmap = [Windows.Media.Imaging.RenderTargetBitmap]::new($width,$height,96,96,[Windows.Media.PixelFormats]::Pbgra32)
 $bitmap.Render($root)
@@ -130,3 +161,21 @@ $encoder.Frames.Add([Windows.Media.Imaging.BitmapFrame]::Create($bitmap))
 $stream = [IO.File]::Create([IO.Path]::GetFullPath($Output))
 try { $encoder.Save($stream) } finally { $stream.Dispose() }
 Write-Output "Rendered CodeAssist WPF $Screen offline; this is not an IDE integration test: $Output"
+if($TestThemeSwitch) {
+    $themeNodes=[Collections.Generic.List[object]]::new()
+    function Get-ThemeNodes($node) {
+        $themeNodes.Add($node)
+        for($index=0;$index -lt [Windows.Media.VisualTreeHelper]::GetChildrenCount($node);$index++) { Get-ThemeNodes ([Windows.Media.VisualTreeHelper]::GetChild($node,$index)) }
+    }
+    Get-ThemeNodes $root
+    $probe=$themeNodes|Where-Object {($_ -is [Windows.Controls.CheckBox]) -or ($_ -is [Windows.Controls.TextBox])}|Select-Object -First 1
+    if($null -eq $probe){throw 'No live theme probe'}
+    $before=$probe.Foreground.Color.ToString()
+    $root.Resources[$foregroundKey]=if($Theme -eq 'Dark'){[Windows.Media.Brushes]::Black}else{[Windows.Media.Brushes]::White}
+    $root.Resources[$backgroundKey]=if($Theme -eq 'Dark'){[Windows.Media.Brushes]::White}else{[Windows.Media.BrushConverter]::new().ConvertFromString('#FF1E1E1E')}
+    $root.UpdateLayout()
+    [Windows.Threading.Dispatcher]::CurrentDispatcher.Invoke([Action]{},[Windows.Threading.DispatcherPriority]::DataBind)
+    $after=$probe.Foreground.Color.ToString()
+    if($before -eq $after){throw 'Open view did not follow theme resource change'}
+    @{Before=$before;After=$after;Passed=$true;Scope='Same open WPF view, theme resource switch; not actual IDE theme action'}|ConvertTo-Json|Set-Content ($Output+'.theme-switch.json') -Encoding utf8
+}

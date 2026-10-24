@@ -31,6 +31,8 @@ namespace CodeAssist.Extension
             await package.JoinableTaskFactory.SwitchToMainThreadAsync();
             var owner=current=new ToolbarCommands(package,dte);
             StartupUi.SettingsApplied+=RefreshLabels;
+            foreach(var menuId in new[]{0x1050,0x1052}) {var main=menuId==0x1052;var menu=new OleMenuCommand((s,e)=>{},new CommandID(GoToSymbolCommand.CommandSet,menuId));menu.BeforeQueryStatus+=(s,e)=>menu.Visible=DisplayQuickInfo.IntegratedMenuVisible(StartupUi.Preferences.IntegratedMainMenu,main);service.AddCommand(menu);}
+
             foreach(var candidate in new[]{"Edit.ToggleTextSpellChecker","Edit.ToggleSpellChecker","Edit.Advanced.ToggleSpellChecker"})
             { try {if(dte.Commands.Item(candidate)!=null){owner.spellCommand=candidate;break;}}catch(ArgumentException){}catch(COMException){} }
             owner.debuggerEvents=dte.Events.DebuggerEvents;

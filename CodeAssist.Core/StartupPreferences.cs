@@ -8,7 +8,7 @@ namespace CodeAssist.Core
 
     public enum StartupAction { Welcome, InfoBar, IntegrationSetup }
 
-    public sealed class StartupPreferences
+    public sealed partial class StartupPreferences
     {
         public List<SourceLinkRule> SourceLinkRules { get; set; } = new List<SourceLinkRule>();
         public bool HighlightCurrentLine { get; set; } = true;
@@ -143,7 +143,7 @@ namespace CodeAssist.Core
             {
                 using (var stream = File.Create(temporary))
                     new XmlSerializer(typeof(StartupPreferences)).Serialize(stream, this);
-                if (File.Exists(path)) File.Replace(temporary, path, path + ".bak");
+                if (File.Exists(path)) File.Replace(temporary, path, RecoveryKeepBackup ? path + ".bak" : null);
                 else File.Move(temporary, path);
             }
             finally { if (File.Exists(temporary)) File.Delete(temporary); }
