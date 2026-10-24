@@ -1,12 +1,19 @@
 <p align="center">
-  <img src="docs/assets/codeassist-logo.png" alt="CodeAssist" width="56">
+  <img src="docs/assets/codeassist-logo.png" width="96" alt="CodeAssist">
+</p>
+<h1 align="center">CodeAssist</h1>
+<p align="center"><strong>코드를 읽고, 심볼을 찾고, 다음 코드를 완성하세요.</strong></p>
+<p align="center">
+  <a href="docs/index.html">사용 안내</a> &middot;
+  <a href="docs/feature-details.md">상세 기능</a> &middot;
+  <a href="docs/keyboard-shortcuts.html">단축키</a> &middot;
+  <a href="#설치">설치</a> &middot;
+  <a href="LICENSE">MIT License</a>
 </p>
 
-# CodeAssist
+---
 
 Visual Studio용 오픈소스 개발 보조 확장입니다. C/C++ 코드의 자동완성, 의미 색상, 파일·심볼 검색과 정의·참조 탐색을 제공하며 Unreal Engine 프로젝트도 지원합니다.
-
-[사용 안내](docs/index.html) · [상세 기능](docs/feature-details.md) · [단축키](docs/keyboard-shortcuts.html) · [MIT License](LICENSE)
 
 <p align="center">
   <img src="docs/assets/codeassist-overview.png" alt="CodeAssist 작동 구조: 프로젝트 코드와 심볼 인덱스·캐시를 의미 색상, 자동완성, 정의·참조 탐색에 연결합니다." width="100%">
