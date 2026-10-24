@@ -78,7 +78,7 @@ namespace CodeAssist.Extension
 
         public IList<ClassificationSpan> GetClassificationSpans(SnapshotSpan span)
         {
-            if (!StartupUi.Preferences.ColoringEnabled) return new List<ClassificationSpan>();
+            if (!StartupUi.Preferences.ColoringEnabled || !StartupUi.Preferences.ColorTextEditors) return new List<ClassificationSpan>();
             var results = new List<ClassificationSpan>();
             var snapshot = span.Snapshot;
             IReadOnlyList<MacroOccurrence> macros;

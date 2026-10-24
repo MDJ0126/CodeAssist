@@ -4,5 +4,5 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup><EmbeddedResource Include="Localization/ui.xml" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="Localization/ui.xml" /><EmbeddedResource Include="Documentation/help.xml" /></ItemGroup>
 </Project>

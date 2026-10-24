@@ -1,4 +1,4 @@
-using CodeAssist.Core;
+﻿using CodeAssist.Core;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,7 +6,10 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.IO;
+using System.Linq;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.PlatformUI;
 
 namespace CodeAssist.Extension
 {
@@ -22,13 +25,17 @@ namespace CodeAssist.Extension
         internal static FrameworkElement Create()
         {
             var content = new StackPanel { MaxWidth=1248, Margin=new Thickness(48,36,48,42), HorizontalAlignment=HorizontalAlignment.Stretch };
+            var languageCodes=new[]{"auto"}.Concat(UiText.LanguageCodes).ToArray();
+            var language=new ComboBox {ItemsSource=languageCodes.Select(code=>new KeyValuePair<string,string>(code,code=="auto"?UiText.Get("시스템 언어",StartupUi.Preferences.UiLanguage):UiText.LanguageName(code))).ToArray(),DisplayMemberPath="Value",SelectedValuePath="Key",SelectedValue=StartupUi.Preferences.UiLanguage,Width=160,HorizontalAlignment=HorizontalAlignment.Right,Margin=new Thickness(0,0,0,12)};
+            System.Windows.Automation.AutomationProperties.SetName(language,"Language / 언어");content.Children.Add(language);
             var hero = new StackPanel { Margin=new Thickness(0,12,0,56), HorizontalAlignment=HorizontalAlignment.Center };
             var brand = new StackPanel { Orientation=Orientation.Horizontal, HorizontalAlignment=HorizontalAlignment.Center, Margin=new Thickness(0,0,0,22) };
             var path=Path.Combine(Path.GetDirectoryName(typeof(ProductWelcome).Assembly.Location),"Resources","CodeAssist.png");
             if(File.Exists(path)) brand.Children.Add(new Image { Source=new BitmapImage(new Uri(path)),Width=24,Height=24,Margin=new Thickness(0,0,8,0) });
             brand.Children.Add(new TextBlock { Text="CodeAssist",Foreground=Ink,FontSize=22,FontWeight=FontWeights.SemiBold });hero.Children.Add(brand);
             var title = new TextBlock { FontSize=52, FontWeight=FontWeights.Bold, TextWrapping=TextWrapping.Wrap, TextAlignment=TextAlignment.Center, Margin=new Thickness(0,0,0,20) };
-            title.Inlines.Add(new Run("Welcome to ") { Foreground=Ink }); title.Inlines.Add(new Run("CodeAssist") { Foreground=ProductTheme.Accent });hero.Children.Add(title);
+            var titleParts=UiText.Get("Welcome to {0}",StartupUi.Preferences.UiLanguage).Split(new[]{"{0}"},StringSplitOptions.None);
+            title.Inlines.Add(new Run(titleParts[0]) {Foreground=Ink});title.Inlines.Add(new Run("CodeAssist") {Foreground=ProductTheme.Accent});if(titleParts.Length>1)title.Inlines.Add(new Run(titleParts[1]) {Foreground=Ink});hero.Children.Add(title);
             var intro=Text(UiText.Get("코드를 이해하고, 원하는 위치로 이동하고, 더 빠르게 편집하세요.", StartupUi.Preferences.UiLanguage),18);intro.Foreground=Muted;intro.TextAlignment=TextAlignment.Center;hero.Children.Add(intro);
             var links=new WrapPanel { HorizontalAlignment=HorizontalAlignment.Center, Margin=new Thickness(0,18,0,0) };
             links.Children.Add(ProductTheme.Button("Documentation",()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.OpenHelp("startup"); }));
@@ -47,7 +54,7 @@ namespace CodeAssist.Extension
                 new[] {"UNREAL & C/C++",UiText.Get("범용 C/C++ 작업 흐름에 Unreal 매크로와 엔진 탐색 지원을 더합니다.", StartupUi.Preferences.UiLanguage),"features"} };
             for(int i=0;i<values.Length;i++) {
                 var entry=values[i];var body=new StackPanel { Margin=new Thickness(0,0,24,24) };
-                var label=Text("•  "+entry[0],14);label.Foreground=ProductTheme.Accent;label.FontWeight=FontWeights.SemiBold;body.Children.Add(label);
+                var label=Text("•  "+UiText.Get(entry[0],StartupUi.Preferences.UiLanguage),14);label.Foreground=ProductTheme.Accent;label.FontWeight=FontWeights.SemiBold;body.Children.Add(label);
                 var description=Text(entry[1]);description.Foreground=Muted;body.Children.Add(description);
                 var more=ProductTheme.Button("Learn More  ›",()=> { ThreadHelper.ThrowIfNotOnUIThread(); StartupUi.OpenHelp(entry[2]); });
                 more.Background=Brushes.Transparent;more.Foreground=ProductTheme.Accent;more.HorizontalAlignment=HorizontalAlignment.Left;more.Padding=new Thickness(0);more.MinWidth=0;
@@ -70,7 +77,7 @@ namespace CodeAssist.Extension
             System.Windows.Automation.AutomationProperties.SetName(note,UiText.Get("피드백 내용", StartupUi.Preferences.UiLanguage));
             feedback.Children.Add(note);
             var copied=Text("",12);copied.Foreground=ProductTheme.Accent;
-            feedback.Children.Add(ProductTheme.Button(UiText.Get("피드백 내용 복사", StartupUi.Preferences.UiLanguage),()=> { try { Clipboard.SetText("CodeAssist 0.0.55\n"+note.Text);copied.Text="복사했습니다. 원하는 이슈나 대화에 붙여넣으세요."; }
+            feedback.Children.Add(ProductTheme.Button(UiText.Get("피드백 내용 복사", StartupUi.Preferences.UiLanguage),()=> { try { Clipboard.SetText("CodeAssist "+ExtensionPackage.ProductVersion+"\n"+note.Text);copied.Text=UiText.Get("Copied. Paste it into your issue or message.",StartupUi.Preferences.UiLanguage); }
                 catch(System.Runtime.InteropServices.ExternalException) {copied.Text=UiText.Get("클립보드에 복사하지 못했습니다. 잠시 뒤 다시 시도하세요.", StartupUi.Preferences.UiLanguage);} }));
             feedback.Children.Add(copied);
             var right=CardView(feedback);right.Margin=new Thickness(12,0,0,24);Grid.SetColumn(right,1);lower.Children.Add(right);content.Children.Add(lower);
@@ -84,6 +91,35 @@ namespace CodeAssist.Extension
             var footer=Text(UiText.Get("CodeAssist · 범용 C/C++ 개발 보조 · Unreal Engine 지원", StartupUi.Preferences.UiLanguage),12);footer.Foreground=Muted;footer.TextAlignment=TextAlignment.Center;content.Children.Add(footer);
             var scroll = new ScrollViewer { Content=content, VerticalScrollBarVisibility=ScrollBarVisibility.Auto, HorizontalScrollBarVisibility=ScrollBarVisibility.Disabled };
             ProductTheme.Apply(scroll);scroll.Background=Canvas;scroll.Foreground=Ink;
+            language.SelectionChanged+=(s,e)=>{
+                if(!(language.SelectedValue is string code)||code==StartupUi.Preferences.UiLanguage)return;
+                var previous=StartupUi.Preferences.UiLanguage;StartupUi.Preferences.UiLanguage=code;
+                if(!StartupUi.Save()){StartupUi.Preferences.UiLanguage=previous;language.SelectedValue=previous;return;}
+                var parent=(DependencyObject)language;while(parent!=null && !(parent is ScrollViewer))parent=VisualTreeHelper.GetParent(parent);
+                if(!(parent is ScrollViewer host))return;
+                var updated=(ScrollViewer)Create();var body=updated.Content;updated.Content=null;host.Content=body;
+            };
+            void Theme(DependencyObject parent)
+            {
+                if(parent is TextBlock textBlock)
+                {
+                    if(ReferenceEquals(textBlock.Foreground,ProductTheme.Accent)) ProductTheme.BrushFor(textBlock,TextBlock.ForegroundProperty,"Accent");
+                    else if(ReferenceEquals(textBlock.Foreground,Muted)) ProductTheme.BrushFor(textBlock,TextBlock.ForegroundProperty,"Muted");
+                    else textBlock.SetResourceReference(TextBlock.ForegroundProperty,EnvironmentColors.ToolWindowTextBrushKey);
+                    textBlock.SetResourceReference(ProductTheme.ThemeSurfaceProperty,EnvironmentColors.ToolWindowBackgroundBrushKey);
+                    foreach(var inline in textBlock.Inlines) if(inline is Run run && run.ReadLocalValue(TextElement.ForegroundProperty)!=DependencyProperty.UnsetValue)
+                        System.Windows.Data.BindingOperations.SetBinding(run,TextElement.ForegroundProperty,new System.Windows.Data.Binding {Source=textBlock,Path=new PropertyPath(ProductTheme.ThemeSurfaceProperty),Converter=ProductTheme.Palette,ConverterParameter=ReferenceEquals(run.Foreground,ProductTheme.Accent)?"Accent":"Ink"});
+                }
+                if(parent is Border border && ReferenceEquals(border.Background,Card)) ProductTheme.BrushFor(border,Border.BackgroundProperty,"Card");
+                if(parent is Control control)
+                {
+                    if(ReferenceEquals(control.Background,Canvas)) ProductTheme.BrushFor(control,Control.BackgroundProperty,"Canvas");
+                    if(!(control is Button) && (ReferenceEquals(control.Foreground,Ink)||ReferenceEquals(control.Foreground,Muted))) control.SetResourceReference(Control.ForegroundProperty,EnvironmentColors.ToolWindowTextBrushKey);
+                    if(control is Button && ReferenceEquals(control.Foreground,ProductTheme.Accent)) ProductTheme.BrushFor(control,Control.ForegroundProperty,"Accent");
+                }
+                foreach(var child in LogicalTreeHelper.GetChildren(parent)) if(child is DependencyObject dependency) Theme(dependency);
+            }
+            Theme(scroll);
             return scroll;
         }
     }

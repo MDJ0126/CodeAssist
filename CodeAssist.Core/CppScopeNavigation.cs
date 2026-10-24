@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -32,10 +32,20 @@ namespace CodeAssist.Core
             var enclosing = pairs.Where(pair => next ? pair.Open <= position && position < pair.Close :
                 pair.Open < position && position <= pair.Close).OrderBy(pair => pair.Close - pair.Open).FirstOrDefault();
             if (enclosing != null) return next ? enclosing.Close : enclosing.Open;
-            // At global scope, skip parameter lists and visit outer brace blocks.
-            var globals = pairs.Where(pair => pair.Kind == '{' && pair.BraceDepth == 0);
-            return next ? globals.Where(pair => pair.Open > position).Select(pair => pair.Open).DefaultIfEmpty(code.Length).Min() :
-                globals.Where(pair => pair.Close < position).Select(pair => pair.Close).DefaultIfEmpty(0).Max();
+            // At global scope VA moves between method declarations, not opening braces.
+            var globals=pairs.Where(pair=>pair.Kind=='{'&&pair.BraceDepth==0).OrderBy(pair=>pair.Open).ToArray();
+            var functions=CppSemanticParser.Parse(code).Where(t=>t.Kind==SemanticTokenKind.Function).ToArray();
+            var methods=new List<int>();var boundary=0;
+            foreach(var pair in globals) {
+                var function=functions.FirstOrDefault(t=>t.Start>=boundary&&t.Start<pair.Open);
+                if(function!=null) {
+                    var start=Math.Max(code.LastIndexOf('\n',Math.Max(0,function.Start-1)),code.LastIndexOf(';',Math.Max(0,function.Start-1)))+1;
+                    start=Math.Max(start,boundary);while(start<function.Start&&char.IsWhiteSpace(code[start]))start++;
+                    methods.Add(start);
+                }
+                boundary=pair.Close+1;
+            }
+            return next?methods.Where(start=>start>position).DefaultIfEmpty(code.Length).Min():methods.Where(start=>start<position).DefaultIfEmpty(0).Max();
         }
     }
 }

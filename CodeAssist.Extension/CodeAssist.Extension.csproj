@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <MinimumVisualStudioVersion>17.0</MinimumVisualStudioVersion>
+    <CodeAssistTarget Condition="'$(CodeAssistTarget)' == ''">Modern</CodeAssistTarget>
+    <BaseIntermediateOutputPath Condition="'$(CodeAssistTarget)' == 'VS2019'">obj\VS2019\</BaseIntermediateOutputPath>
+    <MinimumVisualStudioVersion Condition="'$(CodeAssistTarget)' != 'VS2019'">17.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion Condition="'$(CodeAssistTarget)' == 'VS2019'">16.0</MinimumVisualStudioVersion>
+    <CodeAssistSdkVersion Condition="'$(CodeAssistTarget)' != 'VS2019'">17.0.32112.339</CodeAssistSdkVersion>
+    <CodeAssistSdkVersion Condition="'$(CodeAssistTarget)' == 'VS2019'">16.0.208</CodeAssistSdkVersion>
+    <CodeAssistManifest Condition="'$(CodeAssistTarget)' != 'VS2019'">source.extension.vsixmanifest</CodeAssistManifest>
+    <CodeAssistManifest Condition="'$(CodeAssistTarget)' == 'VS2019'">source.2019.extension.vsixmanifest</CodeAssistManifest>
+    <CodeAssistPackageName Condition="'$(CodeAssistTarget)' != 'VS2019'">CodeAssist.vsix</CodeAssistPackageName>
+    <CodeAssistPackageName Condition="'$(CodeAssistTarget)' == 'VS2019'">CodeAssist.VS2019.vsix</CodeAssistPackageName>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -44,10 +53,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(CodeAssistTarget)' == 'VS2019'">
+    <OutputPath>bin\VS2019\$(Configuration)\</OutputPath>
+    <DefineConstants>$(DefineConstants);VS2019</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="CompletionCommandFilter.cs" />
+    <Compile Include="EditorIntegrationChecks.cs" />
+    <Compile Include="SymbolQuickInfo.cs" />
+    <Compile Include="QuickInfoPresentation.cs" />
     <Compile Include="ToolbarCommands.cs" />
     <Compile Include="CompletionColorProvider.cs" />
+    <Compile Include="CompletionFilterPresenter.cs" />
     <Compile Include="CppSemanticClassifier.cs" />
     <Compile Include="FindReferencesCommand.cs" />
     <Compile Include="GoToSymbolCommand.cs" />
@@ -59,17 +76,40 @@
     <Compile Include="SnippetInsertion.cs" />
     <Compile Include="SymbolToolWindows.cs" />
     <Compile Include="WordHighlights.cs" />
+    <Compile Include="EditorGuides.cs" />
+    <Compile Include="SymbolStyles.cs" />
+    <Compile Include="ReferenceHighlighting.cs" />
     <Compile Include="CompilerSemanticService.cs" />
     <Compile Include="ReferenceResults.cs" />
+    <Compile Include="ReferenceSearchState.cs" />
+    <Compile Include="ReferenceResultKeys.cs" />
+    <Compile Include="ObjectBrowserColors.cs" />
+    <Compile Include="NativeBrowserColors.cs" />
+    <Compile Include="LiteTreeColors.cs" />
+    <Compile Include="SymbolNameTextBlock.cs" />
+
     <Compile Include="CompilerRename.cs" />
+    <Compile Include="CompilerActions.cs" />
+    <Compile Include="EditorFeatureCommands.cs" />
+    <Compile Include="RefactoringCommands.cs" />
+    <Compile Include="UtilityCommands.cs" />
+    <Compile Include="PluginCommands.cs" />
+    <Compile Include="SemanticRefactoringCommands.cs" />
+    <Compile Include="ResultHighlighting.cs" />
+    <Compile Include="SpellingTagger.cs" />
+
+    <Compile Include="WorkspaceEditPreview.cs" />
     <Compile Include="ProjectIndexService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatusCommand.cs" />
+    <Compile Include="KeyboardCompatibility.cs" />
     <Compile Include="StartupUi.cs" />
     <Compile Include="ContextBar.cs" />
     <Compile Include="ProjectInspection.cs" />
     <Compile Include="ProductWelcome.cs" />
+    <Compile Include="ProductHelp.cs" />
     <Compile Include="ProductOptions.cs" />
+    <Compile Include="ColorSelectionPopup.cs" />
     <Compile Include="WelcomeDocumentWindow.cs" />
     <Compile Include="RecommendedColors.cs" />
     <Compile Include="SymbolTypoTagger.cs" />
@@ -85,13 +125,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\CodeAssistHelp.html"><IncludeInVSIX>true</IncludeInVSIX><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="Resources\CodeAssistToolbar.png"><IncludeInVSIX>true</IncludeInVSIX></Content>
     <Content Include="Resources\CodeAssist.png"><IncludeInVSIX>true</IncludeInVSIX><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
-    <None Include="source.extension.vsixmanifest">
+    <SourceVsixManifest Include="$(CodeAssistManifest)" />
+    <None Include="$(CodeAssistManifest)">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System.Drawing" />
     <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -101,7 +145,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.32112.339" ExcludeAssets="runtime" NoWarn="NU1604" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="$(CodeAssistSdkVersion)" ExcludeAssets="runtime" NoWarn="NU1604" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.14.2142" />
   </ItemGroup>
   <ItemGroup>
@@ -121,11 +165,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Target Name="CopyVsixToRepositoryRoot" AfterTargets="CreateVsixContainer">
-    <Copy
-      SourceFiles="$(TargetDir)$(TargetName).vsix"
-      DestinationFiles="$(MSBuildProjectDirectory)\..\CodeAssist.vsix"
-      Condition="Exists('$(TargetDir)$(TargetName).vsix')" />
+  <Target Name="CopyVsixToInstallers" AfterTargets="CreateVsixContainer" Condition="Exists('$(TargetDir)$(TargetName).vsix')">
+    <XmlPeek XmlInputPath="$(MSBuildProjectDirectory)\$(CodeAssistManifest)" Query="//*[local-name()='Identity']/@Version">
+      <Output TaskParameter="Result" PropertyName="CodeAssistPackageVersion" />
+    </XmlPeek>
+    <Error Condition="'$(CodeAssistPackageVersion)' == ''" Text="Missing VSIX manifest version; refusing an unversioned installer destination." />
+    <PropertyGroup><CodeAssistInstallerDirectory>$(MSBuildProjectDirectory)\..\installers\$(CodeAssistPackageVersion)</CodeAssistInstallerDirectory></PropertyGroup>
+    <MakeDir Directories="$(CodeAssistInstallerDirectory)" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).vsix" DestinationFiles="$(CodeAssistInstallerDirectory)\$(CodeAssistPackageName)" />
+    <Message Importance="high" Text="Installer: $(CodeAssistInstallerDirectory)\$(CodeAssistPackageName)" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

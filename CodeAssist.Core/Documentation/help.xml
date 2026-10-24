@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='utf-8'?>
+<help version="2">
+  <section id="startup">
+    <content lang="ko">
+      <title>시작하기</title>
+      <heading>설치와 시작</heading>
+      <item>CodeAssist는 Visual Studio의 범용 C/C++ 개발 보조 확장입니다.</item>
+      <item>VSIX를 설치하고 Visual Studio를 다시 시작하면 사용하실 수 있습니다.</item>
+      <item>Unreal 프로젝트에도 사용할 수 있습니다.</item>
+      <heading>도구 모음 사용</heading>
+      <item>도구 모음 첫 번째 바나나는 설정, 두 번째 버튼은 파일 열기입니다.</item>
+      <item>Welcome은 도구 모음 맨 뒤 또는 Tools → CodeAssist: Welcome에서 여세요.</item>
+      <heading>설치본에 포함된 도움말</heading>
+      <item>이 도움말은 설치 파일에 포함되어 Visual Studio 내부에서 열립니다.</item>
+      <item>저장소 다운로드, 웹사이트 또는 인터넷 연결이 필요하지 않습니다.</item>
+    </content>
+    <content lang="en">
+      <title>Getting started</title>
+      <heading>Install and start</heading>
+      <item>CodeAssist is a general C/C++ extension for Visual Studio.</item>
+      <item>Install the VSIX and restart Visual Studio.</item>
+      <item>Unreal projects are also supported.</item>
+      <heading>Using the toolbar</heading>
+      <item>The first toolbar banana opens Options.</item>
+      <item>The second button opens files.</item>
+      <item>Open Welcome with the last toolbar button or Tools → CodeAssist: Welcome.</item>
+      <heading>Included offline help</heading>
+      <item>This help is included in the installer and opens inside Visual Studio.</item>
+      <item>No repository download, website, or internet connection is required.</item>
+    </content>
+  </section>
+  <section id="features">
+    <content lang="ko">
+      <title>기능 사용</title>
+      <heading>사용할 수 있는 기능</heading>
+      <p>파일·심볼 찾기, 정의/구현 이동, 참조 검색, 파일 내 메서드 탐색, 대응 파일 열기, 자동 완성, 심볼 색상, 스니펫, 클립보드 기록을 사용할 수 있습니다.</p>
+      <heading>표시 언어 변경</heading>
+      <item>언어를 바꾸려면 설정의 Language에서 한국어 또는 English를 선택하고 저장하세요.</item>
+      <item>이미 열린 Welcome은 닫고 다시 열면 바뀐 언어로 표시됩니다.</item>
+    </content>
+    <content lang="en">
+      <title>Using features</title>
+      <heading>Available features</heading>
+      <p>Use file and symbol search, definition navigation, references, method navigation, corresponding files, completion, symbol colors, snippets, and clipboard history.</p>
+      <heading>Change the display language</heading>
+      <item>Select Korean or English under Language in Options and save.</item>
+      <item>Close and reopen an existing Welcome page to use the new language.</item>
+    </content>
+  </section>
+  <section id="navigation">
+    <content lang="ko">
+      <title>파일·심볼·참조 탐색</title>
+      <heading>파일·심볼 검색</heading>
+      <item>Alt+Shift+O는 파일 찾기, Alt+Shift+S는 심볼 찾기입니다.</item>
+      <item>검색어를 입력하고 목록에서 항목을 선택한 다음 Enter를 누르세요.</item>
+      <heading>정의·참조·메서드 이동</heading>
+      <item>Alt+G는 정의/구현, Alt+Shift+F는 참조, Alt+O는 대응하는 헤더/소스, Alt+M은 현재 파일 메서드 목록입니다.</item>
+      <item>검색 결과의 파일 경로와 위치를 확인하세요.</item>
+      <heading>컴파일러 기반 탐색 준비</heading>
+      <item>정확한 컴파일러 탐색에는 프로젝트에 맞는 compile_commands.json 또는 compile_flags.txt와 clangd 구성이 필요합니다.</item>
+      <item>구성이 없는 경우 인덱스 기반 후보와 VS 기본 기능을 사용합니다.</item>
+      <heading>소스 링크 설정</heading>
+      <item>소스 링크: 설정 → Navigation → Source Links에서 단순 패턴(issue #{id}) 또는 정규식(BUG-(?&lt;id&gt;[0-9]+))과 대상 URL을 추가하고 저장하세요.</item>
+      <item>주석의 일치 부분에 커서를 두고 CodeAssist: Open Source Link를 실행합니다.</item>
+      <item>GitHub·FogBugz 예제의 사이트 주소는 직접 바꾸세요.</item>
+    </content>
+    <content lang="en">
+      <title>File, symbol, and reference navigation</title>
+      <heading>Search files and symbols</heading>
+      <item>Alt+Shift+O opens file search; Alt+Shift+S opens symbol search.</item>
+      <item>Enter a query, select a result, and press Enter.</item>
+      <heading>Definitions, references, and methods</heading>
+      <item>Alt+G navigates to a definition, Alt+Shift+F finds references, Alt+O opens the corresponding header/source, and Alt+M lists methods.</item>
+      <item>Check the returned file and location.</item>
+      <heading>Compiler navigation setup</heading>
+      <item>Compiler navigation requires a matching compile_commands.json or compile_flags.txt and clangd configuration.</item>
+      <item>Otherwise indexed candidates and Visual Studio commands are used.</item>
+      <heading>Configure source links</heading>
+      <item>Source Links: add and save a simple issue #{id} pattern or a regex with named captures in Navigation / Source Links.</item>
+      <item>Place the caret in a match and run CodeAssist: Open Source Link.</item>
+      <item>Replace the placeholder host and repository in GitHub/FogBugz examples.</item>
+    </content>
+  </section>
+  <section id="colors">
+    <content lang="ko">
+      <title>추천 목록과 코드 색상</title>
+      <heading>코드 색상 변경</heading>
+      <item>설정 → Editor → Coloring에서 향상된 심볼 색상과 타입·변수·함수·매크로 색상을 조정합니다.</item>
+      <item>저장하면 열린 문서에 적용됩니다.</item>
+      <heading>추천 목록의 색상</heading>
+      <item>Visual Studio 기본 추천 색상 사용을 켜면 추천 목록에 적용하는 CodeAssist 전경색을 해제합니다.</item>
+      <item>코드 편집기 심볼 팔레트는 별도 설정입니다.</item>
+      <heading>편집기 강조와 완성 설정</heading>
+      <item>Editor → Guides에서 현재 줄, 괄호 짝·불일치, 컬럼 기준선과 위치를 설정합니다.</item>
+      <item>머리글자 약어와 축약어 완성은 Editor에서 각각 끌 수 있습니다.</item>
+      <item>원본 VA의 기본값과 같은지는 미검증입니다.</item>
+    </content>
+    <content lang="en">
+      <title>Completion and code colors</title>
+      <heading>Change code colors</heading>
+      <item>Open Options → Editor → Coloring to adjust enhanced symbol colors for types, variables, functions, and macros.</item>
+      <item>Save to apply to open documents.</item>
+      <heading>Completion list colors</heading>
+      <item>Enable Use Visual Studio completion colors to remove CodeAssist foreground overrides from completion lists.</item>
+      <item>The editor symbol palette is a separate setting.</item>
+      <heading>Editor highlights and completion</heading>
+      <item>Editor / Guides controls current-line, brace matching/mismatches and column guides.</item>
+      <item>Editor toggles acronym and shorthand completion separately.</item>
+      <item>Defaults have not been verified against VA.</item>
+    </content>
+  </section>
+  <section id="editing">
+    <content lang="ko">
+      <title>선택·주석·괄호 편집</title>
+      <heading>편집 동작 설정</heading>
+      <p>Editor에서 주석 이어쓰기, 선택 영역 감싸기, 괄호·따옴표 자동 닫기, 닫는 중괄호 위치와 함수 괄호 간격을 설정합니다.</p>
+      <heading>선택 영역 편집</heading>
+      <item>선택 영역에 / 또는 *를 입력하면 주석으로, ( 또는 {를 입력하면 괄호로 감쌉니다.</item>
+      <item>Smart Select의 Alt+Shift+]로 확장하고 Alt+Shift+[로 축소합니다.</item>
+      <heading>Visual Studio 설정과의 관계</heading>
+      <item>VS 기본 괄호 기능과 함께 동작합니다.</item>
+      <item>CodeAssist의 옵션을 끄더라도 VS 자체 기능은 VS 설정에 따릅니다.</item>
+      <heading>스니펫과 파일 작업</heading>
+      <item>선택 영역에서 스니펫을 만들면 솔루션의 .codeassist/snippets.tpl에 저장됩니다.</item>
+      <item>단축어를 입력하고 추천 목록이 닫힌 상태에서 Tab을 누르면 확장합니다.</item>
+      <item>사용자 입력 자리가 있으면 입력 창이 열립니다.</item>
+      <item>선택 영역을 새 파일로 이동하면 원본 편집은 Undo할 수 있지만 새 파일은 남습니다.</item>
+      <item>파일 이름 변경은 프로젝트 항목 이름만 바꾸며 include 참조를 자동 수정하지 않습니다.</item>
+      <heading>리팩터링 지원 범위</heading>
+      <item>추가 리팩터링: 서명 변경은 컴파일러가 찾은 선언·정의·호출부의 매개변수 순서를 변경합니다.</item>
+      <item>인수 추가·삭제·타입 변경은 아직 지원하지 않습니다.</item>
+      <item>포인터↔인스턴스는 지역 변수의 멤버 접근만 지원하며, 메서드 추출은 전역 void 함수와 명시 참조 매개변수만 지원합니다.</item>
+      <item>일괄 구현 이동은 기존 대응 소스 파일이 필요합니다.</item>
+      <item>도구 메뉴의 각 명령에서 변경 미리보기를 확인한 후 적용하세요.</item>
+    </content>
+    <content lang="en">
+      <title>Selections, comments, and pairs</title>
+      <heading>Configure editing behavior</heading>
+      <p>Configure comment continuation, surround selection, bracket/quote completion, closing brace placement, and function call spacing under Editor.</p>
+      <heading>Edit selections</heading>
+      <item>Type / or * over a selection to comment it; type ( or { to surround it.</item>
+      <item>Alt+Shift+] expands Smart Select and Alt+Shift+[ shrinks it.</item>
+      <heading>Visual Studio settings</heading>
+      <item>Works alongside Visual Studio pair completion.</item>
+      <item>Disabling a CodeAssist option leaves Visual Studio native behavior controlled by its own settings.</item>
+      <heading>Snippets and file operations</heading>
+      <item>Create from Selection stores snippets in the solution .codeassist/snippets.tpl.</item>
+      <item>Type a shortcut and press Tab with completion closed to expand it; variable fields open an input dialog.</item>
+      <item>Moving a selection to a new file supports source Undo, while the new file remains.</item>
+      <item>Rename File changes the project item name; include references are not rewritten.</item>
+      <heading>Refactoring support</heading>
+      <item>Additional refactorings: Change Signature reorders compiler-resolved declarations, definitions and call arguments; adding/removing arguments and changing types remain unsupported.</item>
+      <item>Pointer/instance conversion supports local member-access uses.</item>
+      <item>Extract Method supports global void helpers with explicit parameters.</item>
+      <item>Batch outline requires existing counterpart source files.</item>
+      <item>Review changes before applying.</item>
+    </content>
+  </section>
+  <section id="inspection">
+    <content lang="ko">
+      <title>코드 검사</title>
+      <heading>검사 모드 선택</heading>
+      <item>상단 Enable은 프로젝트 기본 구문 검사를 시작하고 오류 목록에 후보를 표시합니다.</item>
+      <item>Disable은 CodeAssist 검사를 끄며 Use per-file engine은 열린 파일별 검사를 사용합니다.</item>
+      <heading>결과 확인</heading>
+      <item>이 검사는 전체 컴파일러 진단이나 VA의 모든 검사기와 동일하지 않습니다.</item>
+      <item>빌드 오류와 함께 확인하세요.</item>
+    </content>
+    <content lang="en">
+      <title>Code inspection</title>
+      <heading>Choose an inspection mode</heading>
+      <item>Enable on the top bar starts basic project syntax checks and reports candidates in Error List.</item>
+      <item>Disable turns off CodeAssist checks; Use per-file engine selects open-file checks.</item>
+      <heading>Review results</heading>
+      <item>These checks do not replace compiler diagnostics or the full VA inspection engine.</item>
+      <item>Review them alongside build errors.</item>
+    </content>
+  </section>
+  <section id="shortcuts">
+    <content lang="ko">
+      <title>주요 단축키</title>
+      <heading>탐색</heading>
+      <shortcut label="Alt+G">정의 / 구현으로 이동</shortcut>
+      <shortcut label="Alt+Shift+F">모든 참조 찾기</shortcut>
+      <shortcut label="Alt+Shift+S">심볼 찾기</shortcut>
+      <shortcut label="Alt+Shift+O">파일 찾기</shortcut>
+      <shortcut label="Alt+O">대응하는 헤더 / 소스 열기</shortcut>
+      <shortcut label="Alt+M">현재 파일의 메서드 목록</shortcut>
+      <heading>편집과 선택</heading>
+      <shortcut label="Alt+Shift+R">이름 바꾸기</shortcut>
+      <shortcut label="Alt+Shift+Q">빠른 작업 열기</shortcut>
+      <shortcut label="Alt+Shift+]">선택 영역 확장</shortcut>
+      <shortcut label="Alt+Shift+[">선택 영역 축소</shortcut>
+      <shortcut label="Alt+]">블록 선택 확장</shortcut>
+      <shortcut label="Alt+[">블록 선택 축소</shortcut>
+      <heading>기록과 검색</heading>
+      <shortcut label="Ctrl+Shift+V">클립보드 기록</shortcut>
+      <shortcut label="Alt+Shift+H">해시태그 찾기</shortcut>
+      <shortcut label="Alt+K">선택 항목 찾기</shortcut>
+      <heading>키가 동작하지 않을 때</heading>
+      <step label="1">Visual Studio의 도구 → 옵션 → 환경 → 키보드를 엽니다.</step>
+      <step label="2">CodeAssist 명령을 검색하고 다른 확장과 충돌하는 키를 확인합니다.</step>
+      <step label="3">CodeAssist 설정 → 탐색 → 이동의 단축키 복원 버튼으로 기본 배치를 다시 적용할 수 있습니다. 복원하면 해당 키 배치가 변경됩니다.</step>
+    </content>
+    <content lang="en">
+      <title>Keyboard shortcuts</title>
+      <heading>Navigation</heading>
+      <shortcut label="Alt+G">Go to definition / implementation</shortcut>
+      <shortcut label="Alt+Shift+F">Find all references</shortcut>
+      <shortcut label="Alt+Shift+S">Find a symbol</shortcut>
+      <shortcut label="Alt+Shift+O">Find a file</shortcut>
+      <shortcut label="Alt+O">Open the corresponding header / source</shortcut>
+      <shortcut label="Alt+M">List methods in the current file</shortcut>
+      <heading>Editing and selection</heading>
+      <shortcut label="Alt+Shift+R">Rename</shortcut>
+      <shortcut label="Alt+Shift+Q">Open quick actions</shortcut>
+      <shortcut label="Alt+Shift+]">Expand selection</shortcut>
+      <shortcut label="Alt+Shift+[">Shrink selection</shortcut>
+      <shortcut label="Alt+]">Expand block selection</shortcut>
+      <shortcut label="Alt+[">Shrink block selection</shortcut>
+      <heading>History and search</heading>
+      <shortcut label="Ctrl+Shift+V">Clipboard history</shortcut>
+      <shortcut label="Alt+Shift+H">Find hashtags</shortcut>
+      <shortcut label="Alt+K">Find selected text</shortcut>
+      <heading>If a shortcut does not work</heading>
+      <step label="1">Open Tools → Options → Environment → Keyboard in Visual Studio.</step>
+      <step label="2">Find the CodeAssist command and inspect conflicting shortcuts.</step>
+      <step label="3">Use Restore VA-compatible shortcuts under CodeAssist Options → Navigation → Goto to reapply the layout. Restoring changes these bindings.</step>
+    </content>
+  </section>
+  <section id="troubleshooting">
+    <content lang="ko">
+      <title>설치·문제 해결</title>
+      <heading>설치 확인</heading>
+      <item>VSIX 설치 후 이전 화면이 보이면 모든 Visual Studio 창을 닫고 다시 실행하세요.</item>
+      <item>확장 관리자에서 설치된 CodeAssist 버전을 확인할 수 있습니다.</item>
+      <heading>다른 확장과 분리해 테스트</heading>
+      <item>CodeAssist만 테스트할 때는 VA 등 같은 기능의 확장을 비활성화하면 동작을 구분하기 쉽습니다.</item>
+      <item>문서나 테스트 파일의 변경 내용은 먼저 저장하세요.</item>
+      <heading>설정·진단 파일 위치</heading>
+      <item>설정은 사용자 LocalAppData/CodeAssist/startup.xml, Welcome 진단은 같은 폴더의 Welcome-host.log에 저장됩니다.</item>
+      <item>문제를 신고할 때 버전과 재현 절차를 함께 남겨 주세요.</item>
+      <heading>성능 설정</heading>
+      <item>고급 → 성능에서 파서 스레드 수를 조정합니다.</item>
+      <item>변경값은 다음 인덱스 빌드와 작업자 프로세스에 적용됩니다.</item>
+      <item>이미 실행 중인 작업의 스레드 수는 바뀌지 않습니다.</item>
+    </content>
+    <content lang="en">
+      <title>Installation and troubleshooting</title>
+      <heading>Check installation</heading>
+      <item>If old UI remains after VSIX installation, close all Visual Studio windows and restart.</item>
+      <item>Check the installed CodeAssist version in Extension Manager.</item>
+      <heading>Isolate other extensions</heading>
+      <item>Disable overlapping extensions such as VA when isolating CodeAssist behavior.</item>
+      <item>Save document and fixture changes first.</item>
+      <heading>Settings and diagnostics</heading>
+      <item>Settings are stored in user LocalAppData/CodeAssist/startup.xml.</item>
+      <item>Welcome diagnostics are in Welcome-host.log in the same folder.</item>
+      <item>Include the version and reproduction steps when reporting an issue.</item>
+      <heading>Performance settings</heading>
+      <item>Adjust parser threads in Advanced → Performance.</item>
+      <item>The limit applies to the next index build and worker process.</item>
+      <item>Running builds keep their current limit.</item>
+    </content>
+  </section>
+</help>

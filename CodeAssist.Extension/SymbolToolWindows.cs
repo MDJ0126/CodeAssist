@@ -62,17 +62,18 @@ namespace CodeAssist.Extension
             ThreadHelper.ThrowIfNotOnUIThread();
             if (attached || dte == null || index == null) return;
             attached = true; windows = dte.Events.WindowEvents; editor = dte.Events.TextEditorEvents;
-            windows.WindowActivated += OnWindowActivated; editor.LineChanged += OnLineChanged; index.IndexUpdated += OnIndexUpdated; Schedule();
+            windows.WindowActivated += OnWindowActivated; editor.LineChanged += OnLineChanged; index.IndexUpdated += OnIndexUpdated; StartupUi.SettingsApplied+=OnSettingsApplied; Schedule();
         }
         private void Detach()
         {
             ThreadHelper.ThrowIfNotOnUIThread(); revision++; debounce.Stop();
             if (!attached) return;
-            windows.WindowActivated -= OnWindowActivated; editor.LineChanged -= OnLineChanged; index.IndexUpdated -= OnIndexUpdated;
+            windows.WindowActivated -= OnWindowActivated; editor.LineChanged -= OnLineChanged; index.IndexUpdated -= OnIndexUpdated; StartupUi.SettingsApplied-=OnSettingsApplied;
             windows = null; editor = null; attached = false;
         }
         private void OnWindowActivated(EnvDTE.Window active, EnvDTE.Window previous) => Schedule();
         private void OnLineChanged(EnvDTE.TextPoint start, EnvDTE.TextPoint end, int hint) { if (!workspace) Schedule(); }
+        private void OnSettingsApplied()=>Schedule();
         private void OnIndexUpdated(object sender, EventArgs args)
         {
             package.JoinableTaskFactory.RunAsync(async () =>
@@ -118,8 +119,11 @@ namespace CodeAssist.Extension
             {
                 var parent = new TreeViewItem { Header = string.IsNullOrEmpty(group.Key) ? "Global" : workspace ? System.IO.Path.GetFileName(group.Key) : group.Key, IsExpanded = !workspace };
                 foreach (var symbol in group.OrderBy(symbol => symbol.Line))
-                    parent.Items.Add(new TreeViewItem { Header = symbol.Name + (string.IsNullOrEmpty(symbol.Signature) ? "" : " — " + symbol.Signature),
-                        Tag = new NavigationEntry(symbol.Name, symbol.FilePath, symbol.Line, symbol.Column) });
+                    {
+                    var item=new TreeViewItem {Header=symbol.Name+(string.IsNullOrEmpty(symbol.Signature)?"":" — "+symbol.Signature),Tag=new NavigationEntry(symbol.Name,symbol.FilePath,symbol.Line,symbol.Column)};
+                    if(StartupUi.Preferences.ColoringEnabled&&StartupUi.Preferences.ColorViews){var brush=RecommendedColors.SymbolBrush(symbol.Kind);if(brush!=null)item.Foreground=brush;}
+                    parent.Items.Add(item);
+                }
                 tree.Items.Add(parent);
             }
             status.Text = Math.Min(5000, symbols.Length) + " / " + symbols.Length + " symbols";

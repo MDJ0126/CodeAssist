@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using CodeAssist.Indexing;
 
@@ -10,7 +10,8 @@ internal static class Program
         try
         {
             var mode = Read(); var root = Read(); var project = Read(); var output = Read();
-            var index = new PersistentSymbolIndex();
+            var index = new PersistentSymbolIndex {AdditionalSourceExtensions=(Environment.GetEnvironmentVariable("CODEASSIST_SOURCE_EXTENSIONS")??"").Split(new[]{';'},StringSplitOptions.RemoveEmptyEntries)};
+            if(int.TryParse(Environment.GetEnvironmentVariable("CODEASSIST_PARSE_CONCURRENCY"),out var concurrency))index.ParseConcurrency=concurrency;
             if (mode == "project") index.BuildProject(root);
             else if (mode == "engine") index.BuildEngine(root, project);
             else throw new ArgumentException("Unknown indexing mode");

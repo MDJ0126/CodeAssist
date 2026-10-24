@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
 using System.IO;
@@ -24,10 +24,10 @@ namespace CodeAssist.Extension
             this.controller = controller;
             this.indexService = indexService;
             var menuCommandId = new CommandID(CommandSet, CommandId);
-            commandService.AddCommand(new MenuCommand(Execute, menuCommandId));
+            commandService.AddCommand(new OleMenuCommand(Execute, menuCommandId));
         }
 
-        public static async Task InitializeAsync(AsyncPackage package, IntelliSenseSquiggleController controller, ProjectIndexService indexService)
+        public static async System.Threading.Tasks.Task InitializeAsync(AsyncPackage package, IntelliSenseSquiggleController controller, ProjectIndexService indexService)
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -45,7 +45,7 @@ namespace CodeAssist.Extension
             package.JoinableTaskFactory.RunAsync(ExecuteAsync).FileAndForget("CodeAssist/GoToSymbol");
         }
 
-        private async Task ExecuteAsync()
+        private async System.Threading.Tasks.Task ExecuteAsync()
         {
             await package.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -97,7 +97,7 @@ namespace CodeAssist.Extension
                 new SourceSymbol(symbolName, item.File, item.Line, item.Column, SymbolKind.Unknown)).ToArray() : indexService?.Index.FindDefinitions(symbolName);
             if (results == null || results.Count == 0)
             {
-                results = await Task.Run(() => new CppSymbolIndexer().Find(solutionDirectory, symbolName));
+                results = await System.Threading.Tasks.Task.Run(() => new CppSymbolIndexer().Find(solutionDirectory, symbolName));
             }
             await package.JoinableTaskFactory.SwitchToMainThreadAsync();
 
@@ -113,7 +113,7 @@ namespace CodeAssist.Extension
             {
                 var picker = new NavigationPicker("CodeAssist: 정의 후보 선택", distinct.Select(item =>
                     new NavigationEntry(item.Name, item.FilePath, item.Line, item.Column)).ToArray(), package.JoinableTaskFactory);
-                new System.Windows.Interop.WindowInteropHelper(picker).Owner = dte.MainWindow.HWnd;
+                new System.Windows.Interop.WindowInteropHelper(picker).Owner = (IntPtr)dte.MainWindow.HWnd;
                 if (picker.ShowDialog() != true || picker.Selected == null) return;
                 var selected = picker.Selected;
                 target = new SourceSymbol(selected.Name, selected.File, selected.Line, selected.Column, target.Kind);

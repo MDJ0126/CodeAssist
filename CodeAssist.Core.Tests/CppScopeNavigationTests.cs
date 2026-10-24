@@ -1,8 +1,15 @@
-using CodeAssist.Core;
+﻿using CodeAssist.Core;
 
 namespace CodeAssist.Core.Tests;
 public class CppScopeNavigationTests
 {
+    [Fact]
+    public void GlobalNavigationMatchesRecordedVaMethodStart()
+    {
+        var text="void First() {}\r\nvoid Second() {}\r\n";
+        Assert.Equal(17,CppScopeNavigation.Move(text,0,true));
+        Assert.Equal(0,CppScopeNavigation.Move(text,17,false));
+    }
     [Fact]
     public void MovesToEnclosingBoundaryThenAdjacentGlobalBlock()
     {
@@ -11,7 +18,7 @@ public class CppScopeNavigationTests
         Assert.Equal(close, CppScopeNavigation.Move(text, text.IndexOf("Call"), true));
         Assert.Equal(open, CppScopeNavigation.Move(text, close, false));
         Assert.Equal(0, CppScopeNavigation.Move(text, open, false));
-        Assert.Equal(text.LastIndexOf('{'), CppScopeNavigation.Move(text, close, true));
+        Assert.Equal(text.IndexOf("void Two"), CppScopeNavigation.Move(text, close, true));
     }
     [Fact]
     public void NestedParenthesesAndBlocksMoveOutward()

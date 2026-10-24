@@ -18,8 +18,10 @@ namespace CodeAssist.Extension
     [PartCreationPolicy(CreationPolicy.Shared)]
     internal sealed class ProjectIndexService : IDisposable
     {
+        private string[] configuredExtensions=Array.Empty<string>();
         private readonly object gate = new object();
         private Task buildTask;
+        private TaskCompletionSource<bool> projectReady;
         private readonly CancellationTokenSource shutdown = new CancellationTokenSource();
         private string initializedProjectRoot;
         private int intelliSenseEvidence;
@@ -47,6 +49,7 @@ namespace CodeAssist.Extension
         }
         private IndexBuildResult BuildIndex(PersistentSymbolIndex target, string mode, string root, string project)
         {
+            target.ParseConcurrency=StartupUi.Preferences.ParseConcurrency;target.AdditionalSourceExtensions=configuredExtensions;
             return IndexBuildRunner.Build(target, mode, root, project,
                 Path.Combine(Path.GetDirectoryName(typeof(ProjectIndexService).Assembly.Location), "CodeAssist.Worker.exe"),
                 Environment.GetEnvironmentVariable("CODEASSIST_USE_INDEX_WORKER") == "1", shutdown.Token);
@@ -80,6 +83,14 @@ namespace CodeAssist.Extension
             }
         }
 
+        public IReadOnlyList<IndexedSymbol> CompleteLiveMembers(string typeName,string prefix,int limit,bool acronyms,bool shorthand)
+        {
+            return Index.CompleteMembers(typeName,prefix,limit,acronyms,shorthand,liveDocuments.SnapshotEntries());
+        }
+        public IReadOnlyList<IndexedSymbol> FindLiveSymbolDetails(string name)
+        {
+            return QuickInfoSymbolResolver.MergeLiveDeclarations(Index.FindSymbolDetails(name),liveDocuments.SnapshotEntries(),name);
+        }
         public bool ContainsLiveSymbol(string name)
         {
             if (string.IsNullOrWhiteSpace(name)) return false;
@@ -90,19 +101,22 @@ namespace CodeAssist.Extension
             }
         }
 
+        public Task WhenReadyAsync() { lock(gate) return projectReady?.Task ?? Task.CompletedTask; }
+
         public void Initialize(string unrealProjectPath)
         {
             if (string.IsNullOrWhiteSpace(unrealProjectPath)) return;
+            var extensions=FileExtensionSettings.Parse(StartupUi.Preferences.CustomFileExtensions);
             var projectRoot = Path.GetDirectoryName(unrealProjectPath);
-            var engineRoot = FindEngineRoot(unrealProjectPath);
+            var engineRoot = string.Equals(Path.GetExtension(unrealProjectPath),".uproject",StringComparison.OrdinalIgnoreCase) ? FindEngineRoot(unrealProjectPath) : null;
             var projectCachePath = GetProjectCachePath(projectRoot);
             var engineCachePath = GetEngineCachePath(engineRoot);
 
             lock (gate)
             {
-                if (string.Equals(initializedProjectRoot, projectRoot, StringComparison.OrdinalIgnoreCase)) return;
+                if (string.Equals(initializedProjectRoot, projectRoot, StringComparison.OrdinalIgnoreCase)&&configuredExtensions.SequenceEqual(extensions)) return;
                 if (buildTask != null && !buildTask.IsCompleted) return;
-                initializedProjectRoot = projectRoot;
+                initializedProjectRoot = projectRoot;configuredExtensions=extensions;
                 IntelliSenseReady = false;
                 intelliSenseEvidence = 0;
                 var projectIndex = new PersistentSymbolIndex();
@@ -112,6 +126,7 @@ namespace CodeAssist.Extension
                 // Publish the small built-in snapshot immediately. Large project
                 // and engine cache files must never be read on the editor UI thread.
                 Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
+                projectReady=new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
                 IsBuilding = true;
                 ReportIndexingStatus("캐시 확인 중...", 5);
                 buildTask = Task.Run(() =>
@@ -119,27 +134,30 @@ namespace CodeAssist.Extension
                     try
                     {
                         CompilationModel = ProjectCompilationModel.Load(projectRoot);
+                        var configurationFingerprint=CompilationModel.Fingerprint+"|source-extensions-v4|"+string.Join(";",extensions);
                         var configurationPath = projectCachePath + ".configuration";
                         var configurationCurrent = File.Exists(configurationPath) &&
-                            File.ReadAllText(configurationPath) == CompilationModel.Fingerprint;
+                            File.ReadAllText(configurationPath) == configurationFingerprint;
                         var projectCacheLoaded = projectIndex.Load(projectCachePath);
                         var engineCacheLoaded = engineIndex.Load(engineCachePath);
                         Index.ReplaceWith(projectIndex, engineIndex, builtInIndex);
                         var engineInputsPath = projectCachePath + ".engine-inputs";
                         var engineInputs = string.IsNullOrWhiteSpace(engineRoot) ? null :
-                            IndexInputFingerprint.Create(PersistentSymbolIndex.InputFiles(engineRoot, projectRoot));
+                            IndexInputFingerprint.Create(PersistentSymbolIndex.InputFiles(engineRoot, projectRoot,extensions));
                         var engineInputsCurrent = engineInputs != null && File.Exists(engineInputsPath) &&
                             File.ReadAllText(engineInputsPath) == engineInputs;
                         var changed = false;
-                        if (!projectCacheLoaded || !configurationCurrent || !IsCacheCurrent(projectRoot, projectCachePath))
+                        if (!projectCacheLoaded || !configurationCurrent || !IsCacheCurrent(projectRoot, projectCachePath,extensions))
                         {
                             ReportIndexingStatus("프로젝트 심볼 분석 중...", 20);
                             LastBuild = BuildIndex(projectIndex, "project", projectRoot, projectRoot);
                             projectIndex.Save(projectCachePath);
-                            File.WriteAllText(configurationPath, CompilationModel.Fingerprint);
+                            File.WriteAllText(configurationPath, configurationFingerprint);
                             changed = true;
                         }
 
+                        Index.ReplaceWith(projectIndex,engineIndex,builtInIndex);
+                        projectReady.TrySetResult(true);
                         if (!string.IsNullOrWhiteSpace(engineRoot) && (!engineCacheLoaded || !engineInputsCurrent))
                         {
                             // The existing engine cache remains searchable while the modules used by
@@ -168,6 +186,7 @@ namespace CodeAssist.Extension
                     }
                     finally
                     {
+                        projectReady.TrySetResult(true);
                         IsBuilding = false;
                     }
                 });
@@ -210,10 +229,14 @@ namespace CodeAssist.Extension
         {
             if (string.IsNullOrWhiteSpace(filePath)) return;
             var directory = Path.GetDirectoryName(filePath);
+            string genericProject = null;
             for (var depth = 0; depth < 12 && !string.IsNullOrWhiteSpace(directory); depth++)
             {
                 try
                 {
+                    if (genericProject == null)
+                        genericProject = Directory.EnumerateFiles(directory,"*.sln",SearchOption.TopDirectoryOnly).FirstOrDefault()
+                            ?? Directory.EnumerateFiles(directory,"*.vcxproj",SearchOption.TopDirectoryOnly).FirstOrDefault();
                     var project = Directory.EnumerateFiles(directory, "*.uproject", SearchOption.TopDirectoryOnly).FirstOrDefault();
                     if (project != null)
                     {
@@ -227,6 +250,7 @@ namespace CodeAssist.Extension
                 }
                 directory = Path.GetDirectoryName(directory);
             }
+            Initialize(genericProject ?? filePath);
         }
 
         private static string GetProjectCachePath(string projectRoot)
@@ -259,12 +283,12 @@ namespace CodeAssist.Extension
             }
         }
 
-        private static bool IsCacheCurrent(string projectRoot, string cachePath)
+        private static bool IsCacheCurrent(string projectRoot, string cachePath,string[] extensions)
         {
             var cacheTime = File.GetLastWriteTimeUtc(cachePath);
             try
             {
-                return !PersistentSymbolIndex.InputFiles(projectRoot)
+                return !PersistentSymbolIndex.InputFiles(projectRoot,null,extensions)
                     .Where(path => path.EndsWith(".h", StringComparison.OrdinalIgnoreCase) ||
                                    path.EndsWith(".hpp", StringComparison.OrdinalIgnoreCase) ||
                                    path.EndsWith(".cpp", StringComparison.OrdinalIgnoreCase) ||
@@ -280,6 +304,7 @@ namespace CodeAssist.Extension
         private static string FindEngineRoot(string unrealProjectPath)
         {
             var association = ReadEngineAssociation(unrealProjectPath);
+            if(string.IsNullOrWhiteSpace(association))return null;
             try
             {
                 using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Epic Games\Unreal Engine\Builds"))

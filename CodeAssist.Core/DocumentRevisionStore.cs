@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,5 +26,6 @@ namespace CodeAssist.Core
         }
         public void Remove(string path) { lock (gate) { revisions.Remove(path); values.Remove(path); } }
         public T[] Snapshot() { lock (gate) return values.Values.ToArray(); }
+        public IReadOnlyDictionary<string,T> SnapshotEntries() { lock(gate) return new Dictionary<string,T>(values,StringComparer.OrdinalIgnoreCase); }
     }
 }

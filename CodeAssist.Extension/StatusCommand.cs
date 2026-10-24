@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
 using System.Threading.Tasks;
@@ -18,10 +18,10 @@ namespace CodeAssist.Extension
             this.controller = controller;
             this.indexService = indexService;
             var commandId = new CommandID(GoToSymbolCommand.CommandSet, CommandId);
-            commandService.AddCommand(new MenuCommand(Execute, commandId));
+            commandService.AddCommand(new OleMenuCommand(Execute, commandId));
         }
 
-        public static async Task InitializeAsync(AsyncPackage package, IntelliSenseSquiggleController controller, ProjectIndexService indexService)
+        public static async System.Threading.Tasks.Task InitializeAsync(AsyncPackage package, IntelliSenseSquiggleController controller, ProjectIndexService indexService)
         {
             await package.JoinableTaskFactory.SwitchToMainThreadAsync();
             var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;

@@ -13,7 +13,7 @@ namespace CodeAssist.Semantics
     }
     public static class SemanticCompletions
     {
-        public static SemanticCompletion[] Read(JToken result, string text, int expectedStart, int expectedEnd)
+        public static SemanticCompletion[] Read(JToken result, string text, int expectedStart, int expectedEnd, bool membersOnly = false)
         {
             var items = result as JArray ?? (result is JObject ? result["items"] as JArray : null);
             var completions = new List<SemanticCompletion>();
@@ -21,6 +21,9 @@ namespace CodeAssist.Semantics
             foreach (var item in items)
             {
                 if ((int?)item["insertTextFormat"] == 2 || item["additionalTextEdits"] is JArray additional && additional.Count > 0) continue;
+                var kind=(int?)item["kind"]??0;
+                // LSP Variable/Text/Keyword fallbacks are not members of the receiver.
+                if(membersOnly&&kind!=2&&kind!=3&&kind!=5&&kind!=7&&kind!=8&&kind!=10&&kind!=13&&kind!=20&&kind!=21&&kind!=22)continue;
                 var edit = item["textEdit"];
                 if (edit?["range"] == null) continue;
                 var range = edit["range"];

@@ -1,3 +1,4 @@
+﻿using System.Linq;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace CodeAssist.Extension
         private readonly SemaphoreSlim gate = new SemaphoreSlim(1, 1);
         private readonly CancellationTokenSource shutdown = new CancellationTokenSource();
         private ClangdClient client;
-        private string currentRoot;
+        private string currentRoot;private string currentDatabase;
         internal string LastError { get; private set; }
         internal string EditorExecutable { get; set; }
         internal async Task<NavigationEntry[]> FindAsync(string method, string root, string executable, string file, string text, int line, int column, CancellationToken cancellation)
@@ -41,7 +42,9 @@ namespace CodeAssist.Extension
             if (string.IsNullOrEmpty(root) || string.IsNullOrEmpty(file) || text == null) return null;
             if (!Directory.Exists(root)) root = Path.GetDirectoryName(root);
             if (string.IsNullOrEmpty(root) || !Directory.Exists(root)) return null;
-            if (Environment.GetEnvironmentVariable("CODEASSIST_USE_CLANGD") != "1" &&
+            var database=StartupUi.Preferences.CompilationDatabaseDirectory;
+            if(!string.IsNullOrEmpty(database)&&!File.Exists(Path.Combine(database,"compile_commands.json"))){LastError="Compilation database does not exist";return null;}
+            if (string.IsNullOrEmpty(database)&&Environment.GetEnvironmentVariable("CODEASSIST_USE_CLANGD") != "1" &&
                 !File.Exists(Path.Combine(root, "compile_commands.json")) && !File.Exists(Path.Combine(root, "compile_flags.txt"))) return null;
             var clangd = Environment.GetEnvironmentVariable("CODEASSIST_CLANGD");
             if (string.IsNullOrWhiteSpace(clangd) && !string.IsNullOrEmpty(executable))
@@ -55,11 +58,11 @@ namespace CodeAssist.Extension
                     await gate.WaitAsync(timeout.Token).ConfigureAwait(false);
                     try
                     {
-                        if (client == null || !string.Equals(root, currentRoot, StringComparison.OrdinalIgnoreCase))
+                        if (client == null || !string.Equals(root, currentRoot, StringComparison.OrdinalIgnoreCase)||!string.Equals(database,currentDatabase,StringComparison.OrdinalIgnoreCase))
                         {
-                            client?.Dispose(); client = null; currentRoot = root;
+                            client?.Dispose(); client = null; currentRoot = root;currentDatabase=database;
                             client = await ClangdClient.StartAsync(clangd, root, timeout.Token,
-                                File.Exists(Path.Combine(root, "compile_commands.json")) && Environment.GetEnvironmentVariable("CODEASSIST_CLANGD_BACKGROUND_INDEX") != "0").ConfigureAwait(false);
+                                File.Exists(Path.Combine(root, "compile_commands.json")) && Environment.GetEnvironmentVariable("CODEASSIST_CLANGD_BACKGROUND_INDEX") != "0",database).ConfigureAwait(false);
                         }
                         await client.SyncAsync(file, text, timeout.Token).ConfigureAwait(false);
                         if (openDocuments != null)
@@ -71,8 +74,10 @@ namespace CodeAssist.Extension
                                 if (File.Exists(header) && (openDocuments == null || !openDocuments.ContainsKey(header)))
                                     await client.SyncAsync(header, File.ReadAllText(header), timeout.Token).ConfigureAwait(false);
                             }
+                        if(method=="codeassist/sync")return new JObject();
                         var extra = parameters ?? (method == "textDocument/references" ? new JObject { ["context"] = new JObject { ["includeDeclaration"] = true } } : null);
-                        var result = await client.AtAsync(method, file, line - 1, column - 1, timeout.Token, extra).ConfigureAwait(false);
+                        if(method=="textDocument/codeAction"&&extra?["context"]?["only"] is JArray kinds&&kinds.Any(k=>(string)k=="quickfix")){if(client.Diagnostics(file).Count==0)await Task.Delay(150,timeout.Token).ConfigureAwait(false);extra["context"]["diagnostics"]=client.Diagnostics(file);}
+                        var result = method=="codeassist/previewCommand" ? await client.PreviewCommandAsync(extra,timeout.Token).ConfigureAwait(false) : method=="codeAction/resolve" ? await client.RequestAsync(method,extra,timeout.Token).ConfigureAwait(false) : await client.AtAsync(method, file, line - 1, column - 1, timeout.Token, extra).ConfigureAwait(false);
                         LastError = client.LastError; return result;
                     }
                     catch (Exception error) when (!(error is OperationCanceledException))

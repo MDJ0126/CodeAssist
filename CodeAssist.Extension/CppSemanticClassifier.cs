@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Utilities;
@@ -14,6 +15,14 @@ namespace CodeAssist.Extension
         public const string TypeName = "CodeAssist C++ Type";
         public const string VariableName = "CodeAssist C++ Variable";
         public const string FunctionName = "CodeAssist C++ Function";
+        public const string NamespaceName = "CodeAssist C++ Namespace";
+        public const string EnumMemberName = "CodeAssist C++ Enum Member";
+        [Export(typeof(ClassificationTypeDefinition))][Name(NamespaceName)] internal static ClassificationTypeDefinition NamespaceDefinition=null;
+        [Export(typeof(ClassificationTypeDefinition))][Name(EnumMemberName)] internal static ClassificationTypeDefinition EnumDefinition=null;
+        [Export(typeof(EditorFormatDefinition))][ClassificationType(ClassificationTypeNames=NamespaceName)][Name(NamespaceName)][UserVisible(true)][Order(After=Priority.High)]
+        internal sealed class NamespaceFormat:ClassificationFormatDefinition {public NamespaceFormat(){DisplayName=NamespaceName;ForegroundColor=Color.FromRgb(185,215,162);}}
+        [Export(typeof(EditorFormatDefinition))][ClassificationType(ClassificationTypeNames=EnumMemberName)][Name(EnumMemberName)][UserVisible(true)][Order(After=Priority.High)]
+        internal sealed class EnumFormat:ClassificationFormatDefinition {public EnumFormat(){DisplayName=EnumMemberName;ForegroundColor=Color.FromRgb(184,128,32);}}
 
         [Export(typeof(ClassificationTypeDefinition))]
         [Name(TypeName)]
@@ -76,6 +85,7 @@ namespace CodeAssist.Extension
     {
         [Import]
         internal IClassificationTypeRegistryService Registry = null;
+        [Import] internal ProjectIndexService Indexes=null;
 
 
         public IClassifier GetClassifier(ITextBuffer textBuffer)
@@ -85,7 +95,7 @@ namespace CodeAssist.Extension
                     textBuffer,
                     Registry.GetClassificationType(CppSemanticClassification.TypeName),
                     Registry.GetClassificationType(CppSemanticClassification.VariableName),
-                    Registry.GetClassificationType(CppSemanticClassification.FunctionName)));
+                    Registry.GetClassificationType(CppSemanticClassification.FunctionName),Registry,Indexes));
         }
     }
 
@@ -95,12 +105,13 @@ namespace CodeAssist.Extension
         private readonly IClassificationType typeClassification;
         private readonly IClassificationType variableClassification;
         private readonly IClassificationType functionClassification;
+        private readonly IClassificationTypeRegistryService registry;private readonly ProjectIndexService indexes;private CppReferenceContext localContext;
         private ITextSnapshot cachedSnapshot;
         private IReadOnlyList<SemanticToken> cachedTokens = Array.Empty<SemanticToken>();
 
-        public CppSemanticClassifier(ITextBuffer textBuffer, IClassificationType typeClassification, IClassificationType variableClassification, IClassificationType functionClassification)
+        public CppSemanticClassifier(ITextBuffer textBuffer, IClassificationType typeClassification, IClassificationType variableClassification, IClassificationType functionClassification,IClassificationTypeRegistryService registry=null,ProjectIndexService indexes=null)
         {
-            this.textBuffer = textBuffer;
+            this.textBuffer = textBuffer;this.registry=registry;this.indexes=indexes;
             this.typeClassification = typeClassification;
             this.variableClassification = variableClassification;
             this.functionClassification = functionClassification;
@@ -111,6 +122,7 @@ namespace CodeAssist.Extension
             {
                 var target = weak.Target as CppSemanticClassifier;
                 if (target == null) { StartupUi.SettingsApplied -= settingsChanged; return; }
+                target.cachedSnapshot=null;
                 var snapshot = target.textBuffer.CurrentSnapshot;
                 target.ClassificationChanged?.Invoke(target, new ClassificationChangedEventArgs(new SnapshotSpan(snapshot, 0, snapshot.Length)));
             };
@@ -121,7 +133,7 @@ namespace CodeAssist.Extension
 
         public IList<ClassificationSpan> GetClassificationSpans(SnapshotSpan span)
         {
-            if (!StartupUi.Preferences.ColoringEnabled) return new List<ClassificationSpan>();
+            if (!StartupUi.Preferences.ColoringEnabled || !StartupUi.Preferences.ColorTextEditors) return new List<ClassificationSpan>();
             EnsureParsed(span.Snapshot);
             var results = new List<ClassificationSpan>();
             foreach (var token in cachedTokens)
@@ -136,6 +148,14 @@ namespace CodeAssist.Extension
                     : token.Kind == SemanticTokenKind.Function
                         ? functionClassification
                         : variableClassification;
+                if(token.Kind==SemanticTokenKind.Namespace)classification=registry?.GetClassificationType(CppSemanticClassification.NamespaceName)??classification;
+                else if(token.Kind==SemanticTokenKind.EnumMember)classification=registry?.GetClassificationType(CppSemanticClassification.EnumMemberName)??classification;
+                if(StartupUi.Preferences.LocalSymbolsBold&&token.Kind==SemanticTokenKind.Variable&&localContext?.DeclarationAt(token.Name,token.Start)!=null)classification=registry?.GetClassificationType("CodeAssist Local Bold")??classification;
+                else if(StartupUi.Preferences.SystemSymbolsItalic&&indexes!=null&&registry!=null&&token.Kind!=SemanticTokenKind.Namespace&&token.Kind!=SemanticTokenKind.EnumMember)
+                {
+                    var definitions=indexes.Index.FindDefinitions(token.Name);
+                    if(definitions.Count>0&&definitions.All(item=>SystemPath(item.FilePath)))classification=registry.GetClassificationType(token.Kind==SemanticTokenKind.Type?"CodeAssist System Type":token.Kind==SemanticTokenKind.Function?"CodeAssist System Function":"CodeAssist System Variable")??classification;
+                }
                 results.Add(new ClassificationSpan(new SnapshotSpan(span.Snapshot, token.Start, token.Length), classification));
             }
 
@@ -149,10 +169,13 @@ namespace CodeAssist.Extension
                 return;
             }
 
-            cachedTokens = CppSemanticParser.Parse(snapshot.GetText());
+            var text=snapshot.GetText();
+            cachedTokens = CppSemanticParser.Parse(text);
+            localContext=StartupUi.Preferences.LocalSymbolsBold&&snapshot.Length<=512*1024?new CppReferenceContext(text):null;
             cachedSnapshot = snapshot;
         }
 
+        private static bool SystemPath(string path)=>!string.IsNullOrEmpty(path)&&(path.IndexOf(@"\Program Files",StringComparison.OrdinalIgnoreCase)>=0||path.IndexOf("/usr/include/",StringComparison.Ordinal)>=0||path.IndexOf(@"\Engine\Source\",StringComparison.OrdinalIgnoreCase)>=0);
         private void OnBufferChanged(object sender, TextContentChangedEventArgs e)
         {
             cachedSnapshot = null;

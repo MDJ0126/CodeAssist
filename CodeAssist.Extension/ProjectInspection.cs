@@ -1,4 +1,4 @@
-using CodeAssist.Core;
+﻿using CodeAssist.Core;
 using CodeAssist.Indexing;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;

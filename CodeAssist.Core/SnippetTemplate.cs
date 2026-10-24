@@ -8,7 +8,15 @@ namespace CodeAssist.Core
 {
     public sealed class SnippetTemplate
     {
-        public SnippetTemplate(string title, string shortcut, string body) { Title = title; Shortcut = shortcut; Body = body; }
+        public SnippetTemplate(string title, string shortcut, string body) {
+            Title = title; ShortcutField = shortcut ?? string.Empty; Body = body;
+            var surround = Regex.Match(ShortcutField, @"(?:^|\s)SurroundWith=(?<character>\S)(?=\s|$)", RegexOptions.CultureInvariant);
+            SurroundingCharacter = surround.Success ? (char?)surround.Groups["character"].Value[0] : null;
+            Shortcut = surround.Success ? ShortcutField.Remove(surround.Index, surround.Length).Trim() : ShortcutField;
+        }
+        public string ShortcutField { get; }
+        public char? SurroundingCharacter { get; }
+        public bool CanSurround(char character) => SurroundingCharacter == character && Variables().Contains("selected");
         public string Title { get; }
         public string Shortcut { get; }
         public string Body { get; }
@@ -30,7 +38,7 @@ namespace CodeAssist.Core
         public SnippetTemplate WithEnvironment(Func<string, string> lookup)
         {
             var body = Regex.Replace(Body, @"%([^%\r\n]+)%", match => lookup?.Invoke(match.Groups[1].Value) ?? "");
-            return new SnippetTemplate(Title, Shortcut, body);
+            return new SnippetTemplate(Title, ShortcutField, body);
         }
         private static string BaseName(string token, out string modifier, out string initial)
         {

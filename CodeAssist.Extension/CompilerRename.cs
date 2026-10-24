@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.ComponentModelHost;
+﻿using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text;
@@ -38,8 +38,8 @@ namespace CodeAssist.Extension
             var oldName = IdentifierParser.At(selection.ActivePoint.CreateEditPoint().GetLines(line, line + 1), column - 1);
             if (string.IsNullOrEmpty(oldName)) return false;
             var name = new TextBox { Text = oldName, Margin = new Thickness(10) };
-            var rename = new Button { Content = "변경 계획 보기", IsDefault = true, Margin = new Thickness(10) };
-            var panel = new StackPanel(); panel.Children.Add(name); panel.Children.Add(rename);
+            var rename = ProductTheme.Button("변경 계획 보기",()=>{},true);rename.IsDefault=true;rename.Margin=new Thickness(10);
+            var panel = new StackPanel(); ProductTheme.Apply(panel);panel.Children.Add(name); panel.Children.Add(rename);
             var prompt = new Window { Title = "CodeAssist: Rename", Content = panel, Width = 400, Height = 160, WindowStartupLocation = WindowStartupLocation.CenterOwner };
             new System.Windows.Interop.WindowInteropHelper(prompt).Owner = (IntPtr)dte.MainWindow.HWnd;
             rename.Click += (s, e) => { if (Regex.IsMatch(name.Text, @"^[A-Za-z_]\w*$")) prompt.DialogResult = true; };
@@ -81,8 +81,8 @@ namespace CodeAssist.Extension
                 var before = Preview(plan.Before); var after = Preview(plan.After); Grid.SetColumn(after, 1); grid.Children.Add(before); grid.Children.Add(after);
                 tabs.Items.Add(new TabItem { Header = Path.GetFileName(plan.File), ToolTip = plan.File, Content = grid });
             }
-            var apply = new Button { Content = "이름 변경 적용", IsDefault = true, Margin = new Thickness(10) };
-            var previewPanel = new DockPanel(); DockPanel.SetDock(apply, Dock.Bottom); previewPanel.Children.Add(apply); previewPanel.Children.Add(tabs);
+            var apply = ProductTheme.Button("이름 변경 적용",()=>{},true);apply.IsDefault=true;apply.Margin=new Thickness(10);
+            var previewPanel = new DockPanel(); ProductTheme.Apply(previewPanel);DockPanel.SetDock(apply, Dock.Bottom); previewPanel.Children.Add(apply); previewPanel.Children.Add(tabs);
             var preview = new Window { Title = "CodeAssist: " + oldName + " → " + name.Text + " (" + plans.Count + " files)", Content = previewPanel,
                 Width = 1100, Height = 650, WindowStartupLocation = WindowStartupLocation.CenterOwner };
             new System.Windows.Interop.WindowInteropHelper(preview).Owner = (IntPtr)dte.MainWindow.HWnd;

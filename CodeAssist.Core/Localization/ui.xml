@@ -444,4 +444,1104 @@
     <text lang="ko">Visual Studio 기본 추천 색상 사용</text>
     <text lang="en">Use Visual Studio default completion colors</text>
   </entry>
+  <entry key="ui.a56868aef2b0" source="Format after paste">
+    <text lang="ko">붙여넣기 후 서식 지정</text>
+    <text lang="en">Format after paste</text>
+  </entry>
+  <entry key="ui.a6be008f0700" source="Extend multi-line comments">
+    <text lang="ko">여러 줄 주석 이어쓰기</text>
+    <text lang="en">Extend multi-line comments</text>
+  </entry>
+  <entry key="ui.831adbacdb7c" source="Insert () and closing brackets and quotes">
+    <text lang="ko">괄호 및 따옴표 자동 닫기</text>
+    <text lang="en">Insert () and closing brackets and quotes</text>
+  </entry>
+  <entry key="ui.eebaedfe2e25" source="Spaces between method name and ()">
+    <text lang="ko">메서드 이름과 () 사이 공백 수</text>
+    <text lang="en">Spaces between method name and ()</text>
+  </entry>
+  <entry key="ui.e6d6496e29d7" source="Insert closing brace:">
+    <text lang="ko">닫는 중괄호 삽입 위치:</text>
+    <text lang="en">Insert closing brace:</text>
+  </entry>
+  <entry key="ui.2643d0f6e0cc" source="after a blank line">
+    <text lang="ko">빈 줄 다음에</text>
+    <text lang="en">after a blank line</text>
+  </entry>
+  <entry key="ui.b1370abbc8fb" source="on the next line">
+    <text lang="ko">다음 줄에</text>
+    <text lang="en">on the next line</text>
+  </entry>
+  <entry key="ui.3b8bcde1684a" source="on the same line">
+    <text lang="ko">같은 줄에</text>
+    <text lang="en">on the same line</text>
+  </entry>
+  <entry key="ui.4b204809ab8b" source="Surround Selection via character toggles">
+    <text lang="ko">문자 입력으로 선택 영역 감싸기</text>
+    <text lang="en">Surround Selection via character toggles</text>
+  </entry>
+  <entry key="ui.2b0ca3e64f3d" source="Insert a space when toggling a line into a comment">
+    <text lang="ko">줄 주석으로 전환할 때 공백 삽입</text>
+    <text lang="en">Insert a space when toggling a line into a comment</text>
+  </entry>
+  <entry key="ui.46758ba762cb" source="Editor options not yet implemented remain listed in the verification document.">
+    <text lang="ko">아직 구현되지 않은 편집기 옵션은 검증 문서에 기록되어 있습니다.</text>
+    <text lang="en">Editor options not yet implemented remain listed in the verification document.</text>
+  </entry>
+  <entry key="ui.cabd5db317ee" source="Start and grow selections by relatively small increments">
+    <text lang="ko">선택 영역을 작은 단위로 시작하고 확장</text>
+    <text lang="en">Start and grow selections by relatively small increments</text>
+  </entry>
+  <entry key="ui.6953fca6d81e" source="Start non-block selections with the current word">
+    <text lang="ko">블록 외 선택은 현재 단어부터 시작</text>
+    <text lang="en">Start non-block selections with the current word</text>
+  </entry>
+  <entry key="ui.c88fdf0422ce" source="Changes in case delimit current word">
+    <text lang="ko">대소문자 변화로 현재 단어 구분</text>
+    <text lang="en">Changes in case delimit current word</text>
+  </entry>
+  <entry key="ui.7c735049e710" source="Underscores delimit current word">
+    <text lang="ko">밑줄로 현재 단어 구분</text>
+    <text lang="en">Underscores delimit current word</text>
+  </entry>
+  <entry key="ui.11b7f118602a" source="Show symbol Quick Info">
+    <text lang="ko">심볼 빠른 정보 표시</text>
+    <text lang="en">Show symbol Quick Info</text>
+  </entry>
+  <entry key="ui.95b56e296256" source="Welcome to {0}">
+    <text lang="en">Welcome to {0}</text>
+    <text lang="ko">{0}에 오신 것을 환영합니다</text>
+  </entry>
+  <entry key="ui.f838a6ae341f" source="What's New with CodeAssist">
+    <text lang="en">What's New with CodeAssist</text>
+    <text lang="ko">CodeAssist의 주요 기능</text>
+  </entry>
+  <entry key="ui.333f43c3a7f6" source="Learn More about CodeAssist">
+    <text lang="en">Learn More about CodeAssist</text>
+    <text lang="ko">CodeAssist 사용 안내</text>
+  </entry>
+  <entry key="ui.cdc8258f4139" source="Share your Feedback">
+    <text lang="en">Share your Feedback</text>
+    <text lang="ko">의견 보내기</text>
+  </entry>
+  <entry key="ui.d1ce81b5defa" source="CodeAssist Shortcuts">
+    <text lang="en">CodeAssist Shortcuts</text>
+    <text lang="ko">CodeAssist 단축키</text>
+  </entry>
+  <entry key="ui.6344a8cda29c" source="Learn More  ›">
+    <text lang="en">Learn More  ›</text>
+    <text lang="ko">자세히 보기  ›</text>
+  </entry>
+  <entry key="ui.deaf36c2ab1f" source="PROJECT CODE INSPECTION">
+    <text lang="en">PROJECT CODE INSPECTION</text>
+    <text lang="ko">프로젝트 코드 검사</text>
+  </entry>
+  <entry key="ui.9d92b907a576" source="EDITOR &amp; COLORING">
+    <text lang="en">EDITOR &amp; COLORING</text>
+    <text lang="ko">편집기와 색상</text>
+  </entry>
+  <entry key="ui.9f1583fb5cf0" source="FAST SYMBOL NAVIGATION">
+    <text lang="en">FAST SYMBOL NAVIGATION</text>
+    <text lang="ko">빠른 심볼 탐색</text>
+  </entry>
+  <entry key="ui.2a29c155ad46" source="UNREAL &amp; C/C++">
+    <text lang="en">UNREAL &amp; C/C++</text>
+    <text lang="ko">Unreal 및 C/C++</text>
+  </entry>
+  <entry key="ui.a87f916d683c" source="Find References">
+    <text lang="en">Find References</text>
+    <text lang="ko">모든 참조 찾기</text>
+  </entry>
+  <entry key="ui.aaf5ca5d1020" source="Find Selected">
+    <text lang="en">Find Selected</text>
+    <text lang="ko">선택 항목 찾기</text>
+  </entry>
+  <entry key="ui.1ae07f0c49e8" source="Find Symbol">
+    <text lang="en">Find Symbol</text>
+    <text lang="ko">심볼 찾기</text>
+  </entry>
+  <entry key="ui.43cdaa928810" source="Go to Definition / Implementation">
+    <text lang="en">Go to Definition / Implementation</text>
+    <text lang="ko">정의 / 구현으로 이동</text>
+  </entry>
+  <entry key="ui.f706e26e03a5" source="Go to Related">
+    <text lang="en">Go to Related</text>
+    <text lang="ko">관련 항목으로 이동</text>
+  </entry>
+  <entry key="ui.7c2cc19ecf81" source="List Methods">
+    <text lang="en">List Methods</text>
+    <text lang="ko">메서드 목록</text>
+  </entry>
+  <entry key="ui.270b2597810e" source="Corresponding File">
+    <text lang="en">Corresponding File</text>
+    <text lang="ko">대응 파일</text>
+  </entry>
+  <entry key="ui.1e8d18f62f2d" source="Open File">
+    <text lang="en">Open File</text>
+    <text lang="ko">파일 열기</text>
+  </entry>
+  <entry key="ui.8b796de5fa8f" source="Multiple Clipboards">
+    <text lang="en">Multiple Clipboards</text>
+    <text lang="ko">클립보드 기록</text>
+  </entry>
+  <entry key="ui.2cc2b6f7f200" source="Quick Actions">
+    <text lang="en">Quick Actions</text>
+    <text lang="ko">빠른 작업</text>
+  </entry>
+  <entry key="ui.3064d79a295c" source="Rename">
+    <text lang="en">Rename</text>
+    <text lang="ko">이름 바꾸기</text>
+  </entry>
+  <entry key="ui.eb485662972f" source="Hashtags">
+    <text lang="en">Hashtags</text>
+    <text lang="ko">해시태그</text>
+  </entry>
+  <entry key="ui.3806efdd2870" source="Search help">
+    <text lang="en">Search help</text>
+    <text lang="ko">도움말 검색</text>
+  </entry>
+  <entry key="ui.b969b3f35d14" source="No matching topics">
+    <text lang="en">No matching topics</text>
+    <text lang="ko">일치하는 도움말이 없습니다.</text>
+  </entry>
+  <entry key="ui.2b4e345dd511" source="Copied. Paste it into your issue or message.">
+    <text lang="en">Copied. Paste it into your issue or message.</text>
+    <text lang="ko">복사했습니다. 원하는 이슈나 대화에 붙여넣으세요.</text>
+  </entry>
+  <entry key="ui.85045ccc0567" source="Apply changes">
+    <text lang="en">Apply changes</text>
+    <text lang="ko">변경 적용</text>
+  </entry>
+  <entry key="ui.5d9f33f62e13" source="New file name">
+    <text lang="en">New file name</text>
+    <text lang="ko">새 파일 이름</text>
+  </entry>
+  <entry key="ui.e899adf5b91f" source="Snippet title">
+    <text lang="en">Snippet title</text>
+    <text lang="ko">스니펫 제목</text>
+  </entry>
+  <entry key="ui.603c2c4b14f2" source="Snippet shortcut">
+    <text lang="en">Snippet shortcut</text>
+    <text lang="ko">스니펫 축약어</text>
+  </entry>
+  <entry key="ui.6990d3217b77" source="Create file">
+    <text lang="en">Create file</text>
+    <text lang="ko">파일 생성</text>
+  </entry>
+  <entry key="ui.b4baa1847b67" source="Header name (use &lt;...&gt; for system headers)">
+    <text lang="en">Header name (use &lt;...&gt; for system headers)</text>
+    <text lang="ko">헤더 이름 (시스템 헤더는 &lt;...&gt; 형식)</text>
+  </entry>
+  <entry key="ui.4d73aa616ceb" source="Qualified type name (class or struct)">
+    <text lang="en">Qualified type name (class or struct)</text>
+    <text lang="ko">타입 이름 (class 또는 struct)</text>
+  </entry>
+  <entry key="ui.b691cb2fecc3" source="Select a project file first.">
+    <text lang="en">Select a project file first.</text>
+    <text lang="ko">먼저 프로젝트 파일을 선택하세요.</text>
+  </entry>
+  <entry key="ui.40537c0fd7bc" source="Save the document before renaming it.">
+    <text lang="en">Save the document before renaming it.</text>
+    <text lang="ko">파일 이름을 바꾸기 전에 저장하세요.</text>
+  </entry>
+  <entry key="ui.eb8557710479" source="Place the caret inside an http or https link.">
+    <text lang="en">Place the caret inside an http or https link.</text>
+    <text lang="ko">http 또는 https 링크 안에 커서를 놓으세요.</text>
+  </entry>
+  <entry key="ui.711911a20eab" source="Select a method declaration or its signature line.">
+    <text lang="en">Select a method declaration or its signature line.</text>
+    <text lang="ko">메서드 선언 또는 시그니처 줄을 선택하세요.</text>
+  </entry>
+  <entry key="ui.9de309162c5f" source="Source link rules">
+    <text lang="ko">소스 링크 규칙</text>
+    <text lang="en">Source link rules</text>
+  </entry>
+  <entry key="ui.df174a3f2faa" source="Enabled">
+    <text lang="ko">사용</text>
+    <text lang="en">Enabled</text>
+  </entry>
+  <entry key="ui.cdfc76a8a310" source="Regular expression">
+    <text lang="ko">정규식</text>
+    <text lang="en">Regular expression</text>
+  </entry>
+  <entry key="ui.709a23220f2c" source="Name">
+    <text lang="ko">이름</text>
+    <text lang="en">Name</text>
+  </entry>
+  <entry key="ui.1fff6a31661b" source="Pattern">
+    <text lang="ko">패턴</text>
+    <text lang="en">Pattern</text>
+  </entry>
+  <entry key="ui.b7d8a4de2bb4" source="Target URL">
+    <text lang="ko">대상 URL</text>
+    <text lang="en">Target URL</text>
+  </entry>
+  <entry key="ui.362f56c8c8a6" source="Add / Update">
+    <text lang="ko">추가 / 수정</text>
+    <text lang="en">Add / Update</text>
+  </entry>
+  <entry key="ui.f6fdbe48dc54" source="Delete">
+    <text lang="ko">삭제</text>
+    <text lang="en">Delete</text>
+  </entry>
+  <entry key="ui.f0c6d84fef53" source="GitHub example">
+    <text lang="ko">GitHub 예제</text>
+    <text lang="en">GitHub example</text>
+  </entry>
+  <entry key="ui.41cedf44cce7" source="FogBugz example">
+    <text lang="ko">FogBugz 예제</text>
+    <text lang="en">FogBugz example</text>
+  </entry>
+  <entry key="ui.c8da1aec1918" source="No source link matches the caret. Configure Navigation / Source Links.">
+    <text lang="ko">커서 위치에 일치하는 소스 링크가 없습니다. 탐색 / 소스 링크에서 규칙을 설정하세요.</text>
+    <text lang="en">No source link matches the caret. Configure Navigation / Source Links.</text>
+  </entry>
+  <entry key="ui.d3d692b75295" source="Parser threads">
+    <text lang="ko">파서 스레드 수</text>
+    <text lang="en">Parser threads</text>
+  </entry>
+  <entry key="ui.83fbf47616cd" source="Highlight current line">
+    <text lang="ko">현재 줄 강조</text>
+    <text lang="en">Highlight current line</text>
+  </entry>
+  <entry key="ui.6c70407e51a5" source="Highlight matching braces">
+    <text lang="ko">짝이 맞는 괄호 강조</text>
+    <text lang="en">Highlight matching braces</text>
+  </entry>
+  <entry key="ui.d5fe9f9d4f71" source="Highlight mismatching braces">
+    <text lang="ko">짝이 맞지 않는 괄호 강조</text>
+    <text lang="en">Highlight mismatching braces</text>
+  </entry>
+  <entry key="ui.6a6f65a7a63b" source="Show column indicator">
+    <text lang="ko">컬럼 기준선 표시</text>
+    <text lang="en">Show column indicator</text>
+  </entry>
+  <entry key="ui.65ba00e95e60" source="Column">
+    <text lang="ko">컬럼</text>
+    <text lang="en">Column</text>
+  </entry>
+  <entry key="ui.dacf9a998adb" source="Expand snippet shortcuts with Tab">
+    <text lang="ko">Tab으로 스니펫 단축어 확장</text>
+    <text lang="en">Expand snippet shortcuts with Tab</text>
+  </entry>
+  <entry key="ui.929a28d26142" source="Guides">
+    <text lang="ko">편집기 안내선</text>
+    <text lang="en">Guides</text>
+  </entry>
+  <entry key="ui.c1ab6c9b9947" source="Acronym completion">
+    <text lang="ko">머리글자 약어 완성</text>
+    <text lang="en">Acronym completion</text>
+  </entry>
+  <entry key="ui.260c7eefec33" source="Shorthand completion">
+    <text lang="ko">축약어 완성</text>
+    <text lang="en">Shorthand completion</text>
+  </entry>
+  <entry key="ui.d55d8bc694be" source="Convert pointer dot to arrow">
+    <text lang="ko">포인터 점 입력을 화살표로 변환</text>
+    <text lang="en">Convert pointer dot to arrow</text>
+  </entry>
+  <entry key="ui.ea72a2efaba7" source="Repair type name case">
+    <text lang="ko">타입 이름 대소문자 교정</text>
+    <text lang="en">Repair type name case</text>
+  </entry>
+  <entry key="ui.2f212a9db758" source="Insert underscore after m and Shift">
+    <text lang="ko">m 다음 Shift 입력으로 밑줄 추가</text>
+    <text lang="en">Insert underscore after m and Shift</text>
+  </entry>
+  <entry key="ui.2f20a3a85415" source="Local symbols in bold">
+    <text lang="ko">지역 심볼 굵게 표시</text>
+    <text lang="en">Local symbols in bold</text>
+  </entry>
+  <entry key="ui.01edbff07fc7" source="System symbols in italics">
+    <text lang="ko">시스템 심볼 기울임 표시</text>
+    <text lang="en">System symbols in italics</text>
+  </entry>
+  <entry key="ui.709372269d87" source="Highlight references under caret">
+    <text lang="ko">커서 심볼 참조 강조</text>
+    <text lang="en">Highlight references under caret</text>
+  </entry>
+  <entry key="ui.090b00969817" source="Alt + click: Go to definition">
+    <text lang="ko">Alt + 클릭: 정의로 이동</text>
+    <text lang="en">Alt + click: Go to definition</text>
+  </entry>
+  <entry key="ui.71ebe244f1d9" source="Highlight output filenames">
+    <text lang="ko">출력 창 파일 이름 강조</text>
+    <text lang="en">Highlight output filenames</text>
+  </entry>
+  <entry key="ui.ca58964377c1" source="Highlight find results">
+    <text lang="ko">검색 결과 강조</text>
+    <text lang="en">Highlight find results</text>
+  </entry>
+  <entry key="ui.89a97ba0cdd5" source="Underline comment and string spelling">
+    <text lang="ko">주석·문자열 맞춤법 밑줄</text>
+    <text lang="en">Underline comment and string spelling</text>
+  </entry>
+  <entry key="ui.cfad97405a76" source="Step filter enabled">
+    <text lang="ko">스텝 필터 사용</text>
+    <text lang="en">Step filter enabled</text>
+  </entry>
+  <entry key="ui.49cd9ccbc3da" source="Suggestion lists">
+    <text lang="ko">추천 목록 사용</text>
+    <text lang="en">Suggestion lists</text>
+  </entry>
+  <entry key="ui.e7cb457f2e1e" source="Expected-type literal suggestions">
+    <text lang="ko">예상 타입 리터럴 추천</text>
+    <text lang="en">Expected-type literal suggestions</text>
+  </entry>
+  <entry key="ui.12dc3fe9f937" source="Snippet suggestions">
+    <text lang="ko">스니펫 추천</text>
+    <text lang="en">Snippet suggestions</text>
+  </entry>
+  <entry key="ui.2ae9d5f291d4" source="Additional C/C++ file extensions">
+    <text lang="ko">추가 C/C++ 파일 확장자</text>
+    <text lang="en">Additional C/C++ file extensions</text>
+  </entry>
+  <entry key="ui.65c84dfe8cf3" source="Compilation database directory">
+    <text lang="ko">컴파일 데이터베이스 폴더</text>
+    <text lang="en">Compilation database directory</text>
+  </entry>
+  <entry key="ui.d346424d2b38" source="File Extensions">
+    <text lang="ko">파일 확장자</text>
+    <text lang="en">File Extensions</text>
+  </entry>
+  <entry key="ui.04996d9e3e7c" source="Compilation Database">
+    <text lang="ko">컴파일 데이터베이스</text>
+    <text lang="en">Compilation Database</text>
+  </entry>
+  <entry key="ui.dcd0aa3ea0bf" source="Generation Templates">
+    <text lang="ko">생성 템플릿</text>
+    <text lang="en">Generation Templates</text>
+  </entry>
+  <entry key="ui.7fdfbeec1c20" source="Method implementation body template">
+    <text lang="ko">메서드 구현 본문 템플릿</text>
+    <text lang="en">Method implementation body template</text>
+  </entry>
+  <entry key="ui.4eef27df518f" source="Preview selected fix">
+    <text lang="ko">선택한 수정 미리보기</text>
+    <text lang="en">Preview selected fix</text>
+  </entry>
+  <entry key="ui.602fc62a31eb" source="The selected syntax is unsupported. Select the complete declaration or expression.">
+    <text lang="ko">지원하지 않는 구문입니다. 완전한 선언이나 표현식을 선택하세요.</text>
+    <text lang="en">The selected syntax is unsupported. Select the complete declaration or expression.</text>
+  </entry>
+  <entry key="ui.ba5e8c04aa2a" source="New parameter order (one-based, e.g. 2,1; reorder only)">
+    <text lang="ko">새 매개변수 순서 (1부터 시작, 예: 2,1; 순서 변경만 지원)</text>
+    <text lang="en">New parameter order (one-based, e.g. 2,1; reorder only)</text>
+  </entry>
+  <entry key="ui.880a8ec6fc89" source="New free-function signature (use reference parameters for outputs)">
+    <text lang="ko">새 전역 함수 서명 (출력은 참조 매개변수로 지정)</text>
+    <text lang="en">New free-function signature (use reference parameters for outputs)</text>
+  </entry>
+  <entry key="ui.eaa81b86f0f6" source="Accessor name suffix">
+    <text lang="ko">접근자 이름 접미사</text>
+    <text lang="en">Accessor name suffix</text>
+  </entry>
+  <entry key="ui.fe8b32e06a54" source="Member declaration">
+    <text lang="ko">멤버 선언</text>
+    <text lang="en">Member declaration</text>
+  </entry>
+  <entry key="ui.1febbd946f48" source="New member name">
+    <text lang="ko">새 멤버 이름</text>
+    <text lang="en">New member name</text>
+  </entry>
+  <entry key="ui.0449e1003dd0" source="Namespace">
+    <text lang="ko">네임스페이스</text>
+    <text lang="en">Namespace</text>
+  </entry>
+  <entry key="ui.e4647330ae63" source="Qualified owner type (empty for free function)">
+    <text lang="ko">한정된 소유 타입 (전역 함수는 비워 두세요)</text>
+    <text lang="en">Qualified owner type (empty for free function)</text>
+  </entry>
+  <entry key="ui.ef413eac416e" source="Virtual declarations to implement in the derived class">
+    <text lang="ko">파생 클래스에서 구현할 가상 함수 선언</text>
+    <text lang="en">Virtual declarations to implement in the derived class</text>
+  </entry>
+  <entry key="ui.8bd702d198ef" source="Qualified scoped enum name">
+    <text lang="ko">한정된 scoped enum 이름</text>
+    <text lang="en">Qualified scoped enum name</text>
+  </entry>
+  <entry key="ui.2cc1946e9d75" source="Enum declaration">
+    <text lang="ko">enum 선언</text>
+    <text lang="en">Enum declaration</text>
+  </entry>
+  <entry source="Solution only">
+    <text lang="en">Solution only</text>
+    <text lang="ko">솔루션만</text>
+  </entry>
+  <entry source="Classes/structs/namespaces">
+    <text lang="en">Classes/structs/namespaces</text>
+    <text lang="ko">클래스/구조체/네임스페이스</text>
+  </entry>
+  <entry source="Cancel">
+    <text lang="en">Cancel</text>
+    <text lang="ko">취소</text>
+  </entry>
+  <entry source="Symbol">
+    <text lang="en">Symbol</text>
+    <text lang="ko">심볼</text>
+  </entry>
+  <entry source="Definition">
+    <text lang="en">Definition</text>
+    <text lang="ko">정의</text>
+  </entry>
+  <entry source="File">
+    <text lang="en">File</text>
+    <text lang="ko">파일</text>
+  </entry>
+  <entry source="Path">
+    <text lang="en">Path</text>
+    <text lang="ko">경로</text>
+  </entry>
+  <entry source="Search">
+    <text lang="en">Search</text>
+    <text lang="ko">검색</text>
+  </entry>
+  <entry source="Fuzzy search">
+    <text lang="ko">퍼지 검색</text>
+    <text lang="en">Fuzzy search</text>
+  </entry>
+  <entry key="toolbar.Settings" source="Toolbar.Settings">
+    <text lang="ko">설정</text>
+    <text lang="en">Settings</text>
+  </entry>
+  <entry key="toolbar.OpenFile" source="Toolbar.OpenFile">
+    <text lang="ko">파일 찾기</text>
+    <text lang="en">Open File</text>
+  </entry>
+  <entry key="toolbar.FindSymbol" source="Toolbar.FindSymbol">
+    <text lang="ko">심볼 찾기</text>
+    <text lang="en">Find Symbol</text>
+  </entry>
+  <entry key="toolbar.FindReferences" source="Toolbar.FindReferences">
+    <text lang="ko">모든 참조 찾기</text>
+    <text lang="en">Find References</text>
+  </entry>
+  <entry key="toolbar.PreviousContext" source="Toolbar.PreviousContext">
+    <text lang="ko">이전 참조로 이동</text>
+    <text lang="en">Find Previous by Context</text>
+  </entry>
+  <entry key="toolbar.NextContext" source="Toolbar.NextContext">
+    <text lang="ko">다음 참조로 이동</text>
+    <text lang="en">Find Next by Context</text>
+  </entry>
+  <entry key="toolbar.Snippet" source="Toolbar.Snippet">
+    <text lang="ko">코드 조각 삽입</text>
+    <text lang="en">Insert Snippet</text>
+  </entry>
+  <entry key="toolbar.SpellCheck" source="Toolbar.SpellCheck">
+    <text lang="ko">맞춤법 검사</text>
+    <text lang="en">Spell Check</text>
+  </entry>
+  <entry key="toolbar.CorrespondingFile" source="Toolbar.CorrespondingFile">
+    <text lang="ko">대응 파일 열기</text>
+    <text lang="en">Open Corresponding File</text>
+  </entry>
+  <entry key="toolbar.SkipBreakpoints" source="Toolbar.SkipBreakpoints">
+    <text lang="ko">모든 중단점 건너뛰기</text>
+    <text lang="en">Skip All Breakpoints</text>
+  </entry>
+  <entry key="toolbar.ThreadBreakpoints" source="Toolbar.ThreadBreakpoints">
+    <text lang="ko">현재 스레드에 중단점 연결</text>
+    <text lang="en">Bind Breakpoints to Current Thread</text>
+  </entry>
+  <entry key="toolbar.Welcome" source="Toolbar.Welcome">
+    <text lang="ko">시작 안내</text>
+    <text lang="en">Welcome</text>
+  </entry>
+  <entry source="CodeAssist: Change Signature (Reorder Parameters)">
+    <text lang="ko">CodeAssist: 시그니처 변경 (매개변수 순서 변경)</text>
+    <text lang="en">CodeAssist: Change Signature (Reorder Parameters)</text>
+  </entry>
+  <entry source="CodeAssist: Move Method Implementations to Source">
+    <text lang="ko">CodeAssist: 메서드 구현을 소스 파일로 이동</text>
+    <text lang="en">CodeAssist: Move Method Implementations to Source</text>
+  </entry>
+  <entry source="CodeAssist: Convert Local Pointer / Instance">
+    <text lang="ko">CodeAssist: 지역 포인터 / 인스턴스 변환</text>
+    <text lang="en">CodeAssist: Convert Local Pointer / Instance</text>
+  </entry>
+  <entry source="CodeAssist: Extract Method">
+    <text lang="ko">CodeAssist: 메서드 추출</text>
+    <text lang="en">CodeAssist: Extract Method</text>
+  </entry>
+  <entry source="CodeAssist: Quick Fixes at Caret">
+    <text lang="ko">CodeAssist: 커서 위치의 빠른 수정</text>
+    <text lang="en">CodeAssist: Quick Fixes at Caret</text>
+  </entry>
+  <entry source="CodeAssist: Quick Fixes Window">
+    <text lang="ko">CodeAssist: 빠른 수정 창</text>
+    <text lang="en">CodeAssist: Quick Fixes Window</text>
+  </entry>
+  <entry source="CodeAssist: Plugin Actions">
+    <text lang="ko">CodeAssist: 플러그인 작업</text>
+    <text lang="en">CodeAssist: Plugin Actions</text>
+  </entry>
+  <entry source="CodeAssist: PDB Explorer">
+    <text lang="ko">CodeAssist: PDB 탐색기</text>
+    <text lang="en">CodeAssist: PDB Explorer</text>
+  </entry>
+  <entry source="CodeAssist: Resolve Address (RVA)">
+    <text lang="ko">CodeAssist: 주소 해석 (RVA)</text>
+    <text lang="en">CodeAssist: Resolve Address (RVA)</text>
+  </entry>
+  <entry source="CodeAssist: Memory View">
+    <text lang="ko">CodeAssist: 메모리 보기</text>
+    <text lang="en">CodeAssist: Memory View</text>
+  </entry>
+  <entry source="CodeAssist: Preview File">
+    <text lang="ko">CodeAssist: 파일 미리 보기</text>
+    <text lang="en">CodeAssist: Preview File</text>
+  </entry>
+  <entry source="CodeAssist: Print in Color">
+    <text lang="ko">CodeAssist: 컬러 인쇄</text>
+    <text lang="en">CodeAssist: Print in Color</text>
+  </entry>
+  <entry source="CodeAssist: Parameter Info">
+    <text lang="ko">CodeAssist: 매개변수 정보</text>
+    <text lang="en">CodeAssist: Parameter Info</text>
+  </entry>
+  <entry source="CodeAssist: Simplify Instance Declaration">
+    <text lang="ko">CodeAssist: 인스턴스 선언 간소화</text>
+    <text lang="en">CodeAssist: Simplify Instance Declaration</text>
+  </entry>
+  <entry source="CodeAssist: Encapsulate Field">
+    <text lang="ko">CodeAssist: 필드 캡슐화</text>
+    <text lang="en">CodeAssist: Encapsulate Field</text>
+  </entry>
+  <entry source="CodeAssist: Add Member">
+    <text lang="ko">CodeAssist: 멤버 추가</text>
+    <text lang="en">CodeAssist: Add Member</text>
+  </entry>
+  <entry source="CodeAssist: Add Similar Member">
+    <text lang="ko">CodeAssist: 유사 멤버 추가</text>
+    <text lang="en">CodeAssist: Add Similar Member</text>
+  </entry>
+  <entry source="CodeAssist: Add Using Directive">
+    <text lang="ko">CodeAssist: using 지시문 추가</text>
+    <text lang="en">CodeAssist: Add Using Directive</text>
+  </entry>
+  <entry source="CodeAssist: Add / Remove Braces">
+    <text lang="ko">CodeAssist: 중괄호 추가 / 제거</text>
+    <text lang="en">CodeAssist: Add / Remove Braces</text>
+  </entry>
+  <entry source="CodeAssist: Create Declaration">
+    <text lang="ko">CodeAssist: 선언 생성</text>
+    <text lang="en">CodeAssist: Create Declaration</text>
+  </entry>
+  <entry source="CodeAssist: Create Implementation">
+    <text lang="ko">CodeAssist: 구현 생성</text>
+    <text lang="en">CodeAssist: Create Implementation</text>
+  </entry>
+  <entry source="CodeAssist: Create Method Implementations">
+    <text lang="ko">CodeAssist: 메서드 구현 생성</text>
+    <text lang="en">CodeAssist: Create Method Implementations</text>
+  </entry>
+  <entry source="CodeAssist: Implement Virtual Methods">
+    <text lang="ko">CodeAssist: 가상 메서드 구현</text>
+    <text lang="en">CodeAssist: Implement Virtual Methods</text>
+  </entry>
+  <entry source="CodeAssist: Add Missing Case Statements">
+    <text lang="ko">CodeAssist: 누락된 case 문 추가</text>
+    <text lang="en">CodeAssist: Add Missing Case Statements</text>
+  </entry>
+  <entry source="CodeAssist: Open Source Link">
+    <text lang="ko">CodeAssist: 소스 링크 열기</text>
+    <text lang="en">CodeAssist: Open Source Link</text>
+  </entry>
+  <entry source="CodeAssist: Go To Member">
+    <text lang="ko">CodeAssist: 멤버로 이동</text>
+    <text lang="en">CodeAssist: Go To Member</text>
+  </entry>
+  <entry source="CodeAssist: Create File">
+    <text lang="ko">CodeAssist: 파일 생성</text>
+    <text lang="en">CodeAssist: Create File</text>
+  </entry>
+  <entry source="CodeAssist: Rename File">
+    <text lang="ko">CodeAssist: 파일 이름 변경</text>
+    <text lang="en">CodeAssist: Rename File</text>
+  </entry>
+  <entry source="CodeAssist: Move Selection to New File">
+    <text lang="ko">CodeAssist: 선택 영역을 새 파일로 이동</text>
+    <text lang="en">CodeAssist: Move Selection to New File</text>
+  </entry>
+  <entry source="CodeAssist: Surround With Snippet">
+    <text lang="ko">CodeAssist: 코드 조각으로 감싸기</text>
+    <text lang="en">CodeAssist: Surround With Snippet</text>
+  </entry>
+  <entry source="CodeAssist: Create Snippet from Selection">
+    <text lang="ko">CodeAssist: 선택 영역에서 코드 조각 생성</text>
+    <text lang="en">CodeAssist: Create Snippet from Selection</text>
+  </entry>
+  <entry source="CodeAssist: Open Hyperlink">
+    <text lang="ko">CodeAssist: 하이퍼링크 열기</text>
+    <text lang="en">CodeAssist: Open Hyperlink</text>
+  </entry>
+  <entry source="CodeAssist: Document Method">
+    <text lang="ko">CodeAssist: 메서드 문서화</text>
+    <text lang="en">CodeAssist: Document Method</text>
+  </entry>
+  <entry source="CodeAssist: Add Include">
+    <text lang="ko">CodeAssist: include 추가</text>
+    <text lang="en">CodeAssist: Add Include</text>
+  </entry>
+  <entry source="CodeAssist: Add Forward Declaration">
+    <text lang="ko">CodeAssist: 전방 선언 추가</text>
+    <text lang="en">CodeAssist: Add Forward Declaration</text>
+  </entry>
+  <entry source="CodeAssist: Verify Editor Integration">
+    <text lang="ko">CodeAssist: 편집기 통합 검사</text>
+    <text lang="en">CodeAssist: Verify Editor Integration</text>
+  </entry>
+  <entry source="CodeAssist: Welcome">
+    <text lang="ko">CodeAssist: 시작 페이지</text>
+    <text lang="en">CodeAssist: Welcome</text>
+  </entry>
+  <entry source="CodeAssist: Settings">
+    <text lang="ko">CodeAssist: 설정</text>
+    <text lang="en">CodeAssist: Settings</text>
+  </entry>
+  <entry source="CodeAssist: Sort Selected Lines">
+    <text lang="ko">CodeAssist: 선택한 줄 정렬</text>
+    <text lang="en">CodeAssist: Sort Selected Lines</text>
+  </entry>
+  <entry source="CodeAssist: Reparse Current File">
+    <text lang="ko">CodeAssist: 현재 파일 다시 분석</text>
+    <text lang="en">CodeAssist: Reparse Current File</text>
+  </entry>
+  <entry source="CodeAssist: Reference Results">
+    <text lang="ko">CodeAssist: 참조 결과</text>
+    <text lang="en">CodeAssist: Reference Results</text>
+  </entry>
+  <entry source="CodeAssist: Clone Reference Results">
+    <text lang="ko">CodeAssist: 참조 결과 복제</text>
+    <text lang="en">CodeAssist: Clone Reference Results</text>
+  </entry>
+  <entry source="CodeAssist: Find Selected">
+    <text lang="ko">CodeAssist: 선택 항목 찾기</text>
+    <text lang="en">CodeAssist: Find Selected</text>
+  </entry>
+  <entry source="CodeAssist: Outline">
+    <text lang="ko">CodeAssist: 개요</text>
+    <text lang="en">CodeAssist: Outline</text>
+  </entry>
+  <entry source="CodeAssist: Workspace Symbols">
+    <text lang="ko">CodeAssist: 작업 영역 심볼</text>
+    <text lang="en">CodeAssist: Workspace Symbols</text>
+  </entry>
+  <entry source="CodeAssist: Insert Snippet">
+    <text lang="ko">CodeAssist: 코드 조각 삽입</text>
+    <text lang="en">CodeAssist: Insert Snippet</text>
+  </entry>
+  <entry source="CodeAssist: Multiple Clipboards">
+    <text lang="ko">CodeAssist: 클립보드 기록</text>
+    <text lang="en">CodeAssist: Multiple Clipboards</text>
+  </entry>
+  <entry source="CodeAssist: Hashtags">
+    <text lang="ko">CodeAssist: 해시태그</text>
+    <text lang="en">CodeAssist: Hashtags</text>
+  </entry>
+  <entry source="CodeAssist: Include Files">
+    <text lang="ko">CodeAssist: 포함 파일</text>
+    <text lang="en">CodeAssist: Include Files</text>
+  </entry>
+  <entry source="CodeAssist: Extend Selection">
+    <text lang="ko">CodeAssist: 선택 영역 확장</text>
+    <text lang="en">CodeAssist: Extend Selection</text>
+  </entry>
+  <entry source="CodeAssist: Shrink Selection">
+    <text lang="ko">CodeAssist: 선택 영역 축소</text>
+    <text lang="en">CodeAssist: Shrink Selection</text>
+  </entry>
+  <entry source="CodeAssist: Extend Block Selection">
+    <text lang="ko">CodeAssist: 블록 선택 확장</text>
+    <text lang="en">CodeAssist: Extend Block Selection</text>
+  </entry>
+  <entry source="CodeAssist: Shrink Block Selection">
+    <text lang="ko">CodeAssist: 블록 선택 축소</text>
+    <text lang="en">CodeAssist: Shrink Block Selection</text>
+  </entry>
+  <entry source="CodeAssist: Reset Editor Zoom">
+    <text lang="ko">CodeAssist: 편집기 확대/축소 초기화</text>
+    <text lang="en">CodeAssist: Reset Editor Zoom</text>
+  </entry>
+  <entry source="CodeAssist: Open File">
+    <text lang="ko">CodeAssist: 파일 열기</text>
+    <text lang="en">CodeAssist: Open File</text>
+  </entry>
+  <entry source="CodeAssist: Find Symbol">
+    <text lang="ko">CodeAssist: 심볼 찾기</text>
+    <text lang="en">CodeAssist: Find Symbol</text>
+  </entry>
+  <entry source="CodeAssist: Open Corresponding File">
+    <text lang="ko">CodeAssist: 대응 파일 열기</text>
+    <text lang="en">CodeAssist: Open Corresponding File</text>
+  </entry>
+  <entry source="CodeAssist: List Methods">
+    <text lang="ko">CodeAssist: 메서드 목록</text>
+    <text lang="en">CodeAssist: List Methods</text>
+  </entry>
+  <entry source="CodeAssist: Related Symbol Candidates">
+    <text lang="ko">CodeAssist: 관련 심볼 후보</text>
+    <text lang="en">CodeAssist: Related Symbol Candidates</text>
+  </entry>
+  <entry source="CodeAssist: Navigate Back">
+    <text lang="ko">CodeAssist: 이전 위치로 이동</text>
+    <text lang="en">CodeAssist: Navigate Back</text>
+  </entry>
+  <entry source="CodeAssist: Navigate Forward">
+    <text lang="ko">CodeAssist: 다음 위치로 이동</text>
+    <text lang="en">CodeAssist: Navigate Forward</text>
+  </entry>
+  <entry source="CodeAssist: Rename">
+    <text lang="ko">CodeAssist: 이름 변경</text>
+    <text lang="en">CodeAssist: Rename</text>
+  </entry>
+  <entry source="CodeAssist: Quick Actions (Visual Studio)">
+    <text lang="ko">CodeAssist: 빠른 작업 (Visual Studio)</text>
+    <text lang="en">CodeAssist: Quick Actions (Visual Studio)</text>
+  </entry>
+  <entry source="CodeAssist: Create From Usage (Visual Studio Quick Actions)">
+    <text lang="ko">CodeAssist: 사용 위치에서 생성 (Visual Studio 빠른 작업)</text>
+    <text lang="en">CodeAssist: Create From Usage (Visual Studio Quick Actions)</text>
+  </entry>
+  <entry source="CodeAssist: Next Scope">
+    <text lang="ko">CodeAssist: 다음 스코프</text>
+    <text lang="en">CodeAssist: Next Scope</text>
+  </entry>
+  <entry source="CodeAssist: Previous Scope">
+    <text lang="ko">CodeAssist: 이전 스코프</text>
+    <text lang="en">CodeAssist: Previous Scope</text>
+  </entry>
+  <entry source="CodeAssist: Go to Symbol">
+    <text lang="ko">CodeAssist: 정의 / 구현으로 이동</text>
+    <text lang="en">CodeAssist: Go to Symbol</text>
+  </entry>
+  <entry source="CodeAssist: Status">
+    <text lang="ko">CodeAssist: 상태</text>
+    <text lang="en">CodeAssist: Status</text>
+  </entry>
+  <entry source="CodeAssist: Find References">
+    <text lang="ko">CodeAssist: 모든 참조 찾기</text>
+    <text lang="en">CodeAssist: Find References</text>
+  </entry>
+  <entry source="CodeAssist: Find Previous by Context">
+    <text lang="ko">CodeAssist: 문맥의 이전 항목 찾기</text>
+    <text lang="en">CodeAssist: Find Previous by Context</text>
+  </entry>
+  <entry source="CodeAssist: Find Next by Context">
+    <text lang="ko">CodeAssist: 문맥의 다음 항목 찾기</text>
+    <text lang="en">CodeAssist: Find Next by Context</text>
+  </entry>
+  <entry source="CodeAssist: Spell Check (Visual Studio)">
+    <text lang="ko">CodeAssist: 맞춤법 검사 (Visual Studio)</text>
+    <text lang="en">CodeAssist: Spell Check (Visual Studio)</text>
+  </entry>
+  <entry source="CodeAssist: Skip All Breakpoints">
+    <text lang="ko">CodeAssist: 모든 중단점 건너뛰기</text>
+    <text lang="en">CodeAssist: Skip All Breakpoints</text>
+  </entry>
+  <entry source="CodeAssist: Bind Breakpoints to Current Thread">
+    <text lang="ko">CodeAssist: 중단점을 현재 스레드에 연결</text>
+    <text lang="en">CodeAssist: Bind Breakpoints to Current Thread</text>
+  </entry>
+  <entry source="Enable">
+    <text lang="ko">사용</text>
+    <text lang="en">Enable</text>
+  </entry>
+  <entry source="Disable">
+    <text lang="ko">사용 안 함</text>
+    <text lang="en">Disable</text>
+  </entry>
+  <entry source="Use per-file engine">
+    <text lang="ko">파일별 검사 사용</text>
+    <text lang="en">Use per-file engine</text>
+  </entry>
+  <entry source="Welcome">
+    <text lang="ko">시작 페이지</text>
+    <text lang="en">Welcome</text>
+  </entry>
+  <entry source="Context: ">
+    <text lang="ko">문맥: </text>
+    <text lang="en">Context: </text>
+  </entry>
+  <entry source="Definition: ">
+    <text lang="ko">정의: </text>
+    <text lang="en">Definition: </text>
+  </entry>
+  <entry source="Global">
+    <text lang="ko">전역</text>
+    <text lang="en">Global</text>
+  </entry>
+  <entry source="Go">
+    <text lang="ko">이동</text>
+    <text lang="en">Go</text>
+  </entry>
+  <entry source="메서드 선택">
+    <text lang="ko">메서드 선택</text>
+    <text lang="en">Select method</text>
+  </entry>
+  <entry source="대응 파일 (Alt+O)">
+    <text lang="ko">대응 파일 (Alt+O)</text>
+    <text lang="en">Corresponding file (Alt+O)</text>
+  </entry>
+  <entry source="Inspection.Prompt">
+    <text lang="ko">CodeAssist: '{0}' 프로젝트 전체 기본 코드 검사를 사용하시겠습니까?</text>
+    <text lang="en">CodeAssist: Enable basic project-wide code inspections for '{0}'?</text>
+  </entry>
+  <entry source="Inspection.Start">
+    <text lang="ko">CodeAssist: 코드 탐색과 편집을 시작하세요.</text>
+    <text lang="en">CodeAssist: Start navigating and editing code.</text>
+  </entry>
+  <entry key="layout.preprocessor" source="Preprocessor macros">
+    <text lang="en">Preprocessor macros</text>
+    <text lang="ko">전처리기 매크로</text>
+  </entry>
+  <entry key="layout.functions" source="Functions / methods">
+    <text lang="en">Functions / methods</text>
+    <text lang="ko">함수 / 메서드</text>
+  </entry>
+  <entry key="layout.text" source="Text editor font attributes">
+    <text lang="en">Text editor font attributes</text>
+    <text lang="ko">텍스트 편집기 글꼴 속성</text>
+  </entry>
+  <entry key="display.navigation.0" source="Display CodeAssist Navigation Bar">
+    <text lang="ko">CodeAssist 탐색 표시줄 표시</text>
+    <text lang="en">Display CodeAssist Navigation Bar</text>
+  </entry>
+  <entry key="display.navigation.1" source="Sort dropdown by">
+    <text lang="ko">드롭다운 정렬 기준</text>
+    <text lang="en">Sort dropdown by</text>
+  </entry>
+  <entry key="display.navigation.2" source="Occurrence">
+    <text lang="ko">코드에 나타난 순서</text>
+    <text lang="en">Occurrence</text>
+  </entry>
+  <entry key="display.navigation.3" source="Alphabetically">
+    <text lang="ko">이름순</text>
+    <text lang="en">Alphabetically</text>
+  </entry>
+  <entry source="Ascending" key="sort.dialog.0">
+    <text lang="ko">오름차순</text>
+    <text lang="en">Ascending</text>
+  </entry>
+  <entry source="Descending" key="sort.dialog.1">
+    <text lang="ko">내림차순</text>
+    <text lang="en">Descending</text>
+  </entry>
+  <entry source="Case-sensitive" key="sort.dialog.2">
+    <text lang="ko">대소문자 구분</text>
+    <text lang="en">Case-sensitive</text>
+  </entry>
+  <entry source="Case-insensitive" key="sort.dialog.3">
+    <text lang="ko">대소문자 무시</text>
+    <text lang="en">Case-insensitive</text>
+  </entry>
+  <entry source="OK" key="sort.dialog.5">
+    <text lang="ko">확인</text>
+    <text lang="en">OK</text>
+  </entry>
+  <entry key="ui.b480d0c3a98e" source="and put">
+    <text lang="ko">그리고</text>
+    <text lang="en">and put</text>
+  </entry>
+  <entry key="ui.5c0189e8674a" source="spaces between method name and ()">
+    <text lang="ko">메서드 이름과 () 사이의 공백 수</text>
+    <text lang="en">spaces between method name and ()</text>
+  </entry>
+  <entry key="ui.7be250abe01d" source="Enable Suggestion Lists">
+    <text lang="ko">추천 목록 사용</text>
+    <text lang="en">Enable Suggestion Lists</text>
+  </entry>
+  <entry key="ui.aa0277967b72" source="Include Smart Suggestions">
+    <text lang="ko">스마트 추천 포함</text>
+    <text lang="en">Include Smart Suggestions</text>
+  </entry>
+  <entry key="ui.937e844102c7" source="Suggestion and Completion lists">
+    <text lang="ko">추천 및 자동 완성 목록</text>
+    <text lang="en">Suggestion and Completion lists</text>
+  </entry>
+  <entry key="ui.54360064c03b" source="Enable in C++">
+    <text lang="ko">C++에서 사용</text>
+    <text lang="en">Enable in C++</text>
+  </entry>
+  <entry key="ui.6781e2d184a9" source="Include CodeAssist Snippets">
+    <text lang="ko">CodeAssist 스니펫 포함</text>
+    <text lang="en">Include CodeAssist Snippets</text>
+  </entry>
+  <entry key="editor.paste-menu-enabled" source="Display paste menu with">
+    <text lang="ko">붙여넣기 메뉴 표시</text>
+    <text lang="en">Display paste menu with</text>
+  </entry>
+  <entry key="editor.paste-menu-items" source="items">
+    <text lang="ko">개 항목</text>
+    <text lang="en">items</text>
+  </entry>
+  <entry key="editor.clipboard-menu-title" source="Clipboard">
+    <text lang="ko">클립보드</text>
+    <text lang="en">Clipboard</text>
+  </entry>
+  <entry key="references.next" source="Next reference">
+    <text lang="ko">다음 참조</text>
+    <text lang="en">Next reference</text>
+  </entry>
+  <entry key="references.previous" source="Previous reference">
+    <text lang="ko">이전 참조</text>
+    <text lang="en">Previous reference</text>
+  </entry>
+  <entry key="references.filter" source="Filter references">
+    <text lang="ko">참조 필터</text>
+    <text lang="en">Filter references</text>
+  </entry>
+  <entry source="Clear filter">
+    <text lang="ko">필터 지우기</text>
+    <text lang="en">Clear filter</text>
+  </entry>
+  <entry source="Refresh references">
+    <text lang="ko">참조 새로 고침</text>
+    <text lang="en">Refresh references</text>
+  </entry>
+  <entry source="Clone Results">
+    <text lang="ko">결과 복제</text>
+    <text lang="en">Clone Results</text>
+  </entry>
+  <entry source="Reference refresh failed">
+    <text lang="ko">참조 새로 고침 실패</text>
+    <text lang="en">Reference refresh failed</text>
+  </entry>
+  <entry source="Search location changed; find references again">
+    <text lang="ko">검색 위치가 변경되었습니다. 참조를 다시 검색해 주세요.</text>
+    <text lang="en">Search location changed; find references again</text>
+  </entry>
+  <entry source="CodeAssist References">
+    <text lang="ko">CodeAssist 참조</text>
+    <text lang="en">CodeAssist References</text>
+  </entry>
+  <entry source="CodeAssist Find: {0}">
+    <text lang="ko">CodeAssist 검색: {0}</text>
+    <text lang="en">CodeAssist Find: {0}</text>
+  </entry>
+  <entry source="Compiler references">
+    <text lang="ko">컴파일러 참조</text>
+    <text lang="en">Compiler references</text>
+  </entry>
+  <entry source="Reference candidates">
+    <text lang="ko">참조 후보</text>
+    <text lang="en">Reference candidates</text>
+  </entry>
+  <entry source="CodeAssist: '{0}' compiler references {1}">
+    <text lang="ko">CodeAssist: '{0}' 컴파일러 참조 {1}개</text>
+    <text lang="en">CodeAssist: '{0}' compiler references {1}</text>
+  </entry>
+  <entry source="CodeAssist: '{0}' reference candidates {1} (lexical/local-block scope)">
+    <text lang="ko">CodeAssist: '{0}' 참조 후보 {1}개 (어휘·지역 블록 기준)</text>
+    <text lang="en">CodeAssist: '{0}' reference candidates {1} (lexical/local-block scope)</text>
+  </entry>
+  <entry source="Search project changed; find references again">
+    <text lang="ko">검색 프로젝트가 변경되었습니다. 참조를 다시 검색해 주세요.</text>
+    <text lang="en">Search project changed; find references again</text>
+  </entry>
+  <entry source="With CodeAssist Snippets">
+    <text lang="ko">CodeAssist 스니펫 사용</text>
+    <text lang="en">With CodeAssist Snippets</text>
+  </entry>
+  <entry source="Convert dot to -&gt; if operator -&gt; is overloaded">
+    <text lang="ko">operator -&gt; 오버로드에도 점을 -&gt;로 변환</text>
+    <text lang="en">Convert dot to -&gt; if operator -&gt; is overloaded</text>
+  </entry>
+  <entry source="Double effective rate of key repeat">
+    <text lang="ko">키 반복 속도 두 배</text>
+    <text lang="en">Double effective rate of key repeat</text>
+  </entry>
+  <entry source="Enum members">
+    <text lang="ko">열거형 멤버</text>
+    <text lang="en">Enum members</text>
+  </entry>
+  <entry source="Namespaces">
+    <text lang="ko">네임스페이스</text>
+    <text lang="en">Namespaces</text>
+  </entry>
+  <entry source="Apply coloring to">
+    <text lang="ko">색상 적용 대상</text>
+    <text lang="en">Apply coloring to</text>
+  </entry>
+  <entry source="Text Editors">
+    <text lang="ko">텍스트 편집기</text>
+    <text lang="en">Text Editors</text>
+  </entry>
+  <entry source="Tooltips">
+    <text lang="ko">도구 설명</text>
+    <text lang="en">Tooltips</text>
+  </entry>
+  <entry source="Listboxes">
+    <text lang="ko">추천 목록</text>
+    <text lang="en">Listboxes</text>
+  </entry>
+  <entry source="Object Browser">
+    <text lang="ko">개체 브라우저</text>
+    <text lang="en">Object Browser</text>
+  </entry>
+  <entry source="Views">
+    <text lang="ko">보기 창</text>
+    <text lang="en">Views</text>
+  </entry>
+  <entry source="CodeAssist Navigation Bar">
+    <text lang="ko">CodeAssist 탐색 막대</text>
+    <text lang="en">CodeAssist Navigation Bar</text>
+  </entry>
+  <entry key="ui.85794effd6e8" source="Palette">
+    <text lang="ko">팔레트</text>
+    <text lang="en">Palette</text>
+  </entry>
+  <entry key="ui.2975104784a4" source="Web">
+    <text lang="ko">웹</text>
+    <text lang="en">Web</text>
+  </entry>
+  <entry key="ui.6725e7bbcd28" source="System">
+    <text lang="ko">시스템</text>
+    <text lang="en">System</text>
+  </entry>
+  <entry key="ui.81a9be1a8044" source="Color palette">
+    <text lang="ko">색상 팔레트</text>
+    <text lang="en">Color palette</text>
+  </entry>
+  <entry key="ui.a5f69a181be0" source="Custom color">
+    <text lang="ko">사용자 색상</text>
+    <text lang="en">Custom color</text>
+  </entry>
+  <entry key="ui.69493e6f1a69" source="Hex">
+    <text lang="ko">Hex</text>
+    <text lang="en">Hex</text>
+  </entry>
+  <entry key="ui.324b134f57c7" source="Preview">
+    <text lang="ko">미리보기</text>
+    <text lang="en">Preview</text>
+  </entry>
+  <entry key="ui.4d7056f0e9be" source="Hue">
+    <text lang="ko">색상</text>
+    <text lang="en">Hue</text>
+  </entry>
+  <entry key="ui.993f024b650e" source="Saturation">
+    <text lang="ko">채도</text>
+    <text lang="en">Saturation</text>
+  </entry>
+  <entry key="ui.ec811d30a89c" source="Brightness">
+    <text lang="ko">명도</text>
+    <text lang="en">Brightness</text>
+  </entry>
+  <entry key="ui.ba19e9c3d5f4" source="Red">
+    <text lang="ko">빨강</text>
+    <text lang="en">Red</text>
+  </entry>
+  <entry key="ui.d486dfbd5fb5" source="Green">
+    <text lang="ko">녹색</text>
+    <text lang="en">Green</text>
+  </entry>
+  <entry key="ui.ec7d56a01607" source="Blue">
+    <text lang="ko">파랑</text>
+    <text lang="en">Blue</text>
+  </entry>
+  <entry key="completion.filter.all" source="Show all suggestions"><text lang="ko">전체 추천 표시</text><text lang="en">Show all suggestions</text></entry>
+  <entry key="completion.filter.fields" source="Show fields"><text lang="ko">필드 표시</text><text lang="en">Show fields</text></entry>
+  <entry key="completion.filter.methods" source="Show methods"><text lang="ko">함수 표시</text><text lang="en">Show methods</text></entry>
+  <entry key="completion.local.first" source="List non-inherited entries first"><text lang="ko">상속되지 않은 멤버 먼저 표시</text><text lang="en">List non-inherited entries first</text></entry>
 </translations>

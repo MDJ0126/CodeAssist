@@ -22,8 +22,8 @@ namespace CodeAssist.Extension
         internal static void Register(IMenuCommandService commands, Action welcome, Action settings)
         {
             if (commands == null) throw new InvalidOperationException("Visual Studio menu command service is unavailable.");
-            commands.AddCommand(new MenuCommand((s, e) => welcome(), new CommandID(GoToSymbolCommand.CommandSet, 0x140)));
-            commands.AddCommand(new MenuCommand((s, e) => settings(), new CommandID(GoToSymbolCommand.CommandSet, 0x141)));
+            commands.AddCommand(new OleMenuCommand((s, e) => welcome(), new CommandID(GoToSymbolCommand.CommandSet, 0x140)));
+            commands.AddCommand(new OleMenuCommand((s, e) => settings(), new CommandID(GoToSymbolCommand.CommandSet, 0x141)));
         }
     }
 
@@ -86,7 +86,14 @@ namespace CodeAssist.Extension
             {
                 try
                 {
+                    ThreadHelper.ThrowIfNotOnUIThread();
                     if (package == null || package.DisposalToken.IsCancellationRequested) return;
+            var keyboardDte=Package.GetGlobalService(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
+            if(keyboardDte!=null && Preferences.KeyboardCompatibilityProfile!=keyboardDte.RegistryRoot && KeyboardCompatibility.Apply(keyboardDte)) {
+                Preferences.KeyboardCompatibilityProfile=keyboardDte.RegistryRoot;Save();
+            }
+
+                    ToolbarCommands.RefreshLabels();
                     if (welcomeRequested && !Preferences.ShouldShowWelcome) OpenWelcome();
                     foreach (var action in Preferences.GetStartupActions())
                     {
@@ -155,8 +162,14 @@ namespace CodeAssist.Extension
         internal static void OpenHelp(string topic)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            var path = Path.Combine(Path.GetDirectoryName(typeof(StartupUi).Assembly.Location), "Resources", "CodeAssistHelp.html");
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(new Uri(path).AbsoluteUri + "#" + topic) { UseShellExecute=true });
+            if(package==null)throw new InvalidOperationException("CodeAssist document host is not ready.");
+            package.JoinableTaskFactory.RunAsync(async()=>{
+                var pane=await package.ShowToolWindowAsync(typeof(HelpToolWindow),0,true,package.DisposalToken);
+                await package.JoinableTaskFactory.SwitchToMainThreadAsync();
+                if(!(pane?.Content is HelpView view))throw new InvalidOperationException("CodeAssist help view is unavailable.");
+                pane.Caption="CodeAssist — "+UiText.Get("Documentation",Preferences.UiLanguage);
+                view.Navigate(topic);WelcomeDocumentWindow.RecordEvent("HelpOpened topic="+topic);
+            }).FileAndForget("CodeAssist/Help");
         }
 
         internal static void Execute(int id)
@@ -218,12 +231,12 @@ namespace CodeAssist.Extension
             if (factory == null) { RetryBar(); return; }
             var dte = Package.GetGlobalService(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
             var ask = Preferences.InspectionMode == InspectionMode.Ask && dte?.Solution?.IsOpen == true;
-            var message = ask ? "CodeAssist: '" + Path.GetFileNameWithoutExtension(dte.Solution.FullName) + "' 프로젝트 전체 기본 코드 검사를 사용하시겠습니까?"
-                : "CodeAssist: 코드 탐색과 편집을 시작하세요.";
+            var message = ask ? string.Format(UiText.Get("Inspection.Prompt",Preferences.UiLanguage),Path.GetFileNameWithoutExtension(dte.Solution.FullName))
+                : UiText.Get("Inspection.Start",Preferences.UiLanguage);
             var actions = ask ? new IVsInfoBarActionItem[] {
-                new InfoBarHyperlink("Enable", "enable"), new InfoBarHyperlink("Disable", "disable"),
-                new InfoBarHyperlink("Use per-file engine", "perfile"), new InfoBarHyperlink("Welcome", "welcome"), new InfoBarHyperlink("Options", "settings") }
-                : new IVsInfoBarActionItem[] { new InfoBarHyperlink("Welcome", "welcome"), new InfoBarHyperlink("Options", "settings") };
+                new InfoBarHyperlink(UiText.Get("Enable",Preferences.UiLanguage), "enable"), new InfoBarHyperlink(UiText.Get("Disable",Preferences.UiLanguage), "disable"),
+                new InfoBarHyperlink(UiText.Get("Use per-file engine",Preferences.UiLanguage), "perfile"), new InfoBarHyperlink(UiText.Get("Welcome",Preferences.UiLanguage), "welcome"), new InfoBarHyperlink(UiText.Get("Options",Preferences.UiLanguage), "settings") }
+                : new IVsInfoBarActionItem[] { new InfoBarHyperlink(UiText.Get("Welcome",Preferences.UiLanguage), "welcome"), new InfoBarHyperlink(UiText.Get("Options",Preferences.UiLanguage), "settings") };
             bar = factory.CreateInfoBar(new InfoBarModel(message, actions, BrandIcon, true));
             barEvents = new BarEvents(); bar.Advise(barEvents, out cookie); host.AddInfoBar(bar);
             barRetry?.Stop();

@@ -16,8 +16,9 @@ namespace CodeAssist.Extension
     internal sealed class ColoredCompletion : Completion4
     {
         internal SymbolKind Kind { get; }
-        internal ColoredCompletion(SymbolKind kind,string display,string insert,string description,ImageMoniker icon,string automation,IEnumerable<CompletionIcon2> attributes,string suffix)
-            : base(display,insert,description,icon,automation,attributes,suffix) { Kind=kind; }
+        internal string OwnerType { get; }
+        internal ColoredCompletion(SymbolKind kind,string display,string insert,string description,ImageMoniker icon,string automation,IEnumerable<CompletionIcon2> attributes,string suffix,string ownerType=null)
+            : base(display,insert,description,icon,automation,attributes,suffix) { Kind=kind;OwnerType=ownerType; }
     }
     [Export(typeof(IUIElementProvider<Completion,ICompletionSession>))]
     [Name("CodeAssist Completion Colors")]
@@ -28,17 +29,9 @@ namespace CodeAssist.Extension
         private static readonly HashSet<UIElementType> observed = new HashSet<UIElementType>();
         public UIElement GetUIElement(Completion item,ICompletionSession session,UIElementType elementType)
         {
-            if (!(item is ColoredCompletion colored) || (!StartupUi.Preferences.ColoringEnabled || StartupUi.Preferences.CompletionUseVisualStudioColors)) return null;
+            if (!(item is ColoredCompletion colored) || (!StartupUi.Preferences.ColoringEnabled || !StartupUi.Preferences.ColorListboxes || StartupUi.Preferences.CompletionUseVisualStudioColors)) return null;
             if(observed.Add(elementType)) WelcomeDocumentWindow.RecordEvent("CompletionColorProvider " + elementType);
-            var preferences=StartupUi.Preferences;
-            var color=colored.Kind==SymbolKind.Function?preferences.FunctionColor:
-                colored.Kind==SymbolKind.Type?preferences.TypeColor:
-                colored.Kind==SymbolKind.Variable?preferences.VariableColor:
-                colored.Kind==SymbolKind.Macro||colored.Kind==SymbolKind.Specifier?preferences.MacroColor:null;
-            if(color==null)return null;
-            Brush brush;
-            try { brush=(Brush)new BrushConverter().ConvertFromString(color); }
-            catch(System.FormatException) { return null; }
+            var brush=RecommendedColors.SymbolBrush(colored.Kind);if(brush==null)return null;
             var text=new TextBlock { Text=elementType==UIElementType.Tooltip?item.Description:item.DisplayText, Foreground=brush, TextWrapping=TextWrapping.NoWrap };
             System.Windows.Automation.AutomationProperties.SetName(text,text.Text);
             return text;
@@ -93,13 +86,9 @@ namespace CodeAssist.Extension
         }
         private Brush Color(SymbolKind kind)
         {
-            var p=StartupUi.Preferences;
-            var value=kind==SymbolKind.Function?p.FunctionColor:kind==SymbolKind.Type?p.TypeColor:
-                kind==SymbolKind.Variable?p.VariableColor:kind==SymbolKind.Macro||kind==SymbolKind.Specifier?p.MacroColor:null;
-            if(value==null)return null;
-            if(!brushes.TryGetValue(value,out var brush))
-            {try{brush=(Brush)new BrushConverter().ConvertFromString(value);brush.Freeze();brushes[value]=brush;}catch(FormatException){return null;}}
-            return brush;
+            var resolved=RecommendedColors.SymbolBrush(kind);if(resolved==null)return null;
+            var key=resolved.ToString();if(brushes.TryGetValue(key,out var cached))return cached;
+            brushes[key]=resolved;return resolved;
         }
         private void Paint()
         {
@@ -117,7 +106,7 @@ namespace CodeAssist.Extension
                     var node=pending.Pop();
                     if(node is TextBlock text&&colors.TryGetValue(text.Text,out var brush)&&brush!=null)
                     {
-                        var enabled=StartupUi.Preferences.ColoringEnabled && !StartupUi.Preferences.CompletionUseVisualStudioColors;
+                        var enabled=StartupUi.Preferences.ColoringEnabled && StartupUi.Preferences.ColorListboxes && !StartupUi.Preferences.CompletionUseVisualStudioColors;
                         foregrounds.Apply(text,TextBlock.ForegroundProperty,brush,enabled);
                         foreach(var inline in text.Inlines)foregrounds.Apply(inline,TextElement.ForegroundProperty,brush,enabled);
                     }

@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.PlatformUI;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -33,17 +34,21 @@ namespace CodeAssist.Extension
     [ProvideEditorFactory(typeof(WelcomeEditorFactory), 110)]
     [ProvideEditorExtension(typeof(WelcomeEditorFactory), ".codeassist", 32)]
     [ProvideEditorLogicalView(typeof(WelcomeEditorFactory), "00000000-0000-0000-0000-000000000000")]
-    [InstalledProductRegistration("#110", "#112", "0.0.66")]
+    [InstalledProductRegistration("#110", "#112", ExtensionPackage.ProductVersion)]
+    [ProvideToolWindow(typeof(HelpToolWindow))]
+    [ProvideToolWindow(typeof(UtilityToolWindow))]
     [ProvideToolWindow(typeof(OutlineToolWindow))]
     [ProvideToolWindow(typeof(WorkspaceToolWindow))]
-    [ProvideToolWindow(typeof(ReferenceResultsToolWindow), MultiInstances = true)]
+    [ProvideToolWindow(typeof(ReferenceResultsToolWindow), MultiInstances = true, Style = VsDockStyle.Tabbed, Window = "{34E76E81-EE4A-11D0-AE2E-00A0C90FFFC3}", Orientation = ToolWindowOrientation.Bottom)]
     [Guid(ExtensionPackage.PackageGuidString)]
     public sealed class ExtensionPackage : AsyncPackage
     {
+        internal const string ProductVersion = "0.0.95";
         internal static ExtensionPackage Current { get; private set; }
         private IntelliSenseSquiggleController squiggleController;
         private ProjectIndexService indexService;
         private IndexingStatusReporter indexingStatusReporter;
+    private ObjectBrowserColors objectBrowserColors;
 
          /// <summary>
         /// CodeAssist ExtensionPackage GUID string.
@@ -71,9 +76,13 @@ namespace CodeAssist.Extension
         var componentModel = await GetServiceAsync(typeof(SComponentModel)) as IComponentModel;
         indexService = componentModel?.GetService<ProjectIndexService>();
         StartupUi.AttachInspection(indexService);
+        themeComponents=componentModel;
         RecommendedColors.Apply(componentModel);
+        VSColorTheme.ThemeChanged+=OnThemeChanged;
         StartupUi.SettingsApplied += () => { ThreadHelper.ThrowIfNotOnUIThread(); RecommendedColors.Apply(componentModel); };
         var semanticDte = await GetServiceAsync(typeof(EnvDTE.DTE)) as EnvDTE80.DTE2;
+        ReferenceResultKeys.Attach(semanticDte);
+        if(semanticDte!=null)objectBrowserColors=new ObjectBrowserColors(semanticDte,indexService);
         if (semanticDte != null) CompilerSemanticService.Instance.EditorExecutable = semanticDte.FullName;
         try
         {
@@ -94,12 +103,27 @@ namespace CodeAssist.Extension
         await StatusCommand.InitializeAsync(this, squiggleController, indexService);
         await NavigationCommands.InitializeAsync(this, indexService, squiggleController);
           await ToolbarCommands.InitializeAsync(this);
+        await EditorFeatureCommands.InitializeAsync(this,indexService);
+        await RefactoringCommands.InitializeAsync(this);
+        await UtilityCommands.InitializeAsync(this);
+        await PluginCommands.InitializeAsync(this);
+        await SemanticRefactoringCommands.InitializeAsync(this);
+        await EditorIntegrationChecks.InitializeAsync(this);
         await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+        await ToolbarCommands.LocalizeMenusAsync(this);
         StartupUi.CompleteInitialization();
     }
 
+    private IComponentModel themeComponents;
+    private void OnThemeChanged(ThemeChangedEventArgs args)
+    {
+        JoinableTaskFactory.RunAsync(async()=>{await JoinableTaskFactory.SwitchToMainThreadAsync();
+            System.Windows.Application.Current?.Dispatcher.BeginInvoke(new System.Action(()=>{if(themeComponents!=null)RecommendedColors.Apply(themeComponents);}),System.Windows.Threading.DispatcherPriority.ContextIdle);
+        }).FileAndForget("CodeAssist/ThemeColors");
+    }
     protected override void Dispose(bool disposing)
     {
+        if(disposing){VSColorTheme.ThemeChanged-=OnThemeChanged;themeComponents=null;}
         if (disposing && squiggleController != null)
         {
             ThreadHelper.JoinableTaskFactory.Run(async delegate
@@ -109,7 +133,7 @@ namespace CodeAssist.Extension
             });
         }
 
-        if (disposing && Current != null) ThreadHelper.JoinableTaskFactory.Run(async () => { await JoinableTaskFactory.SwitchToMainThreadAsync(); ToolbarCommands.Shutdown(); StartupUi.Shutdown(); });
+        if (disposing && Current != null) ThreadHelper.JoinableTaskFactory.Run(async () => { await JoinableTaskFactory.SwitchToMainThreadAsync(); objectBrowserColors?.Dispose(); ReferenceResultKeys.Detach(); ToolbarCommands.Shutdown(); StartupUi.Shutdown(); });
         if (disposing) indexingStatusReporter?.Dispose();
         if (disposing) indexService?.Dispose();
         if (disposing) CompilerSemanticService.Instance.Dispose();
@@ -121,4 +145,3 @@ namespace CodeAssist.Extension
     #endregion
 }
 }
-

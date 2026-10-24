@@ -6,76 +6,129 @@
 
   <Commands package="guidCodeAssistPackage">
     <Menus>
+      <Menu guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenu" priority="0x0100" type="Menu"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenuGroup" /><Strings><ButtonText>CodeAssist</ButtonText></Strings></Menu>
+      <Menu guid="guidCodeAssistCommandSet" id="CodeAssistContextMenu" priority="0x0700" type="Menu"><Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" /><Strings><ButtonText>CodeAssist</ButtonText></Strings></Menu>
       <Menu guid="guidCodeAssistCommandSet" id="CodeAssistToolbar" priority="0x0100" type="Toolbar">
         <CommandFlag>DefaultDocked</CommandFlag><Strings><ButtonText>CodeAssist</ButtonText><CommandName>CodeAssist</CommandName></Strings>
       </Menu>
     </Menus>
     <Groups>
+      <Group guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenuGroup" priority="0x0600"><Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" /></Group>
+      <Group guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextMenu" /></Group>
       <Group guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbar" /></Group>
       <Group guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+        <Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolsMenu" />
       </Group>
     </Groups>
 
     <Buttons>
-      <Button guid="guidCodeAssistCommandSet" id="WelcomeCommandId" priority="0x0100" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Icon guid="guidCodeAssistImages" id="BananaIcon" /><Strings><ButtonText>CodeAssist: Welcome</ButtonText><ToolTipText>CodeAssist Welcome 문서 열기</ToolTipText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SettingsCommandId" priority="0x0101" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Icon guid="guidCodeAssistImages" id="BananaIcon" /><Strings><ButtonText>CodeAssist: Settings</ButtonText><ToolTipText>CodeAssist 옵션 열기</ToolTipText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SortLinesCommandId" priority="0x013b" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Sort Selected Lines</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="ReparseCommandId" priority="0x013a" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reparse Current File</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="ReferencesResultsCommandId" priority="0x0139" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reference Results</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="CloneReferencesCommandId" priority="0x013a" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Clone Reference Results</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="FindSelectedCommandId" priority="0x0138" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Selected</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="OutlineCommandId" priority="0x0136" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Outline</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="WorkspaceCommandId" priority="0x0137" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Workspace Symbols</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SnippetCommandId" priority="0x0135" type="Button"><Icon guid="ImageCatalogGuid" id="Snippet"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Insert Snippet</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="ClipboardCommandId" priority="0x0133" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Multiple Clipboards</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="HashtagsCommandId" priority="0x012d" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Hashtags</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="IncludesCommandId" priority="0x012e" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Include Files</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SelectExtendCommandId" priority="0x012f" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Extend Selection</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SelectShrinkCommandId" priority="0x0130" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Shrink Selection</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SelectBlockExtendCommandId" priority="0x0131" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Extend Block Selection</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SelectBlockShrinkCommandId" priority="0x0132" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Shrink Block Selection</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="ResetZoomCommandId" priority="0x012c" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reset Editor Zoom</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="OpenFileCommandId" priority="0x0120" type="Button"><Icon guid="ImageCatalogGuid" id="OpenFileDialog"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open File</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" priority="0x0121" type="Button"><Icon guid="ImageCatalogGuid" id="FindSymbol"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Symbol</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="CorrespondingFileCommandId" priority="0x0122" type="Button"><Icon guid="ImageCatalogGuid" id="SwitchSourceOrTarget"/><CommandFlag>IconIsMoniker</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open Corresponding File</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="ListMethodsCommandId" priority="0x0123" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: List Methods</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="RelatedSymbolsCommandId" priority="0x0124" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Related Symbol Candidates</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="NavigateBackCommandId" priority="0x0125" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Navigate Back</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="NavigateForwardCommandId" priority="0x0126" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Navigate Forward</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="RenameCommandId" priority="0x0127" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Rename</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="QuickActionsCommandId" priority="0x0128" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Quick Actions (Visual Studio)</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="CreateDeclarationCommandId" priority="0x0129" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create From Usage (Visual Studio Quick Actions)</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="NextScopeCommandId" priority="0x012a" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Next Scope</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="PreviousScopeCommandId" priority="0x012b" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Previous Scope</ButtonText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="GoToSymbolCommandId" priority="0x0100" type="Button">
+<Button guid="guidCodeAssistCommandSet" id="ChangeSignatureId" priority="0x0282" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Change Signature (Reorder Parameters)</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="MoveAllImplementationsId" priority="0x0283" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Move Method Implementations to Source</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="PointerInstanceId" priority="0x0280" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Convert Local Pointer / Instance</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="ExtractMethodId" priority="0x0281" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Extract Method</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="EditorQuickFixesId" priority="0x0270" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Quick Fixes at Caret</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="PaneQuickFixesId" priority="0x0271" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Quick Fixes Window</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="PluginActionsId" priority="0x0260" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Plugin Actions</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="PdbExplorerId" priority="0x0240" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: PDB Explorer</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="AddressResolverId" priority="0x0241" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Resolve Address (RVA)</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="MemoryViewerId" priority="0x0242" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Memory View</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="PreviewFileId" priority="0x0243" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Preview File</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="PrintColorId" priority="0x0244" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Print in Color</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="ParameterInfoId" priority="0x0245" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Parameter Info</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="SimplifyInstanceId" priority="0x0220" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Simplify Instance Declaration</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="EncapsulateFieldId" priority="0x0221" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Encapsulate Field</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="AddMemberId" priority="0x0222" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add Member</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="SimilarMemberId" priority="0x0223" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add Similar Member</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="UsingNamespaceId" priority="0x0224" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add Using Directive</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="ToggleBracesId" priority="0x0225" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add / Remove Braces</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="GenerateDeclarationId" priority="0x0226" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create Declaration</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="GenerateImplementationId" priority="0x0227" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create Implementation</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="GenerateImplementationsId" priority="0x0228" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create Method Implementations</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="OverrideMethodsId" priority="0x0229" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Implement Virtual Methods</ButtonText></Strings></Button>
+<Button guid="guidCodeAssistCommandSet" id="MissingCasesId" priority="0x022a" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add Missing Case Statements</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SourceLinkCommandId" priority="0x020a" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open Source Link</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="MemberCommandId" priority="0x0200" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Go To Member</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="CreateFileCommandId" priority="0x0201" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="RenameFileCommandId" priority="0x0202" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Rename File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="MoveSelectionCommandId" priority="0x0203" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Move Selection to New File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SurroundSnippetCommandId" priority="0x0204" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Surround With Snippet</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="CreateSnippetCommandId" priority="0x0205" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create Snippet from Selection</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="OpenHyperlinkCommandId" priority="0x0206" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open Hyperlink</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="DocumentMethodCommandId" priority="0x0207" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Document Method</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="AddIncludeCommandId" priority="0x0208" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add Include</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ForwardDeclarationCommandId" priority="0x0209" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Add Forward Declaration</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="EditorChecksCommandId" priority="0x01ff" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><CommandFlag>DefaultInvisible</CommandFlag><CommandFlag>DynamicVisibility</CommandFlag><Strings><ButtonText>CodeAssist: Verify Editor Integration</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="WelcomeCommandId" priority="0x0100" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="WelcomeIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Welcome</ButtonText><ToolTipText>CodeAssist Welcome 문서 열기</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SettingsCommandId" priority="0x0101" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="BananaIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Settings</ButtonText><ToolTipText>CodeAssist 옵션 열기</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SortLinesCommandId" priority="0x013b" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Sort Selected Lines</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ReparseCommandId" priority="0x013a" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reparse Current File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ReferencesResultsCommandId" priority="0x0139" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reference Results</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="CloneReferencesCommandId" priority="0x013a" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Clone Reference Results</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="FindSelectedCommandId" priority="0x0138" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Selected</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="OutlineCommandId" priority="0x0136" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Outline</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="WorkspaceCommandId" priority="0x0137" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Workspace Symbols</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SnippetCommandId" priority="0x0135" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="SnippetIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Insert Snippet</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ClipboardCommandId" priority="0x0133" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Multiple Clipboards</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="HashtagsCommandId" priority="0x012d" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Hashtags</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="IncludesCommandId" priority="0x012e" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Include Files</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SelectExtendCommandId" priority="0x012f" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Extend Selection</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SelectShrinkCommandId" priority="0x0130" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Shrink Selection</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SelectBlockExtendCommandId" priority="0x0131" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Extend Block Selection</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SelectBlockShrinkCommandId" priority="0x0132" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Shrink Block Selection</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ResetZoomCommandId" priority="0x012c" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Reset Editor Zoom</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="OpenFileCommandId" priority="0x0120" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="FileIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" priority="0x0121" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="SymbolIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Find Symbol</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="CorrespondingFileCommandId" priority="0x0122" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="CorrespondingIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Open Corresponding File</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ListMethodsCommandId" priority="0x0123" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: List Methods</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="RelatedSymbolsCommandId" priority="0x0124" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Related Symbol Candidates</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="NavigateBackCommandId" priority="0x0125" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Navigate Back</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="NavigateForwardCommandId" priority="0x0126" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Navigate Forward</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="RenameCommandId" priority="0x0127" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Rename</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="QuickActionsCommandId" priority="0x0128" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Quick Actions (Visual Studio)</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="CreateDeclarationCommandId" priority="0x0129" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Create From Usage (Visual Studio Quick Actions)</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="NextScopeCommandId" priority="0x012a" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Next Scope</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="PreviousScopeCommandId" priority="0x012b" type="Button"><CommandFlag>TextChanges</CommandFlag><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" /><Strings><ButtonText>CodeAssist: Previous Scope</ButtonText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="GoToSymbolCommandId" priority="0x0100" type="Button"><CommandFlag>TextChanges</CommandFlag>
         <Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" />
         <Strings>
           <ButtonText>CodeAssist: Go to Symbol</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidCodeAssistCommandSet" id="StatusCommandId" priority="0x0110" type="Button">
+      <Button guid="guidCodeAssistCommandSet" id="StatusCommandId" priority="0x0110" type="Button"><CommandFlag>TextChanges</CommandFlag>
         <Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" />
         <Strings>
           <ButtonText>CodeAssist: Status</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" priority="0x0108" type="Button"><Icon guid="ImageCatalogGuid" id="Search"/><CommandFlag>IconIsMoniker</CommandFlag>
+      <Button guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" priority="0x0108" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="ReferencesIcon"/>
         <Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup" />
         <Strings>
           <ButtonText>CodeAssist: Find References</ButtonText>
         </Strings>
       </Button>
-      <Button guid="guidCodeAssistCommandSet" id="PreviousContextCommandId" priority="0x0150" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="FindPrevious"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Find Previous by Context</ButtonText><ToolTipText>Find Previous by Context</ToolTipText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="NextContextCommandId" priority="0x0151" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="FindNext"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Find Next by Context</ButtonText><ToolTipText>Find Next by Context</ToolTipText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SpellCheckCommandId" priority="0x0152" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="SpellCheck"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Spell Check (Visual Studio)</ButtonText><ToolTipText>Spell Check (Visual Studio)</ToolTipText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="SkipBreakpointsCommandId" priority="0x0153" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="BreakpointDisabled"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Skip All Breakpoints</ButtonText><ToolTipText>Skip All Breakpoints</ToolTipText></Strings></Button>
-      <Button guid="guidCodeAssistCommandSet" id="ThreadBreakpointsCommandId" priority="0x0154" type="Button"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Icon guid="ImageCatalogGuid" id="Thread"/><CommandFlag>IconIsMoniker</CommandFlag><Strings><ButtonText>CodeAssist: Bind Breakpoints to Current Thread</ButtonText><ToolTipText>Bind Breakpoints to Current Thread</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="PreviousContextCommandId" priority="0x0150" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="PreviousIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Find Previous by Context</ButtonText><ToolTipText>Find Previous by Context</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="NextContextCommandId" priority="0x0151" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="NextIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Find Next by Context</ButtonText><ToolTipText>Find Next by Context</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SpellCheckCommandId" priority="0x0152" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="SpellIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Spell Check (Visual Studio)</ButtonText><ToolTipText>Spell Check (Visual Studio)</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="SkipBreakpointsCommandId" priority="0x0153" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="SkipIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Skip All Breakpoints</ButtonText><ToolTipText>Skip All Breakpoints</ToolTipText></Strings></Button>
+      <Button guid="guidCodeAssistCommandSet" id="ThreadBreakpointsCommandId" priority="0x0154" type="Button"><CommandFlag>TextChanges</CommandFlag><Icon guid="guidCodeAssistImages" id="ThreadIcon"/><Parent guid="guidCodeAssistCommandSet" id="CodeAssistCommandGroup"/><Strings><ButtonText>CodeAssist: Bind Breakpoints to Current Thread</ButtonText><ToolTipText>Bind Breakpoints to Current Thread</ToolTipText></Strings></Button>
     </Buttons>
-    <Bitmaps><Bitmap guid="guidCodeAssistImages" href="Resources/CodeAssist16.png" usedList="BananaIcon" /></Bitmaps>
+    <Bitmaps><Bitmap guid="guidCodeAssistImages" href="Resources/CodeAssistToolbar.png" usedList="BananaIcon,FileIcon,SymbolIcon,ReferencesIcon,PreviousIcon,NextIcon,SnippetIcon,SpellIcon,CorrespondingIcon,SkipIcon,ThreadIcon,WelcomeIcon" /></Bitmaps>
   </Commands>
 
   <CommandPlacements>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="EditorQuickFixesId" priority="0x0180"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup"/></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="GoToSymbolCommandId" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="MemberCommandId" priority="0x0101"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" priority="0x0102"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="QuickActionsCommandId" priority="0x0103"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="RenameCommandId" priority="0x0104"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="SurroundSnippetCommandId" priority="0x0105"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="CreateSnippetCommandId" priority="0x0106"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="DocumentMethodCommandId" priority="0x0107"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="AddIncludeCommandId" priority="0x0108"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="SourceLinkCommandId" priority="0x0109"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="OpenHyperlinkCommandId" priority="0x010a"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
+<CommandPlacement guid="guidCodeAssistCommandSet" id="SettingsCommandId" priority="0x010b"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistContextGroup" /></CommandPlacement>
     <CommandPlacement guid="guidCodeAssistCommandSet" id="SettingsCommandId" priority="0x0100"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
     <CommandPlacement guid="guidCodeAssistCommandSet" id="OpenFileCommandId" priority="0x0101"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
     <CommandPlacement guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" priority="0x0102"><Parent guid="guidCodeAssistCommandSet" id="CodeAssistToolbarGroup"/></CommandPlacement>
@@ -114,10 +167,35 @@
     <KeyBinding guid="guidCodeAssistCommandSet" id="CreateDeclarationCommandId" editor="guidVSStd97" key1="C" mod1="ALT SHIFT" />
     <KeyBinding guid="guidCodeAssistCommandSet" id="NextScopeCommandId" editor="guidVSStd97" key1="VK_DOWN" mod1="ALT" />
     <KeyBinding guid="guidCodeAssistCommandSet" id="PreviousScopeCommandId" editor="guidVSStd97" key1="VK_UP" mod1="ALT" />
+    <!-- Editor-scope bindings override competing built-in editor shortcuts. -->
+    <KeyBinding guid="guidCodeAssistCommandSet" id="FindSelectedCommandId" editor="GUID_TextEditorFactory" key1="K" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="ClipboardCommandId" editor="GUID_TextEditorFactory" key1="V" mod1="CONTROL SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="HashtagsCommandId" editor="GUID_TextEditorFactory" key1="H" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="SelectExtendCommandId" editor="GUID_TextEditorFactory" key1="VK_OEM_6" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="SelectShrinkCommandId" editor="GUID_TextEditorFactory" key1="VK_OEM_4" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="SelectBlockExtendCommandId" editor="GUID_TextEditorFactory" key1="VK_OEM_6" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="SelectBlockShrinkCommandId" editor="GUID_TextEditorFactory" key1="VK_OEM_4" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="ResetZoomCommandId" editor="GUID_TextEditorFactory" key1="0" mod1="CONTROL" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="GoToSymbolCommandId" editor="GUID_TextEditorFactory" key1="VK_F12" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="GoToSymbolCommandId" editor="GUID_TextEditorFactory" key1="G" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" editor="GUID_TextEditorFactory" key1="VK_F12" mod1="SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="FindReferencesCommandId" editor="GUID_TextEditorFactory" key1="F" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="OpenFileCommandId" editor="GUID_TextEditorFactory" key1="O" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="FindSymbolCommandId" editor="GUID_TextEditorFactory" key1="S" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="CorrespondingFileCommandId" editor="GUID_TextEditorFactory" key1="O" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="ListMethodsCommandId" editor="GUID_TextEditorFactory" key1="M" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="RelatedSymbolsCommandId" editor="GUID_TextEditorFactory" key1="G" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="NavigateBackCommandId" editor="GUID_TextEditorFactory" key1="VK_LEFT" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="NavigateForwardCommandId" editor="GUID_TextEditorFactory" key1="VK_RIGHT" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="RenameCommandId" editor="GUID_TextEditorFactory" key1="R" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="QuickActionsCommandId" editor="GUID_TextEditorFactory" key1="Q" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="CreateDeclarationCommandId" editor="GUID_TextEditorFactory" key1="C" mod1="ALT SHIFT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="NextScopeCommandId" editor="GUID_TextEditorFactory" key1="VK_DOWN" mod1="ALT" />
+    <KeyBinding guid="guidCodeAssistCommandSet" id="PreviousScopeCommandId" editor="GUID_TextEditorFactory" key1="VK_UP" mod1="ALT" />
   </KeyBindings>
 
   <Symbols>
-    <GuidSymbol name="guidCodeAssistImages" value="{11a04c98-43f9-4d52-8da2-aa957e0e8ab5}"><IDSymbol name="BananaIcon" value="1" /></GuidSymbol>
+    <GuidSymbol name="guidCodeAssistImages" value="{11a04c98-43f9-4d52-8da2-aa957e0e8ab5}"><IDSymbol name="BananaIcon" value="1"/><IDSymbol name="FileIcon" value="2"/><IDSymbol name="SymbolIcon" value="3"/><IDSymbol name="ReferencesIcon" value="4"/><IDSymbol name="PreviousIcon" value="5"/><IDSymbol name="NextIcon" value="6"/><IDSymbol name="SnippetIcon" value="7"/><IDSymbol name="SpellIcon" value="8"/><IDSymbol name="CorrespondingIcon" value="9"/><IDSymbol name="SkipIcon" value="10"/><IDSymbol name="ThreadIcon" value="11"/><IDSymbol name="WelcomeIcon" value="12"/></GuidSymbol>
     <GuidSymbol name="guidCodeAssistPackage" value="{28053c53-4f17-4fe3-9f58-b4f3cf573bad}" />
     <GuidSymbol name="guidCodeAssistCommandSet" value="{f9d77864-fac8-457e-bd4f-552715151b6c}">
       <IDSymbol name="PreviousContextCommandId" value="0x0150" />
@@ -125,10 +203,47 @@
       <IDSymbol name="SpellCheckCommandId" value="0x0152" />
       <IDSymbol name="SkipBreakpointsCommandId" value="0x0153" />
       <IDSymbol name="ThreadBreakpointsCommandId" value="0x0154" />
+      <IDSymbol name="CodeAssistContextMenu" value="0x1040" />
+      <IDSymbol name="CodeAssistContextGroup" value="0x1041" />
+      <IDSymbol name="SourceLinkCommandId" value="0x017b" />
+<IDSymbol name="SimplifyInstanceId" value="0x0180" />
+<IDSymbol name="EncapsulateFieldId" value="0x0181" />
+<IDSymbol name="AddMemberId" value="0x0182" />
+<IDSymbol name="SimilarMemberId" value="0x0183" />
+<IDSymbol name="UsingNamespaceId" value="0x0184" />
+<IDSymbol name="ToggleBracesId" value="0x0185" />
+<IDSymbol name="GenerateDeclarationId" value="0x0186" />
+<IDSymbol name="GenerateImplementationId" value="0x0187" />
+<IDSymbol name="GenerateImplementationsId" value="0x0188" />
+<IDSymbol name="OverrideMethodsId" value="0x0189" />
+<IDSymbol name="MissingCasesId" value="0x018a" />
+<IDSymbol name="PdbExplorerId" value="0x0190" />
+<IDSymbol name="AddressResolverId" value="0x0191" />
+<IDSymbol name="MemoryViewerId" value="0x0192" />
+<IDSymbol name="PreviewFileId" value="0x0193" />
+<IDSymbol name="PrintColorId" value="0x0194" />
+<IDSymbol name="ParameterInfoId" value="0x0195" />
+<IDSymbol name="PluginActionsId" value="0x01b0"/>
+<IDSymbol name="EditorQuickFixesId" value="0x0196"/><IDSymbol name="PaneQuickFixesId" value="0x0197"/>
+<IDSymbol name="PointerInstanceId" value="0x018b"/><IDSymbol name="ExtractMethodId" value="0x018c"/>
+<IDSymbol name="ChangeSignatureId" value="0x01c0"/><IDSymbol name="MoveAllImplementationsId" value="0x01c1"/>
+      <IDSymbol name="MemberCommandId" value="0x0171" />
+      <IDSymbol name="CreateFileCommandId" value="0x0172" />
+      <IDSymbol name="RenameFileCommandId" value="0x0173" />
+      <IDSymbol name="MoveSelectionCommandId" value="0x0174" />
+      <IDSymbol name="SurroundSnippetCommandId" value="0x0175" />
+      <IDSymbol name="CreateSnippetCommandId" value="0x0176" />
+      <IDSymbol name="OpenHyperlinkCommandId" value="0x0177" />
+      <IDSymbol name="DocumentMethodCommandId" value="0x0178" />
+      <IDSymbol name="AddIncludeCommandId" value="0x0179" />
+      <IDSymbol name="ForwardDeclarationCommandId" value="0x017a" />
+      <IDSymbol name="EditorChecksCommandId" value="0x0160" />
       <IDSymbol name="WelcomeCommandId" value="0x0140" />
       <IDSymbol name="SettingsCommandId" value="0x0141" />
       <IDSymbol name="CodeAssistToolbar" value="0x1030" />
       <IDSymbol name="CodeAssistToolbarGroup" value="0x1031" />
+      <IDSymbol name="CodeAssistToolsMenu" value="0x1050" />
+      <IDSymbol name="CodeAssistToolsMenuGroup" value="0x1051" />
       <IDSymbol name="CodeAssistCommandGroup" value="0x1020" />
       <IDSymbol name="GoToSymbolCommandId" value="0x0100" />
       <IDSymbol name="StatusCommandId" value="0x0101" />

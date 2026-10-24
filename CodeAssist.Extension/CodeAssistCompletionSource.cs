@@ -59,6 +59,7 @@ namespace CodeAssist.Extension
         private readonly ITextBuffer buffer;
         private readonly ProjectIndexService indexService;
         private bool disposed;
+        private int tracedQueries;
         private readonly string filePath;
         private ITextSnapshot compilerSnapshot;
         private int compilerPosition = -1;
@@ -77,8 +78,9 @@ namespace CodeAssist.Extension
 
         public void AugmentCompletionSession(ICompletionSession session, IList<CompletionSet> completionSets)
         {
+            if (tracedQueries++ < 12) WelcomeDocumentWindow.RecordEvent("CompletionQuery file="+filePath+" count="+indexService.Index.Count+" root="+indexService.ProjectRoot);
             if (!StartupUi.Preferences.CompletionEnabled) return;
-            if (disposed || indexService.Index.Count == 0) return;
+            if (disposed) return;
             var point = session.GetTriggerPoint(buffer.CurrentSnapshot);
             if (!point.HasValue) return;
 
@@ -91,6 +93,7 @@ namespace CodeAssist.Extension
             string prefix;
             IReadOnlyList<IndexedSymbol> candidates;
             var hasResolvedMemberContext = false;
+            string memberOwner=null;
             if (includeMatch.Success)
             {
                 prefix = includeMatch.Groups["prefix"].Value;
@@ -111,19 +114,23 @@ namespace CodeAssist.Extension
                     ? indexService.Index.ResolveBaseType(currentOwner)
                     : memberMatch.Groups["call"].Success
                         ? indexService.Index.ResolveReturnType(currentOwner, receiver)
-                        : ResolveLocalVariableType(snapshot, receiver, point.Value.Position) ?? indexService.Index.ResolveVariableType(currentOwner, receiver);
+                        : ResolveLocalVariableType(snapshot, receiver, line.Start.Position + memberMatch.Groups["receiver"].Index + receiver.Length) ?? indexService.Index.ResolveVariableType(currentOwner, receiver);
+                if (memberMatch.Groups["operator"].Value == "->")
+                    typeName = indexService.Index.ResolveArrowTargetType(typeName);
+                if (tracedQueries <= 12) WelcomeDocumentWindow.RecordEvent("CompletionReceiver receiver="+receiver+" op="+memberMatch.Groups["operator"].Value+" type="+typeName);
                 hasResolvedMemberContext = !string.IsNullOrWhiteSpace(typeName);
+                memberOwner=NormalizeType(typeName);
                 candidates = hasResolvedMemberContext
-                    ? indexService.Index.CompleteMembers(NormalizeType(typeName), prefix, 100)
+                    ? indexService.CompleteLiveMembers(NormalizeType(typeName), prefix, 100, StartupUi.Preferences.AcronymCompletionEnabled, StartupUi.Preferences.ShorthandCompletionEnabled)
                     : receiver == "Super"
-                        ? indexService.Index.Complete(prefix, 100)
+                        ? indexService.Index.Complete(prefix, 100, StartupUi.Preferences.AcronymCompletionEnabled, StartupUi.Preferences.ShorthandCompletionEnabled)
                         : Array.Empty<IndexedSymbol>();
             }
             else
             {
                 prefix = GetIdentifierPrefix(beforeCaret);
                 candidates = MergeCandidates(
-                    indexService.Index.Complete(prefix, 200),
+                    indexService.Index.Complete(prefix, 200,StartupUi.Preferences.AcronymCompletionEnabled,StartupUi.Preferences.ShorthandCompletionEnabled),
                     indexService.CompleteLive(prefix, 200, filePath).Where(item => !item.IsLocal ||
                         ResolveLocalVariableType(snapshot, item.Name, point.Value.Position) != null).ToArray());
             }
@@ -131,15 +138,21 @@ namespace CodeAssist.Extension
 
             if (!includeMatch.Success && !UnrealSpecifierContext.IsMatch(beforeCaret))
             {
-                RequestCompilerCompletion(session, snapshot, point.Value.Position, prefix);
+                RequestCompilerCompletion(session, snapshot, point.Value.Position, prefix,memberMatch.Success);
                 if (ReferenceEquals(compilerSnapshot, snapshot) && compilerPosition == point.Value.Position &&
                     string.Equals(compilerRoot, indexService.ProjectRoot, StringComparison.OrdinalIgnoreCase))
-                    candidates = compilerCandidates.Concat(candidates).GroupBy(item => item.Name + "|" + item.Signature, StringComparer.Ordinal)
+                    candidates = candidates.Concat(compilerCandidates).GroupBy(item => item.Name, StringComparer.Ordinal)
                         .Select(group => group.First()).ToArray();
             }
-            candidates = RankByRecentUse(candidates, snapshot, point.Value.Position).Take(100).ToArray();
+            // Member declarations are not recent usage: retain the index match order for member lists.
+            candidates = (hasResolvedMemberContext ? candidates : RankByRecentUse(candidates, snapshot, point.Value.Position)).Take(100).ToArray();
 
-            if (candidates.Count == 0) return;
+            if(!StartupUi.Preferences.SuggestionListsEnabled)return;
+            var snippetItems=StartupUi.Preferences.SnippetSuggestionsEnabled&&!hasResolvedMemberContext&&!includeMatch.Success?SnippetInsertion.Suggestions(indexService.ProjectRoot,prefix).Select(t=>(Completion)new SnippetCompletion(t)).ToList():new List<Completion>();
+            if(StartupUi.Preferences.SmartSuggestionsEnabled&&!hasResolvedMemberContext&&!includeMatch.Success)
+                snippetItems.AddRange(SmartSuggestions.At(snapshot.GetText(),point.Value.Position).Where(value=>value.StartsWith(prefix,StringComparison.OrdinalIgnoreCase)).Select(value=>(Completion)new Completion(value,value,"CodeAssist expected-type literal",null,"literal")));
+            if (tracedQueries <= 12) WelcomeDocumentWindow.RecordEvent("CompletionCandidates count="+candidates.Count+" snippets="+snippetItems.Count+" sets="+completionSets.Count);
+            if (candidates.Count == 0&&snippetItems.Count==0) return;
             var builtInSet = completionSets.FirstOrDefault(set =>
                 !string.Equals(set.Moniker, "CodeAssistPreview", StringComparison.Ordinal) &&
                 set.Completions != null && set.Completions.Count > 0);
@@ -151,13 +164,15 @@ namespace CodeAssist.Extension
                 var overlap = candidates.Count(candidate => builtInNames.Contains(candidate.Name));
                 if (hasResolvedMemberContext) indexService.ReportIntelliSenseEvidence(overlap, candidates.Count);
                 var previewItems = candidates.Where(candidate => !builtInNames.Contains(candidate.Name)).Select(CreateCompletion).ToList();
-                if (indexService.IntelliSenseReady && previewItems.Count == 0) return;
-                if (previewItems.Count == 0) return;
+                // Native-only lists cannot render our semantic colors. Keep the
+                // native presentation only when the user explicitly selects it.
+                if (previewItems.Count == 0 && snippetItems.Count == 0 &&
+                    StartupUi.Preferences.CompletionUseVisualStudioColors) return;
 
                 // Never display VCCompletionSet and CodeAssist CompletionSet together.
                 // Visual Studio 17.14 can crash inside VCCompletionSet's highlight
                 // callback while WPF realizes items from the mixed session.
-                var combined = candidates.Select(CreateCompletion).ToList();
+                var combined = candidates.Select(symbol => CreateCompletion(symbol,builtInSet.Completions.FirstOrDefault(item=>string.Equals(item.InsertionText,symbol.Name,StringComparison.Ordinal)))).Concat(snippetItems).ToList();
                 foreach (var native in builtInSet.Completions)
                 {
                     if (combined.Any(item => string.Equals(item.InsertionText, native.InsertionText, StringComparison.OrdinalIgnoreCase))) continue;
@@ -165,17 +180,17 @@ namespace CodeAssist.Extension
                     if (combined.Count >= 200) break;
                 }
                 completionSets.Clear();
-                completionSets.Add(new PreviewCompletionSet(applicable, combined));
+                completionSets.Add(new PreviewCompletionSet(applicable, combined,memberOwner));
                 MarkCodeAssistSession(session);
                 return;
             }
 
-            var completions = candidates.Select(CreateCompletion).ToList();
-            completionSets.Add(new PreviewCompletionSet(applicable, completions));
+            var completions = candidates.Select(CreateCompletion).Concat(snippetItems).ToList();
+            completionSets.Add(new PreviewCompletionSet(applicable, completions,memberOwner));
             MarkCodeAssistSession(session);
         }
 
-        private void RequestCompilerCompletion(ICompletionSession session, ITextSnapshot snapshot, int position, string prefix)
+        private void RequestCompilerCompletion(ICompletionSession session, ITextSnapshot snapshot, int position, string prefix,bool membersOnly)
         {
             var root = indexService.ProjectRoot;
             var owner = ExtensionPackage.Current;
@@ -196,10 +211,10 @@ namespace CodeAssist.Extension
                         line.LineNumber + 1, position - line.Start.Position + 1, pending.Token,
                         new JObject { ["context"] = new JObject { ["triggerKind"] = 1 } });
                     if (result == null) return;
-                    var found = SemanticCompletions.Read(result, text, position - prefix.Length, position).Select(item =>
+                    var found = SemanticCompletions.Read(result, text, position - prefix.Length, position,membersOnly).Select(item =>
                         new IndexedSymbol(item.Name, item.Kind == 2 || item.Kind == 3 || item.Kind == 4 ? SymbolKind.Function :
                             item.Kind == 7 || item.Kind == 8 || item.Kind == 13 || item.Kind == 22 || item.Kind == 25 ? SymbolKind.Type :
-                            item.Kind == 5 || item.Kind == 6 || item.Kind == 10 || item.Kind == 21 ? SymbolKind.Variable : SymbolKind.Unknown,
+                            item.Kind == 5 || item.Kind == 6 || item.Kind == 10 || item.Kind == 20 || item.Kind == 21 ? SymbolKind.Variable : SymbolKind.Unknown,
                             "", 0, 0, signature: item.Detail)).ToArray();
                     await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
                     if (disposed || pending.IsCancellationRequested || !ReferenceEquals(buffer.CurrentSnapshot, snapshot) ||
@@ -230,21 +245,24 @@ namespace CodeAssist.Extension
             return context.ResolveVariableType(name, position);
         }
 
-        private static Completion CreateCompletion(IndexedSymbol symbol)
+        private static Completion CreateCompletion(IndexedSymbol symbol) => CreateCompletion(symbol,null);
+        private static Completion CreateCompletion(IndexedSymbol symbol,Completion native)
         {
-            var owner = string.IsNullOrWhiteSpace(symbol.OwnerType) ? string.Empty : " — " + symbol.OwnerType;
-            return new ColoredCompletion(symbol.Kind,
-                symbol.Name,
-                symbol.Name,
-                symbol.Kind + owner + (symbol.Signature.Length > 0 ? "\n" + symbol.Signature : "") + " (CodeAssist 미리보기)",
-                CompletionIcons.For(symbol.Kind),
-                symbol.Kind.ToString(),
-                null,
-                "");
+            var signature=string.IsNullOrWhiteSpace(symbol.Signature)?symbol.Name:symbol.Signature;
+            if(!string.IsNullOrWhiteSpace(symbol.OwnerType)&&signature.StartsWith(symbol.Name,StringComparison.Ordinal))signature=symbol.OwnerType+"::"+signature;
+            var declaration=(string.IsNullOrWhiteSpace(symbol.ValueType)?signature:symbol.ValueType+" "+signature).Trim();
+            var description=!string.IsNullOrWhiteSpace(native?.Description)?native.Description:declaration;
+            if(native==null&&!string.IsNullOrWhiteSpace(symbol.FilePath))description+="\n"+System.IO.Path.GetFileName(symbol.FilePath);
+            return new ColoredCompletion(symbol.Kind,symbol.Name,symbol.Name,description,CompletionIcons.For(symbol.Kind),symbol.Kind.ToString(),null,"",symbol.OwnerType);
         }
 
         private static Completion CloneCompletion(Completion completion)
         {
+            // Completion3.IconSource is always null: preserve its public image moniker.
+            if (completion is Completion3 modern)
+                return new Completion4(completion.DisplayText, completion.InsertionText,
+                    completion.Description, modern.IconMoniker, completion.IconAutomationText,
+                    modern.AttributeIcons?.OfType<CompletionIcon2>(), (completion as Completion4)?.Suffix ?? "");
             return new Completion(
                 completion.DisplayText,
                 completion.InsertionText,
@@ -292,9 +310,23 @@ namespace CodeAssist.Extension
 
         private static void MarkCodeAssistSession(ICompletionSession session)
         {
+            // VC++ can create its completion session after our queued standalone session.
+            // Retain one current preview per view instead of stacking two presenters.
+            var properties=session.TextView.Properties;
+            if(properties.TryGetProperty(CodeAssistCompletionSessionState.ActiveSession,out ICompletionSession previous)&&!ReferenceEquals(previous,session)&&!previous.IsDismissed)previous.Dismiss();
+            properties.RemoveProperty(CodeAssistCompletionSessionState.ActiveSession);
+            properties.AddProperty(CodeAssistCompletionSessionState.ActiveSession,session);
             if (!session.Properties.ContainsProperty(CodeAssistCompletionSessionState.Marker))
             {
                 session.Properties.AddProperty(CodeAssistCompletionSessionState.Marker, true);
+                if(EditorInputTrace.Enabled){WelcomeDocumentWindow.RecordEvent("CompletionSession created id="+session.GetHashCode()+" caret="+session.TextView.Caret.Position.BufferPosition.Position);session.Dismissed+=(sender,args)=>WelcomeDocumentWindow.RecordEvent("CompletionSession dismissed id="+session.GetHashCode()+" closed="+session.TextView.IsClosed);}
+
+                session.Dismissed+=(sender,args)=>{if(properties.TryGetProperty(CodeAssistCompletionSessionState.ActiveSession,out ICompletionSession current)&&ReferenceEquals(current,session))properties.RemoveProperty(CodeAssistCompletionSessionState.ActiveSession);};
+                session.Committed+=(sender,args)=>{
+                    ThreadHelper.ThrowIfNotOnUIThread();
+                    if(session.SelectedCompletionSet?.SelectionStatus?.Completion is SnippetCompletion snippet&&session.TextView is Microsoft.VisualStudio.Text.Editor.IWpfTextView view&&!view.IsClosed)
+                    {var span=session.SelectedCompletionSet.ApplicableTo.GetSpan(view.TextSnapshot);SnippetInsertion.CommitSuggestion(view,snippet.Shortcut,span);}
+                };
                 CompletionPopupColors.Connect(session);
             }
         }
@@ -303,13 +335,34 @@ namespace CodeAssist.Extension
     internal static class CodeAssistCompletionSessionState
     {
         internal static readonly object Marker = new object();
+        internal static readonly object ActiveSession = new object();
     }
 
+    internal sealed class SnippetCompletion:Completion
+    {
+        internal string Shortcut{get;}
+        internal SnippetCompletion(SnippetTemplate template):base(template.Shortcut,template.Shortcut,template.Title+" (CodeAssist snippet)",null,"snippet"){Shortcut=template.Shortcut;}
+    }
     internal sealed class PreviewCompletionSet : CompletionSet
     {
-        public PreviewCompletionSet(ITrackingSpan applicableTo, IList<Completion> completions)
+        private readonly Completion[] all;
+        internal string MemberOwner {get;}
+        public PreviewCompletionSet(ITrackingSpan applicableTo, IList<Completion> completions,string memberOwner=null)
             : base("CodeAssistPreview", "CodeAssist 미리보기", applicableTo, completions, null)
         {
+            all=completions.ToArray();MemberOwner=memberOwner;
+        }
+        internal void SelectKinds(IEnumerable<SymbolKind> kinds,bool nonInheritedFirst)
+        {
+            var selected=SelectionStatus?.Completion?.InsertionText;
+            var selectedKinds=new HashSet<SymbolKind>(kinds);
+            IEnumerable<Completion> query=all.Where(item=>selectedKinds.Count==0||item is ColoredCompletion colored&&selectedKinds.Contains(colored.Kind));
+            if(nonInheritedFirst&&!string.IsNullOrEmpty(MemberOwner))query=query.OrderBy(item=>item is ColoredCompletion colored&&colored.Kind==SymbolKind.Function&&string.Equals(colored.OwnerType,MemberOwner,StringComparison.OrdinalIgnoreCase)?0:1);
+            var visible=query.ToArray();
+            WritableCompletions.Clear();foreach(var item in visible)WritableCompletions.Add(item);
+            Filter();
+            var current=visible.FirstOrDefault(item=>item.InsertionText==selected)??visible.FirstOrDefault();
+            SelectionStatus=new CompletionSelectionStatus(current,current!=null,current!=null);
         }
 
         public override IReadOnlyList<Span> GetHighlightedSpansInDisplayText(string displayText)

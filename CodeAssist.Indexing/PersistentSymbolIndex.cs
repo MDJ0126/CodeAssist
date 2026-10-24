@@ -13,8 +13,11 @@ namespace CodeAssist.Indexing
 {
     public sealed class PersistentSymbolIndex
     {
+        public string[] AdditionalSourceExtensions { get; set; } = Array.Empty<string>();
+        private int parseConcurrency=2;
+        public int ParseConcurrency { get=>parseConcurrency;set=>parseConcurrency=Math.Max(1,Math.Min(16,value)); }
         private static readonly HashSet<string> SourceExtensions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-            { ".h", ".hpp", ".hh", ".inl", ".cpp", ".cc", ".cxx" };
+            { ".h", ".hpp", ".hh", ".inl", ".cpp", ".cc", ".cxx", ".c" };
 
         private static readonly HashSet<string> IgnoredDirectories = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             { ".git", ".vs", "Binaries", "DerivedDataCache", "Intermediate", "Saved" };
@@ -26,11 +29,11 @@ namespace CodeAssist.Indexing
             };
 
         private static readonly Regex TypePattern = new Regex(
-            @"\b(?:class|struct)\s+(?:\w+_API\s+)?(?<name>[A-Za-z_]\w*)(?:\s*:\s*(?:public|protected|private)\s+(?<base>[A-Za-z_]\w*))?",
+            @"\b(?:class|struct)\s+(?:\w+_API\s+)?(?<name>[A-Za-z_]\w*)(?:\s*:\s*(?:(?:public|protected|private)\s+)?(?<base>[A-Za-z_]\w*))?",
             RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
         private static readonly Regex FunctionPattern = new Regex(
-            @"\b(?<type>[A-Za-z_]\w*(?:\s*<[^>]+>)?[*&]?)\s+(?:(?<owner>[A-Za-z_]\w*)::)?(?<name>~?[A-Za-z_]\w*)\s*\(",
+            @"\b(?<type>[A-Za-z_]\w*(?:\s*<[^>]+>)?[*&]?)\s+(?:(?<owner>[A-Za-z_]\w*)::)?(?<name>operator\s*(?:->\*?|\(\)|\[\]|[+*/%<>=!&|^~-]+)|~?[A-Za-z_]\w*)\s*\(",
             RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
         private static readonly Regex ConstructorPattern = new Regex(
@@ -75,11 +78,11 @@ namespace CodeAssist.Indexing
 
         public void Build(string projectRoot, string engineRoot = null)
         {
-            var files = new List<string>(EnumerateProjectFiles(projectRoot));
+            var files = new List<string>(EnumerateProjectFiles(projectRoot, AdditionalSourceExtensions));
 
             if (!string.IsNullOrWhiteSpace(engineRoot) && Directory.Exists(engineRoot))
             {
-                files.AddRange(EnumerateEngineApiFiles(engineRoot, CollectEngineModules(projectRoot)));
+                files.AddRange(EnumerateEngineApiFiles(engineRoot, CollectEngineModules(projectRoot),AdditionalSourceExtensions));
             }
 
             BuildFiles(files, projectRoot, engineRoot);
@@ -87,13 +90,13 @@ namespace CodeAssist.Indexing
 
         public void BuildProject(string projectRoot, CancellationToken cancellation = default(CancellationToken))
         {
-            BuildFiles(EnumerateProjectFiles(projectRoot), projectRoot, null, cancellation);
+            BuildFiles(EnumerateProjectFiles(projectRoot, AdditionalSourceExtensions), projectRoot, null, cancellation);
         }
 
         public void BuildEngine(string engineRoot, string projectRoot, CancellationToken cancellation = default(CancellationToken))
         {
             var modules = CollectEngineModules(projectRoot);
-            BuildFiles(EnumerateEngineApiFiles(engineRoot, modules), null, engineRoot, cancellation);
+            BuildFiles(EnumerateEngineApiFiles(engineRoot, modules,AdditionalSourceExtensions), null, engineRoot, cancellation);
         }
 
         public void LoadBuiltInApi()
@@ -254,60 +257,68 @@ namespace CodeAssist.Indexing
             }
         }
 
-        public IReadOnlyList<IndexedSymbol> Complete(string prefix, int limit = 200)
+        public IReadOnlyList<IndexedSymbol> Complete(string prefix, int limit = 200, bool acronyms = false, bool shorthand = false)
         {
             prefix = prefix ?? string.Empty;
             lock (gate)
             {
                 IEnumerable<IndexedSymbol> pool = symbols.Where(item => !item.IsLocal);
-                if (prefix.Length > 0 && completionsByPrefix.TryGetValue(GetPrefixKey(prefix), out var indexedPool))
+                if (prefix.Length > 0 && completionsByPrefix.TryGetValue((acronyms||shorthand?prefix.Substring(0,1):GetPrefixKey(prefix)), out var indexedPool))
                 {
                     pool = indexedPool;
                 }
 
                 var names = new HashSet<string>(StringComparer.Ordinal);
-                var results = new List<IndexedSymbol>();
+                var results = new List<KeyValuePair<int, IndexedSymbol>>();
                 foreach (var item in pool)
                 {
-                    if (!item.Name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) || !names.Add(item.Name)) continue;
-                    results.Add(item);
+                    var rank = IdentifierMatching.Rank(item.Name, prefix, acronyms, shorthand);
+                    if (rank == int.MaxValue || !names.Add(item.Name)) continue;
+                    results.Add(new KeyValuePair<int, IndexedSymbol>(rank, item));
                 }
                 return results
-                    .OrderBy(item => CompletionMatchRank(item.Name, prefix))
-                    .ThenBy(item => item.Name, StringComparer.Ordinal)
+                    .OrderBy(item => item.Key)
+                    .ThenBy(item => item.Value.Name, StringComparer.Ordinal)
+                    .Select(item => item.Value)
                     .Take(limit)
                     .ToArray();
             }
         }
 
-        public IReadOnlyList<IndexedSymbol> CompleteMembers(string typeName, string prefix, int limit = 200)
+        public IReadOnlyList<IndexedSymbol> CompleteMembers(string typeName, string prefix, int limit = 200, bool acronyms = true, bool shorthand = true)
         {
-            typeName = NormalizeTypeName(typeName);
-            if (string.IsNullOrWhiteSpace(typeName))
-            {
-                return Array.Empty<IndexedSymbol>();
-            }
+            return CompleteMembers(typeName,prefix,limit,acronyms,shorthand,null);
+        }
 
-            var owners = GetTypeHierarchy(typeName);
-            lock (gate)
+        public IReadOnlyList<IndexedSymbol> CompleteMembers(string typeName,string prefix,int limit,bool acronyms,bool shorthand,IReadOnlyDictionary<string,IReadOnlyList<IndexedSymbol>> liveDocuments)
+        {
+            typeName=NormalizeTypeName(typeName);
+            if(string.IsNullOrWhiteSpace(typeName)||limit<=0)return Array.Empty<IndexedSymbol>();
+            var livePaths=new HashSet<string>(liveDocuments?.Keys??Enumerable.Empty<string>(),StringComparer.OrdinalIgnoreCase);
+            var live=(liveDocuments?.Values.SelectMany(items=>items)??Enumerable.Empty<IndexedSymbol>()).Where(item=>!item.IsLocal).ToArray();
+            var liveTypes=live.Where(item=>item.Kind==SymbolKind.Type).GroupBy(item=>NormalizeTypeName(item.Name),StringComparer.OrdinalIgnoreCase).ToDictionary(group=>group.Key,group=>group.First(),StringComparer.OrdinalIgnoreCase);
+            var liveMembers=live.Where(item=>!string.IsNullOrEmpty(item.OwnerType)).ToLookup(item=>NormalizeTypeName(item.OwnerType),StringComparer.OrdinalIgnoreCase);
+            lock(gate)
             {
-                var query = prefix ?? string.Empty;
-                var names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-                var results = new List<IndexedSymbol>();
-                foreach (var owner in owners)
+                var owners=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                var current=typeName;
+                while(!string.IsNullOrWhiteSpace(current)&&owners.Add(current))
                 {
-                    if (!membersByOwner.TryGetValue(owner, out var members)) continue;
-                    foreach (var item in members)
+                    current=liveTypes.TryGetValue(current,out var liveType)?NormalizeTypeName(liveType.BaseType):ResolveBaseType(current);
+                }
+                var results=new List<KeyValuePair<int,IndexedSymbol>>();
+                var names=new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                foreach(var owner in owners)
+                {
+                    var persisted=membersByOwner.TryGetValue(owner,out var members)?members:Enumerable.Empty<IndexedSymbol>();
+                    foreach(var item in liveMembers[owner].Concat(persisted.Where(item=>!livePaths.Contains(item.FilePath))))
                     {
-                        if (MemberMatchRank(item.Name, query) == int.MaxValue || !names.Add(item.Name + "\0" + item.Signature)) continue;
-                        results.Add(item);
+                        var rank=CompletionMemberRank(item.Name,prefix??string.Empty,acronyms,shorthand);
+                        if(rank==int.MaxValue||!names.Add(item.Name+"\0"+item.Signature))continue;
+                        results.Add(new KeyValuePair<int,IndexedSymbol>(rank,item));
                     }
                 }
-                return results
-                    .OrderBy(item => MemberMatchRank(item.Name, query))
-                    .ThenBy(item => item.Name, StringComparer.OrdinalIgnoreCase)
-                    .Take(limit)
-                    .ToArray();
+                return results.OrderBy(item=>item.Key).ThenBy(item=>item.Value.Name,StringComparer.OrdinalIgnoreCase).Select(item=>item.Value).Take(limit).ToArray();
             }
         }
 
@@ -380,6 +391,23 @@ namespace CodeAssist.Indexing
             return string.IsNullOrEmpty(ownerType) ? ResolveReturnType(functionName) : null;
         }
 
+        /// <summary>Resolve overloaded operator-> chains without following raw pointers or cycles.</summary>
+        public string ResolveArrowTargetType(string valueType)
+        {
+            var current = valueType;
+            var visited = new HashSet<string>(StringComparer.Ordinal);
+            for (var depth = 0; depth < 16 && !string.IsNullOrWhiteSpace(current); depth++)
+            {
+                var normalized = NormalizeTypeName(current);
+                if (Regex.IsMatch(current, @"\*\s*(?:const\s*)?$")) return normalized;
+                if (!visited.Add(normalized)) return null;
+                var target = ResolveReturnType(normalized, "operator->");
+                if (string.IsNullOrWhiteSpace(target)) return normalized;
+                current = target;
+            }
+            return null;
+        }
+
         public string FindCorrectTypeCasing(string name)
         {
             lock (gate)
@@ -396,6 +424,15 @@ namespace CodeAssist.Indexing
             {
                 return baseTypesByName.TryGetValue(NormalizeTypeName(typeName), out var baseType) ? baseType : null;
             }
+        }
+
+        public IReadOnlyList<IndexedSymbol> FindSymbolDetails(string name)
+        {
+            if (string.IsNullOrEmpty(name)) return Array.Empty<IndexedSymbol>();
+            lock (gate)
+                return definitionsByName.TryGetValue(name, out var found)
+                    ? found.Where(item => item.Name == name && !item.IsLocal && !string.IsNullOrWhiteSpace(item.FilePath)).ToArray()
+                    : Array.Empty<IndexedSymbol>();
         }
 
         public IReadOnlyList<SourceSymbol> FindDefinitions(string name)
@@ -492,7 +529,7 @@ namespace CodeAssist.Indexing
             List<string> lines;
             lock (gate)
             {
-                lines = new List<string> { "CODEASSIST5", Encode(ProjectRoot), Encode(EngineRoot), LastUpdatedUtc.Ticks.ToString() };
+                lines = new List<string> { "CODEASSIST7", Encode(ProjectRoot), Encode(EngineRoot), LastUpdatedUtc.Ticks.ToString() };
                 lines.AddRange(sourceFiles.Select(file => "@FILE\t" + Encode(file)));
                 lines.AddRange(symbols.Select(item => string.Join("\t", Encode(item.Name), (int)item.Kind, Encode(item.FilePath), item.Line, item.Column, Encode(item.OwnerType), Encode(item.ValueType), Encode(item.BaseType), Encode(item.ScopeId), Encode(item.Signature), item.IsLocal ? "1" : "0")));
             }
@@ -515,7 +552,7 @@ namespace CodeAssist.Indexing
             try
             {
                 var lines = File.ReadAllLines(cachePath, Encoding.UTF8);
-                if (lines.Length < 4 || lines[0] != "CODEASSIST5") return false;
+                if (lines.Length < 4 || lines[0] != "CODEASSIST7") return false;
                 var loaded = new List<IndexedSymbol>();
                 var files = new List<string>();
                 foreach (var line in lines.Skip(4))
@@ -585,8 +622,16 @@ namespace CodeAssist.Indexing
                 var line = lines[index];
                 Action<IndexedSymbol> emit = item => addSymbol(new IndexedSymbol(item.Name, item.Kind, item.FilePath, item.Line, item.Column,
                     item.OwnerType, item.ValueType, item.BaseType, context.ScopeAt(offset + Math.Max(0, item.Column - 1)),
-                    item.Kind == SymbolKind.Function ? line.Substring(Math.Max(0, item.Column - 1)).Split('{')[0].Trim().TrimEnd(';') : "",
+                    item.Kind == SymbolKind.Function ? ReadFunctionSignature(line,Math.Max(0,item.Column-1)) : "",
                     item.Kind == SymbolKind.Variable && context.IsExecutableAt(offset + Math.Max(0, item.Column - 1))));
+                var macroMatch=Regex.Match(line,@"^\s*#\s*define\s+(?<name>[A-Za-z_]\w*)");
+                if(macroMatch.Success)
+                {
+                    var group=macroMatch.Groups["name"];
+                    emit(new IndexedSymbol(group.Value,SymbolKind.Macro,filePath,index+1,group.Index+1));
+                    offset+=line.Length+1;
+                    continue;
+                }
                 var typeMatch = TypePattern.Match(line);
                 if (typeMatch.Success)
                 {
@@ -647,6 +692,14 @@ namespace CodeAssist.Indexing
                     }
                 }
 
+                // Inline members can share a line with a function; do not drop the field.
+                if(line.Contains("("))
+                    foreach(Match member in VariablePattern.Matches(line))
+                    {
+                        var group=member.Groups["name"];
+                        if(group.Index < line.IndexOf('(') && !context.IsExecutableAt(offset+group.Index) && !IsControlKeyword(member.Groups["type"].Value.Trim()))
+                            emit(new IndexedSymbol(group.Value,SymbolKind.Variable,filePath,index+1,group.Index+1,typeScopes.Count==0?null:typeScopes.Peek().Name,member.Groups["type"].Value.Trim()));
+                    }
                 braceDepth += line.Count(character => character == '{');
                 braceDepth -= line.Count(character => character == '}');
                 while (typeScopes.Count > 0 && braceDepth < typeScopes.Peek().Depth)
@@ -655,6 +708,18 @@ namespace CodeAssist.Indexing
                 }
                 offset += line.Length + 1;
             }
+        }
+
+        private static string ReadFunctionSignature(string line,int start)
+        {
+            var depth=0;var end=start;
+            for(;end<line.Length;end++) {
+                var ch=line[end];
+                if(ch=='(')depth++;
+                else if(ch==')')depth=Math.Max(0,depth-1);
+                else if(depth==0&&(ch==';'||ch=='{'||ch=='}'))break;
+            }
+            return line.Substring(start,end-start).Trim();
         }
 
         private sealed class TypeScope
@@ -669,26 +734,26 @@ namespace CodeAssist.Indexing
             public int Depth { get; }
         }
 
-        public static string[] InputFiles(string root, string projectRoot = null)
+        public static string[] InputFiles(string root, string projectRoot = null,string[] extensions=null)
         {
-            return (projectRoot == null ? EnumerateProjectFiles(root) : EnumerateEngineApiFiles(root, CollectEngineModules(projectRoot)))
+            return (projectRoot == null ? EnumerateProjectFiles(root,extensions) : EnumerateEngineApiFiles(root, CollectEngineModules(projectRoot),extensions))
                 .Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(path => path, StringComparer.OrdinalIgnoreCase).ToArray();
         }
 
-        private static IEnumerable<string> EnumerateProjectFiles(string root)
+        private static IEnumerable<string> EnumerateProjectFiles(string root,string[] extensions=null)
         {
             if (string.IsNullOrWhiteSpace(root) || !Directory.Exists(root)) yield break;
-            foreach (var file in EnumerateFiles(root, directory => !IgnoredDirectories.Contains(Path.GetFileName(directory)))) yield return file;
+            foreach (var file in EnumerateFiles(root, directory => !IgnoredDirectories.Contains(Path.GetFileName(directory)),extensions)) yield return file;
         }
 
-        private static IEnumerable<string> EnumerateEngineApiFiles(string engineRoot, ISet<string> modules)
+        private static IEnumerable<string> EnumerateEngineApiFiles(string engineRoot, ISet<string> modules,string[] extensions=null)
         {
             foreach (var moduleRoot in EnumerateEngineModuleRoots(engineRoot, modules))
             {
                 foreach (var apiDirectory in new[] { Path.Combine(moduleRoot, "Public"), Path.Combine(moduleRoot, "Classes") })
                 {
                     if (!Directory.Exists(apiDirectory)) continue;
-                    foreach (var file in EnumerateFiles(apiDirectory, directory => !IgnoredDirectories.Contains(Path.GetFileName(directory))))
+                    foreach (var file in EnumerateFiles(apiDirectory, directory => !IgnoredDirectories.Contains(Path.GetFileName(directory)),extensions))
                     {
                         if (!file.EndsWith(".cpp", StringComparison.OrdinalIgnoreCase)) yield return file;
                     }
@@ -747,7 +812,7 @@ namespace CodeAssist.Indexing
             return modules;
         }
 
-        private static IEnumerable<string> EnumerateFiles(string root, Func<string, bool> includeDirectory)
+        private static IEnumerable<string> EnumerateFiles(string root, Func<string, bool> includeDirectory,string[] extensions=null)
         {
             var pending = new Stack<string>();
             pending.Push(root);
@@ -759,7 +824,7 @@ namespace CodeAssist.Indexing
                 try { files = Directory.GetFiles(directory); directories = Directory.GetDirectories(directory); }
                 catch (IOException) { continue; }
                 catch (UnauthorizedAccessException) { continue; }
-                foreach (var file in files) if (SourceExtensions.Contains(Path.GetExtension(file))) yield return file;
+                foreach (var file in files) if ((SourceExtensions.Contains(Path.GetExtension(file))||(extensions??Array.Empty<string>()).Contains(Path.GetExtension(file),StringComparer.OrdinalIgnoreCase))) yield return file;
                 foreach (var child in directories) if (includeDirectory(child)) pending.Push(child);
             }
         }
@@ -1026,11 +1091,11 @@ namespace CodeAssist.Indexing
             return int.MaxValue;
         }
 
-        private static ParallelOptions CreateParallelOptions(CancellationToken cancellation = default(CancellationToken))
+        private ParallelOptions CreateParallelOptions(CancellationToken cancellation = default(CancellationToken))
         {
             return new ParallelOptions
             {
-                MaxDegreeOfParallelism = Math.Min(2, Math.Max(1, Environment.ProcessorCount))
+                MaxDegreeOfParallelism = Math.Min(ParseConcurrency, Math.Max(1, Environment.ProcessorCount))
                 , CancellationToken = cancellation
             };
         }
@@ -1050,6 +1115,18 @@ namespace CodeAssist.Indexing
             if (name.StartsWith(query, StringComparison.Ordinal)) return 1;
             if (name.Equals(query, StringComparison.OrdinalIgnoreCase)) return 2;
             return 3;
+        }
+
+        private static int CompletionMemberRank(string name, string query, bool acronyms, bool shorthand)
+        {
+            // Preserve the expanded member-list matching when shorthand is enabled.
+            // Symbol search keeps its independent fuzzy matcher below.
+            if (shorthand) return MemberMatchRank(name, query);
+            if (string.IsNullOrEmpty(query)) return 4;
+            if (name.Equals(query, StringComparison.OrdinalIgnoreCase)) return 0;
+            if (name.StartsWith(query, StringComparison.OrdinalIgnoreCase)) return 1;
+            return acronyms && IdentifierMatching.Acronym(name).StartsWith(query, StringComparison.OrdinalIgnoreCase)
+                ? 2 : int.MaxValue;
         }
 
         private static int MemberMatchRank(string name, string query)

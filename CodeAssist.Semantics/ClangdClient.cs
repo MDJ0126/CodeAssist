@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Concurrent;
@@ -55,26 +55,29 @@ namespace CodeAssist.Semantics
         private readonly Dictionary<string, Tuple<int, string>> opened = new Dictionary<string, Tuple<int, string>>(StringComparer.OrdinalIgnoreCase);
         private readonly Task reader;
         private long sequence;
+        private readonly SemaphoreSlim previewGate=new SemaphoreSlim(1,1);
+        private TaskCompletionSource<JToken> previewEdit;
         private int disposed;
         public string LastError { get; private set; }
-        private ClangdClient(string executable, string root, bool backgroundIndex)
+        private ClangdClient(string executable, string root, bool backgroundIndex,string databaseDirectory=null)
         {
             process = new Process { StartInfo = new ProcessStartInfo(executable,
                 "--background-index=" + (backgroundIndex ? "1" : "0") + " -j=2 --log=error --header-insertion=never --compile-commands-dir=\"" + root + "\"")
                 { UseShellExecute = false, CreateNoWindow = true, RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true, WorkingDirectory = root } };
             process.ErrorDataReceived += (s, e) => { if (!string.IsNullOrWhiteSpace(e.Data)) LastError = e.Data; };
+            if(!string.IsNullOrEmpty(databaseDirectory)){var directory=Path.GetFullPath(databaseDirectory);if(directory.IndexOf('"')>=0||!File.Exists(Path.Combine(directory,"compile_commands.json")))throw new ArgumentException("Invalid compilation database directory");process.StartInfo.Arguments+=" --compile-commands-dir=\""+directory.TrimEnd('\\','/')+"\"";}
             process.Start(); process.BeginErrorReadLine(); reader = Task.Run(ReadLoopAsync);
         }
-        public static async Task<ClangdClient> StartAsync(string executable, string root, CancellationToken cancellation, bool backgroundIndex = false)
+        public static async Task<ClangdClient> StartAsync(string executable, string root, CancellationToken cancellation, bool backgroundIndex = false,string databaseDirectory=null)
         {
-            var client = new ClangdClient(executable, root, backgroundIndex);
+            var client = new ClangdClient(executable, root, backgroundIndex,databaseDirectory);
             try
             {
                 await client.RequestAsync("initialize", new JObject
                 {
                     ["processId"] = Process.GetCurrentProcess().Id, ["rootUri"] = new Uri(Path.GetFullPath(root) + Path.DirectorySeparatorChar).AbsoluteUri,
-                    ["capabilities"] = new JObject { ["general"] = new JObject { ["positionEncodings"] = new JArray("utf-16") },
-                        ["textDocument"] = new JObject { ["completion"] = new JObject { ["completionItem"] = new JObject { ["snippetSupport"] = false } } } }
+                    ["capabilities"] = new JObject { ["workspace"] = new JObject {["applyEdit"] = true}, ["general"] = new JObject { ["positionEncodings"] = new JArray("utf-16") },
+                        ["textDocument"] = new JObject { ["codeAction"] = new JObject { ["dataSupport"] = true, ["resolveSupport"] = new JObject { ["properties"] = new JArray("edit") }, ["codeActionLiteralSupport"] = new JObject { ["codeActionKind"] = new JObject { ["valueSet"] = new JArray("quickfix", "refactor", "refactor.extract", "refactor.inline", "refactor.rewrite") } } }, ["completion"] = new JObject { ["completionItem"] = new JObject { ["snippetSupport"] = false } } } }
                 }, cancellation).ConfigureAwait(false);
                 await client.NotifyAsync("initialized", new JObject()).ConfigureAwait(false); return client;
             }
@@ -123,6 +126,26 @@ namespace CodeAssist.Semantics
                 finally { pending.TryRemove(id, out _); }
             }
         }
+        public static bool SupportsPreviewCommand(JToken command) => command is JObject &&
+            ((string)command["command"]=="clangd.applyTweak"||(string)command["command"]=="clangd.applyFix");
+        public async Task<JToken> PreviewCommandAsync(JObject command,CancellationToken cancellation)
+        {
+            if(!SupportsPreviewCommand(command))throw new NotSupportedException("Unsupported compiler command");
+            await previewGate.WaitAsync(cancellation).ConfigureAwait(false);
+            var captured=new TaskCompletionSource<JToken>(TaskCreationOptions.RunContinuationsAsynchronously);
+            try
+            {
+                Volatile.Write(ref previewEdit,captured);
+                try {await RequestAsync("workspace/executeCommand",new JObject {["command"]=command["command"].DeepClone(),["arguments"]=command["arguments"]?.DeepClone()??new JArray()},cancellation).ConfigureAwait(false);}
+                catch(InvalidOperationException) when(captured.Task.Status==TaskStatus.RanToCompletion) { }
+                cancellation.ThrowIfCancellationRequested();
+                if(captured.Task.Status!=TaskStatus.RanToCompletion)throw new InvalidOperationException("Compiler command did not produce a text-edit preview");
+                return await captured.Task.ConfigureAwait(false);
+            }
+            finally {Volatile.Write(ref previewEdit,null);previewGate.Release();}
+        }
+        private readonly ConcurrentDictionary<string,JArray> diagnostics=new ConcurrentDictionary<string,JArray>(StringComparer.OrdinalIgnoreCase);
+        public JArray Diagnostics(string file)=>diagnostics.TryGetValue(new Uri(Path.GetFullPath(file)).AbsoluteUri,out var found)?(JArray)found.DeepClone():new JArray();
         public Task NotifyAsync(string method, JToken args) => SendAsync(new JObject { ["jsonrpc"] = "2.0", ["method"] = method, ["params"] = args });
         private async Task SendAsync(JToken value)
         {
@@ -140,6 +163,14 @@ namespace CodeAssist.Semantics
                     if (message == null) throw new EndOfStreamException("clangd exited");
                     if (message["method"] != null)
                     {
+                        if((string)message["method"]=="workspace/applyEdit" && message["id"]!=null)
+                        {
+                            var capture=Volatile.Read(ref previewEdit);var edit=message["params"]?["edit"];
+                            if(capture!=null&&edit!=null)capture.TrySetResult(edit.DeepClone());
+                            await SendAsync(new JObject {["jsonrpc"]="2.0",["id"]=message["id"].DeepClone(),["result"]=new JObject {["applied"]=false,["failureReason"]="CodeAssist preview only; no files changed"}}).ConfigureAwait(false);
+                            continue;
+                        }
+                        if((string)message["method"]=="textDocument/publishDiagnostics"&&message["params"]?["uri"]!=null&&message["params"]?["diagnostics"] is JArray published)diagnostics[(string)message["params"]["uri"]]=(JArray)published.DeepClone();
                         if (message["id"] != null) await SendAsync(new JObject { ["jsonrpc"] = "2.0", ["id"] = message["id"],
                             ["error"] = new JObject { ["code"] = -32601, ["message"] = "Unsupported client request" } }).ConfigureAwait(false);
                         continue;

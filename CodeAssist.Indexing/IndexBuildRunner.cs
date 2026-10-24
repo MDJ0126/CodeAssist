@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -29,6 +29,8 @@ namespace CodeAssist.Indexing
                     {
                         process.StartInfo = new ProcessStartInfo(workerPath) { UseShellExecute=false, CreateNoWindow=true,
                             RedirectStandardInput=true, RedirectStandardError=true, WorkingDirectory=Path.GetDirectoryName(workerPath) };
+                        process.StartInfo.EnvironmentVariables["CODEASSIST_PARSE_CONCURRENCY"]=index.ParseConcurrency.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                        process.StartInfo.EnvironmentVariables["CODEASSIST_SOURCE_EXTENSIONS"]=string.Join(";",index.AdditionalSourceExtensions);
                         process.Start();
                         var error = process.StandardError.ReadToEndAsync();
                         foreach (var value in new[] { mode, root, project ?? "", temporary })

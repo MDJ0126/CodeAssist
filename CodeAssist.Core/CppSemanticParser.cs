@@ -9,7 +9,9 @@ namespace CodeAssist.Core
     {
         Type,
         Variable,
-        Function
+        Function,
+        Namespace,
+        EnumMember
     }
 
     public sealed class SemanticToken
@@ -99,7 +101,9 @@ namespace CodeAssist.Core
                 else if (variableNames.Contains(name)) tokens.Add(new SemanticToken(name, identifier.Index, identifier.Length, SemanticTokenKind.Variable));
             }
             AddFunctionOccurrences(text, tokens);
-            return tokens.OrderBy(token => token.Start).ToArray();
+            var special=CppColorCategories.Parse(text);
+            var specialPositions=new HashSet<int>(special.Select(t=>t.Start));
+            return tokens.Where(t=>!specialPositions.Contains(t.Start)).Concat(special).OrderBy(token => token.Start).ToArray();
         }
 
         private static HashSet<string> CollectNames(string text, Regex pattern)
