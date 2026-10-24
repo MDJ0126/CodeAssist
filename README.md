@@ -37,7 +37,7 @@ Visual Studio IntelliSense와 함께 작동합니다. 기능별 동작 범위와
 | 2019 (16.x) | `CodeAssist.VS2019.vsix` | x86 |
 | 2022 (17.x) · 2026 (18.x) | `CodeAssist.vsix` | x64 |
 
-설치 파일은 빌드 후 `installers/<매니페스트 버전>/`에 생성됩니다. 현재 저장소에는 해당 경로의 설치 파일이 등록되어 있지 않으므로 아래 개발 안내에 따라 빌드해 주세요.
+[최신 릴리즈](https://github.com/MDJ0126/CodeAssist/releases/latest)에서 Visual Studio 버전에 맞는 설치 파일을 내려받으세요. [0.0.175 릴리즈](https://github.com/MDJ0126/CodeAssist/releases/tag/v0.0.175)에는 두 VSIX와 `SHA256SUMS.txt`가 제공됩니다. 로컬 빌드 파일은 `installers/<매니페스트 버전>/`에 보관하고 Git에는 올리지 않습니다.
 
 1. Visual Studio를 종료합니다.
 2. 버전에 맞는 VSIX를 실행해 설치합니다.
@@ -69,3 +69,5 @@ HTML 문서는 저장소를 내려받은 뒤 브라우저에서 열어 주세요
 ---
 
 [MIT License](LICENSE) · Microsoft 또는 Epic Games와 제휴하거나 공식 승인을 받은 제품이 아닙니다.
+
+[커밋·릴리즈 이력](CHANGELOG.md) · [저장소 파일 관리 기준](docs/repository-hygiene.md)
