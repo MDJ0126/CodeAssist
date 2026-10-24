@@ -1,5 +1,6 @@
-﻿param([string]$Package = "$PSScriptRoot/../CodeAssist.vsix", [string]$Output = "$PSScriptRoot/../docs/validation/package.json")
+param([string]$Package = "", [string]$Output = "$PSScriptRoot/../docs/validation/package.json")
 $ErrorActionPreference='Stop'
+if(!$Package){[xml]$source=Get-Content -LiteralPath "$PSScriptRoot/../CodeAssist.Extension/source.extension.vsixmanifest" -Raw;$version=$source.PackageManifest.Metadata.Identity.Version;$Package="$PSScriptRoot/../installers/$version/CodeAssist.vsix"}
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $codeAssistPackagePath=(Resolve-Path -LiteralPath $Package).Path
 $codeAssistZip=[IO.Compression.ZipFile]::OpenRead($codeAssistPackagePath)
@@ -14,6 +15,7 @@ try {
     [xml]$codeAssistSourceManifest=Get-Content -LiteralPath "$PSScriptRoot/../CodeAssist.Extension/source.extension.vsixmanifest" -Raw
     if($codeAssistVersion -ne $codeAssistSourceManifest.PackageManifest.Metadata.Identity.Version) { throw "Incorrect version: $codeAssistVersion" }
     if($codeAssistPkgdef -notmatch 'Editors\\\{fcb5ef5d-27a7-43f4-8e97-cfcf48219013\}'){throw 'Missing registered Welcome editor factory'}
+    if($codeAssistPkgdef -notmatch 'c25bc16f-d84a-45b2-932b-4fa52280a64a'){throw 'Missing registered internal help tool window'}
     if($null -eq $codeAssistZip.GetEntry('Resources/CodeAssistHelp.html')) {throw 'Missing offline help'}
     if($null -eq $codeAssistZip.GetEntry('Resources/CodeAssist.png')) {throw 'Missing CodeAssist icon'}
     if($codeAssistPkgdef -match '5e5645de-4a8b-4f85-9123-73246b5a29aa'){throw 'Obsolete floating Welcome tool window is still registered'}

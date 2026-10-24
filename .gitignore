@@ -15,7 +15,6 @@ x86/
 
 # Visual Studio extension output
 *.vsix
-!CodeAssist.vsix
 *.pkgdef
 *.pdb
 
@@ -37,3 +36,61 @@ Thumbs.db
 
 # Local XERJ binary, index, journals and logs
 .local/
+
+# Installers are distributed through GitHub Releases, not Git history.
+/installers/*
+!/installers/README.md
+
+# Python and locally compiled verification probes
+__pycache__/
+*.py[cod]
+/tools/**/*.exe
+/tools/**/*.dll
+
+# Raw local validation runs. Tracked evidence remains tracked.
+# Publish a reviewed report by adding a specific exception below.
+/docs/validation/*
+!/docs/validation/display-source-175/
+
+# Historical, locally generated HTML reports (authored Markdown is retained).
+/docs/all-108-comparison.html
+/docs/all-108-review-20261017.html
+/docs/automated-parity-runner.html
+/docs/behavior-094.html
+/docs/bounded-099.html
+/docs/bounded-100.html
+/docs/comparison-0.0.78.html
+/docs/comparison-0.0.79.html
+/docs/comparison-097.html
+/docs/comparison-098.html
+/docs/comparison-20261016.html
+/docs/compatibility-parity-0.0.86.html
+/docs/completion-0.0.83.html
+/docs/composite-093.html
+/docs/debug-0.0.89.html
+/docs/debug-0.0.90.html
+/docs/debug-0.0.91.html
+/docs/debug-0.0.92.html
+/docs/file-navigation-101.html
+/docs/file-navigation-102.html
+/docs/fixed-108-096.html
+/docs/help-0.0.82.html
+/docs/layout-0.0.88.html
+/docs/live-comparison-20261017.html
+/docs/localization-0.0.84.html
+/docs/options-retest-20261018.html
+/docs/physical-shortcuts-092.html
+/docs/physical-shortcuts-093.html
+/docs/remaining-98.html
+/docs/remaining-features.html
+/docs/runtime-stop-20261017.html
+/docs/screenshot-analysis-20261018.html
+/docs/similarity-audit-0.0.90.html
+/docs/theme-layout.html
+/docs/toolbar-0.0.80.html
+/docs/tools-menu-0.0.85.html
+/docs/ui-comparison-0.0.88.html
+/docs/ui-comparison-0.0.90.html
+/docs/va-documentation-comparison.html
+/docs/verification-095.html
+/docs/verification-current.html
