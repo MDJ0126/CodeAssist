@@ -35,7 +35,7 @@ VSCT에 기본 키를 등록했습니다. Visual Studio의 사용자 지정 할�
 
 설치된 현재 VS에서 `Alt+Down`이 선택 행 이동을 실행하는 충돌을 직접 확인했습니다. VA 탐색 바 화살표로 확인한 [범위 이동 기록](reverse-engineering/va-2630/runtime/scope-navigation.json)과 [키 충돌 기록](reverse-engineering/va-2630/runtime/key-conflicts.json)을 구분해 보존했습니다. 괄호·중괄호 범위 설명은 [공식 Move Scope 문서](https://www.wholetomato.com/documentation/navigation/move-scope)와 함께 대조했습니다. namespace·class·전처리 조건을 포함한 모든 C++ 범위의 동등성은 미확인입니다.
 
-`도구 → 옵션 → 환경 → 키보드`에서 `CodeAssist`로 명령을 찾아 표의 키를 지정해 주세요. 파일·심볼 검색은 Global, 편집기 동작은 Text Editor 범위로 지정하실 수 있습니다. 실제 IDE 키 동작은 [확인 목록](validation/README.md)에 남겼습니다.
+`도구 → 옵션 → 환경 → 키보드`에서 `CodeAssist`로 명령을 찾아 표의 키를 지정해 주세요. 파일·심볼 검색은 Global, 편집기 동작은 Text Editor 범위로 지정하실 수 있습니다. 실제 IDE 키 동작은 [확인 목록](https://mdj0126.github.io/codex-config/assets/imports/CodeAssist/docs/validation/README.md)에 남겼습니다.
 
 ## 등록 파일
 

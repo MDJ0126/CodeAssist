@@ -95,4 +95,4 @@ Welcome 한국어, 설치본 내부 도움말, 새 편집 명령도 포함했습
 
 자동 테스트 247개 통과, 생성된 C++ 6개 사례의 clang++ 구문 검사 통과, Release 전체 빌드, VSIX 바이너리 6개 해시와 기존 단축키 등록 24개 일치를 확인했습니다. [0.0.76 근거](validation/feature-batch-0.0.76.json).
 
-설치·PC 제어·실제 디버거·인쇄 명령·컴퓨터 종료는 수행하지 않았습니다. [다음 검증 순서](handoff.html#next-verification-076)를 참조하세요.
+설치·PC 제어·실제 디버거·인쇄 명령·컴퓨터 종료는 수행하지 않았습니다. [다음 검증 순서](https://mdj0126.github.io/codex-config/assets/imports/CodeAssist/docs/handoff.html#next-verification-076)를 참조하세요.

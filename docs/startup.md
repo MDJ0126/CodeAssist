@@ -10,4 +10,4 @@ Welcome은 코드 파일과 같은 문서 영역에 열립니다. Tools → Code
 
 상단 안내의 Enable은 기본 프로젝트 구문 검사를 실행합니다. VA의 전체 코드 검사 엔진과 같은 기능이라고 검증하지 않았습니다.
 
-[인터페이스 사용 안내](interface.html) · [한영 번역표](localization.html) · [원본 유사도·구현 기능 수](progress-audit.html) · [이전 검증 이력](handoff.html)
+[인터페이스 사용 안내](interface.html) · [한영 번역표](localization.html) · [원본 유사도·구현 기능 수](https://mdj0126.github.io/codex-config/assets/imports/CodeAssist/docs/progress-audit.html) · [이전 검증 이력](https://mdj0126.github.io/codex-config/assets/imports/CodeAssist/docs/handoff.html)

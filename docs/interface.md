@@ -1,6 +1,6 @@
 # CodeAssist 인터페이스
 
-[원본 유사도·구현 기능 수](progress-audit.html)에서 현재 검증 범위를 확인하실 수 있습니다. 과거 빌드의 기록은 [인계 문서](handoff.html)에 보존합니다.
+[원본 유사도·구현 기능 수](https://mdj0126.github.io/codex-config/assets/imports/CodeAssist/docs/progress-audit.html)에서 현재 검증 범위를 확인하실 수 있습니다. 과거 빌드의 기록은 [인계 문서](https://mdj0126.github.io/codex-config/assets/imports/CodeAssist/docs/handoff.html)에 보존합니다.
 
 ## 도구 모음
 
